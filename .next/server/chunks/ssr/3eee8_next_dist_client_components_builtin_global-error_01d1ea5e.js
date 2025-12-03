@@ -1,0 +1,3 @@
+module.exports=[27849,(a,b,c)=>{let{createClientModuleProxy:d}=a.r(40340);a.n(d("[project]/Downloads/wall-street-playbook/node_modules/next/dist/client/components/builtin/global-error.js <module evaluation>"))},29780,(a,b,c)=>{let{createClientModuleProxy:d}=a.r(40340);a.n(d("[project]/Downloads/wall-street-playbook/node_modules/next/dist/client/components/builtin/global-error.js"))},40636,a=>{"use strict";a.i(27849);var b=a.i(29780);a.n(b)}];
+
+//# sourceMappingURL=3eee8_next_dist_client_components_builtin_global-error_01d1ea5e.js.map

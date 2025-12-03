@@ -1,0 +1,6 @@
+User-Agent: *
+Allow: /
+Disallow: /api/
+Disallow: /scripts/
+
+Sitemap: https://wallstreetplaybook.org/sitemap.xml

@@ -1,0 +1,3 @@
+module.exports=[23940,a=>{"use strict";var b=a.i(62537);function c(){return(0,b.jsx)("div",{className:"flex min-h-screen items-center justify-center bg-off-white",children:(0,b.jsxs)("div",{className:"flex flex-col items-center gap-4",children:[(0,b.jsx)("div",{className:"flex h-12 w-12 items-center justify-center rounded bg-gold",children:(0,b.jsx)("span",{className:"text-lg font-bold text-navy",children:"WSP"})}),(0,b.jsx)("div",{className:"h-1 w-32 overflow-hidden rounded-full bg-charcoal/10",children:(0,b.jsx)("div",{className:"h-full w-1/2 animate-pulse rounded-full bg-gold"})})]})})}a.s(["default",()=>c])}];
+
+//# sourceMappingURL=Downloads_wall-street-playbook_app_loading_tsx_954d798e._.js.map
