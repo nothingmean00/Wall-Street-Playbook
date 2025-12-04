@@ -6,6 +6,7 @@ import { Menu, X } from "lucide-react"
 import { Logo } from "@/components/ui/logo"
 
 const navigation = [
+  { name: "Jobs", href: "/jobs" },
   { name: "Playbooks", href: "/playbooks" },
   { name: "Resume Services", href: "/resume-services" },
   { name: "Blog", href: "/blog" },
