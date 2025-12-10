@@ -66,12 +66,14 @@ async function fetchFromTheirStack(query: string): Promise<Job[]> {
       page: 0,
       limit: 25,
       posted_at_max_age_days: 30,
+      job_country_code_or: ["US"], // US jobs only
       job_title_or: [
         "Investment Banking",
         "Private Equity", 
         "Hedge Fund",
         "Financial Analyst",
         "Summer Analyst",
+        "Summer Associate",
       ],
       order_by: [{ desc: true, field: "date_posted" }],
     }
