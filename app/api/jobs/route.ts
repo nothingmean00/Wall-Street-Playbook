@@ -34,7 +34,11 @@ const CACHE_DURATION = 1000 * 60 * 60 * 6 // 6 hour cache to conserve API credit
 // Track daily API calls to avoid exceeding limits
 let dailyApiCalls = 0
 let lastApiCallDate = new Date().toDateString()
-const MAX_DAILY_API_CALLS = 4 // Conservative: ~120 credits/month leaves buffer
+const MAX_DAILY_API_CALLS = 2 // Very conservative: ~60 credits/month
+
+// Simple request tracking to prevent rapid successive calls
+let lastApiCallTime = 0
+const MIN_CALL_INTERVAL = 1000 * 60 * 30 // 30 minutes between API calls minimum
 
 // Track job source for response
 let lastFetchReason = "sample"
@@ -58,6 +62,13 @@ async function fetchFromTheirStack(query: string): Promise<Job[]> {
   if (dailyApiCalls >= MAX_DAILY_API_CALLS) {
     lastFetchReason = jobsCache ? "cached" : "limit"
     return jobsCache?.jobs || getSampleJobs()
+  }
+
+  // Prevent rapid successive API calls (serverless instances don't share memory well)
+  const now = Date.now()
+  if (now - lastApiCallTime < MIN_CALL_INTERVAL && jobsCache?.jobs) {
+    lastFetchReason = "cached"
+    return jobsCache.jobs
   }
 
   try {
@@ -96,8 +107,9 @@ async function fetchFromTheirStack(query: string): Promise<Job[]> {
       throw new Error(`TheirStack API error: ${response.status}`)
     }
 
-    // Increment API call counter
+    // Increment API call counter and track time
     dailyApiCalls++
+    lastApiCallTime = Date.now()
 
     const data = await response.json()
 
@@ -390,12 +402,17 @@ export async function GET(request: Request) {
       jobs = jobs.filter((job) => job.location.toLowerCase().includes(location.toLowerCase()))
     }
 
-    return NextResponse.json({ 
+    const response = NextResponse.json({ 
       jobs, 
       categories: FINANCE_CATEGORIES, 
       cached: true,
       source: "live"
     })
+    
+    // Cache at CDN level for 6 hours
+    response.headers.set('Cache-Control', 's-maxage=21600, stale-while-revalidate=3600')
+    
+    return response
   }
 
   // Fetch fresh jobs (this uses API credits)
@@ -415,10 +432,15 @@ export async function GET(request: Request) {
     filteredJobs = filteredJobs.filter((job) => job.location.toLowerCase().includes(location.toLowerCase()))
   }
 
-  return NextResponse.json({ 
+  const response = NextResponse.json({ 
     jobs: filteredJobs, 
     categories: FINANCE_CATEGORIES, 
     cached: false,
     source: lastFetchReason === "success" ? "live" : "sample"
   })
+  
+  // Cache at CDN level for 6 hours to minimize API calls
+  response.headers.set('Cache-Control', 's-maxage=21600, stale-while-revalidate=3600')
+  
+  return response
 }
