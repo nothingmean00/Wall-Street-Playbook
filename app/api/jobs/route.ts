@@ -27,9 +27,14 @@ const FINANCE_CATEGORIES = [
   "Venture Capital",
 ]
 
-// Cache for storing jobs (in production, use Redis or DB)
+// Cache for storing jobs - longer cache for free plan (6 hours instead of 1)
 let jobsCache: { jobs: Job[]; timestamp: number } | null = null
-const CACHE_DURATION = 1000 * 60 * 60 // 1 hour cache
+const CACHE_DURATION = 1000 * 60 * 60 * 6 // 6 hour cache to conserve API credits
+
+// Track daily API calls to avoid exceeding limits
+let dailyApiCalls = 0
+let lastApiCallDate = new Date().toDateString()
+const MAX_DAILY_API_CALLS = 6 // ~200 credits / 30 days = ~6 calls per day max
 
 async function fetchFromTheirStack(query: string): Promise<Job[]> {
   const apiKey = process.env.THEIRSTACK_API_KEY
@@ -37,6 +42,19 @@ async function fetchFromTheirStack(query: string): Promise<Job[]> {
   if (!apiKey) {
     console.warn("TheirStack API key not configured, using sample data")
     return getSampleJobs()
+  }
+
+  // Reset daily counter if it's a new day
+  const today = new Date().toDateString()
+  if (today !== lastApiCallDate) {
+    dailyApiCalls = 0
+    lastApiCallDate = today
+  }
+
+  // Check if we've exceeded daily limit
+  if (dailyApiCalls >= MAX_DAILY_API_CALLS) {
+    console.warn("Daily API limit reached, using cached/sample data")
+    return jobsCache?.jobs || getSampleJobs()
   }
 
   try {
@@ -48,10 +66,11 @@ async function fetchFromTheirStack(query: string): Promise<Job[]> {
       },
       body: JSON.stringify({
         page: 0,
-        limit: 25,
+        limit: 50, // Get more jobs per request to maximize value
         posted_at_max_age_days: 30,
         job_title_or: [
-          "Investment Banking",
+          "Investment Banking Analyst",
+          "Investment Banking Associate",
           "Private Equity",
           "Hedge Fund",
           "Financial Analyst",
@@ -60,9 +79,7 @@ async function fetchFromTheirStack(query: string): Promise<Job[]> {
           "Portfolio Manager",
           "Trader",
           "Asset Management",
-          "Corporate Finance",
           "Venture Capital",
-          "Risk Analyst",
         ],
         job_title_pattern_and: query ? [query] : undefined,
         order_by: [{ desc: true, field: "posted_at" }],
@@ -70,23 +87,42 @@ async function fetchFromTheirStack(query: string): Promise<Job[]> {
     })
 
     if (!response.ok) {
+      const errorText = await response.text()
+      console.error(`TheirStack API error: ${response.status}`, errorText)
       throw new Error(`TheirStack API error: ${response.status}`)
     }
 
+    // Increment API call counter
+    dailyApiCalls++
+    console.log(`TheirStack API call #${dailyApiCalls} today`)
+
     const data = await response.json()
 
-    return data.data.map((job: any) => ({
+    if (!data.data || !Array.isArray(data.data)) {
+      console.warn("No jobs returned from TheirStack")
+      return getSampleJobs()
+    }
+
+    const jobs = data.data.map((job: any) => ({
       id: job.id || crypto.randomUUID(),
       title: job.job_title || "Finance Role",
       company: job.company_name || "Confidential",
-      location: job.location || "Remote",
+      location: job.location || job.job_country || "Remote",
       type: job.job_type || "Full-time",
       salary: job.salary_string || undefined,
       posted: formatPostedDate(job.posted_at),
       url: job.url || "#",
-      description: job.description_summary || undefined,
+      description: job.description_summary || job.description?.substring(0, 200) || undefined,
       category: categorizeJob(job.job_title || ""),
     }))
+
+    // Merge with sample jobs if we got few results
+    if (jobs.length < 10) {
+      const sampleJobs = getSampleJobs()
+      return [...jobs, ...sampleJobs.slice(0, 10 - jobs.length)]
+    }
+
+    return jobs
   } catch (error) {
     console.error("TheirStack API error:", error)
     return getSampleJobs()
@@ -109,23 +145,23 @@ function formatPostedDate(dateStr: string): string {
 function categorizeJob(title: string): string {
   const titleLower = title.toLowerCase()
 
-  if (titleLower.includes("investment bank") || titleLower.includes("m&a") || titleLower.includes("ib analyst"))
+  if (titleLower.includes("investment bank") || titleLower.includes("m&a") || titleLower.includes("ib analyst") || titleLower.includes("ib associate"))
     return "Investment Banking"
-  if (titleLower.includes("private equity") || titleLower.includes("pe ") || titleLower.includes("buyout"))
+  if (titleLower.includes("private equity") || titleLower.includes("pe ") || titleLower.includes("buyout") || titleLower.includes("lbo"))
     return "Private Equity"
-  if (titleLower.includes("hedge fund") || titleLower.includes("portfolio manager") || titleLower.includes("hf "))
+  if (titleLower.includes("hedge fund") || titleLower.includes("portfolio manager") || titleLower.includes("hf ") || titleLower.includes("long short"))
     return "Hedge Fund"
-  if (titleLower.includes("asset management") || titleLower.includes("wealth"))
+  if (titleLower.includes("asset management") || titleLower.includes("wealth") || titleLower.includes("aum"))
     return "Asset Management"
-  if (titleLower.includes("equity research") || titleLower.includes("research analyst"))
+  if (titleLower.includes("equity research") || titleLower.includes("research analyst") || titleLower.includes("stock analyst"))
     return "Equity Research"
-  if (titleLower.includes("trading") || titleLower.includes("trader") || titleLower.includes("sales"))
+  if (titleLower.includes("trading") || titleLower.includes("trader") || titleLower.includes("sales") || titleLower.includes("market maker"))
     return "Sales & Trading"
-  if (titleLower.includes("venture") || titleLower.includes("vc "))
+  if (titleLower.includes("venture") || titleLower.includes("vc ") || titleLower.includes("startup"))
     return "Venture Capital"
-  if (titleLower.includes("risk"))
+  if (titleLower.includes("risk") || titleLower.includes("compliance"))
     return "Risk Management"
-  if (titleLower.includes("corporate finance") || titleLower.includes("fp&a"))
+  if (titleLower.includes("corporate finance") || titleLower.includes("fp&a") || titleLower.includes("treasury"))
     return "Corporate Finance"
 
   return "Finance"
@@ -141,7 +177,7 @@ function getSampleJobs(): Job[] {
       type: "Full-time",
       salary: "$110,000 - $130,000",
       posted: "2 days ago",
-      url: "#",
+      url: "https://www.goldmansachs.com/careers",
       description: "Join our M&A team advising Fortune 500 companies on strategic transactions.",
       category: "Investment Banking",
     },
@@ -153,7 +189,7 @@ function getSampleJobs(): Job[] {
       type: "Full-time",
       salary: "$200,000 - $350,000",
       posted: "1 day ago",
-      url: "#",
+      url: "https://www.blackstone.com/careers",
       description: "Evaluate and execute investments across diverse sectors.",
       category: "Private Equity",
     },
@@ -165,7 +201,7 @@ function getSampleJobs(): Job[] {
       type: "Full-time",
       salary: "$150,000 - $300,000",
       posted: "3 days ago",
-      url: "#",
+      url: "https://www.citadel.com/careers",
       description: "Fundamental equity research and stock picking for long/short portfolio.",
       category: "Hedge Fund",
     },
@@ -177,7 +213,7 @@ function getSampleJobs(): Job[] {
       type: "Full-time",
       salary: "$175,000 - $225,000",
       posted: "Today",
-      url: "#",
+      url: "https://www.morganstanley.com/careers",
       description: "Lead transaction execution and client advisory for middle-market deals.",
       category: "Investment Banking",
     },
@@ -189,7 +225,7 @@ function getSampleJobs(): Job[] {
       type: "Full-time",
       salary: "$125,000 - $175,000",
       posted: "4 days ago",
-      url: "#",
+      url: "https://www.jpmorgan.com/careers",
       description: "Coverage of technology sector with focus on software companies.",
       category: "Equity Research",
     },
@@ -201,7 +237,7 @@ function getSampleJobs(): Job[] {
       type: "Full-time",
       salary: "$300,000 - $500,000+",
       posted: "1 week ago",
-      url: "#",
+      url: "https://www.bridgewater.com/careers",
       description: "Develop and manage macro trading strategies across asset classes.",
       category: "Hedge Fund",
     },
@@ -213,7 +249,7 @@ function getSampleJobs(): Job[] {
       type: "Full-time",
       salary: "$175,000 - $250,000",
       posted: "5 days ago",
-      url: "#",
+      url: "https://a16z.com/careers",
       description: "Source and evaluate early-stage technology investments.",
       category: "Venture Capital",
     },
@@ -225,7 +261,7 @@ function getSampleJobs(): Job[] {
       type: "Full-time",
       salary: "$200,000 - $400,000",
       posted: "2 days ago",
-      url: "#",
+      url: "https://www.janestreet.com/join-jane-street",
       description: "Quantitative trading and market making across global markets.",
       category: "Sales & Trading",
     },
@@ -237,7 +273,7 @@ function getSampleJobs(): Job[] {
       type: "Internship",
       salary: "$85,000 prorated",
       posted: "Today",
-      url: "#",
+      url: "https://www.evercore.com/careers",
       description: "10-week summer program with exposure to live M&A transactions.",
       category: "Investment Banking",
     },
@@ -249,7 +285,7 @@ function getSampleJobs(): Job[] {
       type: "Full-time",
       salary: "$100,000 - $140,000",
       posted: "3 days ago",
-      url: "#",
+      url: "https://www.blackrock.com/careers",
       description: "Support portfolio management and client advisory across fixed income strategies.",
       category: "Asset Management",
     },
@@ -261,7 +297,7 @@ function getSampleJobs(): Job[] {
       type: "Internship",
       salary: "$100,000 prorated",
       posted: "1 week ago",
-      url: "#",
+      url: "https://www.kkr.com/careers",
       description: "Summer program with direct deal team exposure and LBO modeling.",
       category: "Private Equity",
     },
@@ -273,9 +309,57 @@ function getSampleJobs(): Job[] {
       type: "Full-time",
       salary: "$140,000 - $200,000",
       posted: "4 days ago",
-      url: "#",
+      url: "https://www.twosigma.com/careers",
       description: "Quantitative risk analysis for systematic trading strategies.",
       category: "Risk Management",
+    },
+    {
+      id: "13",
+      title: "Investment Banking Analyst - TMT",
+      company: "Lazard",
+      location: "New York, NY",
+      type: "Full-time",
+      salary: "$110,000 - $130,000",
+      posted: "3 days ago",
+      url: "https://www.lazard.com/careers",
+      description: "M&A advisory for technology, media, and telecommunications sectors.",
+      category: "Investment Banking",
+    },
+    {
+      id: "14",
+      title: "Growth Equity Associate",
+      company: "General Atlantic",
+      location: "New York, NY",
+      type: "Full-time",
+      salary: "$200,000 - $300,000",
+      posted: "5 days ago",
+      url: "https://www.generalatlantic.com/careers",
+      description: "Evaluate growth-stage technology and healthcare investments.",
+      category: "Private Equity",
+    },
+    {
+      id: "15",
+      title: "Quantitative Researcher",
+      company: "DE Shaw",
+      location: "New York, NY",
+      type: "Full-time",
+      salary: "$200,000 - $400,000",
+      posted: "1 week ago",
+      url: "https://www.deshaw.com/careers",
+      description: "Develop systematic trading strategies using quantitative methods.",
+      category: "Hedge Fund",
+    },
+    {
+      id: "16",
+      title: "FP&A Manager",
+      company: "Amazon",
+      location: "Seattle, WA",
+      type: "Full-time",
+      salary: "$130,000 - $180,000",
+      posted: "2 days ago",
+      url: "https://www.amazon.jobs",
+      description: "Lead financial planning and analysis for AWS business unit.",
+      category: "Corporate Finance",
     },
   ]
 }
@@ -285,9 +369,12 @@ export async function GET(request: Request) {
   const query = searchParams.get("q") || ""
   const category = searchParams.get("category") || ""
   const location = searchParams.get("location") || ""
+  const refresh = searchParams.get("refresh") === "true"
 
-  // Check cache
-  if (jobsCache && Date.now() - jobsCache.timestamp < CACHE_DURATION && !query) {
+  // Check cache first (unless refresh is requested)
+  const cacheValid = jobsCache && Date.now() - jobsCache.timestamp < CACHE_DURATION
+  
+  if (cacheValid && !refresh && !query) {
     let jobs = jobsCache.jobs
 
     // Apply filters
@@ -298,10 +385,17 @@ export async function GET(request: Request) {
       jobs = jobs.filter((job) => job.location.toLowerCase().includes(location.toLowerCase()))
     }
 
-    return NextResponse.json({ jobs, categories: FINANCE_CATEGORIES, cached: true })
+    return NextResponse.json({ 
+      jobs, 
+      categories: FINANCE_CATEGORIES, 
+      cached: true,
+      cacheAge: Math.floor((Date.now() - jobsCache.timestamp) / 1000 / 60), // minutes
+      apiCallsToday: dailyApiCalls,
+      maxDailyApiCalls: MAX_DAILY_API_CALLS
+    })
   }
 
-  // Fetch fresh jobs
+  // Fetch fresh jobs (this uses API credits)
   const jobs = await fetchFromTheirStack(query)
 
   // Update cache if no specific query
@@ -318,6 +412,11 @@ export async function GET(request: Request) {
     filteredJobs = filteredJobs.filter((job) => job.location.toLowerCase().includes(location.toLowerCase()))
   }
 
-  return NextResponse.json({ jobs: filteredJobs, categories: FINANCE_CATEGORIES, cached: false })
+  return NextResponse.json({ 
+    jobs: filteredJobs, 
+    categories: FINANCE_CATEGORIES, 
+    cached: false,
+    apiCallsToday: dailyApiCalls,
+    maxDailyApiCalls: MAX_DAILY_API_CALLS
+  })
 }
-
