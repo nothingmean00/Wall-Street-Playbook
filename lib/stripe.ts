@@ -19,38 +19,38 @@ export const PRODUCTS = {
   // Playbooks
   'ib-technical-guide': {
     priceId: process.env.STRIPE_PRICE_IB_TECHNICAL || 'price_xxx',
-    name: 'Investment Banking Technical Guide',
-    price: 79,
+    name: 'IB Technical Interview Guide',
+    price: 127,
   },
-  'networking-playbook': {
-    priceId: process.env.STRIPE_PRICE_NETWORKING || 'price_xxx',
-    name: 'The Networking Playbook',
-    price: 49,
-  },
-  'pe-recruiting-guide': {
+  'pe-recruiting-playbook': {
     priceId: process.env.STRIPE_PRICE_PE || 'price_xxx',
-    name: 'Private Equity Recruiting Guide',
-    price: 99,
+    name: 'PE Recruiting Playbook',
+    price: 167,
   },
-  'behavioral-mastery': {
-    priceId: process.env.STRIPE_PRICE_BEHAVIORAL || 'price_xxx',
-    name: 'Behavioral Interview Mastery',
-    price: 59,
+  'networking-cold-email-playbook': {
+    priceId: process.env.STRIPE_PRICE_NETWORKING || 'price_xxx',
+    name: 'Networking & Cold Email Playbook',
+    price: 67,
   },
-  'hedge-fund-primer': {
-    priceId: process.env.STRIPE_PRICE_HF || 'price_xxx',
-    name: 'Hedge Fund Interview Primer',
-    price: 89,
+  'lbo-modeling-course': {
+    priceId: process.env.STRIPE_PRICE_LBO || 'price_xxx',
+    name: 'LBO Modeling Crash Course',
+    price: 127,
   },
-  'recruiting-timeline-tracker': {
-    priceId: process.env.STRIPE_PRICE_TRACKER || 'price_xxx',
-    name: 'Recruiting Timeline & Tracker',
-    price: 29,
+  'stock-pitch-guide': {
+    priceId: process.env.STRIPE_PRICE_STOCK_PITCH || 'price_xxx',
+    name: 'Stock Pitch Template & Examples',
+    price: 77,
+  },
+  'resume-story-playbook': {
+    priceId: process.env.STRIPE_PRICE_RESUME_STORY || 'price_xxx',
+    name: 'Walk Me Through Your Resume Playbook',
+    price: 57,
   },
   'playbook-bundle': {
     priceId: process.env.STRIPE_PRICE_BUNDLE || 'price_xxx',
     name: 'Complete Playbook Bundle',
-    price: 283, // 30% off $404
+    price: 435, // 30% off $622
   },
   // Resume Services
   'resume-review': {
