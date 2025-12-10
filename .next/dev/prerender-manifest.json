@@ -1,1 +1,11 @@
-{"version":4,"routes":{"/playbooks/ib-technical-guide":{},"/playbooks/networking-playbook":{},"/playbooks/pe-recruiting-guide":{},"/playbooks/behavioral-mastery":{},"/playbooks/hedge-fund-primer":{},"/playbooks/recruiting-timeline-tracker":{}},"dynamicRoutes":{"/playbooks/[slug]":{"dataRoute":null,"dataRouteRegex":null,"fallback":null,"fallbackRevalidate":false,"fallbackSourceRoute":"/playbooks/[slug]","routeRegex":"^\\/playbooks\\/([^/]+?)(?:\\/)?$","allowHeader":[]}},"notFoundRoutes":[],"preview":{"previewModeId":"f3a377b5f9b78a9948ad2cd3b86d872a","previewModeSigningKey":"cdf953090ba46e758dca64536db52b36293aa6ae90791079d0d8d11273c12bb9","previewModeEncryptionKey":"411ded2af44115f1ba944e173b0a64c09fbf530dff0528a16c468ea6feba3bd3"}}
+{
+  "version": 4,
+  "routes": {},
+  "dynamicRoutes": {},
+  "notFoundRoutes": [],
+  "preview": {
+    "previewModeId": "bbcfbfc895529817b5e4dc76cbc1792e",
+    "previewModeSigningKey": "d9a851d76953e69adc02b769e4572f65df0333cd9c3ab9c2e3f6417911ad17ab",
+    "previewModeEncryptionKey": "a37a9ede9972e038c23338abbf6b356ff3c944fc6ae389dc9962d32d322f8eb2"
+  }
+}

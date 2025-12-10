@@ -46,7 +46,7 @@ export function ResumeServicesSection() {
                 </ul>
 
                 <Link
-                  href="/resume-services"
+                  href={`/submit-resume?service=${service.id}`}
                   className="mt-6 flex items-center justify-center gap-2 rounded-lg bg-navy py-3 text-sm font-semibold text-white transition-colors hover:bg-gold hover:text-navy"
                 >
                   Get Started

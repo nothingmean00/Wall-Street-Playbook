@@ -139,7 +139,8 @@ export default function ResumeServicesPage() {
 
                     {/* CTA */}
                     <div className="border-t border-border bg-off-white/50 p-8">
-                      <button
+                      <Link
+                        href={`/submit-resume?service=${service.id}`}
                         className={`w-full rounded-lg py-4 text-sm font-semibold transition-colors flex items-center justify-center gap-2 ${
                           isRecommended
                             ? "bg-gold text-navy hover:bg-navy hover:text-white"
@@ -148,7 +149,7 @@ export default function ResumeServicesPage() {
                       >
                         Get Started
                         <ArrowRight className="h-4 w-4" />
-                      </button>
+                      </Link>
                     </div>
                   </div>
                 )

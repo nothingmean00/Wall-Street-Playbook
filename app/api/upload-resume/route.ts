@@ -8,8 +8,15 @@ export async function POST(request: NextRequest) {
     const file = formData.get('file') as File | null
     const name = formData.get('name') as string
     const email = formData.get('email') as string
+    const phone = formData.get('phone') as string
+    const serviceType = formData.get('serviceType') as string
     const targetRole = formData.get('targetRole') as string
-    const notes = formData.get('notes') as string
+    const targetFirms = formData.get('targetFirms') as string
+    const currentStatus = formData.get('currentStatus') as string
+    const experienceLevel = formData.get('experienceLevel') as string
+    const timeline = formData.get('timeline') as string
+    const specificConcerns = formData.get('specificConcerns') as string
+    const additionalNotes = formData.get('additionalNotes') as string
 
     if (!file || !email || !name) {
       return NextResponse.json(
@@ -47,6 +54,32 @@ export async function POST(request: NextRequest) {
       addRandomSuffix: false,
     })
 
+    // Build detailed message with all form fields
+    const serviceLabel = serviceType === 'resume-rewrite' ? 'Resume Rewrite ($497)' : 'Resume Review ($197)'
+    
+    const messageLines = [
+      `SERVICE: ${serviceLabel}`,
+      ``,
+      `--- CONTACT INFO ---`,
+      `Name: ${name}`,
+      `Email: ${email}`,
+      `Phone: ${phone || 'Not provided'}`,
+      ``,
+      `--- BACKGROUND ---`,
+      `Target Role: ${targetRole || 'Not specified'}`,
+      `Target Firms: ${targetFirms || 'Not specified'}`,
+      `Current Status: ${currentStatus || 'Not specified'}`,
+      `Experience Level: ${experienceLevel || 'Not specified'}`,
+      `Application Timeline: ${timeline || 'Not specified'}`,
+      ``,
+      `--- CONCERNS & NOTES ---`,
+      `Specific Concerns: ${specificConcerns || 'None provided'}`,
+      `Additional Notes: ${additionalNotes || 'None provided'}`,
+      ``,
+      `--- RESUME ---`,
+      `Resume URL: ${blob.url}`,
+    ]
+
     // Store submission in database
     const sql = getDb()
     await sql`
@@ -55,8 +88,8 @@ export async function POST(request: NextRequest) {
         ${name.split(' ')[0] || name},
         ${name.split(' ').slice(1).join(' ') || ''},
         ${email.toLowerCase()},
-        'Resume Submission',
-        ${`Target Role: ${targetRole || 'Not specified'}\n\nNotes: ${notes || 'None'}\n\nResume URL: ${blob.url}`},
+        ${`Resume Submission - ${serviceLabel}`},
+        ${messageLines.join('\n')},
         'resume_submitted'
       )
     `
@@ -73,4 +106,3 @@ export async function POST(request: NextRequest) {
     )
   }
 }
-

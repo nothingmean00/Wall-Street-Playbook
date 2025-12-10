@@ -1,177 +1,1482 @@
-[00:00:02.084] Server  LOG      ✓ Ready in 1374ms
-[00:00:13.573] Server  LOG      ○ Compiling / ...
-[00:00:27.213] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:00:28.590] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:00:28.590] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
-[00:00:28.591] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3001/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3001/","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1764713190158}
-[00:01:58.532] Server  LOG      ✓ Compiled in 356ms
-[00:01:58.708] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:01:59.260] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:01:59.260] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
-[00:01:59.260] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3001/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3001/","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1764713280827}
-[00:02:25.037] Server  LOG      ✓ Compiled in 1921ms
-[00:04:03.581] Server  LOG      ✓ Compiled in 1244ms
-[00:04:31.824] Server  LOG      ✓ Compiled in 765ms
-[00:07:33.124] Server  LOG      ✓ Compiled in 829ms
-[00:07:44.318] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:07:45.026] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:07:45.027] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
-[00:07:45.027] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3001/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3001/","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1764713626591}
-[00:08:30.535] Server  LOG      ✓ Compiled in 422ms
-[00:08:43.373] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:08:44.532] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:08:44.532] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
-[00:08:44.532] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3001/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3001/","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1764713686091}
-[00:15:55.790] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:15:56.277] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:15:56.277] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
-[00:15:56.277] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3001/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3001/","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1764714117846}
-[00:17:52.767] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:17:53.312] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:17:53.312] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
-[00:17:53.312] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3001/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3001/","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1764714234880}
-[00:20:20.480] Server  LOG      ✓ Compiled in 150ms
-[00:20:35.830] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:20:36.434] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:20:36.434] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
-[00:20:36.434] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3001/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3001/","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1764714398001}
-[00:21:17.648] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:21:17.882] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:21:17.882] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
-[00:21:17.882] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3001/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3001/","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1764714439449}
-[00:22:53.336] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:22:53.569] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:22:53.569] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
-[00:22:53.569] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3001/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3001/","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1764714535134}
-[00:23:22.673] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3001/playbooks color: rgb(120, 120, 120) color: inherit {"dp":"/playbooks","o":"http://localhost:3001/playbooks","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1764714564237}
-[00:23:32.451] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3001/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3001/","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1764714574018}
-[01:45:09.620] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[01:45:09.891] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[01:45:09.891] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
-[01:45:09.891] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3001/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3001/","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1764719471462}
-[01:45:24.106] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3001/playbooks/ib-technical-guide color: rgb(120, 120, 120) color: inherit {"dp":"/playbooks/[slug]","o":"http://localhost:3001/playbooks/ib-technical-guide","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1764719485670}
-[01:45:28.925] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3001/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3001/","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1764719490485}
-[01:45:38.741] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3001/resume-services color: rgb(120, 120, 120) color: inherit {"dp":"/resume-services","o":"http://localhost:3001/resume-services","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1764719500303}
-[01:46:07.087] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[01:46:07.291] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[01:46:07.291] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/resume-services","route":"/resume-services"}
-[01:46:07.291] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3001/resume-services color: rgb(120, 120, 120) color: inherit {"dp":"/resume-services","o":"http://localhost:3001/resume-services","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1764719528862}
-[01:55:27.665] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[01:55:28.226] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[01:55:28.226] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/about","route":"/about"}
-[01:55:28.226] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3001/about color: rgb(120, 120, 120) color: inherit {"dp":"/about","o":"http://localhost:3001/about","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1764720089789}
-[01:56:23.831] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3001/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3001/","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1764720145388}
-[01:57:48.339] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[01:57:48.587] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[01:57:48.587] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
-[01:57:48.587] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3001/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3001/","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1764720230096}
-[02:03:15.425] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3001/resume-services color: rgb(120, 120, 120) color: inherit {"dp":"/resume-services","o":"http://localhost:3001/resume-services","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1764720556992}
-[02:05:35.286] Server  LOG      ✓ Compiled in 64ms
-[02:05:51.817] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[02:05:52.159] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[02:05:52.159] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
-[02:05:52.159] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3001/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3001/","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1764720713716}
-[02:06:06.410] Server  LOG      ✓ Compiled in 59ms
-[02:06:10.131] Server  LOG      ✓ Compiled in 49ms
-[02:06:16.872] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[02:06:17.139] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[02:06:17.139] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
-[02:06:17.139] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3001/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3001/","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1764720738697}
-[02:11:27.349] Server  LOG      ✓ Compiled in 210ms
-[02:11:51.688] Server  LOG      ✓ Compiled in 133ms
-[02:12:52.086] Server  LOG      ✓ Compiled in 169ms
-[02:13:09.438] Server  LOG      ✓ Compiled in 150ms
-[02:14:13.163] Server  LOG      ✓ Compiled in 182ms
-[02:15:01.658] Server  LOG      ✓ Compiled in 163ms
-[02:18:08.481] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[02:18:08.672] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[02:18:08.672] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/contact","route":"/contact"}
-[02:18:08.672] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3001/contact color: rgb(120, 120, 120) color: inherit {"dp":"/contact","o":"http://localhost:3001/contact","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1764721450238}
-[02:18:14.149] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[02:18:14.397] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[02:18:14.397] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/playbooks/ib-technical-guide","route":"/playbooks/[slug]"}
-[02:18:14.397] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3001/playbooks/ib-technical-guide color: rgb(120, 120, 120) color: inherit {"dp":"/playbooks/[slug]","o":"http://localhost:3001/playbooks/ib-technical-guide","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1764721455956}
-[02:18:19.827] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[02:18:19.976] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[02:18:19.976] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/success","route":"/success"}
-[02:18:19.976] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3001/success color: rgb(120, 120, 120) color: inherit {"dp":"/success","o":"http://localhost:3001/success","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1764721461537}
-[02:18:24.862] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[02:18:25.010] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[02:18:25.010] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/submit-resume","route":"/submit-resume"}
-[02:18:25.010] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3001/submit-resume color: rgb(120, 120, 120) color: inherit {"dp":"/submit-resume","o":"http://localhost:3001/submit-resume","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1764721466579}
-[03:26:57.076] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3001/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3001/","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1764725578643}
-[03:27:15.899] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3001/resume-services color: rgb(120, 120, 120) color: inherit {"dp":"/resume-services","o":"http://localhost:3001/resume-services","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1764725597468}
-[03:27:28.915] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3001/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3001/","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1764725610485}
-[03:27:39.452] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3001/playbooks color: rgb(120, 120, 120) color: inherit {"dp":"/playbooks","o":"http://localhost:3001/playbooks","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1764725621015}
-[03:27:47.786] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3001/resume-services color: rgb(120, 120, 120) color: inherit {"dp":"/resume-services","o":"http://localhost:3001/resume-services","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1764725629353}
-[03:27:59.250] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3001/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3001/","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1764725640819}
-[03:28:06.900] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3001/playbooks color: rgb(120, 120, 120) color: inherit {"dp":"/playbooks","o":"http://localhost:3001/playbooks","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1764725648463}
-[03:28:21.532] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3001/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3001/","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1764725663094}
-[03:28:59.579] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[03:28:59.999] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[03:28:59.999] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
-[03:28:59.999] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3001/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3001/","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1764725701561}
-[03:29:16.587] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[03:29:16.903] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[03:29:16.903] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/contact","route":"/contact"}
-[03:29:16.903] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3001/contact color: rgb(120, 120, 120) color: inherit {"dp":"/contact","o":"http://localhost:3001/contact","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1764725718474}
-[03:29:25.679] Server  LOG      ✓ Compiled in 151ms
-[03:29:31.564] Server  LOG      ✓ Compiled in 295ms
-[03:29:49.283] Server  LOG      ✓ Compiled in 139ms
-[03:29:52.965] Server  LOG      ✓ Compiled in 258ms
-[03:30:07.085] Server  LOG      ✓ Compiled in 237ms
-[03:30:10.023] Server  LOG      ✓ Compiled in 209ms
-[03:30:16.124] Server  LOG      ✓ Compiled in 240ms
-[03:30:24.300] Server  LOG      ✓ Compiled in 234ms
-[03:30:37.886] Server  LOG      ✓ Compiled in 234ms
-[03:30:44.916] Server  LOG      ✓ Compiled in 492ms
-[03:31:04.631] Server  LOG      ✓ Compiled in 218ms
-[03:31:10.113] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[03:31:10.537] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[03:31:10.537] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
-[03:31:10.537] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3001/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3001/","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1764725832108}
-[03:31:34.772] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[03:31:34.772] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[03:31:34.772] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/submit-resume","route":"/submit-resume"}
-[03:31:34.772] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3001/submit-resume color: rgb(120, 120, 120) color: inherit {"dp":"/submit-resume","o":"http://localhost:3001/submit-resume","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1764725856182}
-[03:31:45.613] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[03:31:46.107] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[03:31:46.107] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/playbooks/ib-technical-guide","route":"/playbooks/[slug]"}
-[03:31:46.107] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3001/playbooks/ib-technical-guide color: rgb(120, 120, 120) color: inherit {"dp":"/playbooks/[slug]","o":"http://localhost:3001/playbooks/ib-technical-guide","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1764725867665}
-[03:32:09.323] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[03:32:09.712] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[03:32:09.712] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
-[03:32:09.712] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3001/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3001/","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1764725891269}
-[03:44:55.459] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3001/resume-services color: rgb(120, 120, 120) color: inherit {"dp":"/resume-services","o":"http://localhost:3001/resume-services","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1764726657029}
-[03:49:18.617] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[03:49:19.143] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[03:49:19.143] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
-[03:49:19.143] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3001/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3001/","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1764726920713}
-[06:23:13.922] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3001/playbooks color: rgb(120, 120, 120) color: inherit {"dp":"/playbooks","o":"http://localhost:3001/playbooks","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1764736155485}
-[06:23:20.126] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3001/playbooks/networking-playbook color: rgb(120, 120, 120) color: inherit {"dp":"/playbooks/[slug]","o":"http://localhost:3001/playbooks/networking-playbook","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1764736161685}
-[06:23:22.343] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3001/playbooks color: rgb(120, 120, 120) color: inherit {"dp":"/playbooks","o":"http://localhost:3001/playbooks","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1764736163903}
-[06:23:23.940] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3001/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3001/","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1764736165508}
-[06:23:27.876] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3001/playbooks color: rgb(120, 120, 120) color: inherit {"dp":"/playbooks","o":"http://localhost:3001/playbooks","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1764736169441}
-[06:23:33.618] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3001/playbooks/networking-playbook color: rgb(120, 120, 120) color: inherit {"dp":"/playbooks/[slug]","o":"http://localhost:3001/playbooks/networking-playbook","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1764736175174}
-[06:23:44.531] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3001/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3001/","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1764736186094}
-[06:24:33.770] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3001/playbooks color: rgb(120, 120, 120) color: inherit {"dp":"/playbooks","o":"http://localhost:3001/playbooks","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1764736235338}
-[06:24:39.617] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3001/playbooks/ib-technical-guide color: rgb(120, 120, 120) color: inherit {"dp":"/playbooks/[slug]","o":"http://localhost:3001/playbooks/ib-technical-guide","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1764736241186}
-[06:24:42.994] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3001/playbooks color: rgb(120, 120, 120) color: inherit {"dp":"/playbooks","o":"http://localhost:3001/playbooks","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1764736244563}
-[06:25:46.329] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3001/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3001/","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1764736307892}
-[06:25:48.495] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3001/playbooks color: rgb(120, 120, 120) color: inherit {"dp":"/playbooks","o":"http://localhost:3001/playbooks","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1764736310055}
-[06:27:26.312] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3001/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3001/","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1764736407883}
-[06:27:31.206] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3001/blog color: rgb(120, 120, 120) color: inherit {"dp":"/blog","o":"http://localhost:3001/blog","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1764736412775}
-[06:27:32.280] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3001/resume-services color: rgb(120, 120, 120) color: inherit {"dp":"/resume-services","o":"http://localhost:3001/resume-services","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1764736413839}
-[06:27:36.338] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3001/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3001/","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1764736417909}
-[06:29:02.352] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[06:29:02.572] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[06:29:02.572] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
-[06:29:02.572] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3001/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3001/","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1764736504137}
-[06:29:04.527] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3001/resume-services color: rgb(120, 120, 120) color: inherit {"dp":"/resume-services","o":"http://localhost:3001/resume-services","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1764736506090}
-[06:29:05.525] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3001/blog color: rgb(120, 120, 120) color: inherit {"dp":"/blog","o":"http://localhost:3001/blog","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1764736507090}
-[06:29:07.761] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3001/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3001/","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1764736509326}
-[07:05:13.746] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3001/resume-services color: rgb(120, 120, 120) color: inherit {"dp":"/resume-services","o":"http://localhost:3001/resume-services","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1764738674128}
-[07:05:15.663] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3001/blog color: rgb(120, 120, 120) color: inherit {"dp":"/blog","o":"http://localhost:3001/blog","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1764738676040}
-[07:05:17.352] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3001/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3001/","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1764738677733}
-[07:05:19.662] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3001/resume-services color: rgb(120, 120, 120) color: inherit {"dp":"/resume-services","o":"http://localhost:3001/resume-services","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1764738680045}
-[07:05:25.693] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3001/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3001/","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1764738686064}
+[00:00:01.609] Server  LOG      ✓ Ready in 1105ms
+[00:00:20.840] Server  ERROR    ⨯ ./Downloads/wall-street-playbook/app/favicon.ico
+Processing image failed
+unable to decode image data
+
+Caused by:
+- Format error decoding Ico: ICO image entry has too many color planes or too large hotspot value
+- ICO image entry has too many color planes or too large hotspot value
+
+
+[00:00:21.942] Browser ERROR   uncaughtError: Error: ./Downloads/wall-street-playbook/app/favicon.ico
+Processing image failed
+unable to decode image data
+
+Caused by:
+- Format error decoding Ico: ICO image entry has too many color planes or too large hotspot value
+- ICO image entry has too many color planes or too large hotspot value
+
+
+[00:00:22.127] Browser ERROR   ./Downloads/wall-street-playbook/app/favicon.ico
+Processing image failed
+unable to decode image data
+
+Caused by:
+- Format error decoding Ico: ICO image entry has too many color planes or too large hotspot value
+- ICO image entry has too many color planes or too large hotspot value
+[00:00:22.308] Browser ERROR   ./Downloads/wall-street-playbook/app/favicon.ico
+Processing image failed
+unable to decode image data
+
+Caused by:
+- Format error decoding Ico: ICO image entry has too many color planes or too large hotspot value
+- ICO image entry has too many color planes or too large hotspot value
+[00:00:26.022] Browser ERROR   ./Downloads/wall-street-playbook/app/favicon.ico
+Processing image failed
+unable to decode image data
+
+Caused by:
+- Format error decoding Ico: ICO image entry has too many color planes or too large hotspot value
+- ICO image entry has too many color planes or too large hotspot value
+[00:00:40.575] Server  ERROR    ⨯ ./Downloads/wall-street-playbook/app/favicon.ico
+Processing image failed
+unable to decode image data
+
+Caused by:
+- Format error decoding Ico: ICO image entry has too many color planes or too large hotspot value
+- ICO image entry has too many color planes or too large hotspot value
+
+
+[00:00:40.675] Browser ERROR   uncaughtError: Error: ./Downloads/wall-street-playbook/app/favicon.ico
+Processing image failed
+unable to decode image data
+
+Caused by:
+- Format error decoding Ico: ICO image entry has too many color planes or too large hotspot value
+- ICO image entry has too many color planes or too large hotspot value
+
+
+[00:00:40.828] Browser ERROR   ./Downloads/wall-street-playbook/app/favicon.ico
+Processing image failed
+unable to decode image data
+
+Caused by:
+- Format error decoding Ico: ICO image entry has too many color planes or too large hotspot value
+- ICO image entry has too many color planes or too large hotspot value
+[00:00:40.828] Browser ERROR   ./Downloads/wall-street-playbook/app/favicon.ico
+Processing image failed
+unable to decode image data
+
+Caused by:
+- Format error decoding Ico: ICO image entry has too many color planes or too large hotspot value
+- ICO image entry has too many color planes or too large hotspot value
+[00:00:59.638] Browser ERROR   ./Downloads/wall-street-playbook/app/favicon.ico
+Processing image failed
+unable to decode image data
+
+Caused by:
+- Format error decoding Ico: ICO image entry has too many color planes or too large hotspot value
+- ICO image entry has too many color planes or too large hotspot value
+[00:00:59.801] Browser ERROR   ./Downloads/wall-street-playbook/app/favicon.ico
+Processing image failed
+unable to decode image data
+
+Caused by:
+- Format error decoding Ico: ICO image entry has too many color planes or too large hotspot value
+- ICO image entry has too many color planes or too large hotspot value
+[00:01:19.685] Browser ERROR   ./Downloads/wall-street-playbook/app/favicon.ico
+Processing image failed
+unable to decode image data
+
+Caused by:
+- Format error decoding Ico: ICO image entry has too many color planes or too large hotspot value
+- ICO image entry has too many color planes or too large hotspot value
+[00:01:19.685] Browser ERROR   ./Downloads/wall-street-playbook/app/favicon.ico
+Processing image failed
+unable to decode image data
+
+Caused by:
+- Format error decoding Ico: ICO image entry has too many color planes or too large hotspot value
+- ICO image entry has too many color planes or too large hotspot value
+[00:02:47.334] Browser ERROR   ./Downloads/wall-street-playbook/app/favicon.ico
+Processing image failed
+unable to decode image data
+
+Caused by:
+- Format error decoding Ico: ICO image entry has too many color planes or too large hotspot value
+- ICO image entry has too many color planes or too large hotspot value
+[00:02:49.270] Browser ERROR   ./Downloads/wall-street-playbook/app/favicon.ico
+Processing image failed
+unable to decode image data
+
+Caused by:
+- Format error decoding Ico: ICO image entry has too many color planes or too large hotspot value
+- ICO image entry has too many color planes or too large hotspot value
+[00:03:04.698] Server  ERROR    ⨯ ./Downloads/wall-street-playbook/app/favicon.ico
+Processing image failed
+unable to decode image data
+
+Caused by:
+- Format error decoding Ico: ICO image entry has too many color planes or too large hotspot value
+- ICO image entry has too many color planes or too large hotspot value
+
+
+[00:03:04.926] Browser ERROR   uncaughtError: Error: ./Downloads/wall-street-playbook/app/favicon.ico
+Processing image failed
+unable to decode image data
+
+Caused by:
+- Format error decoding Ico: ICO image entry has too many color planes or too large hotspot value
+- ICO image entry has too many color planes or too large hotspot value
+
+
+[00:03:05.610] Browser ERROR   ./Downloads/wall-street-playbook/app/favicon.ico
+Processing image failed
+unable to decode image data
+
+Caused by:
+- Format error decoding Ico: ICO image entry has too many color planes or too large hotspot value
+- ICO image entry has too many color planes or too large hotspot value
+[00:03:05.610] Browser ERROR   ./Downloads/wall-street-playbook/app/favicon.ico
+Processing image failed
+unable to decode image data
+
+Caused by:
+- Format error decoding Ico: ICO image entry has too many color planes or too large hotspot value
+- ICO image entry has too many color planes or too large hotspot value
+[00:03:30.509] Browser ERROR   ./Downloads/wall-street-playbook/app/favicon.ico
+Processing image failed
+unable to decode image data
+
+Caused by:
+- failed to fill whole buffer
+[00:03:31.081] Server  WARN     ⚠ Fast Refresh had to perform a full reload when ./Downloads/wall-street-playbook/node_modules/next/dist/shared/lib/router/router.js changed. Read more: https://nextjs.org/docs/messages/fast-refresh-reload
+[00:03:33.561] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:03:34.611] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:03:34.611] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/submit-resume","route":"/submit-resume"}
+[00:03:34.611] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/submit-resume color: rgb(120, 120, 120) color: inherit {"dp":"/submit-resume","o":"http://localhost:3000/submit-resume","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1765317384123}
+[00:03:43.091] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:03:43.609] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+%s%s https://react.dev/link/hydration-mismatch 
+
+  ...
+    <RenderFromTemplateContext>
+      <ScrollAndFocusHandler segmentPath={[...]}>
+        <InnerScrollAndFocusHandler segmentPath={[...]} focusAndScrollRef={{apply:false, ...}}>
+          <ErrorBoundary errorComponent={undefined} errorStyles={undefined} errorScripts={undefined}>
+            <LoadingBoundary name="submit-res..." loading={null}>
+              <HTTPAccessFallbackBoundary notFound={undefined} forbidden={undefined} unauthorized={undefined}>
+                <RedirectBoundary>
+                  <RedirectErrorBoundary router={{...}}>
+                    <InnerLayoutRouter url="/submit-re..." tree={[...]} params={{}} cacheNode={{lazyData:null, ...}} ...>
+                      <SegmentViewNode type="page" pagePath="/Downloads...">
+                        <SegmentTrieNode>
+                        <ClientPageRoot Component={function SubmitResumePage} serverProvidedParams={{...}}>
+                          <SubmitResumePage params={Promise} searchParams={Promise}>
+                            <div
+                              className="flex min-h-screen flex-col"
+-                             data-cursor-ref="ref-h2zkaptuzjn"
+                            >
+                              <Navbar>
+                                <header
+                                  className="sticky top-0 z-50 transition-all duration-300 bg-navy"
+-                                 data-cursor-ref="ref-3l4r3bsuc27"
+                                >
+                                  <nav
+                                    className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8"
+-                                   data-cursor-ref="ref-q7scxk1lhda"
+                                  >
+                                    <LinkComponent href="/" className="flex items...">
+                                      <a
+                                        className="flex items-center gap-2 sm:gap-2.5"
+                                        ref={function}
+                                        onClick={function onClick}
+                                        onMouseEnter={function onMouseEnter}
+                                        onTouchStart={function onTouchStart}
+                                        href="/"
+-                                       data-cursor-ref="ref-wrwer305rtg"
+                                      >
+                                        <Logo className="h-7 w-7 sm...">
+                                          <svg
+                                            viewBox="0 0 32 32"
+                                            fill="none"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            className="h-7 w-7 sm:h-8 sm:w-8 flex-shrink-0"
+-                                           data-cursor-ref="ref-iln6ellapie"
+                                          >
+                                        ...
+                                    <div
+                                      className="hidden lg:flex lg:items-center lg:gap-x-8"
+-                                     data-cursor-ref="ref-hth4ofy1qhu"
+                                    >
+                                      <LinkComponent href="/jobs" className="text-sm fo...">
+                                        <a
+                                          className="text-sm font-medium text-white/80 transition-colors duration-200 ..."
+                                          ref={function}
+                                          onClick={function onClick}
+                                          onMouseEnter={function onMouseEnter}
+                                          onTouchStart={function onTouchStart}
+                                          href="/jobs"
+-                                         data-cursor-ref="ref-e2718mqd5r"
+                                        >
++                                         Jobs
+                                      <LinkComponent href="/playbooks" className="text-sm fo...">
+                                        <a
+                                          className="text-sm font-medium text-white/80 transition-colors duration-200 ..."
+                                          ref={function}
+                                          onClick={function onClick}
+                                          onMouseEnter={function onMouseEnter}
+                                          onTouchStart={function onTouchStart}
+                                          href="/playbooks"
+-                                         data-cursor-ref="ref-5w4wq6243t8"
+                                        >
++                                         Playbooks
+                                      <LinkComponent href="/resume-se..." className="text-sm fo...">
+                                        <a
+                                          className="text-sm font-medium text-white/80 transition-colors duration-200 ..."
+                                          ref={function}
+                                          onClick={function onClick}
+                                          onMouseEnter={function onMouseEnter}
+                                          onTouchStart={function onTouchStart}
+                                          href="/resume-services"
+-                                         data-cursor-ref="ref-b01zj0qmb0p"
+                                        >
++                                         Resume Services
+                                      <LinkComponent href="/blog" className="text-sm fo...">
+                                        <a
+                                          className="text-sm font-medium text-white/80 transition-colors duration-200 ..."
+                                          ref={function}
+                                          onClick={function onClick}
+                                          onMouseEnter={function onMouseEnter}
+                                          onTouchStart={function onTouchStart}
+                                          href="/blog"
+-                                         data-cursor-ref="ref-3yvzym3kddy"
+                                        >
++                                         Blog
+                                    <div
+                                      className="hidden lg:block"
+-                                     data-cursor-ref="ref-fqu1emnmzz7"
+                                    >
+                                      <LinkComponent href="/playbooks" className="rounded-lg...">
+                                        <a
+                                          className="rounded-lg bg-gold px-5 py-2.5 text-sm font-semibold text-navy tr..."
+                                          ref={function}
+                                          onClick={function onClick}
+                                          onMouseEnter={function onMouseEnter}
+                                          onTouchStart={function onTouchStart}
+                                          href="/playbooks"
+-                                         data-cursor-ref="ref-n11teq9h44"
+                                        >
++                                         Get Started
+                                    <button
+                                      type="button"
+                                      className="lg:hidden text-white"
+                                      onClick={function onClick}
+-                                     data-cursor-ref="ref-rf4wjbf7eli"
+                                    >
+                                      <span>
+                                      <Menu className="h-6 w-6">
+                                        <svg
+                                          ref={null}
+                                          xmlns="http://www.w3.org/2000/svg"
+                                          width={24}
+                                          height={24}
+                                          viewBox="0 0 24 24"
+                                          fill="none"
+                                          stroke="currentColor"
+                                          strokeWidth={2}
+                                          strokeLinecap="round"
+                                          strokeLinejoin="round"
+                                          className="lucide lucide-menu h-6 w-6"
+-                                         data-cursor-ref="ref-qom4xi92m6a"
+                                        >
+                              <main
+                                className="flex-grow bg-off-white"
+-                               data-cursor-ref="ref-2ognvxm5xav"
+                              >
+                              <Footer>
+                                <footer
+                                  className="bg-charcoal"
+-                                 data-cursor-ref="ref-t5t6zvuwsx"
+                                >
+                                  <div
+                                    className="mx-auto max-w-7xl px-6 py-16 lg:px-8"
+-                                   data-cursor-ref="ref-3ouuhptcuyj"
+                                  >
+                                    <div
+                                      className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-6"
+-                                     data-cursor-ref="ref-fa45gpsgf5"
+                                    >
+                                      <div
+                                        className="col-span-1 sm:col-span-2"
+-                                       data-cursor-ref="ref-gl0ovrw5i5o"
+                                      >
+                                        <LinkComponent href="/" className="flex items...">
+                                          <a
+                                            className="flex items-center gap-2.5"
+                                            ref={function}
+                                            onClick={function onClick}
+                                            onMouseEnter={function onMouseEnter}
+                                            onTouchStart={function onTouchStart}
+                                            href="/"
+-                                           data-cursor-ref="ref-5jgpt7e8lv7"
+                                          >
+                                            <Logo className="h-8 w-8">
+                                              <svg
+                                                viewBox="0 0 32 32"
+                                                fill="none"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                className="h-8 w-8"
+-                                               data-cursor-ref="ref-h89rwe4ved"
+                                              >
+                                            ...
+                                        <p
+                                          className="mt-4 text-sm leading-relaxed text-white/50"
+-                                         data-cursor-ref="ref-gnbhvjfbem"
+                                        >
++                                         Tactical preparation materials for candidates targeting investment banking, p...
+                                        <div
+                                          className="mt-6"
+-                                         data-cursor-ref="ref-sre8m83ghm8"
+                                        >
+                                          <EmailCapture variant="footer">
+                                            <form
+                                              onSubmit={function handleSubmit}
+                                              className=""
+-                                             data-cursor-ref="ref-ud9ncgkcvo"
+                                            >
+                                              <p
+                                                className="text-sm font-medium text-white mb-3"
+-                                               data-cursor-ref="ref-2uvplg168u7"
+                                              >
++                                               Get recruiting insights
+                                              <div
+                                                className="flex flex-col sm:flex-row gap-2"
+-                                               data-cursor-ref="ref-rcbaef1yhz"
+                                              >
+                                                <input
+                                                  type="email"
+                                                  value=""
+                                                  onChange={function onChange}
+                                                  placeholder="Your email"
+                                                  className="flex-1 min-w-0 rounded-lg border border-white/20 bg-white..."
+                                                  disabled={false}
+-                                                 data-cursor-ref="ref-09ivova9vhic"
+                                                >
+                                                <button
+                                                  type="submit"
+                                                  disabled={false}
+                                                  className="rounded-lg bg-gold px-4 py-2.5 text-sm font-semibold text..."
+-                                                 data-cursor-ref="ref-c629n8n14u"
+                                                >
++                                                 Join
+                                      <div
+-                                       data-cursor-ref="ref-m781ltdt82"
+                                      >
+                                        <h3
+                                          className="text-sm font-semibold uppercase tracking-wider text-gold"
+-                                         data-cursor-ref="ref-z1eigus68ir"
+                                        >
++                                         Playbooks
+                                        <ul
+                                          className="mt-4 space-y-3"
+-                                         data-cursor-ref="ref-sk1ov29nrer"
+                                        >
+                                          <li
+-                                           data-cursor-ref="ref-ixxwydwttc"
+                                          >
+                                            <LinkComponent href="/playbooks" className="text-sm te...">
+                                              <a
+                                                className="text-sm text-white/60 transition-colors hover:text-gold"
+                                                ref={function}
+                                                onClick={function onClick}
+                                                onMouseEnter={function onMouseEnter}
+                                                onTouchStart={function onTouchStart}
+                                                href="/playbooks"
+-                                               data-cursor-ref="ref-hfpssko1vk"
+                                              >
++                                               All Playbooks
+                                          <li
+-                                           data-cursor-ref="ref-037j37qlxc0j"
+                                          >
+                                            <LinkComponent href="/playbooks..." className="text-sm te...">
+                                              <a
+                                                className="text-sm text-white/60 transition-colors hover:text-gold"
+                                                ref={function}
+                                                onClick={function onClick}
+                                                onMouseEnter={function onMouseEnter}
+                                                onTouchStart={function onTouchStart}
+                                                href="/playbooks/ib-technical-guide"
+-                                               data-cursor-ref="ref-9r5py3tilce"
+                                              >
++                                               Technical Guide
+                                          <li
+-                                           data-cursor-ref="ref-7kerodyhn7h"
+                                          >
+                                            <LinkComponent href="/playbooks..." className="text-sm te...">
+                                              <a
+                                                className="text-sm text-white/60 transition-colors hover:text-gold"
+                                                ref={function}
+                                                onClick={function onClick}
+                                                onMouseEnter={function onMouseEnter}
+                                                onTouchStart={function onTouchStart}
+                                                href="/playbooks/networking-playbook"
+-                                               data-cursor-ref="ref-krox3m3eo4b"
+                                              >
++                                               Networking Playbook
+                                          <li
+-                                           data-cursor-ref="ref-tt3ph63p1y9"
+                                          >
+                                            <LinkComponent href="/playbooks..." className="text-sm te...">
+                                              <a
+                                                className="text-sm text-white/60 transition-colors hover:text-gold"
+                                                ref={function}
+                                                onClick={function onClick}
+                                                onMouseEnter={function onMouseEnter}
+                                                onTouchStart={function onTouchStart}
+                                                href="/playbooks/pe-recruiting-guide"
+-                                               data-cursor-ref="ref-loo6wfubeji"
+                                              >
++                                               PE Recruiting Guide
+                                      <div
+-                                       data-cursor-ref="ref-cld6plk32x4"
+                                      >
+                                        <h3
+                                          className="text-sm font-semibold uppercase tracking-wider text-gold"
+-                                         data-cursor-ref="ref-4xlcro0nv6"
+                                        >
++                                         Services
+                                        <ul
+                                          className="mt-4 space-y-3"
+-                                         data-cursor-ref="ref-ou59k1mpt5b"
+                                        >
+                                          <li
+-                                           data-cursor-ref="ref-2bqd3grl2vw"
+                                          >
+                                            <LinkComponent href="/resume-se..." className="text-sm te...">
+                                              <a
+                                                className="text-sm text-white/60 transition-colors hover:text-gold"
+                                                ref={function}
+                                                onClick={function onClick}
+                                                onMouseEnter={function onMouseEnter}
+                                                onTouchStart={function onTouchStart}
+                                                href="/resume-services"
+-                                               data-cursor-ref="ref-15q7bqrb4ijj"
+                                              >
++                                               Resume Review
+                                          <li
+-                                           data-cursor-ref="ref-3n7w7hmh6tk"
+                                          >
+                                            <LinkComponent href="/resume-se..." className="text-sm te...">
+                                              <a
+                                                className="text-sm text-white/60 transition-colors hover:text-gold"
+                                                ref={function}
+                                                onClick={function onClick}
+                                                onMouseEnter={function onMouseEnter}
+                                                onTouchStart={function onTouchStart}
+                                                href="/resume-services"
+-                                               data-cursor-ref="ref-5zodwowwmek"
+                                              >
++                                               Resume Rewrite
+                                      <div
+-                                       data-cursor-ref="ref-c3isozvge97"
+                                      >
+                                        <h3
+                                          className="text-sm font-semibold uppercase tracking-wider text-gold"
+-                                         data-cursor-ref="ref-k1gws5f1ry"
+                                        >
++                                         Company
+                                        <ul
+                                          className="mt-4 space-y-3"
+-                                         data-cursor-ref="ref-sfstj6ru6dq"
+                                        >
+                                          <li
+-                                           data-cursor-ref="ref-h7j9uan2wtn"
+                                          >
+                                            <LinkComponent href="/blog" className="text-sm te...">
+                                              <a
+                                                className="text-sm text-white/60 transition-colors hover:text-gold"
+                                                ref={function}
+                                                onClick={function onClick}
+                                                onMouseEnter={function onMouseEnter}
+                                                onTouchStart={function onTouchStart}
+                                                href="/blog"
+-                                               data-cursor-ref="ref-26lrg51vbl2"
+                                              >
++                                               Blog
+                                          <li
+-                                           data-cursor-ref="ref-dw2q6y5hg37"
+                                          >
+                                            <LinkComponent href="/about" className="text-sm te...">
+                                              <a
+                                                className="text-sm text-white/60 transition-colors hover:text-gold"
+                                                ref={function}
+                                                onClick={function onClick}
+                                                onMouseEnter={function onMouseEnter}
+                                                onTouchStart={function onTouchStart}
+                                                href="/about"
+-                                               data-cursor-ref="ref-9l62z4fouyl"
+                                              >
++                                               About
+                                          <li
+-                                           data-cursor-ref="ref-7cyewp4qatj"
+                                          >
+                                            <LinkComponent href="/contact" className="text-sm te...">
+                                              <a
+                                                className="text-sm text-white/60 transition-colors hover:text-gold"
+                                                ref={function}
+                                                onClick={function onClick}
+                                                onMouseEnter={function onMouseEnter}
+                                                onTouchStart={function onTouchStart}
+                                                href="/contact"
+-                                               data-cursor-ref="ref-il8v8weah6"
+                                              >
++                                               Contact
+                                      <div
+-                                       data-cursor-ref="ref-gz92j6qpud"
+                                      >
+                                        <h3
+                                          className="text-sm font-semibold uppercase tracking-wider text-gold"
+-                                         data-cursor-ref="ref-eejljann2d5"
+                                        >
++                                         Legal
+                                        <ul
+                                          className="mt-4 space-y-3"
+-                                         data-cursor-ref="ref-254vd4vtopi"
+                                        >
+                                          <li
+-                                           data-cursor-ref="ref-6gd5b3tmkbf"
+                                          >
+                                            <LinkComponent href="/privacy" className="text-sm te...">
+                                              <a
+                                                className="text-sm text-white/60 transition-colors hover:text-gold"
+                                                ref={function}
+                                                onClick={function onClick}
+                                                onMouseEnter={function onMouseEnter}
+                                                onTouchStart={function onTouchStart}
+                                                href="/privacy"
+-                                               data-cursor-ref="ref-aekvf19djkd"
+                                              >
++                                               Privacy Policy
+                                          <li
+-                                           data-cursor-ref="ref-ekd9vy5a9zd"
+                                          >
+                                            <LinkComponent href="/terms" className="text-sm te...">
+                                              <a
+                                                className="text-sm text-white/60 transition-colors hover:text-gold"
+                                                ref={function}
+                                                onClick={function onClick}
+                                                onMouseEnter={function onMouseEnter}
+                                                onTouchStart={function onTouchStart}
+                                                href="/terms"
+-                                               data-cursor-ref="ref-bhqlo99r5eg"
+                                              >
++                                               Terms of Service
+                                    <div
+                                      className="mt-12 border-t border-white/10 pt-8"
+-                                     data-cursor-ref="ref-mjc1v9pldp"
+                                    >
+                                      <div
+                                        className="flex flex-col items-center justify-between gap-4 sm:flex-row"
+-                                       data-cursor-ref="ref-nwgtfrp3zo"
+                                      >
+                                        <p
+                                          className="text-xs text-white/40"
+-                                         data-cursor-ref="ref-54faexd8icf"
+                                        >
+                                        <div
+                                          className="flex items-center gap-4 text-xs text-white/40"
+-                                         data-cursor-ref="ref-bm7ha3gj16t"
+                                        >
+                                          <span>
+                                          <span>
+                                          <a
+                                            href="https://techsalesplaybook.com"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="text-white/50 hover:text-gold transition-colors"
+-                                           data-cursor-ref="ref-3voinsyhq85"
+                                          >
++                                           Tech Sales Playbook
+                      ...
+                    ...
+          ...
+
+[00:03:43.609] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:03:43.609] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/submit-resume","route":"/submit-resume"}
+[00:03:43.610] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/submit-resume color: rgb(120, 120, 120) color: inherit {"dp":"/submit-resume","o":"http://localhost:3000/submit-resume","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1765317393444}
+[00:03:56.122] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+%s%s https://react.dev/link/hydration-mismatch 
+
+  ...
+    <LoadingBoundary name="submit-res..." loading={null}>
+      <HTTPAccessFallbackBoundary notFound={undefined} forbidden={undefined} unauthorized={undefined}>
+        <RedirectBoundary>
+          <RedirectErrorBoundary router={{...}}>
+            <InnerLayoutRouter url="/submit-re..." tree={[...]} params={{}} cacheNode={{lazyData:null, ...}} ...>
+              <SegmentViewNode type="page" pagePath="/Downloads...">
+                <SegmentTrieNode>
+                <ClientPageRoot Component={function SubmitResumePage} serverProvidedParams={{...}}>
+                  <SubmitResumePage params={Promise} searchParams={Promise}>
+                    <div className="flex min-h...">
+                      <Navbar>
+                      <main className="flex-grow ...">
+                        <Suspense fallback={<LoadingState>}>
+                          <ResumeSubmissionForm>
+                            <section
+                              className="bg-navy py-12 lg:py-16"
+-                             data-cursor-ref="ref-bp64qzaqnnl"
+                            >
+                            <section
+                              className="py-12 lg:py-16"
+-                             data-cursor-ref="ref-n9jvwrzyeme"
+                            >
+                              <div
+                                className="mx-auto max-w-4xl px-6 lg:px-8"
+-                               data-cursor-ref="ref-emzlmzbx2h7"
+                              >
+                                <div
+                                  className="space-y-6"
+-                                 data-cursor-ref="ref-631xdk26vbc"
+                                >
+                                  <div
+                                    className="grid gap-6 md:grid-cols-2"
+-                                   data-cursor-ref="ref-xqw9kzxigca"
+                                  >
+                                    <button
+                                      type="button"
+                                      onClick={function onClick}
+                                      className="relative flex flex-col overflow-hidden rounded-xl border-2 bg-white p..."
+-                                     data-cursor-ref="ref-j8waabhg0ul"
+                                    >
+                                      <div>
+                                      <h3
+                                        className="mt-4 text-xl font-bold text-navy"
+-                                       data-cursor-ref="ref-82igivlukz8"
+                                      >
++                                       Resume Review
+                                      <div>
+                                      <p
+                                        className="mt-3 text-sm leading-relaxed text-charcoal/70"
+-                                       data-cursor-ref="ref-z5jxco4p8q"
+                                      >
++                                       Detailed line-by-line feedback on your resume with specific rewrite suggestions...
+                                      ...
+                                    <button
+                                      type="button"
+                                      onClick={function onClick}
+                                      className="relative flex flex-col overflow-hidden rounded-xl border-2 bg-white p..."
+-                                     data-cursor-ref="ref-7cjbgzq46l8"
+                                    >
+                                      <div>
+                                      <div>
+                                      <h3
+                                        className="mt-4 text-xl font-bold text-navy"
+-                                       data-cursor-ref="ref-cts6bgohx0t"
+                                      >
++                                       Resume Rewrite
+                                      <div>
+                                      <p
+                                        className="mt-3 text-sm leading-relaxed text-charcoal/70"
+-                                       data-cursor-ref="ref-h4o17ux9ksl"
+                                      >
++                                       Complete resume overhaul from scratch. We rebuild your resume using frameworks ...
+                                      ...
+                                  <div
+                                    className="flex justify-center pt-4"
+-                                   data-cursor-ref="ref-uymsoufvaes"
+                                  >
+                                    <button
+                                      type="button"
+                                      disabled={true}
+                                      onClick={function onClick}
+                                      className="flex items-center gap-2 rounded-lg bg-navy px-8 py-4 text-base font-s..."
+-                                     data-cursor-ref="ref-29qv8dvpch8"
+                                    >
+                                      <ArrowRight className="h-5 w-5">
+                                        <svg
+                                          ref={null}
+                                          xmlns="http://www.w3.org/2000/svg"
+                                          width={24}
+                                          height={24}
+                                          viewBox="0 0 24 24"
+                                          fill="none"
+                                          stroke="currentColor"
+                                          strokeWidth={2}
+                                          strokeLinecap="round"
+                                          strokeLinejoin="round"
+                                          className="lucide lucide-arrow-right h-5 w-5"
+-                                         data-cursor-ref="ref-g2ljavirlq6"
+                                        >
+                                  ...
+                      ...
+              ...
+            ...
+
+[00:04:06.974] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:04:07.117] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:04:07.118] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/submit-resume","route":"/submit-resume"}
+[00:04:07.118] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/submit-resume?service=resume-rewrite color: rgb(120, 120, 120) color: inherit {"dp":"/submit-resume","o":"http://localhost:3000/submit-resume?service=resume-rewrite","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1765317417166}
+[00:04:17.967] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:04:18.612] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:04:18.612] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/resume-services","route":"/resume-services"}
+[00:04:18.612] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/resume-services color: rgb(120, 120, 120) color: inherit {"dp":"/resume-services","o":"http://localhost:3000/resume-services","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1765317428219}
+[00:04:24.096] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:04:24.618] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:04:24.618] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/submit-resume","route":"/submit-resume"}
+[00:04:24.618] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/submit-resume?service=resume-review color: rgb(120, 120, 120) color: inherit {"dp":"/submit-resume","o":"http://localhost:3000/submit-resume?service=resume-review","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1765317434395}
+[00:05:49.699] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+%s%s https://react.dev/link/hydration-mismatch 
+
+  ...
+    <LoadingBoundary name="submit-res..." loading={null}>
+      <HTTPAccessFallbackBoundary notFound={undefined} forbidden={undefined} unauthorized={undefined}>
+        <RedirectBoundary>
+          <RedirectErrorBoundary router={{...}}>
+            <InnerLayoutRouter url="/submit-re..." tree={[...]} params={{}} cacheNode={{lazyData:null, ...}} ...>
+              <SegmentViewNode type="page" pagePath="/Downloads...">
+                <SegmentTrieNode>
+                <ClientPageRoot Component={function SubmitResumePage} serverProvidedParams={{...}}>
+                  <SubmitResumePage params={Promise} searchParams={Promise}>
+                    <div className="flex min-h...">
+                      <Navbar>
+                      <main className="flex-grow ...">
+                        <Suspense fallback={<LoadingState>}>
+                          <ResumeSubmissionForm>
+                            <section
+                              className="bg-navy py-12 lg:py-16"
+-                             data-cursor-ref="ref-idmhxivn9o"
+                            >
+                            <section
+                              className="py-12 lg:py-16"
+-                             data-cursor-ref="ref-tmbtmwsiuj"
+                            >
+                              <div
+                                className="mx-auto max-w-4xl px-6 lg:px-8"
+-                               data-cursor-ref="ref-dd2sten47fp"
+                              >
+                                <div
+                                  className="space-y-6"
+-                                 data-cursor-ref="ref-wbv64xte4hd"
+                                >
+                                  <div
+                                    className="grid gap-6 md:grid-cols-2"
+-                                   data-cursor-ref="ref-limk4du0j6r"
+                                  >
+                                    <button
+                                      type="button"
+                                      onClick={function onClick}
+                                      className="relative flex flex-col overflow-hidden rounded-xl border-2 bg-white p..."
+-                                     data-cursor-ref="ref-o86u2frqq7"
+                                    >
+                                      <div>
+                                      <h3
+                                        className="mt-4 text-xl font-bold text-navy"
+-                                       data-cursor-ref="ref-58rnjg7w64o"
+                                      >
++                                       Resume Review
+                                      <div>
+                                      <p
+                                        className="mt-3 text-sm leading-relaxed text-charcoal/70"
+-                                       data-cursor-ref="ref-sifzfo4kqp7"
+                                      >
++                                       Detailed line-by-line feedback on your resume with specific rewrite suggestions...
+                                      ...
+                                    <button
+                                      type="button"
+                                      onClick={function onClick}
+                                      className="relative flex flex-col overflow-hidden rounded-xl border-2 bg-white p..."
+-                                     data-cursor-ref="ref-w848zhkz2k"
+                                    >
+                                      <div>
+                                      <div>
+                                      <h3
+                                        className="mt-4 text-xl font-bold text-navy"
+-                                       data-cursor-ref="ref-t1resmpqeuo"
+                                      >
++                                       Resume Rewrite
+                                      <div>
+                                      <p
+                                        className="mt-3 text-sm leading-relaxed text-charcoal/70"
+-                                       data-cursor-ref="ref-kamhbkh5yo9"
+                                      >
++                                       Complete resume overhaul from scratch. We rebuild your resume using frameworks ...
+                                      ...
+                                  <div
+                                    className="flex justify-center pt-4"
+-                                   data-cursor-ref="ref-05nyk134f3nc"
+                                  >
+                                    <button
+                                      type="button"
+                                      disabled={true}
+                                      onClick={function onClick}
+                                      className="flex items-center gap-2 rounded-lg bg-navy px-8 py-4 text-base font-s..."
+-                                     data-cursor-ref="ref-1doi4zyqrq5"
+                                    >
+                                      <ArrowRight className="h-5 w-5">
+                                        <svg
+                                          ref={null}
+                                          xmlns="http://www.w3.org/2000/svg"
+                                          width={24}
+                                          height={24}
+                                          viewBox="0 0 24 24"
+                                          fill="none"
+                                          stroke="currentColor"
+                                          strokeWidth={2}
+                                          strokeLinecap="round"
+                                          strokeLinejoin="round"
+                                          className="lucide lucide-arrow-right h-5 w-5"
+-                                         data-cursor-ref="ref-zjcg8wcr84"
+                                        >
+                                  ...
+                      ...
+              ...
+            ...
+
+[00:06:33.060] Server  LOG      ✓ Compiled in 276ms
+[00:08:23.890] Server  LOG      ✓ Compiled in 258ms
+[00:08:37.907] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:08:38.608] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+%s%s https://react.dev/link/hydration-mismatch 
+
+  ...
+    <RenderFromTemplateContext>
+      <ScrollAndFocusHandler segmentPath={[...]}>
+        <InnerScrollAndFocusHandler segmentPath={[...]} focusAndScrollRef={{apply:false, ...}}>
+          <ErrorBoundary errorComponent={undefined} errorStyles={undefined} errorScripts={undefined}>
+            <LoadingBoundary name="submit-res..." loading={null}>
+              <HTTPAccessFallbackBoundary notFound={undefined} forbidden={undefined} unauthorized={undefined}>
+                <RedirectBoundary>
+                  <RedirectErrorBoundary router={{...}}>
+                    <InnerLayoutRouter url="/submit-re..." tree={[...]} params={{}} cacheNode={{lazyData:null, ...}} ...>
+                      <SegmentViewNode type="page" pagePath="/Downloads...">
+                        <SegmentTrieNode>
+                        <ClientPageRoot Component={function SubmitResumePage} serverProvidedParams={{...}}>
+                          <SubmitResumePage params={Promise} searchParams={Promise}>
+                            <div
+                              className="flex min-h-screen flex-col"
+-                             data-cursor-ref="ref-gbkmyv0zt5"
+                            >
+                              <Navbar>
+                                <header
+                                  className="sticky top-0 z-50 transition-all duration-300 bg-navy"
+-                                 data-cursor-ref="ref-v74b8zfwpaa"
+                                >
+                                  <nav
+                                    className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8"
+-                                   data-cursor-ref="ref-2zhu2rg66m7"
+                                  >
+                                    <LinkComponent href="/" className="flex items...">
+                                      <a
+                                        className="flex items-center gap-2 sm:gap-2.5"
+                                        ref={function}
+                                        onClick={function onClick}
+                                        onMouseEnter={function onMouseEnter}
+                                        onTouchStart={function onTouchStart}
+                                        href="/"
+-                                       data-cursor-ref="ref-gjdj84txhvu"
+                                      >
+                                        <Logo className="h-7 w-7 sm...">
+                                          <svg
+                                            viewBox="0 0 32 32"
+                                            fill="none"
+                                            xmlns="http://www.w3.org/2000/svg"
+                                            className="h-7 w-7 sm:h-8 sm:w-8 flex-shrink-0"
+-                                           data-cursor-ref="ref-lqthv4hgblj"
+                                          >
+                                        ...
+                                    <div
+                                      className="hidden lg:flex lg:items-center lg:gap-x-8"
+-                                     data-cursor-ref="ref-kmpijbdisd"
+                                    >
+                                      <LinkComponent href="/jobs" className="text-sm fo...">
+                                        <a
+                                          className="text-sm font-medium text-white/80 transition-colors duration-200 ..."
+                                          ref={function}
+                                          onClick={function onClick}
+                                          onMouseEnter={function onMouseEnter}
+                                          onTouchStart={function onTouchStart}
+                                          href="/jobs"
+-                                         data-cursor-ref="ref-2e03j5kxnxo"
+                                        >
++                                         Jobs
+                                      <LinkComponent href="/playbooks" className="text-sm fo...">
+                                        <a
+                                          className="text-sm font-medium text-white/80 transition-colors duration-200 ..."
+                                          ref={function}
+                                          onClick={function onClick}
+                                          onMouseEnter={function onMouseEnter}
+                                          onTouchStart={function onTouchStart}
+                                          href="/playbooks"
+-                                         data-cursor-ref="ref-zn59wsu51vo"
+                                        >
++                                         Playbooks
+                                      <LinkComponent href="/resume-se..." className="text-sm fo...">
+                                        <a
+                                          className="text-sm font-medium text-white/80 transition-colors duration-200 ..."
+                                          ref={function}
+                                          onClick={function onClick}
+                                          onMouseEnter={function onMouseEnter}
+                                          onTouchStart={function onTouchStart}
+                                          href="/resume-services"
+-                                         data-cursor-ref="ref-68w936bg0xa"
+                                        >
++                                         Resume Services
+                                      <LinkComponent href="/blog" className="text-sm fo...">
+                                        <a
+                                          className="text-sm font-medium text-white/80 transition-colors duration-200 ..."
+                                          ref={function}
+                                          onClick={function onClick}
+                                          onMouseEnter={function onMouseEnter}
+                                          onTouchStart={function onTouchStart}
+                                          href="/blog"
+-                                         data-cursor-ref="ref-8q373kp10hj"
+                                        >
++                                         Blog
+                                    <div
+                                      className="hidden lg:block"
+-                                     data-cursor-ref="ref-qx1cekd6beo"
+                                    >
+                                      <LinkComponent href="/playbooks" className="rounded-lg...">
+                                        <a
+                                          className="rounded-lg bg-gold px-5 py-2.5 text-sm font-semibold text-navy tr..."
+                                          ref={function}
+                                          onClick={function onClick}
+                                          onMouseEnter={function onMouseEnter}
+                                          onTouchStart={function onTouchStart}
+                                          href="/playbooks"
+-                                         data-cursor-ref="ref-00bbyls4giyeb"
+                                        >
++                                         Get Started
+                                    <button
+                                      type="button"
+                                      className="lg:hidden text-white"
+                                      onClick={function onClick}
+-                                     data-cursor-ref="ref-5yekbfwti9a"
+                                    >
+                                      <span>
+                                      <Menu className="h-6 w-6">
+                                        <svg
+                                          ref={null}
+                                          xmlns="http://www.w3.org/2000/svg"
+                                          width={24}
+                                          height={24}
+                                          viewBox="0 0 24 24"
+                                          fill="none"
+                                          stroke="currentColor"
+                                          strokeWidth={2}
+                                          strokeLinecap="round"
+                                          strokeLinejoin="round"
+                                          className="lucide lucide-menu h-6 w-6"
+-                                         data-cursor-ref="ref-ppjy141k9mb"
+                                        >
+                              <main
+                                className="flex-grow bg-off-white"
+-                               data-cursor-ref="ref-lysaij58hv"
+                              >
+                                <FormWrapper>
+                                  <ResumeSubmissionForm initialService="resume-review">
+                                    <section
+                                      className="bg-navy py-12 lg:py-16"
+-                                     data-cursor-ref="ref-ioy67dn47z"
+                                    >
+                                    <section
+                                      className="py-12 lg:py-16"
+-                                     data-cursor-ref="ref-7p96woshcjd"
+                                    >
+                                      <div
+                                        className="mx-auto max-w-4xl px-6 lg:px-8"
+-                                       data-cursor-ref="ref-5zh5or4kiuq"
+                                      >
+                                        <form
+                                          className="space-y-6"
+                                          onSubmit={function onSubmit}
+-                                         data-cursor-ref="ref-0v1elac9lzzh"
+                                        >
+                                          <div
+                                            className="flex items-center justify-between rounded-lg border border-gold..."
+-                                           data-cursor-ref="ref-frlicg4l68g"
+                                          >
+                                            <div>
+                                            <div
+                                              className="text-right"
+-                                             data-cursor-ref="ref-ctn7u1seg7n"
+                                            >
+                                              <p
+                                                className="text-xl font-bold text-gold"
+-                                               data-cursor-ref="ref-g1x38alckp4"
+                                              >
+                                              <button
+                                                type="button"
+                                                onClick={function onClick}
+                                                className="text-xs text-charcoal/60 hover:text-gold"
+-                                               data-cursor-ref="ref-jfxe8cbsxug"
+                                              >
++                                               Change
+                                          <div
+                                            className="rounded-xl border border-border bg-white p-6 shadow-sm"
+-                                           data-cursor-ref="ref-uan7v30mbv8"
+                                          >
+                                            <h2
+                                              className="text-lg font-semibold text-navy"
+-                                             data-cursor-ref="ref-ju8bdh8m43h"
+                                            >
++                                             Contact Information
+                                            <p
+                                              className="mt-1 text-sm text-charcoal/60"
+-                                             data-cursor-ref="ref-fjuxsxnvhh"
+                                            >
++                                             {"We'll use this to deliver your results and follow up with questions."}
+                                            <div
+                                              className="mt-6 grid gap-6 sm:grid-cols-2"
+-                                             data-cursor-ref="ref-hx26mjeg0na"
+                                            >
+                                              <div
+                                                className="sm:col-span-2"
+-                                               data-cursor-ref="ref-x06psvvm4pj"
+                                              >
+                                                <label
+                                                  htmlFor="name"
+                                                  className="block text-sm font-medium text-charcoal"
+-                                                 data-cursor-ref="ref-zhmtfp4wpo8"
+                                                >
+                                                <input
+                                                  type="text"
+                                                  id="name"
+                                                  required={true}
+                                                  value=""
+                                                  onChange={function onChange}
+                                                  className="mt-2 block w-full rounded-lg border border-charcoal/20 px..."
+                                                  placeholder="John Smith"
+-                                                 data-cursor-ref="ref-okd6g3dja7i"
+                                                >
+                                              <div
+-                                               data-cursor-ref="ref-o7ihbc2xndb"
+                                              >
+                                                <label
+                                                  htmlFor="email"
+                                                  className="block text-sm font-medium text-charcoal"
+-                                                 data-cursor-ref="ref-r8i76o5u3qk"
+                                                >
+                                                <input
+                                                  type="email"
+                                                  id="email"
+                                                  required={true}
+                                                  value=""
+                                                  onChange={function onChange}
+                                                  className="mt-2 block w-full rounded-lg border border-charcoal/20 px..."
+                                                  placeholder="john@example.com"
+-                                                 data-cursor-ref="ref-v2kt720y1aj"
+                                                >
+                                              <div
+-                                               data-cursor-ref="ref-dv81tumgvwj"
+                                              >
+                                                <label
+                                                  htmlFor="phone"
+                                                  className="block text-sm font-medium text-charcoal"
+-                                                 data-cursor-ref="ref-eu6hsmroex9"
+                                                >
+                                                <input
+                                                  type="tel"
+                                                  id="phone"
+                                                  value=""
+                                                  onChange={function onChange}
+                                                  className="mt-2 block w-full rounded-lg border border-charcoal/20 px..."
+                                                  placeholder="+1 (555) 000-0000"
+-                                                 data-cursor-ref="ref-go2i8j1ax9p"
+                                                >
+                                          <div
+                                            className="flex items-center justify-between pt-4"
+-                                           data-cursor-ref="ref-6m9yxm6fc0a"
+                                          >
+                                            <button
+                                              type="button"
+                                              onClick={function onClick}
+                                              className="flex items-center gap-2 text-sm font-medium text-charcoal/70 ..."
+-                                             data-cursor-ref="ref-38m349sqwpm"
+                                            >
+                                              <ArrowLeft className="h-4 w-4">
+                                                <svg
+                                                  ref={null}
+                                                  xmlns="http://www.w3.org/2000/svg"
+                                                  width={24}
+                                                  height={24}
+                                                  viewBox="0 0 24 24"
+                                                  fill="none"
+                                                  stroke="currentColor"
+                                                  strokeWidth={2}
+                                                  strokeLinecap="round"
+                                                  strokeLinejoin="round"
+                                                  className="lucide lucide-arrow-left h-4 w-4"
+-                                                 data-cursor-ref="ref-lqxg5nbvgx"
+                                                >
+                                              ...
+                                            <button
+                                              type="submit"
+                                              disabled={true}
+                                              className="flex items-center gap-2 rounded-lg bg-navy px-8 py-4 text-bas..."
+-                                             data-cursor-ref="ref-td7su4cr1u"
+                                            >
+                                              <ArrowRight className="h-5 w-5">
+                                                <svg
+                                                  ref={null}
+                                                  xmlns="http://www.w3.org/2000/svg"
+                                                  width={24}
+                                                  height={24}
+                                                  viewBox="0 0 24 24"
+                                                  fill="none"
+                                                  stroke="currentColor"
+                                                  strokeWidth={2}
+                                                  strokeLinecap="round"
+                                                  strokeLinejoin="round"
+                                                  className="lucide lucide-arrow-right h-5 w-5"
+-                                                 data-cursor-ref="ref-vc9sqrqw0c"
+                                                >
+                              <Footer>
+                                <footer
+                                  className="bg-charcoal"
+-                                 data-cursor-ref="ref-zn7naqi0q3e"
+                                >
+                                  <div
+                                    className="mx-auto max-w-7xl px-6 py-16 lg:px-8"
+-                                   data-cursor-ref="ref-6o0l1qxk7ed"
+                                  >
+                                    <div
+                                      className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-6"
+-                                     data-cursor-ref="ref-w9yh3yg24vh"
+                                    >
+                                      <div
+                                        className="col-span-1 sm:col-span-2"
+-                                       data-cursor-ref="ref-kz5a3e1eiy"
+                                      >
+                                        <LinkComponent href="/" className="flex items...">
+                                          <a
+                                            className="flex items-center gap-2.5"
+                                            ref={function}
+                                            onClick={function onClick}
+                                            onMouseEnter={function onMouseEnter}
+                                            onTouchStart={function onTouchStart}
+                                            href="/"
+-                                           data-cursor-ref="ref-01udzf2eepid"
+                                          >
+                                            <Logo className="h-8 w-8">
+                                              <svg
+                                                viewBox="0 0 32 32"
+                                                fill="none"
+                                                xmlns="http://www.w3.org/2000/svg"
+                                                className="h-8 w-8"
+-                                               data-cursor-ref="ref-ppcx91v0h2"
+                                              >
+                                            ...
+                                        <p
+                                          className="mt-4 text-sm leading-relaxed text-white/50"
+-                                         data-cursor-ref="ref-dpbqh6jlrgp"
+                                        >
++                                         Tactical preparation materials for candidates targeting investment banking, p...
+                                        <div
+                                          className="mt-6"
+-                                         data-cursor-ref="ref-c7bzoq2saur"
+                                        >
+                                          <EmailCapture variant="footer">
+                                            <form
+                                              onSubmit={function handleSubmit}
+                                              className=""
+-                                             data-cursor-ref="ref-vun3n8vr37l"
+                                            >
+                                              <p
+                                                className="text-sm font-medium text-white mb-3"
+-                                               data-cursor-ref="ref-c5sg3veirym"
+                                              >
++                                               Get recruiting insights
+                                              <div
+                                                className="flex flex-col sm:flex-row gap-2"
+-                                               data-cursor-ref="ref-c5e9qc5i3xr"
+                                              >
+                                                <input
+                                                  type="email"
+                                                  value=""
+                                                  onChange={function onChange}
+                                                  placeholder="Your email"
+                                                  className="flex-1 min-w-0 rounded-lg border border-white/20 bg-white..."
+                                                  disabled={false}
+-                                                 data-cursor-ref="ref-g0uqaiuqqli"
+                                                >
+                                                <button
+                                                  type="submit"
+                                                  disabled={false}
+                                                  className="rounded-lg bg-gold px-4 py-2.5 text-sm font-semibold text..."
+-                                                 data-cursor-ref="ref-q3bl5ngz1ge"
+                                                >
++                                                 Join
+                                      <div
+-                                       data-cursor-ref="ref-jx1irx71j8c"
+                                      >
+                                        <h3
+                                          className="text-sm font-semibold uppercase tracking-wider text-gold"
+-                                         data-cursor-ref="ref-jb59v2yw2f"
+                                        >
++                                         Playbooks
+                                        <ul
+                                          className="mt-4 space-y-3"
+-                                         data-cursor-ref="ref-t38u59r2749"
+                                        >
+                                          <li
+-                                           data-cursor-ref="ref-p5k5clng3on"
+                                          >
+                                            <LinkComponent href="/playbooks" className="text-sm te...">
+                                              <a
+                                                className="text-sm text-white/60 transition-colors hover:text-gold"
+                                                ref={function}
+                                                onClick={function onClick}
+                                                onMouseEnter={function onMouseEnter}
+                                                onTouchStart={function onTouchStart}
+                                                href="/playbooks"
+-                                               data-cursor-ref="ref-lf56wty9tae"
+                                              >
++                                               All Playbooks
+                                          <li
+-                                           data-cursor-ref="ref-c8tl9d46pa"
+                                          >
+                                            <LinkComponent href="/playbooks..." className="text-sm te...">
+                                              <a
+                                                className="text-sm text-white/60 transition-colors hover:text-gold"
+                                                ref={function}
+                                                onClick={function onClick}
+                                                onMouseEnter={function onMouseEnter}
+                                                onTouchStart={function onTouchStart}
+                                                href="/playbooks/ib-technical-guide"
+-                                               data-cursor-ref="ref-leg5965zbh"
+                                              >
++                                               Technical Guide
+                                          <li
+-                                           data-cursor-ref="ref-jlf4sb7cd8"
+                                          >
+                                            <LinkComponent href="/playbooks..." className="text-sm te...">
+                                              <a
+                                                className="text-sm text-white/60 transition-colors hover:text-gold"
+                                                ref={function}
+                                                onClick={function onClick}
+                                                onMouseEnter={function onMouseEnter}
+                                                onTouchStart={function onTouchStart}
+                                                href="/playbooks/networking-playbook"
+-                                               data-cursor-ref="ref-2hh1zl5g8o2"
+                                              >
++                                               Networking Playbook
+                                          <li
+-                                           data-cursor-ref="ref-lgialkb7bvo"
+                                          >
+                                            <LinkComponent href="/playbooks..." className="text-sm te...">
+                                              <a
+                                                className="text-sm text-white/60 transition-colors hover:text-gold"
+                                                ref={function}
+                                                onClick={function onClick}
+                                                onMouseEnter={function onMouseEnter}
+                                                onTouchStart={function onTouchStart}
+                                                href="/playbooks/pe-recruiting-guide"
+-                                               data-cursor-ref="ref-pl69yclhnrb"
+                                              >
++                                               PE Recruiting Guide
+                                      <div
+-                                       data-cursor-ref="ref-q50cm790ti"
+                                      >
+                                        <h3
+                                          className="text-sm font-semibold uppercase tracking-wider text-gold"
+-                                         data-cursor-ref="ref-k3n42j6s52f"
+                                        >
++                                         Services
+                                        <ul
+                                          className="mt-4 space-y-3"
+-                                         data-cursor-ref="ref-5rqzhw4x63"
+                                        >
+                                          <li
+-                                           data-cursor-ref="ref-p73vd009a0l"
+                                          >
+                                            <LinkComponent href="/resume-se..." className="text-sm te...">
+                                              <a
+                                                className="text-sm text-white/60 transition-colors hover:text-gold"
+                                                ref={function}
+                                                onClick={function onClick}
+                                                onMouseEnter={function onMouseEnter}
+                                                onTouchStart={function onTouchStart}
+                                                href="/resume-services"
+-                                               data-cursor-ref="ref-kja1mqfocc"
+                                              >
++                                               Resume Review
+                                          <li
+-                                           data-cursor-ref="ref-2nqgdmx0fqn"
+                                          >
+                                            <LinkComponent href="/resume-se..." className="text-sm te...">
+                                              <a
+                                                className="text-sm text-white/60 transition-colors hover:text-gold"
+                                                ref={function}
+                                                onClick={function onClick}
+                                                onMouseEnter={function onMouseEnter}
+                                                onTouchStart={function onTouchStart}
+                                                href="/resume-services"
+-                                               data-cursor-ref="ref-5r7z8dyhhlo"
+                                              >
++                                               Resume Rewrite
+                                      <div
+-                                       data-cursor-ref="ref-0vpjzxt2ob5"
+                                      >
+                                        <h3
+                                          className="text-sm font-semibold uppercase tracking-wider text-gold"
+-                                         data-cursor-ref="ref-evqrkf9djf9"
+                                        >
++                                         Company
+                                        <ul
+                                          className="mt-4 space-y-3"
+-                                         data-cursor-ref="ref-vy4xp4j5ye"
+                                        >
+                                          <li
+-                                           data-cursor-ref="ref-22plpl2tn73"
+                                          >
+                                            <LinkComponent href="/blog" className="text-sm te...">
+                                              <a
+                                                className="text-sm text-white/60 transition-colors hover:text-gold"
+                                                ref={function}
+                                                onClick={function onClick}
+                                                onMouseEnter={function onMouseEnter}
+                                                onTouchStart={function onTouchStart}
+                                                href="/blog"
+-                                               data-cursor-ref="ref-yat66iclvg"
+                                              >
++                                               Blog
+                                          <li
+-                                           data-cursor-ref="ref-e95aef2osk4"
+                                          >
+                                            <LinkComponent href="/about" className="text-sm te...">
+                                              <a
+                                                className="text-sm text-white/60 transition-colors hover:text-gold"
+                                                ref={function}
+                                                onClick={function onClick}
+                                                onMouseEnter={function onMouseEnter}
+                                                onTouchStart={function onTouchStart}
+                                                href="/about"
+-                                               data-cursor-ref="ref-couhjnejf1w"
+                                              >
++                                               About
+                                          <li
+-                                           data-cursor-ref="ref-dzzyzdeq19k"
+                                          >
+                                            <LinkComponent href="/contact" className="text-sm te...">
+                                              <a
+                                                className="text-sm text-white/60 transition-colors hover:text-gold"
+                                                ref={function}
+                                                onClick={function onClick}
+                                                onMouseEnter={function onMouseEnter}
+                                                onTouchStart={function onTouchStart}
+                                                href="/contact"
+-                                               data-cursor-ref="ref-5r5mtitw9xy"
+                                              >
++                                               Contact
+                                      <div
+-                                       data-cursor-ref="ref-4g2j8umbc68"
+                                      >
+                                        <h3
+                                          className="text-sm font-semibold uppercase tracking-wider text-gold"
+-                                         data-cursor-ref="ref-ixm4oa6mjr"
+                                        >
++                                         Legal
+                                        <ul
+                                          className="mt-4 space-y-3"
+-                                         data-cursor-ref="ref-ct2caxftgz"
+                                        >
+                                          <li
+-                                           data-cursor-ref="ref-t4k5q2xkfw"
+                                          >
+                                            <LinkComponent href="/privacy" className="text-sm te...">
+                                              <a
+                                                className="text-sm text-white/60 transition-colors hover:text-gold"
+                                                ref={function}
+                                                onClick={function onClick}
+                                                onMouseEnter={function onMouseEnter}
+                                                onTouchStart={function onTouchStart}
+                                                href="/privacy"
+-                                               data-cursor-ref="ref-3eykn6yigi4"
+                                              >
++                                               Privacy Policy
+                                          <li
+-                                           data-cursor-ref="ref-csfh4tsgnk8"
+                                          >
+                                            <LinkComponent href="/terms" className="text-sm te...">
+                                              <a
+                                                className="text-sm text-white/60 transition-colors hover:text-gold"
+                                                ref={function}
+                                                onClick={function onClick}
+                                                onMouseEnter={function onMouseEnter}
+                                                onTouchStart={function onTouchStart}
+                                                href="/terms"
+-                                               data-cursor-ref="ref-x3hjkadf81m"
+                                              >
++                                               Terms of Service
+                                    <div
+                                      className="mt-12 border-t border-white/10 pt-8"
+-                                     data-cursor-ref="ref-t09eixyvuh"
+                                    >
+                                      <div
+                                        className="flex flex-col items-center justify-between gap-4 sm:flex-row"
+-                                       data-cursor-ref="ref-4spngpqstaa"
+                                      >
+                                        <p
+                                          className="text-xs text-white/40"
+-                                         data-cursor-ref="ref-tqcflqa1nde"
+                                        >
+                                        <div
+                                          className="flex items-center gap-4 text-xs text-white/40"
+-                                         data-cursor-ref="ref-5w6gbfoy4yc"
+                                        >
+                                          <span>
+                                          <span>
+                                          <a
+                                            href="https://techsalesplaybook.com"
+                                            target="_blank"
+                                            rel="noopener noreferrer"
+                                            className="text-white/50 hover:text-gold transition-colors"
+-                                           data-cursor-ref="ref-yd6r1kqxw3k"
+                                          >
++                                           Tech Sales Playbook
+                      ...
+                    ...
+          ...
+
+[00:08:38.608] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:08:38.608] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/submit-resume","route":"/submit-resume"}
+[00:08:38.608] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/submit-resume?service=resume-review color: rgb(120, 120, 120) color: inherit {"dp":"/submit-resume","o":"http://localhost:3000/submit-resume?service=resume-review","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1765317688356}
+[00:10:00.609] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1765317770653}
