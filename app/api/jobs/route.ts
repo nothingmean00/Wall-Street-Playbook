@@ -39,8 +39,10 @@ const MAX_DAILY_API_CALLS = 6 // ~200 credits / 30 days = ~6 calls per day max
 async function fetchFromTheirStack(query: string): Promise<Job[]> {
   const apiKey = process.env.THEIRSTACK_API_KEY
 
+  console.log("[Jobs API] Starting fetch, API key exists:", !!apiKey)
+
   if (!apiKey) {
-    console.warn("TheirStack API key not configured, using sample data")
+    console.warn("[Jobs API] TheirStack API key not configured, using sample data")
     return getSampleJobs()
   }
 
@@ -51,13 +53,16 @@ async function fetchFromTheirStack(query: string): Promise<Job[]> {
     lastApiCallDate = today
   }
 
+  console.log("[Jobs API] Daily calls:", dailyApiCalls, "Max:", MAX_DAILY_API_CALLS)
+
   // Check if we've exceeded daily limit
   if (dailyApiCalls >= MAX_DAILY_API_CALLS) {
-    console.warn("Daily API limit reached, using cached/sample data")
+    console.warn("[Jobs API] Daily API limit reached, using cached/sample data")
     return jobsCache?.jobs || getSampleJobs()
   }
 
   try {
+    console.log("[Jobs API] Making API request to TheirStack...")
     const response = await fetch("https://api.theirstack.com/v1/jobs/search", {
       method: "POST",
       headers: {
@@ -86,20 +91,23 @@ async function fetchFromTheirStack(query: string): Promise<Job[]> {
       }),
     })
 
+    console.log("[Jobs API] Response status:", response.status)
+
     if (!response.ok) {
       const errorText = await response.text()
-      console.error(`TheirStack API error: ${response.status}`, errorText)
+      console.error(`[Jobs API] TheirStack API error: ${response.status}`, errorText)
       throw new Error(`TheirStack API error: ${response.status}`)
     }
 
     // Increment API call counter
     dailyApiCalls++
-    console.log(`TheirStack API call #${dailyApiCalls} today`)
+    console.log(`[Jobs API] TheirStack API call #${dailyApiCalls} today - SUCCESS`)
 
     const data = await response.json()
+    console.log("[Jobs API] Jobs received:", data.data?.length || 0)
 
     if (!data.data || !Array.isArray(data.data)) {
-      console.warn("No jobs returned from TheirStack")
+      console.warn("[Jobs API] No jobs returned from TheirStack")
       return getSampleJobs()
     }
 
@@ -116,15 +124,19 @@ async function fetchFromTheirStack(query: string): Promise<Job[]> {
       category: categorizeJob(job.job_title || ""),
     }))
 
+    console.log("[Jobs API] Mapped", jobs.length, "real jobs")
+
     // Merge with sample jobs if we got few results
     if (jobs.length < 10) {
+      console.log("[Jobs API] Adding sample jobs to fill out results")
       const sampleJobs = getSampleJobs()
       return [...jobs, ...sampleJobs.slice(0, 10 - jobs.length)]
     }
 
+    console.log("[Jobs API] Returning", jobs.length, "real jobs")
     return jobs
   } catch (error) {
-    console.error("TheirStack API error:", error)
+    console.error("[Jobs API] TheirStack API error caught:", error instanceof Error ? error.message : error)
     return getSampleJobs()
   }
 }
