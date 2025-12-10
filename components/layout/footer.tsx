@@ -7,15 +7,17 @@ import { EmailCapture } from "@/components/email-capture"
 const footerLinks = {
   products: [
     { name: "All Playbooks", href: "/playbooks" },
-    { name: "Technical Guide", href: "/playbooks/ib-technical-guide" },
-    { name: "Networking Playbook", href: "/playbooks/networking-playbook" },
-    { name: "PE Recruiting Guide", href: "/playbooks/pe-recruiting-guide" },
+    { name: "IB Technical Guide", href: "/playbooks/ib-technical-guide" },
+    { name: "PE Recruiting Playbook", href: "/playbooks/pe-recruiting-playbook" },
+    { name: "Networking & Cold Email", href: "/playbooks/networking-cold-email-playbook" },
+    { name: "LBO Modeling Course", href: "/playbooks/lbo-modeling-course" },
   ],
   services: [
     { name: "Resume Review", href: "/resume-services" },
     { name: "Resume Rewrite", href: "/resume-services" },
   ],
   resources: [
+    { name: "Jobs & Internships", href: "/jobs" },
     { name: "Blog", href: "/blog" },
     { name: "About", href: "/about" },
     { name: "Contact", href: "/contact" },
