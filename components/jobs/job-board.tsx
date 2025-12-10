@@ -36,7 +36,9 @@ const LOCATIONS = [
   "Chicago",
   "Boston",
   "Los Angeles",
-  "London",
+  "Dallas",
+  "Charlotte",
+  "Houston",
   "Remote",
 ]
 
@@ -99,6 +101,7 @@ export function JobBoard() {
       "Venture Capital": "bg-pink-100 text-pink-800",
       "Risk Management": "bg-orange-100 text-orange-800",
       "Corporate Finance": "bg-indigo-100 text-indigo-800",
+      "Finance": "bg-navy/10 text-navy",
     }
     return colors[category] || "bg-gray-100 text-gray-800"
   }
@@ -194,7 +197,7 @@ export function JobBoard() {
       {/* Results Count */}
       <div className="mb-6 flex items-center justify-between">
         <p className="text-sm text-gray-600">
-          {loading ? "Loading jobs..." : `${filteredJobs.length} jobs found`}
+          {loading ? "Loading opportunities..." : `${filteredJobs.length} opportunities found`}
         </p>
       </div>
 
@@ -288,11 +291,12 @@ export function JobBoard() {
         </div>
       )}
 
-      {/* Load More (for future pagination) */}
-      {filteredJobs.length >= 10 && (
-        <div className="mt-8 text-center">
-          <p className="text-sm text-gray-500">
-            Showing top results. More jobs available with specific searches.
+      {/* Results Info */}
+      {filteredJobs.length > 0 && (
+        <div className="mt-8 rounded-lg bg-navy/5 p-4 text-center">
+          <p className="text-sm text-gray-600">
+            <span className="font-medium text-navy">{filteredJobs.length} opportunities</span> matching your criteria. 
+            Jobs are sourced from top finance employers across the US.
           </p>
         </div>
       )}

@@ -6,23 +6,25 @@ import { Briefcase, Bell, Target } from "lucide-react"
 import Link from "next/link"
 
 export const metadata: Metadata = {
-  title: "Finance Jobs | Investment Banking, PE & Hedge Fund Careers",
+  title: "Finance Jobs & Internships | Investment Banking, PE & Hedge Fund Careers",
   description:
-    "Browse the latest finance jobs in investment banking, private equity, hedge funds, and asset management. Updated daily with opportunities from top firms.",
+    "Browse finance jobs and internships in investment banking, private equity, hedge funds, and asset management. Summer analyst programs, full-time roles, and internships at top US firms.",
   keywords: [
     "investment banking jobs",
     "private equity careers",
     "hedge fund jobs",
-    "finance jobs",
+    "finance internships",
+    "summer analyst programs",
     "wall street careers",
     "M&A analyst jobs",
-    "trading jobs",
-    "asset management careers",
+    "IB summer analyst",
+    "PE internship",
+    "finance jobs USA",
   ],
   openGraph: {
-    title: "Finance Jobs | Wall Street Playbook",
+    title: "Finance Jobs & Internships | Wall Street Playbook",
     description:
-      "Browse the latest jobs in investment banking, private equity, hedge funds, and asset management.",
+      "Browse jobs and internships in investment banking, private equity, hedge funds, and asset management at top US firms.",
     url: "https://wallstreetplaybook.org/jobs",
   },
   alternates: {
@@ -41,29 +43,33 @@ export default function JobsPage() {
             <div className="mx-auto max-w-3xl text-center">
               <div className="inline-flex items-center gap-2 rounded-full bg-gold/10 px-4 py-2 text-sm font-medium text-gold mb-6">
                 <Briefcase className="h-4 w-4" />
-                Updated Daily
+                US Opportunities • Updated Daily
               </div>
               <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl">
-                Finance Jobs
+                Finance Jobs & Internships
               </h1>
               <p className="mt-6 text-lg leading-relaxed text-white/70 max-w-2xl mx-auto">
-                The latest opportunities in investment banking, private equity, hedge funds, and asset management. 
-                Find your next role at a top firm.
+                Full-time roles, summer analyst programs, and internships in investment banking, private equity, 
+                hedge funds, and asset management at top US firms.
               </p>
 
               {/* Quick Stats */}
               <div className="mt-10 flex flex-wrap justify-center gap-8">
                 <div className="text-center">
-                  <p className="text-3xl font-bold text-gold">500+</p>
-                  <p className="text-sm text-white/60">Active Listings</p>
+                  <p className="text-3xl font-bold text-gold">IB</p>
+                  <p className="text-sm text-white/60">Investment Banking</p>
                 </div>
                 <div className="text-center">
-                  <p className="text-3xl font-bold text-gold">50+</p>
-                  <p className="text-sm text-white/60">Top Firms</p>
+                  <p className="text-3xl font-bold text-gold">PE</p>
+                  <p className="text-sm text-white/60">Private Equity</p>
                 </div>
                 <div className="text-center">
-                  <p className="text-3xl font-bold text-gold">Daily</p>
-                  <p className="text-sm text-white/60">Updates</p>
+                  <p className="text-3xl font-bold text-gold">HF</p>
+                  <p className="text-sm text-white/60">Hedge Funds</p>
+                </div>
+                <div className="text-center">
+                  <p className="text-3xl font-bold text-gold">VC</p>
+                  <p className="text-sm text-white/60">Venture Capital</p>
                 </div>
               </div>
             </div>
@@ -76,15 +82,15 @@ export default function JobsPage() {
             <div className="flex flex-wrap items-center justify-center gap-8 text-sm">
               <div className="flex items-center gap-2 text-navy">
                 <Target className="h-4 w-4 text-gold" />
-                <span>Curated for Finance Careers</span>
+                <span>Full-Time & Internships</span>
               </div>
               <div className="flex items-center gap-2 text-navy">
                 <Bell className="h-4 w-4 text-gold" />
-                <span>Real-Time Job Alerts</span>
+                <span>Summer Analyst Programs</span>
               </div>
               <div className="flex items-center gap-2 text-navy">
                 <Briefcase className="h-4 w-4 text-gold" />
-                <span>From Top Firms</span>
+                <span>Top US Firms</span>
               </div>
             </div>
           </div>
