@@ -150,6 +150,86 @@ export const playbooks: Playbook[] = [
     excerpt:
       "Your story has three beats: (1) Origin—one sentence on where you started and what sparked your interest, (2) Development—how you built relevant skills and confirmed your interest, (3) Destination—why this role is the logical next step. Most candidates ramble. You won't...",
   },
+  {
+    slug: "restructuring-guide",
+    title: "Restructuring & Distressed Debt Guide",
+    description: "Master the technical interviews for RX groups. Bankruptcy mechanics, distressed valuation, and credit analysis.",
+    longDescription:
+      "Restructuring is one of the most technical and intellectually demanding areas of finance—and the interviews reflect that. This guide covers everything from Chapter 11 mechanics to distressed valuation frameworks, giving you the edge to land roles at Houlihan Lokey, PJT, Lazard RX, and distressed credit funds.",
+    price: 97,
+    contents: [
+      "Chapter 11 bankruptcy process: timeline and key milestones",
+      "Restructuring vs. liquidation analysis frameworks",
+      "Distressed valuation: enterprise value waterfall",
+      "Fulcrum security identification and recovery analysis",
+      "Credit agreement basics: covenants, defaults, remedies",
+      "DIP financing and exit financing structures",
+      "100+ RX-specific technical interview questions",
+      "Case study: real restructuring deal walkthrough",
+    ],
+    excerpt:
+      "Walk me through a fulcrum security analysis. Start with enterprise value—typically via DCF or comparable transactions. Then work down the capital structure: secured debt recovers first, then unsecured, then sub debt, then equity. The fulcrum security is where recovery breaks—the tranche that receives partial recovery...",
+  },
+  {
+    slug: "repe-modeling-guide",
+    title: "Real Estate Private Equity Modeling",
+    description: "Property-level models, waterfall structures, and REPE-specific technicals. Includes Excel templates.",
+    longDescription:
+      "Real estate private equity uses completely different modeling conventions than traditional PE. This guide teaches you property-level cash flow modeling, GP/LP waterfall structures, and the sector-specific knowledge (multifamily, office, industrial, retail) you need to break into Blackstone Real Estate, Starwood, or any top REPE shop.",
+    price: 127,
+    contents: [
+      "Property-level cash flow modeling fundamentals",
+      "NOI, Cap Rates, and real estate valuation methods",
+      "GP/LP waterfall structures with promote calculations",
+      "Sector deep dives: multifamily, office, industrial, retail",
+      "Development modeling: construction draws and stabilization",
+      "Debt sizing and DSCR analysis",
+      "3 full REPE model templates (Excel download)",
+      "REPE-specific interview questions and answers",
+    ],
+    excerpt:
+      "Calculate the equity multiple for this deal: Purchase at 5.0% cap rate, $10M NOI = $200M value. 65% LTV = $130M debt, $70M equity. Hold 5 years, exit at 5.5% cap (NOI grows to $12M). Exit value = $218M. Debt paydown to $110M. Equity proceeds = $108M. Multiple = 1.54x. Now add the waterfall...",
+  },
+  {
+    slug: "credit-direct-lending-playbook",
+    title: "Credit & Direct Lending Playbook",
+    description: "Break into private credit. Credit memos, downside analysis, and loan documentation fundamentals.",
+    longDescription:
+      "Private credit is one of the fastest-growing areas in finance, and the interview process is distinct from traditional PE. This playbook covers credit analysis frameworks, memo writing, loan documentation, and the downside-focused thinking that credit funds want to see. Perfect for candidates targeting Ares, Golub, Owl Rock, and similar firms.",
+    price: 97,
+    contents: [
+      "Credit analysis framework: the 5 Cs and beyond",
+      "Writing investment memos that get approved",
+      "Downside protection analysis: what can go wrong?",
+      "Loan documentation: covenants, baskets, and carve-outs",
+      "Unitranche, first lien, second lien structures explained",
+      "Sponsor-backed vs. non-sponsored lending differences",
+      "Credit fund economics: fees, hurdles, waterfalls",
+      "50+ credit-specific interview questions with answers",
+    ],
+    excerpt:
+      "Credit investors think differently than equity investors. The question isn't 'how much can I make?'—it's 'how do I get my money back if everything goes wrong?' Walk me through your downside analysis: revenue decline scenarios, margin compression, liquidity runway, asset coverage, and covenant headroom...",
+  },
+  {
+    slug: "superday-survival-guide",
+    title: "The Superday Survival Guide",
+    description: "Hour-by-hour preparation for final rounds. Manage stress, ace back-to-backs, and close the offer.",
+    longDescription:
+      "Superdays are where offers are won and lost. After months of preparation, everything comes down to one intense day of back-to-back interviews. This guide gives you the hour-by-hour playbook for the 48 hours before, during, and after your Superday—including stress management, energy optimization, and the follow-up strategy that seals offers.",
+    price: 47,
+    contents: [
+      "48-hour countdown: exactly what to do and when",
+      "The night before: sleep, meals, and mental prep",
+      "Morning routine that maximizes performance",
+      "Energy management across 5+ consecutive interviews",
+      "How to reset after a tough interview",
+      "Reading the room: adjusting to interviewer styles",
+      "Closing strong: the final impression that matters",
+      "Post-Superday follow-up: timing and templates",
+    ],
+    excerpt:
+      "The 48 hours before your Superday matter more than you think. Here's the protocol: T-48 hours—final technical review, no new material. T-24 hours—logistics locked, outfit ready, route planned. T-12 hours—light dinner, no alcohol, phone off by 10pm. T-2 hours—protein-heavy breakfast, arrive 20 min early...",
+  },
 ]
 
 export const resumeServices: ResumeService[] = [

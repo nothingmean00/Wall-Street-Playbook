@@ -47,10 +47,30 @@ export const PRODUCTS = {
     name: 'Walk Me Through Your Resume Playbook',
     price: 57,
   },
+  'restructuring-guide': {
+    priceId: process.env.STRIPE_PRICE_RESTRUCTURING || 'price_xxx',
+    name: 'Restructuring & Distressed Debt Guide',
+    price: 97,
+  },
+  'repe-modeling-guide': {
+    priceId: process.env.STRIPE_PRICE_REPE || 'price_xxx',
+    name: 'Real Estate Private Equity Modeling',
+    price: 127,
+  },
+  'credit-direct-lending-playbook': {
+    priceId: process.env.STRIPE_PRICE_CREDIT || 'price_xxx',
+    name: 'Credit & Direct Lending Playbook',
+    price: 97,
+  },
+  'superday-survival-guide': {
+    priceId: process.env.STRIPE_PRICE_SUPERDAY || 'price_xxx',
+    name: 'The Superday Survival Guide',
+    price: 47,
+  },
   'playbook-bundle': {
     priceId: process.env.STRIPE_PRICE_BUNDLE || 'price_xxx',
     name: 'Complete Playbook Bundle',
-    price: 435, // 30% off $622
+    price: 690, // 30% off $990 total
   },
   // Resume Services
   'resume-review': {
