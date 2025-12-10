@@ -104,15 +104,15 @@ async function fetchFromTheirStack(query: string): Promise<Job[]> {
     }
 
     const jobs = data.data.map((job: any) => ({
-      id: job.id || crypto.randomUUID(),
+      id: String(job.id) || crypto.randomUUID(),
       title: job.job_title || "Finance Role",
-      company: job.company_name || "Confidential",
-      location: job.location || job.job_country || "Remote",
-      type: job.job_type || "Full-time",
+      company: job.company || job.company_object?.name || "Confidential",
+      location: job.location || job.short_location || job.country || "Remote",
+      type: job.employment_statuses?.[0] === "internship" ? "Internship" : "Full-time",
       salary: job.salary_string || undefined,
-      posted: formatPostedDate(job.posted_at),
-      url: job.url || "#",
-      description: job.description_summary || job.description?.substring(0, 200) || undefined,
+      posted: formatPostedDate(job.date_posted),
+      url: job.url || job.source_url || "#",
+      description: job.description?.substring(0, 300) || undefined,
       category: categorizeJob(job.job_title || ""),
     }))
 
