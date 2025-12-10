@@ -1,6 +1,7 @@
 import type { Metadata } from "next"
 import { Navbar } from "@/components/layout/navbar"
 import { Footer } from "@/components/layout/footer"
+import { BlogEmailCTA } from "@/components/blog-email-cta"
 import { guides } from "@/lib/data"
 import { notFound } from "next/navigation"
 import Link from "next/link"
@@ -212,6 +213,9 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                 <p className="text-charcoal/70">Full article content coming soon.</p>
               )}
             </article>
+
+            {/* Email Capture CTA */}
+            <BlogEmailCTA variant="inline" />
 
             {/* Gold divider */}
             <div className="my-12 h-px bg-gold/30" />

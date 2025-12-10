@@ -70,24 +70,50 @@ export async function sendWelcomeEmail(to: string) {
   await resend.emails.send({
     from: FROM_EMAIL,
     to,
-    subject: 'Welcome to Wall Street Playbook',
+    subject: '🎯 Your IB/PE Recruiting Edge Starts Here',
     html: `
-      <div style="font-family: system-ui, sans-serif; max-width: 600px; margin: 0 auto;">
-        <h2 style="color: #0A1A2F;">Welcome to Wall Street Playbook</h2>
-        <p style="color: #333; line-height: 1.6;">
-          Thanks for subscribing! You'll receive occasional updates on new content, playbooks, and recruiting insights.
+      <div style="font-family: system-ui, sans-serif; max-width: 600px; margin: 0 auto; padding: 20px;">
+        <div style="text-align: center; margin-bottom: 32px;">
+          <h1 style="color: #0A1A2F; margin: 0; font-size: 28px;">Wall Street Playbook</h1>
+          <p style="color: #C9A86E; margin: 8px 0 0 0; font-size: 14px;">Tactical Prep for Finance Recruiting</p>
+        </div>
+        
+        <h2 style="color: #0A1A2F; font-size: 22px;">Welcome — here's your recruiting edge.</h2>
+        
+        <p style="color: #333; line-height: 1.7; font-size: 16px;">
+          You're now on the list. You'll get actionable recruiting insights, technical prep tips, and early access to new playbooks.
         </p>
-        <p style="color: #333; line-height: 1.6;">
-          To get started, check out some of our most popular resources:
+
+        <div style="background: #F8F6F3; border-left: 4px solid #C9A86E; padding: 20px; margin: 24px 0; border-radius: 4px;">
+          <p style="color: #0A1A2F; font-weight: 600; margin: 0 0 8px 0;">Start Here — Our Most Popular Guides:</p>
+          <ul style="color: #333; line-height: 2; margin: 0; padding-left: 20px;">
+            <li><a href="https://wallstreetplaybook.org/blog/how-to-break-into-investment-banking-2026" style="color: #0A1A2F; text-decoration: underline;">How to Break Into IB in 2026 (Complete Guide)</a></li>
+            <li><a href="https://wallstreetplaybook.org/blog/100-investment-banking-technical-questions" style="color: #0A1A2F; text-decoration: underline;">100 Core Technical Questions by Topic</a></li>
+            <li><a href="https://wallstreetplaybook.org/blog/cold-emailing-bankers-scripts" style="color: #0A1A2F; text-decoration: underline;">Cold Email Scripts That Get Responses</a></li>
+            <li><a href="https://wallstreetplaybook.org/blog/investment-banking-resume-checklist" style="color: #0A1A2F; text-decoration: underline;">IB Resume Checklist</a></li>
+          </ul>
+        </div>
+
+        <p style="color: #333; line-height: 1.7; font-size: 16px;">
+          Ready to go deeper? Our playbooks include 400+ technical questions, networking scripts, and PE recruiting frameworks.
         </p>
-        <ul style="color: #333; line-height: 1.8;">
-          <li><a href="https://wallstreetplaybook.com/blog/breaking-in-non-target" style="color: #C9A86E;">Breaking In From a Non-Target School</a></li>
-          <li><a href="https://wallstreetplaybook.com/blog/lbo-modeling-fundamentals" style="color: #C9A86E;">LBO Modeling Fundamentals</a></li>
-          <li><a href="https://wallstreetplaybook.com/playbooks" style="color: #C9A86E;">Browse All Playbooks</a></li>
-        </ul>
-        <p style="color: #666; font-size: 14px; margin-top: 32px;">
-          — Alex Thornton<br>
-          Wall Street Playbook
+
+        <div style="text-align: center; margin: 32px 0;">
+          <a href="https://wallstreetplaybook.org/playbooks" style="display: inline-block; background: #C9A86E; color: #0A1A2F; padding: 14px 32px; border-radius: 8px; text-decoration: none; font-weight: 600; font-size: 16px;">
+            Browse Playbooks →
+          </a>
+        </div>
+
+        <hr style="border: none; border-top: 1px solid #E5E5E5; margin: 32px 0;" />
+
+        <p style="color: #666; font-size: 13px; line-height: 1.6;">
+          Questions? Just reply to this email — I read every one.<br><br>
+          — Wall Street Playbook Team
+        </p>
+        
+        <p style="color: #999; font-size: 11px; margin-top: 24px;">
+          You're receiving this because you signed up at wallstreetplaybook.org. 
+          <a href="https://wallstreetplaybook.org/unsubscribe" style="color: #999;">Unsubscribe</a>
         </p>
       </div>
     `,

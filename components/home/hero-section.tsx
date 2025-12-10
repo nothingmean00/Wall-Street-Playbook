@@ -1,5 +1,6 @@
 import Link from "next/link"
 import { ArrowRight } from "lucide-react"
+import { EmailCapture } from "@/components/email-capture"
 
 export function HeroSection() {
   return (
@@ -44,6 +45,12 @@ export function HeroSection() {
             >
               Resume Services
             </Link>
+          </div>
+
+          {/* Email Capture */}
+          <div className="mt-12 sm:mt-16 pt-8 border-t border-white/10">
+            <p className="text-sm text-white/60 mb-4">Get free recruiting insights in your inbox</p>
+            <EmailCapture variant="hero" className="mx-auto" />
           </div>
         </div>
       </div>

@@ -4,7 +4,7 @@ import { sendWelcomeEmail } from '@/lib/email'
 
 export async function POST(request: NextRequest) {
   try {
-    const { email } = await request.json()
+    const { email, source = 'website' } = await request.json()
 
     if (!email || !email.includes('@')) {
       return NextResponse.json(
@@ -13,12 +13,16 @@ export async function POST(request: NextRequest) {
       )
     }
 
-    // Insert into database
+    // Insert into database with source tracking
     const sql = getDb()
     await sql`
       INSERT INTO email_subscribers (email, source)
-      VALUES (${email.toLowerCase()}, 'website')
-      ON CONFLICT (email) DO NOTHING
+      VALUES (${email.toLowerCase()}, ${source})
+      ON CONFLICT (email) DO UPDATE SET
+        source = CASE 
+          WHEN email_subscribers.source = 'website' THEN ${source}
+          ELSE email_subscribers.source
+        END
     `
 
     // Send welcome email
