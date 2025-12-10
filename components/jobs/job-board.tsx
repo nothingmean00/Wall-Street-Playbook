@@ -27,6 +27,7 @@ const FINANCE_CATEGORIES = [
   "Venture Capital",
   "Risk Management",
   "Corporate Finance",
+  "Finance",
 ]
 
 const LOCATIONS = [
@@ -115,7 +116,7 @@ export function JobBoard() {
           <Search className="absolute left-4 top-1/2 h-5 w-5 -translate-y-1/2 text-gray-400" />
           <input
             type="text"
-            placeholder="Search jobs by title, company, or keyword..."
+            placeholder="Search jobs & internships by title, company, or keyword..."
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             className="w-full rounded-xl border border-gray-200 bg-white py-4 pl-12 pr-4 text-sm shadow-sm transition-shadow focus:border-gold focus:outline-none focus:ring-2 focus:ring-gold/20"
