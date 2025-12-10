@@ -36,17 +36,14 @@ let dailyApiCalls = 0
 let lastApiCallDate = new Date().toDateString()
 const MAX_DAILY_API_CALLS = 6 // ~200 credits / 30 days = ~6 calls per day max
 
-// Track why we returned sample jobs
-let lastFetchReason = "not_called"
+// Track job source for response
+let lastFetchReason = "sample"
 
 async function fetchFromTheirStack(query: string): Promise<Job[]> {
   const apiKey = process.env.THEIRSTACK_API_KEY
 
-  console.log("[Jobs API] Starting fetch, API key exists:", !!apiKey)
-
   if (!apiKey) {
-    console.warn("[Jobs API] TheirStack API key not configured, using sample data")
-    lastFetchReason = "no_api_key"
+    lastFetchReason = "sample"
     return getSampleJobs()
   }
 
@@ -57,18 +54,13 @@ async function fetchFromTheirStack(query: string): Promise<Job[]> {
     lastApiCallDate = today
   }
 
-  console.log("[Jobs API] Daily calls:", dailyApiCalls, "Max:", MAX_DAILY_API_CALLS)
-
   // Check if we've exceeded daily limit
   if (dailyApiCalls >= MAX_DAILY_API_CALLS) {
-    console.warn("[Jobs API] Daily API limit reached, using cached/sample data")
-    lastFetchReason = "daily_limit"
+    lastFetchReason = jobsCache ? "live" : "sample"
     return jobsCache?.jobs || getSampleJobs()
   }
 
   try {
-    console.log("[Jobs API] Making API request to TheirStack...")
-    
     // Build request body - keep it simple for free plan
     const requestBody: Record<string, unknown> = {
       page: 0,
@@ -101,24 +93,17 @@ async function fetchFromTheirStack(query: string): Promise<Job[]> {
       body: JSON.stringify(requestBody),
     })
 
-    console.log("[Jobs API] Response status:", response.status)
-
     if (!response.ok) {
-      const errorText = await response.text()
-      console.error(`[Jobs API] TheirStack API error: ${response.status}`, errorText)
       throw new Error(`TheirStack API error: ${response.status}`)
     }
 
     // Increment API call counter
     dailyApiCalls++
-    console.log(`[Jobs API] TheirStack API call #${dailyApiCalls} today - SUCCESS`)
 
     const data = await response.json()
-    console.log("[Jobs API] Jobs received:", data.data?.length || 0)
 
     if (!data.data || !Array.isArray(data.data)) {
-      console.warn("[Jobs API] No jobs returned from TheirStack")
-      lastFetchReason = "no_data"
+      lastFetchReason = "sample"
       return getSampleJobs()
     }
 
@@ -135,21 +120,17 @@ async function fetchFromTheirStack(query: string): Promise<Job[]> {
       category: categorizeJob(job.job_title || ""),
     }))
 
-    console.log("[Jobs API] Mapped", jobs.length, "real jobs")
-
     // Merge with sample jobs if we got few results
     if (jobs.length < 10) {
-      console.log("[Jobs API] Adding sample jobs to fill out results")
       const sampleJobs = getSampleJobs()
+      lastFetchReason = "success"
       return [...jobs, ...sampleJobs.slice(0, 10 - jobs.length)]
     }
 
-    console.log("[Jobs API] Returning", jobs.length, "real jobs")
     lastFetchReason = "success"
     return jobs
   } catch (error) {
-    console.error("[Jobs API] TheirStack API error caught:", error instanceof Error ? error.message : error)
-    lastFetchReason = "api_error:" + (error instanceof Error ? error.message : String(error))
+    lastFetchReason = "sample"
     return getSampleJobs()
   }
 }
@@ -414,9 +395,7 @@ export async function GET(request: Request) {
       jobs, 
       categories: FINANCE_CATEGORIES, 
       cached: true,
-      cacheAge: Math.floor((Date.now() - jobsCache.timestamp) / 1000 / 60), // minutes
-      apiCallsToday: dailyApiCalls,
-      maxDailyApiCalls: MAX_DAILY_API_CALLS
+      source: "live"
     })
   }
 
@@ -441,12 +420,6 @@ export async function GET(request: Request) {
     jobs: filteredJobs, 
     categories: FINANCE_CATEGORIES, 
     cached: false,
-    apiCallsToday: dailyApiCalls,
-    maxDailyApiCalls: MAX_DAILY_API_CALLS,
-    debug: {
-      hasApiKey: !!process.env.THEIRSTACK_API_KEY,
-      fetchReason: lastFetchReason,
-      jobSource: filteredJobs.length > 0 && filteredJobs[0].id.length > 5 ? "theirstack" : "sample"
-    }
+    source: lastFetchReason === "success" ? "live" : "sample"
   })
 }
