@@ -36,6 +36,9 @@ let dailyApiCalls = 0
 let lastApiCallDate = new Date().toDateString()
 const MAX_DAILY_API_CALLS = 6 // ~200 credits / 30 days = ~6 calls per day max
 
+// Track why we returned sample jobs
+let lastFetchReason = "not_called"
+
 async function fetchFromTheirStack(query: string): Promise<Job[]> {
   const apiKey = process.env.THEIRSTACK_API_KEY
 
@@ -43,6 +46,7 @@ async function fetchFromTheirStack(query: string): Promise<Job[]> {
 
   if (!apiKey) {
     console.warn("[Jobs API] TheirStack API key not configured, using sample data")
+    lastFetchReason = "no_api_key"
     return getSampleJobs()
   }
 
@@ -58,6 +62,7 @@ async function fetchFromTheirStack(query: string): Promise<Job[]> {
   // Check if we've exceeded daily limit
   if (dailyApiCalls >= MAX_DAILY_API_CALLS) {
     console.warn("[Jobs API] Daily API limit reached, using cached/sample data")
+    lastFetchReason = "daily_limit"
     return jobsCache?.jobs || getSampleJobs()
   }
 
@@ -108,6 +113,7 @@ async function fetchFromTheirStack(query: string): Promise<Job[]> {
 
     if (!data.data || !Array.isArray(data.data)) {
       console.warn("[Jobs API] No jobs returned from TheirStack")
+      lastFetchReason = "no_data"
       return getSampleJobs()
     }
 
@@ -134,9 +140,11 @@ async function fetchFromTheirStack(query: string): Promise<Job[]> {
     }
 
     console.log("[Jobs API] Returning", jobs.length, "real jobs")
+    lastFetchReason = "success"
     return jobs
   } catch (error) {
     console.error("[Jobs API] TheirStack API error caught:", error instanceof Error ? error.message : error)
+    lastFetchReason = "api_error:" + (error instanceof Error ? error.message : String(error))
     return getSampleJobs()
   }
 }
@@ -429,6 +437,11 @@ export async function GET(request: Request) {
     categories: FINANCE_CATEGORIES, 
     cached: false,
     apiCallsToday: dailyApiCalls,
-    maxDailyApiCalls: MAX_DAILY_API_CALLS
+    maxDailyApiCalls: MAX_DAILY_API_CALLS,
+    debug: {
+      hasApiKey: !!process.env.THEIRSTACK_API_KEY,
+      fetchReason: lastFetchReason,
+      jobSource: filteredJobs.length > 0 && filteredJobs[0].id.length > 5 ? "theirstack" : "sample"
+    }
   })
 }
