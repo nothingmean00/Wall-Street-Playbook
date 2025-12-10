@@ -34,11 +34,10 @@ const CACHE_DURATION = 1000 * 60 * 60 * 6 // 6 hour cache to conserve API credit
 // Track daily API calls to avoid exceeding limits
 let dailyApiCalls = 0
 let lastApiCallDate = new Date().toDateString()
-const MAX_DAILY_API_CALLS = 20 // Allow more calls for testing
+const MAX_DAILY_API_CALLS = 4 // Conservative: ~120 credits/month leaves buffer
 
 // Track job source for response
 let lastFetchReason = "sample"
-let lastError = ""
 
 async function fetchFromTheirStack(query: string): Promise<Job[]> {
   const apiKey = process.env.THEIRSTACK_API_KEY
@@ -92,8 +91,6 @@ async function fetchFromTheirStack(query: string): Promise<Job[]> {
     })
 
     if (!response.ok) {
-      const errorText = await response.text()
-      lastError = `${response.status}: ${errorText.substring(0, 200)}`
       throw new Error(`TheirStack API error: ${response.status}`)
     }
 
@@ -420,7 +417,6 @@ export async function GET(request: Request) {
     jobs: filteredJobs, 
     categories: FINANCE_CATEGORIES, 
     cached: false,
-    source: lastFetchReason === "success" ? "live" : "sample",
-    debug: { reason: lastFetchReason, error: lastError, calls: dailyApiCalls }
+    source: lastFetchReason === "success" ? "live" : "sample"
   })
 }
