@@ -25,7 +25,7 @@ export async function GET() {
         limit: 5,
         posted_at_max_age_days: 30,
         job_title_or: ["Investment Banking", "Private Equity"],
-        order_by: [{ desc: true, field: "posted_at" }],
+        order_by: [{ desc: true, field: "date_posted" }],
       }),
     })
 

@@ -82,7 +82,7 @@ async function fetchFromTheirStack(query: string): Promise<Job[]> {
           "Venture Capital",
         ],
         job_title_pattern_and: query ? [query] : undefined,
-        order_by: [{ desc: true, field: "posted_at" }],
+        order_by: [{ desc: true, field: "date_posted" }],
       }),
     })
 
