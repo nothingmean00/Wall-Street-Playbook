@@ -62,31 +62,20 @@ async function fetchFromTheirStack(query: string): Promise<Job[]> {
 
   try {
     // Build request body - keep it simple for free plan
+    // Note: Free plan may have limitations on filters
     const requestBody: Record<string, unknown> = {
       page: 0,
-      limit: 25, // Moderate limit for free plan
+      limit: 25,
       posted_at_max_age_days: 30,
-      country_code_or: ["US"], // US jobs only for Wall Street focus
+      job_country_code_or: ["US"], // US jobs only
       job_title_or: [
-        // Full-time roles
         "Investment Banking",
         "Private Equity", 
         "Hedge Fund",
         "Financial Analyst",
-        "M&A",
-        "Equity Research",
-        "Asset Management",
-        "Venture Capital",
-        "Portfolio Manager",
-        "Trading",
-        // Internships & Summer Programs
+        "M&A Analyst",
         "Summer Analyst",
-        "Summer Associate", 
-        "Finance Intern",
-        "Investment Banking Intern",
-        "Private Equity Intern",
-        "Banking Internship",
-        "Finance Internship",
+        "Summer Associate",
       ],
       order_by: [{ desc: true, field: "date_posted" }],
     }
