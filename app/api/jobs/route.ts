@@ -34,16 +34,17 @@ const CACHE_DURATION = 1000 * 60 * 60 * 6 // 6 hour cache to conserve API credit
 // Track daily API calls to avoid exceeding limits
 let dailyApiCalls = 0
 let lastApiCallDate = new Date().toDateString()
-const MAX_DAILY_API_CALLS = 6 // ~200 credits / 30 days = ~6 calls per day max
+const MAX_DAILY_API_CALLS = 20 // Allow more calls for testing
 
 // Track job source for response
 let lastFetchReason = "sample"
+let lastError = ""
 
 async function fetchFromTheirStack(query: string): Promise<Job[]> {
   const apiKey = process.env.THEIRSTACK_API_KEY
 
   if (!apiKey) {
-    lastFetchReason = "sample"
+    lastFetchReason = "no_key"
     return getSampleJobs()
   }
 
@@ -56,26 +57,22 @@ async function fetchFromTheirStack(query: string): Promise<Job[]> {
 
   // Check if we've exceeded daily limit
   if (dailyApiCalls >= MAX_DAILY_API_CALLS) {
-    lastFetchReason = jobsCache ? "live" : "sample"
+    lastFetchReason = jobsCache ? "cached" : "limit"
     return jobsCache?.jobs || getSampleJobs()
   }
 
   try {
-    // Build request body - keep it simple for free plan
-    // Note: Free plan may have limitations on filters
+    // Build request body - simple for free plan compatibility
     const requestBody: Record<string, unknown> = {
       page: 0,
       limit: 25,
       posted_at_max_age_days: 30,
-      job_country_code_or: ["US"], // US jobs only
       job_title_or: [
         "Investment Banking",
         "Private Equity", 
         "Hedge Fund",
         "Financial Analyst",
-        "M&A Analyst",
         "Summer Analyst",
-        "Summer Associate",
       ],
       order_by: [{ desc: true, field: "date_posted" }],
     }
@@ -95,6 +92,8 @@ async function fetchFromTheirStack(query: string): Promise<Job[]> {
     })
 
     if (!response.ok) {
+      const errorText = await response.text()
+      lastError = `${response.status}: ${errorText.substring(0, 200)}`
       throw new Error(`TheirStack API error: ${response.status}`)
     }
 
@@ -421,6 +420,7 @@ export async function GET(request: Request) {
     jobs: filteredJobs, 
     categories: FINANCE_CATEGORIES, 
     cached: false,
-    source: lastFetchReason === "success" ? "live" : "sample"
+    source: lastFetchReason === "success" ? "live" : "sample",
+    debug: { reason: lastFetchReason, error: lastError, calls: dailyApiCalls }
   })
 }
