@@ -66,7 +66,9 @@ async function fetchFromTheirStack(query: string): Promise<Job[]> {
       page: 0,
       limit: 25, // Moderate limit for free plan
       posted_at_max_age_days: 30,
+      country_code_or: ["US"], // US jobs only for Wall Street focus
       job_title_or: [
+        // Full-time roles
         "Investment Banking",
         "Private Equity", 
         "Hedge Fund",
@@ -75,6 +77,16 @@ async function fetchFromTheirStack(query: string): Promise<Job[]> {
         "Equity Research",
         "Asset Management",
         "Venture Capital",
+        "Portfolio Manager",
+        "Trading",
+        // Internships & Summer Programs
+        "Summer Analyst",
+        "Summer Associate", 
+        "Finance Intern",
+        "Investment Banking Intern",
+        "Private Equity Intern",
+        "Banking Internship",
+        "Finance Internship",
       ],
       order_by: [{ desc: true, field: "date_posted" }],
     }
