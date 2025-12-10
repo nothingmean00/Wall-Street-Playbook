@@ -68,32 +68,37 @@ async function fetchFromTheirStack(query: string): Promise<Job[]> {
 
   try {
     console.log("[Jobs API] Making API request to TheirStack...")
+    
+    // Build request body - keep it simple for free plan
+    const requestBody: Record<string, unknown> = {
+      page: 0,
+      limit: 25, // Moderate limit for free plan
+      posted_at_max_age_days: 30,
+      job_title_or: [
+        "Investment Banking",
+        "Private Equity", 
+        "Hedge Fund",
+        "Financial Analyst",
+        "M&A",
+        "Equity Research",
+        "Asset Management",
+        "Venture Capital",
+      ],
+      order_by: [{ desc: true, field: "date_posted" }],
+    }
+    
+    // Only add query filter if specified
+    if (query) {
+      requestBody.job_title_pattern_and = [query]
+    }
+    
     const response = await fetch("https://api.theirstack.com/v1/jobs/search", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
         Authorization: `Bearer ${apiKey}`,
       },
-      body: JSON.stringify({
-        page: 0,
-        limit: 50, // Get more jobs per request to maximize value
-        posted_at_max_age_days: 30,
-        job_title_or: [
-          "Investment Banking Analyst",
-          "Investment Banking Associate",
-          "Private Equity",
-          "Hedge Fund",
-          "Financial Analyst",
-          "M&A",
-          "Equity Research",
-          "Portfolio Manager",
-          "Trader",
-          "Asset Management",
-          "Venture Capital",
-        ],
-        job_title_pattern_and: query ? [query] : undefined,
-        order_by: [{ desc: true, field: "date_posted" }],
-      }),
+      body: JSON.stringify(requestBody),
     })
 
     console.log("[Jobs API] Response status:", response.status)
