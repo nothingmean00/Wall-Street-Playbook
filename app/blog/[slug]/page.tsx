@@ -150,24 +150,60 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
             <article className="prose prose-lg prose-charcoal max-w-none">
               {guide.content ? (
                 <div
-                  className="text-charcoal/80 leading-relaxed space-y-6"
+                  className="text-charcoal/80 leading-relaxed space-y-4"
                   dangerouslySetInnerHTML={{
                     __html: guide.content
                       .split("\n\n")
                       .map((paragraph) => {
+                        // Horizontal rule / divider
+                        if (paragraph.trim() === "---") {
+                          return `<hr class="my-10 border-gold/30" />`
+                        }
+                        // H2 headers
                         if (paragraph.startsWith("## ")) {
-                          return `<h2 class="text-2xl font-bold text-charcoal mt-10 mb-4">${paragraph.replace("## ", "")}</h2>`
+                          return `<h2 class="text-2xl font-bold text-charcoal mt-12 mb-4">${paragraph.replace("## ", "")}</h2>`
                         }
-                        if (
-                          paragraph.startsWith("1. ") ||
-                          paragraph.startsWith("2. ") ||
-                          paragraph.startsWith("3. ") ||
-                          paragraph.startsWith("4. ") ||
-                          paragraph.startsWith("5. ")
-                        ) {
-                          return `<p class="pl-4 border-l-2 border-gold/50 text-charcoal/80">${paragraph.replace(/\*\*(.*?)\*\*/g, '<strong class="text-charcoal">$1</strong>')}</p>`
+                        // H3 headers
+                        if (paragraph.startsWith("### ")) {
+                          return `<h3 class="text-xl font-semibold text-charcoal mt-8 mb-3">${paragraph.replace("### ", "")}</h3>`
                         }
-                        return `<p class="text-charcoal/80">${paragraph.replace(/\*\*(.*?)\*\*/g, '<strong class="text-charcoal">$1</strong>')}</p>`
+                        // Block quotes (lines starting with >)
+                        if (paragraph.startsWith("> ") || paragraph.startsWith(">")) {
+                          const quoteContent = paragraph.replace(/^>\s?/gm, "")
+                            .replace(/\*\*(.*?)\*\*/g, '<strong class="text-charcoal">$1</strong>')
+                            .replace(/\*(.*?)\*/g, '<em>$1</em>')
+                          return `<blockquote class="pl-4 border-l-4 border-gold bg-gold/5 py-3 pr-4 rounded-r-lg text-charcoal/80 italic my-4">${quoteContent}</blockquote>`
+                        }
+                        // Bullet lists (- items)
+                        if (paragraph.startsWith("- ")) {
+                          const items = paragraph.split("\n").filter(line => line.trim().startsWith("- "))
+                          const listItems = items.map(item => {
+                            const content = item.replace(/^-\s+/, "")
+                              .replace(/\*\*(.*?)\*\*/g, '<strong class="text-charcoal">$1</strong>')
+                              .replace(/\*(.*?)\*/g, '<em>$1</em>')
+                              .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" class="text-gold hover:text-navy underline">$1</a>')
+                            return `<li class="text-charcoal/80">${content}</li>`
+                          }).join("")
+                          return `<ul class="list-disc list-inside space-y-2 my-4 ml-4">${listItems}</ul>`
+                        }
+                        // Numbered lists
+                        if (/^\d+\.\s/.test(paragraph.trim())) {
+                          const items = paragraph.split("\n").filter(line => /^\d+\.\s/.test(line.trim()))
+                          const listItems = items.map(item => {
+                            const content = item.replace(/^\d+\.\s+/, "")
+                              .replace(/\*\*(.*?)\*\*/g, '<strong class="text-charcoal">$1</strong>')
+                              .replace(/\*(.*?)\*/g, '<em>$1</em>')
+                              .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" class="text-gold hover:text-navy underline">$1</a>')
+                            return `<li class="text-charcoal/80">${content}</li>`
+                          }).join("")
+                          return `<ol class="list-decimal list-inside space-y-2 my-4 ml-4">${listItems}</ol>`
+                        }
+                        // Regular paragraphs with formatting
+                        const formatted = paragraph
+                          .replace(/\*\*(.*?)\*\*/g, '<strong class="text-charcoal">$1</strong>')
+                          .replace(/\*(.*?)\*/g, '<em>$1</em>')
+                          .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" class="text-gold hover:text-navy underline">$1</a>')
+                        return `<p class="text-charcoal/80 leading-relaxed">${formatted}</p>`
                       })
                       .join(""),
                   }}

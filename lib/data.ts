@@ -270,298 +270,569 @@ export const resumeServices: ResumeService[] = [
 
 export const guides: Guide[] = [
   {
-    slug: "ib-vs-pe-career-paths",
-    title: "Investment Banking vs. Private Equity: Career Path Analysis",
-    summary: "A tactical breakdown of compensation, lifestyle, and exit opportunities across both paths.",
-    category: "Career Strategy",
-    readTime: "8 min read",
-    publishedAt: "2024-12-01",
-    content: `
-The choice between investment banking and private equity represents one of the most consequential career decisions in finance. Both paths offer exceptional compensation and career optionality, but they differ fundamentally in day-to-day work, skill development, and long-term trajectory.
-
-## Compensation Comparison
-
-At the analyst level, total compensation is remarkably similar. First-year IB analysts at bulge brackets typically earn $110-130K base with bonuses pushing total comp to $170-200K. PE associates at mega-funds start slightly higher, with total compensation often reaching $250-350K by year two.
-
-The divergence accelerates at senior levels. Managing Directors in investment banking can earn $1-5M+ annually, while Partners at top PE firms may earn $5-20M+ through carried interest distributions.
-
-## The Work Itself
-
-Investment banking centers on execution. You are building models, preparing materials, and supporting live transactions. The work is intense but relatively predictable in structure. PE involves more investment decision-making, portfolio company oversight, and strategic work.
-
-The hours narrative requires nuance. While IB hours are notoriously brutal (80-100+ hours weekly is common), PE hours at mega-funds often match this during deal processes. The difference lies in predictability and control—PE offers more autonomy over scheduling.
-
-## Exit Opportunities
-
-This is where paths diverge significantly. IB provides broad optionality: PE, hedge funds, corporate development, venture capital, or operating roles. PE narrows focus toward deeper investing roles, portfolio operations, or launching your own fund.
-
-Neither path is superior. The right choice depends on whether you prefer transaction execution or investment ownership, and where you want to be in 15 years.
-    `,
-  },
-  {
-    slug: "breaking-in-non-target",
-    title: "Breaking In From a Non-Target School",
-    summary: "Specific strategies for candidates without traditional pedigree to land top-tier roles.",
+    slug: "how-to-break-into-investment-banking-2026",
+    title: "How to Break Into Investment Banking in 2026: Non-Target, Target, and Lateral Paths",
+    summary: "The complete guide to IB recruiting—timelines, networking strategies, and what actually works for each pathway.",
     category: "Recruiting",
-    readTime: "10 min read",
-    publishedAt: "2024-11-28",
+    readTime: "25 min read",
+    publishedAt: "2025-12-10",
     content: `
-Every year, candidates from non-target schools break into Goldman Sachs, Evercore, and other top-tier firms. The path is harder, but it is well-defined for those willing to execute.
+Breaking into investment banking requires understanding that there isn't one universal path—your strategy depends entirely on where you're starting from and how much time you have. Whether you're a freshman at a target school, a senior at a non-target desperately networking, or a Big 4 analyst looking to lateral, each pathway demands different tactics and timelines.
 
-## The Reality Check
+## The Four Main Entry Points Into Investment Banking
 
-Non-target recruiting requires starting earlier, working harder, and being more strategic than your target-school competition. You cannot rely on on-campus recruiting or alumni density. You must manufacture every advantage.
+Investment banking recruiting operates around four distinct pathways, each with its own timeline, difficulty level, and prerequisites.
 
-## The Networking Imperative
+**Undergraduate at a Target or Semi-Target School** remains the cheapest and most straightforward path. If you attend schools like Wharton, Harvard, NYU Stern, Michigan Ross, or Berkeley Haas, you'll have access to structured on-campus recruiting where bulge bracket banks actively come to you.
 
-Your entire strategy centers on one activity: building relationships with people who can refer you or advocate for your candidacy. This means 50-100+ networking conversations before recruiting begins.
+**Recent Graduates** face a compressed window and must act with urgency. The critical rule: your chances decrease dramatically if you wait more than 1-2 years after graduation.
 
-Start with second-degree connections: alumni from your school, friends of friends, people from your hometown. Expand from there. Every conversation should end with two new names to contact.
+**MBA Candidates** follow a highly structured timeline that starts the moment you confirm your MBA acceptance. Recruiting technically begins before you even start classes.
 
-## The Technical Edge
+**Lateral Hires** with 1-3 years of full-time investment banking or closely related experience can move between banks or from adjacent fields like Transaction Advisory Services.
 
-When you lack the pedigree, you compensate with preparation. Non-target candidates who break in are often more technically prepared than their target-school peers because they had to be.
+## The Recruiting Timeline Reality: Earlier Than You Think
 
-Master technicals before recruiting begins. Not during—before. Your accounting, valuation, and deal knowledge should be flawless.
+Investment banking recruiting has accelerated to absurd levels. For **junior year summer analyst positions**, applications now go live 12-18 months before the internship starts. Bulge bracket banks begin posting applications as early as January-February of sophomore year.
 
-## The Story
+The majority of summer analyst offers get extended between January and April of sophomore year—meaning recruiting wraps up a full 15 months before you'd start the internship.
 
-Your narrative must be airtight. Why finance? Why now? Why you despite your school? The best non-target candidates frame their background as an asset: grit, resourcefulness, and the drive that comes from having to earn every opportunity.
+## Target vs. Non-Target: What Actually Matters
 
-The path is harder. But for candidates willing to execute this playbook, it works.
+The target school advantage is real but not insurmountable. Banks pay career centers for exclusive access because it's financially efficient.
+
+**Target schools** (Wharton, Harvard, Princeton, Stanford, MIT, Columbia, Duke, NYU Stern, Michigan Ross) get on-campus recruiting visits and automatic resume reviews. Students generally can get interviews with a GPA above 3.5, though top banks prefer 3.7-3.8+.
+
+**Non-target schools** require a completely different strategy:
+- Maintain a GPA of 3.7+ as a bare minimum (ideally 3.8-3.9)
+- Network 3-4x as much as target school peers
+- List your SAT/ACT scores on your resume if strong (1500+ SAT, 34+ ACT)
+- Target middle-market banks and regional boutiques first
+
+## Building Your Pre-Internship Foundation
+
+You will not break into a bulge bracket internship with a blank resume. Banks expect to see relevant "steppingstone" experience.
+
+**Freshman and early sophomore summers** should focus on getting any finance-adjacent experience: corporate finance, wealth management, corporate banking, Big 4 accounting firms, or financial analyst roles at startups.
+
+**Academic preparation** needs to happen concurrently. You must learn accounting fundamentals, financial statement analysis, and valuation methodologies before interviews begin.
+
+## Networking: The Non-Negotiable Differentiator
+
+Networking isn't optional—it's the primary determinant of whether you get interviews, especially from non-target schools.
+
+**Volume requirements**: From a target school, you need 20-30 networking calls to get a meaningful advantage. From a non-target, plan for 50-100+ outreach emails and 30-50 completed calls.
+
+**The cold email framework** that works has three components:
+1. Establish your point of connection
+2. Make a specific ask focused on advice, not jobs
+3. Propose three specific times you're available
+
+Keep emails to 5 sentences maximum and always use your school email address.
+
+## The Interview Process
+
+**Behavioral/fit questions** assess whether you'll survive the hours and have genuine interest. Core questions: "Walk me through your resume," "Why investment banking?", "Why our bank?"
+
+**Technical questions** test accounting, valuation, and deal mechanics. Core topics include: three-statement linkages, DCF analysis, LBO modeling, and M&A accretion/dilution.
+
+**The Superday** is the final stage where you meet 3-6 bankers in back-to-back sessions. The acceptance rate averages 30-40%.
+
+## The Path Forward: What to Do Right Now
+
+**Freshmen and sophomores**: Join finance clubs, secure a relevant internship, start learning accounting basics, and begin networking 6-9 months before applications open.
+
+**Current juniors**: Focus on off-cycle internships and middle-market banks. Begin intensive technical preparation and complete 30-50 networking calls.
+
+**Recent graduates**: Target Transaction Advisory Services or valuation roles at Big 4 firms, corporate banking, or middle-market IB roles. Land a steppingstone role within 6 months, lateral to banking within 12-18 months.
+
+---
+
+*Ready to nail the technical questions? Our [IB Technical Interview Guide](/playbooks/ib-technical-guide) covers the 400+ questions you'll actually face.*
+
+*Need help with your resume? Get a [professional resume review](/resume-services) from finance professionals who've screened thousands of candidates.*
     `,
   },
   {
-    slug: "lbo-modeling-fundamentals",
-    title: "LBO Modeling Fundamentals",
-    summary: "Core concepts and key drivers behind leveraged buyout analysis.",
-    category: "Technical",
+    slug: "investment-banking-resume-checklist",
+    title: "Investment Banking Resume Example and Complete Checklist",
+    summary: "The exact structure, bullet point formula, and deal-breakers you need to survive the 30-second screen.",
+    category: "Recruiting",
     readTime: "12 min read",
-    publishedAt: "2024-11-25",
+    publishedAt: "2025-12-09",
     content: `
-Leveraged buyout models form the analytical backbone of private equity. Understanding LBO mechanics is essential for anyone targeting buyside roles.
+Investment banking recruiting is a process of elimination, not selection. Bankers don't read resumes to find reasons to hire you; they scan them for 30 seconds to find reasons to *ding* you. Your resume has one job: survive that initial scan by looking exactly like what a burned-out analyst expects to see.
 
-## The Basic Structure
+If your font is too creative, your bullets are too vague, or your formatting is even slightly off, you will be rejected before anyone reads a word about your internship.
 
-An LBO uses significant debt to acquire a company, with the goal of improving operations and selling at a higher valuation. The sponsor (PE firm) contributes equity, typically 30-40% of the purchase price, with debt financing the remainder.
+## The Only Format That Works (The "Gold Standard")
 
-## The Five Value Creation Levers
+Forget everything career services told you about "standing out" with design. In finance, standing out visually is a negative signal.
 
-PE firms create value through five primary mechanisms:
+**The Non-Negotiables:**
 
-1. **Revenue Growth** - Organic growth, M&A, geographic expansion
-2. **Margin Improvement** - Cost reduction, pricing power, operational efficiency  
-3. **Multiple Expansion** - Selling at a higher EV/EBITDA than purchase
-4. **Debt Paydown** - Using cash flows to reduce leverage, increasing equity value
-5. **Cash Generation** - Dividends and distributions during the hold period
+- **Length:** One page. Period. No exceptions.
+- **Margins:** 0.5" to 0.75" on all sides
+- **Font:** Times New Roman or Garamond, size 10-11pt
+- **Structure:** Header → Education → Work Experience → Skills & Interests
 
-## Key Return Metrics
+## Section 1: Education (The Anchor)
 
-IRR (Internal Rate of Return) and MOIC (Multiple on Invested Capital) are the core metrics. A typical target is 20%+ IRR and 2.0x+ MOIC over a 5-year hold period.
+For students and recent grads, Education goes at the top. This is where bankers look first.
 
-The math is straightforward: buy low, improve the business, sell higher, and use debt leverage to amplify equity returns. Execution is where complexity lives.
+- **GPA:** If it's 3.5 or above, bold it. If below 3.0, you have a major problem.
+- **Test Scores:** If you have a 1500+ SAT or 34+ ACT, keep it. Bankers love standardized metrics.
+- **Relevant Coursework:** List 4-6 finance/accounting classes.
 
-## What Interviewers Test
+## Section 2: Work Experience (The Bullet Point Formula)
 
-Technical interviews focus on: sources and uses, debt structure, cash flow available for debt repayment, and sensitivity to key assumptions. Know how changing revenue growth, margins, and exit multiples impact returns.
+This is where 90% of candidates fail. Most students list *responsibilities*. Bankers want to see *impact*.
+
+**The Perfect Bullet Formula:**
+**[Action Verb]** + **[Context/Task]** + **[Quantified Result]**
+
+**Before (Weak):**
+- *Researched potential acquisition targets for a client in the tech sector*
+- *Helped creating pitch decks for client meetings*
+
+**After (Strong):**
+- **Screened** 50+ potential acquisition targets in the SaaS sector based on EBITDA margins and recurring revenue, identifying 3 high-priority targets
+- **Developed** 15-slide management presentation for a $20M Series B fundraise, including market sizing and pro forma projections
+
+**Key Rules:**
+- No "Assisted" or "Helped"—use *Constructed, Evaluated, Spearheaded, Modeled, Executed*
+- Quantify everything. If you don't have exact numbers, estimate conservatively.
+
+## Section 3: Skills & Interests (The "Airport Test")
+
+The "Airport Test" is simple: If I'm stuck with you at O'Hare for 4 hours during a flight delay, will I be miserable?
+
+- **Be Specific:** "Travel" is boring. "Backpacking through 4 countries in Southeast Asia" is a conversation starter.
+- **The Golden Rule:** If you list it, you must be able to talk about it for 5 minutes.
+
+## 10 Resume Mistakes That Kill Your Chances
+
+1. **Typos:** One typo = ding. Investment banking requires extreme attention to detail.
+2. **Inconsistent Dates:** Using "Jan 2023" in one place and "January 2023" in another.
+3. **No GPA:** Bankers assume it's sub-3.0 if you hide it.
+4. **Bad Margins:** Making margins 0.2" to cram text in.
+5. **Fluff Skills:** Listing "Leadership" or "Microsoft Word" as skills.
+6. **Photo:** Never put your photo on a US finance resume.
+7. **Summary/Objective:** Delete it. Your objective is obviously to get the job.
+8. **Colored Text:** Black and white only.
+9. **Gaps in Timeline:** Explain gaps or format dates to minimize them.
+10. **Lying:** If you say you "Built an LBO model," you will be asked to walk through it.
+
+## Final Step: The "Fresh Eyes" Review
+
+You've looked at your resume for 10 hours; you are now blind to your own errors. You need a second pair of eyes—specifically, eyes that have screened thousands of these before.
+
+---
+
+*Don't let a formatting error be the reason you miss out on a $110K starting salary. Get a [Professional Resume Review](/resume-services) from finance professionals who catch what you miss.*
+
+*Ready to master the technical questions? Check out our [IB Technical Interview Guide](/playbooks/ib-technical-guide).*
     `,
   },
   {
-    slug: "superday-preparation",
-    title: "Superday Preparation Checklist",
-    summary: "Hour-by-hour preparation framework for final round interviews.",
-    category: "Interviews",
-    readTime: "6 min read",
-    publishedAt: "2024-11-20",
-    content: `
-Superdays are where offers are won or lost. After months of preparation and multiple interview rounds, everything comes down to one day of back-to-back interviews. This is how to maximize your odds.
-
-## The Week Before
-
-Review every technical concept. Not learn—review. New learning this close to the event indicates under-preparation.
-
-Finalize your stories. You should have 5-7 polished narratives covering leadership, teamwork, failure, and conflict. These should be rehearsed but not robotic.
-
-Research every interviewer if names are provided. LinkedIn, recent deals, published articles. Find connection points.
-
-## The Night Before
-
-Prepare everything physical: suit pressed, shoes polished, copies of resume, notepad. Eliminate morning decisions.
-
-Sleep is non-negotiable. Aim for 7-8 hours. No late-night cramming—it costs more in alertness than it gains in knowledge.
-
-## The Morning Of
-
-Arrive 15-20 minutes early. Use the time to calm nerves, not to cram.
-
-Eat a real breakfast. Your brain needs fuel for 4-6 hours of high-intensity interviewing.
-
-## During the Day
-
-Energy management matters. Stay hydrated. Use breaks to reset mentally, not to review notes.
-
-Treat every interview as if it is the first. Do not let a difficult interview affect subsequent ones. Interviewers rarely compare notes mid-day.
-
-## The Debrief
-
-Send thank-you notes within 24 hours. Brief, specific, professional. Reference something unique from each conversation.
-    `,
-  },
-  {
-    slug: "networking-cold-outreach",
-    title: "Cold Outreach That Gets Responses",
-    summary: "Email and LinkedIn templates with timing strategies that convert.",
-    category: "Networking",
-    readTime: "7 min read",
-    publishedAt: "2024-11-15",
-    content: `
-Cold outreach is a numbers game with skill modifiers. The right approach dramatically improves response rates.
-
-## The Fundamentals
-
-Keep it short. Three to four sentences maximum. Busy professionals will not read a long email from someone they do not know.
-
-Make the ask specific and small. "15 minutes to hear about your path" beats "I would love to pick your brain about finance."
-
-Demonstrate relevance. Reference something specific: a shared background, a deal they worked on, an article they wrote.
-
-## Email Structure That Works
-
-**Subject Line:** Keep it direct. "Quick Question - [Firm] [Group]" or "[Mutual Connection] Suggested I Reach Out"
-
-**Opening:** One sentence establishing who you are and why you are contacting them specifically.
-
-**Middle:** One sentence on what you are trying to learn or accomplish.
-
-**Close:** The specific ask with a timeframe. "Would you have 15 minutes this week or next for a brief call?"
-
-## Timing Matters
-
-Send emails Tuesday through Thursday, between 8-10 AM or 7-9 PM in the recipient's timezone. Avoid Monday mornings and Friday afternoons.
-
-Follow up once after 5-7 business days if no response. A brief "bumping this to the top of your inbox" is sufficient. After two attempts, move on.
-
-## Response Rate Expectations
-
-A 15-25% response rate on cold outreach is strong. Do not be discouraged by non-responses—it is not personal.
-    `,
-  },
-  {
-    slug: "stock-pitch-framework",
-    title: "Building a Stock Pitch From Scratch",
-    summary: "Step-by-step process for developing an investment thesis that stands out.",
+    slug: "learn-investment-banking-technicals-order",
+    title: "The Only Order You Should Learn Investment Banking Technicals In",
+    summary: "Accounting → Valuation → DCF → M&A → LBO: why sequence matters more than study time.",
     category: "Technical",
-    readTime: "15 min read",
-    publishedAt: "2024-11-10",
+    readTime: "20 min read",
+    publishedAt: "2025-12-08",
     content: `
-A stock pitch is the core demonstration of investing ability in hedge fund and asset management interviews. Strong pitches share common structural elements.
+Investment banking technical interviews test whether you understand finance—but more importantly, they test whether you understand it *in the right order*. Learning DCF models before you know how the three financial statements connect is like learning calculus before algebra.
 
-## The One-Sentence Thesis
+## Why Learning Order Matters More Than Study Time
 
-Start with the conclusion. "Company X is a long/short at $Y because [reason] with [catalyst] in [timeframe]."
+Most candidates fail not because they didn't study enough—they fail because they studied in the wrong sequence. They jump to DCF models without understanding accounting, then panic when asked "Walk me through how depreciation flows through the three statements."
 
-This forces clarity. If you cannot summarize your thesis in one sentence, you do not have a thesis.
+Investment banking technicals are hierarchical. Each concept builds on the previous one.
 
-## Business Overview
+## The Five-Level Hierarchy
 
-Explain what the company does in 2-3 sentences. Assume the interviewer has basic knowledge but has not studied this specific company.
+### Level 1: Accounting Fundamentals (Week 1-2)
 
-Cover: what they sell, who buys it, how they make money, and what drives unit economics.
+This is your foundation. Every technical question traces back to the three financial statements.
 
-## The Variant Perception
+**What You Must Master:**
 
-This is where most pitches fail. A variant perception is a view that differs from consensus and has a reasonable probability of proving correct.
+The income statement flows into both the balance sheet (through retained earnings) and the cash flow statement (through net income). Changes in balance sheet accounts explain the adjustments on the cash flow statement.
 
-"The company will grow revenue" is not a variant perception—everyone expects that. "The company will grow revenue 20% faster than consensus because of X factor the market is underappreciating" is a variant perception.
+**Common Questions:**
+- "Walk me through the three financial statements and how they're linked"
+- "If depreciation increases by $10, walk me through the impact on all three statements"
 
-## Catalysts
+**Time Investment:** 7-10 days until you can answer these in your sleep.
 
-Why will the market recognize your thesis in a reasonable timeframe? Catalysts include: earnings releases, new product launches, strategic announcements, regulatory changes, or management actions.
+### Level 2: Enterprise Value vs. Equity Value (Week 2-3)
 
-## Valuation
+**Enterprise Value** = Value of entire business operations = Equity Value + Net Debt + Preferred + Minority Interest - Non-Operating Assets
 
-Support your price target with clear methodology. Relative valuation (comps) and intrinsic valuation (DCF) together strengthen the case.
+**Equity Value** = Value to common shareholders = Share Price × Fully Diluted Shares
 
-## Risks and Mitigants
+**Time Investment:** 5-7 days. This concept is straightforward but critical.
 
-Every investment has risks. Identify the key ones and explain why they are manageable or priced in. This demonstrates intellectual honesty and thorough analysis.
+### Level 3: Valuation Methodologies (Week 3-5)
+
+The three core methods:
+
+1. **Comparable Company Analysis (Trading Comps):** Value based on public peer multiples
+2. **Precedent Transaction Analysis:** Value based on past M&A deal multiples (includes control premium)
+3. **DCF Analysis:** Value based on present value of future cash flows
+
+**The Five Steps of a DCF:**
+1. Project unlevered free cash flows (5-10 years)
+2. Calculate WACC
+3. Calculate terminal value
+4. Discount everything to present value
+5. Convert enterprise value to equity value
+
+**Time Investment:** 10-14 days. DCF is the most tested methodology.
+
+### Level 4: Merger Models (Week 5-6)
+
+M&A models determine whether an acquisition increases or decreases the acquirer's EPS (accretive vs. dilutive).
+
+**Quick Rule:** If acquirer's P/E > target's implied P/E, deal is likely accretive.
+
+**Time Investment:** 7-10 days.
+
+### Level 5: LBO Models (Week 6-7)
+
+LBO models calculate PE returns from acquiring a company with debt, operating it for 5-7 years, and selling.
+
+**Paper LBO Mental Math:**
+- Rule of 72: If equity doubles, IRR ≈ 72 / years
+- Rule of 114: If equity triples, IRR ≈ 114 / years
+- Rule of 144: If equity quadruples, IRR ≈ 144 / years
+
+**Time Investment:** 7-10 days.
+
+## The 6-Week Study Plan
+
+**Weeks 1-2:** Accounting + EV/Equity Value
+**Weeks 3-5:** Valuation methodologies (focus on DCF)
+**Week 5-6:** M&A models
+**Week 6-7:** LBO models
+
+## How to Know When You're Ready
+
+You're prepared when you can:
+1. Walk through the three statements and explain how a $10 change flows through all three in under 2 minutes
+2. Explain DCF steps and calculate WACC from memory
+3. Complete a paper LBO in 15-20 minutes
+4. Answer "Is this deal accretive or dilutive?" in under 30 seconds
+
+---
+
+*Want the full 400+ question bank with detailed answers? Get the [IB Technical Interview Guide](/playbooks/ib-technical-guide).*
+
+*Need to master LBO modeling specifically? Check out our [LBO Modeling Crash Course](/playbooks/lbo-modeling-course).*
     `,
   },
   {
-    slug: "pe-case-study-approach",
-    title: "Private Equity Case Study Approach",
-    summary: "Framework for tackling take-home and live case studies in PE interviews.",
+    slug: "100-investment-banking-technical-questions",
+    title: "100 Core Investment Banking Technical Questions by Topic",
+    summary: "The most frequently asked questions organized by category, with the concepts you need to actually understand them.",
+    category: "Technical",
+    readTime: "30 min read",
+    publishedAt: "2025-12-07",
+    content: `
+Investment banking technical interviews aren't designed to test whether you've memorized answers—they're designed to expose whether you actually understand finance well enough to explain it under pressure.
+
+## How Technical Questions Are Actually Distributed
+
+Based on analysis of real interview questions: **23% are "Walk me through a DCF"**. Another 20% ask about valuation methodologies, and 10% test financial statement linkages. These top three types account for 53% of everything you'll be asked.
+
+## Category 1: Accounting and Financial Statements
+
+**Q1: Walk me through the three financial statements and how they're linked.**
+
+The income statement shows profitability. The cash flow statement shows cash movements, starting with net income. The balance sheet shows assets, liabilities, and equity at a point in time. Net income flows to retained earnings on the balance sheet and is the starting point for the cash flow statement.
+
+**Q2: How does a $10 increase in depreciation flow through?**
+
+Income statement: Pre-tax income down $10, net income down $7.50 (at 25% tax). Cash flow: Start with NI (down $7.50), add back depreciation ($10). Net: cash up $2.50. Balance sheet: Cash up $2.50, PP&E down $10, retained earnings down $7.50.
+
+**Q3: Why do we add back depreciation on the cash flow statement?**
+
+Depreciation reduced net income but didn't use cash. We add it back to reflect the company still has that cash.
+
+## Category 2: Enterprise Value vs. Equity Value
+
+**Q9: What's the difference between enterprise value and equity value?**
+
+Equity value = value to common shareholders = share price × diluted shares. Enterprise value = value of entire business = equity value + net debt + preferred + minority interest - non-operating assets.
+
+**Q10: If a company issues $100M debt to buy back stock, what happens to EV and equity value?**
+
+Equity value decreases by $100M. Enterprise value stays the same—it's just a capital structure change.
+
+## Category 3: Valuation Methodologies
+
+**Q14: What are the three main ways to value a company?**
+
+1. Comparable Company Analysis (trading comps)
+2. Precedent Transaction Analysis (deal comps)
+3. Discounted Cash Flow (DCF)
+
+**Q15: When would you use each?**
+
+DCF for intrinsic fundamental value. Trading comps for market reality check. Precedent transactions when valuing for M&A (includes control premium).
+
+## Category 4: DCF Analysis (Most Tested)
+
+**Q18: Walk me through a DCF.**
+
+Step 1: Project unlevered free cash flows for 5-10 years. FCFF = EBIT × (1-Tax) + D&A - CapEx - ΔNWC.
+Step 2: Calculate WACC.
+Step 3: Calculate terminal value using perpetuity growth or exit multiple.
+Step 4: Discount all cash flows to present value.
+Step 5: Sum to get enterprise value, subtract net debt for equity value.
+
+**Q19: What discount rate do you use?**
+
+WACC for unlevered FCF. Cost of equity for levered FCF.
+
+**Q20: How do you calculate WACC?**
+
+WACC = (E/V × Cost of Equity) + (D/V × Cost of Debt × (1-Tax)). Cost of equity via CAPM: Risk-Free Rate + Beta × Market Risk Premium.
+
+## Category 5: M&A Analysis
+
+**Q26: Walk me through a merger model.**
+
+Calculate standalone financials for both companies. Determine purchase price and consideration (cash/stock). Model sources and uses. Calculate pro forma adjustments (new interest, new shares, synergies). Calculate pro forma EPS. Compare to standalone—if higher, accretive; if lower, dilutive.
+
+**Q27: Is a deal accretive if acquirer P/E is 20x and pays 15x for target?**
+
+Likely accretive. Acquirer is buying "cheaper" earnings relative to its own valuation.
+
+## Category 6: LBO Models
+
+**Q31: Walk me through an LBO.**
+
+Calculate entry EV using entry multiple. Structure sources (debt, equity) and uses (purchase price, fees). Project 5-7 year financials. Model debt paydown. Calculate exit EV, subtract remaining debt for exit equity. Calculate IRR and MOIC.
+
+**Q32: What's an ideal LBO candidate?**
+
+Strong, stable cash flows. Low capex. Strong market position. Operational improvement opportunity. Non-cyclical industry.
+
+**Q35: How do you calculate IRR quickly?**
+
+Rule of 72: Equity doubles, IRR ≈ 72/years.
+Rule of 114: Equity triples, IRR ≈ 114/years.
+Rule of 144: Equity quadruples, IRR ≈ 144/years.
+
+## How to Actually Learn These
+
+**Build Models From Scratch:** Don't just review—build a DCF and LBO from a blank Excel sheet.
+
+**Verbalize Your Logic:** Practice explaining out loud. Record yourself.
+
+**Focus on Concept Clusters:** Everything connects. Learn in order so each concept builds on the last.
+
+---
+
+*Want all 400+ questions with detailed answers? Get the [IB Technical Interview Guide](/playbooks/ib-technical-guide).*
+
+*Need to master LBO modeling? Our [LBO Modeling Crash Course](/playbooks/lbo-modeling-course) includes 3 full model templates.*
+    `,
+  },
+  {
+    slug: "cold-emailing-bankers-scripts",
+    title: "Cold Emailing Bankers: Exact Scripts, Subject Lines, and Follow-Up Strategies",
+    summary: "The 5 golden rules, plug-and-play templates, and timing strategies that actually get responses in 2026.",
+    category: "Networking",
+    readTime: "10 min read",
+    publishedAt: "2025-12-06",
+    content: `
+Networking in investment banking is a numbers game, but it's a game with specific rules. If you break them, your email gets deleted instantly. If you follow them, you get the 15-minute call that leads to the Superday.
+
+## The 5 Golden Rules of Cold Emailing
+
+1. **5 Sentences Maximum:** No one reads paragraphs on a phone. If they have to scroll, they delete.
+2. **No "Pick Your Brain":** This phrase signals "I want to waste your time." Ask for "advice on your experience in [specific group]."
+3. **Specific Availability:** Never ask "When are you free?" Offer 3 specific time slots.
+4. **Use Your .edu Email:** Gmail addresses often get filtered to spam.
+5. **One Thread Rule:** Always reply to your own email when following up.
+
+## Subject Lines That Get Opened
+
+**For Alumni (High Response Rate):**
+- *Student from [University] - Networking*
+- *[University] Sophomore / Investment Banking Advice*
+- *Introduction - [University] [Year] - [Name]*
+
+**For Non-Alumni:**
+- *Question on [Specific Deal] / [Your University] Student*
+- *Referral from [Mutual Contact Name]*
+
+**Avoid:** "Hello", "Coffee Chat", "Inquiry"
+
+## The "Plug-and-Play" Scripts
+
+### Scenario A: The "Warm" Alumnus Email
+
+**Subject:** [School] Student / Investment Banking Advice - [Name]
+
+Dear [Name],
+
+I hope you're having a good week.
+
+My name is [Name] and I'm a [Year] at [University] majoring in [Major]. I see that you previously were involved with [Student Club/Sport] on campus and are now working in [Group] at [Bank].
+
+I would appreciate the opportunity to briefly speak with you about your experience moving from [School] to [City/Bank]. I am free next Tuesday or Thursday after 2pm ET, but can work around whatever is convenient for you.
+
+Best,
+[Name]
+
+### Scenario B: The "Cold" Non-Alumnus Email
+
+**Subject:** Investment Banking Advice - [Name] ([Internship Experience])
+
+Dear [Name],
+
+I hope you are well.
+
+My name is [Name] and I am a [Year] at [University] with recent internship experience at [Previous Firm]. I noticed you recently worked on the [Deal Name] transaction and wanted to ask for your perspective on [Specific Detail].
+
+I know you are incredibly busy, but I would appreciate 10 minutes of your time. I am available [Time Option 1] or [Time Option 2] if either works.
+
+Best,
+[Name]
+
+## Finding Email Addresses
+
+Most banks follow standard formats:
+- **Goldman Sachs:** first.last@gs.com
+- **Morgan Stanley:** first.last@morganstanley.com
+- **JP Morgan:** first.last@jpmorgan.com
+- **Evercore:** first.last@evercore.com
+- **Lazard:** first.last@lazard.com
+- **Centerview:** flast@centerview.com (Note the difference!)
+
+## Timing and Follow-Up Strategy
+
+**When to Send:**
+- **Best Days:** Tuesday, Wednesday, Thursday
+- **Best Times:** 10am-2pm or 7:30pm-9pm
+- **Avoid:** Monday mornings, Friday afternoons, 2am
+
+**The Follow-Up Cadence:**
+
+**Send 1:** Initial email.
+**Wait:** 5-7 business days.
+**Send 2 (The Bump):** Reply to original thread.
+> "Hi [Name], just wanted to bump this in case it got buried. Would still love 10 minutes if you have a moment next week."
+
+**Wait:** 5-7 business days.
+**Send 3 (The Hail Mary):** Reply one last time.
+> "Hi [Name], I'll try one last time—if you aren't the right person, is there someone else in your group you'd recommend?"
+
+**Result:** If no reply after 3 attempts, move on. Don't email again for 6 months.
+
+## Tracking Your Efforts
+
+Create an Excel tracker with: Bank, Name, Role, Email, Date Sent, Date Followed Up, Status, Notes.
+
+---
+
+*Want 50+ more templates for every scenario? Get the [Networking & Cold Email Playbook](/playbooks/networking-cold-email-playbook).*
+
+*Got the interview? Make sure you don't blow it on technicals. Check out the [IB Technical Interview Guide](/playbooks/ib-technical-guide).*
+    `,
+  },
+  {
+    slug: "investment-banking-behavioral-interview-guide",
+    title: "Mastering the Investment Banking Behavioral Interview",
+    summary: "How to nail 'Walk me through your resume,' the 'Why' questions, and the Airport Test.",
     category: "Interviews",
-    readTime: "11 min read",
-    publishedAt: "2024-11-05",
+    readTime: "12 min read",
+    publishedAt: "2025-12-05",
     content: `
-PE case studies test your ability to evaluate an investment opportunity under time pressure. Whether take-home or live, the evaluation framework is consistent.
+You can have a 4.0 GPA from Wharton and know how to build an LBO model in your sleep, but if you fail the "Airport Test," you will not get an offer.
 
-## The Investment Decision Framework
+Investment banking interviews are split 50/50 between technicals and behaviorals. Technicals are binary—you're either right or wrong. Behaviorals are subjective. They answer the only question that matters to a VP at 2 AM: *"Can I stand to be around this person for 100 hours a week?"*
 
-Every case study answers one question: would you invest? Your framework should systematically address:
+## The Anchor: "Walk Me Through Your Resume"
 
-1. Is this a good business?
-2. Is now the right time?
-3. Is this the right price?
-4. What could go wrong?
+This is the first question in 99% of interviews. You have exactly 2-3 minutes to set the narrative arc of your life.
 
-## Take-Home Cases
+**The 4-Step Structure (The "Spark" Method):**
 
-You typically receive 3-7 days and company materials: financials, industry data, and sometimes a CIM. Structure your time:
+**1. The Spark (The Beginning):** Start with where you're from and the initial trigger for your interest.
+> "I grew up in Chicago and first got interested in finance when I started trading my own small portfolio in high school…"
 
-**Days 1-2:** Read everything. Build a basic model. Identify key questions.
-**Days 3-4:** Deep analysis. Stress-test assumptions. Build bull/bear cases.
-**Days 5-6:** Prepare presentation. Rehearse delivery. Anticipate questions.
+**2. The Growing Interest (College):** Move to your university choice and relevant activities.
+> "I chose [University] because of its strong business program. I joined the Investment Banking Club freshman year…"
 
-## Live Cases
+**3. The Professional Pivot (Internships):** Walk through work experience. For each role, explain what you did and why you moved.
+> "Last summer, I worked at [Firm]. While I enjoyed the client interaction, I realized I wanted larger, transaction-based deals, which led me to target investment banking…"
 
-You have 2-4 hours with limited materials. Efficiency is paramount.
+**4. The "Why You're Here" (The Close):** Bring it to the present.
+> "That experience confirmed IB is the right path. I'm specifically excited about [Bank] because of your strength in [Industry] and the conversations I've had with [Alum Name]."
 
-First 30 minutes: Understand the business and identify 2-3 key issues.
-Middle 60-90 minutes: Build a simple model. Make and support your decision.
-Final 30 minutes: Prepare a clear recommendation with key supporting points.
+**Fatal Mistake:** Reciting your resume line-by-line. They have your resume. They want the *story*.
 
-## What Separates Candidates
+## The "Why" Questions
 
-The best candidates demonstrate investment judgment, not just modeling ability. They identify the one or two factors that truly determine whether an investment works and focus their analysis there.
+**"Why Investment Banking?"**
 
-Average candidates try to analyze everything. Strong candidates prioritize ruthlessly.
-    `,
-  },
-  {
-    slug: "compensation-negotiation",
-    title: "Negotiating Your Finance Offer",
-    summary: "When and how to negotiate compensation in banking and buyside roles.",
-    category: "Career Strategy",
-    readTime: "5 min read",
-    publishedAt: "2024-10-28",
-    content: `
-Compensation negotiation in finance follows different rules than other industries. Understanding when and how to negotiate prevents costly mistakes.
+**Bad:** "I want to make money and exit to PE." (Too mercenary)
+**Bad:** "I love finance and modeling." (You can do that in accounting)
 
-## The Reality of Entry-Level Offers
+**Good (The "High-Stakes" Angle):**
+> "I want to work in investment banking because I thrive in high-pressure environments where my work has tangible impact. In my last internship, I loved the intensity of [Project], but I wanted to be closer to transaction execution. Banking offers the fastest way to build that skillset on live deals."
 
-Junior offers at bulge brackets and major PE firms are typically non-negotiable. These firms make hundreds of similar offers annually and maintain strict pay bands for fairness and efficiency.
+**"Why Our Firm?"**
 
-Attempting to negotiate a first-year analyst offer at Goldman Sachs signals you do not understand the industry. This can create negative impressions before you start.
+**Bad:** "You're a top-tier bulge bracket with great culture." (Applies to everyone)
 
-## When Negotiation Works
+**Good (The "People + Deal" Combo):**
+> "Two reasons. First, I've been following your work on [Specific Deal]—I found the structure really interesting. Second, the people. I've spoken with [Alum] and [Analyst], and they both emphasized how senior bankers here invest in junior development."
 
-Negotiation becomes appropriate as you gain seniority and market alternatives. Associate and VP lateral moves, especially to smaller firms or those actively competing for talent, offer negotiation room.
+## The "Airport Test" (Likability)
 
-Signing bonuses are often more flexible than base salary, particularly for candidates leaving guaranteed money on the table.
+The "Airport Test": *If I were stuck at O'Hare with this candidate for 4 hours during a flight delay, would I want to kill myself?*
 
-## The Approach
+**How to Pass:**
+1. **Have Hobbies:** If asked "What do you do for fun?", don't say "Read the Wall Street Journal." Say "I'm training for a marathon" or "I'm trying to cook every recipe in this cookbook."
+2. **Smile and Banter:** If they ask "How are you?", don't just say "Good." Say "Doing well, though I'm ready for this Chicago winter to be over. How's your week going?"
+3. **Read the Room:** Mirror their energy. If serious, be professional. If laid back, loosen up slightly.
 
-Lead with your value, not your needs. "Given my deal experience in X sector and my relationships with Y clients, I believe a higher signing bonus reflects my immediate contribution."
+## Structured "War Stories" (The STAR Method)
 
-Have alternatives. Real leverage comes from competing offers or the credible ability to stay in your current role.
+Prepare 5 "Core Stories" that adapt to any behavioral question. Use **STAR**:
 
-## What Not to Do
+- **Situation (10%):** Set the scene. "During my internship at X…"
+- **Task (10%):** What was the problem?
+- **Action (70%):** What did **YOU** specifically do?
+- **Result (10%):** The outcome.
 
-Never negotiate without an offer in hand. Never use personal expenses as justification. Never accept verbally then try to renegotiate written terms.
+**The "Greatest Weakness" Trap:**
 
-The goal is to optimize your compensation while maintaining the relationship. Finance is a small industry with long memories.
+**Don't say:** "I work too hard" (Humble-brag—they hate this)
+**Don't say:** "I'm bad at math" (Disqualifying)
+
+**Do say:** A real weakness you're actively fixing.
+> "I sometimes struggle with delegating because I want everything perfect. In my last project, I realized this created bottlenecks, so I created a shared tracker to assign tasks. It's something I'm still improving."
+
+## The Final 5 Minutes: Asking Good Questions
+
+Saying "No" to "Do you have any questions?" is an automatic fail.
+
+**Ask specific questions that show you were listening:**
+- "You mentioned you worked on [Deal X]—how did the team handle the regulatory challenges?"
+- "What's the one skill that separates a top-bucket analyst from an average one in this group?"
+
+---
+
+*Want 30+ example stories and frameworks for every behavioral question? Get the [Walk Me Through Your Resume Playbook](/playbooks/resume-story-playbook).*
+
+*Ready to nail the technicals too? Check out the [IB Technical Interview Guide](/playbooks/ib-technical-guide).*
     `,
   },
 ]
