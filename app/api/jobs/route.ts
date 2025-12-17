@@ -60,10 +60,12 @@ async function fetchFromJSearch(query: string): Promise<Job[]> {
   const apiKey = process.env.RAPIDAPI_KEY
 
   if (!apiKey) {
-    console.log("No RAPIDAPI_KEY found, using sample jobs")
+    console.error("❌ RAPIDAPI_KEY environment variable is not set!")
     lastFetchReason = "no_key"
     return getSampleJobs()
   }
+  
+  console.log("✅ RAPIDAPI_KEY is set, fetching from JSearch...")
 
   try {
     // Multiple search queries to get diverse results including internships
@@ -179,7 +181,7 @@ async function fetchFromJSearch(query: string): Promise<Job[]> {
     lastFetchReason = allJobs.length > 0 ? "success" : "sample"
     return combinedJobs
   } catch (error) {
-    console.error("JSearch fetch error:", error)
+    console.error("❌ JSearch fetch error:", error instanceof Error ? error.message : error)
     lastFetchReason = "sample"
     return getSampleJobs()
   }
