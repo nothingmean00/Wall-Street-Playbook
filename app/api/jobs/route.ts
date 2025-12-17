@@ -56,7 +56,7 @@ const CACHE_DURATION = 1000 * 60 * 60 * 4 // 4 hour cache
 // Track job source for response
 let lastFetchReason = "sample"
 
-async function fetchFromLinkedIn(query: string): Promise<Job[]> {
+async function fetchFromActiveJobsDB(query: string): Promise<Job[]> {
   const apiKey = process.env.RAPIDAPI_KEY
 
   if (!apiKey) {
@@ -65,13 +65,13 @@ async function fetchFromLinkedIn(query: string): Promise<Job[]> {
     return getSampleJobs()
   }
   
-  console.log("✅ RAPIDAPI_KEY is set, fetching from LinkedIn Job Search API...")
+  console.log("✅ RAPIDAPI_KEY is set, fetching from Active Jobs DB...")
 
   try {
     const allJobs: Job[] = []
     const seenIds = new Set<string>()
     
-    // Finance job title filters
+    // Finance job title filters - full-time AND internships
     const titleFilters = query 
       ? [query]
       : [
@@ -79,22 +79,23 @@ async function fetchFromLinkedIn(query: string): Promise<Job[]> {
           "private equity",
           "finance intern",
           "financial analyst",
+          "hedge fund",
         ]
     
     const fetchPromises = titleFilters.map(async (filter) => {
       const response = await fetch(
-        `https://linkedin-job-search-api.p.rapidapi.com/active-jb-7d?limit=100&offset=0&description_type=text&title_filter=${encodeURIComponent(filter)}`,
+        `https://active-jobs-db.p.rapidapi.com/active-ats-7d?limit=100&offset=0&description_type=text&title_filter=${encodeURIComponent(filter)}`,
         {
           method: "GET",
           headers: {
             "X-RapidAPI-Key": apiKey,
-            "X-RapidAPI-Host": "linkedin-job-search-api.p.rapidapi.com",
+            "X-RapidAPI-Host": "active-jobs-db.p.rapidapi.com",
           },
         }
       )
 
       if (!response.ok) {
-        console.error(`LinkedIn API error for filter "${filter}": ${response.status}`)
+        console.error(`Active Jobs DB error for filter "${filter}": ${response.status}`)
         return []
       }
 
@@ -117,13 +118,13 @@ async function fetchFromLinkedIn(query: string): Promise<Job[]> {
           id: jobId,
           title: job.title || "Finance Role",
           company: job.organization || "Confidential",
-          companyLogo: undefined,
+          companyLogo: job.organization_logo || undefined,
           companyWebsite: job.organization_url || undefined,
-          location: formatLinkedInLocation(job),
-          type: determineJobTypeLinkedIn(job),
+          location: formatActiveJobsLocation(job),
+          type: determineJobTypeActive(job),
           salary: job.salary_raw || undefined,
-          posted: formatPostedDate(job.date_posted),
-          url: job.url || `https://www.linkedin.com/jobs/view/${jobId}`,
+          posted: formatPostedDate(job.date_posted || job.date_created),
+          url: job.url || "#",
           description: job.description?.substring(0, 300) || undefined,
           category: categorizeJob(job.title || ""),
         }
@@ -134,7 +135,7 @@ async function fetchFromLinkedIn(query: string): Promise<Job[]> {
 
     const internshipCount = allJobs.filter(j => j.type === "Internship").length
     const fullTimeCount = allJobs.filter(j => j.type === "Full-time").length
-    console.log(`Fetched ${allJobs.length} live LinkedIn jobs (${internshipCount} internships, ${fullTimeCount} full-time)`)
+    console.log(`Fetched ${allJobs.length} live jobs (${internshipCount} internships, ${fullTimeCount} full-time)`)
 
     // NO SAMPLES - only return live jobs
     if (allJobs.length > 0) {
@@ -147,30 +148,27 @@ async function fetchFromLinkedIn(query: string): Promise<Job[]> {
     lastFetchReason = "sample"
     return getSampleJobs()
   } catch (error) {
-    console.error("❌ LinkedIn API error:", error instanceof Error ? error.message : error)
+    console.error("❌ Active Jobs DB error:", error instanceof Error ? error.message : error)
     lastFetchReason = "sample"
     return getSampleJobs()
   }
 }
 
-function formatLinkedInLocation(job: any): string {
-  if (job.location_type === "REMOTE") return "Remote"
-  const locations = job.locations_raw
-  if (Array.isArray(locations) && locations.length > 0) {
-    const loc = locations[0]?.address
-    if (loc) {
-      const parts = [loc.addressLocality, loc.addressRegion, loc.addressCountry].filter(Boolean)
-      return parts.join(", ") || "United States"
-    }
-  }
-  return "United States"
+function formatActiveJobsLocation(job: any): string {
+  if (job.locations_derived_country === "Remote") return "Remote"
+  const parts = [
+    job.locations_derived_locality,
+    job.locations_derived_region,
+    job.locations_derived_country
+  ].filter(Boolean)
+  return parts.join(", ") || "United States"
 }
 
-function determineJobTypeLinkedIn(job: any): string {
+function determineJobTypeActive(job: any): string {
   const title = (job.title || "").toLowerCase()
   const empType = (job.employment_type || "").toLowerCase()
   
-  if (title.includes("intern") || title.includes("summer analyst") || title.includes("summer associate") || title.includes("summer 20")) {
+  if (title.includes("intern") || title.includes("summer analyst") || title.includes("summer associate") || title.includes("summer 20") || title.includes("co-op")) {
     return "Internship"
   }
   if (empType.includes("intern")) return "Internship"
@@ -777,7 +775,7 @@ export async function GET(request: Request) {
     searchQuery = FINANCE_QUERIES[queryIndex]
   }
   
-  const jobs = await fetchFromLinkedIn(searchQuery)
+  const jobs = await fetchFromActiveJobsDB(searchQuery)
 
   // Update cache if no specific query
   if (!query) {
