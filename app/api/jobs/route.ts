@@ -81,8 +81,8 @@ async function fetchFromJSearch(query: string): Promise<Job[]> {
       queriesToFetch = [
         "investment banking analyst",
         "private equity associate", 
-        "investment banking summer analyst intern",
-        "finance intern summer 2025"
+        "summer analyst investment banking",
+        "finance intern"
       ]
     }
     
@@ -179,7 +179,14 @@ function determineJobType(job: any): string {
   const title = (job.job_title || "").toLowerCase()
   const type = (job.job_employment_type || "").toLowerCase()
   
-  if (title.includes("intern") || title.includes("summer analyst") || title.includes("summer associate")) {
+  if (
+    title.includes("intern") || 
+    title.includes("summer analyst") || 
+    title.includes("summer associate") ||
+    title.includes("summer 20") || // Catch Summer 2025, 2026 etc
+    (title.includes("summer") && title.includes("analyst")) ||
+    title.includes("co-op")
+  ) {
     return "Internship"
   }
   if (type.includes("intern")) return "Internship"
