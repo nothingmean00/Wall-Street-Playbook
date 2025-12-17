@@ -19,6 +19,9 @@ BLOB_READ_WRITE_TOKEN=vercel_blob_xxx
 # Resend (Email)
 RESEND_API_KEY=re_xxx
 
+# Jobs API (RapidAPI - JSearch)
+RAPIDAPI_KEY=your_rapidapi_key_here
+
 # App URL
 NEXT_PUBLIC_APP_URL=https://wallstreetplaybook.com
 ```
@@ -75,7 +78,18 @@ Go to [Stripe Dashboard > Products](https://dashboard.stripe.com/products) and c
 
 ---
 
-## 4. Resend Email Setup
+## 4. JSearch Jobs API Setup (RapidAPI)
+
+1. Go to [rapidapi.com](https://rapidapi.com) and create a free account
+2. Subscribe to [JSearch API](https://rapidapi.com/letscrape-6bRBa3QguO5/api/jsearch) (Free tier: 500 requests/month)
+3. Copy your RapidAPI key from the API dashboard
+4. Add it to `RAPIDAPI_KEY` in your `.env.local`
+
+The jobs board will automatically fall back to sample jobs if the API is unavailable.
+
+---
+
+## 5. Resend Email Setup
 
 1. Go to [resend.com](https://resend.com) and create account
 2. Add your domain: `wallstreetplaybook.com`
@@ -89,7 +103,7 @@ Go to [Stripe Dashboard > Products](https://dashboard.stripe.com/products) and c
 
 ---
 
-## 5. Deploy to Vercel
+## 6. Deploy to Vercel
 
 ```bash
 # Install Vercel CLI
@@ -116,6 +130,7 @@ Add all the environment variables from `.env.local` to your Vercel project setti
 | `/api/webhook` | POST | Stripe webhook handler |
 | `/api/download` | GET | Secure file download |
 | `/api/upload-resume` | POST | Resume file upload |
+| `/api/jobs` | GET | Finance job listings (JSearch API) |
 | `/api/init-db` | POST | Initialize database (dev only) |
 
 ---

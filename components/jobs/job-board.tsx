@@ -7,6 +7,8 @@ interface Job {
   id: string
   title: string
   company: string
+  companyLogo?: string
+  companyWebsite?: string
   location: string
   type: string
   salary?: string
@@ -14,6 +16,8 @@ interface Job {
   url: string
   description?: string
   category: string
+  benefits?: string[]
+  applyOptions?: { publisher: string; url: string }[]
 }
 
 const FINANCE_CATEGORIES = [
@@ -229,53 +233,88 @@ export function JobBoard() {
               className="group rounded-xl border border-gray-200 bg-white p-6 shadow-sm transition-all hover:border-gold/30 hover:shadow-md"
             >
               <div className="flex flex-col gap-4 sm:flex-row sm:items-start sm:justify-between">
-                <div className="flex-grow">
-                  {/* Category Badge */}
-                  <span className={`inline-block rounded-full px-3 py-1 text-xs font-medium ${getCategoryColor(job.category)}`}>
-                    {job.category}
-                  </span>
-
-                  {/* Job Title */}
-                  <h3 className="mt-3 text-lg font-semibold text-navy group-hover:text-gold transition-colors">
-                    {job.title}
-                  </h3>
-
-                  {/* Company & Location */}
-                  <div className="mt-2 flex flex-wrap items-center gap-4 text-sm text-gray-600">
-                    <span className="flex items-center gap-1.5">
-                      <Building2 className="h-4 w-4" />
-                      {job.company}
-                    </span>
-                    <span className="flex items-center gap-1.5">
-                      <MapPin className="h-4 w-4" />
-                      {job.location}
-                    </span>
-                    <span className="flex items-center gap-1.5">
-                      <Clock className="h-4 w-4" />
-                      {job.posted}
-                    </span>
-                  </div>
-
-                  {/* Description */}
-                  {job.description && (
-                    <p className="mt-3 text-sm text-gray-600 line-clamp-2">{job.description}</p>
+                <div className="flex gap-4 flex-grow">
+                  {/* Company Logo */}
+                  {job.companyLogo ? (
+                    <div className="flex-shrink-0">
+                      <img
+                        src={job.companyLogo}
+                        alt={`${job.company} logo`}
+                        className="h-12 w-12 rounded-lg object-contain bg-gray-50 p-1"
+                        onError={(e) => {
+                          e.currentTarget.style.display = 'none'
+                        }}
+                      />
+                    </div>
+                  ) : (
+                    <div className="flex-shrink-0 h-12 w-12 rounded-lg bg-gray-100 flex items-center justify-center">
+                      <Building2 className="h-6 w-6 text-gray-400" />
+                    </div>
                   )}
-
-                  {/* Tags */}
-                  <div className="mt-4 flex flex-wrap items-center gap-2">
-                    <span className="rounded-md bg-gray-100 px-2.5 py-1 text-xs font-medium text-gray-700">
-                      {job.type}
+                  
+                  <div className="flex-grow min-w-0">
+                    {/* Category Badge */}
+                    <span className={`inline-block rounded-full px-3 py-1 text-xs font-medium ${getCategoryColor(job.category)}`}>
+                      {job.category}
                     </span>
-                    {job.salary && (
-                      <span className="rounded-md bg-green-50 px-2.5 py-1 text-xs font-medium text-green-700">
-                        {job.salary}
+
+                    {/* Job Title */}
+                    <h3 className="mt-2 text-lg font-semibold text-navy group-hover:text-gold transition-colors">
+                      {job.title}
+                    </h3>
+
+                    {/* Company & Location */}
+                    <div className="mt-2 flex flex-wrap items-center gap-4 text-sm text-gray-600">
+                      <span className="flex items-center gap-1.5">
+                        {job.companyWebsite ? (
+                          <a 
+                            href={job.companyWebsite} 
+                            target="_blank" 
+                            rel="noopener noreferrer"
+                            className="hover:text-gold transition-colors"
+                          >
+                            {job.company}
+                          </a>
+                        ) : (
+                          job.company
+                        )}
                       </span>
+                      <span className="flex items-center gap-1.5">
+                        <MapPin className="h-4 w-4" />
+                        {job.location}
+                      </span>
+                      <span className="flex items-center gap-1.5">
+                        <Clock className="h-4 w-4" />
+                        {job.posted}
+                      </span>
+                    </div>
+
+                    {/* Description */}
+                    {job.description && (
+                      <p className="mt-3 text-sm text-gray-600 line-clamp-2">{job.description}</p>
                     )}
+
+                    {/* Tags */}
+                    <div className="mt-4 flex flex-wrap items-center gap-2">
+                      <span className="rounded-md bg-gray-100 px-2.5 py-1 text-xs font-medium text-gray-700">
+                        {job.type}
+                      </span>
+                      {job.salary && (
+                        <span className="rounded-md bg-green-50 px-2.5 py-1 text-xs font-medium text-green-700">
+                          {job.salary}
+                        </span>
+                      )}
+                      {job.benefits && job.benefits.length > 0 && (
+                        <span className="rounded-md bg-blue-50 px-2.5 py-1 text-xs font-medium text-blue-700">
+                          {job.benefits.length} benefits
+                        </span>
+                      )}
+                    </div>
                   </div>
                 </div>
 
                 {/* Apply Button */}
-                <div className="flex-shrink-0">
+                <div className="flex-shrink-0 self-start">
                   <a
                     href={job.url}
                     target="_blank"
