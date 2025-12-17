@@ -4667,3 +4667,13 @@ It can also happen if the client has a browser extension installed which messes 
 [00:41:44.063] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
 [00:41:44.063] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
 [00:41:44.063] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/?r=1 color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/?r=1","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1765934920319}
+[01:05:37.539] Server  ERROR   C:\Users\malik\Downloads\wall-street-playbook\node_modules\next\dist\server\dev\log-requests.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:05:37.551] Server  ERROR   C:\Users\malik\Downloads\wall-street-playbook\node_modules\next\dist\server\dev\next-dev-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:05:37.566] Server  ERROR   Error: EPIPE: broken pipe, write
+[01:05:37.570] Server  ERROR   C:\Users\malik\Downloads\wall-street-playbook\node_modules\next\dist\server\dev\log-requests.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:05:37.571] Server  ERROR   C:\Users\malik\Downloads\wall-street-playbook\node_modules\next\dist\server\dev\next-dev-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:05:37.573] Server  ERROR    ⨯ "uncaughtException:" Error: EPIPE: broken pipe, write
+[01:05:37.577] Server  ERROR   C:\Users\malik\Downloads\wall-street-playbook\node_modules\next\dist\server\dev\log-requests.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:05:37.578] Server  ERROR   C:\Users\malik\Downloads\wall-street-playbook\node_modules\next\dist\server\dev\next-dev-server.js: Invalid source map. Only conformant source maps can be used to find the original code. Cause: Error: sourceMapURL could not be parsed
+[01:05:37.580] Server  ERROR    ⨯ "uncaughtException: " Error: EPIPE: broken pipe, write
+[01:05:37.845] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold

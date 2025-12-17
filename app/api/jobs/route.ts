@@ -72,21 +72,26 @@ async function fetchFromJSearch(query: string): Promise<Job[]> {
     const searchQueries = query 
       ? [query]
       : [
-          "investment banking analyst USA",
-          "private equity associate USA", 
-          "finance summer analyst intern 2025",
-          "hedge fund financial analyst USA",
+          // Full-time focused queries
+          "financial analyst full time",
+          "investment analyst",
+          "M&A analyst associate",
+          "equity research analyst",
+          // Internship focused queries  
+          "finance intern summer 2025",
+          "investment banking intern",
+          "financial analyst intern",
         ]
     
     const allJobs: Job[] = []
     const seenIds = new Set<string>()
     
-    // Fetch from multiple queries in parallel (but limit to 2 to conserve API calls)
-    const queriesToFetch = searchQueries.slice(0, 2)
+    // Fetch from multiple queries in parallel (use 4 queries for more variety)
+    const queriesToFetch = searchQueries.slice(0, 4)
     
     const fetchPromises = queriesToFetch.map(async (searchQuery) => {
       const response = await fetch(
-        `https://jsearch.p.rapidapi.com/search?query=${encodeURIComponent(searchQuery)}&page=1&num_pages=3&date_posted=month`,
+        `https://jsearch.p.rapidapi.com/search?query=${encodeURIComponent(searchQuery)}&page=1&num_pages=5&date_posted=month`,
         {
           method: "GET",
           headers: {
