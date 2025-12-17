@@ -71,28 +71,18 @@ async function fetchFromJSearch(query: string): Promise<Job[]> {
     const allJobs: Job[] = []
     const seenIds = new Set<string>()
 
-    // Define queries with optional parameters for precise targeting
-    let fetchConfigs: { q: string; params?: string }[] = []
-
-    if (query) {
-      fetchConfigs = [{ q: query }]
-    } else {
-      // Balanced mix: Full-time and Internships
-      fetchConfigs = [
-        { q: "investment banking analyst", params: "&employment_types=FULLTIME" },
-        { q: "private equity associate", params: "&employment_types=FULLTIME" },
-        { q: "summer analyst", params: "&employment_types=INTERN" },
-        { q: "finance intern", params: "&employment_types=INTERN" },
-        { q: "investment banking", params: "&employment_types=INTERN" }
-      ]
-    }
+    // Simple queries - internships and full-time
+    const queries = query ? [query] : [
+      "investment banking analyst",
+      "private equity associate",
+      "finance intern 2025",
+      "investment banking summer analyst",
+      "financial analyst intern"
+    ]
     
-    const fetchPromises = fetchConfigs.map(async ({ q, params }) => {
-      let url = `https://jsearch.p.rapidapi.com/search?query=${encodeURIComponent(q)}&page=1&num_pages=3&date_posted=month`
-      if (params) url += params
-
+    const fetchPromises = queries.map(async (q) => {
       const response = await fetch(
-        url,
+        `https://jsearch.p.rapidapi.com/search?query=${encodeURIComponent(q)}&page=1&num_pages=5&date_posted=month`,
         {
           method: "GET",
           headers: {
