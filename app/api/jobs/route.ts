@@ -145,7 +145,7 @@ async function fetchFromJSearch(query: string): Promise<Job[]> {
 
     console.log(`Fetched ${allJobs.length} finance jobs from JSearch`)
 
-    // Always merge with sample jobs to ensure internships and variety
+    // Always merge with sample jobs to ensure variety of job types
     const sampleJobs = getSampleJobs()
     const combinedJobs = [...allJobs]
     
@@ -153,23 +153,24 @@ async function fetchFromJSearch(query: string): Promise<Job[]> {
     const sampleInternships = sampleJobs.filter(j => j.type === "Internship")
     const sampleFullTime = sampleJobs.filter(j => j.type !== "Internship")
     
-    // Check how many internships we have from live data
+    // Check how many of each type we have from live data
     const liveInternships = allJobs.filter(j => j.type === "Internship").length
+    const liveFullTime = allJobs.filter(j => j.type === "Full-time").length
     
-    // Always add sample internships if we don't have enough from live data
-    if (liveInternships < 10) {
-      for (const sample of sampleInternships) {
-        if (!seenIds.has(sample.id)) {
+    // Always add sample full-time jobs if we don't have enough from live data
+    if (liveFullTime < 15) {
+      for (const sample of sampleFullTime) {
+        if (!seenIds.has(sample.id) && combinedJobs.length < 60) {
           combinedJobs.push(sample)
           seenIds.add(sample.id)
         }
       }
     }
     
-    // Add some sample full-time jobs if we have fewer than 20 total live jobs
-    if (allJobs.length < 20) {
-      for (const sample of sampleFullTime) {
-        if (!seenIds.has(sample.id) && combinedJobs.length < 50) {
+    // Add sample internships if we don't have enough from live data
+    if (liveInternships < 15) {
+      for (const sample of sampleInternships) {
+        if (!seenIds.has(sample.id) && combinedJobs.length < 60) {
           combinedJobs.push(sample)
           seenIds.add(sample.id)
         }
