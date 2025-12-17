@@ -71,12 +71,12 @@ async function fetchFromJSearch(query: string): Promise<Job[]> {
     const allJobs: Job[] = []
     const seenIds = new Set<string>()
 
-    // Simple queries - internships and full-time
+    // Queries for jobs AND internships
     const queries = query ? [query] : [
       "investment banking analyst",
       "private equity associate",
-      "finance intern 2025",
-      "investment banking summer analyst",
+      "finance internship",
+      "investment banking summer 2026",
       "financial analyst intern"
     ]
     
