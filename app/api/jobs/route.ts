@@ -155,13 +155,18 @@ async function fetchFromActiveJobsDB(query: string): Promise<Job[]> {
 }
 
 function formatActiveJobsLocation(job: any): string {
-  if (job.locations_derived_country === "Remote") return "Remote"
-  const parts = [
-    job.locations_derived_locality,
-    job.locations_derived_region,
-    job.locations_derived_country
-  ].filter(Boolean)
-  return parts.join(", ") || "United States"
+  if (job.remote_derived) return "Remote"
+  // locations_derived is an array like ["New York, New York, United States"]
+  if (Array.isArray(job.locations_derived) && job.locations_derived.length > 0) {
+    return job.locations_derived[0]
+  }
+  // Fallback to cities_derived
+  if (Array.isArray(job.cities_derived) && job.cities_derived.length > 0) {
+    const city = job.cities_derived[0]
+    const region = job.regions_derived?.[0]
+    return region ? `${city}, ${region}` : city
+  }
+  return "United States"
 }
 
 function determineJobTypeActive(job: any): string {
