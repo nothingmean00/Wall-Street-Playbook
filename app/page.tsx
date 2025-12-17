@@ -7,6 +7,7 @@ import { FeaturedPlaybooks } from "@/components/home/featured-playbooks"
 import { ResumeServicesSection } from "@/components/home/resume-services-section"
 import { WhyItWorks } from "@/components/home/why-it-works"
 import { BlogPreview } from "@/components/home/blog-preview"
+import { JobsPreview } from "@/components/home/jobs-preview"
 import { CTASection } from "@/components/home/cta-section"
 
 export const metadata: Metadata = {
@@ -27,6 +28,7 @@ export default function HomePage() {
         <WhatYouGet />
         <FeaturedPlaybooks />
         <ResumeServicesSection />
+        <JobsPreview />
         <WhyItWorks />
         <BlogPreview />
         <CTASection />
