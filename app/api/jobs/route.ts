@@ -68,26 +68,23 @@ async function fetchFromJSearch(query: string): Promise<Job[]> {
   console.log("✅ RAPIDAPI_KEY is set, fetching from JSearch...")
 
   try {
-    // Multiple search queries to get diverse results - mix of full-time and internships
-    const searchQueries = query 
-      ? [query]
-      : [
-          // Full-time focused queries
-          "financial analyst full time",
-          "investment analyst",
-          "M&A analyst associate",
-          "equity research analyst",
-          // Internship focused queries  
-          "finance intern summer 2025",
-          "investment banking intern",
-          "financial analyst intern",
-        ]
-    
     const allJobs: Job[] = []
     const seenIds = new Set<string>()
+
+    // Determine queries to run
+    let queriesToFetch: string[] = []
     
-    // Fetch from multiple queries in parallel (use 4 queries for more variety)
-    const queriesToFetch = searchQueries.slice(0, 4)
+    if (query) {
+      queriesToFetch = [query]
+    } else {
+      // Default mix: 2 full-time, 2 internships
+      queriesToFetch = [
+        "investment banking analyst",
+        "private equity associate", 
+        "investment banking summer analyst intern",
+        "finance intern summer 2025"
+      ]
+    }
     
     const fetchPromises = queriesToFetch.map(async (searchQuery) => {
       const response = await fetch(
@@ -150,42 +147,17 @@ async function fetchFromJSearch(query: string): Promise<Job[]> {
 
     console.log(`Fetched ${allJobs.length} finance jobs from JSearch`)
 
-    // Always merge with sample jobs to ensure variety of job types
-    const sampleJobs = getSampleJobs()
-    const combinedJobs = [...allJobs]
-    
-    // Separate internships from full-time in sample jobs
-    const sampleInternships = sampleJobs.filter(j => j.type === "Internship")
-    const sampleFullTime = sampleJobs.filter(j => j.type !== "Internship")
-    
-    // Check how many of each type we have from live data
-    const liveInternships = allJobs.filter(j => j.type === "Internship").length
-    const liveFullTime = allJobs.filter(j => j.type === "Full-time").length
-    
-    // Always add sample full-time jobs if we don't have enough from live data
-    if (liveFullTime < 15) {
-      for (const sample of sampleFullTime) {
-        if (!seenIds.has(sample.id) && combinedJobs.length < 60) {
-          combinedJobs.push(sample)
-          seenIds.add(sample.id)
-        }
-      }
+    // If we have live jobs, return them directly without merging samples
+    // The user requested "no samples" when live data is available
+    if (allJobs.length > 0) {
+      lastFetchReason = "success"
+      return allJobs
     }
-    
-    // Add sample internships if we don't have enough from live data
-    if (liveInternships < 15) {
-      for (const sample of sampleInternships) {
-        if (!seenIds.has(sample.id) && combinedJobs.length < 60) {
-          combinedJobs.push(sample)
-          seenIds.add(sample.id)
-        }
-      }
-    }
-    
-    console.log(`Total jobs after merging: ${combinedJobs.length} (${combinedJobs.filter(j => j.type === "Internship").length} internships)`)
-    
-    lastFetchReason = allJobs.length > 0 ? "success" : "sample"
-    return combinedJobs
+
+    // Only fallback to samples if absolutely no live jobs were found (API down)
+    console.warn("⚠️ No live jobs found, falling back to samples")
+    lastFetchReason = "sample"
+    return getSampleJobs()
   } catch (error) {
     console.error("❌ JSearch fetch error:", error instanceof Error ? error.message : error)
     lastFetchReason = "sample"
