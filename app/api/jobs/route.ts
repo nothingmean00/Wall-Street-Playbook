@@ -56,7 +56,7 @@ const CACHE_DURATION = 1000 * 60 * 60 * 4 // 4 hour cache
 // Track job source for response
 let lastFetchReason = "sample"
 
-async function fetchFromJSearch(query: string): Promise<Job[]> {
+async function fetchFromLinkedIn(query: string): Promise<Job[]> {
   const apiKey = process.env.RAPIDAPI_KEY
 
   if (!apiKey) {
@@ -65,41 +65,41 @@ async function fetchFromJSearch(query: string): Promise<Job[]> {
     return getSampleJobs()
   }
   
-  console.log("✅ RAPIDAPI_KEY is set, fetching from JSearch...")
+  console.log("✅ RAPIDAPI_KEY is set, fetching from LinkedIn Job Search API...")
 
   try {
     const allJobs: Job[] = []
     const seenIds = new Set<string>()
     
-    // Queries for LIVE full-time jobs AND LIVE internships
-    const queries = query 
+    // Finance job title filters
+    const titleFilters = query 
       ? [query]
       : [
-          "investment banking analyst",
-          "private equity associate",
-          "finance internship",
-          "investment banking summer analyst",
+          "investment banking",
+          "private equity",
+          "finance intern",
+          "financial analyst",
         ]
     
-    const fetchPromises = queries.map(async (q) => {
+    const fetchPromises = titleFilters.map(async (filter) => {
       const response = await fetch(
-        `https://jsearch.p.rapidapi.com/search?query=${encodeURIComponent(q)}&page=1&num_pages=5&date_posted=month`,
+        `https://linkedin-job-search-api.p.rapidapi.com/active-jb-7d?limit=100&offset=0&description_type=text&title_filter=${encodeURIComponent(filter)}`,
         {
           method: "GET",
           headers: {
             "X-RapidAPI-Key": apiKey,
-            "X-RapidAPI-Host": "jsearch.p.rapidapi.com",
+            "X-RapidAPI-Host": "linkedin-job-search-api.p.rapidapi.com",
           },
         }
       )
 
       if (!response.ok) {
-        console.error(`JSearch API error for query "${q}": ${response.status}`)
+        console.error(`LinkedIn API error for filter "${filter}": ${response.status}`)
         return []
       }
 
       const data = await response.json()
-      return data.data || []
+      return Array.isArray(data) ? data : []
     })
 
     const results = await Promise.all(fetchPromises)
@@ -107,7 +107,7 @@ async function fetchFromJSearch(query: string): Promise<Job[]> {
     // Combine all results
     for (const jobsData of results) {
       for (const job of jobsData) {
-        const jobId = job.job_id || crypto.randomUUID()
+        const jobId = job.id || crypto.randomUUID()
         
         // Skip duplicates
         if (seenIds.has(jobId)) continue
@@ -115,34 +115,26 @@ async function fetchFromJSearch(query: string): Promise<Job[]> {
         
         const mappedJob: Job = {
           id: jobId,
-          title: job.job_title || "Finance Role",
-          company: job.employer_name || "Confidential",
-          companyLogo: job.employer_logo || undefined,
-          companyWebsite: job.employer_website || undefined,
-          location: formatLocation(job),
-          type: determineJobType(job),
-          salary: formatSalary(job),
-          posted: formatPostedDate(job.job_posted_at_datetime_utc),
-          url: job.job_apply_link || job.job_google_link || "#",
-          description: job.job_description?.substring(0, 300) || undefined,
-          category: categorizeJob(job.job_title || ""),
-          benefits: job.job_benefits || undefined,
-          applyOptions: job.apply_options?.map((opt: any) => ({
-            publisher: opt.publisher,
-            url: opt.apply_link,
-          })) || undefined,
+          title: job.title || "Finance Role",
+          company: job.organization || "Confidential",
+          companyLogo: undefined,
+          companyWebsite: job.organization_url || undefined,
+          location: formatLinkedInLocation(job),
+          type: determineJobTypeLinkedIn(job),
+          salary: job.salary_raw || undefined,
+          posted: formatPostedDate(job.date_posted),
+          url: job.url || `https://www.linkedin.com/jobs/view/${jobId}`,
+          description: job.description?.substring(0, 300) || undefined,
+          category: categorizeJob(job.title || ""),
         }
         
-        // Only include finance-related jobs
-        if (isFinanceRelated(mappedJob.title, mappedJob.description)) {
-          allJobs.push(mappedJob)
-        }
+        allJobs.push(mappedJob)
       }
     }
 
     const internshipCount = allJobs.filter(j => j.type === "Internship").length
     const fullTimeCount = allJobs.filter(j => j.type === "Full-time").length
-    console.log(`Fetched ${allJobs.length} live jobs (${internshipCount} internships, ${fullTimeCount} full-time)`)
+    console.log(`Fetched ${allJobs.length} live LinkedIn jobs (${internshipCount} internships, ${fullTimeCount} full-time)`)
 
     // NO SAMPLES - only return live jobs
     if (allJobs.length > 0) {
@@ -155,10 +147,36 @@ async function fetchFromJSearch(query: string): Promise<Job[]> {
     lastFetchReason = "sample"
     return getSampleJobs()
   } catch (error) {
-    console.error("❌ JSearch fetch error:", error instanceof Error ? error.message : error)
+    console.error("❌ LinkedIn API error:", error instanceof Error ? error.message : error)
     lastFetchReason = "sample"
     return getSampleJobs()
   }
+}
+
+function formatLinkedInLocation(job: any): string {
+  if (job.location_type === "REMOTE") return "Remote"
+  const locations = job.locations_raw
+  if (Array.isArray(locations) && locations.length > 0) {
+    const loc = locations[0]?.address
+    if (loc) {
+      const parts = [loc.addressLocality, loc.addressRegion, loc.addressCountry].filter(Boolean)
+      return parts.join(", ") || "United States"
+    }
+  }
+  return "United States"
+}
+
+function determineJobTypeLinkedIn(job: any): string {
+  const title = (job.title || "").toLowerCase()
+  const empType = (job.employment_type || "").toLowerCase()
+  
+  if (title.includes("intern") || title.includes("summer analyst") || title.includes("summer associate") || title.includes("summer 20")) {
+    return "Internship"
+  }
+  if (empType.includes("intern")) return "Internship"
+  if (empType.includes("contract")) return "Contract"
+  if (empType.includes("part")) return "Part-time"
+  return "Full-time"
 }
 
 function formatLocation(job: any): string {
@@ -759,7 +777,7 @@ export async function GET(request: Request) {
     searchQuery = FINANCE_QUERIES[queryIndex]
   }
   
-  const jobs = await fetchFromJSearch(searchQuery)
+  const jobs = await fetchFromLinkedIn(searchQuery)
 
   // Update cache if no specific query
   if (!query) {
