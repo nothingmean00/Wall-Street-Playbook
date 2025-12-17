@@ -68,14 +68,14 @@ async function fetchFromJSearch(query: string): Promise<Job[]> {
   console.log("✅ RAPIDAPI_KEY is set, fetching from JSearch...")
 
   try {
-    // Multiple search queries to get diverse results including internships
+    // Multiple search queries to get diverse results - mix of full-time and internships
     const searchQueries = query 
       ? [query]
       : [
-          "investment banking analyst intern USA",
-          "private equity associate intern USA",
-          "finance internship summer 2025",
-          "hedge fund analyst USA",
+          "investment banking analyst USA",
+          "private equity associate USA", 
+          "finance summer analyst intern 2025",
+          "hedge fund financial analyst USA",
         ]
     
     const allJobs: Job[] = []
