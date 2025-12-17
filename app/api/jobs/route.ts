@@ -70,15 +70,16 @@ async function fetchFromJSearch(query: string): Promise<Job[]> {
   try {
     const allJobs: Job[] = []
     const seenIds = new Set<string>()
-
-    // Queries for jobs AND internships
-    const queries = query ? [query] : [
-      "investment banking analyst",
-      "private equity associate",
-      "finance internship",
-      "investment banking summer 2026",
-      "financial analyst intern"
-    ]
+    
+    // Queries for LIVE full-time jobs AND LIVE internships
+    const queries = query 
+      ? [query]
+      : [
+          "investment banking analyst",
+          "private equity associate",
+          "finance internship",
+          "investment banking summer analyst",
+        ]
     
     const fetchPromises = queries.map(async (q) => {
       const response = await fetch(
@@ -139,16 +140,17 @@ async function fetchFromJSearch(query: string): Promise<Job[]> {
       }
     }
 
-    console.log(`Fetched ${allJobs.length} finance jobs from JSearch`)
+    const internshipCount = allJobs.filter(j => j.type === "Internship").length
+    const fullTimeCount = allJobs.filter(j => j.type === "Full-time").length
+    console.log(`Fetched ${allJobs.length} live jobs (${internshipCount} internships, ${fullTimeCount} full-time)`)
 
-    // If we have live jobs, return them directly without merging samples
-    // The user requested "no samples" when live data is available
+    // NO SAMPLES - only return live jobs
     if (allJobs.length > 0) {
       lastFetchReason = "success"
       return allJobs
     }
-
-    // Only fallback to samples if absolutely no live jobs were found (API down)
+    
+    // Only fallback to samples if API returns nothing
     console.warn("⚠️ No live jobs found, falling back to samples")
     lastFetchReason = "sample"
     return getSampleJobs()
@@ -173,14 +175,7 @@ function determineJobType(job: any): string {
   const title = (job.job_title || "").toLowerCase()
   const type = (job.job_employment_type || "").toLowerCase()
   
-  if (
-    title.includes("intern") || 
-    title.includes("summer analyst") || 
-    title.includes("summer associate") ||
-    title.includes("summer 20") || // Catch Summer 2025, 2026 etc
-    (title.includes("summer") && title.includes("analyst")) ||
-    title.includes("co-op")
-  ) {
+  if (title.includes("intern") || title.includes("summer analyst") || title.includes("summer associate")) {
     return "Internship"
   }
   if (type.includes("intern")) return "Internship"
