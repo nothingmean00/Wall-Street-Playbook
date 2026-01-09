@@ -86,7 +86,7 @@
 }
 
 @theme inline {
-  --font-sans: "Inter", "Inter Fallback", system-ui, sans-serif;
+  --font-sans: "DM Sans", "DM Sans Fallback", system-ui, sans-serif;
   --font-serif: var(--font-playfair), "Playfair Display", Georgia, serif;
   --font-mono: "Geist Mono", "Geist Mono Fallback", monospace;
 

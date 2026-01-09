@@ -138,7 +138,7 @@ export default function AboutPage() {
             <div className="mx-auto max-w-2xl text-center">
               <h2 className="text-2xl font-bold text-charcoal sm:text-3xl">Ready to Start Preparing?</h2>
               <p className="mt-4 text-charcoal/60">
-                Explore our playbooks and resume services to take your recruiting preparation to the next level.
+                Browse our playbooks and resume services to get the materials you need.
               </p>
               <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
                 <Link

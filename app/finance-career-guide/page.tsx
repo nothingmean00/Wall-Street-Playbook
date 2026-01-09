@@ -300,7 +300,7 @@ export default function FinanceCareerGuidePage() {
         <section className="bg-white py-20 lg:py-28">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <div className="mx-auto max-w-3xl text-center">
-              <h2 className="text-3xl font-bold text-navy sm:text-4xl">Ready to Start Your Journey?</h2>
+              <h2 className="text-3xl font-bold text-navy sm:text-4xl">Pick a Path and Go Deep</h2>
               <p className="mt-4 text-lg text-charcoal/60">
                 Pick a path and go deep. Our playbooks give you the specific frameworks and templates 
                 to break in.
