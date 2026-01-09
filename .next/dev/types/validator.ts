@@ -83,10 +83,73 @@ type RouteHandlerConfig<Route extends AppRouteHandlerRoutes = AppRouteHandlerRou
   type __Unused = __Check
 }
 
+// Validate ../../../app/dcf-model-guide/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/dcf-model-guide">> = Specific
+  const handler = {} as typeof import("../../../app/dcf-model-guide/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../../app/finance-career-guide/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/finance-career-guide">> = Specific
+  const handler = {} as typeof import("../../../app/finance-career-guide/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../../app/hedge-fund-interview-prep/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/hedge-fund-interview-prep">> = Specific
+  const handler = {} as typeof import("../../../app/hedge-fund-interview-prep/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../../app/investment-banking-interview-prep/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/investment-banking-interview-prep">> = Specific
+  const handler = {} as typeof import("../../../app/investment-banking-interview-prep/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../../app/investment-banking-resume/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/investment-banking-resume">> = Specific
+  const handler = {} as typeof import("../../../app/investment-banking-resume/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
 // Validate ../../../app/jobs/page.tsx
 {
   type __IsExpected<Specific extends AppPageConfig<"/jobs">> = Specific
   const handler = {} as typeof import("../../../app/jobs/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../../app/lbo-modeling-guide/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/lbo-modeling-guide">> = Specific
+  const handler = {} as typeof import("../../../app/lbo-modeling-guide/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../../app/non-target-investment-banking/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/non-target-investment-banking">> = Specific
+  const handler = {} as typeof import("../../../app/non-target-investment-banking/page.js")
   type __Check = __IsExpected<typeof handler>
   // @ts-ignore
   type __Unused = __Check
@@ -123,6 +186,15 @@ type RouteHandlerConfig<Route extends AppRouteHandlerRoutes = AppRouteHandlerRou
 {
   type __IsExpected<Specific extends AppPageConfig<"/privacy">> = Specific
   const handler = {} as typeof import("../../../app/privacy/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../../app/private-equity-recruiting/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/private-equity-recruiting">> = Specific
+  const handler = {} as typeof import("../../../app/private-equity-recruiting/page.js")
   type __Check = __IsExpected<typeof handler>
   // @ts-ignore
   type __Unused = __Check

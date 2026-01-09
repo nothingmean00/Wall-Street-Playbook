@@ -86,114 +86,109 @@ const CACHE_DURATION = 1000 * 60 * 60 * 4 // 4 hour cache
 ;
 // Track job source for response
 let lastFetchReason = "sample";
-async function fetchFromJSearch(query) {
+async function fetchFromActiveJobsDB(query) {
     const apiKey = process.env.RAPIDAPI_KEY;
     if (!apiKey) {
         console.error("❌ RAPIDAPI_KEY environment variable is not set!");
         lastFetchReason = "no_key";
         return getSampleJobs();
     }
-    console.log("✅ RAPIDAPI_KEY is set, fetching from JSearch...");
+    console.log("✅ RAPIDAPI_KEY is set, fetching from Active Jobs DB...");
     try {
-        // Multiple search queries to get diverse results - mix of full-time and internships
-        const searchQueries = query ? [
-            query
-        ] : [
-            "investment banking analyst USA",
-            "private equity associate USA",
-            "finance summer analyst intern 2025",
-            "hedge fund financial analyst USA"
-        ];
         const allJobs = [];
         const seenIds = new Set();
-        // Fetch from multiple queries in parallel (but limit to 2 to conserve API calls)
-        const queriesToFetch = searchQueries.slice(0, 2);
-        const fetchPromises = queriesToFetch.map(async (searchQuery)=>{
-            const response = await fetch(`https://jsearch.p.rapidapi.com/search?query=${encodeURIComponent(searchQuery)}&page=1&num_pages=3&date_posted=month`, {
+        // Finance job title filters - full-time AND internships
+        const titleFilters = query ? [
+            query
+        ] : [
+            "investment banking",
+            "private equity",
+            "finance intern",
+            "financial analyst",
+            "hedge fund"
+        ];
+        const fetchPromises = titleFilters.map(async (filter)=>{
+            const response = await fetch(`https://active-jobs-db.p.rapidapi.com/active-ats-7d?limit=100&offset=0&description_type=text&title_filter=${encodeURIComponent(filter)}`, {
                 method: "GET",
                 headers: {
                     "X-RapidAPI-Key": apiKey,
-                    "X-RapidAPI-Host": "jsearch.p.rapidapi.com"
+                    "X-RapidAPI-Host": "active-jobs-db.p.rapidapi.com"
                 }
             });
             if (!response.ok) {
-                console.error(`JSearch API error for query "${searchQuery}": ${response.status}`);
+                console.error(`Active Jobs DB error for filter "${filter}": ${response.status}`);
                 return [];
             }
             const data = await response.json();
-            return data.data || [];
+            return Array.isArray(data) ? data : [];
         });
         const results = await Promise.all(fetchPromises);
         // Combine all results
         for (const jobsData of results){
             for (const job of jobsData){
-                const jobId = job.job_id || crypto.randomUUID();
+                const jobId = job.id || crypto.randomUUID();
                 // Skip duplicates
                 if (seenIds.has(jobId)) continue;
                 seenIds.add(jobId);
                 const mappedJob = {
                     id: jobId,
-                    title: job.job_title || "Finance Role",
-                    company: job.employer_name || "Confidential",
-                    companyLogo: job.employer_logo || undefined,
-                    companyWebsite: job.employer_website || undefined,
-                    location: formatLocation(job),
-                    type: determineJobType(job),
-                    salary: formatSalary(job),
-                    posted: formatPostedDate(job.job_posted_at_datetime_utc),
-                    url: job.job_apply_link || job.job_google_link || "#",
-                    description: job.job_description?.substring(0, 300) || undefined,
-                    category: categorizeJob(job.job_title || ""),
-                    benefits: job.job_benefits || undefined,
-                    applyOptions: job.apply_options?.map((opt)=>({
-                            publisher: opt.publisher,
-                            url: opt.apply_link
-                        })) || undefined
+                    title: job.title || "Finance Role",
+                    company: job.organization || "Confidential",
+                    companyLogo: job.organization_logo || undefined,
+                    companyWebsite: job.organization_url || undefined,
+                    location: formatActiveJobsLocation(job),
+                    type: determineJobTypeActive(job),
+                    salary: job.salary_raw || undefined,
+                    posted: formatPostedDate(job.date_posted || job.date_created),
+                    url: job.url || "#",
+                    description: job.description?.substring(0, 300) || undefined,
+                    category: categorizeJob(job.title || "")
                 };
-                // Only include finance-related jobs
-                if (isFinanceRelated(mappedJob.title, mappedJob.description)) {
-                    allJobs.push(mappedJob);
-                }
+                allJobs.push(mappedJob);
             }
         }
-        console.log(`Fetched ${allJobs.length} finance jobs from JSearch`);
-        // Always merge with sample jobs to ensure variety of job types
-        const sampleJobs = getSampleJobs();
-        const combinedJobs = [
-            ...allJobs
-        ];
-        // Separate internships from full-time in sample jobs
-        const sampleInternships = sampleJobs.filter((j)=>j.type === "Internship");
-        const sampleFullTime = sampleJobs.filter((j)=>j.type !== "Internship");
-        // Check how many of each type we have from live data
-        const liveInternships = allJobs.filter((j)=>j.type === "Internship").length;
-        const liveFullTime = allJobs.filter((j)=>j.type === "Full-time").length;
-        // Always add sample full-time jobs if we don't have enough from live data
-        if (liveFullTime < 15) {
-            for (const sample of sampleFullTime){
-                if (!seenIds.has(sample.id) && combinedJobs.length < 60) {
-                    combinedJobs.push(sample);
-                    seenIds.add(sample.id);
-                }
-            }
+        const internshipCount = allJobs.filter((j)=>j.type === "Internship").length;
+        const fullTimeCount = allJobs.filter((j)=>j.type === "Full-time").length;
+        console.log(`Fetched ${allJobs.length} live jobs (${internshipCount} internships, ${fullTimeCount} full-time)`);
+        // NO SAMPLES - only return live jobs
+        if (allJobs.length > 0) {
+            lastFetchReason = "success";
+            return allJobs;
         }
-        // Add sample internships if we don't have enough from live data
-        if (liveInternships < 15) {
-            for (const sample of sampleInternships){
-                if (!seenIds.has(sample.id) && combinedJobs.length < 60) {
-                    combinedJobs.push(sample);
-                    seenIds.add(sample.id);
-                }
-            }
-        }
-        console.log(`Total jobs after merging: ${combinedJobs.length} (${combinedJobs.filter((j)=>j.type === "Internship").length} internships)`);
-        lastFetchReason = allJobs.length > 0 ? "success" : "sample";
-        return combinedJobs;
+        // Only fallback to samples if API returns nothing
+        console.warn("⚠️ No live jobs found, falling back to samples");
+        lastFetchReason = "sample";
+        return getSampleJobs();
     } catch (error) {
-        console.error("❌ JSearch fetch error:", error instanceof Error ? error.message : error);
+        console.error("❌ Active Jobs DB error:", error instanceof Error ? error.message : error);
         lastFetchReason = "sample";
         return getSampleJobs();
     }
+}
+function formatActiveJobsLocation(job) {
+    if (job.remote_derived) return "Remote";
+    // locations_derived is an array like ["New York, New York, United States"]
+    if (Array.isArray(job.locations_derived) && job.locations_derived.length > 0) {
+        return job.locations_derived[0];
+    }
+    // Fallback to cities_derived
+    if (Array.isArray(job.cities_derived) && job.cities_derived.length > 0) {
+        const city = job.cities_derived[0];
+        const region = job.regions_derived?.[0];
+        return region ? `${city}, ${region}` : city;
+    }
+    return "United States";
+}
+function determineJobTypeActive(job) {
+    const title = (job.title || "").toLowerCase();
+    const empType = (job.employment_type || "").toLowerCase();
+    if (title.includes("intern") || title.includes("summer analyst") || title.includes("summer associate") || title.includes("summer 20") || title.includes("co-op")) {
+        return "Internship";
+    }
+    if (empType.includes("intern")) return "Internship";
+    if (empType.includes("contract")) return "Contract";
+    if (empType.includes("part")) return "Part-time";
+    return "Full-time";
 }
 function formatLocation(job) {
     if (job.job_is_remote) return "Remote";
@@ -797,7 +792,7 @@ async function GET(request) {
         const queryIndex = Math.floor(Date.now() / (1000 * 60 * 60)) % FINANCE_QUERIES.length;
         searchQuery = FINANCE_QUERIES[queryIndex];
     }
-    const jobs = await fetchFromJSearch(searchQuery);
+    const jobs = await fetchFromActiveJobsDB(searchQuery);
     // Update cache if no specific query
     if (!query) {
         jobsCache = {

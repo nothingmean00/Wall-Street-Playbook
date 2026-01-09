@@ -42,44 +42,65 @@ export default function ResumeServicesPage() {
   return (
     <div className="flex min-h-screen flex-col">
       <Navbar />
-      <main className="flex-grow">
+      <main className="flex-grow pt-0">
         {/* Page Header */}
-        <section className="bg-navy py-20 lg:py-28">
-          <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        <section className="relative bg-navy-deep pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden">
+          {/* Background effects */}
+          <div className="absolute inset-0">
+            <div className="absolute inset-0 bg-gradient-to-b from-navy-deep via-navy to-navy-deep" />
+            <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,_rgba(201,168,110,0.15),_transparent)]" />
+            <div 
+              className="absolute inset-0 opacity-[0.03]"
+              style={{
+                backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 30h60M30 0v60' stroke='%23C9A86E' stroke-width='0.5' fill='none'/%3E%3C/svg%3E")`,
+              }}
+            />
+          </div>
+          
+          <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
             <div className="mx-auto max-w-3xl text-center">
-              <p className="text-sm font-semibold uppercase tracking-widest text-gold">Professional Services</p>
-              <h1 className="mt-4 text-4xl font-bold tracking-tight text-white sm:text-5xl">Resume Services</h1>
-              <p className="mt-6 text-lg leading-relaxed text-white/70">
-                Your resume is your first impression. We ensure it positions you as a top candidate from the first
-                glance.
+              <div className="inline-flex items-center gap-2 rounded-full border border-gold/30 bg-gold/10 px-4 py-1.5 mb-6">
+                <BadgeCheck className="w-4 h-4 text-gold" />
+                <span className="text-xs font-semibold uppercase tracking-widest text-gold">Professional Services</span>
+              </div>
+              <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl">
+                Resume <span className="text-gradient-gold">Services</span>
+              </h1>
+              <p className="mt-6 text-lg leading-relaxed text-white/60">
+                Your resume gets 30 seconds. We ensure every word positions you as a top candidate.
               </p>
 
-              <div className="mt-8 inline-flex items-center gap-2 rounded-full border border-gold/30 bg-gold/10 px-4 py-2">
-                <BadgeCheck className="h-5 w-5 text-gold" />
-                <span className="text-sm font-medium text-gold">100% Money-Back Guarantee</span>
+              <div className="mt-8 inline-flex items-center gap-2 rounded-full bg-gold/20 px-5 py-2.5">
+                <svg className="w-5 h-5 text-gold" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
+                </svg>
+                <span className="text-sm font-semibold text-gold">100% Money-Back Guarantee</span>
               </div>
 
               {/* Stats */}
               <div className="mt-12 grid grid-cols-3 gap-8 border-t border-white/10 pt-12">
                 <div className="text-center">
-                  <div className="text-lg font-semibold text-gold">Line-by-Line</div>
-                  <div className="mt-1 text-sm text-white/60">Detailed Analysis</div>
+                  <div className="text-2xl font-bold text-gold number-highlight">Line-by-Line</div>
+                  <div className="mt-1 text-sm text-white/50">Detailed Analysis</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-lg font-semibold text-gold">3-7 Days</div>
-                  <div className="mt-1 text-sm text-white/60">Turnaround</div>
+                  <div className="text-2xl font-bold text-gold number-highlight">3-7 Days</div>
+                  <div className="mt-1 text-sm text-white/50">Turnaround</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-lg font-semibold text-gold">IB-Focused</div>
-                  <div className="mt-1 text-sm text-white/60">Formatting Standards</div>
+                  <div className="text-2xl font-bold text-gold number-highlight">IB-Focused</div>
+                  <div className="mt-1 text-sm text-white/50">Formatting Standards</div>
                 </div>
               </div>
             </div>
           </div>
+          
+          {/* Bottom gradient */}
+          <div className="absolute bottom-0 left-0 right-0 h-20 bg-gradient-to-t from-cream to-transparent" />
         </section>
 
         {/* Services Section */}
-        <section className="bg-off-white py-20 lg:py-28">
+        <section className="bg-cream py-20 lg:py-28">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <div className="mx-auto grid max-w-5xl grid-cols-1 gap-8 lg:grid-cols-2">
               {resumeServices.map((service, index) => {

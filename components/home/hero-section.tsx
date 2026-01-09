@@ -1,62 +1,172 @@
+"use client"
+
 import Link from "next/link"
+import Image from "next/image"
 import { ArrowRight } from "lucide-react"
 import { EmailCapture } from "@/components/email-capture"
 
 export function HeroSection() {
   return (
-    <section className="relative bg-navy overflow-hidden">
-      {/* Background with geometric pattern */}
+    <section className="relative bg-navy-deep overflow-hidden min-h-[90vh] flex items-center">
+      {/* Layered background effects */}
       <div className="absolute inset-0">
-        <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,_var(--tw-gradient-stops))] from-gold/10 via-transparent to-transparent" />
+        {/* Deep gradient base */}
+        <div className="absolute inset-0 bg-gradient-to-b from-navy-deep via-navy to-navy-deep" />
+        
+        {/* Radial gold accent */}
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,_rgba(201,168,110,0.15),_transparent)]" />
+        
+        {/* Secondary accent */}
+        <div className="absolute inset-0 bg-[radial-gradient(ellipse_50%_80%_at_80%_50%,_rgba(201,168,110,0.08),_transparent)]" />
+        
+        {/* Subtle mesh pattern */}
         <div
-          className="absolute inset-0 opacity-[0.06]"
+          className="absolute inset-0 opacity-[0.03]"
           style={{
-            backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fillRule='evenodd'%3E%3Cg fill='%23C9A86E' fillOpacity='1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E")`,
+            backgroundImage: `url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M0 30h60M30 0v60' stroke='%23C9A86E' stroke-width='0.5' fill='none'/%3E%3C/svg%3E")`,
           }}
         />
+        
+        {/* Grain texture */}
+        <div className="absolute inset-0 grain" />
       </div>
 
-      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 py-16 sm:py-20 lg:px-8 lg:py-28">
-        <div className="mx-auto max-w-3xl text-center">
-          {/* Headline */}
-          <h1 className="text-balance text-3xl sm:text-4xl font-bold tracking-tight text-white md:text-5xl lg:text-6xl">
-            Preparation Materials for{" "}
-            <span className="text-gold">Finance Recruiting</span>
-          </h1>
+      {/* Decorative lines */}
+      <div className="absolute top-0 left-1/4 w-px h-32 bg-gradient-to-b from-transparent via-gold/20 to-transparent" />
+      <div className="absolute top-0 right-1/3 w-px h-48 bg-gradient-to-b from-transparent via-gold/10 to-transparent" />
+      <div className="absolute bottom-0 left-1/2 w-px h-24 bg-gradient-to-t from-transparent via-gold/15 to-transparent" />
 
-          {/* Subheadline - honest and direct */}
-          <p className="mx-auto mt-4 sm:mt-6 max-w-2xl text-base sm:text-lg leading-relaxed text-white/70">
-            Technical guides, networking frameworks, and interview prep for investment banking, 
-            private equity, and hedge fund roles.
-          </p>
+      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 py-16 sm:py-24 lg:px-8 lg:py-32 w-full">
+        <div className="grid lg:grid-cols-2 gap-12 lg:gap-8 items-center">
+          {/* Left column - Text content */}
+          <div className="text-center lg:text-left">
+            {/* Eyebrow */}
+            <div className="inline-flex items-center gap-2 rounded-full border border-gold/30 bg-gold/10 px-4 py-1.5 mb-6 animate-slide-up">
+              <span className="h-1.5 w-1.5 rounded-full bg-gold animate-pulse" />
+              <span className="text-xs font-semibold uppercase tracking-widest text-gold">Premium Finance Prep</span>
+            </div>
+            
+            {/* Headline */}
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-[1.1] animate-slide-up animate-delay-100">
+              Your Edge Into{" "}
+              <span className="relative inline-block">
+                <span className="text-gradient-gold">Wall Street</span>
+                <svg className="absolute -bottom-2 left-0 w-full h-3" viewBox="0 0 200 12" fill="none">
+                  <path d="M2 10C50 2 150 2 198 10" stroke="#c9a86e" strokeWidth="3" strokeLinecap="round" className="animate-draw" style={{ animationDelay: '0.5s' }} />
+                </svg>
+              </span>
+            </h1>
 
-          {/* CTAs */}
-          <div className="mt-8 sm:mt-10 flex flex-col items-center justify-center gap-3 sm:gap-4 sm:flex-row">
-            <Link
-              href="/playbooks"
-              className="group flex w-full items-center justify-center gap-2 rounded-lg bg-gold px-6 sm:px-8 py-3.5 sm:py-4 text-sm sm:text-base font-semibold text-navy transition-colors hover:bg-white sm:w-auto"
-            >
-              Browse Playbooks
-              <ArrowRight className="h-4 w-4 transition-transform group-hover:translate-x-1" />
-            </Link>
-            <Link
-              href="/resume-services"
-              className="w-full rounded-lg border-2 border-white/20 px-6 sm:px-8 py-3.5 sm:py-4 text-sm sm:text-base font-semibold text-white transition-all hover:border-gold hover:text-gold sm:w-auto text-center"
-            >
-              Resume Services
-            </Link>
+            {/* Subheadline */}
+            <p className="mt-6 text-lg sm:text-xl leading-relaxed text-white/60 max-w-xl mx-auto lg:mx-0 animate-slide-up animate-delay-200">
+              Technical guides, interview frameworks, and networking strategies for 
+              <span className="text-white/80"> investment banking</span>,
+              <span className="text-white/80"> private equity</span>, and
+              <span className="text-white/80"> hedge funds</span>.
+            </p>
+
+            {/* CTAs */}
+            <div className="mt-10 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 animate-slide-up animate-delay-300">
+              <Link
+                href="/playbooks"
+                className="group relative flex w-full sm:w-auto items-center justify-center gap-2 rounded-xl bg-gold px-8 py-4 text-base font-semibold text-navy overflow-hidden transition-all hover:shadow-lg hover:shadow-gold/25"
+              >
+                <span className="relative z-10">Browse Playbooks</span>
+                <ArrowRight className="relative z-10 h-5 w-5 transition-transform group-hover:translate-x-1" />
+                <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              </Link>
+              <Link
+                href="/resume-services"
+                className="group w-full sm:w-auto rounded-xl border-2 border-white/20 bg-white/5 backdrop-blur-sm px-8 py-4 text-base font-semibold text-white transition-all hover:border-gold hover:bg-gold/10 text-center"
+              >
+                Resume Services
+              </Link>
+            </div>
+
+            {/* Trust indicators */}
+            <div className="mt-10 flex flex-wrap items-center justify-center lg:justify-start gap-6 animate-slide-up animate-delay-400">
+              <div className="flex items-center gap-2 text-white/40">
+                <svg className="w-5 h-5 text-gold" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                </svg>
+                <span className="text-sm">Instant Download</span>
+              </div>
+              <div className="flex items-center gap-2 text-white/40">
+                <svg className="w-5 h-5 text-gold" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                </svg>
+                <span className="text-sm">Lifetime Updates</span>
+              </div>
+              <div className="flex items-center gap-2 text-white/40">
+                <svg className="w-5 h-5 text-gold" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                </svg>
+                <span className="text-sm">Money-Back Guarantee</span>
+              </div>
+            </div>
           </div>
 
-          {/* Email Capture */}
-          <div className="mt-12 sm:mt-16 pt-8 border-t border-white/10">
-            <p className="text-sm text-white/60 mb-4">Get free recruiting insights in your inbox</p>
-            <EmailCapture variant="hero" className="mx-auto" />
+          {/* Right column - Hero Image */}
+          <div className="relative hidden lg:block animate-slide-up animate-delay-500">
+            <div className="relative">
+              {/* Image container with effects */}
+              <div className="relative rounded-2xl overflow-hidden shadow-2xl shadow-black/40">
+                {/* Gold border glow */}
+                <div className="absolute -inset-px rounded-2xl bg-gradient-to-br from-gold/40 via-gold/10 to-gold/30" />
+                
+                {/* Image */}
+                <div className="relative rounded-2xl overflow-hidden">
+                  <Image
+                    src="/hero-image.png"
+                    alt="Wall Street Success"
+                    width={600}
+                    height={500}
+                    className="w-full h-auto object-cover"
+                    priority
+                  />
+                  
+                  {/* Subtle overlay gradient for depth */}
+                  <div className="absolute inset-0 bg-gradient-to-t from-navy-deep/40 via-transparent to-transparent" />
+                </div>
+              </div>
+              
+              {/* Decorative glow behind image */}
+              <div className="absolute -inset-8 bg-gold/10 rounded-3xl blur-3xl -z-10" />
+              
+              {/* Stats overlay on image */}
+              <div className="absolute -bottom-20 -left-6 right-6 mx-auto">
+                <div className="bg-navy/95 backdrop-blur-xl rounded-xl border border-white/10 p-5 shadow-xl">
+                  <div className="grid grid-cols-3 gap-4 text-center">
+                    <div>
+                      <p className="text-2xl font-bold text-gold number-highlight">400+</p>
+                      <p className="text-xs text-white/50 mt-0.5">Technical Questions</p>
+                    </div>
+                    <div className="border-x border-white/10">
+                      <p className="text-2xl font-bold text-gold number-highlight">50+</p>
+                      <p className="text-xs text-white/50 mt-0.5">Email Templates</p>
+                    </div>
+                    <div>
+                      <p className="text-2xl font-bold text-gold number-highlight">10</p>
+                      <p className="text-xs text-white/50 mt-0.5">Playbooks</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        {/* Email Capture */}
+        <div className="mt-16 sm:mt-20 pt-10 border-t border-white/10 animate-slide-up animate-delay-600">
+          <div className="max-w-xl mx-auto lg:mx-0">
+            <p className="text-sm text-white/50 mb-4 text-center lg:text-left">Get free recruiting insights delivered to your inbox</p>
+            <EmailCapture variant="hero" />
           </div>
         </div>
       </div>
       
       {/* Bottom gradient fade */}
-      <div className="absolute bottom-0 left-0 right-0 h-16 bg-gradient-to-t from-off-white to-transparent" />
+      <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-off-white via-off-white/50 to-transparent" />
     </section>
   )
 }

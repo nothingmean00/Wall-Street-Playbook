@@ -2,11 +2,11 @@
 
 import Link from "next/link"
 import { useState, useEffect } from "react"
-import { Menu, X } from "lucide-react"
+import { Menu, X, ChevronRight } from "lucide-react"
 import { Logo } from "@/components/ui/logo"
 
 const navigation = [
-  { name: "Jobs/Internships", href: "/jobs" },
+  { name: "Jobs", href: "/jobs" },
   { name: "Playbooks", href: "/playbooks" },
   { name: "Resume Services", href: "/resume-services" },
   { name: "Blog", href: "/blog" },
@@ -26,71 +26,102 @@ export function Navbar() {
 
   return (
     <header
-      className={`sticky top-0 z-50 transition-all duration-300 ${
-        scrolled ? "bg-navy/95 backdrop-blur-sm shadow-lg" : "bg-navy"
+      className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ${
+        scrolled 
+          ? "bg-navy/95 backdrop-blur-xl shadow-lg shadow-navy/10 py-3" 
+          : "bg-transparent py-5"
       }`}
     >
-      <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 lg:px-8">
+      <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 lg:px-8">
         {/* Logo */}
-        <Link href="/" className="flex items-center gap-2 sm:gap-2.5">
-          <Logo className="h-7 w-7 sm:h-8 sm:w-8 flex-shrink-0" />
-          <span className="text-base sm:text-lg font-semibold tracking-tight text-white truncate">Wall Street Playbook</span>
+        <Link href="/" className="group flex items-center gap-2.5 sm:gap-3">
+          <Logo className="h-8 w-8 sm:h-9 sm:w-9 flex-shrink-0 transition-transform group-hover:scale-105" />
+          <div className="flex flex-col">
+            <span className="text-base sm:text-lg font-bold tracking-tight text-white">
+              Wall Street Playbook
+            </span>
+            <span className="text-[10px] uppercase tracking-widest text-gold/70 hidden sm:block">
+              Finance Recruiting Prep
+            </span>
+          </div>
         </Link>
 
         {/* Desktop Navigation */}
-        <div className="hidden lg:flex lg:items-center lg:gap-x-8">
+        <div className="hidden lg:flex lg:items-center lg:gap-x-1">
           {navigation.map((item) => (
             <Link
               key={item.name}
               href={item.href}
-              className="text-sm font-medium text-white/80 transition-colors duration-200 hover:text-gold"
+              className="relative px-4 py-2 text-sm font-medium text-white/80 transition-colors duration-200 hover:text-white group"
             >
               {item.name}
+              <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-0.5 bg-gold transition-all duration-300 group-hover:w-3/4" />
             </Link>
           ))}
         </div>
 
         {/* Desktop CTA */}
-        <div className="hidden lg:block">
+        <div className="hidden lg:flex lg:items-center lg:gap-4">
           <Link
             href="/playbooks"
-            className="rounded-lg bg-gold px-5 py-2.5 text-sm font-semibold text-navy transition-colors hover:bg-white"
+            className="group relative rounded-xl bg-gold px-6 py-2.5 text-sm font-semibold text-navy overflow-hidden transition-all hover:shadow-lg hover:shadow-gold/25"
           >
-            Get Started
+            <span className="relative z-10">Get Started</span>
+            <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
           </Link>
         </div>
 
         {/* Mobile menu button */}
-        <button type="button" className="lg:hidden text-white" onClick={() => setMobileMenuOpen(!mobileMenuOpen)}>
+        <button 
+          type="button" 
+          className="lg:hidden relative p-2 rounded-lg text-white hover:bg-white/10 transition-colors" 
+          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+        >
           <span className="sr-only">Toggle menu</span>
-          {mobileMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+          <div className="relative w-6 h-6">
+            <span className={`absolute left-0 block w-6 h-0.5 bg-white transition-all duration-300 ${mobileMenuOpen ? 'top-3 rotate-45' : 'top-1'}`} />
+            <span className={`absolute left-0 top-3 block w-6 h-0.5 bg-white transition-all duration-300 ${mobileMenuOpen ? 'opacity-0' : 'opacity-100'}`} />
+            <span className={`absolute left-0 block w-6 h-0.5 bg-white transition-all duration-300 ${mobileMenuOpen ? 'top-3 -rotate-45' : 'top-5'}`} />
+          </div>
         </button>
       </nav>
 
       {/* Mobile Navigation */}
-      {mobileMenuOpen && (
-        <div className="lg:hidden bg-navy border-t border-white/10">
-          <div className="px-6 py-6 space-y-4">
-            {navigation.map((item) => (
+      <div className={`lg:hidden fixed inset-0 top-[72px] z-50 transition-all duration-300 ${mobileMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}>
+        {/* Backdrop */}
+        <div 
+          className="absolute inset-0 bg-navy-deep/80 backdrop-blur-xl"
+          onClick={() => setMobileMenuOpen(false)}
+        />
+        
+        {/* Menu content */}
+        <div className={`relative bg-navy border-t border-white/10 transition-transform duration-300 ${mobileMenuOpen ? 'translate-y-0' : '-translate-y-4'}`}>
+          <div className="px-6 py-8 space-y-2">
+            {navigation.map((item, index) => (
               <Link
                 key={item.name}
                 href={item.href}
-                className="block text-base font-medium text-white/80 hover:text-gold"
+                className="group flex items-center justify-between py-4 px-4 rounded-xl text-lg font-medium text-white/80 hover:text-white hover:bg-white/5 transition-all"
                 onClick={() => setMobileMenuOpen(false)}
+                style={{ animationDelay: `${index * 50}ms` }}
               >
                 {item.name}
+                <ChevronRight className="w-5 h-5 text-white/30 group-hover:text-gold group-hover:translate-x-1 transition-all" />
               </Link>
             ))}
-            <Link
-              href="/playbooks"
-              className="mt-4 block rounded-lg bg-gold px-5 py-3 text-center text-sm font-semibold text-navy"
-              onClick={() => setMobileMenuOpen(false)}
-            >
-              Get Started
-            </Link>
+            <div className="pt-4 mt-4 border-t border-white/10">
+              <Link
+                href="/playbooks"
+                className="flex items-center justify-center gap-2 rounded-xl bg-gold px-6 py-4 text-base font-semibold text-navy transition-all hover:bg-white"
+                onClick={() => setMobileMenuOpen(false)}
+              >
+                Get Started
+                <ChevronRight className="w-5 h-5" />
+              </Link>
+            </div>
           </div>
         </div>
-      )}
+      </div>
     </header>
   )
 }
