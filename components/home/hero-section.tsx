@@ -51,9 +51,8 @@ export function HeroSection() {
               Your Edge Into{" "}
               <span className="relative inline-block">
                 <span className="text-gradient-gold">Wall Street</span>
-                <svg className="absolute -bottom-2 left-0 w-full h-3" viewBox="0 0 200 12" fill="none">
-                  <path d="M2 10C50 2 150 2 198 10" stroke="#c9a86e" strokeWidth="3" strokeLinecap="round" className="animate-draw" style={{ animationDelay: '0.5s' }} />
-                </svg>
+                {/* Underline decoration - CSS only for better performance */}
+                <span className="absolute -bottom-1 left-0 w-full h-1 bg-gold/60 rounded-full" />
               </span>
             </h1>
 
@@ -68,18 +67,18 @@ export function HeroSection() {
             {/* CTAs */}
             <div className="mt-10 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 animate-slide-up animate-delay-300">
               <Link
-                href="/playbooks"
+                href="/resume-services"
                 className="group relative flex w-full sm:w-auto items-center justify-center gap-2 rounded-xl bg-gold px-8 py-4 text-base font-semibold text-navy overflow-hidden transition-all hover:shadow-lg hover:shadow-gold/25"
               >
-                <span className="relative z-10">Browse Playbooks</span>
+                <span className="relative z-10">Get Your Resume Reviewed</span>
                 <ArrowRight className="relative z-10 h-5 w-5 transition-transform group-hover:translate-x-1" />
                 <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </Link>
               <Link
-                href="/resume-services"
+                href="/jobs"
                 className="group w-full sm:w-auto rounded-xl border-2 border-white/20 bg-white/5 backdrop-blur-sm px-8 py-4 text-base font-semibold text-white transition-all hover:border-gold hover:bg-gold/10 text-center"
               >
-                Resume Services
+                Browse Finance Jobs
               </Link>
             </div>
 
@@ -89,13 +88,13 @@ export function HeroSection() {
                 <svg className="w-5 h-5 text-gold" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                 </svg>
-                <span className="text-sm">Instant Download</span>
+                <span className="text-sm">48hr Turnaround</span>
               </div>
               <div className="flex items-center gap-2 text-white/40">
                 <svg className="w-5 h-5 text-gold" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                 </svg>
-                <span className="text-sm">Lifetime Updates</span>
+                <span className="text-sm">Proven at Top Firms</span>
               </div>
               <div className="flex items-center gap-2 text-white/40">
                 <svg className="w-5 h-5 text-gold" fill="currentColor" viewBox="0 0 20 20">
@@ -117,12 +116,13 @@ export function HeroSection() {
                 {/* Image */}
                 <div className="relative rounded-2xl overflow-hidden">
                   <Image
-                    src="/hero-image.png"
+                    src="/hero-image.webp"
                     alt="Wall Street Success"
-                    width={600}
-                    height={500}
+                    width={1200}
+                    height={708}
                     className="w-full h-auto object-cover"
                     priority
+                    quality={85}
                   />
                   
                   {/* Subtle overlay gradient for depth */}
@@ -138,16 +138,16 @@ export function HeroSection() {
                 <div className="bg-navy/95 backdrop-blur-xl rounded-xl border border-white/10 p-5 shadow-xl">
                   <div className="grid grid-cols-3 gap-4 text-center">
                     <div>
-                      <p className="text-2xl font-bold text-gold number-highlight">400+</p>
-                      <p className="text-xs text-white/50 mt-0.5">Technical Questions</p>
+                      <p className="text-2xl font-bold text-gold number-highlight">30+</p>
+                      <p className="text-xs text-white/50 mt-0.5">Top Firm Interviews</p>
                     </div>
                     <div className="border-x border-white/10">
-                      <p className="text-2xl font-bold text-gold number-highlight">50+</p>
-                      <p className="text-xs text-white/50 mt-0.5">Email Templates</p>
+                      <p className="text-2xl font-bold text-gold number-highlight">IB+PE+HF</p>
+                      <p className="text-xs text-white/50 mt-0.5">All Paths Covered</p>
                     </div>
                     <div>
-                      <p className="text-2xl font-bold text-gold number-highlight">10</p>
-                      <p className="text-xs text-white/50 mt-0.5">Playbooks</p>
+                      <p className="text-2xl font-bold text-gold number-highlight">48hr</p>
+                      <p className="text-xs text-white/50 mt-0.5">Turnaround Time</p>
                     </div>
                   </div>
                 </div>

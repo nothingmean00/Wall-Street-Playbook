@@ -51,4 +51,39 @@ export async function initDatabase() {
       created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
     )
   `
+
+  await db`
+    CREATE TABLE IF NOT EXISTS resume_submissions (
+      id SERIAL PRIMARY KEY,
+      name VARCHAR(200) NOT NULL,
+      email VARCHAR(255) NOT NULL,
+      phone VARCHAR(50),
+      service_type VARCHAR(50) NOT NULL,
+      target_role VARCHAR(200),
+      target_firms TEXT,
+      current_status VARCHAR(100),
+      experience_level VARCHAR(50),
+      timeline VARCHAR(100),
+      specific_concerns TEXT,
+      additional_notes TEXT,
+      resume_url TEXT NOT NULL,
+      resume_filename VARCHAR(255),
+      status VARCHAR(30) DEFAULT 'pending',
+      payment_status VARCHAR(30) DEFAULT 'unpaid',
+      stripe_session_id VARCHAR(255),
+      amount_paid INTEGER,
+      admin_notes TEXT,
+      created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+      updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    )
+  `
+
+  // Add new payment columns if they don't exist (for existing tables)
+  try {
+    await db`ALTER TABLE resume_submissions ADD COLUMN IF NOT EXISTS payment_status VARCHAR(30) DEFAULT 'unpaid'`
+    await db`ALTER TABLE resume_submissions ADD COLUMN IF NOT EXISTS stripe_session_id VARCHAR(255)`
+    await db`ALTER TABLE resume_submissions ADD COLUMN IF NOT EXISTS amount_paid INTEGER`
+  } catch {
+    // Columns might already exist, ignore errors
+  }
 }

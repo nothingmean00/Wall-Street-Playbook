@@ -80,16 +80,16 @@ export default function ResumeServicesPage() {
               {/* Stats */}
               <div className="mt-12 grid grid-cols-3 gap-8 border-t border-white/10 pt-12">
                 <div className="text-center">
-                  <div className="text-2xl font-bold text-gold number-highlight">Line-by-Line</div>
-                  <div className="mt-1 text-sm text-white/50">Detailed Analysis</div>
+                  <div className="text-2xl font-bold text-gold number-highlight">30+</div>
+                  <div className="mt-1 text-sm text-white/50">Top Firm Interviews</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-2xl font-bold text-gold number-highlight">3-7 Days</div>
-                  <div className="mt-1 text-sm text-white/50">Turnaround</div>
+                  <div className="text-2xl font-bold text-gold number-highlight">48hr</div>
+                  <div className="mt-1 text-sm text-white/50">Turnaround Time</div>
                 </div>
                 <div className="text-center">
-                  <div className="text-2xl font-bold text-gold number-highlight">IB-Focused</div>
-                  <div className="mt-1 text-sm text-white/50">Formatting Standards</div>
+                  <div className="text-2xl font-bold text-gold number-highlight">IB+PE+HF</div>
+                  <div className="mt-1 text-sm text-white/50">All Paths Covered</div>
                 </div>
               </div>
             </div>
@@ -329,10 +329,17 @@ export default function ResumeServicesPage() {
               want to learn and apply changes yourself, Resume Review gives you the roadmap.
             </p>
             <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
-              <Link href="/playbooks" className="text-sm font-semibold text-navy hover:text-gold">
-                Or browse our Playbooks instead →
+              <Link 
+                href="/submit-resume" 
+                className="inline-flex items-center gap-2 rounded-xl bg-gold px-6 py-3 text-sm font-semibold text-navy transition-all hover:bg-navy hover:text-white"
+              >
+                Get Started Now
+                <ArrowRight className="h-4 w-4" />
               </Link>
             </div>
+            <p className="mt-4 text-sm text-charcoal/50">
+              Have questions? <Link href="/contact" className="text-gold hover:underline">Contact us</Link>
+            </p>
           </div>
         </section>
       </main>

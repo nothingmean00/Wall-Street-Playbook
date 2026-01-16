@@ -72,7 +72,7 @@ export function ResumeServicesSection() {
                   {/* Price */}
                   <div className="mt-6 flex items-baseline gap-2">
                     <span className="text-4xl font-bold text-navy">${service.price}</span>
-                    <span className="text-sm text-charcoal/40">one-time payment</span>
+                    <span className="text-sm text-charcoal/60">one-time payment</span>
                   </div>
                   
                   <p className="mt-4 text-sm leading-relaxed text-charcoal/60">{service.description}</p>
@@ -80,7 +80,7 @@ export function ResumeServicesSection() {
 
                 {/* What's Included */}
                 <div className="flex-grow p-8">
-                  <p className="text-xs font-semibold uppercase tracking-wider text-charcoal/40 mb-4">What's Included</p>
+                  <p className="text-xs font-semibold uppercase tracking-wider text-charcoal/60 mb-4">What&apos;s Included</p>
                   <ul className="space-y-3">
                     {service.includes.map((item, i) => (
                       <li key={i} className="flex gap-3">

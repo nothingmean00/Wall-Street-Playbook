@@ -115,9 +115,9 @@ export function WhatYouGet() {
             
             <div className="relative grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
               {[
-                { value: "400+", label: "Technical Questions" },
-                { value: "50+", label: "Email Templates" },
-                { value: "10", label: "Complete Playbooks" },
+                { value: "30+", label: "Top Firm Interviews" },
+                { value: "48hr", label: "Turnaround Time" },
+                { value: "IB+PE+HF", label: "All Paths Covered" },
                 { value: "100%", label: "Money-Back Guarantee" },
               ].map((stat, i) => (
                 <div key={i} className="relative">

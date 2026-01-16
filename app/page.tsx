@@ -2,9 +2,10 @@ import type { Metadata } from "next"
 import { Navbar } from "@/components/layout/navbar"
 import { Footer } from "@/components/layout/footer"
 import { HeroSection } from "@/components/home/hero-section"
+import { ProofGallery } from "@/components/home/proof-gallery"
 import { WhatYouGet } from "@/components/home/what-you-get"
-import { FeaturedPlaybooks } from "@/components/home/featured-playbooks"
 import { ResumeServicesSection } from "@/components/home/resume-services-section"
+import { PlaybooksComingSoon } from "@/components/home/playbooks-coming-soon"
 import { WhyItWorks } from "@/components/home/why-it-works"
 import { BlogPreview } from "@/components/home/blog-preview"
 import { JobsPreview } from "@/components/home/jobs-preview"
@@ -25,11 +26,12 @@ export default function HomePage() {
       <Navbar />
       <main className="flex-grow pt-0">
         <HeroSection />
-        <WhatYouGet />
-        <FeaturedPlaybooks />
+        <ProofGallery />
         <ResumeServicesSection />
-        <JobsPreview />
+        <WhatYouGet />
         <WhyItWorks />
+        <PlaybooksComingSoon />
+        <JobsPreview />
         <BlogPreview />
         <CTASection />
       </main>

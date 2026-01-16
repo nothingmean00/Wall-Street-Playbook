@@ -79,6 +79,7 @@ function ResumeSubmissionForm({ initialService }: { initialService: ServiceType 
   const [status, setStatus] = useState<"idle" | "uploading" | "success" | "error">("idle")
   const [errorMessage, setErrorMessage] = useState("")
   const [formData, setFormData] = useState<FormData>(initialFormData)
+  const [paymentUrl, setPaymentUrl] = useState<string | null>(null)
 
   const selectedServiceData = resumeServices.find(s => s.id === selectedService)
 
@@ -150,7 +151,19 @@ function ResumeSubmissionForm({ initialService }: { initialService: ServiceType 
         throw new Error(data.error || "Upload failed")
       }
 
-      setStatus("success")
+      const data = await response.json()
+      
+      // Store payment URL and show success, then redirect to Stripe
+      if (data.paymentUrl) {
+        setPaymentUrl(data.paymentUrl)
+        setStatus("success")
+        // Auto-redirect to Stripe checkout after 2 seconds
+        setTimeout(() => {
+          window.location.href = data.paymentUrl
+        }, 2000)
+      } else {
+        setStatus("success")
+      }
     } catch (error) {
       console.error("Upload error:", error)
       setStatus("error")
@@ -171,36 +184,64 @@ function ResumeSubmissionForm({ initialService }: { initialService: ServiceType 
             <p className="mt-4 text-lg text-charcoal/70">
               Thank you for choosing our {selectedServiceData?.title} service.
             </p>
-            <div className="mt-8 rounded-xl border border-gold/30 bg-gold/5 p-6">
-              <div className="flex items-center justify-center gap-2 text-gold">
-                <Clock className="h-5 w-5" />
-                <span className="font-semibold">Expected Turnaround: {selectedServiceData?.turnaround}</span>
+            
+            {paymentUrl && (
+              <div className="mt-8 rounded-xl border-2 border-gold bg-gold/10 p-6">
+                <div className="flex items-center justify-center gap-2 mb-4">
+                  <Loader2 className="h-5 w-5 animate-spin text-gold" />
+                  <span className="font-semibold text-navy">Redirecting to secure payment...</span>
+                </div>
+                <p className="text-sm text-charcoal/70 mb-4">
+                  You'll be redirected to Stripe to complete your payment securely.
+                </p>
+                <a
+                  href={paymentUrl}
+                  className="inline-flex items-center gap-2 rounded-xl bg-gold px-8 py-4 text-base font-semibold text-navy transition-all hover:bg-navy hover:text-white"
+                >
+                  Complete Payment - ${selectedServiceData?.price}
+                  <ArrowRight className="h-5 w-5" />
+                </a>
+                <p className="mt-4 text-xs text-charcoal/50">
+                  If you're not redirected automatically, click the button above.
+                </p>
               </div>
-              <p className="mt-3 text-sm text-charcoal/70">
-                We'll begin working on your resume shortly. You'll receive your {selectedService === "resume-review" ? "feedback" : "rewritten resume"} via email at <span className="font-medium text-navy">{formData.email}</span>.
-              </p>
-            </div>
-            <div className="mt-8 rounded-xl border border-border bg-white p-6">
-              <h3 className="font-semibold text-navy">What Happens Next?</h3>
-              <ol className="mt-4 space-y-3 text-left text-sm text-charcoal/70">
-                <li className="flex gap-3">
-                  <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-gold/10 text-xs font-semibold text-gold">1</span>
-                  <span>Our team will review your submission and resume within 24 hours.</span>
-                </li>
-                <li className="flex gap-3">
-                  <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-gold/10 text-xs font-semibold text-gold">2</span>
-                  <span>You'll receive a confirmation email with payment instructions.</span>
-                </li>
-                <li className="flex gap-3">
-                  <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-gold/10 text-xs font-semibold text-gold">3</span>
-                  <span>Once payment is confirmed, we'll start working on your {selectedService === "resume-review" ? "detailed feedback" : "resume rewrite"}.</span>
-                </li>
-                <li className="flex gap-3">
-                  <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-gold/10 text-xs font-semibold text-gold">4</span>
-                  <span>Expect delivery within {selectedServiceData?.turnaround}.</span>
-                </li>
-              </ol>
-            </div>
+            )}
+
+            {!paymentUrl && (
+              <>
+                <div className="mt-8 rounded-xl border border-gold/30 bg-gold/5 p-6">
+                  <div className="flex items-center justify-center gap-2 text-gold">
+                    <Clock className="h-5 w-5" />
+                    <span className="font-semibold">Expected Turnaround: {selectedServiceData?.turnaround}</span>
+                  </div>
+                  <p className="mt-3 text-sm text-charcoal/70">
+                    Check your email at <span className="font-medium text-navy">{formData.email}</span> for payment instructions.
+                  </p>
+                </div>
+                <div className="mt-8 rounded-xl border border-border bg-white p-6">
+                  <h3 className="font-semibold text-navy">What Happens Next?</h3>
+                  <ol className="mt-4 space-y-3 text-left text-sm text-charcoal/70">
+                    <li className="flex gap-3">
+                      <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-gold/10 text-xs font-semibold text-gold">1</span>
+                      <span>Check your email for the payment link.</span>
+                    </li>
+                    <li className="flex gap-3">
+                      <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-gold/10 text-xs font-semibold text-gold">2</span>
+                      <span>Complete payment securely via Stripe.</span>
+                    </li>
+                    <li className="flex gap-3">
+                      <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-gold/10 text-xs font-semibold text-gold">3</span>
+                      <span>We'll start working on your {selectedService === "resume-review" ? "detailed feedback" : "resume rewrite"} within 24 hours.</span>
+                    </li>
+                    <li className="flex gap-3">
+                      <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-gold/10 text-xs font-semibold text-gold">4</span>
+                      <span>Expect delivery within {selectedServiceData?.turnaround}.</span>
+                    </li>
+                  </ol>
+                </div>
+              </>
+            )}
+            
             <p className="mt-8 text-sm text-charcoal/60">
               Questions? Contact us at{" "}
               <a href="mailto:support@wallstreetplaybook.com" className="font-medium text-navy hover:text-gold">

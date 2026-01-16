@@ -6,10 +6,10 @@ import { Menu, X, ChevronRight } from "lucide-react"
 import { Logo } from "@/components/ui/logo"
 
 const navigation = [
-  { name: "Jobs", href: "/jobs" },
-  { name: "Playbooks", href: "/playbooks" },
   { name: "Resume Services", href: "/resume-services" },
+  { name: "Jobs", href: "/jobs" },
   { name: "Blog", href: "/blog" },
+  { name: "Playbooks", href: "/playbooks" },
 ]
 
 export function Navbar() {
@@ -35,7 +35,7 @@ export function Navbar() {
       <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 lg:px-8">
         {/* Logo */}
         <Link href="/" className="group flex items-center gap-2.5 sm:gap-3">
-          <Logo className="h-8 w-8 sm:h-9 sm:w-9 flex-shrink-0 transition-transform group-hover:scale-105" />
+          <Logo className="h-10 w-10 sm:h-12 sm:w-12 flex-shrink-0 transition-transform group-hover:scale-105" />
           <div className="flex flex-col">
             <span className="text-base sm:text-lg font-bold tracking-tight text-white">
               Wall Street Playbook
@@ -63,7 +63,7 @@ export function Navbar() {
         {/* Desktop CTA */}
         <div className="hidden lg:flex lg:items-center lg:gap-4">
           <Link
-            href="/playbooks"
+            href="/submit-resume"
             className="group relative rounded-xl bg-gold px-6 py-2.5 text-sm font-semibold text-navy overflow-hidden transition-all hover:shadow-lg hover:shadow-gold/25"
           >
             <span className="relative z-10">Get Started</span>
@@ -111,11 +111,11 @@ export function Navbar() {
             ))}
             <div className="pt-4 mt-4 border-t border-white/10">
               <Link
-                href="/playbooks"
+                href="/submit-resume"
                 className="flex items-center justify-center gap-2 rounded-xl bg-gold px-6 py-4 text-base font-semibold text-navy transition-all hover:bg-white"
                 onClick={() => setMobileMenuOpen(false)}
               >
-                Get Started
+                Get Your Resume Reviewed
                 <ChevronRight className="w-5 h-5" />
               </Link>
             </div>

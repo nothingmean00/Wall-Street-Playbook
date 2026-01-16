@@ -1,7 +1,11 @@
 import { NextRequest, NextResponse } from 'next/server'
-import { getStripe } from '@/lib/stripe'
+import { getStripe, PRODUCTS } from '@/lib/stripe'
 import { getDb } from '@/lib/db'
-import { sendPurchaseConfirmation } from '@/lib/email'
+import { 
+  sendPurchaseConfirmation, 
+  sendResumePaymentConfirmation,
+  sendAdminResumeNotification 
+} from '@/lib/email'
 import Stripe from 'stripe'
 
 export async function POST(request: NextRequest) {
@@ -28,47 +32,106 @@ export async function POST(request: NextRequest) {
     const productId = session.metadata?.productId
     const productName = session.metadata?.productName
     const email = session.customer_email
+    const submissionId = session.metadata?.submissionId
 
     if (!productId || !email) {
       console.error('Missing product or email in session metadata')
       return NextResponse.json({ error: 'Missing data' }, { status: 400 })
     }
 
-    // Record the order
     const sql = getDb()
-    await sql`
-      INSERT INTO orders (stripe_session_id, stripe_customer_id, email, product_type, product_id, amount, status)
-      VALUES (
-        ${session.id}, 
-        ${session.customer as string}, 
-        ${email}, 
-        ${productId.includes('resume') ? 'service' : 'playbook'},
-        ${productId}, 
-        ${session.amount_total || 0}, 
-        'completed'
-      )
-    `
 
-    // For playbooks, generate a download link
-    if (!productId.includes('resume')) {
-      // In production, you'd store actual PDFs in Vercel Blob
-      // For now, we'll create a signed download URL pattern
+    // Handle Resume Service Payments
+    if (productId === 'resume-review' || productId === 'resume-rewrite') {
+      const serviceName = productId === 'resume-review' ? 'Resume Review' : 'Resume Rewrite'
+      const turnaround = productId === 'resume-review' ? '3-5 business days' : '5-7 business days'
+      const price = PRODUCTS[productId].price
+
+      // Update the resume submission with payment info
+      if (submissionId) {
+        await sql`
+          UPDATE resume_submissions 
+          SET 
+            payment_status = 'paid',
+            stripe_session_id = ${session.id},
+            amount_paid = ${session.amount_total || 0},
+            status = 'in_progress',
+            updated_at = NOW()
+          WHERE id = ${parseInt(submissionId)}
+        `
+
+        // Get the submission details for admin notification
+        const submissions = await sql`
+          SELECT * FROM resume_submissions WHERE id = ${parseInt(submissionId)}
+        `
+        
+        if (submissions.length > 0) {
+          const submission = submissions[0]
+          
+          // Send payment confirmation to customer
+          try {
+            await sendResumePaymentConfirmation(
+              email,
+              submission.name,
+              serviceName,
+              turnaround
+            )
+          } catch (emailError) {
+            console.error('Failed to send payment confirmation:', emailError)
+          }
+
+          // Send notification to admin
+          try {
+            await sendAdminResumeNotification({
+              name: submission.name,
+              email: submission.email,
+              serviceName,
+              price,
+              resumeUrl: submission.resume_url,
+              targetRole: submission.target_role || 'Not specified',
+              targetFirms: submission.target_firms || 'Not specified',
+            })
+          } catch (emailError) {
+            console.error('Failed to send admin notification:', emailError)
+          }
+        }
+      }
+
+      // Also record in orders table
+      await sql`
+        INSERT INTO orders (stripe_session_id, stripe_customer_id, email, product_type, product_id, amount, status)
+        VALUES (
+          ${session.id}, 
+          ${session.customer as string || ''}, 
+          ${email}, 
+          'service',
+          ${productId}, 
+          ${session.amount_total || 0}, 
+          'completed'
+        )
+      `
+    } 
+    // Handle Playbook Purchases
+    else {
+      // Record the order
+      await sql`
+        INSERT INTO orders (stripe_session_id, stripe_customer_id, email, product_type, product_id, amount, status)
+        VALUES (
+          ${session.id}, 
+          ${session.customer as string || ''}, 
+          ${email}, 
+          'playbook',
+          ${productId}, 
+          ${session.amount_total || 0}, 
+          'completed'
+        )
+      `
+
+      // Generate download link and send confirmation
       const downloadUrl = `${process.env.NEXT_PUBLIC_APP_URL}/api/download?order=${session.id}&product=${productId}`
       
       try {
         await sendPurchaseConfirmation(email, productName || productId, downloadUrl)
-      } catch (emailError) {
-        console.error('Failed to send purchase confirmation:', emailError)
-      }
-    } else {
-      // For resume services, just send a confirmation that we received their order
-      // They'll need to submit their resume separately
-      try {
-        await sendPurchaseConfirmation(
-          email, 
-          productName || productId, 
-          `${process.env.NEXT_PUBLIC_APP_URL}/submit-resume?order=${session.id}`
-        )
       } catch (emailError) {
         console.error('Failed to send purchase confirmation:', emailError)
       }
@@ -77,4 +140,3 @@ export async function POST(request: NextRequest) {
 
   return NextResponse.json({ received: true })
 }
-

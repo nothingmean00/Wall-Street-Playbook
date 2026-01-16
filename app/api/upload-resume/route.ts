@@ -1,6 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { put } from '@vercel/blob'
 import { getDb } from '@/lib/db'
+import { PRODUCTS } from '@/lib/stripe'
 
 export async function POST(request: NextRequest) {
   try {
@@ -9,7 +10,7 @@ export async function POST(request: NextRequest) {
     const name = formData.get('name') as string
     const email = formData.get('email') as string
     const phone = formData.get('phone') as string
-    const serviceType = formData.get('serviceType') as string
+    const serviceType = formData.get('serviceType') as 'resume-review' | 'resume-rewrite'
     const targetRole = formData.get('targetRole') as string
     const targetFirms = formData.get('targetFirms') as string
     const currentStatus = formData.get('currentStatus') as string
@@ -54,48 +55,131 @@ export async function POST(request: NextRequest) {
       addRandomSuffix: false,
     })
 
-    // Build detailed message with all form fields
-    const serviceLabel = serviceType === 'resume-rewrite' ? 'Resume Rewrite ($497)' : 'Resume Review ($197)'
-    
-    const messageLines = [
-      `SERVICE: ${serviceLabel}`,
-      ``,
-      `--- CONTACT INFO ---`,
-      `Name: ${name}`,
-      `Email: ${email}`,
-      `Phone: ${phone || 'Not provided'}`,
-      ``,
-      `--- BACKGROUND ---`,
-      `Target Role: ${targetRole || 'Not specified'}`,
-      `Target Firms: ${targetFirms || 'Not specified'}`,
-      `Current Status: ${currentStatus || 'Not specified'}`,
-      `Experience Level: ${experienceLevel || 'Not specified'}`,
-      `Application Timeline: ${timeline || 'Not specified'}`,
-      ``,
-      `--- CONCERNS & NOTES ---`,
-      `Specific Concerns: ${specificConcerns || 'None provided'}`,
-      `Additional Notes: ${additionalNotes || 'None provided'}`,
-      ``,
-      `--- RESUME ---`,
-      `Resume URL: ${blob.url}`,
-    ]
-
-    // Store submission in database
+    // Store submission in resume_submissions table
     const sql = getDb()
-    await sql`
-      INSERT INTO contact_submissions (first_name, last_name, email, subject, message, status)
-      VALUES (
-        ${name.split(' ')[0] || name},
-        ${name.split(' ').slice(1).join(' ') || ''},
-        ${email.toLowerCase()},
-        ${`Resume Submission - ${serviceLabel}`},
-        ${messageLines.join('\n')},
-        'resume_submitted'
-      )
-    `
+    
+    // Try to insert with payment_status column, fall back to without it
+    let result
+    try {
+      result = await sql`
+        INSERT INTO resume_submissions (
+          name, email, phone, service_type, target_role, target_firms,
+          current_status, experience_level, timeline, specific_concerns,
+          additional_notes, resume_url, resume_filename, status, payment_status
+        )
+        VALUES (
+          ${name},
+          ${email.toLowerCase()},
+          ${phone || null},
+          ${serviceType},
+          ${targetRole || null},
+          ${targetFirms || null},
+          ${currentStatus || null},
+          ${experienceLevel || null},
+          ${timeline || null},
+          ${specificConcerns || null},
+          ${additionalNotes || null},
+          ${blob.url},
+          ${file.name},
+          'pending',
+          'unpaid'
+        )
+        RETURNING id
+      `
+    } catch {
+      // Fallback: insert without payment_status column (for older schema)
+      result = await sql`
+        INSERT INTO resume_submissions (
+          name, email, phone, service_type, target_role, target_firms,
+          current_status, experience_level, timeline, specific_concerns,
+          additional_notes, resume_url, resume_filename, status
+        )
+        VALUES (
+          ${name},
+          ${email.toLowerCase()},
+          ${phone || null},
+          ${serviceType},
+          ${targetRole || null},
+          ${targetFirms || null},
+          ${currentStatus || null},
+          ${experienceLevel || null},
+          ${timeline || null},
+          ${specificConcerns || null},
+          ${additionalNotes || null},
+          ${blob.url},
+          ${file.name},
+          'pending'
+        )
+        RETURNING id
+      `
+    }
+
+    const submissionId = result[0].id
+    let paymentUrl: string | null = null
+
+    // Only create Stripe checkout if STRIPE_SECRET_KEY is configured
+    if (process.env.STRIPE_SECRET_KEY) {
+      try {
+        const { getStripe } = await import('@/lib/stripe')
+        const { sendResumePaymentLink } = await import('@/lib/email')
+        
+        const product = PRODUCTS[serviceType]
+        const appUrl = process.env.NEXT_PUBLIC_APP_URL || 'https://wallstreetplaybook.org'
+        
+        const stripe = getStripe()
+        const session = await stripe.checkout.sessions.create({
+          payment_method_types: ['card'],
+          line_items: [
+            {
+              price_data: {
+                currency: 'usd',
+                product_data: {
+                  name: product.name,
+                  description: serviceType === 'resume-review' 
+                    ? 'Detailed line-by-line feedback with specific rewrite suggestions. Delivered in 3-5 business days.'
+                    : 'Complete resume overhaul with 2 revision rounds. Delivered in 5-7 business days.',
+                },
+                unit_amount: product.price * 100,
+              },
+              quantity: 1,
+            },
+          ],
+          mode: 'payment',
+          success_url: `${appUrl}/success?type=resume&session_id={CHECKOUT_SESSION_ID}`,
+          cancel_url: `${appUrl}/resume-services`,
+          customer_email: email.toLowerCase(),
+          metadata: {
+            productId: serviceType,
+            productName: product.name,
+            submissionId: submissionId.toString(),
+          },
+        })
+
+        paymentUrl = session.url
+
+        // Send payment link email
+        const serviceName = serviceType === 'resume-review' ? 'Resume Review' : 'Resume Rewrite'
+        try {
+          await sendResumePaymentLink(
+            email.toLowerCase(),
+            name,
+            serviceName,
+            session.url!,
+            product.price
+          )
+        } catch (emailError) {
+          console.error('Failed to send payment link email:', emailError)
+        }
+      } catch (stripeError) {
+        console.error('Stripe checkout error (non-fatal):', stripeError)
+        // Continue without payment - admin can send payment link manually
+      }
+    }
 
     return NextResponse.json({ 
       success: true,
+      submissionId,
+      paymentUrl,
       url: blob.url 
     })
   } catch (error) {

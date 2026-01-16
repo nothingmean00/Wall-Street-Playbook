@@ -1,70 +1,68 @@
 import Link from "next/link"
-import { ArrowRight, Zap } from "lucide-react"
+import { ArrowRight, Clock, Shield, Sparkles } from "lucide-react"
 
 export function CTASection() {
   return (
-    <section className="relative bg-cream py-20 lg:py-28 overflow-hidden">
+    <section className="relative bg-navy-deep py-20 lg:py-28 overflow-hidden">
       {/* Background decoration */}
       <div className="absolute inset-0">
-        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] bg-gradient-to-br from-gold/10 via-transparent to-navy/5 rounded-full blur-3xl" />
+        <div className="absolute inset-0 bg-gradient-to-b from-navy-deep via-navy to-navy-deep" />
+        <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[800px] bg-gradient-radial from-gold/10 via-transparent to-transparent rounded-full blur-3xl" />
       </div>
       
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-3xl text-center">
-          {/* Icon */}
-          <div className="mx-auto mb-6 flex h-16 w-16 items-center justify-center rounded-2xl bg-navy shadow-xl">
-            <Zap className="h-8 w-8 text-gold" />
+          {/* Urgency badge */}
+          <div className="inline-flex items-center gap-2 rounded-full border border-gold/30 bg-gold/10 px-4 py-1.5 mb-6">
+            <Sparkles className="w-4 h-4 text-gold" />
+            <span className="text-xs font-semibold uppercase tracking-widest text-gold">Limited Capacity</span>
           </div>
           
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-navy">
-            Ready to Start <span className="text-gradient-gold">Preparing</span>?
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold tracking-tight text-white">
+            Your Resume Is Your <span className="text-gradient-gold">First Impression</span>
           </h2>
-          <p className="mt-4 sm:mt-6 text-base sm:text-lg text-charcoal/60 max-w-xl mx-auto">
-            Get instant access to all materials. One-time purchase, lifetime access, no subscriptions.
+          <p className="mt-4 sm:mt-6 text-base sm:text-lg text-white/60 max-w-xl mx-auto">
+            Don't let a weak resume cost you the interview. Get expert feedback from someone who's been there.
           </p>
 
           <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link
-              href="/playbooks"
-              className="group relative flex w-full sm:w-auto items-center justify-center gap-2 rounded-xl bg-navy px-8 py-4 text-base font-semibold text-white overflow-hidden transition-all hover:shadow-xl hover:shadow-navy/20"
+              href="/submit-resume"
+              className="group relative flex w-full sm:w-auto items-center justify-center gap-2 rounded-xl bg-gold px-10 py-5 text-lg font-bold text-navy overflow-hidden transition-all hover:shadow-xl hover:shadow-gold/30 hover:bg-white"
             >
-              <span className="relative z-10">Browse Playbooks</span>
+              <span className="relative z-10">Get Your Resume Reviewed</span>
               <ArrowRight className="relative z-10 h-5 w-5 transition-transform group-hover:translate-x-1" />
-              <div className="absolute inset-0 bg-gold opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
-              <span className="absolute inset-0 z-10 flex items-center justify-center gap-2 text-navy opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                Browse Playbooks
-                <ArrowRight className="h-5 w-5" />
-              </span>
             </Link>
             <Link
-              href="/resume-services"
-              className="w-full sm:w-auto rounded-xl border-2 border-navy bg-transparent px-8 py-4 text-base font-semibold text-navy transition-all hover:bg-navy hover:text-white text-center"
+              href="/jobs"
+              className="w-full sm:w-auto rounded-xl border-2 border-white/20 bg-white/5 backdrop-blur-sm px-8 py-4 text-base font-semibold text-white transition-all hover:border-gold hover:bg-gold/10 text-center"
             >
-              Resume Services
+              View Open Positions
             </Link>
           </div>
           
           {/* Trust badges */}
-          <div className="mt-12 flex flex-wrap items-center justify-center gap-8 text-charcoal/40">
+          <div className="mt-12 flex flex-wrap items-center justify-center gap-8 text-white/50">
             <div className="flex items-center gap-2">
-              <svg className="w-5 h-5 text-gold" fill="currentColor" viewBox="0 0 20 20">
-                <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-              </svg>
-              <span className="text-sm font-medium">Instant Download</span>
+              <Clock className="w-5 h-5 text-gold" />
+              <span className="text-sm font-medium">48-Hour Turnaround</span>
             </div>
             <div className="flex items-center gap-2">
               <svg className="w-5 h-5 text-gold" fill="currentColor" viewBox="0 0 20 20">
                 <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
               </svg>
-              <span className="text-sm font-medium">Lifetime Updates</span>
+              <span className="text-sm font-medium">30+ Top Firm Interviews</span>
             </div>
             <div className="flex items-center gap-2">
-              <svg className="w-5 h-5 text-gold" fill="currentColor" viewBox="0 0 20 20">
-                <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-              </svg>
-              <span className="text-sm font-medium">Money-Back Guarantee</span>
+              <Shield className="w-5 h-5 text-gold" />
+              <span className="text-sm font-medium">100% Money-Back Guarantee</span>
             </div>
           </div>
+          
+          {/* Social proof microcopy */}
+          <p className="mt-8 text-sm text-white/40">
+            Join candidates who've landed interviews at Goldman, Blackstone, KKR, and more.
+          </p>
         </div>
       </div>
     </section>

@@ -9,12 +9,16 @@ const dmSans = DM_Sans({
   subsets: ["latin"],
   variable: "--font-dm-sans",
   weight: ["400", "500", "600", "700"],
+  display: "swap",
+  preload: true,
 })
 
 const playfair = Playfair_Display({
   subsets: ["latin"],
   variable: "--font-playfair",
   weight: ["400", "500", "600", "700"],
+  display: "swap",
+  preload: true,
 })
 
 export const metadata: Metadata = {
@@ -22,6 +26,19 @@ export const metadata: Metadata = {
   title: {
     default: "Wall Street Playbook | Break Into Investment Banking, PE & Hedge Funds",
     template: "%s | Wall Street Playbook",
+  },
+  icons: {
+    icon: [
+      { url: "/favicon.ico" },
+      { url: "/favicon-16x16.png", sizes: "16x16", type: "image/png" },
+      { url: "/favicon-32x32.png", sizes: "32x32", type: "image/png" },
+    ],
+    apple: [
+      { url: "/apple-touch-icon.png" },
+    ],
+    other: [
+      { rel: "manifest", url: "/site.webmanifest" },
+    ],
   },
   description:
     "Proven tactics, frameworks, and tools used by candidates who land roles in investment banking, private equity, and hedge funds. Premium playbooks and resume services for elite finance recruiting.",
@@ -96,6 +113,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        {/* Preconnect to external origins for faster resource loading */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link rel="dns-prefetch" href="https://va.vercel-scripts.com" />
+        
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -104,7 +126,7 @@ export default function RootLayout({
               "@type": "Organization",
               name: "Wall Street Playbook",
               url: "https://wallstreetplaybook.org",
-              logo: "https://wallstreetplaybook.org/logo.png",
+              logo: "https://wallstreetplaybook.org/android-chrome-512x512.png",
               description:
                 "Premium preparation materials and services for investment banking, private equity, and hedge fund recruiting.",
               sameAs: [],

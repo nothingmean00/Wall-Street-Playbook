@@ -149,7 +149,7 @@ export function Footer() {
                 href="https://techsalesplaybook.com" 
                 target="_blank" 
                 rel="noopener noreferrer"
-                className="text-white/40 hover:text-gold transition-colors"
+                className="text-white/50 hover:text-gold transition-colors"
               >
                 Tech Sales Playbook
               </a>

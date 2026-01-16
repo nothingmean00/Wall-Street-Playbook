@@ -1,35 +1,92 @@
-import type { Metadata } from "next"
+"use client"
+
 import Link from "next/link"
-import { CheckCircle, Download, Mail, ArrowRight } from "lucide-react"
+import { CheckCircle, Download, Mail, ArrowRight, Clock, FileText } from "lucide-react"
 import { Navbar } from "@/components/layout/navbar"
 import { Footer } from "@/components/layout/footer"
+import { useSearchParams } from "next/navigation"
+import { Suspense } from "react"
 
-export const metadata: Metadata = {
-  title: "Purchase Successful | Wall Street Playbook",
-  description: "Thank you for your purchase. Your download is ready.",
-}
+function SuccessContent() {
+  const searchParams = useSearchParams()
+  const type = searchParams.get("type")
+  const isResumeService = type === "resume"
 
-export default function SuccessPage() {
   return (
     <div className="flex min-h-screen flex-col">
       <Navbar />
       <main className="flex-grow bg-off-white py-20 lg:py-28">
         <div className="mx-auto max-w-2xl px-6 text-center lg:px-8">
-          {/* Success Icon */}
           <div className="mx-auto flex h-20 w-20 items-center justify-center rounded-full bg-green-100">
             <CheckCircle className="h-10 w-10 text-green-600" />
           </div>
 
-          {/* Heading */}
           <h1 className="mt-8 text-3xl font-bold tracking-tight text-navy sm:text-4xl">
-            Thank You for Your Purchase!
+            {isResumeService ? "Payment Confirmed!" : "Thank You for Your Purchase!"}
           </h1>
           
           <p className="mt-4 text-lg text-charcoal/70">
-            Your order has been confirmed and your materials are on the way.
+            {isResumeService 
+              ? "Your resume service order is confirmed. We'll start working on it right away."
+              : "Your order has been confirmed and your materials are on the way."
+            }
           </p>
 
-          {/* What's Next */}
+          {isResumeService ? (
+            <div className="mt-12 rounded-2xl border border-charcoal/10 bg-white p-8 text-left shadow-sm">
+              <h2 className="text-lg font-semibold text-navy">What happens next?</h2>
+              
+              <ul className="mt-6 space-y-4">
+                <li className="flex items-start gap-4">
+                  <div className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-lg bg-green-100">
+                    <CheckCircle className="h-4 w-4 text-green-600" />
+                  </div>
+                  <div>
+                    <p className="font-medium text-charcoal">Payment received</p>
+                    <p className="mt-1 text-sm text-charcoal/60">
+                      Your payment has been processed successfully.
+                    </p>
+                  </div>
+                </li>
+
+                <li className="flex items-start gap-4">
+                  <div className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-lg bg-gold/10">
+                    <FileText className="h-4 w-4 text-gold" />
+                  </div>
+                  <div>
+                    <p className="font-medium text-charcoal">We are reviewing your resume</p>
+                    <p className="mt-1 text-sm text-charcoal/60">
+                      Our team will start working on your resume within 24 hours.
+                    </p>
+                  </div>
+                </li>
+                
+                <li className="flex items-start gap-4">
+                  <div className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-lg bg-gold/10">
+                    <Clock className="h-4 w-4 text-gold" />
+                  </div>
+                  <div>
+                    <p className="font-medium text-charcoal">Delivery within turnaround time</p>
+                    <p className="mt-1 text-sm text-charcoal/60">
+                      You will receive your detailed feedback or rewritten resume via email.
+                    </p>
+                  </div>
+                </li>
+
+                <li className="flex items-start gap-4">
+                  <div className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-lg bg-gold/10">
+                    <Mail className="h-4 w-4 text-gold" />
+                  </div>
+                  <div>
+                    <p className="font-medium text-charcoal">Check your email for confirmation</p>
+                    <p className="mt-1 text-sm text-charcoal/60">
+                      We have sent a confirmation email with all the details.
+                    </p>
+                  </div>
+                </li>
+              </ul>
+            </div>
+          ) : (
           <div className="mt-12 rounded-2xl border border-charcoal/10 bg-white p-8 text-left shadow-sm">
             <h2 className="text-lg font-semibold text-navy">What happens next?</h2>
             
@@ -41,7 +98,7 @@ export default function SuccessPage() {
                 <div>
                   <p className="font-medium text-charcoal">Check your email</p>
                   <p className="mt-1 text-sm text-charcoal/60">
-                    We've sent a confirmation email with your download link. Check your spam folder if you don't see it.
+                      We have sent a confirmation email with your download link.
                   </p>
                 </div>
               </li>
@@ -53,14 +110,20 @@ export default function SuccessPage() {
                 <div>
                   <p className="font-medium text-charcoal">Download your materials</p>
                   <p className="mt-1 text-sm text-charcoal/60">
-                    Click the download link in your email to access your PDF. The link expires in 7 days.
+                      Click the download link in your email to access your PDF.
                   </p>
                 </div>
               </li>
             </ul>
+            </div>
+          )}
+
+          <div className="mt-8 rounded-xl border border-green-200 bg-green-50 p-4">
+            <p className="text-sm text-green-800">
+              <strong>100% Money-Back Guarantee:</strong> If you are not satisfied with the quality of our work, we will refund your payment in full.
+            </p>
           </div>
 
-          {/* Support */}
           <p className="mt-8 text-sm text-charcoal/60">
             Questions? Contact us at{" "}
             <a href="mailto:support@wallstreetplaybook.com" className="font-medium text-navy hover:text-gold">
@@ -68,13 +131,12 @@ export default function SuccessPage() {
             </a>
           </p>
 
-          {/* Continue browsing */}
           <div className="mt-12 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
             <Link
-              href="/playbooks"
+              href={isResumeService ? "/" : "/playbooks"}
               className="flex items-center gap-2 rounded-lg bg-navy px-6 py-3 text-sm font-semibold text-white transition-colors hover:bg-gold hover:text-navy"
             >
-              Browse More Playbooks
+              {isResumeService ? "Return Home" : "Browse More Playbooks"}
               <ArrowRight className="h-4 w-4" />
             </Link>
             <Link
@@ -91,3 +153,14 @@ export default function SuccessPage() {
   )
 }
 
+export default function SuccessPage() {
+  return (
+    <Suspense fallback={
+      <div className="flex min-h-screen items-center justify-center">
+        <div className="animate-spin h-8 w-8 border-4 border-gold border-t-transparent rounded-full" />
+      </div>
+    }>
+      <SuccessContent />
+    </Suspense>
+  )
+}

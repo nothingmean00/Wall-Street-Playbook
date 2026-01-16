@@ -237,7 +237,7 @@ export const resumeServices: ResumeService[] = [
     id: "resume-review",
     title: "Resume Review",
     description:
-      "Detailed line-by-line feedback on your resume with specific rewrite suggestions. We identify weaknesses in positioning, bullet structure, and overall narrative—then show you exactly how to fix them.",
+      "Detailed line-by-line feedback on your resume with specific rewrite suggestions. Our team identifies weaknesses in positioning, bullet structure, and overall narrative—then shows you exactly how to fix them.",
     price: 197,
     turnaround: "3-5 business days",
     includes: [
@@ -253,7 +253,7 @@ export const resumeServices: ResumeService[] = [
     id: "resume-rewrite",
     title: "Resume Rewrite",
     description:
-      "Complete resume overhaul from scratch. We rebuild your resume using frameworks proven at top firms—transforming your experience into the positioning that gets callbacks.",
+      "Complete resume overhaul from scratch. Our team rebuilds your resume using frameworks proven at top firms—transforming your experience into the positioning that gets callbacks.",
     price: 497,
     turnaround: "5-7 business days",
     includes: [

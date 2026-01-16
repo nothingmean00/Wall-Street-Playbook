@@ -1,22 +1,23 @@
-import { NextResponse } from 'next/server'
+import { NextRequest, NextResponse } from 'next/server'
 import { initDatabase } from '@/lib/db'
 
 // This endpoint should be called once to initialize the database tables
-// In production, you'd run this as a migration script instead
-export async function POST() {
-  // Only allow in development or with admin token
+export async function POST(request: NextRequest) {
+  // Allow in development OR with admin password
   const isDev = process.env.NODE_ENV === 'development'
+  const authHeader = request.headers.get('authorization')
+  const adminPassword = process.env.ADMIN_PASSWORD
+  const isAuthorized = authHeader && adminPassword && authHeader.replace('Bearer ', '') === adminPassword
   
-  if (!isDev) {
-    return NextResponse.json({ error: 'Not allowed in production' }, { status: 403 })
+  if (!isDev && !isAuthorized) {
+    return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
   }
 
   try {
     await initDatabase()
-    return NextResponse.json({ success: true, message: 'Database initialized' })
+    return NextResponse.json({ success: true, message: 'Database initialized with all tables including resume_submissions' })
   } catch (error) {
     console.error('Database init error:', error)
     return NextResponse.json({ error: 'Failed to initialize database' }, { status: 500 })
   }
 }
-
