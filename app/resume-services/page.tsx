@@ -330,7 +330,7 @@ export default function ResumeServicesPage() {
             </p>
             <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
               <Link 
-                href="/submit-resume" 
+                href="/submit-resume?service=resume-review" 
                 className="inline-flex items-center gap-2 rounded-xl bg-gold px-6 py-3 text-sm font-semibold text-navy transition-all hover:bg-navy hover:text-white"
               >
                 Get Started Now

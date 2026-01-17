@@ -227,7 +227,7 @@ const resumeServices = [
     {
         id: "resume-review",
         title: "Resume Review",
-        description: "Detailed line-by-line feedback on your resume with specific rewrite suggestions. We identify weaknesses in positioning, bullet structure, and overall narrative—then show you exactly how to fix them.",
+        description: "Detailed line-by-line feedback on your resume with specific rewrite suggestions. Our team identifies weaknesses in positioning, bullet structure, and overall narrative—then shows you exactly how to fix them.",
         price: 197,
         turnaround: "3-5 business days",
         includes: [
@@ -242,7 +242,7 @@ const resumeServices = [
     {
         id: "resume-rewrite",
         title: "Resume Rewrite",
-        description: "Complete resume overhaul from scratch. We rebuild your resume using frameworks proven at top firms—transforming your experience into the positioning that gets callbacks.",
+        description: "Complete resume overhaul from scratch. Our team rebuilds your resume using frameworks proven at top firms—transforming your experience into the positioning that gets callbacks.",
         price: 497,
         turnaround: "5-7 business days",
         includes: [
@@ -1059,7 +1059,7 @@ function ResumeServicesPage() {
                                                     children: [
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                             className: "text-2xl font-bold text-gold number-highlight",
-                                                            children: "Line-by-Line"
+                                                            children: "30+"
                                                         }, void 0, false, {
                                                             fileName: "[project]/Downloads/wall-street-playbook/app/resume-services/page.tsx",
                                                             lineNumber: 83,
@@ -1067,7 +1067,7 @@ function ResumeServicesPage() {
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                             className: "mt-1 text-sm text-white/50",
-                                                            children: "Detailed Analysis"
+                                                            children: "Top Firm Interviews"
                                                         }, void 0, false, {
                                                             fileName: "[project]/Downloads/wall-street-playbook/app/resume-services/page.tsx",
                                                             lineNumber: 84,
@@ -1084,7 +1084,7 @@ function ResumeServicesPage() {
                                                     children: [
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                             className: "text-2xl font-bold text-gold number-highlight",
-                                                            children: "3-7 Days"
+                                                            children: "48hr"
                                                         }, void 0, false, {
                                                             fileName: "[project]/Downloads/wall-street-playbook/app/resume-services/page.tsx",
                                                             lineNumber: 87,
@@ -1092,7 +1092,7 @@ function ResumeServicesPage() {
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                             className: "mt-1 text-sm text-white/50",
-                                                            children: "Turnaround"
+                                                            children: "Turnaround Time"
                                                         }, void 0, false, {
                                                             fileName: "[project]/Downloads/wall-street-playbook/app/resume-services/page.tsx",
                                                             lineNumber: 88,
@@ -1109,7 +1109,7 @@ function ResumeServicesPage() {
                                                     children: [
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                             className: "text-2xl font-bold text-gold number-highlight",
-                                                            children: "IB-Focused"
+                                                            children: "IB+PE+HF"
                                                         }, void 0, false, {
                                                             fileName: "[project]/Downloads/wall-street-playbook/app/resume-services/page.tsx",
                                                             lineNumber: 91,
@@ -1117,7 +1117,7 @@ function ResumeServicesPage() {
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                             className: "mt-1 text-sm text-white/50",
-                                                            children: "Formatting Standards"
+                                                            children: "All Paths Covered"
                                                         }, void 0, false, {
                                                             fileName: "[project]/Downloads/wall-street-playbook/app/resume-services/page.tsx",
                                                             lineNumber: 92,
@@ -1891,10 +1891,19 @@ function ResumeServicesPage() {
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                     className: "mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row",
                                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$react$2d$server$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"], {
-                                        href: "/playbooks",
-                                        className: "text-sm font-semibold text-navy hover:text-gold",
-                                        children: "Or browse our Playbooks instead →"
-                                    }, void 0, false, {
+                                        href: "/submit-resume",
+                                        className: "inline-flex items-center gap-2 rounded-xl bg-gold px-6 py-3 text-sm font-semibold text-navy transition-all hover:bg-navy hover:text-white",
+                                        children: [
+                                            "Get Started Now",
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$arrow$2d$right$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__$3c$export__default__as__ArrowRight$3e$__["ArrowRight"], {
+                                                className: "h-4 w-4"
+                                            }, void 0, false, {
+                                                fileName: "[project]/Downloads/wall-street-playbook/app/resume-services/page.tsx",
+                                                lineNumber: 337,
+                                                columnNumber: 17
+                                            }, this)
+                                        ]
+                                    }, void 0, true, {
                                         fileName: "[project]/Downloads/wall-street-playbook/app/resume-services/page.tsx",
                                         lineNumber: 332,
                                         columnNumber: 15
@@ -1902,6 +1911,25 @@ function ResumeServicesPage() {
                                 }, void 0, false, {
                                     fileName: "[project]/Downloads/wall-street-playbook/app/resume-services/page.tsx",
                                     lineNumber: 331,
+                                    columnNumber: 13
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                    className: "mt-4 text-sm text-charcoal/50",
+                                    children: [
+                                        "Have questions? ",
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$react$2d$server$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["default"], {
+                                            href: "/contact",
+                                            className: "text-gold hover:underline",
+                                            children: "Contact us"
+                                        }, void 0, false, {
+                                            fileName: "[project]/Downloads/wall-street-playbook/app/resume-services/page.tsx",
+                                            lineNumber: 341,
+                                            columnNumber: 31
+                                        }, this)
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "[project]/Downloads/wall-street-playbook/app/resume-services/page.tsx",
+                                    lineNumber: 340,
                                     columnNumber: 13
                                 }, this)
                             ]
@@ -1923,7 +1951,7 @@ function ResumeServicesPage() {
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$components$2f$layout$2f$footer$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["Footer"], {}, void 0, false, {
                 fileName: "[project]/Downloads/wall-street-playbook/app/resume-services/page.tsx",
-                lineNumber: 339,
+                lineNumber: 346,
                 columnNumber: 7
             }, this)
         ]

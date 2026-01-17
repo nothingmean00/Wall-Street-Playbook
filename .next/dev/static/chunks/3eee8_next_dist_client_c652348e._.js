@@ -140,7 +140,8 @@ function loadScriptsInSequence(scripts, hydrate) {
     if (!scripts || !scripts.length) {
         return hydrate();
     }
-    return scripts.reduce((promise, [src, props])=>{
+    return scripts.reduce((promise, param)=>{
+        let [src, props] = param;
         return promise.then(()=>{
             return new Promise((resolve, reject)=>{
                 const el = document.createElement('script');
@@ -849,7 +850,8 @@ Object.defineProperty(exports, "createHrefFromUrl", {
         return createHrefFromUrl;
     }
 });
-function createHrefFromUrl(url, includeHash = true) {
+function createHrefFromUrl(url) {
+    let includeHash = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : true;
     return url.pathname + url.search + (includeHash ? url.hash : '');
 }
 if ((typeof exports.default === 'function' || typeof exports.default === 'object' && exports.default !== null) && typeof exports.default.__esModule === 'undefined') {
@@ -921,10 +923,11 @@ Object.defineProperty(exports, "HandleISRError", {
     }
 });
 const workAsyncStorage = typeof window === 'undefined' ? __turbopack_context__.r("[project]/Downloads/wall-street-playbook/node_modules/next/dist/server/app-render/work-async-storage.external.js [app-client] (ecmascript)").workAsyncStorage : undefined;
-function HandleISRError({ error }) {
+function HandleISRError(param) {
+    let { error } = param;
     if (workAsyncStorage) {
         const store = workAsyncStorage.getStore();
-        if (store?.isStaticGeneration) {
+        if (store === null || store === void 0 ? void 0 : store.isStaticGeneration) {
             if (error) {
                 console.error(error);
             }
@@ -978,17 +981,6 @@ const _handleisrerror = __turbopack_context__.r("[project]/Downloads/wall-street
 const _isbot = __turbopack_context__.r("[project]/Downloads/wall-street-playbook/node_modules/next/dist/shared/lib/router/utils/is-bot.js [app-client] (ecmascript)");
 const isBotUserAgent = typeof window !== 'undefined' && (0, _isbot.isBot)(window.navigator.userAgent);
 class ErrorBoundaryHandler extends _react.default.Component {
-    constructor(props){
-        super(props), this.reset = ()=>{
-            this.setState({
-                error: null
-            });
-        };
-        this.state = {
-            error: null,
-            previousPathname: this.props.pathname
-        };
-    }
     static getDerivedStateFromError(error) {
         if ((0, _isnextroutererror.isNextRouterError)(error)) {
             // Re-throw if an expected internal Next.js router error occurs
@@ -1044,8 +1036,20 @@ class ErrorBoundaryHandler extends _react.default.Component {
         }
         return this.props.children;
     }
+    constructor(props){
+        super(props), this.reset = ()=>{
+            this.setState({
+                error: null
+            });
+        };
+        this.state = {
+            error: null,
+            previousPathname: this.props.pathname
+        };
+    }
 }
-function ErrorBoundary({ errorComponent, errorStyles, errorScripts, children }) {
+function ErrorBoundary(param) {
+    let { errorComponent, errorStyles, errorScripts, children } = param;
     // When we're rendering the missing params shell, this will return null. This
     // is because we won't be rendering any not found boundaries or error
     // boundaries for the missing params shell. When this runs on the client
@@ -1105,8 +1109,9 @@ const styles = {
         margin: '0 8px'
     }
 };
-function DefaultGlobalError({ error }) {
-    const digest = error?.digest;
+function DefaultGlobalError(param) {
+    let { error } = param;
+    const digest = error === null || error === void 0 ? void 0 : error.digest;
     return /*#__PURE__*/ (0, _jsxruntime.jsxs)("html", {
         id: "__next_error__",
         children: [
@@ -1256,7 +1261,8 @@ const _errorboundary = __turbopack_context__.r("[project]/Downloads/wall-street-
 const _globalerror = /*#__PURE__*/ _interop_require_default._(__turbopack_context__.r("[project]/Downloads/wall-street-playbook/node_modules/next/dist/client/components/builtin/global-error.js [app-client] (ecmascript)"));
 const devToolErrorMod = ("TURBOPACK compile-time truthy", 1) ? __turbopack_context__.r("[project]/Downloads/wall-street-playbook/node_modules/next/dist/next-devtools/userspace/app/errors/index.js [app-client] (ecmascript)") : "TURBOPACK unreachable";
 function onCaughtError(thrownValue, errorInfo) {
-    const errorBoundaryComponent = errorInfo.errorBoundary?.constructor;
+    var _errorInfo_errorBoundary;
+    const errorBoundaryComponent = (_errorInfo_errorBoundary = errorInfo.errorBoundary) === null || _errorInfo_errorBoundary === void 0 ? void 0 : _errorInfo_errorBoundary.constructor;
     let isImplicitErrorBoundary;
     if ("TURBOPACK compile-time truthy", 1) {
         const { AppDevOverlayErrorBoundary } = __turbopack_context__.r("[project]/Downloads/wall-street-playbook/node_modules/next/dist/next-devtools/userspace/app/app-dev-overlay-error-boundary.js [app-client] (ecmascript)");
@@ -1279,12 +1285,13 @@ function onCaughtError(thrownValue, errorInfo) {
     // Skip certain custom errors which are not expected to be reported on client
     if ((0, _bailouttocsr.isBailoutToCSRError)(thrownValue) || (0, _isnextroutererror.isNextRouterError)(thrownValue)) return;
     if ("TURBOPACK compile-time truthy", 1) {
-        const errorBoundaryName = errorBoundaryComponent?.displayName || errorBoundaryComponent?.name || 'Unknown';
-        const componentThatErroredFrame = errorInfo?.componentStack?.split('\n')[1];
+        var _errorInfo_componentStack;
+        const errorBoundaryName = (errorBoundaryComponent === null || errorBoundaryComponent === void 0 ? void 0 : errorBoundaryComponent.displayName) || (errorBoundaryComponent === null || errorBoundaryComponent === void 0 ? void 0 : errorBoundaryComponent.name) || 'Unknown';
+        const componentThatErroredFrame = errorInfo === null || errorInfo === void 0 ? void 0 : (_errorInfo_componentStack = errorInfo.componentStack) === null || _errorInfo_componentStack === void 0 ? void 0 : _errorInfo_componentStack.split('\n')[1];
         // Match chrome or safari stack trace
         const matches = // example 1: at Page (http://localhost:3000/_next/static/chunks/pages/index.js?ts=1631600000000:2:1)
         // example 2: Page@http://localhost:3000/_next/static/chunks/pages/index.js?ts=1631600000000:2:1
-        componentThatErroredFrame?.match(/\s+at (\w+)\s+|(\w+)@/) ?? [];
+        (componentThatErroredFrame === null || componentThatErroredFrame === void 0 ? void 0 : componentThatErroredFrame.match(/\s+at (\w+)\s+|(\w+)@/)) ?? [];
         const componentThatErroredName = matches[1] || matches[2] || 'Unknown';
         // Create error location with errored component and error boundary, to match the behavior of default React onCaughtError handler.
         const errorBoundaryMessage = `It was handled by the <${errorBoundaryName}> error boundary.`;
@@ -1699,7 +1706,8 @@ function computeChangedPath(treeA, treeB) {
     // lightweight normalization to remove route groups
     return normalizeSegments(changedPath.split('/'));
 }
-function getSelectedParams(currentTree, params = {}) {
+function getSelectedParams(currentTree) {
+    let params = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : {};
     const parallelRoutes = currentTree[1];
     for (const parallelRoute of Object.values(parallelRoutes)){
         const segment = parallelRoute[0];
@@ -1770,10 +1778,10 @@ function handleMutable(state, mutable) {
         },
         // All navigation requires scroll and focus management to trigger.
         focusAndScrollRef: {
-            apply: shouldScroll ? isNotUndefined(mutable?.scrollableSegments) ? true : state.focusAndScrollRef.apply : false,
+            apply: shouldScroll ? isNotUndefined(mutable === null || mutable === void 0 ? void 0 : mutable.scrollableSegments) ? true : state.focusAndScrollRef.apply : false,
             onlyHashChange: mutable.onlyHashChange || false,
             hashFragment: shouldScroll ? mutable.hashFragment && mutable.hashFragment !== '' ? decodeURIComponent(mutable.hashFragment.slice(1)) : state.focusAndScrollRef.hashFragment : null,
-            segmentPaths: shouldScroll ? mutable?.scrollableSegments ?? state.focusAndScrollRef.segmentPaths : []
+            segmentPaths: shouldScroll ? (mutable === null || mutable === void 0 ? void 0 : mutable.scrollableSegments) ?? state.focusAndScrollRef.segmentPaths : []
         },
         // Apply cache.
         cache: mutable.cache ? mutable.cache : state.cache,
@@ -2441,6 +2449,7 @@ async function fetchServerResponse(url, options) {
     // but we should preserve the original URL for the canonical URL and error handling.
     const originalUrl = url;
     try {
+        var _res_headers_get;
         // When creating a "temporary" prefetch (the "on-demand" prefetch that gets created on navigation, if one doesn't exist)
         // we send the request with a "high" priority as it's in response to a user interaction that could be blocking a transition.
         // Otherwise, all other prefetches are sent with a "low" priority.
@@ -2457,7 +2466,7 @@ async function fetchServerResponse(url, options) {
         const responseUrl = (0, _routeparams.urlToUrlWithoutFlightMarker)(new URL(res.url));
         const canonicalUrl = res.redirected ? responseUrl : originalUrl;
         const contentType = res.headers.get('content-type') || '';
-        const interception = !!res.headers.get('vary')?.includes(_approuterheaders.NEXT_URL);
+        const interception = !!((_res_headers_get = res.headers.get('vary')) === null || _res_headers_get === void 0 ? void 0 : _res_headers_get.includes(_approuterheaders.NEXT_URL));
         const postponed = !!res.headers.get(_approuterheaders.NEXT_DID_POSTPONE_HEADER);
         const staleTimeHeaderSeconds = res.headers.get(_approuterheaders.NEXT_ROUTER_STALE_TIME_HEADER);
         const staleTime = staleTimeHeaderSeconds !== null ? parseInt(staleTimeHeaderSeconds, 10) * 1000 : -1;
@@ -2676,7 +2685,8 @@ Object.defineProperty(exports, "createRouterCacheKey", {
     }
 });
 const _segment = __turbopack_context__.r("[project]/Downloads/wall-street-playbook/node_modules/next/dist/shared/lib/segment.js [app-client] (ecmascript)");
-function createRouterCacheKey(segment, withoutSearchParameters = false) {
+function createRouterCacheKey(segment) {
+    let withoutSearchParameters = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : false;
     // if the segment is an array, it means it's a dynamic segment
     // for example, ['lang', 'en', 'd']. We need to convert it to a string to store it as a cache node key.
     if (Array.isArray(segment)) {
@@ -4916,7 +4926,7 @@ function pingSharedPartOfCacheComponentsTree(now, task, route, oldTree, newTree)
             const newTreeChild = newTreeChildren[parallelRouteKey];
             const newTreeChildSegment = newTreeChild.segment;
             const oldTreeChild = oldTreeChildren[parallelRouteKey];
-            const oldTreeChildSegment = oldTreeChild?.[0];
+            const oldTreeChildSegment = oldTreeChild === null || oldTreeChild === void 0 ? void 0 : oldTreeChild[0];
             let childExitStatus;
             if (oldTreeChildSegment !== undefined && doesCurrentSegmentMatchCachedSegment(route, newTreeChildSegment, oldTreeChildSegment)) {
                 // We're still in the "shared" part of the tree.
@@ -5009,7 +5019,7 @@ function diffRouteTreeAgainstCurrent(now, task, route, oldTree, newTree, spawned
             const newTreeChild = newTreeChildren[parallelRouteKey];
             const newTreeChildSegment = newTreeChild.segment;
             const oldTreeChild = oldTreeChildren[parallelRouteKey];
-            const oldTreeChildSegment = oldTreeChild?.[0];
+            const oldTreeChildSegment = oldTreeChild === null || oldTreeChild === void 0 ? void 0 : oldTreeChild[0];
             if (oldTreeChildSegment !== undefined && doesCurrentSegmentMatchCachedSegment(route, newTreeChildSegment, oldTreeChildSegment)) {
                 // This segment is already part of the current route. Keep traversing.
                 const requestTreeChild = diffRouteTreeAgainstCurrent(now, task, route, oldTreeChild, newTreeChild, spawnedEntries, fetchStrategy);
@@ -5743,8 +5753,8 @@ const IDLE_LINK_STATUS = {
 };
 function setLinkForCurrentNavigation(link) {
     (0, _react.startTransition)(()=>{
-        linkForMostRecentNavigation?.setOptimisticLinkStatus(IDLE_LINK_STATUS);
-        link?.setOptimisticLinkStatus(PENDING_LINK_STATUS);
+        linkForMostRecentNavigation === null || linkForMostRecentNavigation === void 0 ? void 0 : linkForMostRecentNavigation.setOptimisticLinkStatus(IDLE_LINK_STATUS);
+        link === null || link === void 0 ? void 0 : link.setOptimisticLinkStatus(PENDING_LINK_STATUS);
         linkForMostRecentNavigation = link;
     });
 }
@@ -7017,6 +7027,7 @@ async function fetchSegmentPrefetchesUsingDynamicRequest(task, route, fetchStrat
             }
     }
     try {
+        var _serverData_rp;
         const response = await fetchPrefetchResponse(url, headers);
         if (!response || !response.ok || !response.body) {
             // Server responded with an error, or with a miss. We should still cache
@@ -7054,7 +7065,7 @@ async function fetchSegmentPrefetchesUsingDynamicRequest(task, route, fetchStrat
             }
         });
         const serverData = await (0, _fetchserverresponse.createFromNextReadableStream)(prefetchStream, headers);
-        const isResponsePartial = fetchStrategy === _types.FetchStrategy.PPRRuntime ? serverData.rp?.[0] === true : false;
+        const isResponsePartial = fetchStrategy === _types.FetchStrategy.PPRRuntime ? ((_serverData_rp = serverData.rp) === null || _serverData_rp === void 0 ? void 0 : _serverData_rp[0]) === true : false;
         // Aside from writing the data into the cache, this function also returns
         // the entries that were fulfilled, so we can streamingly update their sizes
         // in the LRU as more data comes in.
@@ -7071,6 +7082,7 @@ async function fetchSegmentPrefetchesUsingDynamicRequest(task, route, fetchStrat
     }
 }
 function writeDynamicTreeResponseIntoCache(now, task, fetchStrategy, response, serverData, entry, couldBeIntercepted, canonicalUrl, routeIsPPREnabled) {
+    var _serverData_rp;
     // Get the URL that was used to render the target page. This may be different
     // from the URL in the request URL, if the page was rewritten.
     const renderedSearch = (0, _routeparams.getRenderedSearch)(response);
@@ -7089,7 +7101,7 @@ function writeDynamicTreeResponseIntoCache(now, task, fetchStrategy, response, s
     const flightRouterState = flightData.tree;
     // For runtime prefetches, stale time is in the payload at rp[1].
     // For other responses, fall back to the header.
-    const staleTimeSeconds = typeof serverData.rp?.[1] === 'number' ? serverData.rp[1] : parseInt(response.headers.get(_approuterheaders.NEXT_ROUTER_STALE_TIME_HEADER) ?? '', 10);
+    const staleTimeSeconds = typeof ((_serverData_rp = serverData.rp) === null || _serverData_rp === void 0 ? void 0 : _serverData_rp[1]) === 'number' ? serverData.rp[1] : parseInt(response.headers.get(_approuterheaders.NEXT_ROUTER_STALE_TIME_HEADER) ?? '', 10);
     const staleTimeMs = !isNaN(staleTimeSeconds) ? getStaleTimeMs(staleTimeSeconds) : _navigatereducer.STATIC_STALETIME_MS;
     // If the response contains dynamic holes, then we must conservatively assume
     // that any individual segment might contain dynamic holes, and also the
@@ -7134,6 +7146,7 @@ function rejectSegmentEntriesIfStillPending(entries, staleAt) {
     return fulfilledEntries;
 }
 function writeDynamicRenderResponseIntoCache(now, task, fetchStrategy, response, serverData, isResponsePartial, route, spawnedEntries) {
+    var _serverData_rp;
     if (serverData.b !== (0, _appbuildid.getAppBuildId)()) {
         // The server build does not match the client. Treat as a 404. During
         // an actual navigation, the router will trigger an MPA navigation.
@@ -7153,7 +7166,7 @@ function writeDynamicRenderResponseIntoCache(now, task, fetchStrategy, response,
     }
     // For runtime prefetches, stale time is in the payload at rp[1].
     // For other responses, fall back to the header.
-    const staleTimeSeconds = typeof serverData.rp?.[1] === 'number' ? serverData.rp[1] : parseInt(response.headers.get(_approuterheaders.NEXT_ROUTER_STALE_TIME_HEADER) ?? '', 10);
+    const staleTimeSeconds = typeof ((_serverData_rp = serverData.rp) === null || _serverData_rp === void 0 ? void 0 : _serverData_rp[1]) === 'number' ? serverData.rp[1] : parseInt(response.headers.get(_approuterheaders.NEXT_ROUTER_STALE_TIME_HEADER) ?? '', 10);
     const staleTimeMs = !isNaN(staleTimeSeconds) ? getStaleTimeMs(staleTimeSeconds) : _navigatereducer.STATIC_STALETIME_MS;
     const staleAt = now + staleTimeMs;
     for (const flightData of flightDatas){
@@ -7169,8 +7182,9 @@ function writeDynamicRenderResponseIntoCache(now, task, fetchStrategy, response,
             const segmentPath = flightData.segmentPath;
             let tree = route.tree;
             for(let i = 0; i < segmentPath.length; i += 2){
+                var _tree_slots;
                 const parallelRouteKey = segmentPath[i];
-                if (tree?.slots?.[parallelRouteKey] !== undefined) {
+                if ((tree === null || tree === void 0 ? void 0 : (_tree_slots = tree.slots) === null || _tree_slots === void 0 ? void 0 : _tree_slots[parallelRouteKey]) !== undefined) {
                     tree = tree.slots[parallelRouteKey];
                 } else {
                     if (spawnedEntries !== null) {
@@ -7965,7 +7979,7 @@ function fillLazyItemsTillLeafWithHead(navigatedAt, newCache, existingCache, rou
                         head: null,
                         prefetchHead: null,
                         loading,
-                        parallelRoutes: new Map(existingCacheNode?.parallelRoutes),
+                        parallelRoutes: new Map(existingCacheNode === null || existingCacheNode === void 0 ? void 0 : existingCacheNode.parallelRoutes),
                         navigatedAt
                     };
                 } else {
@@ -7977,7 +7991,7 @@ function fillLazyItemsTillLeafWithHead(navigatedAt, newCache, existingCache, rou
                         prefetchRsc: null,
                         head: null,
                         prefetchHead: null,
-                        parallelRoutes: new Map(existingCacheNode?.parallelRoutes),
+                        parallelRoutes: new Map(existingCacheNode === null || existingCacheNode === void 0 ? void 0 : existingCacheNode.parallelRoutes),
                         loading: null,
                         navigatedAt
                     };
@@ -8277,7 +8291,8 @@ async function refreshInactiveParallelSegments(options) {
         fetchedSegments
     });
 }
-async function refreshInactiveParallelSegmentsImpl({ navigatedAt, state, updatedTree, updatedCache, includeNextUrl, fetchedSegments, rootTree = updatedTree, canonicalUrl }) {
+async function refreshInactiveParallelSegmentsImpl(param) {
+    let { navigatedAt, state, updatedTree, updatedCache, includeNextUrl, fetchedSegments, rootTree = updatedTree, canonicalUrl } = param;
     const [, parallelRoutes, refetchPath, refetchMarker] = updatedTree;
     const fetchPromises = [];
     if (refetchPath && refetchPath !== canonicalUrl && refetchMarker === 'refresh' && // it's possible for the tree to contain multiple segments that contain data at the same URL
@@ -8472,8 +8487,9 @@ const _reactdom = __turbopack_context__.r("[project]/Downloads/wall-street-playb
 const ANNOUNCER_TYPE = 'next-route-announcer';
 const ANNOUNCER_ID = '__next-route-announcer__';
 function getAnnouncerNode() {
+    var _existingAnnouncer_shadowRoot;
     const existingAnnouncer = document.getElementsByName(ANNOUNCER_TYPE)[0];
-    if (existingAnnouncer?.shadowRoot?.childNodes[0]) {
+    if (existingAnnouncer === null || existingAnnouncer === void 0 ? void 0 : (_existingAnnouncer_shadowRoot = existingAnnouncer.shadowRoot) === null || _existingAnnouncer_shadowRoot === void 0 ? void 0 : _existingAnnouncer_shadowRoot.childNodes[0]) {
         return existingAnnouncer.shadowRoot.childNodes[0];
     } else {
         const container = document.createElement(ANNOUNCER_TYPE);
@@ -8492,14 +8508,15 @@ function getAnnouncerNode() {
         return announcer;
     }
 }
-function AppRouterAnnouncer({ tree }) {
+function AppRouterAnnouncer(param) {
+    let { tree } = param;
     const [portalNode, setPortalNode] = (0, _react.useState)(null);
     (0, _react.useEffect)(()=>{
         const announcer = getAnnouncerNode();
         setPortalNode(announcer);
         return ()=>{
             const container = document.getElementsByTagName(ANNOUNCER_TYPE)[0];
-            if (container?.isConnected) {
+            if (container === null || container === void 0 ? void 0 : container.isConnected) {
                 document.body.removeChild(container);
             }
         };
@@ -8662,7 +8679,8 @@ _export(exports, {
 const _redirectstatuscode = __turbopack_context__.r("[project]/Downloads/wall-street-playbook/node_modules/next/dist/client/components/redirect-status-code.js [app-client] (ecmascript)");
 const _redirecterror = __turbopack_context__.r("[project]/Downloads/wall-street-playbook/node_modules/next/dist/client/components/redirect-error.js [app-client] (ecmascript)");
 const actionAsyncStorage = typeof window === 'undefined' ? __turbopack_context__.r("[project]/Downloads/wall-street-playbook/node_modules/next/dist/server/app-render/action-async-storage.external.js [app-client] (ecmascript)").actionAsyncStorage : undefined;
-function getRedirectError(url, type, statusCode = _redirectstatuscode.RedirectStatusCode.TemporaryRedirect) {
+function getRedirectError(url, type) {
+    let statusCode = arguments.length > 2 && arguments[2] !== void 0 ? arguments[2] : _redirectstatuscode.RedirectStatusCode.TemporaryRedirect;
     const error = Object.defineProperty(new Error(_redirecterror.REDIRECT_ERROR_CODE), "__NEXT_ERROR_CODE", {
         value: "E394",
         enumerable: false,
@@ -8672,10 +8690,12 @@ function getRedirectError(url, type, statusCode = _redirectstatuscode.RedirectSt
     return error;
 }
 function redirect(/** The URL to redirect to */ url, type) {
-    type ??= actionAsyncStorage?.getStore()?.isAction ? _redirecterror.RedirectType.push : _redirecterror.RedirectType.replace;
+    var _actionAsyncStorage_getStore;
+    type ??= (actionAsyncStorage === null || actionAsyncStorage === void 0 ? void 0 : (_actionAsyncStorage_getStore = actionAsyncStorage.getStore()) === null || _actionAsyncStorage_getStore === void 0 ? void 0 : _actionAsyncStorage_getStore.isAction) ? _redirecterror.RedirectType.push : _redirecterror.RedirectType.replace;
     throw getRedirectError(url, type, _redirectstatuscode.RedirectStatusCode.TemporaryRedirect);
 }
-function permanentRedirect(/** The URL to redirect to */ url, type = _redirecterror.RedirectType.replace) {
+function permanentRedirect(/** The URL to redirect to */ url) {
+    let type = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : _redirecterror.RedirectType.replace;
     throw getRedirectError(url, type, _redirectstatuscode.RedirectStatusCode.PermanentRedirect);
 }
 function getURLFromRedirectError(error) {
@@ -9168,7 +9188,7 @@ const _navigationreactserver = __turbopack_context__.r("[project]/Downloads/wall
 const useDynamicRouteParams = typeof window === 'undefined' ? __turbopack_context__.r("[project]/Downloads/wall-street-playbook/node_modules/next/dist/server/app-render/dynamic-rendering.js [app-client] (ecmascript)").useDynamicRouteParams : undefined;
 const useDynamicSearchParams = typeof window === 'undefined' ? __turbopack_context__.r("[project]/Downloads/wall-street-playbook/node_modules/next/dist/server/app-render/dynamic-rendering.js [app-client] (ecmascript)").useDynamicSearchParams : undefined;
 function useSearchParams() {
-    useDynamicSearchParams?.('useSearchParams()');
+    useDynamicSearchParams === null || useDynamicSearchParams === void 0 ? void 0 : useDynamicSearchParams('useSearchParams()');
     const searchParams = (0, _react.useContext)(_hooksclientcontextsharedruntime.SearchParamsContext);
     // In the case where this is `null`, the compat types added in
     // `next-env.d.ts` will add a new overload that changes the return type to
@@ -9193,7 +9213,7 @@ function useSearchParams() {
     return readonlySearchParams;
 }
 function usePathname() {
-    useDynamicRouteParams?.('usePathname()');
+    useDynamicRouteParams === null || useDynamicRouteParams === void 0 ? void 0 : useDynamicRouteParams('usePathname()');
     // In the case where this is `null`, the compat types added in `next-env.d.ts`
     // will add a new overload that changes the return type to include `null`.
     const pathname = (0, _react.useContext)(_hooksclientcontextsharedruntime.PathnameContext);
@@ -9218,7 +9238,7 @@ function useRouter() {
     return router;
 }
 function useParams() {
-    useDynamicRouteParams?.('useParams()');
+    useDynamicRouteParams === null || useDynamicRouteParams === void 0 ? void 0 : useDynamicRouteParams('useParams()');
     const params = (0, _react.useContext)(_hooksclientcontextsharedruntime.PathParamsContext);
     // Instrument with Suspense DevTools (dev-only)
     if (("TURBOPACK compile-time value", "development") !== 'production' && 'use' in _react.default) {
@@ -9229,8 +9249,9 @@ function useParams() {
     }
     return params;
 }
-function useSelectedLayoutSegments(parallelRouteKey = 'children') {
-    useDynamicRouteParams?.('useSelectedLayoutSegments()');
+function useSelectedLayoutSegments() {
+    let parallelRouteKey = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : 'children';
+    useDynamicRouteParams === null || useDynamicRouteParams === void 0 ? void 0 : useDynamicRouteParams('useSelectedLayoutSegments()');
     const context = (0, _react.useContext)(_approutercontextsharedruntime.LayoutRouterContext);
     // @ts-expect-error This only happens in `pages`. Type is overwritten in navigation.d.ts
     if (!context) return null;
@@ -9238,7 +9259,8 @@ function useSelectedLayoutSegments(parallelRouteKey = 'children') {
     if (("TURBOPACK compile-time value", "development") !== 'production' && 'use' in _react.default) {
         const navigationPromises = (0, _react.use)(_hooksclientcontextsharedruntime.NavigationPromisesContext);
         if (navigationPromises) {
-            const promise = navigationPromises.selectedLayoutSegmentsPromises?.get(parallelRouteKey);
+            var _navigationPromises_selectedLayoutSegmentsPromises;
+            const promise = (_navigationPromises_selectedLayoutSegmentsPromises = navigationPromises.selectedLayoutSegmentsPromises) === null || _navigationPromises_selectedLayoutSegmentsPromises === void 0 ? void 0 : _navigationPromises_selectedLayoutSegmentsPromises.get(parallelRouteKey);
             if (promise) {
                 // We should always have a promise here, but if we don't, it's not worth erroring over.
                 // We just won't be able to instrument it, but can still provide the value.
@@ -9248,13 +9270,15 @@ function useSelectedLayoutSegments(parallelRouteKey = 'children') {
     }
     return (0, _segment.getSelectedLayoutSegmentPath)(context.parentTree, parallelRouteKey);
 }
-function useSelectedLayoutSegment(parallelRouteKey = 'children') {
-    useDynamicRouteParams?.('useSelectedLayoutSegment()');
+function useSelectedLayoutSegment() {
+    let parallelRouteKey = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : 'children';
+    useDynamicRouteParams === null || useDynamicRouteParams === void 0 ? void 0 : useDynamicRouteParams('useSelectedLayoutSegment()');
     const navigationPromises = (0, _react.useContext)(_hooksclientcontextsharedruntime.NavigationPromisesContext);
     const selectedLayoutSegments = useSelectedLayoutSegments(parallelRouteKey);
     // Instrument with Suspense DevTools (dev-only)
     if (("TURBOPACK compile-time value", "development") !== 'production' && navigationPromises && 'use' in _react.default) {
-        const promise = navigationPromises.selectedLayoutSegmentPromises?.get(parallelRouteKey);
+        var _navigationPromises_selectedLayoutSegmentPromises;
+        const promise = (_navigationPromises_selectedLayoutSegmentPromises = navigationPromises.selectedLayoutSegmentPromises) === null || _navigationPromises_selectedLayoutSegmentPromises === void 0 ? void 0 : _navigationPromises_selectedLayoutSegmentPromises.get(parallelRouteKey);
         if (promise) {
             // We should always have a promise here, but if we don't, it's not worth erroring over.
             // We just won't be able to instrument it, but can still provide the value.
@@ -9301,7 +9325,8 @@ const _react = /*#__PURE__*/ _interop_require_wildcard._(__turbopack_context__.r
 const _navigation = __turbopack_context__.r("[project]/Downloads/wall-street-playbook/node_modules/next/dist/client/components/navigation.js [app-client] (ecmascript)");
 const _redirect = __turbopack_context__.r("[project]/Downloads/wall-street-playbook/node_modules/next/dist/client/components/redirect.js [app-client] (ecmascript)");
 const _redirecterror = __turbopack_context__.r("[project]/Downloads/wall-street-playbook/node_modules/next/dist/client/components/redirect-error.js [app-client] (ecmascript)");
-function HandleRedirect({ redirect, reset, redirectType }) {
+function HandleRedirect(param) {
+    let { redirect, reset, redirectType } = param;
     const router = (0, _navigation.useRouter)();
     (0, _react.useEffect)(()=>{
         _react.default.startTransition(()=>{
@@ -9321,13 +9346,6 @@ function HandleRedirect({ redirect, reset, redirectType }) {
     return null;
 }
 class RedirectErrorBoundary extends _react.default.Component {
-    constructor(props){
-        super(props);
-        this.state = {
-            redirect: null,
-            redirectType: null
-        };
-    }
     static getDerivedStateFromError(error) {
         if ((0, _redirecterror.isRedirectError)(error)) {
             const url = (0, _redirect.getURLFromRedirectError)(error);
@@ -9363,8 +9381,16 @@ class RedirectErrorBoundary extends _react.default.Component {
         }
         return this.props.children;
     }
+    constructor(props){
+        super(props);
+        this.state = {
+            redirect: null,
+            redirectType: null
+        };
+    }
 }
-function RedirectBoundary({ children }) {
+function RedirectBoundary(param) {
+    let { children } = param;
     const router = (0, _navigation.useRouter)();
     return /*#__PURE__*/ (0, _jsxruntime.jsx)(RedirectErrorBoundary, {
         router: router,
@@ -9565,15 +9591,6 @@ function getDomNodeAttributes(node) {
     return result;
 }
 class GracefulDegradeBoundary extends _react.Component {
-    constructor(props){
-        super(props);
-        this.state = {
-            hasError: false
-        };
-        this.rootHtml = '';
-        this.htmlAttributes = {};
-        this.htmlRef = /*#__PURE__*/ (0, _react.createRef)();
-    }
     static getDerivedStateFromError(_) {
         return {
             hasError: true
@@ -9583,7 +9600,8 @@ class GracefulDegradeBoundary extends _react.Component {
         const htmlNode = this.htmlRef.current;
         if (this.state.hasError && htmlNode) {
             // Reapply the cached HTML attributes to the root element
-            Object.entries(this.htmlAttributes).forEach(([key, value])=>{
+            Object.entries(this.htmlAttributes).forEach((param)=>{
+                let [key, value] = param;
                 htmlNode.setAttribute(key, value);
             });
         }
@@ -9606,6 +9624,15 @@ class GracefulDegradeBoundary extends _react.Component {
             });
         }
         return this.props.children;
+    }
+    constructor(props){
+        super(props);
+        this.state = {
+            hasError: false
+        };
+        this.rootHtml = '';
+        this.htmlAttributes = {};
+        this.htmlRef = /*#__PURE__*/ (0, _react.createRef)();
     }
 }
 const _default = GracefulDegradeBoundary;
@@ -9636,7 +9663,8 @@ const _gracefuldegradeboundary = /*#__PURE__*/ _interop_require_default._(__turb
 const _errorboundary = __turbopack_context__.r("[project]/Downloads/wall-street-playbook/node_modules/next/dist/client/components/error-boundary.js [app-client] (ecmascript)");
 const _isbot = __turbopack_context__.r("[project]/Downloads/wall-street-playbook/node_modules/next/dist/shared/lib/router/utils/is-bot.js [app-client] (ecmascript)");
 const isBotUserAgent = typeof window !== 'undefined' && (0, _isbot.isBot)(window.navigator.userAgent);
-function RootErrorBoundary({ children, errorComponent, errorStyles, errorScripts }) {
+function RootErrorBoundary(param) {
+    let { children, errorComponent, errorStyles, errorScripts } = param;
     if (isBotUserAgent) {
         // Preserve existing DOM/HTML for bots to avoid replacing content with an error UI
         // and to keep the original SSR output intact.
@@ -9811,13 +9839,6 @@ const _httpaccessfallback = __turbopack_context__.r("[project]/Downloads/wall-st
 const _warnonce = __turbopack_context__.r("[project]/Downloads/wall-street-playbook/node_modules/next/dist/shared/lib/utils/warn-once.js [app-client] (ecmascript)");
 const _approutercontextsharedruntime = __turbopack_context__.r("[project]/Downloads/wall-street-playbook/node_modules/next/dist/shared/lib/app-router-context.shared-runtime.js [app-client] (ecmascript)");
 class HTTPAccessFallbackErrorBoundary extends _react.default.Component {
-    constructor(props){
-        super(props);
-        this.state = {
-            triggeredStatus: undefined,
-            previousPathname: props.pathname
-        };
-    }
     componentDidCatch() {
         if (("TURBOPACK compile-time value", "development") === 'development' && this.props.missingSlots && this.props.missingSlots.size > 0 && // A missing children slot is the typical not-found case, so no need to warn
         !this.props.missingSlots.has('children')) {
@@ -9886,8 +9907,16 @@ class HTTPAccessFallbackErrorBoundary extends _react.default.Component {
         }
         return children;
     }
+    constructor(props){
+        super(props);
+        this.state = {
+            triggeredStatus: undefined,
+            previousPathname: props.pathname
+        };
+    }
 }
-function HTTPAccessFallbackBoundary({ notFound, forbidden, unauthorized, children }) {
+function HTTPAccessFallbackBoundary(param) {
+    let { notFound, forbidden, unauthorized, children } = param;
     // When we're rendering the missing params shell, this will return null. This
     // is because we won't be rendering any not found boundaries or error
     // boundaries for the missing params shell. When this runs on the client
@@ -9956,7 +9985,8 @@ function NotAllowedRootHTTPFallbackError() {
     bailOnRootNotFound();
     return null;
 }
-function DevRootHTTPAccessFallbackBoundary({ children }) {
+function DevRootHTTPAccessFallbackBoundary(param) {
+    let { children } = param;
     return /*#__PURE__*/ (0, _jsxruntime.jsx)(_errorboundary.HTTPAccessFallbackBoundary, {
         notFound: /*#__PURE__*/ (0, _jsxruntime.jsx)(NotAllowedRootHTTPFallbackError, {}),
         children: children
@@ -10001,7 +10031,7 @@ _export(exports, {
 const REACT_REFRESH_FULL_RELOAD = '[Fast Refresh] performing full reload\n\n' + "Fast Refresh will perform a full reload when you edit a file that's imported by modules outside of the React rendering tree.\n" + 'You might have a file which exports a React component but also exports a value that is imported by a non-React component file.\n' + 'Consider migrating the non-React component export to a separate file and importing it into both files.\n\n' + 'It is also possible the parent component of the component you edited is a class component, which disables Fast Refresh.\n' + 'Fast Refresh requires at least one parent function component in your React tree.';
 const REACT_REFRESH_FULL_RELOAD_FROM_ERROR = '[Fast Refresh] performing full reload because your application had an unrecoverable error';
 function reportInvalidHmrMessage(message, err) {
-    console.warn('[HMR] Invalid message: ' + JSON.stringify(message) + '\n' + (err instanceof Error && err?.stack || ''));
+    console.warn('[HMR] Invalid message: ' + JSON.stringify(message) + '\n' + (err instanceof Error && (err === null || err === void 0 ? void 0 : err.stack) || ''));
 }
 if ((typeof exports.default === 'function' || typeof exports.default === 'object' && exports.default !== null) && typeof exports.default.__esModule === 'undefined') {
     Object.defineProperty(exports.default, '__esModule', {
@@ -10190,7 +10220,8 @@ function createProcessTurbopackMessage(sendMessage) {
             queue.push(msg);
         }
     };
-    __turbopack_context__.A("[turbopack]/browser/dev/hmr-client/hmr-client.ts [app-client] (ecmascript, async loader)").then(({ connect })=>{
+    __turbopack_context__.A("[turbopack]/browser/dev/hmr-client/hmr-client.ts [app-client] (ecmascript, async loader)").then((param)=>{
+        let { connect } = param;
         connect({
             addMessageListener (cb) {
                 callback = cb;
@@ -10298,7 +10329,8 @@ Object.defineProperty(exports, /**
         return reportHmrLatency;
     }
 });
-function reportHmrLatency(sendMessage, updatedModules, startMsSinceEpoch, endMsSinceEpoch, hasUpdate = true) {
+function reportHmrLatency(sendMessage, updatedModules, startMsSinceEpoch, endMsSinceEpoch) {
+    let hasUpdate = arguments.length > 4 && arguments[4] !== void 0 ? arguments[4] : true;
     const latencyMs = endMsSinceEpoch - startMsSinceEpoch;
     console.log(`[Fast Refresh] done in ${latencyMs}ms`);
     if (!hasUpdate) {
@@ -10330,6 +10362,11 @@ if ((typeof exports.default === 'function' || typeof exports.default === 'object
 "[project]/Downloads/wall-street-playbook/node_modules/next/dist/client/dev/hot-reloader/turbopack-hot-reloader-common.js [app-client] (ecmascript)", ((__turbopack_context__, module, exports) => {
 "use strict";
 
+var _class_private_field_get = __turbopack_context__.r("[project]/Downloads/wall-street-playbook/node_modules/@swc/helpers/cjs/_class_private_field_get.cjs [app-client] (ecmascript)");
+var _class_private_field_init = __turbopack_context__.r("[project]/Downloads/wall-street-playbook/node_modules/@swc/helpers/cjs/_class_private_field_init.cjs [app-client] (ecmascript)");
+var _class_private_field_set = __turbopack_context__.r("[project]/Downloads/wall-street-playbook/node_modules/@swc/helpers/cjs/_class_private_field_set.cjs [app-client] (ecmascript)");
+var _class_private_method_get = __turbopack_context__.r("[project]/Downloads/wall-street-playbook/node_modules/@swc/helpers/cjs/_class_private_method_get.cjs [app-client] (ecmascript)");
+var _class_private_method_init = __turbopack_context__.r("[project]/Downloads/wall-street-playbook/node_modules/@swc/helpers/cjs/_class_private_method_init.cjs [app-client] (ecmascript)");
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
@@ -10342,61 +10379,38 @@ Object.defineProperty(exports, "TurbopackHmr", {
 // How long to wait before reporting the HMR start, used to suppress irrelevant
 // `BUILDING` events. Does not impact reported latency.
 const TURBOPACK_HMR_START_DELAY_MS = 100;
+var _updatedModules = /*#__PURE__*/ new WeakMap(), _startMsSinceEpoch = /*#__PURE__*/ new WeakMap(), _lastUpdateMsSinceEpoch = /*#__PURE__*/ new WeakMap(), _deferredReportHmrStartId = /*#__PURE__*/ new WeakMap(), _reportedHmrStart = /*#__PURE__*/ new WeakMap(), // HACK: Turbopack tends to generate a lot of irrelevant "BUILDING" actions,
+// as it reports *any* compilation, including fully no-op/cached compilations
+// and those unrelated to HMR. Fixing this would require significant
+// architectural changes.
+//
+// Work around this by deferring any "rebuilding" message by 100ms. If we get
+// a BUILT event within that threshold and nothing has changed, just suppress
+// the message entirely.
+_runDeferredReportHmrStart = /*#__PURE__*/ new WeakSet(), _cancelDeferredReportHmrStart = /*#__PURE__*/ new WeakSet(), /** Helper for other `onEvent` methods. */ _onUpdate = /*#__PURE__*/ new WeakSet();
 class TurbopackHmr {
-    #updatedModules;
-    #startMsSinceEpoch;
-    #lastUpdateMsSinceEpoch;
-    #deferredReportHmrStartId;
-    #reportedHmrStart;
-    constructor(){
-        this.#updatedModules = new Set();
-        this.#reportedHmrStart = false;
-    }
-    // HACK: Turbopack tends to generate a lot of irrelevant "BUILDING" actions,
-    // as it reports *any* compilation, including fully no-op/cached compilations
-    // and those unrelated to HMR. Fixing this would require significant
-    // architectural changes.
-    //
-    // Work around this by deferring any "rebuilding" message by 100ms. If we get
-    // a BUILT event within that threshold and nothing has changed, just suppress
-    // the message entirely.
-    #runDeferredReportHmrStart() {
-        if (this.#deferredReportHmrStartId != null) {
-            console.log('[Fast Refresh] rebuilding');
-            this.#reportedHmrStart = true;
-            this.#cancelDeferredReportHmrStart();
-        }
-    }
-    #cancelDeferredReportHmrStart() {
-        clearTimeout(this.#deferredReportHmrStartId);
-        this.#deferredReportHmrStartId = undefined;
-    }
     onBuilding() {
-        this.#lastUpdateMsSinceEpoch = undefined;
-        this.#cancelDeferredReportHmrStart();
-        this.#startMsSinceEpoch = Date.now();
+        _class_private_field_set._(this, _lastUpdateMsSinceEpoch, undefined);
+        _class_private_method_get._(this, _cancelDeferredReportHmrStart, cancelDeferredReportHmrStart).call(this);
+        _class_private_field_set._(this, _startMsSinceEpoch, Date.now());
         // report the HMR start after a short delay
-        this.#deferredReportHmrStartId = setTimeout(()=>this.#runDeferredReportHmrStart(), self.__NEXT_HMR_TURBOPACK_REPORT_NOISY_NOOP_EVENTS ? 0 : TURBOPACK_HMR_START_DELAY_MS);
-    }
-    /** Helper for other `onEvent` methods. */ #onUpdate() {
-        this.#runDeferredReportHmrStart();
-        this.#lastUpdateMsSinceEpoch = Date.now();
+        _class_private_field_set._(this, _deferredReportHmrStartId, setTimeout(()=>_class_private_method_get._(this, _runDeferredReportHmrStart, runDeferredReportHmrStart).call(this), self.__NEXT_HMR_TURBOPACK_REPORT_NOISY_NOOP_EVENTS ? 0 : TURBOPACK_HMR_START_DELAY_MS));
     }
     onTurbopackMessage(msg) {
-        this.#onUpdate();
+        _class_private_method_get._(this, _onUpdate, onUpdate).call(this);
         const updatedModules = extractModulesFromTurbopackMessage(msg.data);
         for (const module1 of updatedModules){
-            this.#updatedModules.add(module1);
+            _class_private_field_get._(this, _updatedModules).add(module1);
         }
     }
     onServerComponentChanges() {
-        this.#onUpdate();
+        _class_private_method_get._(this, _onUpdate, onUpdate).call(this);
     }
     onReloadPage() {
-        this.#onUpdate();
+        _class_private_method_get._(this, _onUpdate, onUpdate).call(this);
     }
     onPageAddRemove() {
-        this.#onUpdate();
+        _class_private_method_get._(this, _onUpdate, onUpdate).call(this);
     }
     /**
    * @returns `null` if the caller should ignore the update entirely. Returns an
@@ -10408,23 +10422,65 @@ class TurbopackHmr {
         //
         // There's also a case where `onBuilt` gets called before `onBuilding`,
         // which can happen during initial page load. Ignore that too!
-        const hasUpdates = this.#lastUpdateMsSinceEpoch != null && this.#startMsSinceEpoch != null;
-        if (!hasUpdates && !this.#reportedHmrStart) {
+        const hasUpdates = _class_private_field_get._(this, _lastUpdateMsSinceEpoch) != null && _class_private_field_get._(this, _startMsSinceEpoch) != null;
+        if (!hasUpdates && !_class_private_field_get._(this, _reportedHmrStart)) {
             // suppress the update entirely
-            this.#cancelDeferredReportHmrStart();
+            _class_private_method_get._(this, _cancelDeferredReportHmrStart, cancelDeferredReportHmrStart).call(this);
             return null;
         }
-        this.#runDeferredReportHmrStart();
+        _class_private_method_get._(this, _runDeferredReportHmrStart, runDeferredReportHmrStart).call(this);
         const result = {
             hasUpdates,
-            updatedModules: this.#updatedModules,
-            startMsSinceEpoch: this.#startMsSinceEpoch,
-            endMsSinceEpoch: this.#lastUpdateMsSinceEpoch ?? Date.now()
+            updatedModules: _class_private_field_get._(this, _updatedModules),
+            startMsSinceEpoch: _class_private_field_get._(this, _startMsSinceEpoch),
+            endMsSinceEpoch: _class_private_field_get._(this, _lastUpdateMsSinceEpoch) ?? Date.now()
         };
-        this.#updatedModules = new Set();
-        this.#reportedHmrStart = false;
+        _class_private_field_set._(this, _updatedModules, new Set());
+        _class_private_field_set._(this, _reportedHmrStart, false);
         return result;
     }
+    constructor(){
+        _class_private_method_init._(this, _runDeferredReportHmrStart);
+        _class_private_method_init._(this, _cancelDeferredReportHmrStart);
+        _class_private_method_init._(this, _onUpdate);
+        _class_private_field_init._(this, _updatedModules, {
+            writable: true,
+            value: void 0
+        });
+        _class_private_field_init._(this, _startMsSinceEpoch, {
+            writable: true,
+            value: void 0
+        });
+        _class_private_field_init._(this, _lastUpdateMsSinceEpoch, {
+            writable: true,
+            value: void 0
+        });
+        _class_private_field_init._(this, _deferredReportHmrStartId, {
+            writable: true,
+            value: void 0
+        });
+        _class_private_field_init._(this, _reportedHmrStart, {
+            writable: true,
+            value: void 0
+        });
+        _class_private_field_set._(this, _updatedModules, new Set());
+        _class_private_field_set._(this, _reportedHmrStart, false);
+    }
+}
+function runDeferredReportHmrStart() {
+    if (_class_private_field_get._(this, _deferredReportHmrStartId) != null) {
+        console.log('[Fast Refresh] rebuilding');
+        _class_private_field_set._(this, _reportedHmrStart, true);
+        _class_private_method_get._(this, _cancelDeferredReportHmrStart, cancelDeferredReportHmrStart).call(this);
+    }
+}
+function cancelDeferredReportHmrStart() {
+    clearTimeout(_class_private_field_get._(this, _deferredReportHmrStartId));
+    _class_private_field_set._(this, _deferredReportHmrStartId, undefined);
+}
+function onUpdate() {
+    _class_private_method_get._(this, _runDeferredReportHmrStart, runDeferredReportHmrStart).call(this);
+    _class_private_field_set._(this, _lastUpdateMsSinceEpoch, Date.now());
 }
 function extractModulesFromTurbopackMessage(data) {
     const updatedModules = new Set();
@@ -10829,7 +10885,7 @@ function processMessage(message, sendMessage, processTurbopackMessage, staticInd
         // TODO-APP: make server component change more granular
         case _hotreloadertypes.HMR_MESSAGE_SENT_TO_BROWSER.SERVER_COMPONENT_CHANGES:
             {
-                turbopackHmr?.onServerComponentChanges();
+                turbopackHmr === null || turbopackHmr === void 0 ? void 0 : turbopackHmr.onServerComponentChanges();
                 sendMessage(JSON.stringify({
                     event: 'server-component-reload-page',
                     clientId: __nextDevClientId,
@@ -10853,7 +10909,7 @@ function processMessage(message, sendMessage, processTurbopackMessage, staticInd
             }
         case _hotreloadertypes.HMR_MESSAGE_SENT_TO_BROWSER.RELOAD_PAGE:
             {
-                turbopackHmr?.onReloadPage();
+                turbopackHmr === null || turbopackHmr === void 0 ? void 0 : turbopackHmr.onReloadPage();
                 sendMessage(JSON.stringify({
                     event: 'client-reload-page',
                     clientId: __nextDevClientId
@@ -10865,7 +10921,7 @@ function processMessage(message, sendMessage, processTurbopackMessage, staticInd
         case _hotreloadertypes.HMR_MESSAGE_SENT_TO_BROWSER.ADDED_PAGE:
         case _hotreloadertypes.HMR_MESSAGE_SENT_TO_BROWSER.REMOVED_PAGE:
             {
-                turbopackHmr?.onPageAddRemove();
+                turbopackHmr === null || turbopackHmr === void 0 ? void 0 : turbopackHmr.onPageAddRemove();
                 // TODO-APP: potentially only refresh if the currently viewed page was added/removed.
                 return _approuterinstance.publicAppRouterInstance.hmrRefresh();
             }
@@ -10950,7 +11006,8 @@ function processMessage(message, sendMessage, processTurbopackMessage, staticInd
             }
     }
 }
-function HotReload({ children, globalError, webSocket, staticIndicatorState }) {
+function HotReload(param) {
+    let { children, globalError, webSocket, staticIndicatorState } = param;
     (0, _useerrorhandler.useErrorHandler)(_nextdevtools.dispatcher.onUnhandledError, _nextdevtools.dispatcher.onUnhandledRejection);
     (0, _websocket.useWebSocketPing)(webSocket);
     // We don't want access of the pathname for the dev tools to trigger a dynamic
@@ -11047,7 +11104,8 @@ const _rooterrorboundary = /*#__PURE__*/ _interop_require_default._(__turbopack_
 const _globalerror = /*#__PURE__*/ _interop_require_default._(__turbopack_context__.r("[project]/Downloads/wall-street-playbook/node_modules/next/dist/client/components/builtin/global-error.js [app-client] (ecmascript)"));
 const _boundarycomponents = __turbopack_context__.r("[project]/Downloads/wall-street-playbook/node_modules/next/dist/lib/framework/boundary-components.js [app-client] (ecmascript)");
 const globalMutable = {};
-function HistoryUpdater({ appRouterState }) {
+function HistoryUpdater(param) {
+    let { appRouterState } = param;
     (0, _react.useInsertionEffect)(()=>{
         if ("TURBOPACK compile-time falsy", 0) //TURBOPACK unreachable
         ;
@@ -11103,17 +11161,18 @@ function createEmptyCacheNode() {
 function copyNextJsInternalHistoryState(data) {
     if (data == null) data = {};
     const currentState = window.history.state;
-    const __NA = currentState?.__NA;
+    const __NA = currentState === null || currentState === void 0 ? void 0 : currentState.__NA;
     if (__NA) {
         data.__NA = __NA;
     }
-    const __PRIVATE_NEXTJS_INTERNALS_TREE = currentState?.__PRIVATE_NEXTJS_INTERNALS_TREE;
+    const __PRIVATE_NEXTJS_INTERNALS_TREE = currentState === null || currentState === void 0 ? void 0 : currentState.__PRIVATE_NEXTJS_INTERNALS_TREE;
     if (__PRIVATE_NEXTJS_INTERNALS_TREE) {
         data.__PRIVATE_NEXTJS_INTERNALS_TREE = __PRIVATE_NEXTJS_INTERNALS_TREE;
     }
     return data;
 }
-function Head({ headCacheNode }) {
+function Head(param) {
+    let { headCacheNode } = param;
     // If this segment has a `prefetchHead`, it's the statically prefetched data.
     // We should use that on initial render instead of `head`. Then we'll switch
     // to `head` when the dynamic response streams in.
@@ -11128,7 +11187,8 @@ function Head({ headCacheNode }) {
 }
 /**
  * The global router that wraps the application components.
- */ function Router({ actionQueue, globalError, webSocket, staticIndicatorState }) {
+ */ function Router(param) {
+    let { actionQueue, globalError, webSocket, staticIndicatorState } = param;
     const state = (0, _useactionqueue.useActionQueue)(actionQueue);
     const { canonicalUrl } = state;
     // Add memoized pathname/query for useSearchParams and usePathname.
@@ -11166,7 +11226,8 @@ function Head({ headCacheNode }) {
         // would trigger the mpa navigation logic again from the lines below.
         // This will restore the router to the initial state in the event that the app is restored from bfcache.
         function handlePageShow(event) {
-            if (!event.persisted || !window.history.state?.__PRIVATE_NEXTJS_INTERNALS_TREE) {
+            var _window_history_state;
+            if (!event.persisted || !((_window_history_state = window.history.state) === null || _window_history_state === void 0 ? void 0 : _window_history_state.__PRIVATE_NEXTJS_INTERNALS_TREE)) {
                 return;
             }
             // Clear the pendingMpaPath value so that a subsequent MPA navigation to the same URL can be triggered.
@@ -11244,8 +11305,9 @@ function Head({ headCacheNode }) {
         const originalReplaceState = window.history.replaceState.bind(window.history);
         // Ensure the canonical URL in the Next.js Router is updated when the URL is changed so that `usePathname` and `useSearchParams` hold the pushed values.
         const applyUrlFromHistoryPushReplace = (url)=>{
+            var _window_history_state;
             const href = window.location.href;
-            const appHistoryState = window.history.state?.__PRIVATE_NEXTJS_INTERNALS_TREE;
+            const appHistoryState = (_window_history_state = window.history.state) === null || _window_history_state === void 0 ? void 0 : _window_history_state.__PRIVATE_NEXTJS_INTERNALS_TREE;
             (0, _react.startTransition)(()=>{
                 (0, _useactionqueue.dispatchAppRouterAction)({
                     type: _routerreducertypes.ACTION_RESTORE,
@@ -11260,7 +11322,7 @@ function Head({ headCacheNode }) {
      * Ensures usePathname and useSearchParams hold the newly provided url.
      */ window.history.pushState = function pushState(data, _unused, url) {
             // Avoid a loop when Next.js internals trigger pushState/replaceState
-            if (data?.__NA || data?._N) {
+            if ((data === null || data === void 0 ? void 0 : data.__NA) || (data === null || data === void 0 ? void 0 : data._N)) {
                 return originalPushState(data, _unused, url);
             }
             data = copyNextJsInternalHistoryState(data);
@@ -11275,7 +11337,7 @@ function Head({ headCacheNode }) {
      * Ensures usePathname and useSearchParams hold the newly provided url.
      */ window.history.replaceState = function replaceState(data, _unused, url) {
             // Avoid a loop when Next.js internals trigger pushState/replaceState
-            if (data?.__NA || data?._N) {
+            if ((data === null || data === void 0 ? void 0 : data.__NA) || (data === null || data === void 0 ? void 0 : data._N)) {
                 return originalReplaceState(data, _unused, url);
             }
             data = copyNextJsInternalHistoryState(data);
@@ -11445,7 +11507,8 @@ function Head({ headCacheNode }) {
         ]
     });
 }
-function AppRouter({ actionQueue, globalErrorState, webSocket, staticIndicatorState }) {
+function AppRouter(param) {
+    let { actionQueue, globalErrorState, webSocket, staticIndicatorState } = param;
     (0, _navfailurehandler.useNavFailureHandler)();
     const router = /*#__PURE__*/ (0, _jsxruntime.jsx)(Router, {
         actionQueue: actionQueue,
@@ -11680,7 +11743,8 @@ Object.defineProperty(exports, "hasInterceptionRouteInCurrentTree", {
     }
 });
 const _interceptionroutes = __turbopack_context__.r("[project]/Downloads/wall-street-playbook/node_modules/next/dist/shared/lib/router/utils/interception-routes.js [app-client] (ecmascript)");
-function hasInterceptionRouteInCurrentTree([segment, parallelRoutes]) {
+function hasInterceptionRouteInCurrentTree(param) {
+    let [segment, parallelRoutes] = param;
     // If we have a dynamic segment, it's marked as an interception route by the presence of the `i` suffix.
     if (Array.isArray(segment) && (segment[2] === 'di(..)(..)' || segment[2] === 'ci(..)(..)' || segment[2] === 'di(.)' || segment[2] === 'ci(.)' || segment[2] === 'di(..)' || segment[2] === 'ci(..)' || segment[2] === 'di(...)' || segment[2] === 'ci(...)')) {
         return true;
@@ -11981,7 +12045,8 @@ const createFromFetch = _client.createFromFetch;
 let createDebugChannel;
 if ("TURBOPACK compile-time falsy", 0) //TURBOPACK unreachable
 ;
-async function fetchServerAction(state, nextUrl, { actionId, actionArgs }) {
+async function fetchServerAction(state, nextUrl, param) {
+    let { actionId, actionArgs } = param;
     const temporaryReferences = (0, _client.createTemporaryReferenceSet)();
     const info = (0, _serverreferenceinfo.extractInfoFromServerReferenceId)(actionId);
     // TODO: Currently, we're only omitting unused args for the experimental "use
@@ -12025,7 +12090,7 @@ async function fetchServerAction(state, nextUrl, { actionId, actionArgs }) {
         });
     }
     const redirectHeader = res.headers.get('x-action-redirect');
-    const [location, _redirectType] = redirectHeader?.split(';') || [];
+    const [location, _redirectType] = (redirectHeader === null || redirectHeader === void 0 ? void 0 : redirectHeader.split(';')) || [];
     let redirectType;
     switch(_redirectType){
         case 'push':
@@ -12111,7 +12176,8 @@ function serverActionReducer(state, action) {
     // next-url.
     (state.previousNextUrl || state.nextUrl) && (0, _hasinterceptionrouteincurrenttree.hasInterceptionRouteInCurrentTree)(state.tree) ? state.previousNextUrl || state.nextUrl : null;
     const navigatedAt = Date.now();
-    return fetchServerAction(state, nextUrl, action).then(async ({ actionResult, actionFlightData: flightData, redirectLocation, redirectType, revalidatedParts })=>{
+    return fetchServerAction(state, nextUrl, action).then(async (param)=>{
+        let { actionResult, actionFlightData: flightData, redirectLocation, redirectType, revalidatedParts } = param;
         let redirectHref;
         // honor the redirect type instead of defaulting to push in case of server actions.
         if (redirectLocation) {
@@ -12390,7 +12456,8 @@ function runRemainingActions(actionQueue, setState) {
         }
     }
 }
-async function runAction({ actionQueue, action, setState }) {
+async function runAction(param) {
+    let { actionQueue, action, setState } = param;
     const prevState = actionQueue.state;
     actionQueue.pending = action;
     const payload = action.payload;
@@ -12568,7 +12635,7 @@ const publicAppRouterInstance = {
     // cache. So we don't need to dispatch an action.
     (href, options)=>{
         const actionQueue = getAppRouterActionQueue();
-        const prefetchKind = options?.kind ?? _routerreducertypes.PrefetchKind.AUTO;
+        const prefetchKind = (options === null || options === void 0 ? void 0 : options.kind) ?? _routerreducertypes.PrefetchKind.AUTO;
         // We don't currently offer a way to issue a runtime prefetch via `router.prefetch()`.
         // This will be possible when we update its API to not take a PrefetchKind.
         let fetchStrategy;
@@ -12599,16 +12666,16 @@ const publicAppRouterInstance = {
                     fetchStrategy = _types.FetchStrategy.PPR;
                 }
         }
-        (0, _prefetch.prefetch)(href, actionQueue.state.nextUrl, actionQueue.state.tree, fetchStrategy, options?.onInvalidate ?? null);
+        (0, _prefetch.prefetch)(href, actionQueue.state.nextUrl, actionQueue.state.tree, fetchStrategy, (options === null || options === void 0 ? void 0 : options.onInvalidate) ?? null);
     },
     replace: (href, options)=>{
         (0, _react.startTransition)(()=>{
-            dispatchNavigateAction(href, 'replace', options?.scroll ?? true, null);
+            dispatchNavigateAction(href, 'replace', (options === null || options === void 0 ? void 0 : options.scroll) ?? true, null);
         });
     },
     push: (href, options)=>{
         (0, _react.startTransition)(()=>{
-            dispatchNavigateAction(href, 'push', options?.scroll ?? true, null);
+            dispatchNavigateAction(href, 'push', (options === null || options === void 0 ? void 0 : options.scroll) ?? true, null);
         });
     },
     refresh: ()=>{
@@ -12661,7 +12728,8 @@ const _filllazyitemstillleafwithhead = __turbopack_context__.r("[project]/Downlo
 const _computechangedpath = __turbopack_context__.r("[project]/Downloads/wall-street-playbook/node_modules/next/dist/client/components/router-reducer/compute-changed-path.js [app-client] (ecmascript)");
 const _refetchinactiveparallelsegments = __turbopack_context__.r("[project]/Downloads/wall-street-playbook/node_modules/next/dist/client/components/router-reducer/refetch-inactive-parallel-segments.js [app-client] (ecmascript)");
 const _flightdatahelpers = __turbopack_context__.r("[project]/Downloads/wall-street-playbook/node_modules/next/dist/client/flight-data-helpers.js [app-client] (ecmascript)");
-function createInitialRouterState({ navigatedAt, initialFlightData, initialCanonicalUrlParts, initialRenderedSearch, initialParallelRoutes, location }) {
+function createInitialRouterState(param) {
+    let { navigatedAt, initialFlightData, initialCanonicalUrlParts, initialRenderedSearch, initialParallelRoutes, location } = param;
     // When initialized on the server, the canonical URL is provided as an array of parts.
     // This is to ensure that when the RSC payload streamed to the client, crawlers don't interpret it
     // as a URL that should be crawled.
@@ -12670,8 +12738,8 @@ function createInitialRouterState({ navigatedAt, initialFlightData, initialCanon
     const { tree: initialTree, seedData: initialSeedData, head: initialHead } = normalizedFlightData;
     // For the SSR render, seed data should always be available (we only send back a `null` response
     // in the case of a `loading` segment, pre-PPR.)
-    const rsc = initialSeedData?.[0];
-    const loading = initialSeedData?.[2] ?? null;
+    const rsc = initialSeedData === null || initialSeedData === void 0 ? void 0 : initialSeedData[0];
+    const loading = (initialSeedData === null || initialSeedData === void 0 ? void 0 : initialSeedData[2]) ?? null;
     const cache = {
         lazyData: null,
         rsc,
@@ -12708,7 +12776,7 @@ function createInitialRouterState({ navigatedAt, initialFlightData, initialCanon
         },
         canonicalUrl,
         renderedSearch: initialRenderedSearch,
-        nextUrl: ((0, _computechangedpath.extractPathFromFlightRouterState)(initialTree) || location?.pathname) ?? null,
+        nextUrl: ((0, _computechangedpath.extractPathFromFlightRouterState)(initialTree) || (location === null || location === void 0 ? void 0 : location.pathname)) ?? null,
         previousNextUrl: null,
         debugInfo: null
     };
@@ -12744,8 +12812,9 @@ function linkGc() {
                 if (mutation.type === 'childList') {
                     for (const node of mutation.addedNodes){
                         if ('tagName' in node && node.tagName === 'LINK') {
+                            var _link_dataset_precedence;
                             const link = node;
-                            if (link.dataset.precedence?.startsWith('next')) {
+                            if ((_link_dataset_precedence = link.dataset.precedence) === null || _link_dataset_precedence === void 0 ? void 0 : _link_dataset_precedence.startsWith('next')) {
                                 const href = link.getAttribute('href');
                                 if (href) {
                                     const [resource, version] = href.split('?v=', 2);
@@ -12758,7 +12827,8 @@ function linkGc() {
                                             ...document.querySelectorAll('link[href^="' + (resource.startsWith(currentOrigin) ? resource.slice(currentOrigin.length) : currentOrigin + resource) + '"]')
                                         ];
                                         for (const otherLink of allLinks){
-                                            if (otherLink.dataset.precedence?.startsWith('next')) {
+                                            var _otherLink_dataset_precedence;
+                                            if ((_otherLink_dataset_precedence = otherLink.dataset.precedence) === null || _otherLink_dataset_precedence === void 0 ? void 0 : _otherLink_dataset_precedence.startsWith('next')) {
                                                 const otherHref = otherLink.getAttribute('href');
                                                 if (otherHref) {
                                                     const [, otherVersion] = otherHref.split('?v=', 2);
@@ -12962,7 +13032,8 @@ if (clientResumeFetch) {
         startTime: 0
     });
 }
-function ServerRoot({ initialRSCPayload, actionQueue, webSocket, staticIndicatorState }) {
+function ServerRoot(param) {
+    let { initialRSCPayload, actionQueue, webSocket, staticIndicatorState } = param;
     const router = /*#__PURE__*/ (0, _jsxruntime.jsx)(_approuter.default, {
         actionQueue: actionQueue,
         globalErrorState: initialRSCPayload.G,
@@ -12980,7 +13051,8 @@ function ServerRoot({ initialRSCPayload, actionQueue, webSocket, staticIndicator
     return router;
 }
 const StrictModeIfEnabled = ("TURBOPACK compile-time truthy", 1) ? _react.default.StrictMode : "TURBOPACK unreachable";
-function Root({ children }) {
+function Root(param) {
+    let { children } = param;
     if ("TURBOPACK compile-time falsy", 0) //TURBOPACK unreachable
     ;
     return children;

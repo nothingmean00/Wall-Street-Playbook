@@ -199,7 +199,7 @@ export default function AboutPage() {
                   View Playbooks
                 </Link>
                 <Link
-                  href="/resume-services"
+                  href="/submit-resume?service=resume-review"
                   className="rounded-lg border border-charcoal/20 bg-white px-8 py-3.5 text-sm font-semibold text-charcoal transition-colors hover:border-gold hover:text-gold"
                 >
                   Resume Services

@@ -119,6 +119,34 @@ const metadata = {
         default: "Wall Street Playbook | Break Into Investment Banking, PE & Hedge Funds",
         template: "%s | Wall Street Playbook"
     },
+    icons: {
+        icon: [
+            {
+                url: "/favicon.ico"
+            },
+            {
+                url: "/favicon-16x16.png",
+                sizes: "16x16",
+                type: "image/png"
+            },
+            {
+                url: "/favicon-32x32.png",
+                sizes: "32x32",
+                type: "image/png"
+            }
+        ],
+        apple: [
+            {
+                url: "/apple-touch-icon.png"
+            }
+        ],
+        other: [
+            {
+                rel: "manifest",
+                url: "/site.webmanifest"
+            }
+        ]
+    },
     description: "Proven tactics, frameworks, and tools used by candidates who land roles in investment banking, private equity, and hedge funds. Premium playbooks and resume services for elite finance recruiting.",
     keywords: [
         "investment banking interview prep",
@@ -198,7 +226,7 @@ function RootLayout({ children }) {
                             "@type": "Organization",
                             name: "Wall Street Playbook",
                             url: "https://wallstreetplaybook.org",
-                            logo: "https://wallstreetplaybook.org/logo.png",
+                            logo: "https://wallstreetplaybook.org/android-chrome-512x512.png",
                             description: "Premium preparation materials and services for investment banking, private equity, and hedge fund recruiting.",
                             sameAs: [],
                             contactPoint: {
@@ -210,12 +238,12 @@ function RootLayout({ children }) {
                     }
                 }, void 0, false, {
                     fileName: "[project]/Downloads/wall-street-playbook/app/layout.tsx",
-                    lineNumber: 99,
+                    lineNumber: 112,
                     columnNumber: 9
                 }, this)
             }, void 0, false, {
                 fileName: "[project]/Downloads/wall-street-playbook/app/layout.tsx",
-                lineNumber: 98,
+                lineNumber: 111,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])("body", {
@@ -224,24 +252,24 @@ function RootLayout({ children }) {
                     children,
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$components$2f$exit$2d$intent$2d$popup$2e$tsx__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["ExitIntentPopup"], {}, void 0, false, {
                         fileName: "[project]/Downloads/wall-street-playbook/app/layout.tsx",
-                        lineNumber: 122,
+                        lineNumber: 135,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$rsc$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f40$vercel$2f$analytics$2f$dist$2f$next$2f$index$2e$mjs__$5b$app$2d$rsc$5d$__$28$ecmascript$29$__["Analytics"], {}, void 0, false, {
                         fileName: "[project]/Downloads/wall-street-playbook/app/layout.tsx",
-                        lineNumber: 123,
+                        lineNumber: 136,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/Downloads/wall-street-playbook/app/layout.tsx",
-                lineNumber: 120,
+                lineNumber: 133,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/Downloads/wall-street-playbook/app/layout.tsx",
-        lineNumber: 97,
+        lineNumber: 110,
         columnNumber: 5
     }, this);
 }

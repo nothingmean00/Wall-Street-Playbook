@@ -67,7 +67,7 @@ export function HeroSection() {
             {/* CTAs */}
             <div className="mt-10 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 animate-slide-up animate-delay-300">
               <Link
-                href="/resume-services"
+                href="/submit-resume?service=resume-review"
                 className="group relative flex w-full sm:w-auto items-center justify-center gap-2 rounded-xl bg-gold px-8 py-4 text-base font-semibold text-navy overflow-hidden transition-all hover:shadow-lg hover:shadow-gold/25"
               >
                 <span className="relative z-10">Get Your Resume Reviewed</span>

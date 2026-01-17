@@ -455,7 +455,8 @@ function computeSelectedLayoutSegment(segments, parallelRouteKey) {
     // Returning an internal value like `__DEFAULT__` would be confusing
     return rawSegment === DEFAULT_SEGMENT_KEY ? null : rawSegment;
 }
-function getSelectedLayoutSegmentPath(tree, parallelRouteKey, first = true, segmentPath = []) {
+function getSelectedLayoutSegmentPath(tree, parallelRouteKey) {
+    let first = arguments.length > 2 && arguments[2] !== void 0 ? arguments[2] : true, segmentPath = arguments.length > 3 && arguments[3] !== void 0 ? arguments[3] : [];
     let node;
     if (first) {
         // Use the provided parallel route key on the first parallel route
@@ -1337,7 +1338,7 @@ Object.defineProperty(exports, "normalizedAssetPrefix", {
 });
 function normalizedAssetPrefix(assetPrefix) {
     // remove all leading slashes and trailing slashes
-    const escapedAssetPrefix = assetPrefix?.replace(/^\/+|\/+$/g, '') || false;
+    const escapedAssetPrefix = (assetPrefix === null || assetPrefix === void 0 ? void 0 : assetPrefix.replace(/^\/+|\/+$/g, '')) || false;
     // if an assetPrefix was '/', we return empty string
     // because it could be an unnecessary trailing slash
     if (!escapedAssetPrefix) {
@@ -1654,16 +1655,20 @@ const _boundaryconstants = __turbopack_context__.r("[project]/Downloads/wall-str
 // We use a namespace object to allow us to recover the name of the function
 // at runtime even when production bundling/minification is used.
 const NameSpace = {
-    [_boundaryconstants.METADATA_BOUNDARY_NAME]: function({ children }) {
+    [_boundaryconstants.METADATA_BOUNDARY_NAME]: function(param) {
+        let { children } = param;
         return children;
     },
-    [_boundaryconstants.VIEWPORT_BOUNDARY_NAME]: function({ children }) {
+    [_boundaryconstants.VIEWPORT_BOUNDARY_NAME]: function(param) {
+        let { children } = param;
         return children;
     },
-    [_boundaryconstants.OUTLET_BOUNDARY_NAME]: function({ children }) {
+    [_boundaryconstants.OUTLET_BOUNDARY_NAME]: function(param) {
+        let { children } = param;
         return children;
     },
-    [_boundaryconstants.ROOT_LAYOUT_BOUNDARY_NAME]: function({ children }) {
+    [_boundaryconstants.ROOT_LAYOUT_BOUNDARY_NAME]: function(param) {
+        let { children } = param;
         return children;
     }
 };
@@ -2283,7 +2288,10 @@ function patchConsoleMethod(methodName, wrapper) {
     if (descriptor && (descriptor.configurable || descriptor.writable) && typeof descriptor.value === 'function') {
         const originalMethod = descriptor.value;
         const originalName = Object.getOwnPropertyDescriptor(originalMethod, 'name');
-        const wrapperMethod = function(...args) {
+        const wrapperMethod = function() {
+            for(var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++){
+                args[_key] = arguments[_key];
+            }
             wrapper(methodName, ...args);
             originalMethod.apply(this, args);
         };
@@ -2351,7 +2359,8 @@ const safeStringifyWithDepth = (0, _safestablestringify.configure)({
     maximumDepth,
     maximumBreadth
 });
-function preLogSerializationClone(value, seen = new WeakMap()) {
+function preLogSerializationClone(value) {
+    let seen = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : new WeakMap();
     if (value === undefined) return _forwardlogsshared.UNDEFINED_MARKER;
     if (value === null || typeof value !== 'object') return value;
     if (seen.has(value)) return seen.get(value);
@@ -2655,6 +2664,8 @@ const logQueue = {
         });
     },
     onSocketReady: (socket)=>{
+        var // incase an existing timeout was going to run with a stale socket
+        _logQueue_cancelFlush;
         // When MCP or terminal logging is enabled, we enable the socket connection,
         // otherwise it will not proceed.
         if ("TURBOPACK compile-time falsy", 0) //TURBOPACK unreachable
@@ -2663,8 +2674,7 @@ const logQueue = {
             // invariant
             return;
         }
-        // incase an existing timeout was going to run with a stale socket
-        logQueue.cancelFlush?.();
+        (_logQueue_cancelFlush = logQueue.cancelFlush) === null || _logQueue_cancelFlush === void 0 ? void 0 : _logQueue_cancelFlush.call(logQueue);
         logQueue.socket = socket;
         // Add socket event listeners to track connection state
         socket.addEventListener('close', ()=>{
@@ -2719,8 +2729,8 @@ const createLogEntry = (level, args)=>{
     // do not abstract this, it implicitly relies on which functions call it. forcing the inlined implementation makes you think about callers
     // error capture stack trace maybe
     const stack = stackWithOwners(new Error());
-    const stackLines = stack?.split('\n');
-    const cleanStack = stackLines?.slice(3).join('\n') // this is probably ignored anyways
+    const stackLines = stack === null || stack === void 0 ? void 0 : stack.split('\n');
+    const cleanStack = stackLines === null || stackLines === void 0 ? void 0 : stackLines.slice(3).join('\n') // this is probably ignored anyways
     ;
     const entry = {
         kind: 'console',
@@ -2758,8 +2768,8 @@ const forwardErrorLog = (args)=>{
    *
    * do not abstract this, it implicitly relies on which functions call it. forcing the inlined implementation makes you think about callers
    */ const stack = stackWithOwners(new Error());
-    const stackLines = stack?.split('\n');
-    const cleanStack = stackLines?.slice(3).join('\n');
+    const stackLines = stack === null || stack === void 0 ? void 0 : stack.split('\n');
+    const cleanStack = stackLines === null || stackLines === void 0 ? void 0 : stackLines.slice(3).join('\n');
     const entry = {
         kind: 'any-logged-error',
         method: 'error',
@@ -2888,7 +2898,10 @@ const initializeDebugLogForwarding = (router)=>{
     }
     // better to be safe than sorry
     try {
-        methods.forEach((method)=>(0, _forwardlogsshared.patchConsoleMethod)(method, (_, ...args)=>{
+        methods.forEach((method)=>(0, _forwardlogsshared.patchConsoleMethod)(method, function(_) {
+                for(var _len = arguments.length, args = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++){
+                    args[_key - 1] = arguments[_key];
+                }
                 if (isHMR(args)) {
                     return;
                 }
@@ -3026,7 +3039,7 @@ function onUnhandledError(event) {
     }
 }
 function onUnhandledRejection(ev) {
-    const reason = ev?.reason;
+    const reason = ev === null || ev === void 0 ? void 0 : ev.reason;
     if ((0, _isnextroutererror.isNextRouterError)(reason)) {
         ev.preventDefault();
         return;
@@ -3095,7 +3108,10 @@ function patchConsoleError() {
     if (typeof window === 'undefined') {
         return;
     }
-    window.console.error = function error(...args) {
+    window.console.error = function error() {
+        for(var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++){
+            args[_key] = arguments[_key];
+        }
         let maybeError;
         if ("TURBOPACK compile-time truthy", 1) {
             const { error: replayedError } = (0, _console.parseConsoleArgs)(args);
@@ -3231,7 +3247,8 @@ const _react = __turbopack_context__.r("[project]/Downloads/wall-street-playbook
 const _nextdevtools = __turbopack_context__.r("[project]/Downloads/wall-street-playbook/node_modules/next/dist/compiled/next-devtools/index.js (raw)");
 const _notfound = __turbopack_context__.r("[project]/Downloads/wall-street-playbook/node_modules/next/dist/client/components/not-found.js [app-client] (ecmascript)");
 const SEGMENT_EXPLORER_SIMULATED_ERROR_MESSAGE = 'NEXT_DEVTOOLS_SIMULATED_ERROR';
-function SegmentTrieNode({ type, pagePath }) {
+function SegmentTrieNode(param) {
+    let { type, pagePath } = param;
     const { boundaryType, setBoundaryType } = useSegmentState();
     const nodeState = (0, _react.useMemo)(()=>{
         return {
@@ -3273,7 +3290,8 @@ function LoadingSegmentNode() {
     (0, _react.use)(forever);
     return null;
 }
-function SegmentViewStateNode({ page }) {
+function SegmentViewStateNode(param) {
+    let { page } = param;
     (0, _react.useLayoutEffect)(()=>{
         _nextdevtools.dispatcher.segmentExplorerUpdateRouteState(page);
         return ()=>{
@@ -3296,7 +3314,8 @@ function SegmentBoundaryTriggerNode() {
     }
     return segmentNode;
 }
-function SegmentViewNode({ type, pagePath, children }) {
+function SegmentViewNode(param) {
+    let { type, pagePath, children } = param;
     const segmentNode = /*#__PURE__*/ (0, _jsxruntime.jsx)(SegmentTrieNode, {
         type: type,
         pagePath: pagePath
@@ -3312,7 +3331,8 @@ const SegmentStateContext = /*#__PURE__*/ (0, _react.createContext)({
     boundaryType: null,
     setBoundaryType: ()=>{}
 });
-function SegmentStateProvider({ children }) {
+function SegmentStateProvider(param) {
+    let { children } = param;
     const [boundaryType, setBoundaryType] = (0, _react.useState)(null);
     const [errorBoundaryKey, setErrorBoundaryKey] = (0, _react.useState)(0);
     const reloadBoundary = (0, _react.useCallback)(()=>setErrorBoundaryKey((prev)=>prev + 1), []);
@@ -3365,7 +3385,8 @@ const _runtimeerrorhandler = __turbopack_context__.r("[project]/Downloads/wall-s
 const _errorboundary = __turbopack_context__.r("[project]/Downloads/wall-street-playbook/node_modules/next/dist/client/components/error-boundary.js [app-client] (ecmascript)");
 const _globalerror = /*#__PURE__*/ _interop_require_default._(__turbopack_context__.r("[project]/Downloads/wall-street-playbook/node_modules/next/dist/client/components/builtin/global-error.js [app-client] (ecmascript)"));
 const _segmentexplorernode = __turbopack_context__.r("[project]/Downloads/wall-street-playbook/node_modules/next/dist/next-devtools/userspace/app/segment-explorer-node.js [app-client] (ecmascript)");
-function ErroredHtml({ globalError: [GlobalError, globalErrorStyles], error }) {
+function ErroredHtml(param) {
+    let { globalError: [GlobalError, globalErrorStyles], error } = param;
     if (!error) {
         return /*#__PURE__*/ (0, _jsxruntime.jsxs)("html", {
             children: [
@@ -3500,7 +3521,8 @@ function readSsrError() {
     }
     return null;
 }
-function ReplaySsrOnlyErrors({ onBlockingError }) {
+function ReplaySsrOnlyErrors(param) {
+    let { onBlockingError } = param;
     if ("TURBOPACK compile-time truthy", 1) {
         // Need to read during render. The attributes will be gone after commit.
         const ssrError = readSsrError();
@@ -3548,7 +3570,8 @@ const _jsxruntime = __turbopack_context__.r("[project]/Downloads/wall-street-pla
 const _react = /*#__PURE__*/ _interop_require_default._(__turbopack_context__.r("[project]/Downloads/wall-street-playbook/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)"));
 const _globalerror = /*#__PURE__*/ _interop_require_default._(__turbopack_context__.r("[project]/Downloads/wall-street-playbook/node_modules/next/dist/client/components/builtin/global-error.js [app-client] (ecmascript)"));
 const _appdevoverlayerrorboundary = __turbopack_context__.r("[project]/Downloads/wall-street-playbook/node_modules/next/dist/next-devtools/userspace/app/app-dev-overlay-error-boundary.js [app-client] (ecmascript)");
-function RootLevelDevOverlayElement({ children }) {
+function RootLevelDevOverlayElement(param) {
+    let { children } = param;
     return /*#__PURE__*/ (0, _jsxruntime.jsx)(_appdevoverlayerrorboundary.AppDevOverlayErrorBoundary, {
         globalError: [
             _globalerror.default,
@@ -3636,7 +3659,10 @@ function createSnapshot() {
     if (maybeGlobalAsyncLocalStorage) {
         return maybeGlobalAsyncLocalStorage.snapshot();
     }
-    return function(fn, ...args) {
+    return function(fn) {
+        for(var _len = arguments.length, args = new Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++){
+            args[_key - 1] = arguments[_key];
+        }
         return fn(...args);
     };
 } //# sourceMappingURL=async-local-storage.js.map
@@ -4104,29 +4130,6 @@ var RenderStage = /*#__PURE__*/ function(RenderStage) {
     return RenderStage;
 }({});
 class StagedRenderingController {
-    constructor(abortSignal = null){
-        this.abortSignal = abortSignal;
-        this.currentStage = 1;
-        this.runtimeStagePromise = (0, _promisewithresolvers.createPromiseWithResolvers)();
-        this.dynamicStagePromise = (0, _promisewithresolvers.createPromiseWithResolvers)();
-        if (abortSignal) {
-            abortSignal.addEventListener('abort', ()=>{
-                const { reason } = abortSignal;
-                if (this.currentStage < 2) {
-                    this.runtimeStagePromise.promise.catch(ignoreReject) // avoid unhandled rejections
-                    ;
-                    this.runtimeStagePromise.reject(reason);
-                }
-                if (this.currentStage < 3) {
-                    this.dynamicStagePromise.promise.catch(ignoreReject) // avoid unhandled rejections
-                    ;
-                    this.dynamicStagePromise.reject(reason);
-                }
-            }, {
-                once: true
-            });
-        }
-    }
     advanceStage(stage) {
         // If we're already at the target stage or beyond, do nothing.
         // (this can happen e.g. if sync IO advanced us to the dynamic stage)
@@ -4177,6 +4180,29 @@ class StagedRenderingController {
             promise.catch(ignoreReject);
         }
         return promise;
+    }
+    constructor(abortSignal = null){
+        this.abortSignal = abortSignal;
+        this.currentStage = 1;
+        this.runtimeStagePromise = (0, _promisewithresolvers.createPromiseWithResolvers)();
+        this.dynamicStagePromise = (0, _promisewithresolvers.createPromiseWithResolvers)();
+        if (abortSignal) {
+            abortSignal.addEventListener('abort', ()=>{
+                const { reason } = abortSignal;
+                if (this.currentStage < 2) {
+                    this.runtimeStagePromise.promise.catch(ignoreReject) // avoid unhandled rejections
+                    ;
+                    this.runtimeStagePromise.reject(reason);
+                }
+                if (this.currentStage < 3) {
+                    this.dynamicStagePromise.promise.catch(ignoreReject) // avoid unhandled rejections
+                    ;
+                    this.dynamicStagePromise.reject(reason);
+                }
+            }, {
+                once: true
+            });
+        }
     }
 }
 function ignoreReject() {}
@@ -4533,7 +4559,8 @@ function abortAndThrowOnSynchronousRequestDataAccess(route, expression, errorWit
     }
     throw createPrerenderInterruptedError(`Route ${route} needs to bail out of prerendering at this point because it used ${expression}.`);
 }
-function Postpone({ reason, route }) {
+function Postpone(param) {
+    let { reason, route } = param;
     const prerenderStore = _workunitasyncstorageexternal.workUnitAsyncStorage.getStore();
     const dynamicTracking = prerenderStore && prerenderStore.type === 'prerender-ppr' ? prerenderStore.dynamicTracking : null;
     postponeWithTracking(route, reason, dynamicTracking);
@@ -4593,7 +4620,8 @@ function consumeDynamicAccess(serverDynamic, clientDynamic) {
     return serverDynamic.dynamicAccesses;
 }
 function formatDynamicAPIAccesses(dynamicAccesses) {
-    return dynamicAccesses.filter((access)=>typeof access.stack === 'string' && access.stack.length > 0).map(({ expression, stack })=>{
+    return dynamicAccesses.filter((access)=>typeof access.stack === 'string' && access.stack.length > 0).map((param)=>{
+        let { expression, stack } = param;
         stack = stack.split('\n') // Remove the "Error: " prefix from the first line of the stack trace as
         // well as the first 4 lines of the stack trace which is the distance
         // from the user code and the `new Error().stack` call.

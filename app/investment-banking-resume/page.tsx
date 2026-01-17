@@ -109,7 +109,7 @@ export default function InvestmentBankingResumePage() {
             
             <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
               <Link
-                href="/resume-services"
+                href="/submit-resume?service=resume-review"
                 className="group flex items-center gap-2 rounded-xl bg-gold px-8 py-4 text-base font-semibold text-navy transition-all hover:bg-white"
               >
                 Get Professional Resume Help

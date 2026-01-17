@@ -14,7 +14,8 @@ Object.defineProperty(exports, "disableSmoothScrollDuringRouteTransition", {
     }
 });
 const _warnonce = __turbopack_context__.r("[project]/Downloads/wall-street-playbook/node_modules/next/dist/shared/lib/utils/warn-once.js [app-client] (ecmascript)");
-function disableSmoothScrollDuringRouteTransition(fn, options = {}) {
+function disableSmoothScrollDuringRouteTransition(fn) {
+    let options = arguments.length > 1 && arguments[1] !== void 0 ? arguments[1] : {};
     // if only the hash is changed, we don't need to disable smooth scrolling
     // we only care to prevent smooth scrolling when navigating to a new page to avoid jarring UX
     if (options.onlyHashChange) {
@@ -315,7 +316,8 @@ class InnerScrollAndFocusHandler extends _react.default.Component {
                 // If the element is skipped, try to select the next sibling and try again.
                 while(!(domNode instanceof HTMLElement) || shouldSkipElement(domNode)){
                     if ("TURBOPACK compile-time truthy", 1) {
-                        if (domNode.parentElement?.localName === 'head') {
+                        var _domNode_parentElement;
+                        if (((_domNode_parentElement = domNode.parentElement) === null || _domNode_parentElement === void 0 ? void 0 : _domNode_parentElement.localName) === 'head') {
                         // TODO: We enter this state when metadata was rendered as part of the page or via Next.js.
                         // This is always a bug in Next.js and caused by React hoisting metadata.
                         // We need to replace `findDOMNode` in favor of Fragment Refs (when available) so that we can skip over metadata.
@@ -370,7 +372,8 @@ class InnerScrollAndFocusHandler extends _react.default.Component {
         };
     }
 }
-function ScrollAndFocusHandler({ segmentPath, children }) {
+function ScrollAndFocusHandler(param) {
+    let { segmentPath, children } = param;
     const context = (0, _react.useContext)(_approutercontextsharedruntime.GlobalLayoutRouterContext);
     if (!context) {
         throw Object.defineProperty(new Error('invariant global layout router not mounted'), "__NEXT_ERROR_CODE", {
@@ -387,7 +390,8 @@ function ScrollAndFocusHandler({ segmentPath, children }) {
 }
 /**
  * InnerLayoutRouter handles rendering the provided segment based on the cache.
- */ function InnerLayoutRouter({ tree, segmentPath, debugNameContext, cacheNode, params, url, isActive }) {
+ */ function InnerLayoutRouter(param) {
+    let { tree, segmentPath, debugNameContext, cacheNode, params, url, isActive } = param;
     const context = (0, _react.useContext)(_approutercontextsharedruntime.GlobalLayoutRouterContext);
     const parentNavPromises = (0, _react.useContext)(_hooksclientcontextsharedruntime.NavigationPromisesContext);
     if (!context) {
@@ -493,7 +497,8 @@ function ScrollAndFocusHandler({ segmentPath, children }) {
 /**
  * Renders suspense boundary with the provided "loading" property as the fallback.
  * If no loading property is provided it renders the children without a suspense boundary.
- */ function LoadingBoundary({ name, loading, children }) {
+ */ function LoadingBoundary(param) {
+    let { name, loading, children } = param;
     // If loading is a promise, unwrap it. This happens in cases where we haven't
     // yet received the loading data from the server — which includes whether or
     // not this layout has a loading component at all.
@@ -529,7 +534,8 @@ function ScrollAndFocusHandler({ segmentPath, children }) {
         children: children
     });
 }
-function OuterLayoutRouter({ parallelRouterKey, error, errorStyles, errorScripts, templateStyles, templateScripts, template, notFound, forbidden, unauthorized, segmentViewBoundaries }) {
+function OuterLayoutRouter(param) {
+    let { parallelRouterKey, error, errorStyles, errorScripts, templateStyles, templateScripts, template, notFound, forbidden, unauthorized, segmentViewBoundaries } = param;
     const context = (0, _react.useContext)(_approutercontextsharedruntime.LayoutRouterContext);
     if (!context) {
         throw Object.defineProperty(new Error('invariant expected layout router to be mounted'), "__NEXT_ERROR_CODE", {
@@ -1157,7 +1163,10 @@ const flushCurrentErrorIfNew = cache((key)=>{
     }
 });
 function createDedupedByCallsiteServerErrorLoggerDev(getMessage) {
-    return function logDedupedError(...args) {
+    return function logDedupedError() {
+        for(var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++){
+            args[_key] = arguments[_key];
+        }
         const message = getMessage(...args);
         if ("TURBOPACK compile-time truthy", 1) {
             var _stack;
@@ -1988,7 +1997,10 @@ const fallbackParamsProxyHandler = {
         if (prop === 'then' || prop === 'catch' || prop === 'finally') {
             const originalMethod = _reflect.ReflectAdapter.get(target, prop, receiver);
             return ({
-                [prop]: (...args)=>{
+                [prop]: function() {
+                    for(var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++){
+                        args[_key] = arguments[_key];
+                    }
                     const store = _dynamicaccessasyncstorageexternal.dynamicAccessAsyncStorage.getStore();
                     if (store) {
                         store.abortController.abort(Object.defineProperty(new Error(`Accessed fallback \`params\` during prerendering.`), "__NEXT_ERROR_CODE", {
@@ -2154,7 +2166,8 @@ const _approutercontextsharedruntime = __turbopack_context__.r("[project]/Downlo
 const _react = __turbopack_context__.r("[project]/Downloads/wall-street-playbook/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)");
 const _routeparams = __turbopack_context__.r("[project]/Downloads/wall-street-playbook/node_modules/next/dist/client/route-params.js [app-client] (ecmascript)");
 const _hooksclientcontextsharedruntime = __turbopack_context__.r("[project]/Downloads/wall-street-playbook/node_modules/next/dist/shared/lib/hooks-client-context.shared-runtime.js [app-client] (ecmascript)");
-function ClientPageRoot({ Component, serverProvidedParams }) {
+function ClientPageRoot(param) {
+    let { Component, serverProvidedParams } = param;
     let searchParams;
     let params;
     if (serverProvidedParams !== null) {
@@ -2229,7 +2242,8 @@ const _jsxruntime = __turbopack_context__.r("[project]/Downloads/wall-street-pla
 const _invarianterror = __turbopack_context__.r("[project]/Downloads/wall-street-playbook/node_modules/next/dist/shared/lib/invariant-error.js [app-client] (ecmascript)");
 const _approutercontextsharedruntime = __turbopack_context__.r("[project]/Downloads/wall-street-playbook/node_modules/next/dist/shared/lib/app-router-context.shared-runtime.js [app-client] (ecmascript)");
 const _react = __turbopack_context__.r("[project]/Downloads/wall-street-playbook/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)");
-function ClientSegmentRoot({ Component, slots, serverProvidedParams }) {
+function ClientSegmentRoot(param) {
+    let { Component, slots, serverProvidedParams } = param;
     let params;
     if (serverProvidedParams !== null) {
         params = serverProvidedParams.params;

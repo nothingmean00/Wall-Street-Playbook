@@ -137,7 +137,7 @@ export function ProofGallery() {
             Want the same frameworks that generated these results?
           </p>
           <a
-            href="/resume-services"
+            href="/submit-resume?service=resume-review"
             className="inline-flex items-center gap-2 rounded-xl bg-gold px-8 py-4 text-base font-semibold text-navy transition-all hover:bg-white hover:shadow-lg hover:shadow-gold/20"
           >
             Get Your Resume Reviewed

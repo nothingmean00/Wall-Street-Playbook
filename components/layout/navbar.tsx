@@ -63,7 +63,7 @@ export function Navbar() {
         {/* Desktop CTA */}
         <div className="hidden lg:flex lg:items-center lg:gap-4">
           <Link
-            href="/submit-resume"
+            href="/submit-resume?service=resume-review"
             className="group relative rounded-xl bg-gold px-6 py-2.5 text-sm font-semibold text-navy overflow-hidden transition-all hover:shadow-lg hover:shadow-gold/25"
           >
             <span className="relative z-10">Get Started</span>
@@ -111,7 +111,7 @@ export function Navbar() {
             ))}
             <div className="pt-4 mt-4 border-t border-white/10">
               <Link
-                href="/submit-resume"
+                href="/submit-resume?service=resume-review"
                 className="flex items-center justify-center gap-2 rounded-xl bg-gold px-6 py-4 text-base font-semibold text-navy transition-all hover:bg-white"
                 onClick={() => setMobileMenuOpen(false)}
               >

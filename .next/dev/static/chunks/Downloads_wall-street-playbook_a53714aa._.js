@@ -333,7 +333,10 @@ var version = "1.6.1";
 // src/queue.ts
 var initQueue = ()=>{
     if (window.va) return;
-    window.va = function a(...params) {
+    window.va = function a() {
+        for(var _len = arguments.length, params = new Array(_len), _key = 0; _key < _len; _key++){
+            params[_key] = arguments[_key];
+        }
         (window.vaq = window.vaq || []).push(params);
     };
 };
@@ -350,7 +353,8 @@ function detectEnvironment() {
     } catch (e) {}
     return "production";
 }
-function setMode(mode = "auto") {
+function setMode() {
+    let mode = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : "auto";
     if (mode === "auto") {
         window.vam = detectEnvironment();
         return;
@@ -411,9 +415,10 @@ function getScriptSrc(props) {
     return "/_vercel/insights/script.js";
 }
 // src/generic.ts
-function inject(props = {
-    debug: true
-}) {
+function inject() {
+    let props = arguments.length > 0 && arguments[0] !== void 0 ? arguments[0] : {
+        debug: true
+    };
     var _a;
     if (!isBrowser()) return;
     setMode(props.mode);
@@ -448,7 +453,8 @@ function inject(props = {
     }
     document.head.appendChild(script);
 }
-function pageview({ route, path }) {
+function pageview(param) {
+    let { route, path } = param;
     var _a;
     (_a = window.va) == null ? void 0 : _a.call(window, "pageview", {
         route,
@@ -787,9 +793,14 @@ else {
     ()=>toKebabCase
 ]);
 const toKebabCase = (string)=>string.replace(/([a-z0-9])([A-Z])/g, "$1-$2").toLowerCase();
-const mergeClasses = (...classes)=>classes.filter((className, index, array)=>{
+const mergeClasses = function() {
+    for(var _len = arguments.length, classes = new Array(_len), _key = 0; _key < _len; _key++){
+        classes[_key] = arguments[_key];
+    }
+    return classes.filter((className, index, array)=>{
         return Boolean(className) && className.trim() !== "" && array.indexOf(className) === index;
     }).join(" ").trim();
+};
 ;
  //# sourceMappingURL=utils.js.map
 }),
@@ -837,7 +848,8 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$
 ;
 ;
 ;
-const Icon = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["forwardRef"])(({ color = "currentColor", size = 24, strokeWidth = 2, absoluteStrokeWidth, className = "", children, iconNode, ...rest }, ref)=>{
+const Icon = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["forwardRef"])((param, ref)=>{
+    let { color = "currentColor", size = 24, strokeWidth = 2, absoluteStrokeWidth, className = "", children, iconNode, ...rest } = param;
     return (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["createElement"])("svg", {
         ref,
         ...__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$defaultAttributes$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"],
@@ -848,7 +860,10 @@ const Icon = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wa
         className: (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$shared$2f$src$2f$utils$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["mergeClasses"])("lucide", className),
         ...rest
     }, [
-        ...iconNode.map(([tag, attrs])=>(0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["createElement"])(tag, attrs)),
+        ...iconNode.map((param)=>{
+            let [tag, attrs] = param;
+            return (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["createElement"])(tag, attrs);
+        }),
         ...Array.isArray(children) ? children : [
             children
         ]
@@ -876,12 +891,15 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$
 ;
 ;
 const createLucideIcon = (iconName, iconNode)=>{
-    const Component = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["forwardRef"])(({ className, ...props }, ref)=>(0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["createElement"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$Icon$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
+    const Component = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["forwardRef"])((param, ref)=>{
+        let { className, ...props } = param;
+        return (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["createElement"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$Icon$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
             ref,
             iconNode,
             className: (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$shared$2f$src$2f$utils$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["mergeClasses"])(`lucide-${(0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$shared$2f$src$2f$utils$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["toKebabCase"])(iconName)}`, className),
             ...props
-        }));
+        });
+    });
     Component.displayName = `${iconName}`;
     return Component;
 };

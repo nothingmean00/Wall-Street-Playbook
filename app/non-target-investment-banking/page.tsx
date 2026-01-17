@@ -334,7 +334,7 @@ export default function NonTargetInvestmentBankingPage() {
                 <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
               </Link>
               <Link
-                href="/resume-services"
+                href="/submit-resume?service=resume-review"
                 className="rounded-xl border-2 border-white/20 px-8 py-4 text-base font-semibold text-white hover:border-gold hover:text-gold transition-colors"
               >
                 Get Resume Help

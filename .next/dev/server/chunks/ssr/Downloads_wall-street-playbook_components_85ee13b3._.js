@@ -9,226 +9,33 @@ __turbopack_context__.s([
     ()=>LogoMark
 ]);
 var __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Downloads/wall-street-playbook/node_modules/next/dist/server/route-modules/app-page/vendored/ssr/react-jsx-dev-runtime.js [app-ssr] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Downloads/wall-street-playbook/node_modules/next/image.js [app-ssr] (ecmascript)");
+;
 ;
 function Logo({ className = "h-8 w-8" }) {
-    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
-        viewBox: "0 0 40 40",
-        fill: "none",
-        xmlns: "http://www.w3.org/2000/svg",
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
+        src: "/android-chrome-192x192.png",
+        alt: "Wall Street Playbook",
+        width: 40,
+        height: 40,
         className: className,
-        children: [
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("rect", {
-                width: "40",
-                height: "40",
-                rx: "10",
-                fill: "url(#logoGradient)"
-            }, void 0, false, {
-                fileName: "[project]/Downloads/wall-street-playbook/components/ui/logo.tsx",
-                lineNumber: 10,
-                columnNumber: 7
-            }, this),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("rect", {
-                x: "2",
-                y: "2",
-                width: "36",
-                height: "36",
-                rx: "8",
-                fill: "url(#innerGradient)",
-                fillOpacity: "0.5"
-            }, void 0, false, {
-                fileName: "[project]/Downloads/wall-street-playbook/components/ui/logo.tsx",
-                lineNumber: 13,
-                columnNumber: 7
-            }, this),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
-                d: "M10 26L16 18L22 22L28 12L34 16",
-                stroke: "url(#lineGradient)",
-                strokeWidth: "3",
-                strokeLinecap: "round",
-                strokeLinejoin: "round"
-            }, void 0, false, {
-                fileName: "[project]/Downloads/wall-street-playbook/components/ui/logo.tsx",
-                lineNumber: 16,
-                columnNumber: 7
-            }, this),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
-                cx: "34",
-                cy: "16",
-                r: "4",
-                fill: "#C9A86E"
-            }, void 0, false, {
-                fileName: "[project]/Downloads/wall-street-playbook/components/ui/logo.tsx",
-                lineNumber: 25,
-                columnNumber: 7
-            }, this),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
-                cx: "34",
-                cy: "16",
-                r: "2.5",
-                fill: "#E8D5A8"
-            }, void 0, false, {
-                fileName: "[project]/Downloads/wall-street-playbook/components/ui/logo.tsx",
-                lineNumber: 26,
-                columnNumber: 7
-            }, this),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
-                d: "M10 30h24M10 22h24M10 14h24",
-                stroke: "#C9A86E",
-                strokeWidth: "0.5",
-                strokeOpacity: "0.2"
-            }, void 0, false, {
-                fileName: "[project]/Downloads/wall-street-playbook/components/ui/logo.tsx",
-                lineNumber: 29,
-                columnNumber: 7
-            }, this),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("defs", {
-                children: [
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("linearGradient", {
-                        id: "logoGradient",
-                        x1: "0",
-                        y1: "0",
-                        x2: "40",
-                        y2: "40",
-                        gradientUnits: "userSpaceOnUse",
-                        children: [
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("stop", {
-                                offset: "0%",
-                                stopColor: "#0D2240"
-                            }, void 0, false, {
-                                fileName: "[project]/Downloads/wall-street-playbook/components/ui/logo.tsx",
-                                lineNumber: 38,
-                                columnNumber: 11
-                            }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("stop", {
-                                offset: "100%",
-                                stopColor: "#0A1A2F"
-                            }, void 0, false, {
-                                fileName: "[project]/Downloads/wall-street-playbook/components/ui/logo.tsx",
-                                lineNumber: 39,
-                                columnNumber: 11
-                            }, this)
-                        ]
-                    }, void 0, true, {
-                        fileName: "[project]/Downloads/wall-street-playbook/components/ui/logo.tsx",
-                        lineNumber: 37,
-                        columnNumber: 9
-                    }, this),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("linearGradient", {
-                        id: "innerGradient",
-                        x1: "0",
-                        y1: "0",
-                        x2: "40",
-                        y2: "40",
-                        gradientUnits: "userSpaceOnUse",
-                        children: [
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("stop", {
-                                offset: "0%",
-                                stopColor: "#C9A86E",
-                                stopOpacity: "0.1"
-                            }, void 0, false, {
-                                fileName: "[project]/Downloads/wall-street-playbook/components/ui/logo.tsx",
-                                lineNumber: 42,
-                                columnNumber: 11
-                            }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("stop", {
-                                offset: "100%",
-                                stopColor: "#C9A86E",
-                                stopOpacity: "0"
-                            }, void 0, false, {
-                                fileName: "[project]/Downloads/wall-street-playbook/components/ui/logo.tsx",
-                                lineNumber: 43,
-                                columnNumber: 11
-                            }, this)
-                        ]
-                    }, void 0, true, {
-                        fileName: "[project]/Downloads/wall-street-playbook/components/ui/logo.tsx",
-                        lineNumber: 41,
-                        columnNumber: 9
-                    }, this),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("linearGradient", {
-                        id: "lineGradient",
-                        x1: "10",
-                        y1: "20",
-                        x2: "34",
-                        y2: "20",
-                        gradientUnits: "userSpaceOnUse",
-                        children: [
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("stop", {
-                                offset: "0%",
-                                stopColor: "#C9A86E",
-                                stopOpacity: "0.6"
-                            }, void 0, false, {
-                                fileName: "[project]/Downloads/wall-street-playbook/components/ui/logo.tsx",
-                                lineNumber: 46,
-                                columnNumber: 11
-                            }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("stop", {
-                                offset: "50%",
-                                stopColor: "#C9A86E"
-                            }, void 0, false, {
-                                fileName: "[project]/Downloads/wall-street-playbook/components/ui/logo.tsx",
-                                lineNumber: 47,
-                                columnNumber: 11
-                            }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("stop", {
-                                offset: "100%",
-                                stopColor: "#E8D5A8"
-                            }, void 0, false, {
-                                fileName: "[project]/Downloads/wall-street-playbook/components/ui/logo.tsx",
-                                lineNumber: 48,
-                                columnNumber: 11
-                            }, this)
-                        ]
-                    }, void 0, true, {
-                        fileName: "[project]/Downloads/wall-street-playbook/components/ui/logo.tsx",
-                        lineNumber: 45,
-                        columnNumber: 9
-                    }, this)
-                ]
-            }, void 0, true, {
-                fileName: "[project]/Downloads/wall-street-playbook/components/ui/logo.tsx",
-                lineNumber: 36,
-                columnNumber: 7
-            }, this)
-        ]
-    }, void 0, true, {
+        priority: true
+    }, void 0, false, {
         fileName: "[project]/Downloads/wall-street-playbook/components/ui/logo.tsx",
-        lineNumber: 3,
+        lineNumber: 5,
         columnNumber: 5
     }, this);
 }
 function LogoMark({ className = "h-6 w-6" }) {
-    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
-        viewBox: "0 0 24 24",
-        fill: "none",
-        xmlns: "http://www.w3.org/2000/svg",
-        className: className,
-        children: [
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
-                d: "M3 15L7 7L11 11L15 3L19 9",
-                stroke: "currentColor",
-                strokeWidth: "2",
-                strokeLinecap: "round",
-                strokeLinejoin: "round"
-            }, void 0, false, {
-                fileName: "[project]/Downloads/wall-street-playbook/components/ui/logo.tsx",
-                lineNumber: 63,
-                columnNumber: 7
-            }, this),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("circle", {
-                cx: "19",
-                cy: "9",
-                r: "1.5",
-                fill: "currentColor"
-            }, void 0, false, {
-                fileName: "[project]/Downloads/wall-street-playbook/components/ui/logo.tsx",
-                lineNumber: 70,
-                columnNumber: 7
-            }, this)
-        ]
-    }, void 0, true, {
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
+        src: "/favicon-32x32.png",
+        alt: "Wall Street Playbook",
+        width: 24,
+        height: 24,
+        className: className
+    }, void 0, false, {
         fileName: "[project]/Downloads/wall-street-playbook/components/ui/logo.tsx",
-        lineNumber: 57,
+        lineNumber: 18,
         columnNumber: 5
     }, this);
 }
@@ -253,20 +60,20 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$
 ;
 const navigation = [
     {
-        name: "Jobs",
-        href: "/jobs"
-    },
-    {
-        name: "Playbooks",
-        href: "/playbooks"
-    },
-    {
         name: "Resume Services",
         href: "/resume-services"
     },
     {
+        name: "Jobs",
+        href: "/jobs"
+    },
+    {
         name: "Blog",
         href: "/blog"
+    },
+    {
+        name: "Playbooks",
+        href: "/playbooks"
     }
 ];
 function Navbar() {
@@ -290,7 +97,7 @@ function Navbar() {
                         className: "group flex items-center gap-2.5 sm:gap-3",
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$components$2f$ui$2f$logo$2e$tsx__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["Logo"], {
-                                className: "h-8 w-8 sm:h-9 sm:w-9 flex-shrink-0 transition-transform group-hover:scale-105"
+                                className: "h-10 w-10 sm:h-12 sm:w-12 flex-shrink-0 transition-transform group-hover:scale-105"
                             }, void 0, false, {
                                 fileName: "[project]/Downloads/wall-street-playbook/components/layout/navbar.tsx",
                                 lineNumber: 38,
@@ -355,7 +162,7 @@ function Navbar() {
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "hidden lg:flex lg:items-center lg:gap-4",
                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
-                            href: "/playbooks",
+                            href: "/submit-resume?service=resume-review",
                             className: "group relative rounded-xl bg-gold px-6 py-2.5 text-sm font-semibold text-navy overflow-hidden transition-all hover:shadow-lg hover:shadow-gold/25",
                             children: [
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -480,11 +287,11 @@ function Navbar() {
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                     className: "pt-4 mt-4 border-t border-white/10",
                                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["default"], {
-                                        href: "/playbooks",
+                                        href: "/submit-resume?service=resume-review",
                                         className: "flex items-center justify-center gap-2 rounded-xl bg-gold px-6 py-4 text-base font-semibold text-navy transition-all hover:bg-white",
                                         onClick: ()=>setMobileMenuOpen(false),
                                         children: [
-                                            "Get Started",
+                                            "Get Your Resume Reviewed",
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$chevron$2d$right$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__$3c$export__default__as__ChevronRight$3e$__["ChevronRight"], {
                                                 className: "w-5 h-5"
                                             }, void 0, false, {
@@ -1220,7 +1027,7 @@ function Footer() {
                                             href: "https://techsalesplaybook.com",
                                             target: "_blank",
                                             rel: "noopener noreferrer",
-                                            className: "text-white/40 hover:text-gold transition-colors",
+                                            className: "text-white/50 hover:text-gold transition-colors",
                                             children: "Tech Sales Playbook"
                                         }, void 0, false, {
                                             fileName: "[project]/Downloads/wall-street-playbook/components/layout/footer.tsx",

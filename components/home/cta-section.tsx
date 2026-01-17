@@ -27,7 +27,7 @@ export function CTASection() {
 
           <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link
-              href="/submit-resume"
+              href="/submit-resume?service=resume-review"
               className="group relative flex w-full sm:w-auto items-center justify-center gap-2 rounded-xl bg-gold px-10 py-5 text-lg font-bold text-navy overflow-hidden transition-all hover:shadow-xl hover:shadow-gold/30 hover:bg-white"
             >
               <span className="relative z-10">Get Your Resume Reviewed</span>
