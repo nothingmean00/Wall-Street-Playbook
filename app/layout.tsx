@@ -2,7 +2,7 @@ import type React from "react"
 import type { Metadata, Viewport } from "next"
 import { DM_Sans, Playfair_Display } from "next/font/google"
 import { Analytics } from "@vercel/analytics/next"
-import { ExitIntentPopup } from "@/components/exit-intent-popup"
+import { ExitIntentWrapper } from "@/components/exit-intent-wrapper"
 import "./globals.css"
 
 const dmSans = DM_Sans({
@@ -118,6 +118,7 @@ export default function RootLayout({
         <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
         <link rel="dns-prefetch" href="https://va.vercel-scripts.com" />
         
+        {/* Organization Schema */}
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{
@@ -129,7 +130,11 @@ export default function RootLayout({
               logo: "https://wallstreetplaybook.org/android-chrome-512x512.png",
               description:
                 "Premium preparation materials and services for investment banking, private equity, and hedge fund recruiting.",
-              sameAs: [],
+              sameAs: [
+                "https://www.linkedin.com/company/wallstreetplaybook",
+                "https://twitter.com/wsplaybook",
+                "https://www.instagram.com/wallstreetplaybook",
+              ],
               contactPoint: {
                 "@type": "ContactPoint",
                 contactType: "customer service",
@@ -138,10 +143,27 @@ export default function RootLayout({
             }),
           }}
         />
+        {/* WebSite Schema for Sitelinks Search Box */}
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              name: "Wall Street Playbook",
+              url: "https://wallstreetplaybook.org",
+              description: "Premium preparation materials for investment banking, private equity, and hedge fund recruiting.",
+              publisher: {
+                "@type": "Organization",
+                name: "Wall Street Playbook",
+              },
+            }),
+          }}
+        />
       </head>
       <body className={`${dmSans.className} ${playfair.variable} font-sans antialiased`}>
         {children}
-        <ExitIntentPopup />
+        <ExitIntentWrapper />
         <Analytics />
       </body>
     </html>
