@@ -1,7 +1,7 @@
 import type { Metadata } from "next"
 import { Navbar } from "@/components/layout/navbar"
 import { Footer } from "@/components/layout/footer"
-import { guides } from "@/lib/data"
+import { getAllBlogPosts } from "@/lib/blog"
 import Link from "next/link"
 import { ArrowRight, Clock } from "lucide-react"
 
@@ -37,8 +37,9 @@ const categoryColors: Record<string, string> = {
 }
 
 export default function BlogPage() {
-  const featuredPost = guides[0]
-  const remainingPosts = guides.slice(1)
+  const allPosts = getAllBlogPosts()
+  const featuredPost = allPosts[0]
+  const remainingPosts = allPosts.slice(1)
 
   return (
     <div className="flex min-h-screen flex-col">

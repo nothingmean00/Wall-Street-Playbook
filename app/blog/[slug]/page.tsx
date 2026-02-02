@@ -2,48 +2,51 @@ import type { Metadata } from "next"
 import { Navbar } from "@/components/layout/navbar"
 import { Footer } from "@/components/layout/footer"
 import { BlogEmailCTA } from "@/components/blog-email-cta"
-import { guides } from "@/lib/data"
+import { RelatedContent, relatedContentByTopic } from "@/components/related-content"
+import { getAllBlogPosts, getBlogPost, getRelatedBlogPosts } from "@/lib/blog"
 import { notFound } from "next/navigation"
 import Link from "next/link"
 import { ArrowLeft, ArrowRight, Clock, Calendar } from "lucide-react"
 
 export async function generateStaticParams() {
-  return guides.map((guide) => ({
-    slug: guide.slug,
+  const posts = getAllBlogPosts()
+  return posts.map((post) => ({
+    slug: post.slug,
   }))
 }
 
 export async function generateMetadata({ params }: { params: Promise<{ slug: string }> }): Promise<Metadata> {
   const { slug } = await params
-  const guide = guides.find((g) => g.slug === slug)
-  if (!guide) return { title: "Not Found" }
+  const post = getBlogPost(slug)
+  if (!post) return { title: "Not Found" }
 
   return {
-    title: guide.title,
-    description: guide.summary,
+    title: post.title,
+    description: post.summary,
     keywords: [
-      guide.category.toLowerCase(),
+      post.category.toLowerCase(),
       "finance career",
       "wall street",
-      guide.title.toLowerCase().split(" ").slice(0, 3).join(" "),
+      post.title.toLowerCase().split(" ").slice(0, 3).join(" "),
+      ...(post.tags || []),
     ],
-    authors: [{ name: "Wall Street Playbook" }],
+    authors: [{ name: post.author || "Wall Street Playbook" }],
     openGraph: {
-      title: `${guide.title} | Wall Street Playbook`,
-      description: guide.summary,
-      url: `https://wallstreetplaybook.org/blog/${guide.slug}`,
+      title: `${post.title} | Wall Street Playbook`,
+      description: post.summary,
+      url: `https://wallstreetplaybook.org/blog/${post.slug}`,
       type: "article",
-      publishedTime: guide.publishedAt,
-      authors: ["Wall Street Playbook"],
-      section: guide.category,
+      publishedTime: post.publishedAt,
+      authors: [post.author || "Wall Street Playbook"],
+      section: post.category,
     },
     twitter: {
       card: "summary_large_image",
-      title: guide.title,
-      description: guide.summary,
+      title: post.title,
+      description: post.summary,
     },
     alternates: {
-      canonical: `https://wallstreetplaybook.org/blog/${guide.slug}`,
+      canonical: `https://wallstreetplaybook.org/blog/${post.slug}`,
     },
   }
 }
@@ -56,18 +59,30 @@ const categoryColors: Record<string, string> = {
   Networking: "bg-gold/20 text-gold",
 }
 
+// Helper to determine related content topic
+function getRelatedTopic(slug: string, category: string, tags?: string[]): keyof typeof relatedContentByTopic | null {
+  const tagSet = new Set(tags || [])
+  if (tagSet.has("non-target") || slug.includes("non-target")) return "nonTarget"
+  if (category === "Technical" || slug.includes("dcf") || slug.includes("lbo") || slug.includes("technical")) return "technicals"
+  if (slug.includes("resume") || category === "Resume") return "resume"
+  if (slug.includes("private-equity") || slug.includes("pe-")) return "peRecruiting"
+  if (slug.includes("hedge-fund") || slug.includes("hf-")) return "hfRecruiting"
+  return null
+}
+
 export default async function BlogPostPage({ params }: { params: Promise<{ slug: string }> }) {
   const { slug } = await params
-  const guide = guides.find((g) => g.slug === slug)
+  const post = getBlogPost(slug)
 
-  if (!guide) {
+  if (!post) {
     notFound()
   }
 
-  const relatedPosts = guides.filter((g) => g.category === guide.category && g.slug !== guide.slug).slice(0, 2)
+  const relatedPosts = getRelatedBlogPosts(slug, post.category, 2)
+  const relatedTopic = getRelatedTopic(slug, post.category, post.tags)
 
-  const formattedDate = guide.publishedAt
-    ? new Date(guide.publishedAt).toLocaleDateString("en-US", {
+  const formattedDate = post.publishedAt
+    ? new Date(post.publishedAt).toLocaleDateString("en-US", {
         year: "numeric",
         month: "long",
         day: "numeric",
@@ -77,27 +92,60 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
   const articleStructuredData = {
     "@context": "https://schema.org",
     "@type": "Article",
-    headline: guide.title,
-    description: guide.summary,
+    headline: post.title,
+    description: post.summary,
+    image: "https://wallstreetplaybook.org/og-image.jpg",
     author: {
       "@type": "Organization",
-      name: "Wall Street Playbook",
+      name: post.author || "Wall Street Playbook",
+      url: "https://wallstreetplaybook.org",
     },
     publisher: {
       "@type": "Organization",
       name: "Wall Street Playbook",
       url: "https://wallstreetplaybook.org",
+      logo: {
+        "@type": "ImageObject",
+        url: "https://wallstreetplaybook.org/android-chrome-512x512.png",
+      },
     },
-    datePublished: guide.publishedAt,
+    datePublished: post.publishedAt,
+    dateModified: post.publishedAt,
     mainEntityOfPage: {
       "@type": "WebPage",
-      "@id": `https://wallstreetplaybook.org/blog/${guide.slug}`,
+      "@id": `https://wallstreetplaybook.org/blog/${post.slug}`,
     },
+  }
+
+  const breadcrumbStructuredData = {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: [
+      {
+        "@type": "ListItem",
+        position: 1,
+        name: "Home",
+        item: "https://wallstreetplaybook.org",
+      },
+      {
+        "@type": "ListItem",
+        position: 2,
+        name: "Blog",
+        item: "https://wallstreetplaybook.org/blog",
+      },
+      {
+        "@type": "ListItem",
+        position: 3,
+        name: post.title,
+        item: `https://wallstreetplaybook.org/blog/${post.slug}`,
+      },
+    ],
   }
 
   return (
     <div className="flex min-h-screen flex-col">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleStructuredData) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbStructuredData) }} />
 
       <Navbar />
       <main className="flex-grow">
@@ -115,17 +163,17 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
             <div className="flex flex-wrap items-center gap-3 mb-6">
               <span
                 className={`inline-block rounded-full px-3 py-1 text-xs font-medium ${
-                  categoryColors[guide.category] || "bg-navy/10 text-navy"
+                  categoryColors[post.category] || "bg-navy/10 text-navy"
                 }`}
               >
-                {guide.category}
+                {post.category}
               </span>
-              {guide.readTime && (
+              {post.readTime && (
                 <>
                   <span className="h-1 w-1 rounded-full bg-white/30" />
                   <span className="flex items-center gap-1 text-xs text-white/60">
                     <Clock className="h-3 w-3" />
-                    {guide.readTime}
+                    {post.readTime}
                   </span>
                 </>
               )}
@@ -140,8 +188,8 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
               )}
             </div>
 
-            <h1 className="text-3xl lg:text-4xl font-bold tracking-tight text-white text-balance">{guide.title}</h1>
-            <p className="mt-6 text-lg text-white/70">{guide.summary}</p>
+            <h1 className="text-3xl lg:text-4xl font-bold tracking-tight text-white text-balance">{post.title}</h1>
+            <p className="mt-6 text-lg text-white/70">{post.summary}</p>
           </div>
         </section>
 
@@ -149,11 +197,11 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
         <section className="bg-off-white py-16 lg:py-20">
           <div className="mx-auto max-w-3xl px-6 lg:px-8">
             <article className="prose prose-lg prose-charcoal max-w-none">
-              {guide.content ? (
+              {post.content ? (
                 <div
                   className="text-charcoal/80 leading-relaxed space-y-4"
                   dangerouslySetInnerHTML={{
-                    __html: guide.content
+                    __html: post.content
                       .split("\n\n")
                       .map((paragraph) => {
                         // Horizontal rule / divider
@@ -238,37 +286,45 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
           </div>
         </section>
 
-        {/* Related Posts */}
+        {/* Related Content - Topic-based recommendations */}
+        {relatedTopic && (
+          <RelatedContent
+            title="Related Resources"
+            items={relatedContentByTopic[relatedTopic]}
+          />
+        )}
+
+        {/* Related Posts - Same category */}
         {relatedPosts.length > 0 && (
           <section className="bg-white py-16 lg:py-20 border-t border-border">
             <div className="mx-auto max-w-7xl px-6 lg:px-8">
-              <h2 className="text-2xl font-bold text-charcoal mb-8">Related Articles</h2>
+              <h2 className="text-2xl font-bold text-charcoal mb-8">More in {post.category}</h2>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                {relatedPosts.map((post) => (
+                {relatedPosts.map((relatedPost) => (
                   <Link
-                    key={post.slug}
-                    href={`/blog/${post.slug}`}
+                    key={relatedPost.slug}
+                    href={`/blog/${relatedPost.slug}`}
                     className="group flex flex-col bg-off-white rounded-xl border border-border p-6 transition-all duration-200 hover:shadow-lg hover:border-gold/30"
                   >
                     <div className="flex items-center justify-between mb-4">
                       <span
                         className={`inline-block rounded-full px-3 py-1 text-xs font-medium ${
-                          categoryColors[post.category] || "bg-navy/10 text-navy"
+                          categoryColors[relatedPost.category] || "bg-navy/10 text-navy"
                         }`}
                       >
-                        {post.category}
+                        {relatedPost.category}
                       </span>
-                      {post.readTime && (
+                      {relatedPost.readTime && (
                         <span className="flex items-center gap-1 text-xs text-charcoal/50">
                           <Clock className="h-3 w-3" />
-                          {post.readTime}
+                          {relatedPost.readTime}
                         </span>
                       )}
                     </div>
                     <h3 className="text-lg font-semibold text-charcoal group-hover:text-navy transition-colors">
-                      {post.title}
+                      {relatedPost.title}
                     </h3>
-                    <p className="mt-2 text-sm text-charcoal/70 line-clamp-2 flex-grow">{post.summary}</p>
+                    <p className="mt-2 text-sm text-charcoal/70 line-clamp-2 flex-grow">{relatedPost.summary}</p>
                     <div className="mt-4 flex items-center gap-1 text-sm font-medium text-gold">
                       Read Article
                       <ArrowRight className="h-3 w-3 transition-transform group-hover:translate-x-1" />

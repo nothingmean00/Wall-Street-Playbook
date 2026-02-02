@@ -1,4 +1,7 @@
+"use client"
+
 import { BookOpen, FileText, MessageSquare, Calendar, Target, TrendingUp } from "lucide-react"
+import { ScrollReveal } from "@/components/scroll-reveal"
 
 const features = [
   {
@@ -60,23 +63,24 @@ export function WhatYouGet() {
       
       <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
         {/* Section Header */}
-        <div className="mx-auto max-w-2xl text-center mb-16">
-          <p className="text-sm font-semibold uppercase tracking-widest text-gold mb-4">Comprehensive Coverage</p>
+        <ScrollReveal animation="fade-up" className="mx-auto max-w-2xl text-center mb-16">
+          <p className="text-sm font-semibold uppercase tracking-widest text-gold mb-4">What's Included</p>
           <h2 className="text-3xl font-bold tracking-tight text-navy sm:text-4xl lg:text-5xl">
-            Everything You Need to <span className="text-gradient-gold">Succeed</span>
+            Technical + Behavioral + <span className="text-gradient-gold">Networking</span>
           </h2>
           <p className="mt-4 text-base sm:text-lg leading-relaxed text-charcoal/60">
-            Preparation materials covering the core areas of finance recruiting.
+            The three pillars of finance recruiting, covered with actionable frameworks.
           </p>
-        </div>
+        </ScrollReveal>
 
         {/* Features Grid */}
         <div className="mx-auto grid max-w-6xl grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {features.map((feature, index) => (
-            <div
+            <ScrollReveal
               key={feature.title}
+              animation="fade-up"
+              delay={index * 100}
               className="group relative rounded-2xl bg-white p-8 transition-all duration-500 hover:shadow-xl hover:-translate-y-1"
-              style={{ animationDelay: `${index * 100}ms` }}
             >
               {/* Gradient accent on hover */}
               <div className={`absolute inset-0 rounded-2xl bg-gradient-to-br ${feature.accent} opacity-0 group-hover:opacity-100 transition-opacity duration-500`} />
@@ -102,12 +106,12 @@ export function WhatYouGet() {
                 <div className="absolute top-0 right-0 w-full h-px bg-gradient-to-l from-gold to-transparent" />
                 <div className="absolute top-0 right-0 w-px h-full bg-gradient-to-b from-gold to-transparent" />
               </div>
-            </div>
+            </ScrollReveal>
           ))}
         </div>
         
         {/* Bottom stat bar */}
-        <div className="mt-20 mx-auto max-w-4xl">
+        <ScrollReveal animation="fade-up" delay={400} className="mt-20 mx-auto max-w-4xl">
           <div className="relative rounded-2xl bg-navy p-8 lg:p-10 overflow-hidden">
             {/* Background effects */}
             <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_rgba(201,168,110,0.15),_transparent_60%)]" />
@@ -130,7 +134,7 @@ export function WhatYouGet() {
               ))}
             </div>
           </div>
-        </div>
+        </ScrollReveal>
       </div>
     </section>
   )

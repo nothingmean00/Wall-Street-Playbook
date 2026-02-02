@@ -92,9 +92,83 @@ const fundTypes = [
   { type: "Event-Driven", examples: "Elliott, Third Point", focus: "M&A, activism, special situations" },
 ]
 
+const faqStructuredData = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "How are hedge fund interviews different from banking or PE interviews?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Hedge fund interviews focus on whether you can generate alpha, not just execute transactions. The centerpiece is usually a stock pitch where you present a fully-formed investment thesis. Unlike banking interviews with 'right answers,' hedge fund interviews assess your investment process and independent thinking.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What is the structure of a good stock pitch?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "A strong stock pitch follows 6 parts: (1) Thesis - one sentence with your position and target, (2) Business Overview - what they do and how they make money, (3) Variant Perception - what you see that the market misses, (4) Catalysts - what will make the market realize you're right, (5) Valuation - how you arrive at your price target, (6) Risks - what could go wrong and why you're comfortable.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What types of questions are asked in hedge fund interviews?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Hedge fund interviews include four main types: Stock Pitch questions (pitch a stock, give a short idea), Market Discussion (what's happening in markets, where do you see opportunities), Technical/Modeling (valuation methods, DCF walkthrough), and Behavioral/Fit (why hedge funds, tell me about an investment mistake).",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What are common stock pitch mistakes to avoid?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Common mistakes include: pitching a well-known stock without differentiated insight, not knowing the numbers cold, having no clear catalyst, crumbling under pushback from interviewers, and ignoring or minimizing risks. Address the bear case upfront to show mature investment thinking.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What are the different types of hedge funds?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Main hedge fund types include: Long/Short Equity (Tiger Cubs, Point72) focused on stock picking, Multi-Strategy (Citadel, Millennium) with pod structures, Macro (Bridgewater) focused on economic analysis, Quant (Two Sigma, Renaissance) requiring programming skills, and Event-Driven (Elliott, Third Point) focused on M&A and special situations.",
+      },
+    },
+  ],
+}
+
+const breadcrumbStructuredData = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Home",
+      item: "https://wallstreetplaybook.org",
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Hedge Fund Interview Prep",
+      item: "https://wallstreetplaybook.org/hedge-fund-interview-prep",
+    },
+  ],
+}
+
 export default function HedgeFundInterviewPrepPage() {
   return (
     <div className="flex min-h-screen flex-col">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqStructuredData) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbStructuredData) }}
+      />
       <Navbar />
       <main className="flex-grow pt-0">
         {/* Hero Section */}

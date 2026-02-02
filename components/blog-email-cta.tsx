@@ -104,7 +104,7 @@ export function BlogEmailCTA({ variant = "inline" }: BlogEmailCTAProps) {
         <div className="flex-1">
           <h3 className="text-lg font-bold mb-1">Want More Recruiting Content?</h3>
           <p className="text-white/70 text-sm">
-            Join 2,000+ candidates getting free technical prep tips, networking scripts, and interview frameworks.
+            Get free technical prep tips, networking scripts, and interview frameworks delivered to your inbox.
           </p>
         </div>
       </div>

@@ -73,9 +73,83 @@ const timeline = [
   { phase: "Final Weeks", task: "Review weak areas, rest before interviews" },
 ]
 
+const faqStructuredData = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "What are the main types of questions in investment banking interviews?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Investment banking interviews test three core areas: technical knowledge (accounting, valuation, M&A, LBO concepts), behavioral fit (your story, motivations, teamwork examples), and industry knowledge (market awareness, deal experience, firm knowledge). Technical questions typically make up 50-70% of analyst-level interviews.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "How long should I prepare for investment banking interviews?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Preparation takes 3-6 months for most candidates. The timeline includes: 6-12 months before for learning accounting fundamentals and networking, 3-6 months before for mastering valuation and practicing technicals daily, 1-3 months before for mock interviews and refining your story, and final weeks for reviewing weak areas.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What accounting topics should I know for IB interviews?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "You should master: walking through the three financial statements, how the statements link together, what happens when depreciation increases by $10, and why cash flow is more important than net income. Understanding these fundamentals is essential before moving to valuation topics.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What valuation questions are asked in investment banking interviews?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Common valuation questions include: what are the three main valuation methodologies, walk me through a DCF, when would you use a DCF vs comparable companies, and what's the difference between enterprise value and equity value.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "How important is networking for investment banking recruiting?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "Networking is non-negotiable, especially from non-target schools. Plan for 50-100+ outreach messages and 30-50 networking calls to build meaningful relationships. Follow up every 5-7 days. Networking is how you get interviews, not just how you learn about the industry.",
+      },
+    },
+  ],
+}
+
+const breadcrumbStructuredData = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Home",
+      item: "https://wallstreetplaybook.org",
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Investment Banking Interview Prep",
+      item: "https://wallstreetplaybook.org/investment-banking-interview-prep",
+    },
+  ],
+}
+
 export default function InvestmentBankingInterviewPrepPage() {
   return (
     <div className="flex min-h-screen flex-col">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqStructuredData) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbStructuredData) }}
+      />
       <Navbar />
       <main className="flex-grow pt-0">
         {/* Hero Section */}

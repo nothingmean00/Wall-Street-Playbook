@@ -54,9 +54,83 @@ const technicalTopics = [
   },
 ]
 
+const faqStructuredData = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: [
+    {
+      "@type": "Question",
+      name: "What is the difference between on-cycle and off-cycle PE recruiting?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "On-cycle PE recruiting is the main recruiting push that happens 6-18 months before start date, with a highly compressed timeline (days, not weeks), focused on mega-funds and upper-middle-market firms, and driven by headhunters. Off-cycle recruiting happens year-round as needs arise, offers more preparation time between rounds, focuses on middle-market and growth equity, and allows for direct outreach.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "When does on-cycle PE recruiting start?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "On-cycle PE recruiting typically begins within months 1-3 of starting as an IB analyst, when headhunters start reaching out to top performers. First-round interviews begin around months 4-6, often with 24-48 hour notice. Superdays and offers are extended around months 6-8, with same-day decisions being common.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What technical topics are tested in PE interviews?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "PE interviews focus on four main technical areas: LBO mechanics (sources & uses, debt schedules, IRR/MOIC calculations), Paper LBO (10-minute mental math framework, quick IRR approximations), Deal Discussion (walking through deals you worked on, key learnings), and Investment Thesis (industry analysis, company positioning, value creation plan, risk factors).",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "What IRR and MOIC do PE firms typically target?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "PE firms typically target an IRR of 20%+ and a MOIC (multiple on invested capital) of 2-3x. You should be able to complete a paper LBO in about 10 minutes during an interview setting.",
+      },
+    },
+    {
+      "@type": "Question",
+      name: "How fast can on-cycle PE recruiting move?",
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: "On-cycle PE recruiting can move extremely fast - you can go from first headhunter call to signed offer in under 72 hours. This is why preparation must be complete before your phone rings, as there is no time to prepare during the process itself.",
+      },
+    },
+  ],
+}
+
+const breadcrumbStructuredData = {
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  itemListElement: [
+    {
+      "@type": "ListItem",
+      position: 1,
+      name: "Home",
+      item: "https://wallstreetplaybook.org",
+    },
+    {
+      "@type": "ListItem",
+      position: 2,
+      name: "Private Equity Recruiting",
+      item: "https://wallstreetplaybook.org/private-equity-recruiting",
+    },
+  ],
+}
+
 export default function PrivateEquityRecruitingPage() {
   return (
     <div className="flex min-h-screen flex-col">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqStructuredData) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbStructuredData) }}
+      />
       <Navbar />
       <main className="flex-grow pt-0">
         {/* Hero Section */}

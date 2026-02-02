@@ -393,9 +393,9 @@ function ResumeSubmissionForm({ initialService }: { initialService: ServiceType 
                 {/* Social Proof */}
                 <div className="mt-6 rounded-lg bg-navy/5 p-4">
                   <p className="text-xs text-charcoal/70 italic">
-                    "Used this service before my Goldman interview. The feedback was incredibly detailed and helped me land the offer."
+                    "I was getting ghosted on applications. After the rewrite, I got callbacks from Evercore, Lazard, and Centerview within 2 weeks."
                   </p>
-                  <p className="mt-2 text-xs font-medium text-navy">— Recent Client</p>
+                  <p className="mt-2 text-xs font-medium text-navy">— Non-target senior, Class of 2025</p>
                 </div>
               </div>
             </div>

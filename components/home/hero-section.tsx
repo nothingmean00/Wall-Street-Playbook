@@ -40,10 +40,10 @@ export function HeroSection() {
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-8 items-center">
           {/* Left column - Text content */}
           <div className="text-center lg:text-left">
-            {/* Eyebrow */}
+            {/* Eyebrow - Real urgency based on recruiting calendar */}
             <div className="inline-flex items-center gap-2 rounded-full border border-gold/30 bg-gold/10 px-4 py-1.5 mb-6 animate-slide-up">
               <span className="h-1.5 w-1.5 rounded-full bg-gold animate-pulse" />
-              <span className="text-xs font-semibold uppercase tracking-widest text-gold">Premium Finance Prep</span>
+              <span className="text-xs font-semibold uppercase tracking-widest text-gold">2026 Summer Analyst Apps Open Now</span>
             </div>
             
             {/* Headline */}
@@ -56,12 +56,12 @@ export function HeroSection() {
               </span>
             </h1>
 
-            {/* Subheadline */}
+            {/* Subheadline - FOMO: reference the timeline pressure */}
             <p className="mt-6 text-lg sm:text-xl leading-relaxed text-white/60 max-w-xl mx-auto lg:mx-0 animate-slide-up animate-delay-200">
-              Technical guides, interview frameworks, and networking strategies for 
-              <span className="text-white/80"> investment banking</span>,
-              <span className="text-white/80"> private equity</span>, and
-              <span className="text-white/80"> hedge funds</span>.
+              Resume frameworks, technical prep, and networking strategies that get callbacks at 
+              <span className="text-white/80"> bulge brackets</span>,
+              <span className="text-white/80"> elite boutiques</span>, and
+              <span className="text-white/80"> buyside firms</span>.
             </p>
 
             {/* CTAs */}
@@ -78,23 +78,23 @@ export function HeroSection() {
                 href="/jobs"
                 className="group w-full sm:w-auto rounded-xl border-2 border-white/20 bg-white/5 backdrop-blur-sm px-8 py-4 text-base font-semibold text-white transition-all hover:border-gold hover:bg-gold/10 text-center"
               >
-                Browse Finance Jobs
+                See Open Roles
               </Link>
             </div>
 
-            {/* Trust indicators */}
+            {/* Trust indicators - Authority signals */}
             <div className="mt-10 flex flex-wrap items-center justify-center lg:justify-start gap-6 animate-slide-up animate-delay-400">
               <div className="flex items-center gap-2 text-white/40">
                 <svg className="w-5 h-5 text-gold" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                 </svg>
-                <span className="text-sm">48hr Turnaround</span>
+                <span className="text-sm">GS / MS / Evercore Formats</span>
               </div>
               <div className="flex items-center gap-2 text-white/40">
                 <svg className="w-5 h-5 text-gold" fill="currentColor" viewBox="0 0 20 20">
                   <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
                 </svg>
-                <span className="text-sm">Proven at Top Firms</span>
+                <span className="text-sm">48hr Turnaround</span>
               </div>
               <div className="flex items-center gap-2 text-white/40">
                 <svg className="w-5 h-5 text-gold" fill="currentColor" viewBox="0 0 20 20">
@@ -116,10 +116,10 @@ export function HeroSection() {
                 {/* Image */}
                 <div className="relative rounded-2xl overflow-hidden">
                   <Image
-                    src="/hero-image.webp"
-                    alt="Wall Street Success"
+                    src="/hero-image-new.jpg"
+                    alt="Two young finance professionals walking outside the New York Stock Exchange on Wall Street"
                     width={1200}
-                    height={708}
+                    height={800}
                     className="w-full h-auto object-cover"
                     priority
                     quality={85}
@@ -138,16 +138,16 @@ export function HeroSection() {
                 <div className="bg-navy/95 backdrop-blur-xl rounded-xl border border-white/10 p-5 shadow-xl">
                   <div className="grid grid-cols-3 gap-4 text-center">
                     <div>
-                      <p className="text-2xl font-bold text-gold number-highlight">30+</p>
-                      <p className="text-xs text-white/50 mt-0.5">Top Firm Interviews</p>
+                      <p className="text-2xl font-bold text-gold number-highlight">$197</p>
+                      <p className="text-xs text-white/50 mt-0.5">Resume Review</p>
                     </div>
                     <div className="border-x border-white/10">
-                      <p className="text-2xl font-bold text-gold number-highlight">IB+PE+HF</p>
-                      <p className="text-xs text-white/50 mt-0.5">All Paths Covered</p>
+                      <p className="text-2xl font-bold text-gold number-highlight">48hr</p>
+                      <p className="text-xs text-white/50 mt-0.5">Turnaround</p>
                     </div>
                     <div>
-                      <p className="text-2xl font-bold text-gold number-highlight">48hr</p>
-                      <p className="text-xs text-white/50 mt-0.5">Turnaround Time</p>
+                      <p className="text-2xl font-bold text-gold number-highlight">100%</p>
+                      <p className="text-xs text-white/50 mt-0.5">Money-Back</p>
                     </div>
                   </div>
                 </div>
@@ -159,7 +159,7 @@ export function HeroSection() {
         {/* Email Capture */}
         <div className="mt-16 sm:mt-20 pt-10 border-t border-white/10 animate-slide-up animate-delay-600">
           <div className="max-w-xl mx-auto lg:mx-0">
-            <p className="text-sm text-white/50 mb-4 text-center lg:text-left">Get free recruiting insights delivered to your inbox</p>
+            <p className="text-sm text-white/50 mb-4 text-center lg:text-left">Free: 50 technical interview questions PDF + weekly recruiting tips</p>
             <EmailCapture variant="hero" />
           </div>
         </div>

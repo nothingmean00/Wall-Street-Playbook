@@ -2,6 +2,8 @@ import type { Metadata } from "next"
 import Link from "next/link"
 import { Navbar } from "@/components/layout/navbar"
 import { Footer } from "@/components/layout/footer"
+import { ReadingProgress } from "@/components/reading-progress"
+import { ScrollReveal } from "@/components/scroll-reveal"
 import { ArrowRight, CheckCircle, Calculator, TrendingDown, DollarSign, Target } from "lucide-react"
 
 export const metadata: Metadata = {
@@ -94,6 +96,7 @@ const interviewQuestions = [
 export default function DCFModelGuidePage() {
   return (
     <div className="flex min-h-screen flex-col">
+      <ReadingProgress />
       <Navbar />
       <main className="flex-grow pt-0">
         {/* Hero Section */}
@@ -135,10 +138,12 @@ export default function DCFModelGuidePage() {
         <section className="bg-cream py-20 lg:py-28">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <div className="mx-auto max-w-3xl">
-              <h2 className="text-3xl font-bold text-navy sm:text-4xl">What Is a DCF Model?</h2>
-              <div className="mt-2 h-1 w-20 bg-gold" />
+              <ScrollReveal animation="fade-up">
+                <h2 className="text-3xl font-bold text-navy sm:text-4xl">What Is a DCF Model?</h2>
+                <div className="mt-2 h-1 w-20 bg-gold" />
+              </ScrollReveal>
               
-              <div className="mt-8 prose prose-lg max-w-none text-charcoal/80">
+              <ScrollReveal animation="fade-up" delay={100} className="mt-8 prose prose-lg max-w-none text-charcoal/80">
                 <p>
                   A discounted cash flow (DCF) model values a company based on its expected future cash flows, 
                   discounted back to present value. The core concept is simple: <strong>a dollar today is worth 
@@ -149,7 +154,7 @@ export default function DCFModelGuidePage() {
                   fundamentals, not relative to other companies. This makes DCFs powerful but also sensitive 
                   to your assumptions.
                 </p>
-              </div>
+              </ScrollReveal>
 
               <div className="mt-12 grid gap-6 sm:grid-cols-2">
                 {[
@@ -157,16 +162,18 @@ export default function DCFModelGuidePage() {
                   { icon: TrendingDown, title: "Discounting", desc: "Future cash flows are worth less today due to time value of money" },
                   { icon: Target, title: "Intrinsic Value", desc: "Based on fundamentals, not what others are paying for similar assets" },
                   { icon: DollarSign, title: "Output", desc: "Enterprise value, then bridge to equity value and per-share price" },
-                ].map((item) => (
-                  <div key={item.title} className="flex gap-4 p-5 rounded-xl bg-white shadow-sm">
-                    <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-lg bg-navy">
-                      <item.icon className="h-5 w-5 text-gold" />
+                ].map((item, index) => (
+                  <ScrollReveal key={item.title} animation="fade-up" delay={200 + index * 100}>
+                    <div className="flex gap-4 p-5 rounded-xl bg-white shadow-sm">
+                      <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-lg bg-navy">
+                        <item.icon className="h-5 w-5 text-gold" />
+                      </div>
+                      <div>
+                        <h3 className="font-semibold text-navy">{item.title}</h3>
+                        <p className="mt-1 text-sm text-charcoal/60">{item.desc}</p>
+                      </div>
                     </div>
-                    <div>
-                      <h3 className="font-semibold text-navy">{item.title}</h3>
-                      <p className="mt-1 text-sm text-charcoal/60">{item.desc}</p>
-                    </div>
-                  </div>
+                  </ScrollReveal>
                 ))}
               </div>
             </div>
@@ -177,33 +184,37 @@ export default function DCFModelGuidePage() {
         <section id="dcf-steps" className="bg-white py-20 lg:py-28">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <div className="mx-auto max-w-3xl">
-              <h2 className="text-3xl font-bold text-navy sm:text-4xl">Building a DCF Model: 4 Key Steps</h2>
-              <div className="mt-2 h-1 w-20 bg-gold" />
+              <ScrollReveal animation="fade-up">
+                <h2 className="text-3xl font-bold text-navy sm:text-4xl">Building a DCF Model: 4 Key Steps</h2>
+                <div className="mt-2 h-1 w-20 bg-gold" />
+              </ScrollReveal>
 
               <div className="mt-12 space-y-6">
-                {dcfSteps.map((step) => (
-                  <div key={step.step} className="rounded-2xl border border-border bg-off-white/50 p-8">
-                    <div className="flex items-start gap-4">
-                      <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-navy text-gold font-bold text-xl">
-                        {step.step}
-                      </div>
-                      <div className="flex-1">
-                        <h3 className="text-xl font-bold text-navy">{step.title}</h3>
-                        <p className="mt-1 text-charcoal/60">{step.desc}</p>
-                        <div className="mt-4 p-3 rounded-lg bg-navy/5 border border-navy/10 font-mono text-sm text-navy">
-                          {step.formula}
+                {dcfSteps.map((step, index) => (
+                  <ScrollReveal key={step.step} animation="fade-up" delay={index * 150}>
+                    <div className="rounded-2xl border border-border bg-off-white/50 p-8">
+                      <div className="flex items-start gap-4">
+                        <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-navy text-gold font-bold text-xl">
+                          {step.step}
                         </div>
-                        <ul className="mt-4 grid gap-2 sm:grid-cols-2">
-                          {step.details.map((detail, i) => (
-                            <li key={i} className="flex items-center gap-2">
-                              <CheckCircle className="h-4 w-4 text-gold" />
-                              <span className="text-sm text-charcoal/70">{detail}</span>
-                            </li>
-                          ))}
-                        </ul>
+                        <div className="flex-1">
+                          <h3 className="text-xl font-bold text-navy">{step.title}</h3>
+                          <p className="mt-1 text-charcoal/60">{step.desc}</p>
+                          <div className="mt-4 p-3 rounded-lg bg-navy/5 border border-navy/10 font-mono text-sm text-navy">
+                            {step.formula}
+                          </div>
+                          <ul className="mt-4 grid gap-2 sm:grid-cols-2">
+                            {step.details.map((detail, i) => (
+                              <li key={i} className="flex items-center gap-2">
+                                <CheckCircle className="h-4 w-4 text-gold" />
+                                <span className="text-sm text-charcoal/70">{detail}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
                       </div>
                     </div>
-                  </div>
+                  </ScrollReveal>
                 ))}
               </div>
             </div>
@@ -214,12 +225,14 @@ export default function DCFModelGuidePage() {
         <section className="bg-navy py-20 lg:py-28">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <div className="mx-auto max-w-3xl">
-              <h2 className="text-3xl font-bold text-white sm:text-4xl text-center">Understanding WACC</h2>
-              <p className="mt-4 text-center text-white/60">
-                WACC is the most tested DCF concept in interviews. Know every component cold.
-              </p>
+              <ScrollReveal animation="fade-up">
+                <h2 className="text-3xl font-bold text-white sm:text-4xl text-center">Understanding WACC</h2>
+                <p className="mt-4 text-center text-white/60">
+                  WACC is the most tested DCF concept in interviews. Know every component cold.
+                </p>
+              </ScrollReveal>
 
-              <div className="mt-12 overflow-hidden rounded-2xl bg-white/10">
+              <ScrollReveal animation="fade-up" delay={150} className="mt-12 overflow-hidden rounded-2xl bg-white/10">
                 <table className="w-full">
                   <thead>
                     <tr className="border-b border-white/10">
@@ -238,16 +251,16 @@ export default function DCFModelGuidePage() {
                     ))}
                   </tbody>
                 </table>
-              </div>
+              </ScrollReveal>
 
-              <div className="mt-8 p-6 rounded-xl bg-white/5 border border-gold/30">
+              <ScrollReveal animation="fade-up" delay={300} className="mt-8 p-6 rounded-xl bg-white/5 border border-gold/30">
                 <h3 className="text-lg font-bold text-gold">Interview Tip</h3>
                 <p className="mt-2 text-white/70 text-sm">
                   Be ready to walk through WACC component by component. &quot;We use CAPM for cost of equity, 
                   which requires the risk-free rate (10-year Treasury), beta (company-specific systematic risk), 
                   and the equity risk premium...&quot;
                 </p>
-              </div>
+              </ScrollReveal>
             </div>
           </div>
         </section>
@@ -256,24 +269,28 @@ export default function DCFModelGuidePage() {
         <section className="bg-cream py-20 lg:py-28">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <div className="mx-auto max-w-3xl">
-              <h2 className="text-3xl font-bold text-navy sm:text-4xl">6 DCF Mistakes That Kill Your Model</h2>
-              <div className="mt-2 h-1 w-20 bg-gold" />
+              <ScrollReveal animation="fade-up">
+                <h2 className="text-3xl font-bold text-navy sm:text-4xl">6 DCF Mistakes That Kill Your Model</h2>
+                <div className="mt-2 h-1 w-20 bg-gold" />
+              </ScrollReveal>
 
               <div className="mt-12 space-y-4">
                 {commonMistakes.map((item, i) => (
-                  <div key={i} className="rounded-xl border border-border bg-white p-6">
-                    <div className="flex items-start gap-4">
-                      <span className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-red-100 text-red-600 text-sm font-bold">
-                        {i + 1}
-                      </span>
-                      <div>
-                        <p className="font-semibold text-navy">{item.mistake}</p>
-                        <p className="mt-1 text-sm text-charcoal/70">
-                          <span className="text-green-600 font-medium">Fix:</span> {item.fix}
-                        </p>
+                  <ScrollReveal key={i} animation="fade-up" delay={i * 100}>
+                    <div className="rounded-xl border border-border bg-white p-6">
+                      <div className="flex items-start gap-4">
+                        <span className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-full bg-red-100 text-red-600 text-sm font-bold">
+                          {i + 1}
+                        </span>
+                        <div>
+                          <p className="font-semibold text-navy">{item.mistake}</p>
+                          <p className="mt-1 text-sm text-charcoal/70">
+                            <span className="text-green-600 font-medium">Fix:</span> {item.fix}
+                          </p>
+                        </div>
                       </div>
                     </div>
-                  </div>
+                  </ScrollReveal>
                 ))}
               </div>
             </div>
@@ -284,21 +301,25 @@ export default function DCFModelGuidePage() {
         <section className="bg-white py-20 lg:py-28">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <div className="mx-auto max-w-3xl">
-              <h2 className="text-3xl font-bold text-navy sm:text-4xl">Common DCF Interview Questions</h2>
-              <div className="mt-2 h-1 w-20 bg-gold" />
+              <ScrollReveal animation="fade-up">
+                <h2 className="text-3xl font-bold text-navy sm:text-4xl">Common DCF Interview Questions</h2>
+                <div className="mt-2 h-1 w-20 bg-gold" />
+              </ScrollReveal>
 
               <div className="mt-12 grid gap-3 sm:grid-cols-2">
                 {interviewQuestions.map((question, i) => (
-                  <div key={i} className="flex items-start gap-3 rounded-xl bg-off-white/50 p-4">
-                    <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-navy text-gold text-xs font-bold">
-                      {i + 1}
-                    </span>
-                    <span className="text-sm text-charcoal/80">{question}</span>
-                  </div>
+                  <ScrollReveal key={i} animation="fade-up" delay={i * 50}>
+                    <div className="flex items-start gap-3 rounded-xl bg-off-white/50 p-4">
+                      <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-navy text-gold text-xs font-bold">
+                        {i + 1}
+                      </span>
+                      <span className="text-sm text-charcoal/80">{question}</span>
+                    </div>
+                  </ScrollReveal>
                 ))}
               </div>
 
-              <div className="mt-12 rounded-2xl bg-gold/10 border border-gold/30 p-8 text-center">
+              <ScrollReveal animation="zoom-in" delay={300} className="mt-12 rounded-2xl bg-gold/10 border border-gold/30 p-8 text-center">
                 <h3 className="text-xl font-bold text-navy">Get Full Answers + DCF Templates</h3>
                 <p className="mt-2 text-charcoal/70">
                   Our Valuation Mastery course covers every question with detailed explanations plus 
@@ -311,7 +332,7 @@ export default function DCFModelGuidePage() {
                   Get the Full Course — $97
                   <ArrowRight className="h-4 w-4" />
                 </Link>
-              </div>
+              </ScrollReveal>
             </div>
           </div>
         </section>

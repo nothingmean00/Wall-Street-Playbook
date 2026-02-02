@@ -111,15 +111,15 @@ export function ExitIntentPopup() {
                 <Mail className="h-7 w-7 text-gold" />
               </div>
 
-              {/* Headline */}
+              {/* Headline - Reciprocity: offer something valuable */}
               <h3 className="text-2xl sm:text-3xl font-bold text-charcoal text-center mb-3">
-                Before you go...
+                Free: 50 Technical Questions PDF
               </h3>
               
               <p className="text-center text-charcoal/70 mb-6">
-                Get free recruiting insights, technical prep tips, and early access to new playbooks.
+                The most-asked accounting, valuation, and M&A questions—with answers. 
                 <span className="block mt-2 text-sm font-medium text-navy">
-                  Join 2,000+ candidates preparing for IB, PE, and HF roles.
+                  Instant download. No credit card.
                 </span>
               </p>
 
@@ -142,7 +142,7 @@ export function ExitIntentPopup() {
                     <Loader2 className="h-5 w-5 animate-spin" />
                   ) : (
                     <>
-                      Get Free Insights
+                      Send Me the PDF
                       <ArrowRight className="h-4 w-4" />
                     </>
                   )}

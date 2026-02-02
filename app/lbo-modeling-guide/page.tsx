@@ -2,6 +2,8 @@ import type { Metadata } from "next"
 import Link from "next/link"
 import { Navbar } from "@/components/layout/navbar"
 import { Footer } from "@/components/layout/footer"
+import { ReadingProgress } from "@/components/reading-progress"
+import { ScrollReveal } from "@/components/scroll-reveal"
 import { ArrowRight, CheckCircle, Calculator, TrendingUp, DollarSign, BarChart3 } from "lucide-react"
 
 export const metadata: Metadata = {
@@ -85,6 +87,7 @@ const commonQuestions = [
 export default function LBOModelingGuidePage() {
   return (
     <div className="flex min-h-screen flex-col">
+      <ReadingProgress />
       <Navbar />
       <main className="flex-grow pt-0">
         {/* Hero Section */}
@@ -126,10 +129,12 @@ export default function LBOModelingGuidePage() {
         <section className="bg-cream py-20 lg:py-28">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <div className="mx-auto max-w-3xl">
-              <h2 className="text-3xl font-bold text-navy sm:text-4xl">What Is a Leveraged Buyout?</h2>
-              <div className="mt-2 h-1 w-20 bg-gold" />
+              <ScrollReveal animation="fade-up">
+                <h2 className="text-3xl font-bold text-navy sm:text-4xl">What Is a Leveraged Buyout?</h2>
+                <div className="mt-2 h-1 w-20 bg-gold" />
+              </ScrollReveal>
               
-              <div className="mt-8 prose prose-lg max-w-none text-charcoal/80">
+              <ScrollReveal animation="fade-up" delay={100} className="mt-8 prose prose-lg max-w-none text-charcoal/80">
                 <p>
                   A leveraged buyout (LBO) is when a private equity firm acquires a company using a significant 
                   amount of <strong>borrowed money (debt)</strong> to fund the purchase. The target company&apos;s 
@@ -140,7 +145,7 @@ export default function LBOModelingGuidePage() {
                   outsized returns because they only put up a fraction of the purchase price. But leverage 
                   also amplifies risk—if things go wrong, equity can be wiped out.
                 </p>
-              </div>
+              </ScrollReveal>
 
               <div className="mt-12 grid gap-6 sm:grid-cols-2">
                 {[
@@ -148,16 +153,18 @@ export default function LBOModelingGuidePage() {
                   { icon: TrendingUp, title: "Target Returns", desc: "20%+ IRR and 2-3x+ MOIC over 5-7 year hold period" },
                   { icon: Calculator, title: "Exit Strategy", desc: "Sale to strategic buyer, another PE firm, or IPO" },
                   { icon: BarChart3, title: "Value Creation", desc: "EBITDA growth, multiple expansion, debt paydown" },
-                ].map((item) => (
-                  <div key={item.title} className="flex gap-4 p-5 rounded-xl bg-white shadow-sm">
-                    <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-lg bg-navy">
-                      <item.icon className="h-5 w-5 text-gold" />
+                ].map((item, index) => (
+                  <ScrollReveal key={item.title} animation="fade-up" delay={200 + index * 100}>
+                    <div className="flex gap-4 p-5 rounded-xl bg-white shadow-sm">
+                      <div className="flex h-10 w-10 flex-shrink-0 items-center justify-center rounded-lg bg-navy">
+                        <item.icon className="h-5 w-5 text-gold" />
+                      </div>
+                      <div>
+                        <h3 className="font-semibold text-navy">{item.title}</h3>
+                        <p className="mt-1 text-sm text-charcoal/60">{item.desc}</p>
+                      </div>
                     </div>
-                    <div>
-                      <h3 className="font-semibold text-navy">{item.title}</h3>
-                      <p className="mt-1 text-sm text-charcoal/60">{item.desc}</p>
-                    </div>
-                  </div>
+                  </ScrollReveal>
                 ))}
               </div>
             </div>
@@ -168,30 +175,34 @@ export default function LBOModelingGuidePage() {
         <section className="bg-white py-20 lg:py-28">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <div className="mx-auto max-w-3xl">
-              <h2 className="text-3xl font-bold text-navy sm:text-4xl">Building an LBO Model: 4 Key Steps</h2>
-              <div className="mt-2 h-1 w-20 bg-gold" />
+              <ScrollReveal animation="fade-up">
+                <h2 className="text-3xl font-bold text-navy sm:text-4xl">Building an LBO Model: 4 Key Steps</h2>
+                <div className="mt-2 h-1 w-20 bg-gold" />
+              </ScrollReveal>
 
               <div className="mt-12 space-y-6">
-                {lboSteps.map((step) => (
-                  <div key={step.step} className="rounded-2xl border border-border bg-off-white/50 p-8">
-                    <div className="flex items-start gap-4">
-                      <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-navy text-gold font-bold text-xl">
-                        {step.step}
-                      </div>
-                      <div className="flex-1">
-                        <h3 className="text-xl font-bold text-navy">{step.title}</h3>
-                        <p className="mt-1 text-charcoal/60">{step.desc}</p>
-                        <ul className="mt-4 grid gap-2 sm:grid-cols-2">
-                          {step.details.map((detail, i) => (
-                            <li key={i} className="flex items-center gap-2">
-                              <CheckCircle className="h-4 w-4 text-gold" />
-                              <span className="text-sm text-charcoal/70">{detail}</span>
-                            </li>
-                          ))}
-                        </ul>
+                {lboSteps.map((step, index) => (
+                  <ScrollReveal key={step.step} animation="fade-up" delay={index * 150}>
+                    <div className="rounded-2xl border border-border bg-off-white/50 p-8">
+                      <div className="flex items-start gap-4">
+                        <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-navy text-gold font-bold text-xl">
+                          {step.step}
+                        </div>
+                        <div className="flex-1">
+                          <h3 className="text-xl font-bold text-navy">{step.title}</h3>
+                          <p className="mt-1 text-charcoal/60">{step.desc}</p>
+                          <ul className="mt-4 grid gap-2 sm:grid-cols-2">
+                            {step.details.map((detail, i) => (
+                              <li key={i} className="flex items-center gap-2">
+                                <CheckCircle className="h-4 w-4 text-gold" />
+                                <span className="text-sm text-charcoal/70">{detail}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
                       </div>
                     </div>
-                  </div>
+                  </ScrollReveal>
                 ))}
               </div>
             </div>
@@ -202,29 +213,33 @@ export default function LBOModelingGuidePage() {
         <section id="paper-lbo" className="bg-navy py-20 lg:py-28">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <div className="mx-auto max-w-3xl">
-              <h2 className="text-3xl font-bold text-white sm:text-4xl text-center">The Paper LBO Framework</h2>
-              <p className="mt-4 text-center text-white/60">
-                In PE interviews, you&apos;ll need to solve an LBO in 10-15 minutes with just pen and paper. 
-                These rules let you calculate IRR without Excel.
-              </p>
+              <ScrollReveal animation="fade-up">
+                <h2 className="text-3xl font-bold text-white sm:text-4xl text-center">The Paper LBO Framework</h2>
+                <p className="mt-4 text-center text-white/60">
+                  In PE interviews, you&apos;ll need to solve an LBO in 10-15 minutes with just pen and paper. 
+                  These rules let you calculate IRR without Excel.
+                </p>
+              </ScrollReveal>
 
               <div className="mt-12 space-y-4">
-                {paperLboRules.map((rule) => (
-                  <div key={rule.rule} className="rounded-xl bg-white/10 p-6">
-                    <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
-                      <div>
-                        <h3 className="text-lg font-bold text-gold">{rule.rule}</h3>
-                        <p className="mt-1 text-white/70">{rule.formula}</p>
-                      </div>
-                      <div className="px-4 py-2 rounded-lg bg-white/10 text-sm font-mono text-white">
-                        {rule.example}
+                {paperLboRules.map((rule, index) => (
+                  <ScrollReveal key={rule.rule} animation="fade-up" delay={index * 100}>
+                    <div className="rounded-xl bg-white/10 p-6">
+                      <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
+                        <div>
+                          <h3 className="text-lg font-bold text-gold">{rule.rule}</h3>
+                          <p className="mt-1 text-white/70">{rule.formula}</p>
+                        </div>
+                        <div className="px-4 py-2 rounded-lg bg-white/10 text-sm font-mono text-white">
+                          {rule.example}
+                        </div>
                       </div>
                     </div>
-                  </div>
+                  </ScrollReveal>
                 ))}
               </div>
 
-              <div className="mt-12 rounded-2xl bg-white/10 p-8">
+              <ScrollReveal animation="zoom-in" delay={300} className="mt-12 rounded-2xl bg-white/10 p-8">
                 <h3 className="text-xl font-bold text-white mb-4">Paper LBO Example</h3>
                 <div className="text-white/80 space-y-3 font-mono text-sm">
                   <p><span className="text-gold">Given:</span> Buy company at 8x EBITDA, $100M EBITDA</p>
@@ -238,9 +253,9 @@ export default function LBOModelingGuidePage() {
                   <p><span className="text-gold">MOIC:</span> $710M ÷ $320M = 2.2x</p>
                   <p><span className="text-gold">IRR:</span> ~17% (using Rule of 72: 2.2x in 5 years)</p>
                 </div>
-              </div>
+              </ScrollReveal>
 
-              <div className="mt-8 text-center">
+              <ScrollReveal animation="fade-up" delay={400} className="mt-8 text-center">
                 <Link
                   href="/playbooks/lbo-modeling-course"
                   className="inline-flex items-center gap-2 rounded-xl bg-gold px-8 py-4 text-base font-semibold text-navy hover:bg-white transition-colors"
@@ -248,7 +263,7 @@ export default function LBOModelingGuidePage() {
                   Get Full LBO Course + Excel Templates — $127
                   <ArrowRight className="h-5 w-5" />
                 </Link>
-              </div>
+              </ScrollReveal>
             </div>
           </div>
         </section>
@@ -257,13 +272,15 @@ export default function LBOModelingGuidePage() {
         <section className="bg-cream py-20 lg:py-28">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <div className="mx-auto max-w-3xl">
-              <h2 className="text-3xl font-bold text-navy sm:text-4xl">LBO Value Creation Levers</h2>
-              <div className="mt-2 h-1 w-20 bg-gold" />
-              <p className="mt-4 text-charcoal/70">
-                Understanding how PE firms create value is essential for interviews.
-              </p>
+              <ScrollReveal animation="fade-up">
+                <h2 className="text-3xl font-bold text-navy sm:text-4xl">LBO Value Creation Levers</h2>
+                <div className="mt-2 h-1 w-20 bg-gold" />
+                <p className="mt-4 text-charcoal/70">
+                  Understanding how PE firms create value is essential for interviews.
+                </p>
+              </ScrollReveal>
 
-              <div className="mt-12 overflow-hidden rounded-2xl border border-border bg-white">
+              <ScrollReveal animation="fade-up" delay={150} className="mt-12 overflow-hidden rounded-2xl border border-border bg-white">
                 <table className="w-full">
                   <thead>
                     <tr className="border-b border-border bg-off-white/50">
@@ -288,7 +305,7 @@ export default function LBOModelingGuidePage() {
                     ))}
                   </tbody>
                 </table>
-              </div>
+              </ScrollReveal>
             </div>
           </div>
         </section>
@@ -297,21 +314,25 @@ export default function LBOModelingGuidePage() {
         <section className="bg-white py-20 lg:py-28">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <div className="mx-auto max-w-3xl">
-              <h2 className="text-3xl font-bold text-navy sm:text-4xl">Common LBO Interview Questions</h2>
-              <div className="mt-2 h-1 w-20 bg-gold" />
+              <ScrollReveal animation="fade-up">
+                <h2 className="text-3xl font-bold text-navy sm:text-4xl">Common LBO Interview Questions</h2>
+                <div className="mt-2 h-1 w-20 bg-gold" />
+              </ScrollReveal>
 
               <div className="mt-12 grid gap-3 sm:grid-cols-2">
                 {commonQuestions.map((question, i) => (
-                  <div key={i} className="flex items-start gap-3 rounded-xl bg-off-white/50 p-4">
-                    <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-navy text-gold text-xs font-bold">
-                      {i + 1}
-                    </span>
-                    <span className="text-sm text-charcoal/80">{question}</span>
-                  </div>
+                  <ScrollReveal key={i} animation="fade-up" delay={i * 50}>
+                    <div className="flex items-start gap-3 rounded-xl bg-off-white/50 p-4">
+                      <span className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-navy text-gold text-xs font-bold">
+                        {i + 1}
+                      </span>
+                      <span className="text-sm text-charcoal/80">{question}</span>
+                    </div>
+                  </ScrollReveal>
                 ))}
               </div>
 
-              <div className="mt-12 rounded-2xl bg-gold/10 border border-gold/30 p-8 text-center">
+              <ScrollReveal animation="zoom-in" delay={300} className="mt-12 rounded-2xl bg-gold/10 border border-gold/30 p-8 text-center">
                 <h3 className="text-xl font-bold text-navy">Want Detailed Answers to All These Questions?</h3>
                 <p className="mt-2 text-charcoal/70">
                   Our LBO Modeling Course covers every question with step-by-step explanations.
@@ -323,7 +344,7 @@ export default function LBOModelingGuidePage() {
                   Get the Full Course — $127
                   <ArrowRight className="h-4 w-4" />
                 </Link>
-              </div>
+              </ScrollReveal>
             </div>
           </div>
         </section>

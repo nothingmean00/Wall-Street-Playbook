@@ -1,5 +1,8 @@
+"use client"
+
 import { FileText, Users, Clock, BookOpen, ArrowUpRight } from "lucide-react"
 import Link from "next/link"
+import { ScrollReveal } from "@/components/scroll-reveal"
 
 const reasons = [
   {
@@ -48,13 +51,13 @@ export function WhyItWorks() {
       <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
           {/* Left column - Header */}
-          <div>
-            <p className="text-sm font-semibold uppercase tracking-widest text-gold mb-4">Why Choose Us</p>
+          <ScrollReveal animation="fade-right">
+            <p className="text-sm font-semibold uppercase tracking-widest text-gold mb-4">Our Approach</p>
             <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl leading-tight">
-              Built for <span className="text-gradient-gold">Results</span>, Not Just Information
+              Frameworks Over <span className="text-gradient-gold">Theory</span>
             </h2>
             <p className="mt-6 text-lg text-white/60 leading-relaxed">
-              Our materials are designed around what actually works in finance recruiting—structured frameworks that you can apply immediately.
+              No motivational fluff. Structured templates and frameworks you can apply to your next networking email, interview, or resume update.
             </p>
             
             <div className="mt-10 flex flex-col sm:flex-row gap-4">
@@ -72,13 +75,15 @@ export function WhyItWorks() {
                 Read Free Guides
               </Link>
             </div>
-          </div>
+          </ScrollReveal>
           
           {/* Right column - Features */}
           <div className="grid sm:grid-cols-2 gap-5">
             {reasons.map((reason, index) => (
-              <div
+              <ScrollReveal
                 key={reason.title}
+                animation="fade-left"
+                delay={index * 100}
                 className="group relative rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm transition-all duration-300 hover:border-gold/30 hover:bg-white/10"
               >
                 {/* Number */}
@@ -96,7 +101,7 @@ export function WhyItWorks() {
                 
                 {/* Hover line accent */}
                 <div className="absolute bottom-0 left-6 right-6 h-px bg-gradient-to-r from-transparent via-gold/50 to-transparent scale-x-0 group-hover:scale-x-100 transition-transform duration-500" />
-              </div>
+              </ScrollReveal>
             ))}
           </div>
         </div>
