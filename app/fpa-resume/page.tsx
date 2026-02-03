@@ -113,17 +113,17 @@ export default function FPAResumePage() {
 
               <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
                 <Link
-                  href="/submit-resume?service=resume-review&role=fpa"
+                  href="/submit-resume?service=resume-review&segment=fpa"
                   className="group flex items-center gap-2 rounded-xl bg-gold px-8 py-4 text-base font-semibold text-navy hover:bg-white transition-colors"
                 >
-                  Get Resume Review — $197
+                  Get Resume Review — $147
                   <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
                 </Link>
                 <Link
-                  href="/submit-resume?service=resume-rewrite&role=fpa"
+                  href="/submit-resume?service=resume-rewrite&segment=fpa"
                   className="rounded-xl border-2 border-white/20 px-8 py-4 text-base font-semibold text-white hover:border-gold hover:text-gold transition-colors"
                 >
-                  Full Rewrite — $497
+                  Full Rewrite — $347
                 </Link>
               </div>
 
@@ -281,9 +281,9 @@ export default function FPAResumePage() {
                   </ul>
 
                   <div className="mt-8 flex items-center justify-between">
-                    <span className="text-3xl font-bold text-navy">$197</span>
+                    <span className="text-3xl font-bold text-navy">$147</span>
                     <Link
-                      href="/submit-resume?service=resume-review&role=fpa"
+                      href="/submit-resume?service=resume-review&segment=fpa"
                       className="flex items-center gap-2 rounded-lg bg-navy px-6 py-3 text-sm font-semibold text-white hover:bg-gold hover:text-navy transition-colors"
                     >
                       Get Review
@@ -325,9 +325,9 @@ export default function FPAResumePage() {
                   </ul>
 
                   <div className="mt-8 flex items-center justify-between">
-                    <span className="text-3xl font-bold text-navy">$497</span>
+                    <span className="text-3xl font-bold text-navy">$347</span>
                     <Link
-                      href="/submit-resume?service=resume-rewrite&role=fpa"
+                      href="/submit-resume?service=resume-rewrite&segment=fpa"
                       className="flex items-center gap-2 rounded-lg bg-gold px-6 py-3 text-sm font-semibold text-navy hover:bg-navy hover:text-white transition-colors"
                     >
                       Get Rewrite
@@ -377,17 +377,17 @@ export default function FPAResumePage() {
 
             <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
               <Link
-                href="/submit-resume?service=resume-review&role=fpa"
+                href="/submit-resume?service=resume-review&segment=fpa"
                 className="group flex items-center gap-2 rounded-xl bg-gold px-8 py-4 text-base font-semibold text-navy hover:bg-white transition-colors"
               >
-                Get Resume Review — $197
+                Get Resume Review — $147
                 <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
               </Link>
               <Link
-                href="/submit-resume?service=resume-rewrite&role=fpa"
+                href="/submit-resume?service=resume-rewrite&segment=fpa"
                 className="rounded-xl border-2 border-white/20 px-8 py-4 text-base font-semibold text-white hover:border-gold hover:text-gold transition-colors"
               >
-                Full Rewrite — $497
+                Full Rewrite — $347
               </Link>
             </div>
 

@@ -1,0 +1,463 @@
+---
+title: "100 Investment Banking Technical Interview Questions (With Answers)"
+summary: "The most frequently asked technical questions in IB interviews—accounting, valuation, M&A, and LBO—with concise answers that demonstrate competence."
+category: "Interview Prep"
+readTime: "25 min read"
+publishedAt: "2026-01-18"
+author: "Wall Street Playbook"
+tags: ["technical interview", "investment banking", "DCF", "valuation", "accounting", "M&A", "LBO"]
+---
+
+Technical interviews separate candidates who understand finance from those who memorized a prep book. Here are 100 real questions asked at Goldman, Morgan Stanley, Evercore, and other top banks—with the concise, accurate answers that get offers.
+
+## Accounting Fundamentals (Questions 1-25)
+
+### The Three Financial Statements
+
+**1. Walk me through the three financial statements.**
+
+The income statement shows revenue, expenses, and net income over a period. The balance sheet shows assets, liabilities, and equity at a point in time. The cash flow statement reconciles net income to actual cash generated, split into operating, investing, and financing activities.
+
+**2. How do the three statements link together?**
+
+Net income flows from the income statement to the top of the cash flow statement. The cash flow statement's ending cash balance becomes cash on the balance sheet. Net income also increases retained earnings in shareholders' equity.
+
+**3. If depreciation increases by $10, how does that affect the three statements?**
+
+Income statement: Operating income decreases by $10, net income decreases by $6 (assuming 40% tax rate).
+
+Cash flow statement: Net income down $6, but D&A added back $10, so cash from operations increases by $4.
+
+Balance sheet: Cash up $4, PP&E down $10, retained earnings down $6. Both sides decrease by $6.
+
+**4. A company prepays $12 for a year of rent. What happens?**
+
+Cash decreases by $12, prepaid rent (current asset) increases by $12. As each month passes, prepaid rent decreases and rent expense increases. No immediate P&L impact—it's a balance sheet event at payment.
+
+**5. What's the difference between accounts receivable and deferred revenue?**
+
+Accounts receivable is money customers owe you (an asset). Deferred revenue is money customers paid you for services not yet delivered (a liability). AR means you delivered but weren't paid; deferred revenue means you were paid but didn't deliver.
+
+### Working Capital
+
+**6. What is working capital?**
+
+Current assets minus current liabilities. It measures short-term liquidity and operational efficiency.
+
+**7. How does an increase in accounts receivable affect cash flow?**
+
+It decreases cash flow from operations. You've recorded revenue but haven't collected cash yet.
+
+**8. If inventory increases by $20, what happens to cash flow?**
+
+Cash flow from operations decreases by $20. You spent cash to buy inventory that hasn't been sold yet.
+
+**9. What does negative working capital mean?**
+
+The company collects cash before paying suppliers. Common in retail and subscription businesses. Can be a sign of efficiency, not distress.
+
+**10. Walk me through a $10 increase in accounts payable.**
+
+Cash flow from operations increases by $10—you owe suppliers more, meaning you've kept more cash. It's a source of cash.
+
+### Depreciation and Amortization
+
+**11. Why do we add back depreciation in the cash flow statement?**
+
+Depreciation is a non-cash expense. It reduced net income but didn't actually use cash, so we add it back to reconcile net income to actual cash generated.
+
+**12. What's the difference between depreciation and amortization?**
+
+Depreciation applies to tangible assets (PP&E). Amortization applies to intangible assets (patents, software, certain intangibles from acquisitions).
+
+**13. How does a $100 capital expenditure flow through the statements?**
+
+Day 1: Cash decreases $100, PP&E increases $100 (balance sheet). Over time, PP&E is depreciated, creating depreciation expense (income statement) that reduces net income but is added back on the cash flow statement.
+
+**14. What's the difference between capitalizing and expensing?**
+
+Capitalizing puts the cost on the balance sheet and spreads it over time through depreciation. Expensing hits the income statement immediately. Capitalizing increases near-term profitability.
+
+**15. What is accumulated depreciation?**
+
+The total depreciation expense recorded against an asset since purchase. It's a contra-asset that reduces gross PP&E to net PP&E on the balance sheet.
+
+### Taxes and GAAP
+
+**16. What's the difference between book depreciation and tax depreciation?**
+
+Book depreciation follows GAAP (often straight-line). Tax depreciation follows IRS rules (often accelerated). The difference creates deferred tax assets or liabilities.
+
+**17. What is a deferred tax liability?**
+
+Taxes you'll owe in the future that you haven't paid yet. Created when taxable income is less than book income (e.g., accelerated tax depreciation). It's a liability because you'll eventually pay more taxes.
+
+**18. What is a deferred tax asset?**
+
+Future tax benefits from things like net operating losses. If you lose money this year, you can use that loss to reduce taxes in future profitable years.
+
+**19. What is goodwill?**
+
+The premium paid above the fair value of net identifiable assets in an acquisition. It represents intangible value like brand, customer relationships, and synergies.
+
+**20. How is goodwill tested for impairment?**
+
+Annually, companies compare the fair value of reporting units to their carrying value. If fair value is less, goodwill is impaired and written down. The impairment is a non-cash expense.
+
+### Advanced Accounting
+
+**21. What are stock-based compensation's effects on the statements?**
+
+Income statement: SBC is an expense, reducing operating income. Cash flow: SBC is non-cash, added back in operating activities. Balance sheet: Increases shareholders' equity (as the expense is offset by shares issued).
+
+**22. How do you account for an operating lease?**
+
+Under ASC 842, operating leases create a right-of-use asset and lease liability on the balance sheet. The income statement shows lease expense (typically straight-line). Cash outflows are in operating activities.
+
+**23. What is treasury stock?**
+
+Shares the company has repurchased but not retired. It reduces shareholders' equity (contra-equity account).
+
+**24. How do minority interest and equity investments differ?**
+
+Minority interest is someone else's stake in your subsidiary (liability-like, appears in equity). Equity investments are your stake in another company (asset).
+
+**25. What is comprehensive income?**
+
+Net income plus other comprehensive income (OCI)—items that bypass the income statement like foreign currency adjustments and unrealized gains/losses on certain investments.
+
+## Valuation (Questions 26-50)
+
+### DCF Fundamentals
+
+**26. Walk me through a DCF.**
+
+Project free cash flows for 5-10 years. Calculate terminal value using perpetuity growth or exit multiple. Discount all cash flows to present value using WACC. Sum them to get enterprise value.
+
+**27. What is free cash flow?**
+
+EBIT × (1 - tax rate) + D&A - CapEx - Change in NWC. It's cash available to all capital providers after maintaining operations.
+
+**28. What discount rate do you use for unlevered free cash flow?**
+
+WACC (Weighted Average Cost of Capital), because unlevered FCF belongs to both debt and equity holders.
+
+**29. How do you calculate WACC?**
+
+(E/V × Cost of Equity) + (D/V × Cost of Debt × (1 - Tax Rate)), where V = E + D. Weight each source of capital by its proportion and cost.
+
+**30. How do you calculate cost of equity?**
+
+CAPM: Risk-free rate + Beta × Equity Risk Premium. Risk-free is typically 10-year Treasury. ERP is usually 5-7%. Beta measures the stock's correlation to the market.
+
+**31. What is terminal value and why does it matter?**
+
+The value of all cash flows beyond your projection period. Often 60-80% of DCF value. Calculated via perpetuity growth (FCF × (1+g))/(WACC-g) or exit multiple (EBITDA × multiple).
+
+**32. What perpetuity growth rate should you use?**
+
+Typically 2-3%, around long-term GDP or inflation. Never higher than the economy's growth rate—no company grows faster than GDP forever.
+
+**33. Why might you use an exit multiple for terminal value?**
+
+It's more market-based and reflects what buyers would actually pay. Useful when perpetuity assumptions feel speculative. Cross-check against perpetuity growth implied rate.
+
+**34. If WACC increases, what happens to valuation?**
+
+Valuation decreases. Higher discount rate means future cash flows are worth less today.
+
+**35. When would you not use a DCF?**
+
+Early-stage companies with negative/unpredictable cash flows, companies being liquidated, or when comparable company data is more reliable.
+
+### Comparable Companies Analysis
+
+**36. Walk me through a comparable companies analysis.**
+
+Select similar companies (industry, size, growth). Calculate trading multiples (EV/EBITDA, P/E, etc.) for each. Apply median/mean multiples to your company's metrics to derive implied valuation.
+
+**37. What multiples would you use for a bank?**
+
+P/E and P/Book, because interest expense is part of core operations (can't use EV/EBITDA). Banks create value through net interest margin, not EBITDA.
+
+**38. Why might a company trade at a premium to peers?**
+
+Higher growth, better margins, stronger market position, better management, superior assets, or acquisition speculation.
+
+**39. EV/EBITDA or EV/Revenue—when to use each?**
+
+EV/EBITDA for mature companies with stable margins. EV/Revenue for high-growth companies (often unprofitable) or when margins vary significantly across comps.
+
+**40. What's the difference between trailing and forward multiples?**
+
+Trailing uses historical data (LTM). Forward uses projected data (NTM). Forward is more relevant for valuation because you're buying future cash flows.
+
+### Enterprise Value and Equity Value
+
+**41. What is enterprise value?**
+
+The total value of a company's core operations, attributable to all capital providers. EV = Equity Value + Debt + Preferred Stock + Minority Interest - Cash.
+
+**42. Why do we add debt and subtract cash in EV?**
+
+Debt is a claim on the business that an acquirer assumes. Cash is a non-operating asset that reduces the effective purchase price. EV represents the cost to acquire the operations.
+
+**43. Why is minority interest added to EV?**
+
+EBITDA includes 100% of a subsidiary's earnings, but minority interest represents the portion you don't own. Adding it makes the EV/EBITDA multiple consistent.
+
+**44. When would equity value equal enterprise value?**
+
+When a company has no debt, no cash, no preferred stock, and no minority interest. Rare in practice.
+
+**45. A company has $100M market cap, $50M debt, $20M cash. What's the EV?**
+
+$130M. Market cap ($100M) + Debt ($50M) - Cash ($20M) = $130M.
+
+### Precedent Transactions
+
+**46. Walk me through precedent transactions analysis.**
+
+Find similar M&A deals. Calculate transaction multiples (EV/EBITDA, EV/Revenue at acquisition). Apply to your company's metrics. Precedent transactions typically show a premium to trading comparables.
+
+**47. Why do precedent transactions typically show higher multiples?**
+
+They include control premiums—buyers pay extra for control of the company, synergies, and strategic value.
+
+**48. When would you rely more heavily on precedent transactions?**
+
+When advising on an actual sale process, or when trading comps are limited. They reflect what buyers actually pay, not theoretical values.
+
+**49. What's a typical control premium?**
+
+20-30% above the unaffected share price. Varies by industry, deal context, and competitive dynamics.
+
+**50. How do you adjust for different time periods in precedent transactions?**
+
+Consider market conditions at the time. A deal done in a bull market may not reflect current values. Weight recent deals more heavily or adjust for market changes.
+
+## M&A and LBO (Questions 51-75)
+
+### M&A Fundamentals
+
+**51. Why would a company acquire another company?**
+
+Revenue synergies (cross-selling, new markets), cost synergies (eliminating redundancies), strategic value (technology, talent, market position), or financial engineering (tax benefits, leverage).
+
+**52. What is accretion/dilution analysis?**
+
+Comparing pro forma EPS to standalone EPS. If pro forma EPS > standalone, the deal is accretive. If lower, it's dilutive. Tells you whether the deal creates or destroys shareholder value.
+
+**53. Walk me through a simple accretion/dilution analysis.**
+
+Calculate acquirer's standalone EPS. Calculate combined EPS (combined net income / new share count, accounting for deal terms). Compare. Adjust for synergies, financing costs, and transaction expenses.
+
+**54. Is an accretive deal always good?**
+
+No. You can create accretion by buying low P/E companies with debt, but destroy long-term value. Accretion is necessary but not sufficient—strategic rationale matters.
+
+**55. What makes a deal more likely to be accretive?**
+
+Target with lower P/E than acquirer, debt financing (cheaper than equity dilution), significant synergies, and minimal transaction costs.
+
+**56. What's the difference between asset and stock deals?**
+
+Stock deal: Buyer acquires target's equity, including all assets and liabilities. Asset deal: Buyer picks specific assets and liabilities. Asset deals offer tax benefits (step-up) but are more complex.
+
+**57. What is a merger of equals?**
+
+When similar-sized companies combine with no clear acquirer. Often involves stock-for-stock exchange and shared management. Rare in practice—one side usually has leverage.
+
+**58. What are the key documents in an M&A process?**
+
+Teaser, CIM (Confidential Information Memorandum), management presentation, LOI (Letter of Intent), due diligence materials, and definitive agreement.
+
+**59. What is due diligence?**
+
+The buyer's investigation of the target—financial, legal, operational, commercial, and technical review to confirm assumptions and identify risks.
+
+**60. What is a MAC clause?**
+
+Material Adverse Change clause. Allows buyer to walk away if the target's business deteriorates significantly between signing and closing.
+
+### Synergies
+
+**61. What are revenue synergies?**
+
+Increased sales from cross-selling, entering new markets with combined capabilities, or pricing power from reduced competition.
+
+**62. What are cost synergies?**
+
+Savings from eliminating redundant functions (corporate overhead, facilities), procurement efficiencies, or operational improvements.
+
+**63. Why are cost synergies more reliable?**
+
+They're under management control. Revenue synergies depend on customer behavior and competitive response, which are uncertain.
+
+**64. How do you value synergies?**
+
+Project annual synergy value. Tax-effect cost synergies (they reduce expenses, which reduces taxes). Capitalize using a multiple or DCF. Compare to synergy price paid.
+
+**65. What's a typical synergy multiple?**
+
+Acquirers often pay 3-5x expected annual synergies in premium. If synergies = $100M/year and premium = $400M, they're paying 4x synergies.
+
+### LBO Fundamentals
+
+**66. What is an LBO?**
+
+A leveraged buyout—acquiring a company using significant debt financing. The target's cash flows service the debt. PE firms use LBOs to magnify equity returns.
+
+**67. Why does leverage magnify returns?**
+
+If you put in less equity and the company appreciates, your percentage return is higher. But leverage also magnifies losses if things go wrong.
+
+**68. What makes a good LBO candidate?**
+
+Stable, predictable cash flows; strong market position; opportunities for operational improvement; low capex needs; undervalued or under-managed assets.
+
+**69. Walk me through an LBO model.**
+
+Build transaction structure (sources and uses). Project operating performance. Model debt paydown schedule. Calculate exit value. Compute returns (IRR, MOIC).
+
+**70. What are sources and uses?**
+
+Uses: Purchase price + transaction fees + debt payoff. Sources: Debt tranches + sponsor equity + management rollover. Sources must equal uses.
+
+**71. What are typical LBO debt levels?**
+
+40-60% debt / 40-60% equity is common. Exact mix depends on cash flow stability, market conditions, and lender appetite.
+
+**72. How do PE firms create value in an LBO?**
+
+Leverage (financial engineering), operational improvements (margin expansion, revenue growth), multiple expansion (selling at higher multiple), and debt paydown (equity value increases as debt decreases).
+
+**73. What IRR do PE firms target?**
+
+20%+ net to LPs. Gross returns are higher (25-30%+) before fees.
+
+**74. How do you calculate IRR?**
+
+The discount rate that makes NPV of cash flows equal zero. Entry equity is negative, exit equity is positive. Solve for the rate that balances them.
+
+**75. What's the relationship between IRR and MOIC?**
+
+MOIC = Exit Equity / Entry Equity. IRR depends on MOIC and time. A 2x MOIC over 3 years is ~26% IRR; over 5 years it's ~15% IRR.
+
+## Advanced Topics (Questions 76-100)
+
+### Capital Structure
+
+**76. What is optimal capital structure?**
+
+The mix of debt and equity that minimizes WACC and maximizes firm value. Trade-off between tax benefits of debt and costs of financial distress.
+
+**77. Why is debt cheaper than equity?**
+
+Interest is tax-deductible (reduces effective cost). Debt holders have priority in bankruptcy (lower risk, lower required return).
+
+**78. What is the Modigliani-Miller theorem?**
+
+In a perfect market with no taxes or bankruptcy costs, capital structure doesn't affect firm value. In reality, taxes and bankruptcy costs make capital structure matter.
+
+**79. When might a company choose more equity?**
+
+High growth with uncertain cash flows, financial flexibility needs, stock is overvalued, or debt markets are unfavorable.
+
+**80. What is a dividend recapitalization?**
+
+When a PE-owned company takes on debt to pay a special dividend to owners. Allows sponsors to take money out without selling the company.
+
+### Special Situations
+
+**81. What is a spin-off?**
+
+When a company separates a division into a standalone public company, distributing shares to existing shareholders. Tax-free if structured properly.
+
+**82. What is a carve-out?**
+
+Selling a minority stake in a subsidiary via IPO, while retaining majority control. Raises capital and creates a public valuation for the subsidiary.
+
+**83. What is a divestiture?**
+
+Selling a business unit to another company. Allows focus on core operations and raises cash.
+
+**84. What is restructuring?**
+
+Reorganizing a company's operations, capital structure, or both. Can be operational (layoffs, closures) or financial (debt-for-equity swaps, bankruptcy).
+
+**85. What is a Section 363 sale?**
+
+Asset sale through bankruptcy court. Provides buyer with cleaner title (free of most liabilities) and faster process than traditional M&A.
+
+### Industry-Specific
+
+**86. How do you value a REIT?**
+
+NAV (Net Asset Value), P/FFO (Funds From Operations), and dividend yield. Traditional DCF less relevant because REITs distribute most income.
+
+**87. How do you value a financial services company?**
+
+P/E, P/Book, and dividend yield. EV-based metrics don't work because debt is operational, not a financing choice.
+
+**88. How do you value a natural resources company?**
+
+NAV based on reserves, production profiles, and commodity price assumptions. DCF with depletion. Comparable metrics like EV/EBITDAX or EV/2P reserves.
+
+**89. What is a sum-of-the-parts valuation?**
+
+Valuing each business segment separately and summing them. Used for conglomerates where different divisions have different characteristics and comparables.
+
+**90. When would sum-of-the-parts show a different value?**
+
+When conglomerate discount exists (market values the whole at less than parts) or when hidden value exists in a segment obscured by consolidated financials.
+
+### Technical Edge Cases
+
+**91. How do you handle negative EBITDA in comps?**
+
+Use revenue multiples instead. Or look at comparable companies with positive EBITDA and adjust for the subject company's path to profitability.
+
+**92. How do you adjust EBITDA for comparability?**
+
+Normalize for one-time items, non-recurring expenses, unusual gains/losses. Stock-based comp treatment varies—some add back, some don't.
+
+**93. What is NOL and how does it affect valuation?**
+
+Net Operating Losses can offset future taxable income. Value = NOL × tax rate × probability of realization, discounted to present. Section 382 limits usage after ownership changes.
+
+**94. How do convertible securities affect valuation?**
+
+They complicate equity value calculations. Use treasury stock method for options. Convertible debt may be treated as debt or equity depending on likelihood of conversion.
+
+**95. What is a stub period in DCF?**
+
+Partial year cash flows when valuation date doesn't align with fiscal year end. Discount for the fraction of the year remaining.
+
+### Behavioral Technical Questions
+
+**96. If you could only use one valuation method, which would you choose?**
+
+DCF—it's based on fundamental cash flow generation, not market sentiment. But acknowledge that in practice, you use multiple methods and triangulate.
+
+**97. Your DCF gives $50, comps give $35. Why the difference?**
+
+DCF may have aggressive growth or margin assumptions. Comps may have depressed multiples due to market conditions. The company may have unique characteristics not reflected in comps.
+
+**98. A company's P/E is 5x while peers are at 15x. What explains this?**
+
+Lower growth expectations, higher risk, declining industry, poor management, one-time earnings boost inflating the E, or market inefficiency.
+
+**99. How would you value a company with no revenue?**
+
+Option valuation, milestone analysis, comparable financing rounds, or DCF with very long-term projections and high discount rates.
+
+**100. What's the most important thing in valuation?**
+
+Understanding the business. Models are tools. If you don't understand how the company makes money and what drives its value, your models are meaningless.
+
+---
+
+*Want 400+ questions with detailed answers and walkthroughs? Get the [IB Technical Interview Guide](/playbooks/ib-technical-guide).*
+
+*Ready to apply what you've learned? Get your resume reviewed by bankers who've asked these questions: [Resume Review](/submit-resume?service=resume-review).*

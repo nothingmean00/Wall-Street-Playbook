@@ -117,14 +117,14 @@ export default function NonTargetResumePage() {
             
             <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
               <Link
-                href="/submit-resume?service=resume-rewrite"
+                href="/submit-resume?service=resume-rewrite&segment=non-target"
                 className="group flex items-center gap-2 rounded-xl bg-gold px-8 py-4 text-base font-semibold text-navy transition-all hover:bg-white"
               >
                 Get Your Resume Rewritten — $497
                 <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
               </Link>
               <Link
-                href="/submit-resume?service=resume-review"
+                href="/submit-resume?service=resume-review&segment=non-target"
                 className="rounded-xl border-2 border-white/20 px-8 py-4 text-base font-semibold text-white transition-all hover:border-gold hover:text-gold"
               >
                 Or Start with Review — $197
@@ -272,8 +272,69 @@ export default function NonTargetResumePage() {
           </div>
         </section>
 
+        {/* Non-Target Testimonials */}
+        <section className="bg-white py-16 lg:py-20">
+          <div className="mx-auto max-w-7xl px-6 lg:px-8">
+            <div className="mx-auto max-w-3xl">
+              <h2 className="text-3xl font-bold text-navy sm:text-4xl text-center">What Clients Say</h2>
+              <div className="mt-2 flex justify-center">
+                <div className="h-1 w-20 bg-gold" />
+              </div>
+
+              <div className="mt-12 grid gap-6 sm:grid-cols-2">
+                <div className="rounded-xl border border-gold/30 bg-gold/5 p-6">
+                  <div className="flex gap-1 mb-3">
+                    {[...Array(5)].map((_, i) => (
+                      <svg key={i} className="h-4 w-4 text-gold" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                      </svg>
+                    ))}
+                  </div>
+                  <p className="text-sm text-charcoal/80 italic">
+                    &quot;I was getting ghosted on applications for months. After the rewrite, I finally started getting first rounds at boutiques.&quot;
+                  </p>
+                  <p className="mt-4 text-xs font-semibold text-navy">
+                    — State School Senior, Class of 2025
+                  </p>
+                </div>
+                <div className="rounded-xl border border-border bg-white p-6">
+                  <div className="flex gap-1 mb-3">
+                    {[...Array(5)].map((_, i) => (
+                      <svg key={i} className="h-4 w-4 text-gold" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                      </svg>
+                    ))}
+                  </div>
+                  <p className="text-sm text-charcoal/80 italic">
+                    &quot;The reviewer understood exactly what non-targets face. They helped me position my Big 4 experience in a way that made sense for banking.&quot;
+                  </p>
+                  <p className="mt-4 text-xs font-semibold text-navy">
+                    — Big 4 TAS Lateral
+                  </p>
+                </div>
+              </div>
+
+              <div className="mt-6 rounded-xl border border-border bg-white p-6">
+                <div className="flex gap-1 mb-3">
+                  {[...Array(5)].map((_, i) => (
+                    <svg key={i} className="h-4 w-4 text-gold" fill="currentColor" viewBox="0 0 20 20">
+                      <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                    </svg>
+                  ))}
+                </div>
+                <p className="text-sm text-charcoal/80 italic">
+                  &quot;The review caught formatting issues I didn&apos;t even know existed and weak bullets that were hurting my chances. Concrete feedback I could actually use.&quot;
+                </p>
+                <p className="mt-4 text-xs font-semibold text-navy">
+                  — Liberal Arts College Junior
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Services */}
-        <section className="bg-white py-20 lg:py-28">
+        <section className="bg-cream py-20 lg:py-28">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <div className="mx-auto max-w-3xl text-center">
               <h2 className="text-3xl font-bold text-navy sm:text-4xl">Choose Your Path</h2>
@@ -315,7 +376,7 @@ export default function NonTargetResumePage() {
                   <div className="mt-8">
                     <span className="text-3xl font-bold text-navy">$197</span>
                     <Link
-                      href="/submit-resume?service=resume-review"
+                      href="/submit-resume?service=resume-review&segment=non-target"
                       className="mt-4 flex items-center justify-center gap-2 rounded-lg bg-navy px-6 py-3 text-sm font-semibold text-white hover:bg-gold hover:text-navy transition-colors"
                     >
                       Get Review
@@ -355,7 +416,7 @@ export default function NonTargetResumePage() {
                   <div className="mt-8">
                     <span className="text-3xl font-bold text-navy">$497</span>
                     <Link
-                      href="/submit-resume?service=resume-rewrite"
+                      href="/submit-resume?service=resume-rewrite&segment=non-target"
                       className="mt-4 flex items-center justify-center gap-2 rounded-lg bg-gold px-6 py-3 text-sm font-semibold text-navy hover:bg-navy hover:text-white transition-colors"
                     >
                       Get Rewrite
@@ -382,7 +443,7 @@ export default function NonTargetResumePage() {
             
             <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
               <Link
-                href="/submit-resume?service=resume-rewrite"
+                href="/submit-resume?service=resume-rewrite&segment=non-target"
                 className="group flex items-center gap-2 rounded-xl bg-gold px-8 py-4 text-base font-semibold text-navy hover:bg-white transition-colors"
               >
                 Get Resume Rewrite — $497

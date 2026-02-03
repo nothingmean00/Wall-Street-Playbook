@@ -113,17 +113,17 @@ export default function VentureCapitalResumePage() {
 
               <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
                 <Link
-                  href="/submit-resume?service=resume-review&role=venture-capital"
+                  href="/submit-resume?service=resume-review&segment=vc"
                   className="group flex items-center gap-2 rounded-xl bg-gold px-8 py-4 text-base font-semibold text-navy hover:bg-white transition-colors"
                 >
-                  Get Resume Review — $197
+                  Get Resume Review — $297
                   <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
                 </Link>
                 <Link
-                  href="/submit-resume?service=resume-rewrite&role=venture-capital"
+                  href="/submit-resume?service=resume-rewrite&segment=vc"
                   className="rounded-xl border-2 border-white/20 px-8 py-4 text-base font-semibold text-white hover:border-gold hover:text-gold transition-colors"
                 >
-                  Full Rewrite — $497
+                  Full Rewrite — $697
                 </Link>
               </div>
 
@@ -280,9 +280,9 @@ export default function VentureCapitalResumePage() {
                   </ul>
 
                   <div className="mt-8 flex items-center justify-between">
-                    <span className="text-3xl font-bold text-navy">$197</span>
+                    <span className="text-3xl font-bold text-navy">$297</span>
                     <Link
-                      href="/submit-resume?service=resume-review&role=venture-capital"
+                      href="/submit-resume?service=resume-review&segment=vc"
                       className="flex items-center gap-2 rounded-lg bg-navy px-6 py-3 text-sm font-semibold text-white hover:bg-gold hover:text-navy transition-colors"
                     >
                       Get Review
@@ -323,9 +323,9 @@ export default function VentureCapitalResumePage() {
                   </ul>
 
                   <div className="mt-8 flex items-center justify-between">
-                    <span className="text-3xl font-bold text-navy">$497</span>
+                    <span className="text-3xl font-bold text-navy">$697</span>
                     <Link
-                      href="/submit-resume?service=resume-rewrite&role=venture-capital"
+                      href="/submit-resume?service=resume-rewrite&segment=vc"
                       className="flex items-center gap-2 rounded-lg bg-gold px-6 py-3 text-sm font-semibold text-navy hover:bg-navy hover:text-white transition-colors"
                     >
                       Get Rewrite
@@ -375,17 +375,17 @@ export default function VentureCapitalResumePage() {
 
             <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
               <Link
-                href="/submit-resume?service=resume-review&role=venture-capital"
+                href="/submit-resume?service=resume-review&segment=vc"
                 className="group flex items-center gap-2 rounded-xl bg-gold px-8 py-4 text-base font-semibold text-navy hover:bg-white transition-colors"
               >
-                Get Resume Review — $197
+                Get Resume Review — $297
                 <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
               </Link>
               <Link
-                href="/submit-resume?service=resume-rewrite&role=venture-capital"
+                href="/submit-resume?service=resume-rewrite&segment=vc"
                 className="rounded-xl border-2 border-white/20 px-8 py-4 text-base font-semibold text-white hover:border-gold hover:text-gold transition-colors"
               >
-                Full Rewrite — $497
+                Full Rewrite — $697
               </Link>
             </div>
 

@@ -107,17 +107,17 @@ export default function PEResumePage() {
             
             <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
               <Link
-                href="/submit-resume?service=resume-rewrite"
+                href="/submit-resume?service=resume-rewrite&segment=pe"
                 className="group flex items-center gap-2 rounded-xl bg-gold px-8 py-4 text-base font-semibold text-navy transition-all hover:bg-white"
               >
-                Get PE Resume Rewrite — $497
+                Get PE Resume Rewrite — $697
                 <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
               </Link>
               <Link
-                href="/submit-resume?service=resume-review"
+                href="/submit-resume?service=resume-review&segment=pe"
                 className="rounded-xl border-2 border-white/20 px-8 py-4 text-base font-semibold text-white transition-all hover:border-gold hover:text-gold"
               >
-                Review Only — $197
+                Review Only — $297
               </Link>
             </div>
 
@@ -249,8 +249,53 @@ export default function PEResumePage() {
           </div>
         </section>
 
-        {/* Services CTA */}
+        {/* PE Testimonials */}
         <section className="bg-white py-20 lg:py-28">
+          <div className="mx-auto max-w-7xl px-6 lg:px-8">
+            <div className="mx-auto max-w-3xl">
+              <h2 className="text-3xl font-bold text-navy sm:text-4xl text-center">What Clients Say</h2>
+              <div className="mt-2 flex justify-center">
+                <div className="h-1 w-20 bg-gold" />
+              </div>
+
+              <div className="mt-12 grid gap-6 sm:grid-cols-2">
+                <div className="rounded-xl border border-gold/30 bg-gold/5 p-6">
+                  <div className="flex gap-1 mb-3">
+                    {[...Array(5)].map((_, i) => (
+                      <svg key={i} className="h-4 w-4 text-gold" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                      </svg>
+                    ))}
+                  </div>
+                  <p className="text-sm text-charcoal/80 italic">
+                    &quot;The rewrite changed how I presented my deal experience. Went from no responses to multiple headhunter callbacks within two weeks.&quot;
+                  </p>
+                  <p className="mt-4 text-xs font-semibold text-navy">
+                    — BB Analyst, now at UMM PE
+                  </p>
+                </div>
+                <div className="rounded-xl border border-border bg-white p-6">
+                  <div className="flex gap-1 mb-3">
+                    {[...Array(5)].map((_, i) => (
+                      <svg key={i} className="h-4 w-4 text-gold" fill="currentColor" viewBox="0 0 20 20">
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                      </svg>
+                    ))}
+                  </div>
+                  <p className="text-sm text-charcoal/80 italic">
+                    &quot;I didn&apos;t realize my deal bullets were so generic until the review. The specific feedback on positioning made the difference.&quot;
+                  </p>
+                  <p className="mt-4 text-xs font-semibold text-navy">
+                    — EB Analyst, Class of 2024
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Services CTA */}
+        <section className="bg-cream py-20 lg:py-28">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <div className="mx-auto max-w-3xl text-center">
               <h2 className="text-3xl font-bold text-navy sm:text-4xl">Get PE-Ready</h2>
@@ -264,15 +309,15 @@ export default function PEResumePage() {
 
               <div className="mt-12 grid gap-6 sm:grid-cols-2 max-w-2xl mx-auto">
                 <Link 
-                  href="/submit-resume?service=resume-review"
+                  href="/submit-resume?service=resume-review&segment=pe"
                   className="group rounded-2xl border-2 border-border bg-white p-6 text-left hover:border-gold transition-colors"
                 >
                   <h3 className="text-xl font-bold text-navy group-hover:text-gold transition-colors">PE Resume Review</h3>
                   <p className="mt-2 text-sm text-charcoal/60">Detailed feedback on deal descriptions and positioning</p>
-                  <p className="mt-4 text-2xl font-bold text-gold">$197</p>
+                  <p className="mt-4 text-2xl font-bold text-gold">$297</p>
                 </Link>
                 <Link 
-                  href="/submit-resume?service=resume-rewrite"
+                  href="/submit-resume?service=resume-rewrite&segment=pe"
                   className="group rounded-2xl border-2 border-gold bg-gold/5 p-6 text-left hover:bg-gold/10 transition-colors"
                 >
                   <div className="flex items-center justify-between">
@@ -280,7 +325,7 @@ export default function PEResumePage() {
                     <span className="text-xs font-bold text-gold bg-gold/20 px-2 py-1 rounded">RECOMMENDED</span>
                   </div>
                   <p className="mt-2 text-sm text-charcoal/60">Complete reconstruction with optimized deal positioning</p>
-                  <p className="mt-4 text-2xl font-bold text-gold">$497</p>
+                  <p className="mt-4 text-2xl font-bold text-gold">$697</p>
                 </Link>
               </div>
 
@@ -301,10 +346,10 @@ export default function PEResumePage() {
             
             <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
               <Link
-                href="/submit-resume?service=resume-rewrite"
+                href="/submit-resume?service=resume-rewrite&segment=pe"
                 className="group flex items-center gap-2 rounded-xl bg-gold px-8 py-4 text-base font-semibold text-navy hover:bg-white transition-colors"
               >
-                Get PE Resume Rewrite — $497
+                Get PE Resume Rewrite — $697
                 <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
               </Link>
               <Link

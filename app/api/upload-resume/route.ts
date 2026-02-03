@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { put } from '@vercel/blob'
 import { getDb } from '@/lib/db'
-import { PRODUCTS } from '@/lib/stripe'
+import { PRODUCTS, getSegmentPricing } from '@/lib/stripe'
 
 export async function POST(request: NextRequest) {
   try {
@@ -18,6 +18,7 @@ export async function POST(request: NextRequest) {
     const timeline = formData.get('timeline') as string
     const specificConcerns = formData.get('specificConcerns') as string
     const additionalNotes = formData.get('additionalNotes') as string
+    const segment = formData.get('segment') as string | null
 
     if (!file || !email || !name) {
       return NextResponse.json(
@@ -126,6 +127,14 @@ export async function POST(request: NextRequest) {
         const product = PRODUCTS[serviceType]
         const appUrl = process.env.NEXT_PUBLIC_APP_URL || 'https://wallstreetplaybook.org'
         
+        // Get segment-based pricing
+        const { tier, reviewPrice, rewritePrice } = getSegmentPricing(segment)
+        const segmentPrice = serviceType === 'resume-review' ? reviewPrice : rewritePrice
+        
+        // Build product name with tier indication for premium segments
+        const tierLabel = tier === 'premium' ? ' (Premium)' : tier === 'accessible' ? '' : ''
+        const productName = `${product.name}${tierLabel}`
+        
         const stripe = getStripe()
         const session = await stripe.checkout.sessions.create({
           payment_method_types: ['card'],
@@ -134,12 +143,12 @@ export async function POST(request: NextRequest) {
               price_data: {
                 currency: 'usd',
                 product_data: {
-                  name: product.name,
+                  name: productName,
                   description: serviceType === 'resume-review' 
                     ? 'Detailed line-by-line feedback with specific rewrite suggestions. Delivered in 3-5 business days.'
                     : 'Complete resume overhaul with 2 revision rounds. Delivered in 5-7 business days.',
                 },
-                unit_amount: product.price * 100,
+                unit_amount: segmentPrice * 100,
               },
               quantity: 1,
             },
@@ -150,8 +159,10 @@ export async function POST(request: NextRequest) {
           customer_email: email.toLowerCase(),
           metadata: {
             productId: serviceType,
-            productName: product.name,
+            productName: productName,
             submissionId: submissionId.toString(),
+            segment: segment || 'none',
+            pricingTier: tier,
           },
         })
 
@@ -165,7 +176,7 @@ export async function POST(request: NextRequest) {
             name,
             serviceName,
             session.url!,
-            product.price
+            segmentPrice
           )
         } catch (emailError) {
           console.error('Failed to send payment link email:', emailError)

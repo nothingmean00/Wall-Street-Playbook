@@ -14,6 +14,48 @@ export function getStripe() {
   return stripeInstance
 }
 
+// Segment-based pricing tiers
+export const SEGMENT_TIERS = {
+  premium: ['pe', 'hf', 'vc', 'mba-m7', 'private-equity', 'hedge-fund', 'venture-capital'],
+  standard: ['ib', 'non-target', 'consulting-to-banking', 'mba', 'investment-banking', 'equity-research'],
+  accessible: ['fpa', 'credit', 'financial-advisor', 'fintech', 'asset-management', 'credit-analyst']
+} as const
+
+export const TIER_PRICES = {
+  premium: { review: 297, rewrite: 697 },
+  standard: { review: 197, rewrite: 497 },
+  accessible: { review: 147, rewrite: 347 }
+} as const
+
+export type PricingTier = keyof typeof TIER_PRICES
+export type Segment = string
+
+// Get the pricing tier for a given segment
+export function getSegmentTier(segment: Segment | null | undefined): PricingTier {
+  if (!segment) return 'standard'
+  
+  const normalizedSegment = segment.toLowerCase().trim()
+  
+  if (SEGMENT_TIERS.premium.some(s => normalizedSegment.includes(s))) {
+    return 'premium'
+  }
+  if (SEGMENT_TIERS.accessible.some(s => normalizedSegment.includes(s))) {
+    return 'accessible'
+  }
+  return 'standard'
+}
+
+// Get pricing for a specific segment
+export function getSegmentPricing(segment: Segment | null | undefined) {
+  const tier = getSegmentTier(segment)
+  return {
+    tier,
+    prices: TIER_PRICES[tier],
+    reviewPrice: TIER_PRICES[tier].review,
+    rewritePrice: TIER_PRICES[tier].rewrite
+  }
+}
+
 // Product IDs mapped to Stripe Price IDs (you'll create these in Stripe Dashboard)
 export const PRODUCTS = {
   // Playbooks
