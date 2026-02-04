@@ -2,6 +2,7 @@
 
 import { useState, useEffect } from "react"
 import { X, Mail, ArrowRight, Loader2, Check } from "lucide-react"
+import { track } from "@vercel/analytics"
 
 export function ExitIntentPopup() {
   const [isOpen, setIsOpen] = useState(false)
@@ -23,6 +24,8 @@ export function ExitIntentPopup() {
         setIsOpen(true)
         setHasShown(true)
         sessionStorage.setItem("exitPopupShown", "true")
+        // Track popup shown
+        track("exit_popup_shown", { trigger: "mouse_leave" })
       }
     }
 
@@ -32,6 +35,8 @@ export function ExitIntentPopup() {
         setIsOpen(true)
         setHasShown(true)
         sessionStorage.setItem("exitPopupShown", "true")
+        // Track popup shown
+        track("exit_popup_shown", { trigger: "timeout" })
       }
     }, 45000)
 
@@ -62,6 +67,9 @@ export function ExitIntentPopup() {
 
       if (!response.ok) throw new Error("Failed")
 
+      // Track successful subscription from exit popup
+      track("email_subscribed", { source: "exit_popup" })
+      
       setStatus("success")
     } catch {
       setStatus("error")

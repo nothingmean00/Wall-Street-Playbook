@@ -4,6 +4,7 @@ import Link from "next/link"
 import Image from "next/image"
 import { ArrowRight } from "lucide-react"
 import { EmailCapture } from "@/components/email-capture"
+import { track } from "@vercel/analytics"
 
 export function HeroSection() {
   return (
@@ -68,6 +69,7 @@ export function HeroSection() {
             <div className="mt-10 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 animate-slide-up animate-delay-300">
               <Link
                 href="/submit-resume?service=resume-review"
+                onClick={() => track("cta_clicked", { location: "hero_resume" })}
                 className="group relative flex w-full sm:w-auto items-center justify-center gap-2 rounded-xl bg-gold px-8 py-4 text-base font-semibold text-navy overflow-hidden transition-all hover:shadow-lg hover:shadow-gold/25"
               >
                 <span className="relative z-10">Get Your Resume Reviewed</span>
@@ -76,6 +78,7 @@ export function HeroSection() {
               </Link>
               <Link
                 href="/jobs"
+                onClick={() => track("cta_clicked", { location: "hero_jobs" })}
                 className="group w-full sm:w-auto rounded-xl border-2 border-white/20 bg-white/5 backdrop-blur-sm px-8 py-4 text-base font-semibold text-white transition-all hover:border-gold hover:bg-gold/10 text-center"
               >
                 See Open Roles

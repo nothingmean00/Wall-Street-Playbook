@@ -2,6 +2,7 @@
 
 import { useState } from "react"
 import { Loader2, Check } from "lucide-react"
+import { track } from "@vercel/analytics"
 
 export function ContactForm() {
   const [formData, setFormData] = useState({
@@ -41,6 +42,9 @@ export function ContactForm() {
         throw new Error("Failed to submit")
       }
 
+      // Track contact form submission
+      track("contact_submitted", { subject: formData.subject || "none" })
+      
       setStatus("success")
       setFormData({ firstName: "", lastName: "", email: "", subject: "", message: "" })
     } catch (error) {

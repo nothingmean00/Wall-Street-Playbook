@@ -2,6 +2,7 @@
 
 import { useState } from "react"
 import { ArrowRight, Check, Loader2 } from "lucide-react"
+import { track } from "@vercel/analytics"
 
 interface EmailCaptureProps {
   variant?: "hero" | "footer" | "inline"
@@ -36,6 +37,9 @@ export function EmailCapture({ variant = "inline", className = "" }: EmailCaptur
         throw new Error("Failed to subscribe")
       }
 
+      // Track successful subscription
+      track("email_subscribed", { source: variant })
+      
       setStatus("success")
       setEmail("")
     } catch (error) {

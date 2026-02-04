@@ -2,6 +2,7 @@
 
 import { useState } from "react"
 import { Loader2, ShoppingCart } from "lucide-react"
+import { track } from "@vercel/analytics"
 
 interface BuyButtonProps {
   productId: string
@@ -15,6 +16,9 @@ export function BuyButton({ productId, price, label = "Buy Now", className = "" 
 
   const handleCheckout = async () => {
     setLoading(true)
+    
+    // Track checkout initiation
+    track("checkout_started", { productId, price })
     
     try {
       const response = await fetch("/api/checkout", {

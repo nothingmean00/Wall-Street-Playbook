@@ -19,6 +19,7 @@ import {
 } from "lucide-react"
 import { resumeServices } from "@/lib/data"
 import { getSegmentPricing, type PricingTier } from "@/lib/stripe"
+import { track } from "@vercel/analytics"
 import Link from "next/link"
 
 type ServiceType = "resume-review" | "resume-rewrite" | null
@@ -225,6 +226,12 @@ function ResumeSubmissionForm({ initialService, segment, pricing }: ResumeSubmis
       }
 
       const data = await response.json()
+      
+      // Track successful resume submission
+      track("resume_submitted", { 
+        service: selectedService, 
+        segment: finalSegment || "none" 
+      })
       
       if (data.paymentUrl) {
         setPaymentUrl(data.paymentUrl)
