@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react"
 import dynamic from "next/dynamic"
-import { ChevronLeft, ChevronRight, BookOpen, X, ZoomIn, Loader2 } from "lucide-react"
+import { ChevronLeft, ChevronRight, BookOpen, X, Maximize2, Loader2, Eye } from "lucide-react"
 
 // Dynamically import react-pdf with SSR disabled (uses browser APIs)
 const Document = dynamic(
@@ -23,7 +23,7 @@ interface PlaybookPreviewProps {
 
 export function PlaybookPreview({ title, pdfUrl, previewPages = 5, totalPages }: PlaybookPreviewProps) {
   const [currentPage, setCurrentPage] = useState(1)
-  const [isExpanded, setIsExpanded] = useState(false)
+  const [isOpen, setIsOpen] = useState(false)
   const [isLoading, setIsLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
   const [pdfWorkerReady, setPdfWorkerReady] = useState(false)
@@ -63,129 +63,174 @@ export function PlaybookPreview({ title, pdfUrl, previewPages = 5, totalPages }:
     console.error("PDF load error:", err)
   }
 
-  const PreviewContent = ({ expanded = false }: { expanded?: boolean }) => (
-    <div className={`bg-white rounded-lg shadow-lg overflow-hidden ${expanded ? 'max-w-4xl w-full max-h-[90vh]' : ''}`}>
-      {/* Header */}
-      <div className="bg-navy px-4 py-3 flex items-center justify-between">
-        <div className="flex items-center gap-2">
-          <BookOpen className="h-4 w-4 text-gold" />
-          <span className="text-sm font-medium text-white">Preview: {title}</span>
-        </div>
-        <div className="flex items-center gap-2">
-          <span className="text-xs text-white/60">
-            Page {currentPage} of {totalPages} ({maxPreviewPage} preview pages)
-          </span>
-          {expanded ? (
-            <button
-              onClick={() => setIsExpanded(false)}
-              className="ml-2 p-1 rounded hover:bg-white/10 transition-colors"
-            >
-              <X className="h-4 w-4 text-white/60" />
-            </button>
-          ) : (
-            <button
-              onClick={() => setIsExpanded(true)}
-              className="ml-2 p-1 rounded hover:bg-white/10 transition-colors"
-              title="Expand preview"
-            >
-              <ZoomIn className="h-4 w-4 text-white/60" />
-            </button>
-          )}
-        </div>
-      </div>
-
-      {/* Page Content */}
-      <div className={`relative bg-gray-100 ${expanded ? 'p-8' : 'p-4'} flex justify-center`}>
-        <div className="relative" style={{ minHeight: expanded ? 600 : 400 }}>
-          {(isLoading || !pdfWorkerReady) && (
-            <div className="absolute inset-0 flex items-center justify-center bg-white z-10">
-              <Loader2 className="h-8 w-8 animate-spin text-gold" />
-            </div>
-          )}
-          
-          {error ? (
-            <div className="flex items-center justify-center p-12 text-charcoal/60">
-              {error}
-            </div>
-          ) : pdfWorkerReady ? (
-            <Document
-              file={pdfUrl}
-              onLoadSuccess={onDocumentLoadSuccess}
-              onLoadError={onDocumentLoadError}
-              loading={null}
-            >
-              <Page
-                pageNumber={currentPage}
-                width={expanded ? 600 : 350}
-                renderTextLayer={false}
-                renderAnnotationLayer={false}
-              />
-            </Document>
-          ) : null}
-          
-          {/* Fade overlay on last preview page */}
-          {currentPage === maxPreviewPage && !error && !isLoading && (
-            <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white via-white/95 to-transparent flex items-end justify-center pb-4">
-              <span className="text-sm text-charcoal/60 bg-white px-3 py-1 rounded-full border border-border shadow-sm">
-                Purchase to read all {totalPages} pages...
-              </span>
-            </div>
-          )}
-        </div>
-      </div>
-
-      {/* Navigation */}
-      <div className="bg-gray-50 px-4 py-3 flex items-center justify-between border-t border-gray-200">
+  // Teaser card shown by default
+  if (!isOpen) {
+    return (
+      <div className="my-8">
         <button
-          onClick={prevPage}
-          disabled={currentPage === 1}
-          className="flex items-center gap-1 text-sm text-charcoal/70 hover:text-navy disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
+          onClick={() => setIsOpen(true)}
+          className="w-full group"
         >
-          <ChevronLeft className="h-4 w-4" />
-          Previous
-        </button>
-        
-        <div className="flex items-center gap-1">
-          {Array.from({ length: maxPreviewPage }, (_, i) => i + 1).map((page) => (
-            <button
-              key={page}
-              onClick={() => setCurrentPage(page)}
-              className={`w-2 h-2 rounded-full transition-colors ${
-                page === currentPage ? 'bg-gold' : 'bg-gray-300 hover:bg-gray-400'
-              }`}
-            />
-          ))}
-        </div>
+          <div className="relative overflow-hidden rounded-2xl border-2 border-gold/30 bg-gradient-to-br from-navy/5 to-gold/10 p-6 sm:p-8 transition-all hover:border-gold/60 hover:shadow-xl">
+            {/* Decorative elements */}
+            <div className="absolute top-0 right-0 w-32 h-32 bg-gold/10 rounded-full blur-3xl" />
+            <div className="absolute bottom-0 left-0 w-24 h-24 bg-navy/10 rounded-full blur-2xl" />
+            
+            <div className="relative flex flex-col sm:flex-row items-center gap-6">
+              {/* Book icon */}
+              <div className="flex-shrink-0 w-20 h-24 sm:w-24 sm:h-32 bg-white rounded-lg shadow-lg border border-charcoal/10 flex items-center justify-center relative overflow-hidden">
+                <div className="absolute inset-0 bg-gradient-to-br from-navy to-navy/80" />
+                <div className="absolute inset-x-0 top-0 h-1 bg-gold" />
+                <BookOpen className="relative h-10 w-10 text-white" />
+                <div className="absolute bottom-2 left-2 right-2 space-y-1">
+                  <div className="h-0.5 bg-white/30 rounded" />
+                  <div className="h-0.5 bg-white/20 rounded w-3/4" />
+                  <div className="h-0.5 bg-white/20 rounded w-1/2" />
+                </div>
+              </div>
 
-        <button
-          onClick={nextPage}
-          disabled={currentPage === maxPreviewPage}
-          className="flex items-center gap-1 text-sm text-charcoal/70 hover:text-navy disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
-        >
-          Next
-          <ChevronRight className="h-4 w-4" />
+              {/* Text content */}
+              <div className="flex-1 text-center sm:text-left">
+                <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-gold/20 text-gold text-xs font-semibold mb-3">
+                  <Eye className="h-3 w-3" />
+                  FREE PREVIEW
+                </div>
+                <h3 className="text-xl sm:text-2xl font-bold text-navy mb-2">
+                  Look Inside This Playbook
+                </h3>
+                <p className="text-charcoal/70 text-sm sm:text-base mb-4">
+                  Preview the first {previewPages} pages of the {totalPages}-page guide. See the table of contents, introduction, and sample chapters.
+                </p>
+                <div className="inline-flex items-center gap-2 text-gold font-semibold group-hover:gap-3 transition-all">
+                  <Maximize2 className="h-4 w-4" />
+                  Click to Open Preview
+                </div>
+              </div>
+            </div>
+          </div>
         </button>
       </div>
-    </div>
-  )
+    )
+  }
 
+  // Full preview modal
   return (
-    <>
-      {/* Inline Preview */}
-      <PreviewContent />
+    <div 
+      className="fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 bg-black/80"
+      onClick={() => setIsOpen(false)}
+    >
+      <div 
+        className="bg-white rounded-xl shadow-2xl overflow-hidden w-full max-w-4xl max-h-[95vh] flex flex-col"
+        onClick={(e) => e.stopPropagation()}
+      >
+        {/* Header */}
+        <div className="bg-navy px-4 sm:px-6 py-4 flex items-center justify-between flex-shrink-0">
+          <div className="flex items-center gap-3">
+            <div className="w-8 h-8 rounded-lg bg-gold/20 flex items-center justify-center">
+              <BookOpen className="h-4 w-4 text-gold" />
+            </div>
+            <div>
+              <h3 className="text-white font-semibold text-sm sm:text-base">{title}</h3>
+              <p className="text-white/60 text-xs">
+                Page {currentPage} of {totalPages} • Previewing {maxPreviewPage} pages
+              </p>
+            </div>
+          </div>
+          <button
+            onClick={() => setIsOpen(false)}
+            className="p-2 rounded-lg hover:bg-white/10 transition-colors"
+          >
+            <X className="h-5 w-5 text-white/70" />
+          </button>
+        </div>
 
-      {/* Expanded Modal */}
-      {isExpanded && (
-        <div 
-          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70"
-          onClick={() => setIsExpanded(false)}
-        >
-          <div onClick={(e) => e.stopPropagation()}>
-            <PreviewContent expanded />
+        {/* PDF Content */}
+        <div className="flex-1 overflow-auto bg-gray-200 flex items-start justify-center p-4 sm:p-8">
+          <div className="relative bg-white shadow-xl rounded-sm">
+            {(isLoading || !pdfWorkerReady) && (
+              <div className="absolute inset-0 flex items-center justify-center bg-white z-10 min-h-[500px]">
+                <div className="text-center">
+                  <Loader2 className="h-10 w-10 animate-spin text-gold mx-auto mb-3" />
+                  <p className="text-charcoal/60 text-sm">Loading preview...</p>
+                </div>
+              </div>
+            )}
+            
+            {error ? (
+              <div className="flex items-center justify-center p-12 text-charcoal/60 min-h-[500px]">
+                {error}
+              </div>
+            ) : pdfWorkerReady ? (
+              <Document
+                file={pdfUrl}
+                onLoadSuccess={onDocumentLoadSuccess}
+                onLoadError={onDocumentLoadError}
+                loading={null}
+                className="flex justify-center"
+              >
+                <Page
+                  pageNumber={currentPage}
+                  width={typeof window !== 'undefined' && window.innerWidth < 640 ? window.innerWidth - 60 : 550}
+                  renderTextLayer={false}
+                  renderAnnotationLayer={false}
+                  className="shadow-sm"
+                />
+              </Document>
+            ) : null}
+            
+            {/* Fade overlay on last preview page */}
+            {currentPage === maxPreviewPage && !error && !isLoading && (
+              <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-white via-white/95 to-transparent flex items-end justify-center pb-6">
+                <div className="text-center">
+                  <p className="text-charcoal/70 text-sm mb-2">End of preview</p>
+                  <span className="inline-flex items-center gap-2 text-sm text-navy font-semibold bg-gold/20 px-4 py-2 rounded-full">
+                    <BookOpen className="h-4 w-4" />
+                    Purchase to read all {totalPages} pages
+                  </span>
+                </div>
+              </div>
+            )}
           </div>
         </div>
-      )}
-    </>
+
+        {/* Navigation Footer */}
+        <div className="bg-white border-t border-gray-200 px-4 sm:px-6 py-4 flex items-center justify-between flex-shrink-0">
+          <button
+            onClick={prevPage}
+            disabled={currentPage === 1}
+            className="flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium text-charcoal hover:bg-gray-100 disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
+          >
+            <ChevronLeft className="h-4 w-4" />
+            <span className="hidden sm:inline">Previous</span>
+          </button>
+          
+          <div className="flex items-center gap-2">
+            {Array.from({ length: maxPreviewPage }, (_, i) => i + 1).map((page) => (
+              <button
+                key={page}
+                onClick={() => setCurrentPage(page)}
+                className={`w-8 h-8 rounded-lg text-sm font-medium transition-colors ${
+                  page === currentPage 
+                    ? 'bg-navy text-white' 
+                    : 'bg-gray-100 text-charcoal hover:bg-gray-200'
+                }`}
+              >
+                {page}
+              </button>
+            ))}
+          </div>
+
+          <button
+            onClick={nextPage}
+            disabled={currentPage === maxPreviewPage}
+            className="flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium text-charcoal hover:bg-gray-100 disabled:opacity-30 disabled:cursor-not-allowed transition-colors"
+          >
+            <span className="hidden sm:inline">Next</span>
+            <ChevronRight className="h-4 w-4" />
+          </button>
+        </div>
+      </div>
+    </div>
   )
 }
 
