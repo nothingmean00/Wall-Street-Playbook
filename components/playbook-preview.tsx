@@ -1,18 +1,23 @@
 "use client"
 
-import { useState } from "react"
-import { Document, Page, pdfjs } from "react-pdf"
+import { useState, useEffect } from "react"
+import dynamic from "next/dynamic"
 import { ChevronLeft, ChevronRight, BookOpen, X, ZoomIn, Loader2 } from "lucide-react"
-import "react-pdf/dist/Page/AnnotationLayer.css"
-import "react-pdf/dist/Page/TextLayer.css"
 
-// Set up PDF.js worker
-pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.mjs`
+// Dynamically import react-pdf with SSR disabled (uses browser APIs)
+const Document = dynamic(
+  () => import("react-pdf").then((mod) => mod.Document),
+  { ssr: false }
+)
+const Page = dynamic(
+  () => import("react-pdf").then((mod) => mod.Page),
+  { ssr: false }
+)
 
 interface PlaybookPreviewProps {
   title: string
   pdfUrl: string
-  previewPages?: number // Number of pages to preview (default 5)
+  previewPages?: number
   totalPages: number
 }
 
@@ -21,6 +26,17 @@ export function PlaybookPreview({ title, pdfUrl, previewPages = 5, totalPages }:
   const [isExpanded, setIsExpanded] = useState(false)
   const [isLoading, setIsLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
+  const [pdfWorkerReady, setPdfWorkerReady] = useState(false)
+
+  // Set up PDF.js worker on client side only
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      import("react-pdf").then((pdfjs) => {
+        pdfjs.pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.pdfjs.version}/build/pdf.worker.min.mjs`
+        setPdfWorkerReady(true)
+      })
+    }
+  }, [])
 
   const maxPreviewPage = Math.min(previewPages, totalPages)
 
@@ -80,8 +96,8 @@ export function PlaybookPreview({ title, pdfUrl, previewPages = 5, totalPages }:
 
       {/* Page Content */}
       <div className={`relative bg-gray-100 ${expanded ? 'p-8' : 'p-4'} flex justify-center`}>
-        <div className="relative">
-          {isLoading && (
+        <div className="relative" style={{ minHeight: expanded ? 600 : 400 }}>
+          {(isLoading || !pdfWorkerReady) && (
             <div className="absolute inset-0 flex items-center justify-center bg-white z-10">
               <Loader2 className="h-8 w-8 animate-spin text-gold" />
             </div>
@@ -91,7 +107,7 @@ export function PlaybookPreview({ title, pdfUrl, previewPages = 5, totalPages }:
             <div className="flex items-center justify-center p-12 text-charcoal/60">
               {error}
             </div>
-          ) : (
+          ) : pdfWorkerReady ? (
             <Document
               file={pdfUrl}
               onLoadSuccess={onDocumentLoadSuccess}
@@ -105,10 +121,10 @@ export function PlaybookPreview({ title, pdfUrl, previewPages = 5, totalPages }:
                 renderAnnotationLayer={false}
               />
             </Document>
-          )}
+          ) : null}
           
           {/* Fade overlay on last preview page */}
-          {currentPage === maxPreviewPage && !error && (
+          {currentPage === maxPreviewPage && !error && !isLoading && (
             <div className="absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-white via-white/95 to-transparent flex items-end justify-center pb-4">
               <span className="text-sm text-charcoal/60 bg-white px-3 py-1 rounded-full border border-border shadow-sm">
                 Purchase to read all {totalPages} pages...
