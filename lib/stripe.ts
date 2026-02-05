@@ -67,7 +67,7 @@ export const PRODUCTS = {
   'pe-recruiting-playbook': {
     priceId: process.env.STRIPE_PRICE_PE || 'price_xxx',
     name: 'PE Recruiting Playbook',
-    price: 167,
+    price: 97,
   },
   'networking-cold-email-playbook': {
     priceId: process.env.STRIPE_PRICE_NETWORKING || 'price_xxx',

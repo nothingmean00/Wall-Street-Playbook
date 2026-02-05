@@ -52,30 +52,42 @@ export const playbooks: Playbook[] = [
   },
   {
     slug: "pe-recruiting-playbook",
-    title: "PE Recruiting Playbook",
-    description: "Navigate on-cycle chaos, build headhunter relationships, and crush PE interviews. From first call to signed offer.",
+    title: "2026 PE Recruiting Playbook",
+    description: "The definitive 42-page guide to PE recruiting. Timelines, headhunters, technicals, compensation data, and contrarian insights that go beyond conventional wisdom.",
     longDescription:
-      "Private equity recruiting is a different game—compressed timelines, secretive processes, and higher stakes. This playbook gives you the insider knowledge to navigate on-cycle recruiting, build real relationships with headhunters, and prepare for the technicals and case studies that determine who gets offers at KKR, Blackstone, Apollo, and the rest.",
-    price: 167,
+      "Private equity recruiting has reached an inflection point. This comprehensive 42-page, 20-chapter guide synthesizes 2023-2026 data from headhunter sources, industry practitioners, and proprietary research to give you actionable intelligence that contradicts or goes beyond mainstream advice. From the 7 headhunter firms that control megafund access to compensation data by level, from paper LBO frameworks to the contrarian insights that give you edge—this is everything you need to navigate on-cycle chaos, off-cycle opportunities, and everything in between.",
+    price: 97,
     contents: [
-      "On-cycle vs. off-cycle: complete timeline breakdown",
-      "Headhunter relationship strategy (who to target, how to stand out)",
-      "PE technical questions: LBO mechanics, deal math, portfolio questions",
-      "Paper LBO mastery: 10-minute framework that impresses",
-      "Case study walkthrough with real examples",
-      "Firm-specific patterns: mega-funds vs. MM vs. growth equity",
-      "How to handle exploding offers and competing processes",
-      "What to do when you only have 48 hours",
+      "2026 recruiting timeline forecast and market structure analysis",
+      "The 7 headhunter firms that control PE access (CPI, Henkel, SG Partners, Ratio, Amity, DSP, Oxbridge)",
+      "Bank-to-fund pipeline data: which banks and groups place into which funds",
+      "Non-traditional paths: MBB consulting, Big 4 TAS, corporate development, veterans",
+      "Undergrad direct programs: Blackstone, KKR, Warburg Pincus, Apollo, Carlyle analyst programs",
+      "LBO mechanics from first principles: sources & uses, debt schedules, returns analysis",
+      "Paper LBO framework: the 10-minute method with full worked example",
+      "Modeling test execution: time management framework and fatal errors to avoid",
+      "Technical questions deep dive: accounting, credit concepts, EV/equity bridge",
+      "The 'Why PE' framework: what interviewers actually want to hear",
+      "Deal discussion structure: 60-second walkthrough format that impresses",
+      "Culture and fit signals: megafund vs. middle-market expectations",
+      "Firm taxonomy: megafund profiles (BX, KKR, Apollo, TPG, Carlyle, H&F) and practitioner rankings",
+      "Strategic firm selection: optimizing for learning, comp, exits, or work-life balance",
+      "2025-2026 compensation data by level: Associate through Partner, megafund to LMM",
+      "Career progression and exits: promotion rates, what distinguishes people who make Partner",
+      "Networking strategy: email templates with high response rates, channel effectiveness",
+      "Application mechanics: resume tailoring for PE, cover letter approach",
+      "Contrarian insights: 5 myths debunked (megafund obsession, on-cycle panic, technical overemphasis)",
+      "Appendix: mental math rules, IRR approximations, common LBO assumptions by sector",
     ],
     excerpt:
-      "On-cycle PE recruiting can move from first headhunter call to signed offer in under 72 hours. There is no time to prepare during the process—preparation must be complete before your phone rings. Here's exactly what you need ready...",
+      "The conventional 'megafund or bust' mentality is counterproductive for most candidates. 70% of PE buyouts occur in the $25M-$1B range, yet most recruiting advice ignores this reality. Middle-market firms offer superior learning, faster advancement, and comparable long-term outcomes. This guide maps both paths with data, not conventional wisdom.",
   },
   {
     slug: "networking-cold-email-playbook",
     title: "Networking & Cold Email Playbook",
     description: "50+ email templates, LinkedIn scripts, and follow-up sequences that actually get responses. Built for non-targets.",
     longDescription:
-      "Networking is how non-targets break in and how everyone gets an edge. This playbook gives you the exact scripts, templates, and follow-up cadences that convert cold outreach into warm relationships—and warm relationships into referrals. Every template has been tested across hundreds of real recruiting cycles.",
+      "Networking is how non-targets break in and how everyone gets an edge. This playbook gives you the exact scripts, templates, and follow-up cadences that convert cold outreach into warm relationships—and warm relationships into referrals. Every template has been tested across hundreds of real recruiting cycles. For PE-specific networking (headhunters, fund associates), see our PE Recruiting Playbook.",
     price: 67,
     contents: [
       "50+ cold email templates (IB, PE, HF-specific)",
@@ -95,7 +107,7 @@ export const playbooks: Playbook[] = [
     title: "LBO Modeling Crash Course",
     description: "Build LBO models from scratch. Sources & uses, debt schedules, returns analysis—with Excel templates included.",
     longDescription:
-      "LBO modeling is the core technical skill for PE recruiting. This crash course takes you from zero to building full LBO models, including the paper LBO shortcuts that let you ace timed case studies. Includes downloadable Excel templates you can use immediately.",
+      "LBO modeling is the core technical skill for PE recruiting. This crash course takes you from zero to building full LBO models, including the paper LBO shortcuts that let you ace timed case studies. Includes downloadable Excel templates you can use immediately. Pairs perfectly with our PE Recruiting Playbook for complete on-cycle preparation.",
     price: 127,
     contents: [
       "LBO fundamentals: how PE creates value",
@@ -2252,9 +2264,11 @@ But not all exits are created equal, and the path to each is different. Here's t
 - Technical excellence—LBO modeling must be second nature
 - Ability to perform under pressure (48-hour recruiting cycles)
 
-**Compensation:** First-year PE associates typically earn $150-200K base + bonus, with total comp of $300-400K+.
+**Compensation:** First-year PE associates typically earn $150-200K base + bonus, with total comp of $300-400K+. At megafunds like Apollo, KKR, and Blackstone, all-in comp can exceed $400K.
 
 **Realistic for:** Analysts at strong banks with solid deal experience. Harder from middle-market banks without networking.
+
+*Deep dive: The [2026 PE Recruiting Playbook](/playbooks/pe-recruiting-playbook) covers the complete recruiting system—headhunter landscape, technical mastery, firm selection, and compensation data.*
 
 ### Hedge Funds
 

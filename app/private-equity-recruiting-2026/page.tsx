@@ -142,10 +142,10 @@ export default function PERecruiting2026Page() {
             
             <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
               <Link
-                href="/playbooks/pe-interview-guide"
+                href="/playbooks/pe-recruiting-playbook"
                 className="group flex items-center gap-2 rounded-xl bg-gold px-8 py-4 text-base font-semibold text-navy transition-all hover:bg-white"
               >
-                Get PE Interview Guide
+                Get 2026 PE Playbook
                 <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
               </Link>
               <Link
@@ -303,17 +303,17 @@ export default function PERecruiting2026Page() {
             
             <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
               <Link
-                href="/playbooks/pe-interview-guide"
+                href="/playbooks/pe-recruiting-playbook"
                 className="group flex items-center gap-2 rounded-xl bg-navy px-8 py-4 text-base font-semibold text-white hover:bg-gold hover:text-navy transition-colors"
               >
-                Get PE Interview Guide — $127
+                Get 2026 PE Playbook — $97
                 <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
               </Link>
               <Link
-                href="/lbo-modeling-guide"
+                href="/playbooks/lbo-modeling-course"
                 className="rounded-xl border-2 border-navy px-8 py-4 text-base font-semibold text-navy hover:bg-navy hover:text-white transition-colors"
               >
-                LBO Modeling Guide
+                LBO Modeling Course
               </Link>
             </div>
           </div>

@@ -1,16 +1,84 @@
 "use client"
 
 import Link from "next/link"
-import { CheckCircle, Download, Mail, ArrowRight, Clock, FileText } from "lucide-react"
+import { CheckCircle, Download, Mail, ArrowRight, Clock, FileText, Loader2, AlertCircle } from "lucide-react"
 import { Navbar } from "@/components/layout/navbar"
 import { Footer } from "@/components/layout/footer"
 import { useSearchParams } from "next/navigation"
-import { Suspense } from "react"
+import { Suspense, useEffect, useState } from "react"
+
+interface SessionData {
+  success: boolean
+  productId: string
+  productName: string
+  customerEmail: string
+}
 
 function SuccessContent() {
   const searchParams = useSearchParams()
+  const sessionId = searchParams.get("session_id")
   const type = searchParams.get("type")
   const isResumeService = type === "resume"
+
+  const [sessionData, setSessionData] = useState<SessionData | null>(null)
+  const [loading, setLoading] = useState(true)
+  const [error, setError] = useState<string | null>(null)
+  const [downloading, setDownloading] = useState(false)
+
+  useEffect(() => {
+    async function verifySession() {
+      if (!sessionId || isResumeService) {
+        setLoading(false)
+        return
+      }
+
+      try {
+        const response = await fetch(`/api/verify-session?session_id=${sessionId}`)
+        const data = await response.json()
+
+        if (response.ok && data.success) {
+          setSessionData(data)
+        } else {
+          setError(data.error || 'Failed to verify purchase')
+        }
+      } catch (err) {
+        setError('Failed to verify purchase')
+      } finally {
+        setLoading(false)
+      }
+    }
+
+    verifySession()
+  }, [sessionId, isResumeService])
+
+  const handleDownload = async () => {
+    if (!sessionData || !sessionId) return
+
+    setDownloading(true)
+    try {
+      const response = await fetch(`/api/download/${sessionData.productId}?session_id=${sessionId}`)
+      
+      if (!response.ok) {
+        const errorData = await response.json()
+        throw new Error(errorData.error || 'Download failed')
+      }
+
+      // Get the blob and create download
+      const blob = await response.blob()
+      const url = window.URL.createObjectURL(blob)
+      const a = document.createElement('a')
+      a.href = url
+      a.download = `${sessionData.productName.replace(/\s+/g, '-')}.pdf`
+      document.body.appendChild(a)
+      a.click()
+      window.URL.revokeObjectURL(url)
+      document.body.removeChild(a)
+    } catch (err) {
+      alert(err instanceof Error ? err.message : 'Download failed. Please contact support.')
+    } finally {
+      setDownloading(false)
+    }
+  }
 
   return (
     <div className="flex min-h-screen flex-col">
@@ -28,7 +96,9 @@ function SuccessContent() {
           <p className="mt-4 text-lg text-charcoal/70">
             {isResumeService 
               ? "Your resume service order is confirmed. We'll start working on it right away."
-              : "Your order has been confirmed and your materials are on the way."
+              : sessionData 
+                ? `Your ${sessionData.productName} is ready to download.`
+                : "Your order has been confirmed."
             }
           </p>
 
@@ -87,34 +157,105 @@ function SuccessContent() {
               </ul>
             </div>
           ) : (
-          <div className="mt-12 rounded-2xl border border-charcoal/10 bg-white p-8 text-left shadow-sm">
-            <h2 className="text-lg font-semibold text-navy">What happens next?</h2>
-            
-            <ul className="mt-6 space-y-4">
-              <li className="flex items-start gap-4">
-                <div className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-lg bg-gold/10">
-                  <Mail className="h-4 w-4 text-gold" />
+            <div className="mt-12 rounded-2xl border border-charcoal/10 bg-white p-8 shadow-sm">
+              {loading ? (
+                <div className="flex flex-col items-center py-8">
+                  <Loader2 className="h-8 w-8 animate-spin text-gold" />
+                  <p className="mt-4 text-charcoal/60">Verifying your purchase...</p>
                 </div>
-                <div>
-                  <p className="font-medium text-charcoal">Check your email</p>
-                  <p className="mt-1 text-sm text-charcoal/60">
-                      We have sent a confirmation email with your download link.
+              ) : error ? (
+                <div className="flex flex-col items-center py-8">
+                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-red-100">
+                    <AlertCircle className="h-6 w-6 text-red-600" />
+                  </div>
+                  <p className="mt-4 text-charcoal/70">{error}</p>
+                  <p className="mt-2 text-sm text-charcoal/50">
+                    Please contact support at{" "}
+                    <a href="mailto:support@wallstreetplaybook.com" className="text-navy hover:text-gold">
+                      support@wallstreetplaybook.com
+                    </a>
                   </p>
                 </div>
-              </li>
-              
-              <li className="flex items-start gap-4">
-                <div className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-lg bg-gold/10">
-                  <Download className="h-4 w-4 text-gold" />
+              ) : sessionData ? (
+                <>
+                  <h2 className="text-lg font-semibold text-navy text-left">Download Your Playbook</h2>
+                  
+                  <div className="mt-6 p-6 rounded-xl bg-gold/10 border border-gold/30">
+                    <div className="flex items-center gap-4">
+                      <div className="flex h-14 w-14 items-center justify-center rounded-xl bg-gold">
+                        <FileText className="h-7 w-7 text-navy" />
+                      </div>
+                      <div className="flex-1 text-left">
+                        <p className="font-semibold text-navy">{sessionData.productName}</p>
+                        <p className="text-sm text-charcoal/60">PDF • Ready to download</p>
+                      </div>
+                    </div>
+                    
+                    <button
+                      onClick={handleDownload}
+                      disabled={downloading}
+                      className="mt-6 w-full flex items-center justify-center gap-2 rounded-xl bg-navy px-6 py-4 text-base font-semibold text-white transition-colors hover:bg-gold hover:text-navy disabled:opacity-50"
+                    >
+                      {downloading ? (
+                        <>
+                          <Loader2 className="h-5 w-5 animate-spin" />
+                          Downloading...
+                        </>
+                      ) : (
+                        <>
+                          <Download className="h-5 w-5" />
+                          Download PDF
+                        </>
+                      )}
+                    </button>
+                  </div>
+
+                  <ul className="mt-8 space-y-3 text-left">
+                    <li className="flex items-start gap-3">
+                      <CheckCircle className="h-5 w-5 text-green-500 flex-shrink-0 mt-0.5" />
+                      <span className="text-sm text-charcoal/70">Download link never expires — come back anytime</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <CheckCircle className="h-5 w-5 text-green-500 flex-shrink-0 mt-0.5" />
+                      <span className="text-sm text-charcoal/70">Free updates included — you'll get the latest version</span>
+                    </li>
+                    <li className="flex items-start gap-3">
+                      <Mail className="h-5 w-5 text-gold flex-shrink-0 mt-0.5" />
+                      <span className="text-sm text-charcoal/70">
+                        Confirmation sent to <strong>{sessionData.customerEmail}</strong>
+                      </span>
+                    </li>
+                  </ul>
+                </>
+              ) : (
+                <div className="text-left">
+                  <h2 className="text-lg font-semibold text-navy">What happens next?</h2>
+                  <ul className="mt-6 space-y-4">
+                    <li className="flex items-start gap-4">
+                      <div className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-lg bg-gold/10">
+                        <Mail className="h-4 w-4 text-gold" />
+                      </div>
+                      <div>
+                        <p className="font-medium text-charcoal">Check your email</p>
+                        <p className="mt-1 text-sm text-charcoal/60">
+                          We have sent a confirmation email with your download link.
+                        </p>
+                      </div>
+                    </li>
+                    <li className="flex items-start gap-4">
+                      <div className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded-lg bg-gold/10">
+                        <Download className="h-4 w-4 text-gold" />
+                      </div>
+                      <div>
+                        <p className="font-medium text-charcoal">Download your materials</p>
+                        <p className="mt-1 text-sm text-charcoal/60">
+                          Click the download link in your email to access your PDF.
+                        </p>
+                      </div>
+                    </li>
+                  </ul>
                 </div>
-                <div>
-                  <p className="font-medium text-charcoal">Download your materials</p>
-                  <p className="mt-1 text-sm text-charcoal/60">
-                      Click the download link in your email to access your PDF.
-                  </p>
-                </div>
-              </li>
-            </ul>
+              )}
             </div>
           )}
 

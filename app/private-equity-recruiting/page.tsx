@@ -323,7 +323,7 @@ export default function PrivateEquityRecruitingPage() {
                   href="/playbooks/pe-recruiting-playbook"
                   className="mt-6 inline-flex items-center gap-2 rounded-xl bg-gold px-6 py-3 text-sm font-semibold text-navy hover:bg-white transition-colors"
                 >
-                  Get the PE Playbook — $167
+                  Get the PE Playbook — $97
                   <ArrowRight className="h-4 w-4" />
                 </Link>
               </div>

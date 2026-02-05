@@ -4,8 +4,9 @@ import { Navbar } from "@/components/layout/navbar"
 import { Footer } from "@/components/layout/footer"
 import { playbooks } from "@/lib/data"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
-import { Check, Shield, Download, RefreshCw, ArrowLeft, Lock } from "lucide-react"
+import { Check, Shield, Download, RefreshCw, ArrowLeft, Lock, BookOpen } from "lucide-react"
 import { BuyButton } from "@/components/buy-button"
+import { PEPlaybookPreview } from "@/components/playbook-preview"
 import type { Metadata } from "next"
 
 interface PlaybookPageProps {
@@ -158,6 +159,21 @@ export default async function PlaybookPage({ params }: PlaybookPageProps) {
                     ))}
                   </ul>
                 </div>
+
+                {/* Preview Section - PE Playbook */}
+                {playbook.slug === 'pe-recruiting-playbook' && (
+                  <div className="rounded-xl border border-border bg-white p-8 shadow-sm">
+                    <div className="flex items-center gap-2 mb-2">
+                      <BookOpen className="h-5 w-5 text-gold" />
+                      <h2 className="text-xl font-semibold text-navy">Look Inside</h2>
+                    </div>
+                    <div className="mt-2 h-1 w-10 bg-gold" />
+                    <p className="mt-4 text-sm text-charcoal/60 mb-6">
+                      Preview the first 6 pages. Click the expand icon for a larger view.
+                    </p>
+                    <PEPlaybookPreview />
+                  </div>
+                )}
 
                 {/* Excerpt Preview */}
                 <div className="rounded-xl border border-border bg-white p-8 shadow-sm">
