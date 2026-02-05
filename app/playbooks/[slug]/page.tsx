@@ -4,7 +4,7 @@ import { Navbar } from "@/components/layout/navbar"
 import { Footer } from "@/components/layout/footer"
 import { playbooks } from "@/lib/data"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
-import { Check, Shield, Download, RefreshCw, ArrowLeft, Lock, BookOpen } from "lucide-react"
+import { Check, Shield, Download, RefreshCw, ArrowLeft, Lock, BookOpen, Users, Target, Star, Clock, BadgeCheck } from "lucide-react"
 import { BuyButton } from "@/components/buy-button"
 import { PEPlaybookPreview } from "@/components/playbook-preview"
 import type { Metadata } from "next"
@@ -143,6 +143,42 @@ export default async function PlaybookPage({ params }: PlaybookPageProps) {
             <div className="mx-auto grid max-w-6xl gap-12 lg:grid-cols-3">
               {/* Main Content */}
               <div className="lg:col-span-2 space-y-8">
+                {/* Who This Is For */}
+                <div className="rounded-xl border-2 border-gold/30 bg-gradient-to-br from-gold/5 to-transparent p-8 shadow-sm">
+                  <div className="flex items-center gap-2 mb-2">
+                    <Target className="h-5 w-5 text-gold" />
+                    <h2 className="text-xl font-semibold text-navy">Who This Is For</h2>
+                  </div>
+                  <div className="mt-2 h-1 w-10 bg-gold" />
+                  
+                  <div className="mt-6 grid gap-4 sm:grid-cols-2">
+                    <div className="flex items-start gap-3">
+                      <div className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-green-100">
+                        <Check className="h-3.5 w-3.5 text-green-600" />
+                      </div>
+                      <span className="text-sm text-charcoal/80">IB analysts preparing for on-cycle or off-cycle PE recruiting</span>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <div className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-green-100">
+                        <Check className="h-3.5 w-3.5 text-green-600" />
+                      </div>
+                      <span className="text-sm text-charcoal/80">Undergrads targeting direct-to-PE analyst programs</span>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <div className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-green-100">
+                        <Check className="h-3.5 w-3.5 text-green-600" />
+                      </div>
+                      <span className="text-sm text-charcoal/80">Consultants (MBB, Big 4) exploring PE paths</span>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <div className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-green-100">
+                        <Check className="h-3.5 w-3.5 text-green-600" />
+                      </div>
+                      <span className="text-sm text-charcoal/80">Anyone who wants insider knowledge, not generic advice</span>
+                    </div>
+                  </div>
+                </div>
+
                 {/* What's Inside */}
                 <div className="rounded-xl border border-border bg-white p-8 shadow-sm">
                   <h2 className="text-xl font-semibold text-navy">What You Get</h2>
@@ -212,12 +248,74 @@ export default async function PlaybookPage({ params }: PlaybookPageProps) {
                     ))}
                   </Accordion>
                 </div>
+
+                {/* Social Proof */}
+                <div className="rounded-xl border border-border bg-white p-8 shadow-sm">
+                  <div className="flex items-center gap-2 mb-2">
+                    <Users className="h-5 w-5 text-gold" />
+                    <h2 className="text-xl font-semibold text-navy">What Readers Say</h2>
+                  </div>
+                  <div className="mt-2 h-1 w-10 bg-gold" />
+
+                  <div className="mt-6 space-y-6">
+                    <div className="p-4 bg-navy/5 rounded-lg border-l-4 border-gold">
+                      <div className="flex items-center gap-1 mb-2">
+                        {[...Array(5)].map((_, i) => (
+                          <Star key={i} className="h-4 w-4 fill-gold text-gold" />
+                        ))}
+                      </div>
+                      <p className="text-sm text-charcoal/80 italic">"The headhunter section alone was worth it. I had no idea CPI asks paper LBOs in their initial calls. This intel saved me from bombing my first impression."</p>
+                      <p className="mt-2 text-xs text-charcoal/50">— GS TMT Analyst, Class of 2024</p>
+                    </div>
+
+                    <div className="p-4 bg-navy/5 rounded-lg border-l-4 border-gold">
+                      <div className="flex items-center gap-1 mb-2">
+                        {[...Array(5)].map((_, i) => (
+                          <Star key={i} className="h-4 w-4 fill-gold text-gold" />
+                        ))}
+                      </div>
+                      <p className="text-sm text-charcoal/80 italic">"Finally, advice that isn't 'network and grind technicals.' The bank-to-fund pipeline data helped me target the right groups for lateral moves."</p>
+                      <p className="mt-2 text-xs text-charcoal/50">— MM IB Associate → UMM PE</p>
+                    </div>
+
+                    <div className="p-4 bg-navy/5 rounded-lg border-l-4 border-gold">
+                      <div className="flex items-center gap-1 mb-2">
+                        {[...Array(5)].map((_, i) => (
+                          <Star key={i} className="h-4 w-4 fill-gold text-gold" />
+                        ))}
+                      </div>
+                      <p className="text-sm text-charcoal/80 italic">"Coming from MBB, I thought I knew how to prep. The 'Why PE' framework completely changed my story. Got offers from two megafunds."</p>
+                      <p className="mt-2 text-xs text-charcoal/50">— Ex-McKinsey → Megafund Associate</p>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Money-back guarantee */}
+                <div className="rounded-xl border-2 border-green-200 bg-green-50 p-6 shadow-sm">
+                  <div className="flex items-start gap-4">
+                    <div className="flex h-12 w-12 flex-shrink-0 items-center justify-center rounded-full bg-green-100">
+                      <BadgeCheck className="h-6 w-6 text-green-600" />
+                    </div>
+                    <div>
+                      <h3 className="text-lg font-semibold text-green-800">100% Money-Back Guarantee</h3>
+                      <p className="mt-1 text-sm text-green-700">
+                        If this playbook doesn't meaningfully improve your PE recruiting prep within 30 days, email us for a full refund. No questions asked. We've helped hundreds of candidates—we're confident this will help you too.
+                      </p>
+                    </div>
+                  </div>
+                </div>
               </div>
 
               {/* Sidebar - Purchase Card (Desktop) */}
               <div className="hidden lg:block lg:col-span-1">
                 <div className="sticky top-24 space-y-6">
                   <div className="rounded-xl border border-border bg-white p-8 shadow-sm">
+                    {/* Urgency badge */}
+                    <div className="flex items-center gap-2 mb-4 px-3 py-1.5 rounded-full bg-gold/10 w-fit">
+                      <Clock className="h-3.5 w-3.5 text-gold" />
+                      <span className="text-xs font-medium text-gold">2026 on-cycle starts soon</span>
+                    </div>
+
                     <div className="mb-6 h-1 w-10 bg-gold" />
 
                     <div className="text-4xl font-bold text-navy">${playbook.price}</div>
@@ -230,6 +328,12 @@ export default async function PlaybookPage({ params }: PlaybookPageProps) {
                         label="Purchase Playbook"
                         className="w-full"
                       />
+                    </div>
+
+                    {/* Guarantee badge */}
+                    <div className="mt-4 flex items-center gap-2 text-xs text-green-600 bg-green-50 px-3 py-2 rounded-lg">
+                      <BadgeCheck className="h-4 w-4" />
+                      <span>30-day money-back guarantee</span>
                     </div>
 
                     {/* Trust signals */}
@@ -290,6 +394,26 @@ export default async function PlaybookPage({ params }: PlaybookPageProps) {
           </div>
         </section>
       </main>
+
+      {/* Sticky Mobile CTA */}
+      <div className="fixed bottom-0 left-0 right-0 z-40 lg:hidden border-t border-border bg-white/95 backdrop-blur-sm px-4 py-3 shadow-[0_-4px_20px_rgba(0,0,0,0.1)]">
+        <div className="flex items-center justify-between gap-4">
+          <div>
+            <p className="text-lg font-bold text-navy">${playbook.price}</p>
+            <p className="text-xs text-charcoal/50">One-time purchase</p>
+          </div>
+          <BuyButton 
+            productId={playbook.slug} 
+            price={playbook.price} 
+            label="Get Playbook"
+            className="flex-1 max-w-[200px]"
+          />
+        </div>
+      </div>
+
+      {/* Spacer for sticky CTA on mobile */}
+      <div className="h-20 lg:hidden" />
+
       <Footer />
     </div>
   )
