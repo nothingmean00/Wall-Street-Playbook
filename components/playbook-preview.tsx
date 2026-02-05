@@ -38,6 +38,29 @@ export function PlaybookPreview({ title, pdfUrl, previewPages = 5, totalPages }:
     }
   }, [])
 
+  // Handle Escape key and body scroll lock
+  useEffect(() => {
+    if (!isOpen) return
+
+    // Lock body scroll
+    const originalOverflow = document.body.style.overflow
+    document.body.style.overflow = 'hidden'
+
+    // Handle Escape key
+    const handleEscape = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') {
+        setIsOpen(false)
+      }
+    }
+    
+    document.addEventListener('keydown', handleEscape)
+
+    return () => {
+      document.body.style.overflow = originalOverflow
+      document.removeEventListener('keydown', handleEscape)
+    }
+  }, [isOpen])
+
   const maxPreviewPage = Math.min(previewPages, totalPages)
 
   const nextPage = () => {
@@ -118,6 +141,9 @@ export function PlaybookPreview({ title, pdfUrl, previewPages = 5, totalPages }:
     <div 
       className="fixed inset-0 z-50 flex items-center justify-center p-2 sm:p-4 bg-black/80"
       onClick={() => setIsOpen(false)}
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="preview-title"
     >
       <div 
         className="bg-white rounded-xl shadow-2xl overflow-hidden w-full max-w-4xl max-h-[95vh] flex flex-col"
@@ -130,7 +156,7 @@ export function PlaybookPreview({ title, pdfUrl, previewPages = 5, totalPages }:
               <BookOpen className="h-4 w-4 text-gold" />
             </div>
             <div>
-              <h3 className="text-white font-semibold text-sm sm:text-base">{title}</h3>
+              <h3 id="preview-title" className="text-white font-semibold text-sm sm:text-base">{title}</h3>
               <p className="text-white/60 text-xs">
                 Page {currentPage} of {totalPages} • Previewing {maxPreviewPage} pages
               </p>
@@ -139,6 +165,7 @@ export function PlaybookPreview({ title, pdfUrl, previewPages = 5, totalPages }:
           <button
             onClick={() => setIsOpen(false)}
             className="p-2 rounded-lg hover:bg-white/10 transition-colors"
+            aria-label="Close preview"
           >
             <X className="h-5 w-5 text-white/70" />
           </button>
