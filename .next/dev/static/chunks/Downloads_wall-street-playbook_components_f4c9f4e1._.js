@@ -12,7 +12,8 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$
 var __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Downloads/wall-street-playbook/node_modules/next/image.js [app-client] (ecmascript)");
 ;
 ;
-function Logo({ className = "h-8 w-8" }) {
+function Logo(param) {
+    let { className = "h-8 w-8" } = param;
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
         src: "/android-chrome-192x192.png",
         alt: "Wall Street Playbook",
@@ -27,7 +28,8 @@ function Logo({ className = "h-8 w-8" }) {
     }, this);
 }
 _c = Logo;
-function LogoMark({ className = "h-6 w-6" }) {
+function LogoMark(param) {
+    let { className = "h-6 w-6" } = param;
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
         src: "/favicon-32x32.png",
         alt: "Wall Street Playbook",
@@ -178,7 +180,7 @@ function Navbar() {
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "hidden lg:flex lg:items-center lg:gap-4",
                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
-                            href: "/submit-resume",
+                            href: "/submit-resume?service=resume-review",
                             className: "group relative rounded-xl bg-gold px-6 py-2.5 text-sm font-semibold text-navy overflow-hidden transition-all hover:shadow-lg hover:shadow-gold/25",
                             children: [
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -303,7 +305,7 @@ function Navbar() {
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                     className: "pt-4 mt-4 border-t border-white/10",
                                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
-                                        href: "/submit-resume",
+                                        href: "/submit-resume?service=resume-review",
                                         className: "flex items-center justify-center gap-2 rounded-xl bg-gold px-6 py-4 text-base font-semibold text-navy transition-all hover:bg-white",
                                         onClick: ()=>setMobileMenuOpen(false),
                                         children: [
@@ -375,7 +377,8 @@ var _s = __turbopack_context__.k.signature();
 "use client";
 ;
 ;
-function EmailCapture({ variant = "inline", className = "" }) {
+function EmailCapture(param) {
+    let { variant = "inline", className = "" } = param;
     _s();
     const [email, setEmail] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])("");
     const [status, setStatus] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])("idle");
@@ -1059,7 +1062,7 @@ function Footer() {
                                             href: "https://techsalesplaybook.com",
                                             target: "_blank",
                                             rel: "noopener noreferrer",
-                                            className: "text-white/40 hover:text-gold transition-colors",
+                                            className: "text-white/50 hover:text-gold transition-colors",
                                             children: "Tech Sales Playbook"
                                         }, void 0, false, {
                                             fileName: "[project]/Downloads/wall-street-playbook/components/layout/footer.tsx",
@@ -1190,9 +1193,10 @@ function JobBoard() {
         fetchJobs();
     };
     const filteredJobs = jobs.filter((job)=>{
+        var _job_description;
         if (!searchQuery) return true;
         const query = searchQuery.toLowerCase();
-        return job.title.toLowerCase().includes(query) || job.company.toLowerCase().includes(query) || job.description?.toLowerCase().includes(query);
+        return job.title.toLowerCase().includes(query) || job.company.toLowerCase().includes(query) || ((_job_description = job.description) === null || _job_description === void 0 ? void 0 : _job_description.toLowerCase().includes(query));
     });
     const getCategoryColor = (category)=>{
         const colors = {

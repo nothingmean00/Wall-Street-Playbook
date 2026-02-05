@@ -372,9 +372,11 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$
 var __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$arrow$2d$right$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ArrowRight$3e$__ = __turbopack_context__.i("[project]/Downloads/wall-street-playbook/node_modules/lucide-react/dist/esm/icons/arrow-right.js [app-client] (ecmascript) <export default as ArrowRight>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$check$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Check$3e$__ = __turbopack_context__.i("[project]/Downloads/wall-street-playbook/node_modules/lucide-react/dist/esm/icons/check.js [app-client] (ecmascript) <export default as Check>");
 var __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$loader$2d$circle$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Loader2$3e$__ = __turbopack_context__.i("[project]/Downloads/wall-street-playbook/node_modules/lucide-react/dist/esm/icons/loader-circle.js [app-client] (ecmascript) <export default as Loader2>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f40$vercel$2f$analytics$2f$dist$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Downloads/wall-street-playbook/node_modules/@vercel/analytics/dist/index.mjs [app-client] (ecmascript)");
 ;
 var _s = __turbopack_context__.k.signature();
 "use client";
+;
 ;
 ;
 function EmailCapture(param) {
@@ -405,6 +407,10 @@ function EmailCapture(param) {
             if (!response.ok) {
                 throw new Error("Failed to subscribe");
             }
+            // Track successful subscription
+            (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f40$vercel$2f$analytics$2f$dist$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["track"])("email_subscribed", {
+                source: variant
+            });
             setStatus("success");
             setEmail("");
         } catch (error) {
@@ -420,7 +426,7 @@ function EmailCapture(param) {
                     className: "h-5 w-5"
                 }, void 0, false, {
                     fileName: "[project]/Downloads/wall-street-playbook/components/email-capture.tsx",
-                    lineNumber: 50,
+                    lineNumber: 54,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
@@ -428,13 +434,13 @@ function EmailCapture(param) {
                     children: "You're subscribed!"
                 }, void 0, false, {
                     fileName: "[project]/Downloads/wall-street-playbook/components/email-capture.tsx",
-                    lineNumber: 51,
+                    lineNumber: 55,
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/Downloads/wall-street-playbook/components/email-capture.tsx",
-            lineNumber: 49,
+            lineNumber: 53,
             columnNumber: 7
         }, this);
     }
@@ -455,7 +461,7 @@ function EmailCapture(param) {
                             disabled: status === "loading"
                         }, void 0, false, {
                             fileName: "[project]/Downloads/wall-street-playbook/components/email-capture.tsx",
-                            lineNumber: 60,
+                            lineNumber: 64,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -466,7 +472,7 @@ function EmailCapture(param) {
                                 className: "h-4 w-4 animate-spin"
                             }, void 0, false, {
                                 fileName: "[project]/Downloads/wall-street-playbook/components/email-capture.tsx",
-                                lineNumber: 74,
+                                lineNumber: 78,
                                 columnNumber: 15
                             }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Fragment"], {
                                 children: [
@@ -475,20 +481,20 @@ function EmailCapture(param) {
                                         className: "h-4 w-4"
                                     }, void 0, false, {
                                         fileName: "[project]/Downloads/wall-street-playbook/components/email-capture.tsx",
-                                        lineNumber: 78,
+                                        lineNumber: 82,
                                         columnNumber: 17
                                     }, this)
                                 ]
                             }, void 0, true)
                         }, void 0, false, {
                             fileName: "[project]/Downloads/wall-street-playbook/components/email-capture.tsx",
-                            lineNumber: 68,
+                            lineNumber: 72,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/Downloads/wall-street-playbook/components/email-capture.tsx",
-                    lineNumber: 59,
+                    lineNumber: 63,
                     columnNumber: 9
                 }, this),
                 status === "error" && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -496,7 +502,7 @@ function EmailCapture(param) {
                     children: errorMessage
                 }, void 0, false, {
                     fileName: "[project]/Downloads/wall-street-playbook/components/email-capture.tsx",
-                    lineNumber: 84,
+                    lineNumber: 88,
                     columnNumber: 11
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -504,13 +510,13 @@ function EmailCapture(param) {
                     children: "Free recruiting insights. No spam. Unsubscribe anytime."
                 }, void 0, false, {
                     fileName: "[project]/Downloads/wall-street-playbook/components/email-capture.tsx",
-                    lineNumber: 86,
+                    lineNumber: 90,
                     columnNumber: 9
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/Downloads/wall-street-playbook/components/email-capture.tsx",
-            lineNumber: 58,
+            lineNumber: 62,
             columnNumber: 7
         }, this);
     }
@@ -524,7 +530,7 @@ function EmailCapture(param) {
                     children: "Get recruiting insights"
                 }, void 0, false, {
                     fileName: "[project]/Downloads/wall-street-playbook/components/email-capture.tsx",
-                    lineNumber: 96,
+                    lineNumber: 100,
                     columnNumber: 9
                 }, this),
                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -539,7 +545,7 @@ function EmailCapture(param) {
                             disabled: status === "loading"
                         }, void 0, false, {
                             fileName: "[project]/Downloads/wall-street-playbook/components/email-capture.tsx",
-                            lineNumber: 98,
+                            lineNumber: 102,
                             columnNumber: 11
                         }, this),
                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -550,18 +556,18 @@ function EmailCapture(param) {
                                 className: "h-4 w-4 animate-spin"
                             }, void 0, false, {
                                 fileName: "[project]/Downloads/wall-street-playbook/components/email-capture.tsx",
-                                lineNumber: 112,
+                                lineNumber: 116,
                                 columnNumber: 15
                             }, this) : "Join"
                         }, void 0, false, {
                             fileName: "[project]/Downloads/wall-street-playbook/components/email-capture.tsx",
-                            lineNumber: 106,
+                            lineNumber: 110,
                             columnNumber: 11
                         }, this)
                     ]
                 }, void 0, true, {
                     fileName: "[project]/Downloads/wall-street-playbook/components/email-capture.tsx",
-                    lineNumber: 97,
+                    lineNumber: 101,
                     columnNumber: 9
                 }, this),
                 status === "error" && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -569,13 +575,13 @@ function EmailCapture(param) {
                     children: errorMessage
                 }, void 0, false, {
                     fileName: "[project]/Downloads/wall-street-playbook/components/email-capture.tsx",
-                    lineNumber: 119,
+                    lineNumber: 123,
                     columnNumber: 11
                 }, this)
             ]
         }, void 0, true, {
             fileName: "[project]/Downloads/wall-street-playbook/components/email-capture.tsx",
-            lineNumber: 95,
+            lineNumber: 99,
             columnNumber: 7
         }, this);
     }
@@ -593,7 +599,7 @@ function EmailCapture(param) {
                 disabled: status === "loading"
             }, void 0, false, {
                 fileName: "[project]/Downloads/wall-street-playbook/components/email-capture.tsx",
-                lineNumber: 128,
+                lineNumber: 132,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -604,18 +610,18 @@ function EmailCapture(param) {
                     className: "h-4 w-4 animate-spin"
                 }, void 0, false, {
                     fileName: "[project]/Downloads/wall-street-playbook/components/email-capture.tsx",
-                    lineNumber: 142,
+                    lineNumber: 146,
                     columnNumber: 11
                 }, this) : "Subscribe"
             }, void 0, false, {
                 fileName: "[project]/Downloads/wall-street-playbook/components/email-capture.tsx",
-                lineNumber: 136,
+                lineNumber: 140,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/Downloads/wall-street-playbook/components/email-capture.tsx",
-        lineNumber: 127,
+        lineNumber: 131,
         columnNumber: 5
     }, this);
 }
