@@ -1,31 +1,52 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { getDb } from '@/lib/db'
 import { sendContactConfirmation, sendContactNotification } from '@/lib/email'
+import { rateLimit, getClientIp } from '@/lib/rate-limit'
+import { contactSchema, sanitizeHtml } from '@/lib/validation'
 
 export async function POST(request: NextRequest) {
-  try {
-    const { firstName, lastName, email, subject, message } = await request.json()
+  // Rate limit: 3 requests per 60 seconds per IP
+  const ip = getClientIp(request)
+  const limiter = rateLimit(`contact:${ip}`, { maxRequests: 3, windowSeconds: 60 })
 
-    // Validation
-    if (!email || !message) {
+  if (!limiter.success) {
+    return NextResponse.json(
+      { error: 'Too many requests. Please try again later.' },
+      { status: 429 }
+    )
+  }
+
+  try {
+    const body = await request.json()
+    const parsed = contactSchema.safeParse(body)
+
+    if (!parsed.success) {
       return NextResponse.json(
         { error: 'Email and message are required' },
         { status: 400 }
       )
     }
 
+    const { firstName, lastName, email, subject, message } = parsed.data
+
     // Insert into database
     const sql = getDb()
     await sql`
       INSERT INTO contact_submissions (first_name, last_name, email, subject, message)
-      VALUES (${firstName}, ${lastName}, ${email.toLowerCase()}, ${subject}, ${message})
+      VALUES (${firstName}, ${lastName}, ${email}, ${subject}, ${message})
     `
 
-    // Send emails
+    // Send emails with sanitized content
     try {
       await Promise.all([
-        sendContactConfirmation(email, firstName || 'there'),
-        sendContactNotification({ firstName, lastName, email, subject, message }),
+        sendContactConfirmation(email, sanitizeHtml(firstName) || 'there'),
+        sendContactNotification({
+          firstName: sanitizeHtml(firstName),
+          lastName: sanitizeHtml(lastName),
+          email,
+          subject: sanitizeHtml(subject),
+          message: sanitizeHtml(message),
+        }),
       ])
     } catch (emailError) {
       console.error('Failed to send contact emails:', emailError)
@@ -41,4 +62,3 @@ export async function POST(request: NextRequest) {
     )
   }
 }
-

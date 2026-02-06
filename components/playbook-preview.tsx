@@ -272,3 +272,15 @@ export function PEPlaybookPreview() {
     />
   )
 }
+
+// IB Technical Interview Guide Preview - Using actual PDF
+export function IBTechnicalPreview() {
+  return (
+    <PlaybookPreview
+      title="IB Technical Interview Guide"
+      pdfUrl="https://53r2eh0lojknhqsa.public.blob.vercel-storage.com/IB-Technical-Interview-Guide.pdf"
+      previewPages={6}
+      totalPages={87}
+    />
+  )
+}

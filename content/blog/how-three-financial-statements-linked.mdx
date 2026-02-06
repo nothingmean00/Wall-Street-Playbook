@@ -1,0 +1,138 @@
+---
+title: "How the 3 Financial Statements Are Linked (With Examples)"
+summary: "The #1 accounting question in finance interviews. Walk through the exact logic of how income statement, balance sheet, and cash flow statement connect—with the coffee shop example interviewers love."
+category: "Interview Prep"
+readTime: "14 min read"
+publishedAt: "2026-02-01"
+author: "Wall Street Playbook"
+tags: ["accounting", "financial statements", "investment banking interview", "technical interview", "income statement", "balance sheet", "cash flow"]
+---
+
+"Walk me through how the three financial statements are linked."
+
+This is the single most common opening question in investment banking interviews. It's asked at Goldman, Morgan Stanley, Evercore, Lazard—every firm, every time. If you stumble here, the interview is effectively over before it begins.
+
+Here's how to nail it, plus the deeper logic that separates good answers from great ones.
+
+## The 30-Second Answer
+
+**Net income** from the bottom of the income statement flows to the top of the cash flow statement. You then adjust for non-cash charges (like D&A) and changes in working capital to get **cash flow from operations**. After accounting for investing and financing activities, you arrive at the **net change in cash**, which updates the cash line on the balance sheet.
+
+Meanwhile, net income also flows to **retained earnings** on the balance sheet through shareholders' equity. And the balance sheet must always balance: **Assets = Liabilities + Equity**.
+
+That's the answer that gets you a check mark. But here's what actually impresses interviewers.
+
+## The Deep Dive: Building the Intuition
+
+### Start With a Business Transaction
+
+Imagine you start a coffee shop. You invest $500K of equity and borrow $300K from a bank. Day one, your balance sheet looks like this:
+
+| Assets | Liabilities + Equity |
+|--------|---------------------|
+| Cash: $800K | Debt: $300K |
+| | Equity: $500K |
+| **Total: $800K** | **Total: $800K** |
+
+Now you buy an espresso machine for $100K. Cash decreases by $100K, PP&E increases by $100K. The balance sheet still balances—you've just shifted the composition of assets.
+
+### The Income Statement Kicks In
+
+In Year 1, your coffee shop generates:
+- **Revenue:** $400K
+- **COGS:** $150K  
+- **SG&A (rent, salaries):** $100K
+- **Depreciation:** $20K (straight-line on $100K machine over 5 years)
+- **Interest expense:** $15K (5% on $300K loan)
+- **Tax (25%):** $28.75K
+- **Net Income: $86.25K**
+
+### How This Flows to the Cash Flow Statement
+
+Start with net income: **$86.25K**
+
+**Add back depreciation:** +$20K. This is crucial—D&A is a non-cash expense. It reduced net income, but no actual cash left the building. We add it back to reflect the true cash generated.
+
+> **RED FLAG:** A common interview mistake is saying "D&A is added back because it's not a real expense." Wrong. It IS a real expense—it represents the wear and tear on your assets. It's added back because it's *non-cash*. The cash already left when you bought the machine.
+
+**Adjust for working capital changes.** If customers owe you $30K (accounts receivable increased), that's revenue you booked but haven't collected. Subtract $30K. If you owe suppliers $10K more than last year (accounts payable increased), that's cash you haven't spent yet. Add $10K.
+
+**Cash from operations:** $86.25K + $20K - $30K + $10K = **$86.25K**
+
+### Investing and Financing Activities
+
+- **Investing:** You bought $50K more equipment. Cash flow from investing: **-$50K**
+- **Financing:** You repaid $30K of principal on your loan. Cash flow from financing: **-$30K**
+
+**Net change in cash:** $86.25K - $50K - $30K = **$6.25K**
+
+### The Balance Sheet at Year End
+
+Cash goes from $800K to $806.25K (up by $6.25K). PP&E goes from $100K to $130K (bought $50K, depreciated $20K). Debt goes from $300K to $270K. Retained earnings go from $0 to $86.25K (net income added).
+
+Everything balances. **That's the linkage.**
+
+## The Follow-Up Questions They'll Ask
+
+### "If depreciation increases by $10, walk me through the impact."
+
+This is where interviewers separate the memorizers from the thinkers.
+
+1. **Income statement:** D&A up $10 → pre-tax income down $10 → taxes saved $10 × 25% = $2.50 → net income down **$7.50**
+2. **Cash flow statement:** Net income down $7.50, but D&A added back is up $10 → net cash effect is **+$2.50**
+3. **Balance sheet:** Cash up $2.50. PP&E down $10 (more accumulated depreciation). Total assets down $7.50. Retained earnings down $7.50 (from lower net income). Still balances.
+
+The key insight: **Depreciation is a tax shield.** The cash benefit is D&A × tax rate.
+
+### "What if revenue increases by $100 but the customer hasn't paid?"
+
+1. **Income statement:** Revenue up $100 → net income up $75 (assuming 25% tax)
+2. **Cash flow statement:** Net income up $75, but AR increased by $100 → net cash impact is **-$25**
+3. **Balance sheet:** AR up $100, cash down $25. Total assets up $75. Retained earnings up $75. Balances.
+
+The takeaway: **Revenue ≠ Cash.** Accrual accounting means you record revenue when earned, not when collected. This is why working capital adjustments exist.
+
+## Common Interview Traps
+
+### Trap 1: "Which statement is most important?"
+
+The interviewer wants to see you think, not regurgitate. A strong answer:
+
+*"It depends on the context. A lender cares most about the cash flow statement—can the company service its debt? A growth investor focuses on the income statement—is the company generating increasing profitability? But ultimately, the balance sheet is the foundation because it captures the cumulative financial position."*
+
+### Trap 2: "Can you have positive net income and go bankrupt?"
+
+**Yes.** This is the classic accrual vs. cash trap. A company can book $10M in revenue (raising net income) but if customers don't pay, cash flow is negative. If debt repayments come due and there's no cash to service them, the company defaults—even with a "profitable" income statement.
+
+### Trap 3: "What happens if inventory increases?"
+
+Inventory is a working capital item. If inventory increases by $50K, that's cash you've spent buying inventory that hasn't been sold yet. It's an *increase in current assets*, which is a **use of cash**. Cash flow from operations decreases by $50K.
+
+## The 3-Statement Framework Cheat Sheet
+
+| Transaction | Income Statement | Cash Flow Statement | Balance Sheet |
+|---|---|---|---|
+| Revenue (collected) | Revenue ↑, NI ↑ | CFO ↑ | Cash ↑, RE ↑ |
+| Revenue (uncollected) | Revenue ↑, NI ↑ | NI ↑ but AR offset | AR ↑, RE ↑ |
+| Depreciation ↑ | NI ↓ | NI ↓ but D&A add-back | PP&E ↓, RE ↓ |
+| CapEx | No direct effect | CFI ↓ | Cash ↓, PP&E ↑ |
+| Debt repayment | No direct effect | CFF ↓ | Cash ↓, Debt ↓ |
+| Stock issuance | No direct effect | CFF ↑ | Cash ↑, Equity ↑ |
+
+## How to Practice This
+
+The best way to internalize these concepts is to trace transactions through all three statements yourself. Pick any scenario—a company buys equipment, issues debt, records revenue—and walk through each statement.
+
+Our [IB Technical Interview Guide](/playbooks/ib-technical-guide) includes a complete "build a business from scratch" walkthrough that takes you through dozens of transactions with full three-statement impacts. Every question is tagged by interview frequency so you know exactly what to prioritize.
+
+---
+
+### Related Reading
+
+- [Accounting Interview Questions for Investment Banking](/blog/accounting-interview-questions-investment-banking) — The 12 must-know questions with model answers
+- [Walk Me Through a DCF: The Perfect Answer](/blog/walk-me-through-dcf-perfect-answer) — The next most common technical question
+- [Enterprise Value vs. Equity Value Explained](/blog/enterprise-value-vs-equity-value-explained) — Why this distinction matters for every valuation question
+
+*Want all 6 chapters of technical prep in one guide? Get the [IB Technical Interview Guide](/playbooks/ib-technical-guide) — 87 pages, every question tagged by frequency, with dual-format answers.*
+
+*Preparing for PE interviews too? Our [2026 PE Recruiting Playbook](/playbooks/pe-recruiting-playbook) covers the recruiting timeline, headhunters, and what funds actually test.*

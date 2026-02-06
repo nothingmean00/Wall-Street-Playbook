@@ -26,6 +26,62 @@ function ExitIntentPopup() {
     const [email, setEmail] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])("");
     const [status, setStatus] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])("idle");
     const [hasShown, setHasShown] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
+    const modalRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRef"])(null);
+    const closeButtonRef = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRef"])(null);
+    const previouslyFocused = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useRef"])(null);
+    // Focus trap: cycle focus within the modal
+    const handleKeyDown = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useCallback"])({
+        "ExitIntentPopup.useCallback[handleKeyDown]": (e)=>{
+            if (!isOpen) return;
+            if (e.key === "Escape") {
+                setIsOpen(false);
+                return;
+            }
+            if (e.key !== "Tab" || !modalRef.current) return;
+            const focusable = modalRef.current.querySelectorAll('button, [href], input, select, textarea, [tabindex]:not([tabindex="-1"])');
+            const first = focusable[0];
+            const last = focusable[focusable.length - 1];
+            if (e.shiftKey) {
+                if (document.activeElement === first) {
+                    e.preventDefault();
+                    last === null || last === void 0 ? void 0 : last.focus();
+                }
+            } else {
+                if (document.activeElement === last) {
+                    e.preventDefault();
+                    first === null || first === void 0 ? void 0 : first.focus();
+                }
+            }
+        }
+    }["ExitIntentPopup.useCallback[handleKeyDown]"], [
+        isOpen
+    ]);
+    // Manage focus when modal opens/closes
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
+        "ExitIntentPopup.useEffect": ()=>{
+            if (isOpen) {
+                previouslyFocused.current = document.activeElement;
+                // Small delay to let the modal render
+                requestAnimationFrame({
+                    "ExitIntentPopup.useEffect": ()=>{
+                        var _closeButtonRef_current;
+                        return (_closeButtonRef_current = closeButtonRef.current) === null || _closeButtonRef_current === void 0 ? void 0 : _closeButtonRef_current.focus();
+                    }
+                }["ExitIntentPopup.useEffect"]);
+                document.addEventListener("keydown", handleKeyDown);
+            } else {
+                var _previouslyFocused_current;
+                document.removeEventListener("keydown", handleKeyDown);
+                (_previouslyFocused_current = previouslyFocused.current) === null || _previouslyFocused_current === void 0 ? void 0 : _previouslyFocused_current.focus();
+            }
+            return ({
+                "ExitIntentPopup.useEffect": ()=>document.removeEventListener("keydown", handleKeyDown)
+            })["ExitIntentPopup.useEffect"];
+        }
+    }["ExitIntentPopup.useEffect"], [
+        isOpen,
+        handleKeyDown
+    ]);
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
         "ExitIntentPopup.useEffect": ()=>{
             // Check if we've already shown the popup this session
@@ -41,7 +97,6 @@ function ExitIntentPopup() {
                         setIsOpen(true);
                         setHasShown(true);
                         sessionStorage.setItem("exitPopupShown", "true");
-                        // Track popup shown
                         (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f40$vercel$2f$analytics$2f$dist$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["track"])("exit_popup_shown", {
                             trigger: "mouse_leave"
                         });
@@ -55,7 +110,6 @@ function ExitIntentPopup() {
                         setIsOpen(true);
                         setHasShown(true);
                         sessionStorage.setItem("exitPopupShown", "true");
-                        // Track popup shown
                         (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f40$vercel$2f$analytics$2f$dist$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["track"])("exit_popup_shown", {
                             trigger: "timeout"
                         });
@@ -92,7 +146,6 @@ function ExitIntentPopup() {
                 })
             });
             if (!response.ok) throw new Error("Failed");
-            // Track successful subscription from exit popup
             (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f40$vercel$2f$analytics$2f$dist$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["track"])("email_subscribed", {
                 source: "exit_popup"
             });
@@ -104,31 +157,39 @@ function ExitIntentPopup() {
     if (!isOpen) return null;
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
         className: "fixed inset-0 z-50 flex items-center justify-center p-4",
+        role: "dialog",
+        "aria-modal": "true",
+        "aria-labelledby": "exit-popup-title",
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                 className: "absolute inset-0 bg-navy/80 backdrop-blur-sm",
-                onClick: ()=>setIsOpen(false)
+                onClick: ()=>setIsOpen(false),
+                "aria-hidden": "true"
             }, void 0, false, {
                 fileName: "[project]/Downloads/wall-street-playbook/components/exit-intent-popup.tsx",
-                lineNumber: 84,
+                lineNumber: 137,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                ref: modalRef,
                 className: "relative w-full max-w-lg bg-white rounded-2xl shadow-2xl overflow-hidden animate-in fade-in zoom-in duration-300",
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                        ref: closeButtonRef,
                         onClick: ()=>setIsOpen(false),
+                        "aria-label": "Close popup",
                         className: "absolute right-4 top-4 p-1 text-charcoal/50 hover:text-charcoal transition-colors z-10",
                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$x$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__X$3e$__["X"], {
-                            className: "h-5 w-5"
+                            className: "h-5 w-5",
+                            "aria-hidden": "true"
                         }, void 0, false, {
                             fileName: "[project]/Downloads/wall-street-playbook/components/exit-intent-popup.tsx",
-                            lineNumber: 96,
+                            lineNumber: 155,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/Downloads/wall-street-playbook/components/exit-intent-popup.tsx",
-                        lineNumber: 92,
+                        lineNumber: 149,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -139,15 +200,16 @@ function ExitIntentPopup() {
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                     className: "mx-auto w-16 h-16 rounded-full bg-green-100 flex items-center justify-center mb-4",
                                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$check$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Check$3e$__["Check"], {
-                                        className: "h-8 w-8 text-green-600"
+                                        className: "h-8 w-8 text-green-600",
+                                        "aria-hidden": "true"
                                     }, void 0, false, {
                                         fileName: "[project]/Downloads/wall-street-playbook/components/exit-intent-popup.tsx",
-                                        lineNumber: 104,
+                                        lineNumber: 163,
                                         columnNumber: 17
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/Downloads/wall-street-playbook/components/exit-intent-popup.tsx",
-                                    lineNumber: 103,
+                                    lineNumber: 162,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
@@ -155,7 +217,7 @@ function ExitIntentPopup() {
                                     children: "You're in!"
                                 }, void 0, false, {
                                     fileName: "[project]/Downloads/wall-street-playbook/components/exit-intent-popup.tsx",
-                                    lineNumber: 106,
+                                    lineNumber: 165,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -163,7 +225,7 @@ function ExitIntentPopup() {
                                     children: "Check your inbox for recruiting insights and free resources."
                                 }, void 0, false, {
                                     fileName: "[project]/Downloads/wall-street-playbook/components/exit-intent-popup.tsx",
-                                    lineNumber: 107,
+                                    lineNumber: 166,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -172,36 +234,38 @@ function ExitIntentPopup() {
                                     children: "Continue browsing"
                                 }, void 0, false, {
                                     fileName: "[project]/Downloads/wall-street-playbook/components/exit-intent-popup.tsx",
-                                    lineNumber: 108,
+                                    lineNumber: 167,
                                     columnNumber: 15
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/Downloads/wall-street-playbook/components/exit-intent-popup.tsx",
-                            lineNumber: 102,
+                            lineNumber: 161,
                             columnNumber: 13
                         }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Fragment"], {
                             children: [
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                     className: "mx-auto w-14 h-14 rounded-xl bg-gold/10 flex items-center justify-center mb-6",
                                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$mail$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Mail$3e$__["Mail"], {
-                                        className: "h-7 w-7 text-gold"
+                                        className: "h-7 w-7 text-gold",
+                                        "aria-hidden": "true"
                                     }, void 0, false, {
                                         fileName: "[project]/Downloads/wall-street-playbook/components/exit-intent-popup.tsx",
-                                        lineNumber: 119,
+                                        lineNumber: 178,
                                         columnNumber: 17
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/Downloads/wall-street-playbook/components/exit-intent-popup.tsx",
-                                    lineNumber: 118,
+                                    lineNumber: 177,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h3", {
+                                    id: "exit-popup-title",
                                     className: "text-2xl sm:text-3xl font-bold text-charcoal text-center mb-3",
                                     children: "Free: 50 Technical Questions PDF"
                                 }, void 0, false, {
                                     fileName: "[project]/Downloads/wall-street-playbook/components/exit-intent-popup.tsx",
-                                    lineNumber: 123,
+                                    lineNumber: 182,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -213,70 +277,89 @@ function ExitIntentPopup() {
                                             children: "Instant download. No credit card."
                                         }, void 0, false, {
                                             fileName: "[project]/Downloads/wall-street-playbook/components/exit-intent-popup.tsx",
-                                            lineNumber: 129,
+                                            lineNumber: 188,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/Downloads/wall-street-playbook/components/exit-intent-popup.tsx",
-                                    lineNumber: 127,
+                                    lineNumber: 186,
                                     columnNumber: 15
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("form", {
                                     onSubmit: handleSubmit,
                                     className: "space-y-4",
+                                    noValidate: true,
                                     children: [
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("label", {
+                                            htmlFor: "exit-popup-email",
+                                            className: "sr-only",
+                                            children: "Email address"
+                                        }, void 0, false, {
+                                            fileName: "[project]/Downloads/wall-street-playbook/components/exit-intent-popup.tsx",
+                                            lineNumber: 195,
+                                            columnNumber: 17
+                                        }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("input", {
+                                            id: "exit-popup-email",
                                             type: "email",
                                             value: email,
                                             onChange: (e)=>setEmail(e.target.value),
                                             placeholder: "Enter your email",
+                                            "aria-describedby": status === "error" ? "exit-popup-error" : undefined,
+                                            "aria-invalid": status === "error",
                                             className: "w-full rounded-lg border border-border bg-off-white px-4 py-3.5 text-charcoal placeholder:text-charcoal/40 focus:border-gold focus:outline-none focus:ring-2 focus:ring-gold/20",
                                             disabled: status === "loading"
                                         }, void 0, false, {
                                             fileName: "[project]/Downloads/wall-street-playbook/components/exit-intent-popup.tsx",
-                                            lineNumber: 136,
+                                            lineNumber: 198,
                                             columnNumber: 17
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
                                             type: "submit",
                                             disabled: status === "loading",
+                                            "aria-busy": status === "loading",
                                             className: "w-full flex items-center justify-center gap-2 rounded-lg bg-navy px-6 py-3.5 font-semibold text-white transition-colors hover:bg-gold hover:text-navy disabled:opacity-50",
                                             children: status === "loading" ? /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$loader$2d$circle$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Loader2$3e$__["Loader2"], {
-                                                className: "h-5 w-5 animate-spin"
+                                                className: "h-5 w-5 animate-spin",
+                                                "aria-hidden": "true"
                                             }, void 0, false, {
                                                 fileName: "[project]/Downloads/wall-street-playbook/components/exit-intent-popup.tsx",
-                                                lineNumber: 150,
+                                                lineNumber: 216,
                                                 columnNumber: 21
                                             }, this) : /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Fragment"], {
                                                 children: [
                                                     "Send Me the PDF",
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$arrow$2d$right$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ArrowRight$3e$__["ArrowRight"], {
-                                                        className: "h-4 w-4"
+                                                        className: "h-4 w-4",
+                                                        "aria-hidden": "true"
                                                     }, void 0, false, {
                                                         fileName: "[project]/Downloads/wall-street-playbook/components/exit-intent-popup.tsx",
-                                                        lineNumber: 154,
+                                                        lineNumber: 220,
                                                         columnNumber: 23
                                                     }, this)
                                                 ]
                                             }, void 0, true)
                                         }, void 0, false, {
                                             fileName: "[project]/Downloads/wall-street-playbook/components/exit-intent-popup.tsx",
-                                            lineNumber: 144,
+                                            lineNumber: 209,
                                             columnNumber: 17
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/Downloads/wall-street-playbook/components/exit-intent-popup.tsx",
-                                    lineNumber: 135,
+                                    lineNumber: 194,
                                     columnNumber: 15
                                 }, this),
                                 status === "error" && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                    id: "exit-popup-error",
+                                    role: "alert",
+                                    "aria-live": "polite",
                                     className: "mt-3 text-sm text-red-500 text-center",
                                     children: "Please enter a valid email address."
                                 }, void 0, false, {
                                     fileName: "[project]/Downloads/wall-street-playbook/components/exit-intent-popup.tsx",
-                                    lineNumber: 161,
+                                    lineNumber: 227,
                                     columnNumber: 17
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
@@ -284,37 +367,38 @@ function ExitIntentPopup() {
                                     children: "No spam. Unsubscribe anytime. We respect your inbox."
                                 }, void 0, false, {
                                     fileName: "[project]/Downloads/wall-street-playbook/components/exit-intent-popup.tsx",
-                                    lineNumber: 166,
+                                    lineNumber: 232,
                                     columnNumber: 15
                                 }, this)
                             ]
                         }, void 0, true)
                     }, void 0, false, {
                         fileName: "[project]/Downloads/wall-street-playbook/components/exit-intent-popup.tsx",
-                        lineNumber: 100,
+                        lineNumber: 159,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "h-1.5 bg-gradient-to-r from-gold via-gold/70 to-gold"
+                        className: "h-1.5 bg-gradient-to-r from-gold via-gold/70 to-gold",
+                        "aria-hidden": "true"
                     }, void 0, false, {
                         fileName: "[project]/Downloads/wall-street-playbook/components/exit-intent-popup.tsx",
-                        lineNumber: 174,
+                        lineNumber: 240,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/Downloads/wall-street-playbook/components/exit-intent-popup.tsx",
-                lineNumber: 90,
+                lineNumber: 144,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/Downloads/wall-street-playbook/components/exit-intent-popup.tsx",
-        lineNumber: 82,
+        lineNumber: 130,
         columnNumber: 5
     }, this);
 }
-_s(ExitIntentPopup, "WEqchyf/IMJz8PA9MnfOCTc9/8o=");
+_s(ExitIntentPopup, "Kk7UzYXppIFHbPa+lX9h7yhucBE=");
 _c = ExitIntentPopup;
 var _c;
 __turbopack_context__.k.register(_c, "ExitIntentPopup");

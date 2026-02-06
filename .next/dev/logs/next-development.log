@@ -1,20 +1,24 @@
-[00:00:02.484] Server  LOG      ✓ Ready in 1900ms
-[00:00:05.506] Server  LOG      ○ Compiling / ...
-[00:00:12.289] Server  WARN    Image with src "/hero-wall-street.png" is using quality "90" which is not configured in images.qualities [75]. Please update your config to [75, 90].
+[00:00:08.084] Server  LOG      ✓ Ready in 5.4s
+[00:00:12.270] Server  LOG      ○ Compiling / ...
+[00:00:34.433] Server  WARN    Image with src "/hero-wall-street.png" is using quality "90" which is not configured in images.qualities [75]. Please update your config to [75, 90].
 Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:00:13.782] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:00:14.650] Browser WARN    Image with src "/hero-wall-street.png" is using quality "90" which is not configured in images.qualities [75]. Please update your config to [75, 90].
+[00:00:41.225] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:43.914] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:00:43.914] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
+[00:00:43.914] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1770334156537}
+[00:02:47.815] Server  LOG      ✓ Compiled in 567ms
+[00:03:00.541] Server  LOG      ✓ Compiled in 6s
+[00:03:22.868] Server  LOG      ✓ Compiled in 227ms
+[00:03:27.769] Server  LOG      ✓ Compiled in 844ms
+[00:03:31.534] Server  LOG      ✓ Compiled in 228ms
+[05:27:11.329] Server  LOG      ✓ Compiled in 500ms
+[05:27:13.092] Browser WARN    Image with src "/hero-wall-street.png" is using quality "90" which is not configured in images.qualities [75]. Please update your config to [75, 90].
 Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:00:15.125] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:00:15.125] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
-[00:00:15.125] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1770271835923}
-[00:00:16.106] Server  LOG     ✅ RAPIDAPI_KEY is set, fetching from Active Jobs DB...
-[00:00:16.389] Server  ERROR   Active Jobs DB error for filter "M&A analyst": 429
-[00:00:16.392] Server  LOG     Fetched 0 live jobs (0 internships, 0 full-time)
-[00:00:16.393] Server  WARN    ⚠️ No live jobs found, falling back to samples
-[00:00:16.748] Browser WARN    Detected `scroll-behavior: smooth` on the `<html>` element. To disable smooth scrolling during route transitions, add `data-scroll-behavior="smooth"` to your <html> element. Learn more: https://nextjs.org/docs/messages/missing-data-scroll-behavior
-[00:01:01.190] Browser LOG     %c[Vercel Web Analytics]%c [event] exit_popup_shown color: rgb(120, 120, 120) color: inherit {"dp":"/","ed":{"trigger":"timeout"},"en":"exit_popup_shown","o":"http://localhost:3000/","r":"","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1770271881096}
-[00:01:45.275] Server  LOG      ✓ Compiled in 456ms
-[00:04:08.363] Server  LOG      ✓ Compiled in 310ms
-[00:04:08.661] Browser WARN    Image with src "/hero-wall-street.png" is using quality "90" which is not configured in images.qualities [70, 70, 75]. Please update your config to [70, 70, 75, 90].
+[05:27:17.702] Server  LOG     ✅ RAPIDAPI_KEY is set, fetching from Active Jobs DB...
+[05:27:17.885] Server  ERROR   Active Jobs DB error for filter "investment banking analyst": 429
+[05:27:17.889] Server  LOG     Fetched 0 live jobs (0 internships, 0 full-time)
+[05:27:17.890] Server  WARN    ⚠️ No live jobs found, falling back to samples
+[05:36:32.550] Server  LOG      ✓ Compiled in 692ms
+[05:36:33.545] Browser WARN    Image with src "/hero-wall-street.png" is using quality "90" which is not configured in images.qualities [70, 70, 70, 70, 75]. Please update your config to [70, 70, 70, 70, 75, 90].
 Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
+[05:40:39.805] Server  LOG      ✓ Compiled in 507ms

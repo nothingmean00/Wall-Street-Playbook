@@ -1,0 +1,160 @@
+---
+title: "Walk Me Through a DCF: The Perfect Interview Answer"
+summary: "The 6-step DCF framework that gets offers at Goldman, Evercore, and Lazard. Includes UFCF formula, terminal value methods, and the common mistakes that get candidates dinged."
+category: "Interview Prep"
+readTime: "16 min read"
+publishedAt: "2026-01-26"
+author: "Wall Street Playbook"
+tags: ["DCF", "valuation", "investment banking interview", "discounted cash flow", "terminal value", "WACC", "free cash flow"]
+---
+
+"Walk me through a DCF."
+
+After the three-statement linkage, this is the most asked technical question in investment banking interviews. It's a gateway question—get it right and you've demonstrated you can think about valuation. Get it wrong and the interviewer moves on.
+
+Here's the 6-step framework that covers every element an interviewer expects, plus the depth that separates good answers from great ones.
+
+## The 30-Second Answer
+
+A DCF values a company based on the present value of its future free cash flows. You project unlevered free cash flow for 5-10 years, calculate a terminal value to capture value beyond the projection period, and discount everything back at the WACC to get enterprise value. Subtract net debt to get equity value. Divide by diluted shares for the implied share price.
+
+That gets you a checkmark. Here's the framework that gets you an offer.
+
+## The 6-Step Framework
+
+### Step 1: Project Unlevered Free Cash Flow (UFCF)
+
+**UFCF = EBIT × (1 - Tax Rate) + D&A - CapEx - Change in Net Working Capital**
+
+Why *unlevered* free cash flow? Because we want cash flow available to ALL capital providers (debt + equity), not just equity holders. This matches the enterprise value we're calculating.
+
+**What drives each component:**
+- **Revenue growth:** Historical trends, industry analysis, management guidance
+- **EBIT margin:** Operating leverage, competition, cost structure
+- **D&A:** Percentage of revenue or tied to PP&E schedule
+- **CapEx:** Maintenance vs. growth capex, as % of revenue
+- **ΔNWC:** Typically modeled as % of revenue change
+
+**Typical projection period:** 5-10 years. Shorter for mature companies, longer for high-growth companies where near-term cash flows differ significantly from steady state.
+
+> **RED FLAG:** A common mistake is using *levered* free cash flow (after interest) in a DCF that discounts at WACC. If you use LFCF, you must discount at the cost of equity. Mixing them gives a wrong answer.
+
+### Step 2: Calculate Terminal Value
+
+Terminal value captures the value of cash flows beyond your projection period. There are two methods:
+
+**Perpetuity Growth Method:**
+
+TV = Final Year UFCF × (1 + g) / (WACC - g)
+
+Where g = long-term growth rate (typically 2-3%, in line with GDP or inflation).
+
+**Exit Multiple Method:**
+
+TV = Final Year EBITDA × Exit EV/EBITDA Multiple
+
+The exit multiple is typically based on comparable company trading multiples.
+
+**Which to use?** Most analysts calculate both and cross-reference. The perpetuity growth method is more theoretically sound; the exit multiple method is more market-grounded. In practice, terminal value often represents 60-80% of total enterprise value.
+
+**Interview follow-up:** *"Why is the terminal value so large?"*
+
+Because you're only projecting 5-10 years of explicit cash flows. The company presumably operates forever, so the terminal value captures decades of future value compressed into a single number. This is also why sensitivity analysis on terminal value assumptions is critical.
+
+### Step 3: Discount to Present Value
+
+Discount each year's UFCF and the terminal value back to today using the WACC:
+
+**PV = CF / (1 + WACC)^n**
+
+Where n = number of years into the future.
+
+**Sum of all present values = Enterprise Value**
+
+For mid-year convention (assuming cash flows occur evenly throughout the year rather than at year-end), use (n - 0.5) instead of n. This is more realistic and slightly increases the valuation.
+
+### Step 4: Calculate WACC
+
+**WACC = (E/V × Re) + (D/V × Rd × (1 - T))**
+
+Where:
+- E/V = equity weight in capital structure
+- D/V = debt weight
+- Re = cost of equity (from CAPM)
+- Rd = cost of debt (yield on company's debt)
+- T = tax rate
+
+The (1-T) on the debt component reflects the **tax shield**—interest is tax-deductible, making debt cheaper than its stated rate.
+
+For a detailed walkthrough of WACC, see [WACC Explained Simply](/blog/wacc-explained-simply-finance-interviews).
+
+### Step 5: Calculate Equity Value
+
+**Equity Value = Enterprise Value - Net Debt**
+
+Net Debt = Total Debt + Preferred Stock + Minority Interest - Cash
+
+This bridges from the value of the *entire business* to the value available to *common shareholders*.
+
+### Step 6: Implied Share Price
+
+**Implied Share Price = Equity Value / Diluted Shares Outstanding**
+
+Compare this to the current trading price. If your DCF-implied price is significantly higher than the current price, the stock may be undervalued (all else being equal).
+
+## The Sensitivity Analysis
+
+Every interviewer expects you to mention this. A DCF is only as good as its assumptions. Run sensitivities on:
+
+1. **WACC vs. Terminal Growth Rate** — These two assumptions drive the majority of the valuation range
+2. **Revenue Growth vs. EBIT Margin** — Tests how operating performance affects value
+3. **Exit Multiple Range** — If using the exit multiple method
+
+A typical sensitivity table shows WACC on one axis (e.g., 8-12%) and terminal growth rate on the other (1-4%), with the implied share price in each cell.
+
+## Common Interview Traps
+
+### "What are the limitations of a DCF?"
+
+Strong answer:
+1. **Highly sensitive to assumptions** — Small changes in WACC or terminal growth dramatically shift the output
+2. **Terminal value dominance** — 60-80% of value comes from TV, which is the least certain part
+3. **Garbage in, garbage out** — Revenue projections for year 7 are anyone's guess
+4. **Less useful for early-stage companies** — Negative or volatile cash flows make projections unreliable
+
+### "When would you NOT use a DCF?"
+
+- **Early-stage companies** with no revenue or unpredictable cash flows
+- **Financial institutions** (banks, insurance companies)—use dividend discount model instead because their cash flows are harder to define
+- **Cyclical companies** where a single projection path is misleading
+
+### "If you could only use one number to check whether a DCF is reasonable, what would it be?"
+
+**The implied terminal multiple.** If you use the perpetuity growth method, back into what EV/EBITDA multiple your terminal value implies. If it's 25x for a mature industrial company, something is wrong. This cross-check catches unreasonable assumptions.
+
+### "Does a DCF give you enterprise value or equity value?"
+
+**Enterprise value.** You're discounting *unlevered* free cash flow at WACC (the blended cost of all capital). To get equity value, subtract net debt. This is a trick question that catches candidates who confuse the two.
+
+## The Framework Cheat Sheet
+
+| Step | What | Formula/Method |
+|------|------|----------------|
+| 1 | Project UFCF | EBIT(1-T) + D&A - CapEx - ΔNWC |
+| 2 | Terminal Value | Perpetuity: UFCF×(1+g)/(WACC-g) or Exit Multiple |
+| 3 | Discount | PV = CF/(1+WACC)^n |
+| 4 | WACC | (E/V×Re) + (D/V×Rd×(1-T)) |
+| 5 | Equity Value | EV - Net Debt |
+| 6 | Share Price | Equity Value / Diluted Shares |
+
+---
+
+### Related Reading
+
+- [WACC Explained Simply for Finance Interviews](/blog/wacc-explained-simply-finance-interviews) — Deep dive into Step 4 of the DCF
+- [Enterprise Value vs. Equity Value Explained](/blog/enterprise-value-vs-equity-value-explained) — Why Steps 5-6 work the way they do
+- [Trading Comps vs. Precedent Transactions](/blog/trading-comps-vs-precedent-transactions) — The other valuation methodologies you'll be asked about
+
+*This DCF framework is from Chapter 3 of our [IB Technical Interview Guide](/playbooks/ib-technical-guide). The full chapter covers WACC edge cases, mid-year convention details, and the terminal value traps that catch experienced candidates. Every question tagged by interview frequency.*
+
+*Get the free [20 Must-Know Technical Questions](/ib-technical-cheat-sheet) cheat sheet — quick-reference answers for your final review session.*

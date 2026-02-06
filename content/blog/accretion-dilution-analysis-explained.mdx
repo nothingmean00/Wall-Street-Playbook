@@ -1,0 +1,167 @@
+---
+title: "Accretion/Dilution Analysis Explained (With M&A Interview Questions)"
+summary: "The P/E rule for stock deals, goodwill and purchase price allocation, stock vs. asset deals, and every major M&A concept tested in banking interviews—with worked examples."
+category: "Interview Prep"
+readTime: "16 min read"
+publishedAt: "2026-01-20"
+author: "Wall Street Playbook"
+tags: ["M&A", "accretion dilution", "merger model", "investment banking interview", "goodwill", "purchase price allocation", "stock deal"]
+---
+
+M&A questions are where IB interviews get serious. The accounting, valuation, and accounting chapters are warm-ups—M&A is where interviewers test whether you can actually think about deals, not just memorize formulas.
+
+The centerpiece of M&A interview questions is accretion/dilution analysis. Here's how it works, why it matters, and the questions you'll face.
+
+## What Is Accretion/Dilution?
+
+When Company A acquires Company B, the combined entity has a new EPS. The fundamental question:
+
+**Is the acquirer's EPS higher (accretive) or lower (dilutive) after the deal?**
+
+- **Accretive:** Combined EPS > Acquirer's standalone EPS → shareholders benefit
+- **Dilutive:** Combined EPS < Acquirer's standalone EPS → shareholders are worse off (at least initially)
+
+Accretion/dilution analysis tells you whether a deal creates or destroys per-share value for the acquirer's shareholders in Year 1.
+
+## The P/E Rule: The Quick Mental Math
+
+This is the shortcut every banker uses for stock deals:
+
+**In an all-stock deal, if the acquirer's P/E is higher than the target's P/E, the deal is accretive. If the acquirer's P/E is lower, the deal is dilutive.**
+
+**Why this works:**
+
+Think of P/E as the "price" of a dollar of earnings. If Company A trades at 20x P/E and buys Company B at 15x P/E, Company A is buying earnings "cheaply"—each dollar of B's earnings costs less than a dollar of A's earnings is valued by the market. The combined EPS increases.
+
+**Example:**
+- Company A: P/E 20x, EPS $2.00, 100M shares, Price $40
+- Company B: P/E 12x, EPS $3.00, 50M shares, Price $36
+
+A buys B in all stock at market price. Exchange ratio = $36/$40 = 0.9x. A issues 0.9 × 50M = 45M new shares.
+
+**Combined:**
+- Combined earnings: ($2 × 100M) + ($3 × 50M) = $350M
+- Combined shares: 100M + 45M = 145M
+- Combined EPS: $350M / 145M = **$2.41**
+
+Acquirer's standalone EPS was $2.00 → Deal is **accretive** by $0.41.
+
+This makes sense: A's P/E (20x) > B's P/E (12x).
+
+### What About Cash Deals?
+
+For all-cash deals, the test is different:
+
+**Is the yield on the target's earnings greater than the after-tax cost of debt (or the opportunity cost of the cash used)?**
+
+If Company A uses cash to buy B, there's no share dilution. But A either:
+- **Borrows** to fund the deal (cost = after-tax interest expense)
+- **Uses cash on hand** (cost = lost interest income on that cash)
+
+If the earnings gained from B exceed the financing cost, the deal is accretive.
+
+**Example:** A buys B for $1.8B in cash, funded by debt at 5% pre-tax (4% after-tax). B earns $150M.
+
+- Earnings gained: $150M
+- Cost of debt: $1.8B × 4% = $72M
+- Net earnings impact: +$78M → **Accretive**
+
+## Purchase Price Allocation & Goodwill
+
+When Company A buys Company B, the target's assets and liabilities are "stepped up" to fair market value on A's balance sheet. This process is called **purchase price allocation (PPA)**.
+
+**Goodwill = Purchase Price - Fair Market Value of Net Identifiable Assets**
+
+If A pays $500M for B, and B's net identifiable assets have a fair market value of $350M, goodwill = $150M.
+
+**Key interview points:**
+- Goodwill is **not amortized** under GAAP (it is under IFRS)
+- Goodwill is **tested for impairment** annually
+- If impaired, it's written down as a non-cash charge on the income statement
+- The stepped-up asset values may result in higher depreciation, which affects post-deal earnings
+
+> **RED FLAG:** When candidates say "goodwill is the premium you pay," that's incomplete. Goodwill is specifically the excess OVER fair value of identifiable assets. Some of the premium goes to stepping up tangible and intangible assets (brand value, customer lists, patents).
+
+## Stock Deal vs. Cash Deal vs. Asset Deal
+
+### Stock vs. Cash Acquisition
+
+| Factor | Stock Deal | Cash Deal |
+|--------|-----------|-----------|
+| Share dilution | Yes | No |
+| Accreted/diluted by | P/E comparison | Earnings yield vs. cost of debt |
+| Risk to acquirer shareholders | Shared (target gets equity) | Borne entirely by acquirer |
+| Tax impact to target shareholders | Tax-deferred | Taxable immediately |
+
+**When would a company prefer stock?** When its shares are overvalued (it's using expensive currency cheaply), when it wants to conserve cash, or when it wants the target's shareholders aligned as owners.
+
+**When would it prefer cash?** When shares are undervalued (don't want to issue cheap currency), when it has excess cash or cheap debt, or when it's confident in the deal's returns.
+
+### Stock Deal vs. Asset Deal
+
+This is a different concept—it's about legal structure:
+
+**Stock deal:** Buyer acquires the target's shares. Assumes ALL assets and liabilities (including unknown ones).
+
+**Asset deal:** Buyer cherry-picks specific assets and assumes specific liabilities. The target entity continues to exist.
+
+**Tax implications:**
+- Sellers prefer stock deals (capital gains treatment on shares)
+- Buyers prefer asset deals (step-up in tax basis of assets, reducing future tax through higher depreciation)
+
+## The Merger Model: Key Interview Questions
+
+### "Walk me through a basic merger model."
+
+**Step 1:** Project both companies' standalone financials
+**Step 2:** Determine the offer price and deal structure (cash, stock, or mix)
+**Step 3:** Calculate purchase price allocation (goodwill, asset step-ups)
+**Step 4:** Calculate financing (new debt, foregone interest on cash used, new shares issued)
+**Step 5:** Combine the income statements, adding synergies and subtracting new costs
+**Step 6:** Calculate pro forma EPS and compare to the acquirer's standalone EPS → accretive or dilutive?
+
+### "What are synergies?"
+
+**Cost synergies:** Eliminating redundant costs (duplicate HQ, overlapping sales teams, shared IT infrastructure). Typically 5-10% of the smaller company's cost base. More predictable.
+
+**Revenue synergies:** Cross-selling products, accessing new markets, pricing power. Harder to quantify and realize. Investors are more skeptical of revenue synergies.
+
+### "How do you account for synergies in a merger model?"
+
+Add synergies (net of implementation costs) to the combined income statement. They directly increase the combined earnings, making the deal more accretive.
+
+**Be careful:** Don't double-count. Synergies should be incremental, not already embedded in each company's standalone projections.
+
+### "An acquirer pays a 30% premium. Is the deal accretive or dilutive?"
+
+**You can't tell from the premium alone.** It depends on:
+- Deal structure (stock vs. cash)
+- Relative P/E multiples
+- Financing costs
+- Synergies
+
+A 30% premium with significant synergies could easily be accretive. The premium is what you pay; accretion/dilution is about what you get.
+
+## Summary Cheat Sheet
+
+| Concept | Key Point |
+|---------|-----------|
+| Accretive deal | Combined EPS > Acquirer standalone EPS |
+| Dilutive deal | Combined EPS < Acquirer standalone EPS |
+| P/E rule (stock deal) | Higher P/E buys lower P/E = accretive |
+| Cash deal test | Earnings yield > after-tax cost of debt = accretive |
+| Goodwill | Purchase price - FMV of net identifiable assets |
+| Control premium | 20-40% above unaffected market price |
+| Cost synergies | Eliminating redundancies, 5-10% of target's costs |
+
+---
+
+### Related Reading
+
+- [Trading Comps vs. Precedent Transactions](/blog/trading-comps-vs-precedent-transactions) — How deals are valued before they happen
+- [LBO Model Walkthrough: 5 Steps](/blog/lbo-model-walkthrough-5-steps) — The other major deal type
+- [Enterprise Value vs. Equity Value](/blog/enterprise-value-vs-equity-value-explained) — Critical for understanding transaction values
+
+*M&A is covered in Chapter 5 of our [IB Technical Interview Guide](/playbooks/ib-technical-guide). The full chapter goes deeper on purchase price allocation mechanics, restructuring charges, and the full merger model construction. Every concept tagged by interview frequency.*
+
+*Also preparing for PE? Check out our [2026 PE Recruiting Playbook](/playbooks/pe-recruiting-playbook) — PE interviews test M&A heavily since it's core to the business model.*

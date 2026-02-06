@@ -1,0 +1,142 @@
+---
+title: "WACC Explained Simply for Finance Interviews"
+summary: "Break down WACC into its components—cost of equity (CAPM), cost of debt, and capital structure weights—with the formulas, intuition, and interview-ready answers."
+category: "Interview Prep"
+readTime: "13 min read"
+publishedAt: "2026-01-24"
+author: "Wall Street Playbook"
+tags: ["WACC", "cost of capital", "CAPM", "DCF", "valuation", "investment banking interview", "cost of equity", "cost of debt"]
+---
+
+WACC (Weighted Average Cost of Capital) is the discount rate used in DCF analysis. It represents the blended rate of return that all of a company's capital providers—debt holders and equity holders—require.
+
+Every DCF question eventually leads to WACC. Here's how to explain it clearly and handle the follow-ups.
+
+## The Formula
+
+**WACC = (E/V × Re) + (D/V × Rd × (1 - T))**
+
+| Component | What It Is |
+|-----------|-----------|
+| E/V | Equity weight (% of total capital from equity) |
+| D/V | Debt weight (% of total capital from debt) |
+| Re | Cost of equity |
+| Rd | Cost of debt |
+| T | Marginal tax rate |
+| V | E + D (total capital) |
+
+**The intuition:** A company is funded by some mix of debt and equity. Each has a cost. WACC blends these costs based on how much of each the company uses.
+
+## Breaking Down Each Component
+
+### Cost of Equity (Re) — The CAPM Model
+
+**Re = Rf + β × (Rm - Rf)**
+
+| Component | What It Is | Typical Value |
+|-----------|-----------|---------------|
+| Rf | Risk-free rate (10-year Treasury yield) | 4-5% in 2026 |
+| β (Beta) | Stock's sensitivity to market movements | 0.8-1.5 for most companies |
+| Rm - Rf | Equity risk premium (ERP) | 5-7% |
+
+**Risk-free rate:** Use the 10-year U.S. Treasury yield. This is the return an investor can earn with zero risk—it's the baseline.
+
+**Beta:** Measures how volatile a stock is relative to the market. A beta of 1.0 means the stock moves with the market. Above 1.0 means more volatile (higher risk, higher required return). Below 1.0 means less volatile.
+
+- **Tech companies:** Often β > 1.0 (more volatile)
+- **Utilities:** Often β < 1.0 (stable, defensive)
+
+**Equity risk premium:** The extra return investors demand for holding risky stocks instead of risk-free bonds. This is estimated from historical market data (S&P 500 average return minus risk-free rate).
+
+**Example:** Rf = 4.5%, β = 1.2, ERP = 6%
+
+Re = 4.5% + 1.2 × 6% = **11.7%**
+
+> **INTERVIEWER PERSPECTIVE:** When a candidate can explain *why* each CAPM component exists (compensation for time value, systematic risk, and market risk), it signals genuine understanding vs. formula memorization.
+
+### Cost of Debt (Rd)
+
+**Rd = Yield to Maturity on the Company's Debt**
+
+In practice, you can use:
+- The yield on the company's publicly traded bonds
+- The company's interest expense ÷ total debt (blended rate)
+- The risk-free rate + default spread based on credit rating
+
+**The (1-T) adjustment:** Interest on debt is tax-deductible. A company paying 6% interest at a 25% tax rate has an after-tax cost of debt of 6% × (1 - 0.25) = **4.5%**. This tax shield is why debt is "cheaper" than equity—and why the Modigliani-Miller theorem suggests adding debt can increase firm value (up to a point).
+
+### Capital Structure Weights
+
+**Use market values, not book values.**
+
+- E = Market cap (share price × diluted shares)
+- D = Market value of debt (or book value as a proxy if market isn't available)
+- V = E + D
+
+**Why market values?** Because WACC represents the *current* cost of capital. Book values reflect historical costs. If a company's stock has doubled, its equity weight has increased—using book values would understate the equity weight.
+
+**Common follow-up:** *"Should you use the company's current capital structure or a target structure?"*
+
+Use the **target capital structure** if the company is expected to change its leverage (e.g., an LBO where leverage will decrease over time). Otherwise, use the current structure.
+
+## Interview Questions About WACC
+
+### "What happens to WACC if you add more debt?"
+
+Initially, WACC decreases because debt is cheaper than equity (tax shield). But beyond a point, both the cost of debt and cost of equity increase because:
+- Lenders charge higher rates for riskier companies (more debt = more default risk)
+- Equity holders demand higher returns for the increased risk of being wiped out in bankruptcy
+
+This creates a **U-shaped curve** with an optimal capital structure at the bottom.
+
+### "Why is cost of equity higher than cost of debt?"
+
+Two reasons:
+1. **Tax deductibility** — Interest is tax-deductible, dividends aren't
+2. **Priority of claims** — Debt holders get paid first in bankruptcy. Equity holders bear more risk and therefore demand higher returns
+
+### "If a company has no debt, what is WACC?"
+
+**WACC = Cost of equity.** With no debt, the entire capital structure is equity. The formula simplifies to WACC = Re.
+
+### "How does beta change with leverage?"
+
+Higher leverage increases beta. This is because equity holders bear more risk when there's more debt—their returns are more sensitive to changes in the company's operating performance.
+
+**Levered Beta = Unlevered Beta × [1 + (1-T) × (D/E)]**
+
+Unlevered beta reflects pure business risk. Levered beta adds financial risk from the capital structure. When comparing betas across companies with different leverage, you "unlever" their betas first, then "re-lever" at the target company's capital structure.
+
+### "What discount rate would you use for a very risky project?"
+
+You wouldn't necessarily use the company's WACC. If a specific project has different risk than the overall company, use a **project-specific discount rate**. For example, if a stable consumer goods company invests in a risky tech venture, the company's low WACC would understate the project's risk.
+
+## Common Mistakes to Avoid
+
+1. **Using book values for weights** — Always use market values
+2. **Forgetting the tax shield** — The (1-T) on debt cost is essential
+3. **Using the wrong beta** — Use levered beta that matches the target capital structure
+4. **Assuming WACC is constant** — For LBOs where leverage changes significantly over the hold period, WACC changes year by year (which is why LBOs typically use levered FCF and cost of equity instead)
+5. **Confusing nominal and real rates** — If your cash flows are nominal, WACC must be nominal too
+
+## WACC in Context: Why It Matters
+
+WACC isn't just an interview concept—it's the core of corporate finance decision-making:
+
+- **Investment decisions:** A project should only be pursued if its expected return exceeds WACC
+- **Valuation:** WACC is the discount rate in DCF, directly determining what the company is "worth"
+- **Capital allocation:** Understanding WACC helps companies decide how to fund growth (debt vs. equity)
+
+When you explain WACC in an interview, show that you understand it as a decision-making tool, not just a formula to plug into a DCF.
+
+---
+
+### Related Reading
+
+- [Walk Me Through a DCF: The Perfect Answer](/blog/walk-me-through-dcf-perfect-answer) — Where WACC fits in the full DCF framework
+- [Enterprise Value vs. Equity Value Explained](/blog/enterprise-value-vs-equity-value-explained) — Understanding the EV that DCF produces
+- [LBO Model Walkthrough: 5 Steps](/blog/lbo-model-walkthrough-5-steps) — Why LBOs use cost of equity instead of WACC
+
+*WACC is covered in Chapter 3 of our [IB Technical Interview Guide](/playbooks/ib-technical-guide), alongside the complete DCF framework. The full chapter includes edge cases on beta unlevering, terminal growth rate pitfalls, and mid-year convention adjustments.*
+
+*Grab the free [20 Must-Know Technical Questions](/ib-technical-cheat-sheet) cheat sheet — perfect for last-minute review before your interview.*

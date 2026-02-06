@@ -32,7 +32,7 @@ export function Navbar() {
           : "bg-transparent py-5"
       }`}
     >
-      <nav className="mx-auto flex max-w-7xl items-center justify-between px-6 lg:px-8">
+      <nav aria-label="Main navigation" className="mx-auto flex max-w-7xl items-center justify-between px-6 lg:px-8">
         {/* Logo */}
         <Link href="/" className="group flex items-center gap-2.5 sm:gap-3">
           <Logo className="h-10 w-10 sm:h-12 sm:w-12 flex-shrink-0 transition-transform group-hover:scale-105" />
@@ -76,8 +76,10 @@ export function Navbar() {
           type="button" 
           className="lg:hidden relative p-2 rounded-lg text-white hover:bg-white/10 transition-colors" 
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          aria-expanded={mobileMenuOpen}
+          aria-controls="mobile-nav-menu"
         >
-          <span className="sr-only">Toggle menu</span>
+          <span className="sr-only">{mobileMenuOpen ? "Close menu" : "Open menu"}</span>
           <div className="relative w-6 h-6">
             <span className={`absolute left-0 block w-6 h-0.5 bg-white transition-all duration-300 ${mobileMenuOpen ? 'top-3 rotate-45' : 'top-1'}`} />
             <span className={`absolute left-0 top-3 block w-6 h-0.5 bg-white transition-all duration-300 ${mobileMenuOpen ? 'opacity-0' : 'opacity-100'}`} />
@@ -87,7 +89,12 @@ export function Navbar() {
       </nav>
 
       {/* Mobile Navigation */}
-      <div className={`lg:hidden fixed inset-0 top-[72px] z-50 transition-all duration-300 ${mobileMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}>
+      <div
+        id="mobile-nav-menu"
+        role="region"
+        aria-label="Mobile navigation"
+        className={`lg:hidden fixed inset-0 top-[72px] z-50 transition-all duration-300 ${mobileMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}
+      >
         {/* Backdrop */}
         <div 
           className="absolute inset-0 bg-navy-deep/80 backdrop-blur-xl"

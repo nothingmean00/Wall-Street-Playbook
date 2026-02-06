@@ -6,7 +6,7 @@ import { playbooks } from "@/lib/data"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import { Check, Shield, Download, RefreshCw, ArrowLeft, Lock, BookOpen, Users, Target, Star, Clock, BadgeCheck } from "lucide-react"
 import { BuyButton } from "@/components/buy-button"
-import { PEPlaybookPreview } from "@/components/playbook-preview"
+import { PEPlaybookPreview, IBTechnicalPreview } from "@/components/playbook-preview"
 import type { Metadata } from "next"
 
 interface PlaybookPageProps {
@@ -152,30 +152,24 @@ export default async function PlaybookPage({ params }: PlaybookPageProps) {
                   <div className="mt-2 h-1 w-10 bg-gold" />
                   
                   <div className="mt-6 grid gap-4 sm:grid-cols-2">
-                    <div className="flex items-start gap-3">
-                      <div className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-green-100">
-                        <Check className="h-3.5 w-3.5 text-green-600" />
+                    {(playbook.slug === 'ib-technical-guide' ? [
+                      "Undergrads and graduates prepping for IB interviews at bulge brackets and elite boutiques",
+                      "Lateral candidates transitioning from Big 4, consulting, or corporate roles into banking",
+                      "PE/HF candidates who need sharp technicals for buy-side interviews",
+                      "Anyone tired of memorizing answers without understanding the logic behind them",
+                    ] : [
+                      "IB analysts preparing for on-cycle or off-cycle PE recruiting",
+                      "Undergrads targeting direct-to-PE analyst programs",
+                      "Consultants (MBB, Big 4) exploring PE paths",
+                      "Anyone who wants insider knowledge, not generic advice",
+                    ]).map((item, idx) => (
+                      <div key={idx} className="flex items-start gap-3">
+                        <div className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-green-100">
+                          <Check className="h-3.5 w-3.5 text-green-600" />
+                        </div>
+                        <span className="text-sm text-charcoal/80">{item}</span>
                       </div>
-                      <span className="text-sm text-charcoal/80">IB analysts preparing for on-cycle or off-cycle PE recruiting</span>
-                    </div>
-                    <div className="flex items-start gap-3">
-                      <div className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-green-100">
-                        <Check className="h-3.5 w-3.5 text-green-600" />
-                      </div>
-                      <span className="text-sm text-charcoal/80">Undergrads targeting direct-to-PE analyst programs</span>
-                    </div>
-                    <div className="flex items-start gap-3">
-                      <div className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-green-100">
-                        <Check className="h-3.5 w-3.5 text-green-600" />
-                      </div>
-                      <span className="text-sm text-charcoal/80">Consultants (MBB, Big 4) exploring PE paths</span>
-                    </div>
-                    <div className="flex items-start gap-3">
-                      <div className="flex h-6 w-6 flex-shrink-0 items-center justify-center rounded-full bg-green-100">
-                        <Check className="h-3.5 w-3.5 text-green-600" />
-                      </div>
-                      <span className="text-sm text-charcoal/80">Anyone who wants insider knowledge, not generic advice</span>
-                    </div>
+                    ))}
                   </div>
                 </div>
 
@@ -208,6 +202,21 @@ export default async function PlaybookPage({ params }: PlaybookPageProps) {
                       Preview the first 6 pages. Click the expand icon for a larger view.
                     </p>
                     <PEPlaybookPreview />
+                  </div>
+                )}
+
+                {/* Preview Section - IB Technical Guide */}
+                {playbook.slug === 'ib-technical-guide' && (
+                  <div className="rounded-xl border border-border bg-white p-8 shadow-sm">
+                    <div className="flex items-center gap-2 mb-2">
+                      <BookOpen className="h-5 w-5 text-gold" />
+                      <h2 className="text-xl font-semibold text-navy">Look Inside</h2>
+                    </div>
+                    <div className="mt-2 h-1 w-10 bg-gold" />
+                    <p className="mt-4 text-sm text-charcoal/60 mb-6">
+                      Preview the first 6 pages of this 87-page guide. See the structure, frequency tags, and answer format.
+                    </p>
+                    <IBTechnicalPreview />
                   </div>
                 )}
 
@@ -258,35 +267,25 @@ export default async function PlaybookPage({ params }: PlaybookPageProps) {
                   <div className="mt-2 h-1 w-10 bg-gold" />
 
                   <div className="mt-6 space-y-6">
-                    <div className="p-4 bg-navy/5 rounded-lg border-l-4 border-gold">
-                      <div className="flex items-center gap-1 mb-2">
-                        {[...Array(5)].map((_, i) => (
-                          <Star key={i} className="h-4 w-4 fill-gold text-gold" />
-                        ))}
+                    {(playbook.slug === 'ib-technical-guide' ? [
+                      { quote: "The dual-format answers are a game-changer. I used the 30-second versions for quick HireVue rounds and the deep dives for Superdays. Ended up with offers from two BBs.", author: "Non-Target Senior → BB Analyst" },
+                      { quote: "The frequency tags alone saved me 40+ hours of studying. I stopped wasting time on obscure topics and drilled the 'Always Asked' questions until I could answer in my sleep.", author: "Liberal Arts Major → Evercore SA" },
+                      { quote: "I've used WSO, BIWS, and Rosenbaum's textbook. This guide is what actually made the concepts click—the red flag boxes showed me exactly where I was losing points without knowing it.", author: "Big 4 TAS → MM IB Lateral" },
+                    ] : [
+                      { quote: "The headhunter section alone was worth it. I had no idea CPI asks paper LBOs in their initial calls. This intel saved me from bombing my first impression.", author: "GS TMT Analyst, Class of 2024" },
+                      { quote: "Finally, advice that isn't 'network and grind technicals.' The bank-to-fund pipeline data helped me target the right groups for lateral moves.", author: "MM IB Associate → UMM PE" },
+                      { quote: "Coming from MBB, I thought I knew how to prep. The 'Why PE' framework completely changed my story. Got offers from two megafunds.", author: "Ex-McKinsey → Megafund Associate" },
+                    ]).map((testimonial, idx) => (
+                      <div key={idx} className="p-4 bg-navy/5 rounded-lg border-l-4 border-gold">
+                        <div className="flex items-center gap-1 mb-2">
+                          {[...Array(5)].map((_, i) => (
+                            <Star key={i} className="h-4 w-4 fill-gold text-gold" />
+                          ))}
+                        </div>
+                        <p className="text-sm text-charcoal/80 italic">"{testimonial.quote}"</p>
+                        <p className="mt-2 text-xs text-charcoal/50">— {testimonial.author}</p>
                       </div>
-                      <p className="text-sm text-charcoal/80 italic">"The headhunter section alone was worth it. I had no idea CPI asks paper LBOs in their initial calls. This intel saved me from bombing my first impression."</p>
-                      <p className="mt-2 text-xs text-charcoal/50">— GS TMT Analyst, Class of 2024</p>
-                    </div>
-
-                    <div className="p-4 bg-navy/5 rounded-lg border-l-4 border-gold">
-                      <div className="flex items-center gap-1 mb-2">
-                        {[...Array(5)].map((_, i) => (
-                          <Star key={i} className="h-4 w-4 fill-gold text-gold" />
-                        ))}
-                      </div>
-                      <p className="text-sm text-charcoal/80 italic">"Finally, advice that isn't 'network and grind technicals.' The bank-to-fund pipeline data helped me target the right groups for lateral moves."</p>
-                      <p className="mt-2 text-xs text-charcoal/50">— MM IB Associate → UMM PE</p>
-                    </div>
-
-                    <div className="p-4 bg-navy/5 rounded-lg border-l-4 border-gold">
-                      <div className="flex items-center gap-1 mb-2">
-                        {[...Array(5)].map((_, i) => (
-                          <Star key={i} className="h-4 w-4 fill-gold text-gold" />
-                        ))}
-                      </div>
-                      <p className="text-sm text-charcoal/80 italic">"Coming from MBB, I thought I knew how to prep. The 'Why PE' framework completely changed my story. Got offers from two megafunds."</p>
-                      <p className="mt-2 text-xs text-charcoal/50">— Ex-McKinsey → Megafund Associate</p>
-                    </div>
+                    ))}
                   </div>
                 </div>
 
@@ -299,7 +298,9 @@ export default async function PlaybookPage({ params }: PlaybookPageProps) {
                     <div>
                       <h3 className="text-lg font-semibold text-green-800">100% Money-Back Guarantee</h3>
                       <p className="mt-1 text-sm text-green-700">
-                        If this playbook doesn't meaningfully improve your PE recruiting prep within 30 days, email us for a full refund. No questions asked. We've helped hundreds of candidates—we're confident this will help you too.
+                        {playbook.slug === 'ib-technical-guide' 
+                          ? "If this guide doesn't meaningfully improve your technical interview performance within 30 days, email us for a full refund. No questions asked. Thousands of candidates have used these frameworks to land offers at top firms."
+                          : "If this playbook doesn't meaningfully improve your PE recruiting prep within 30 days, email us for a full refund. No questions asked. We've helped hundreds of candidates—we're confident this will help you too."}
                       </p>
                     </div>
                   </div>
@@ -313,7 +314,9 @@ export default async function PlaybookPage({ params }: PlaybookPageProps) {
                     {/* Urgency badge */}
                     <div className="flex items-center gap-2 mb-4 px-3 py-1.5 rounded-full bg-gold/10 w-fit">
                       <Clock className="h-3.5 w-3.5 text-gold" />
-                      <span className="text-xs font-medium text-gold">2026 on-cycle starts soon</span>
+                      <span className="text-xs font-medium text-gold">
+                        {playbook.slug === 'ib-technical-guide' ? '2026 recruiting season is live' : '2026 on-cycle starts soon'}
+                      </span>
                     </div>
 
                     <div className="mb-6 h-1 w-10 bg-gold" />

@@ -1,23 +1,39 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { getDb } from '@/lib/db'
 import { sendWelcomeEmail } from '@/lib/email'
+import { rateLimit, getClientIp } from '@/lib/rate-limit'
+import { subscribeSchema } from '@/lib/validation'
 
 export async function POST(request: NextRequest) {
-  try {
-    const { email, source = 'website' } = await request.json()
+  // Rate limit: 5 requests per 60 seconds per IP
+  const ip = getClientIp(request)
+  const limiter = rateLimit(`subscribe:${ip}`, { maxRequests: 5, windowSeconds: 60 })
 
-    if (!email || !email.includes('@')) {
+  if (!limiter.success) {
+    return NextResponse.json(
+      { error: 'Too many requests. Please try again later.' },
+      { status: 429 }
+    )
+  }
+
+  try {
+    const body = await request.json()
+    const parsed = subscribeSchema.safeParse(body)
+
+    if (!parsed.success) {
       return NextResponse.json(
         { error: 'Valid email is required' },
         { status: 400 }
       )
     }
 
+    const { email, source } = parsed.data
+
     // Insert into database with source tracking
     const sql = getDb()
     await sql`
       INSERT INTO email_subscribers (email, source)
-      VALUES (${email.toLowerCase()}, ${source})
+      VALUES (${email}, ${source})
       ON CONFLICT (email) DO UPDATE SET
         source = CASE 
           WHEN email_subscribers.source = 'website' THEN ${source}
@@ -42,4 +58,3 @@ export async function POST(request: NextRequest) {
     )
   }
 }
-

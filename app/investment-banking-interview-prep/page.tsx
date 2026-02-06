@@ -388,6 +388,42 @@ export default function InvestmentBankingInterviewPrepPage() {
           </div>
         </section>
 
+        {/* Technical Deep Dives */}
+        <section className="bg-off-white py-16">
+          <div className="mx-auto max-w-7xl px-6 lg:px-8">
+            <div className="mx-auto max-w-3xl">
+              <h2 className="text-2xl font-bold text-navy">Technical Deep Dives</h2>
+              <p className="mt-2 text-charcoal/60">Free articles covering each major technical topic in depth.</p>
+              <div className="mt-6 grid gap-3 sm:grid-cols-2">
+                <Link href="/blog/how-three-financial-statements-linked" className="p-4 bg-white rounded-lg border border-border hover:border-gold/50 transition-colors">
+                  <p className="font-medium text-navy text-sm">How the 3 Statements Are Linked</p>
+                  <p className="text-xs text-charcoal/50 mt-1">The #1 accounting question</p>
+                </Link>
+                <Link href="/blog/walk-me-through-dcf-perfect-answer" className="p-4 bg-white rounded-lg border border-border hover:border-gold/50 transition-colors">
+                  <p className="font-medium text-navy text-sm">Walk Me Through a DCF</p>
+                  <p className="text-xs text-charcoal/50 mt-1">6-step framework</p>
+                </Link>
+                <Link href="/blog/enterprise-value-vs-equity-value-explained" className="p-4 bg-white rounded-lg border border-border hover:border-gold/50 transition-colors">
+                  <p className="font-medium text-navy text-sm">EV vs. Equity Value</p>
+                  <p className="text-xs text-charcoal/50 mt-1">EV bridge and matching principle</p>
+                </Link>
+                <Link href="/blog/accretion-dilution-analysis-explained" className="p-4 bg-white rounded-lg border border-border hover:border-gold/50 transition-colors">
+                  <p className="font-medium text-navy text-sm">Accretion/Dilution Explained</p>
+                  <p className="text-xs text-charcoal/50 mt-1">M&A deal mechanics</p>
+                </Link>
+                <Link href="/blog/lbo-model-walkthrough-5-steps" className="p-4 bg-white rounded-lg border border-border hover:border-gold/50 transition-colors">
+                  <p className="font-medium text-navy text-sm">LBO Model: 5 Steps</p>
+                  <p className="text-xs text-charcoal/50 mt-1">Return drivers and debt</p>
+                </Link>
+                <Link href="/ib-technical-cheat-sheet" className="p-4 bg-gold/10 rounded-lg border border-gold/30 hover:border-gold/50 transition-colors">
+                  <p className="font-medium text-navy text-sm">Free: 20 Must-Know Questions</p>
+                  <p className="text-xs text-gold mt-1">Download the cheat sheet</p>
+                </Link>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Final CTA */}
         <section className="bg-cream py-20 lg:py-28">
           <div className="mx-auto max-w-3xl px-6 lg:px-8 text-center">
@@ -398,10 +434,10 @@ export default function InvestmentBankingInterviewPrepPage() {
             
             <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
               <Link
-                href="/playbooks"
+                href="/playbooks/ib-technical-guide"
                 className="group flex items-center gap-2 rounded-xl bg-navy px-8 py-4 text-base font-semibold text-white hover:bg-gold hover:text-navy transition-colors"
               >
-                Browse All Playbooks
+                Get the IB Technical Guide — $127
                 <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
               </Link>
               <Link

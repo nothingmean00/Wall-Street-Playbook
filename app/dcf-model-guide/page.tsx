@@ -337,21 +337,47 @@ export default function DCFModelGuidePage() {
           </div>
         </section>
 
+        {/* Related Deep Dives */}
+        <section className="bg-off-white py-16">
+          <div className="mx-auto max-w-7xl px-6 lg:px-8">
+            <div className="mx-auto max-w-3xl">
+              <h2 className="text-2xl font-bold text-navy">Related Deep Dives</h2>
+              <div className="mt-6 grid gap-3 sm:grid-cols-2">
+                <Link href="/blog/walk-me-through-dcf-perfect-answer" className="p-4 bg-white rounded-lg border border-border hover:border-gold/50 transition-colors">
+                  <p className="font-medium text-navy text-sm">Walk Me Through a DCF</p>
+                  <p className="text-xs text-charcoal/50 mt-1">The perfect interview answer</p>
+                </Link>
+                <Link href="/blog/wacc-explained-simply-finance-interviews" className="p-4 bg-white rounded-lg border border-border hover:border-gold/50 transition-colors">
+                  <p className="font-medium text-navy text-sm">WACC Explained Simply</p>
+                  <p className="text-xs text-charcoal/50 mt-1">CAPM, cost of debt, and weights</p>
+                </Link>
+                <Link href="/dcf-interview-questions-2026" className="p-4 bg-white rounded-lg border border-border hover:border-gold/50 transition-colors">
+                  <p className="font-medium text-navy text-sm">DCF Interview Questions 2026</p>
+                  <p className="text-xs text-charcoal/50 mt-1">All DCF questions by frequency</p>
+                </Link>
+                <Link href="/valuation-methods-investment-banking" className="p-4 bg-white rounded-lg border border-border hover:border-gold/50 transition-colors">
+                  <p className="font-medium text-navy text-sm">Valuation Methods Overview</p>
+                  <p className="text-xs text-charcoal/50 mt-1">DCF vs comps vs precedent</p>
+                </Link>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Final CTA */}
         <section className="bg-navy py-20 lg:py-28">
           <div className="mx-auto max-w-3xl px-6 lg:px-8 text-center">
-            <h2 className="text-3xl font-bold text-white sm:text-4xl">Master DCF Modeling</h2>
+            <h2 className="text-3xl font-bold text-white sm:text-4xl">Master DCF and All Technical Topics</h2>
             <p className="mt-4 text-lg text-white/60">
-              Stop second-guessing your models. Our course walks through everything step-by-step with 
-              real-world examples.
+              DCF is just one chapter. The IB Technical Interview Guide covers all 6 core topics—Accounting, EV/Equity Value, DCF, Comps, M&A, and LBOs—in 87 pages with frequency-tagged questions.
             </p>
             
             <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
               <Link
-                href="/playbooks/valuation-mastery"
+                href="/playbooks/ib-technical-guide"
                 className="group flex items-center gap-2 rounded-xl bg-gold px-8 py-4 text-base font-semibold text-navy hover:bg-white transition-colors"
               >
-                Get Valuation Course — $97
+                Get the IB Technical Interview Guide — $127
                 <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
               </Link>
               <Link

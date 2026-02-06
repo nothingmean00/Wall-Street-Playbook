@@ -3,6 +3,7 @@
 import { useState } from "react"
 import { Loader2, ShoppingCart } from "lucide-react"
 import { track } from "@vercel/analytics"
+import { toast } from "@/hooks/use-toast"
 
 interface BuyButtonProps {
   productId: string
@@ -36,7 +37,11 @@ export function BuyButton({ productId, price, label = "Buy Now", className = "" 
       }
     } catch (error) {
       console.error("Checkout error:", error)
-      alert("Something went wrong. Please try again.")
+      toast({
+        title: "Checkout failed",
+        description: "Something went wrong. Please try again or contact support.",
+        variant: "destructive",
+      })
       setLoading(false)
     }
   }
@@ -45,20 +50,20 @@ export function BuyButton({ productId, price, label = "Buy Now", className = "" 
     <button
       onClick={handleCheckout}
       disabled={loading}
+      aria-busy={loading}
       className={`flex items-center justify-center gap-2 rounded-lg bg-gold px-4 sm:px-6 py-3.5 text-sm sm:text-base font-semibold text-navy transition-colors hover:bg-navy hover:text-white disabled:opacity-50 ${className}`}
     >
       {loading ? (
         <>
-          <Loader2 className="h-5 w-5 animate-spin" />
+          <Loader2 className="h-5 w-5 animate-spin" aria-hidden="true" />
           Processing...
         </>
       ) : (
         <>
-          <ShoppingCart className="h-5 w-5" />
+          <ShoppingCart className="h-5 w-5" aria-hidden="true" />
           {label} – ${price}
         </>
       )}
     </button>
   )
 }
-

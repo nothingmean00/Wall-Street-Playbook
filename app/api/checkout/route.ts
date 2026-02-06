@@ -1,11 +1,34 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { getStripe, PRODUCTS, ProductId } from '@/lib/stripe'
+import { rateLimit, getClientIp } from '@/lib/rate-limit'
+import { checkoutSchema } from '@/lib/validation'
 
 export async function POST(request: NextRequest) {
-  try {
-    const { productId, email } = await request.json()
+  // Rate limit: 10 requests per 60 seconds per IP
+  const ip = getClientIp(request)
+  const limiter = rateLimit(`checkout:${ip}`, { maxRequests: 10, windowSeconds: 60 })
 
-    if (!productId || !PRODUCTS[productId as ProductId]) {
+  if (!limiter.success) {
+    return NextResponse.json(
+      { error: 'Too many requests. Please try again later.' },
+      { status: 429 }
+    )
+  }
+
+  try {
+    const body = await request.json()
+    const parsed = checkoutSchema.safeParse(body)
+
+    if (!parsed.success) {
+      return NextResponse.json(
+        { error: 'Invalid product' },
+        { status: 400 }
+      )
+    }
+
+    const { productId, email } = parsed.data
+
+    if (!PRODUCTS[productId as ProductId]) {
       return NextResponse.json(
         { error: 'Invalid product' },
         { status: 400 }
@@ -43,4 +66,3 @@ export async function POST(request: NextRequest) {
     )
   }
 }
-

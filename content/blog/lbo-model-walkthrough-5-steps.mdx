@@ -1,0 +1,193 @@
+---
+title: "LBO Model Walkthrough: The 5-Step Framework"
+summary: "Build an LBO from scratch—sources & uses, debt structure, cash flow projections, returns analysis, and the 4 return drivers every PE interviewer tests."
+category: "Interview Prep"
+readTime: "17 min read"
+publishedAt: "2026-01-18"
+author: "Wall Street Playbook"
+tags: ["LBO", "leveraged buyout", "private equity", "PE interview", "financial modeling", "IRR", "MOIC", "debt"]
+---
+
+The LBO is the final boss of technical interview questions. If you're interviewing at a PE fund, you'll build one on a whiteboard. If you're at an investment bank, you'll be asked to explain the mechanics conceptually. Either way, you need to know this cold.
+
+Here's the 5-step framework for building and explaining an LBO, plus the return drivers that PE firms actually evaluate.
+
+## What Is an LBO?
+
+A leveraged buyout is when a financial sponsor (PE fund) acquires a company using a significant amount of borrowed money (leverage). The company's cash flows service the debt over a 3-7 year holding period, and the sponsor exits at a profit.
+
+**The core concept:** Use other people's money to amplify returns. If you put $400M of equity into a $1B deal, and sell the company for $1.5B after paying down $400M of debt, your equity goes from $400M to $1.1B—a 2.75x return. That's dramatically better than the 1.5x return if you'd bought with all equity.
+
+## Step 1: Sources & Uses
+
+This is the opening table of every LBO. It answers: **Where does the money come from, and where does it go?**
+
+### Uses (What You're Spending)
+- **Purchase price:** Enterprise value of the target (e.g., 10x EBITDA)
+- **Transaction fees:** Advisory, financing, legal (typically 2-5% of EV)
+- **Refinancing of existing debt:** Most targets have existing debt that gets paid off
+
+### Sources (Where the Money Comes From)
+- **Senior secured debt** (Term Loan A, Term Loan B)
+- **Subordinated debt** (high-yield bonds, mezzanine)
+- **Sponsor equity** (the PE fund's check)
+- **Management rollover** (sometimes management reinvests their equity)
+
+**Example:**
+
+| Sources | Amount | Uses | Amount |
+|---------|--------|------|--------|
+| Term Loan B (4.0x) | $400M | Enterprise Value (10x) | $1,000M |
+| Senior Notes (2.0x) | $200M | Transaction Fees | $35M |
+| Sponsor Equity | $435M | Refinance Existing Debt | $0 |
+| **Total** | **$1,035M** | **Total** | **$1,035M** |
+
+**The leverage ratio:** Total debt / EBITDA. In this example, $600M / $100M = 6.0x. Current market standard for LBOs is 4-7x total leverage.
+
+## Step 2: Build the Operating Model
+
+Project the target's financial performance over the hold period (typically 5 years):
+
+- **Revenue growth:** Conservative assumptions (PE doesn't buy miracles)
+- **EBITDA margin:** Usually stable or improving through operational improvements
+- **CapEx:** Maintenance levels (growth capex is separate)
+- **Working capital:** Changes as % of revenue
+
+**What PE firms actually look for in targets:**
+- **Stable, predictable cash flows** — Can service debt reliably
+- **Strong market position** — Defensible competitive advantage
+- **Multiple expansion potential** — Can the multiple increase by exit?
+- **Operational improvement opportunity** — Margin expansion through efficiency
+- **Low CapEx requirements** — More cash available for debt paydown
+
+> **RED FLAG:** Candidates often project aggressive growth rates in LBO models. PE firms are conservative—they need to service debt regardless of growth. A good LBO candidate doesn't need growth to generate returns.
+
+## Step 3: Construct the Debt Schedule
+
+This is where the leverage magic happens. Map out each debt tranche:
+
+**For each debt tranche, track:**
+- Beginning balance
+- Mandatory amortization (e.g., Term Loan A: 5-10% annual paydown)
+- Optional prepayments (from excess cash flow)
+- Ending balance
+
+**Cash flow sweep:** Most LBOs include a "cash sweep" where 50-75% of excess cash flow automatically prepays debt. This accelerates deleveraging.
+
+**Typical debt structure (2026 market):**
+
+| Tranche | Size | Rate | Amortization |
+|---------|------|------|-------------|
+| Revolving Credit | 1.0x | SOFR+250 | None (drawn as needed) |
+| Term Loan B | 3.0-4.0x | SOFR+350-450 | 1% annual |
+| Senior Notes | 1.5-2.5x | 7-9% fixed | Bullet (repaid at maturity) |
+| Mezzanine (if needed) | 0.5-1.0x | 10-13% | PIK or bullet |
+
+**Total leverage: 5.0-7.0x EBITDA**
+
+The interest expense from the debt schedule flows into the income statement and reduces taxable income (creating the tax shield that makes debt efficient).
+
+## Step 4: Calculate Returns
+
+At exit (typically Year 5), the sponsor sells the company. Returns are measured two ways:
+
+### MOIC (Multiple on Invested Capital)
+
+**MOIC = Exit Equity Value / Initial Equity Investment**
+
+If you put in $435M and get back $1.1B, MOIC = 2.5x.
+
+**PE return targets:**
+- 2.0x MOIC = acceptable
+- 2.5x MOIC = good
+- 3.0x+ MOIC = excellent
+
+### IRR (Internal Rate of Return)
+
+The annualized return that accounts for the time value of money.
+
+**Quick approximation (The Rule of 72):**
+- 2.0x over 5 years ≈ 15% IRR
+- 2.5x over 5 years ≈ 20% IRR
+- 3.0x over 5 years ≈ 25% IRR
+
+**PE return targets:**
+- 15-20% = minimum threshold
+- 20-25% = target range for most funds
+- 25%+ = exceptional
+
+## Step 5: Analyze the Return Drivers
+
+This is what separates a great LBO answer from a good one. There are **4 ways to generate returns** in an LBO:
+
+### 1. EBITDA Growth (Operational Improvement)
+
+If EBITDA grows from $100M to $140M over 5 years, that's organic value creation. This comes from revenue growth, margin expansion, or both.
+
+**This is the most valued return driver** — it indicates the sponsor actually improved the business.
+
+### 2. Multiple Expansion
+
+If you buy at 10x EBITDA and sell at 12x EBITDA, the same EBITDA is worth more at exit. This is partially market-driven (you can't control market sentiment) and partially operational (if you've improved the business profile, it may deserve a higher multiple).
+
+**PE firms model conservative multiples** — entering and exiting at the same multiple is the base case. Multiple expansion is upside.
+
+### 3. Debt Paydown (Deleveraging)
+
+As the company's cash flows pay down debt, equity grows. If you entered with 6x leverage and exit with 3x leverage, the equity slice of the pie has grown even if the pie (EV) stays the same.
+
+**This is the "mechanical" return driver** — it works even without growth or multiple expansion, as long as the company generates enough cash to service and repay debt.
+
+### 4. Cash Generation / Dividends
+
+Some sponsors take dividend recaps or accumulate cash, effectively returning capital before exit. This boosts IRR by getting money back sooner.
+
+## The Paper LBO: Quick Framework
+
+For paper LBOs (done on a whiteboard in 10-15 minutes), simplify:
+
+1. **Calculate purchase price:** EBITDA × Entry Multiple
+2. **Set up sources & uses:** Leverage × EBITDA = debt, remainder = equity
+3. **Project EBITDA:** Growth rate × 5 years
+4. **Calculate debt paydown:** Annual FCF = EBITDA - Interest - Taxes - CapEx. Assume all FCF repays debt.
+5. **Calculate exit:** Exit EBITDA × Exit Multiple = Exit EV. Subtract remaining debt = Exit Equity.
+6. **Calculate returns:** MOIC = Exit Equity / Entry Equity. Estimate IRR from the rule of 72.
+
+For a detailed worked example, see our [Paper LBO Step-by-Step Guide](/blog/paper-lbo-step-by-step-example).
+
+## Common Interview Questions
+
+### "What makes a good LBO candidate?"
+
+- Stable, predictable cash flows (not cyclical)
+- Strong market position with barriers to entry
+- Low capital expenditure requirements
+- Opportunities for operational improvement
+- Experienced management team
+- Multiple expansion potential
+
+### "Why does leverage amplify returns?"
+
+Because you're earning returns on borrowed money. If the total return on assets is 10% and you're borrowing at 5%, the difference is pure equity value creation. The more leverage, the higher the equity return—but also the higher the risk of default.
+
+### "What happens if the company can't service its debt?"
+
+It restructures. Lenders may agree to extend maturities, reduce interest rates, or convert debt to equity. In worst cases, the company files for bankruptcy and equity holders (the PE fund) lose their investment. This is the fundamental risk of leverage.
+
+### "Walk me through the difference between IRR and MOIC."
+
+**MOIC** tells you how many dollars you get back per dollar invested. **IRR** tells you the annualized return, factoring in time. A 3.0x MOIC over 3 years (40% IRR) is far better than 3.0x over 10 years (12% IRR). PE funds optimize for both, but IRR matters more because investors compare returns across different time horizons.
+
+---
+
+### Related Reading
+
+- [Paper LBO: Step-by-Step Example](/blog/paper-lbo-step-by-step-example) — The whiteboard version with full worked example
+- [Accretion/Dilution Analysis Explained](/blog/accretion-dilution-analysis-explained) — The M&A analysis framework
+- [Walk Me Through a DCF](/blog/walk-me-through-dcf-perfect-answer) — The other key valuation framework
+
+*LBOs are covered in Chapter 6 of our [IB Technical Interview Guide](/playbooks/ib-technical-guide). The full chapter includes detailed debt schedule construction, sensitivity tables, and the return attribution analysis that PE firms use internally.*
+
+*Targeting PE specifically? Our [2026 PE Recruiting Playbook](/playbooks/pe-recruiting-playbook) covers the recruiting timeline, headhunter landscape, and the complete PE interview process from first call to offer.*
+
+*Grab the free [20 Must-Know Technical Questions](/ib-technical-cheat-sheet) for quick-reference answers to the most commonly tested concepts.*

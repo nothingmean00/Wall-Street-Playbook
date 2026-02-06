@@ -8,6 +8,25 @@ import {
 } from '@/lib/email'
 import Stripe from 'stripe'
 
+/**
+ * Simple in-memory set to track processed webhook event IDs.
+ * Prevents duplicate processing if Stripe retries the same event.
+ *
+ * In a multi-instance environment, this provides per-instance dedup.
+ * For full idempotency, the DB insert uses ON CONFLICT to avoid duplicate orders.
+ */
+const processedEvents = new Set<string>()
+const MAX_PROCESSED_EVENTS = 1000
+
+function markEventProcessed(eventId: string) {
+  processedEvents.add(eventId)
+  // Prevent unbounded growth
+  if (processedEvents.size > MAX_PROCESSED_EVENTS) {
+    const oldest = processedEvents.values().next().value
+    if (oldest) processedEvents.delete(oldest)
+  }
+}
+
 export async function POST(request: NextRequest) {
   const body = await request.text()
   const signature = request.headers.get('stripe-signature')!
@@ -24,6 +43,11 @@ export async function POST(request: NextRequest) {
   } catch (err) {
     console.error('Webhook signature verification failed:', err)
     return NextResponse.json({ error: 'Invalid signature' }, { status: 400 })
+  }
+
+  // Idempotency: skip already-processed events
+  if (processedEvents.has(event.id)) {
+    return NextResponse.json({ received: true, deduplicated: true })
   }
 
   if (event.type === 'checkout.session.completed') {
@@ -97,7 +121,7 @@ export async function POST(request: NextRequest) {
         }
       }
 
-      // Also record in orders table
+      // Record in orders table with ON CONFLICT for idempotency
       await sql`
         INSERT INTO orders (stripe_session_id, stripe_customer_id, email, product_type, product_id, amount, status)
         VALUES (
@@ -109,11 +133,12 @@ export async function POST(request: NextRequest) {
           ${session.amount_total || 0}, 
           'completed'
         )
+        ON CONFLICT (stripe_session_id) DO NOTHING
       `
     } 
     // Handle Playbook Purchases
     else {
-      // Record the order
+      // Record the order with ON CONFLICT for idempotency
       await sql`
         INSERT INTO orders (stripe_session_id, stripe_customer_id, email, product_type, product_id, amount, status)
         VALUES (
@@ -125,6 +150,7 @@ export async function POST(request: NextRequest) {
           ${session.amount_total || 0}, 
           'completed'
         )
+        ON CONFLICT (stripe_session_id) DO NOTHING
       `
 
       // Generate download link and send confirmation
@@ -137,6 +163,9 @@ export async function POST(request: NextRequest) {
       }
     }
   }
+
+  // Mark this event as processed
+  markEventProcessed(event.id)
 
   return NextResponse.json({ received: true })
 }

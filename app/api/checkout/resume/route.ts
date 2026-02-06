@@ -1,17 +1,33 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { getStripe, PRODUCTS } from '@/lib/stripe'
 import { getDb } from '@/lib/db'
+import { rateLimit, getClientIp } from '@/lib/rate-limit'
+import { resumeCheckoutSchema } from '@/lib/validation'
 
 export async function POST(request: NextRequest) {
-  try {
-    const { submissionId } = await request.json()
+  // Rate limit: 5 requests per 60 seconds per IP
+  const ip = getClientIp(request)
+  const limiter = rateLimit(`resume-checkout:${ip}`, { maxRequests: 5, windowSeconds: 60 })
 
-    if (!submissionId) {
+  if (!limiter.success) {
+    return NextResponse.json(
+      { error: 'Too many requests. Please try again later.' },
+      { status: 429 }
+    )
+  }
+
+  try {
+    const body = await request.json()
+    const parsed = resumeCheckoutSchema.safeParse(body)
+
+    if (!parsed.success) {
       return NextResponse.json(
         { error: 'Submission ID required' },
         { status: 400 }
       )
     }
+
+    const { submissionId } = parsed.data
 
     // Get the submission details
     const sql = getDb()

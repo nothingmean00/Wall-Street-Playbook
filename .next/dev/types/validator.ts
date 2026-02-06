@@ -56,6 +56,15 @@ type RouteHandlerConfig<Route extends AppRouteHandlerRoutes = AppRouteHandlerRou
   type __Unused = __Check
 }
 
+// Validate ../../../app/accounting-interview-questions-finance/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/accounting-interview-questions-finance">> = Specific
+  const handler = {} as typeof import("../../../app/accounting-interview-questions-finance/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
 // Validate ../../../app/admin/page.tsx
 {
   type __IsExpected<Specific extends AppPageConfig<"/admin">> = Specific
@@ -132,6 +141,15 @@ type RouteHandlerConfig<Route extends AppRouteHandlerRoutes = AppRouteHandlerRou
 {
   type __IsExpected<Specific extends AppPageConfig<"/credit-analyst-resume">> = Specific
   const handler = {} as typeof import("../../../app/credit-analyst-resume/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../../app/dcf-interview-questions-2026/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/dcf-interview-questions-2026">> = Specific
+  const handler = {} as typeof import("../../../app/dcf-interview-questions-2026/page.js")
   type __Check = __IsExpected<typeof handler>
   // @ts-ignore
   type __Unused = __Check
@@ -254,6 +272,24 @@ type RouteHandlerConfig<Route extends AppRouteHandlerRoutes = AppRouteHandlerRou
   type __Unused = __Check
 }
 
+// Validate ../../../app/ib-technical-cheat-sheet/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/ib-technical-cheat-sheet">> = Specific
+  const handler = {} as typeof import("../../../app/ib-technical-cheat-sheet/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../../app/ib-technical-interview-2026/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/ib-technical-interview-2026">> = Specific
+  const handler = {} as typeof import("../../../app/ib-technical-interview-2026/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
 // Validate ../../../app/investment-banking-interview-prep/page.tsx
 {
   type __IsExpected<Specific extends AppPageConfig<"/investment-banking-interview-prep">> = Specific
@@ -299,6 +335,15 @@ type RouteHandlerConfig<Route extends AppRouteHandlerRoutes = AppRouteHandlerRou
   type __Unused = __Check
 }
 
+// Validate ../../../app/lbo-interview-questions-2026/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/lbo-interview-questions-2026">> = Specific
+  const handler = {} as typeof import("../../../app/lbo-interview-questions-2026/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
 // Validate ../../../app/lbo-modeling-guide/page.tsx
 {
   type __IsExpected<Specific extends AppPageConfig<"/lbo-modeling-guide">> = Specific
@@ -321,6 +366,15 @@ type RouteHandlerConfig<Route extends AppRouteHandlerRoutes = AppRouteHandlerRou
 {
   type __IsExpected<Specific extends AppPageConfig<"/low-gpa-finance-jobs">> = Specific
   const handler = {} as typeof import("../../../app/low-gpa-finance-jobs/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../../app/ma-interview-questions-2026/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/ma-interview-questions-2026">> = Specific
+  const handler = {} as typeof import("../../../app/ma-interview-questions-2026/page.js")
   type __Check = __IsExpected<typeof handler>
   // @ts-ignore
   type __Unused = __Check
@@ -510,6 +564,15 @@ type RouteHandlerConfig<Route extends AppRouteHandlerRoutes = AppRouteHandlerRou
 {
   type __IsExpected<Specific extends AppPageConfig<"/terms">> = Specific
   const handler = {} as typeof import("../../../app/terms/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../../app/valuation-methods-investment-banking/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/valuation-methods-investment-banking">> = Specific
+  const handler = {} as typeof import("../../../app/valuation-methods-investment-banking/page.js")
   type __Check = __IsExpected<typeof handler>
   // @ts-ignore
   type __Unused = __Check

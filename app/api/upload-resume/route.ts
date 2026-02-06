@@ -2,13 +2,25 @@ import { NextRequest, NextResponse } from 'next/server'
 import { put } from '@vercel/blob'
 import { getDb } from '@/lib/db'
 import { PRODUCTS, getSegmentPricing } from '@/lib/stripe'
+import { rateLimit, getClientIp } from '@/lib/rate-limit'
 
 export async function POST(request: NextRequest) {
+  // Rate limit: 3 requests per 60 seconds per IP
+  const ip = getClientIp(request)
+  const limiter = rateLimit(`upload:${ip}`, { maxRequests: 3, windowSeconds: 60 })
+
+  if (!limiter.success) {
+    return NextResponse.json(
+      { error: 'Too many requests. Please try again later.' },
+      { status: 429 }
+    )
+  }
+
   try {
     const formData = await request.formData()
     const file = formData.get('file') as File | null
-    const name = formData.get('name') as string
-    const email = formData.get('email') as string
+    const name = (formData.get('name') as string)?.trim()
+    const email = (formData.get('email') as string)?.trim().toLowerCase()
     const phone = formData.get('phone') as string
     const serviceType = formData.get('serviceType') as 'resume-review' | 'resume-rewrite'
     const targetRole = formData.get('targetRole') as string
@@ -20,9 +32,27 @@ export async function POST(request: NextRequest) {
     const additionalNotes = formData.get('additionalNotes') as string
     const segment = formData.get('segment') as string | null
 
+    // Validate required fields
     if (!file || !email || !name) {
       return NextResponse.json(
         { error: 'File, name, and email are required' },
+        { status: 400 }
+      )
+    }
+
+    // Validate email format
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/
+    if (!emailRegex.test(email)) {
+      return NextResponse.json(
+        { error: 'Invalid email address' },
+        { status: 400 }
+      )
+    }
+
+    // Validate service type
+    if (!serviceType || !['resume-review', 'resume-rewrite'].includes(serviceType)) {
+      return NextResponse.json(
+        { error: 'Invalid service type' },
         { status: 400 }
       )
     }
@@ -44,10 +74,10 @@ export async function POST(request: NextRequest) {
       )
     }
 
-    // Generate unique filename
+    // Generate unique filename (sanitize email for filename)
     const timestamp = Date.now()
     const safeEmail = email.replace(/[^a-zA-Z0-9]/g, '_')
-    const extension = file.name.split('.').pop()
+    const extension = file.name.split('.').pop()?.replace(/[^a-zA-Z0-9]/g, '') || 'pdf'
     const filename = `resumes/${safeEmail}_${timestamp}.${extension}`
 
     // Upload to Vercel Blob
@@ -70,7 +100,7 @@ export async function POST(request: NextRequest) {
         )
         VALUES (
           ${name},
-          ${email.toLowerCase()},
+          ${email},
           ${phone || null},
           ${serviceType},
           ${targetRole || null},
@@ -97,7 +127,7 @@ export async function POST(request: NextRequest) {
         )
         VALUES (
           ${name},
-          ${email.toLowerCase()},
+          ${email},
           ${phone || null},
           ${serviceType},
           ${targetRole || null},
@@ -132,7 +162,7 @@ export async function POST(request: NextRequest) {
         const segmentPrice = serviceType === 'resume-review' ? reviewPrice : rewritePrice
         
         // Build product name with tier indication for premium segments
-        const tierLabel = tier === 'premium' ? ' (Premium)' : tier === 'accessible' ? '' : ''
+        const tierLabel = tier === 'premium' ? ' (Premium)' : ''
         const productName = `${product.name}${tierLabel}`
         
         const stripe = getStripe()
@@ -156,7 +186,7 @@ export async function POST(request: NextRequest) {
           mode: 'payment',
           success_url: `${appUrl}/success?type=resume&session_id={CHECKOUT_SESSION_ID}`,
           cancel_url: `${appUrl}/resume-services`,
-          customer_email: email.toLowerCase(),
+          customer_email: email,
           metadata: {
             productId: serviceType,
             productName: productName,
@@ -172,7 +202,7 @@ export async function POST(request: NextRequest) {
         const serviceName = serviceType === 'resume-review' ? 'Resume Review' : 'Resume Rewrite'
         try {
           await sendResumePaymentLink(
-            email.toLowerCase(),
+            email,
             name,
             serviceName,
             session.url!,

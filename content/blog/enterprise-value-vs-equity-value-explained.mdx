@@ -1,0 +1,156 @@
+---
+title: "Enterprise Value vs. Equity Value: The Complete Guide"
+summary: "The house analogy that makes EV click forever. EV bridge formula, diluted shares, treasury stock method, and why matching multiples wrong is the fastest way to get dinged."
+category: "Interview Prep"
+readTime: "15 min read"
+publishedAt: "2026-01-28"
+author: "Wall Street Playbook"
+tags: ["enterprise value", "equity value", "valuation", "investment banking interview", "EV bridge", "diluted shares"]
+---
+
+"What's the difference between enterprise value and equity value?"
+
+This question appears in virtually every IB, PE, and hedge fund interview. It sounds simple, but most candidates either give a textbook definition that lacks intuition or make subtle errors that reveal they don't truly understand the concept.
+
+Here's how to nail it—and the follow-ups that separate offers from dings.
+
+## The House Analogy (30-Second Answer)
+
+Think of a house worth $500K with a $300K mortgage.
+
+- **Enterprise value** is the total price of the house: **$500K**
+- **Equity value** is what the homeowner actually owns: **$200K** ($500K - $300K)
+
+Similarly for a company:
+- **Enterprise value** = value of the entire business to ALL capital providers (debt + equity holders)
+- **Equity value** = value available only to equity holders (shareholders)
+
+The formula connecting them:
+
+**Enterprise Value = Equity Value + Net Debt**
+
+Where Net Debt = Total Debt + Preferred Stock + Minority Interest - Cash
+
+## Why This Distinction Matters
+
+This isn't academic trivia. Getting EV vs. equity value wrong will cause you to:
+
+1. **Use the wrong valuation multiples** — EV/EBITDA uses enterprise value because EBITDA is pre-debt (available to all capital providers). P/E uses equity value because earnings are post-debt (available only to equity holders).
+
+2. **Misvalue companies in M&A** — When you acquire a company, you pay the equity value to shareholders, but you assume the debt. The total "cost" is the enterprise value.
+
+3. **Make incorrect comparisons** — Two companies with identical operations but different capital structures will have different equity values but similar enterprise values. EV-based multiples remove the noise of capital structure.
+
+## The EV Bridge: Walking Through Each Component
+
+### Starting Point: Equity Value (Market Cap)
+
+**Equity Value = Share Price × Diluted Shares Outstanding**
+
+Use diluted shares, not basic shares. This accounts for stock options and convertible securities that could increase the share count.
+
+### + Total Debt
+
+All interest-bearing obligations: bank loans, bonds, capital leases, and any other debt. This represents the claims of debt holders on the business.
+
+**Why add debt?** Because enterprise value represents the value of the business to all capital providers. If you're buying the whole house, you need to account for the mortgage.
+
+### + Preferred Stock
+
+Preferred stock behaves more like debt than equity—it typically has fixed dividend payments and priority over common equity. It's a claim on the business that sits above common shareholders.
+
+### + Minority Interest
+
+If a company consolidates a subsidiary it doesn't fully own (e.g., owns 80%), the full subsidiary revenue and EBITDA appear in the financials. Adding minority interest accounts for the portion owned by outside shareholders.
+
+> **RED FLAG:** Many candidates forget minority interest. If you're including 100% of a subsidiary's EBITDA in your EV/EBITDA multiple, you must include 100% of its value in EV—which means adding minority interest.
+
+### − Cash and Cash Equivalents
+
+Cash is subtracted because it effectively reduces the net cost of acquiring the business. If you buy a company for $500M that has $100M in cash, your net cost is really $400M—you can use that cash to pay down the acquisition price or debt.
+
+## Diluted Shares: The Treasury Stock Method
+
+This is a common follow-up. When calculating diluted shares, you use the **treasury stock method (TSM)** for options and warrants:
+
+1. Assume all in-the-money options are exercised
+2. The company receives exercise price × number of options (proceeds)
+3. These proceeds "buy back" shares at the current market price
+4. Net dilution = options exercised - shares bought back
+
+**Example:** 10M basic shares. 1M options with $20 strike price. Current stock price: $50.
+
+- Proceeds from exercise: 1M × $20 = $20M
+- Shares bought back: $20M ÷ $50 = 400K
+- Net new shares: 1M - 400K = 600K
+- **Diluted shares: 10.6M**
+
+**Key rule:** Only *in-the-money* options (strike price < current share price) are included. Out-of-the-money options wouldn't rationally be exercised.
+
+## The Matching Principle: Why This Gets Candidates Dinged
+
+The single most important rule in valuation multiples:
+
+**The numerator and denominator must be consistent.**
+
+- **Enterprise value multiples** use metrics available to ALL capital providers:
+  - EV/Revenue, EV/EBITDA, EV/EBIT
+  - These metrics are *pre-debt*—they're calculated before interest expense
+
+- **Equity value multiples** use metrics available only to EQUITY holders:
+  - P/E (Price/Earnings), P/BV (Price/Book Value)
+  - These metrics are *post-debt*—they're calculated after interest expense
+
+**The trap:** An interviewer might ask, "Would you ever use EV/Net Income?" The answer is **no**—net income is after interest expense (a payment to debt holders), so it's an equity metric. Using it with EV would mismatch the claims.
+
+Similarly, "Would you use Price/EBITDA?" No—EBITDA is pre-debt, so it should pair with EV, not equity value.
+
+## Common Interview Questions
+
+### "When would equity value be greater than enterprise value?"
+
+When a company has **more cash than debt** (net cash position). Enterprise Value = Equity Value + Debt - Cash. If Cash > Debt, EV < Equity Value.
+
+Example: Apple at various points has held more cash than debt, making its EV lower than its market cap.
+
+### "Can enterprise value be negative?"
+
+Technically yes, if a company's cash balance exceeds its equity value plus debt. This is rare and usually indicates the market believes the company will burn through its cash (the business operations are worth less than zero).
+
+### "Why do we use EV/EBITDA instead of P/E for most valuation work?"
+
+Three reasons:
+1. **Capital structure neutral** — EV/EBITDA isn't affected by how a company is financed. Two identical businesses with different leverage will have different P/E ratios but similar EV/EBITDA.
+2. **D&A neutral** — EBITDA strips out depreciation differences, making it better for comparing capital-intensive vs. asset-light businesses.
+3. **Tax neutral** — Different tax structures don't distort the comparison.
+
+### "Walk me through an EV bridge for Company X."
+
+Start with market cap (share price × diluted shares). Add total debt from the balance sheet. Add preferred stock and minority interest if applicable. Subtract cash and equivalents.
+
+**Pro tip:** Always use the *most recent* balance sheet data, not annual data that may be months old.
+
+## Quick Reference: EV vs. Equity Value
+
+| Metric | Value Type | Why |
+|--------|-----------|-----|
+| Revenue | Enterprise | Pre-debt, available to all |
+| EBITDA | Enterprise | Pre-debt, pre-D&A |
+| EBIT | Enterprise | Pre-debt |
+| Net Income | Equity | Post-debt (after interest) |
+| EPS | Equity | Post-debt, per-share |
+| Book Value | Equity | Residual after liabilities |
+| FCF (unlevered) | Enterprise | Pre-debt cash flow |
+| FCF (levered) | Equity | Post-debt cash flow |
+
+---
+
+### Related Reading
+
+- [How the 3 Financial Statements Are Linked](/blog/how-three-financial-statements-linked) — Foundation for understanding where these metrics come from
+- [Walk Me Through a DCF: The Perfect Answer](/blog/walk-me-through-dcf-perfect-answer) — Where EV and equity value show up in practice
+- [Trading Comps vs. Precedent Transactions](/blog/trading-comps-vs-precedent-transactions) — Applying these multiples in real analysis
+
+*This topic is covered in Chapter 2 of our [IB Technical Interview Guide](/playbooks/ib-technical-guide), with additional questions on diluted shares edge cases, convertible securities, and the matching principle traps that catch even experienced candidates.*
+
+*Grab our free [20 Must-Know Technical Questions](/ib-technical-cheat-sheet) cheat sheet for quick-reference answers to the most common interview questions.*

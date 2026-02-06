@@ -1,7 +1,12 @@
 import { NextRequest, NextResponse } from 'next/server'
 import { getDb } from '@/lib/db'
+import { rateLimit, getClientIp } from '@/lib/rate-limit'
+import { timingSafeEqual } from 'crypto'
 
-// Simple admin auth check
+/**
+ * Timing-safe admin auth check.
+ * Uses constant-time comparison to prevent timing attacks on the password.
+ */
 function isAuthorized(request: NextRequest): boolean {
   const authHeader = request.headers.get('authorization')
   if (!authHeader) return false
@@ -10,10 +15,31 @@ function isAuthorized(request: NextRequest): boolean {
   if (!adminPassword) return false
   
   const token = authHeader.replace('Bearer ', '').trim()
-  return token === adminPassword
+
+  // Constant-time comparison prevents timing attacks
+  try {
+    const tokenBuf = Buffer.from(token, 'utf-8')
+    const passwordBuf = Buffer.from(adminPassword, 'utf-8')
+
+    if (tokenBuf.length !== passwordBuf.length) return false
+    return timingSafeEqual(tokenBuf, passwordBuf)
+  } catch {
+    return false
+  }
 }
 
 export async function GET(request: NextRequest) {
+  // Rate limit admin login attempts: 10 per minute per IP
+  const ip = getClientIp(request)
+  const limiter = rateLimit(`admin:${ip}`, { maxRequests: 10, windowSeconds: 60 })
+
+  if (!limiter.success) {
+    return NextResponse.json(
+      { error: 'Too many requests. Please try again later.' },
+      { status: 429 }
+    )
+  }
+
   if (!isAuthorized(request)) {
     return NextResponse.json({ error: 'Unauthorized' }, { status: 401 })
   }
