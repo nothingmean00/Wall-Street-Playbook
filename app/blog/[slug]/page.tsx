@@ -6,7 +6,7 @@ import { RelatedContent, relatedContentByTopic } from "@/components/related-cont
 import { getAllBlogPosts, getBlogPost, getRelatedBlogPosts } from "@/lib/blog"
 import { notFound } from "next/navigation"
 import Link from "next/link"
-import { ArrowLeft, ArrowRight, Clock, Calendar } from "lucide-react"
+import { ArrowLeft, ArrowRight, Clock, Calendar, BookOpen, Download, Shield, Star, CheckCircle } from "lucide-react"
 
 export async function generateStaticParams() {
   const posts = getAllBlogPosts()
@@ -57,13 +57,40 @@ const categoryColors: Record<string, string> = {
   Technical: "bg-charcoal/10 text-charcoal",
   Interviews: "bg-navy/10 text-navy",
   Networking: "bg-gold/20 text-gold",
+  "Interview Prep": "bg-gold/20 text-gold",
+}
+
+// Determine which product CTA to show in the sidebar
+function getSidebarCTA(slug: string, category: string, tags?: string[]) {
+  const tagSet = new Set((tags || []).map(t => t.toLowerCase()))
+  const s = slug.toLowerCase()
+
+  // PE-related content → PE Recruiting Playbook
+  if (s.includes("pe-") || s.includes("private-equity") || s.includes("paper-lbo") || tagSet.has("private equity") || tagSet.has("PE interview")) {
+    return {
+      product: "2026 PE Recruiting Playbook",
+      description: "42 pages. 20 chapters. Headhunter intel, timelines, compensation data, and contrarian insights.",
+      price: 97,
+      href: "/playbooks/pe-recruiting-playbook",
+      features: ["Headhunter firm rankings & strategies", "Bank-to-fund pipeline data", "Paper LBO frameworks", "2026 timeline forecast"],
+    }
+  }
+
+  // Default → IB Technical Interview Guide (covers the broadest audience)
+  return {
+    product: "IB Technical Interview Guide",
+    description: "87 pages. 6 chapters. Every question tagged by frequency with dual-format answers.",
+    price: 127,
+    href: "/playbooks/ib-technical-guide",
+    features: ["Interview frequency tags on every concept", "30-second + 3-minute answer formats", "Red flag warnings for common mistakes", "Self-assessment scorecards"],
+  }
 }
 
 // Helper to determine related content topic
 function getRelatedTopic(slug: string, category: string, tags?: string[]): keyof typeof relatedContentByTopic | null {
-  const tagSet = new Set(tags || [])
+  const tagSet = new Set((tags || []).map(t => t.toLowerCase()))
   if (tagSet.has("non-target") || slug.includes("non-target")) return "nonTarget"
-  if (category === "Technical" || slug.includes("dcf") || slug.includes("lbo") || slug.includes("technical")) return "technicals"
+  if (category === "Technical" || category === "Interview Prep" || slug.includes("dcf") || slug.includes("lbo") || slug.includes("technical") || slug.includes("accounting") || slug.includes("valuation") || slug.includes("wacc") || slug.includes("comps") || slug.includes("accretion")) return "technicals"
   if (slug.includes("resume") || category === "Resume") return "resume"
   if (slug.includes("private-equity") || slug.includes("pe-")) return "peRecruiting"
   if (slug.includes("hedge-fund") || slug.includes("hf-")) return "hfRecruiting"
@@ -193,96 +220,211 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
           </div>
         </section>
 
-        {/* Article Content */}
+        {/* Article Content — 2-column layout */}
         <section className="bg-off-white py-16 lg:py-20">
-          <div className="mx-auto max-w-3xl px-6 lg:px-8">
-            <article className="prose prose-lg prose-charcoal max-w-none">
-              {post.content ? (
-                <div
-                  className="text-charcoal/80 leading-relaxed space-y-4"
-                  dangerouslySetInnerHTML={{
-                    __html: post.content
-                      .split("\n\n")
-                      .map((paragraph) => {
-                        // Horizontal rule / divider
-                        if (paragraph.trim() === "---") {
-                          return `<hr class="my-10 border-gold/30" />`
-                        }
-                        // H2 headers
-                        if (paragraph.startsWith("## ")) {
-                          return `<h2 class="text-2xl font-bold text-charcoal mt-12 mb-4">${paragraph.replace("## ", "")}</h2>`
-                        }
-                        // H3 headers
-                        if (paragraph.startsWith("### ")) {
-                          return `<h3 class="text-xl font-semibold text-charcoal mt-8 mb-3">${paragraph.replace("### ", "")}</h3>`
-                        }
-                        // Block quotes (lines starting with >)
-                        if (paragraph.startsWith("> ") || paragraph.startsWith(">")) {
-                          const quoteContent = paragraph.replace(/^>\s?/gm, "")
-                            .replace(/\*\*(.*?)\*\*/g, '<strong class="text-charcoal">$1</strong>')
-                            .replace(/\*(.*?)\*/g, '<em>$1</em>')
-                          return `<blockquote class="pl-4 border-l-4 border-gold bg-gold/5 py-3 pr-4 rounded-r-lg text-charcoal/80 italic my-4">${quoteContent}</blockquote>`
-                        }
-                        // Bullet lists (- items)
-                        if (paragraph.startsWith("- ")) {
-                          const items = paragraph.split("\n").filter(line => line.trim().startsWith("- "))
-                          const listItems = items.map(item => {
-                            const content = item.replace(/^-\s+/, "")
+          <div className="mx-auto max-w-7xl px-6 lg:px-8">
+            <div className="mx-auto grid max-w-6xl gap-12 lg:grid-cols-[1fr_320px]">
+
+              {/* LEFT — Article Body */}
+              <div className="min-w-0">
+                <article className="prose prose-lg prose-charcoal max-w-none">
+                  {post.content ? (
+                    <div
+                      className="text-charcoal/80 leading-relaxed space-y-4"
+                      dangerouslySetInnerHTML={{
+                        __html: post.content
+                          .split("\n\n")
+                          .map((paragraph) => {
+                            if (paragraph.trim() === "---") {
+                              return `<hr class="my-10 border-gold/30" />`
+                            }
+                            if (paragraph.startsWith("## ")) {
+                              return `<h2 class="text-2xl font-bold text-charcoal mt-12 mb-4">${paragraph.replace("## ", "")}</h2>`
+                            }
+                            if (paragraph.startsWith("### ")) {
+                              return `<h3 class="text-xl font-semibold text-charcoal mt-8 mb-3">${paragraph.replace("### ", "")}</h3>`
+                            }
+                            if (paragraph.startsWith("> ") || paragraph.startsWith(">")) {
+                              const quoteContent = paragraph.replace(/^>\s?/gm, "")
+                                .replace(/\*\*(.*?)\*\*/g, '<strong class="text-charcoal">$1</strong>')
+                                .replace(/\*(.*?)\*/g, '<em>$1</em>')
+                              return `<blockquote class="pl-4 border-l-4 border-gold bg-gold/5 py-3 pr-4 rounded-r-lg text-charcoal/80 italic my-4">${quoteContent}</blockquote>`
+                            }
+                            if (paragraph.startsWith("- ")) {
+                              const items = paragraph.split("\n").filter(line => line.trim().startsWith("- "))
+                              const listItems = items.map(item => {
+                                const content = item.replace(/^-\s+/, "")
+                                  .replace(/\*\*(.*?)\*\*/g, '<strong class="text-charcoal">$1</strong>')
+                                  .replace(/\*(.*?)\*/g, '<em>$1</em>')
+                                  .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" class="text-gold hover:text-navy underline">$1</a>')
+                                return `<li class="text-charcoal/80">${content}</li>`
+                              }).join("")
+                              return `<ul class="list-disc list-inside space-y-2 my-4 ml-4">${listItems}</ul>`
+                            }
+                            if (/^\d+\.\s/.test(paragraph.trim())) {
+                              const items = paragraph.split("\n").filter(line => /^\d+\.\s/.test(line.trim()))
+                              const listItems = items.map(item => {
+                                const content = item.replace(/^\d+\.\s+/, "")
+                                  .replace(/\*\*(.*?)\*\*/g, '<strong class="text-charcoal">$1</strong>')
+                                  .replace(/\*(.*?)\*/g, '<em>$1</em>')
+                                  .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" class="text-gold hover:text-navy underline">$1</a>')
+                                return `<li class="text-charcoal/80">${content}</li>`
+                              }).join("")
+                              return `<ol class="list-decimal list-inside space-y-2 my-4 ml-4">${listItems}</ol>`
+                            }
+                            if (paragraph.startsWith("|") && paragraph.includes("|")) {
+                              const rows = paragraph.split("\n").filter(r => r.trim().startsWith("|"))
+                              if (rows.length >= 2) {
+                                const headerRow = rows[0]
+                                const dataRows = rows.slice(2)
+                                const headers = headerRow.split("|").filter(c => c.trim()).map(c => `<th class="px-3 py-2 text-left text-xs font-semibold text-navy bg-navy/5 border-b border-border">${c.trim()}</th>`).join("")
+                                const body = dataRows.map(row => {
+                                  const cells = row.split("|").filter(c => c.trim()).map(c => {
+                                    const formatted = c.trim()
+                                      .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+                                      .replace(/\*(.*?)\*/g, '<em>$1</em>')
+                                    return `<td class="px-3 py-2 text-xs text-charcoal/70 border-b border-border/50">${formatted}</td>`
+                                  }).join("")
+                                  return `<tr>${cells}</tr>`
+                                }).join("")
+                                return `<div class="my-6 overflow-x-auto rounded-lg border border-border"><table class="w-full"><thead><tr>${headers}</tr></thead><tbody>${body}</tbody></table></div>`
+                              }
+                            }
+                            const formatted = paragraph
                               .replace(/\*\*(.*?)\*\*/g, '<strong class="text-charcoal">$1</strong>')
                               .replace(/\*(.*?)\*/g, '<em>$1</em>')
                               .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" class="text-gold hover:text-navy underline">$1</a>')
-                            return `<li class="text-charcoal/80">${content}</li>`
-                          }).join("")
-                          return `<ul class="list-disc list-inside space-y-2 my-4 ml-4">${listItems}</ul>`
-                        }
-                        // Numbered lists
-                        if (/^\d+\.\s/.test(paragraph.trim())) {
-                          const items = paragraph.split("\n").filter(line => /^\d+\.\s/.test(line.trim()))
-                          const listItems = items.map(item => {
-                            const content = item.replace(/^\d+\.\s+/, "")
-                              .replace(/\*\*(.*?)\*\*/g, '<strong class="text-charcoal">$1</strong>')
-                              .replace(/\*(.*?)\*/g, '<em>$1</em>')
-                              .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" class="text-gold hover:text-navy underline">$1</a>')
-                            return `<li class="text-charcoal/80">${content}</li>`
-                          }).join("")
-                          return `<ol class="list-decimal list-inside space-y-2 my-4 ml-4">${listItems}</ol>`
-                        }
-                        // Regular paragraphs with formatting
-                        const formatted = paragraph
-                          .replace(/\*\*(.*?)\*\*/g, '<strong class="text-charcoal">$1</strong>')
-                          .replace(/\*(.*?)\*/g, '<em>$1</em>')
-                          .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" class="text-gold hover:text-navy underline">$1</a>')
-                        return `<p class="text-charcoal/80 leading-relaxed">${formatted}</p>`
-                      })
-                      .join(""),
-                  }}
-                />
-              ) : (
-                <p className="text-charcoal/70">Full article content coming soon.</p>
-              )}
-            </article>
+                            return `<p class="text-charcoal/80 leading-relaxed">${formatted}</p>`
+                          })
+                          .join(""),
+                      }}
+                    />
+                  ) : (
+                    <p className="text-charcoal/70">Full article content coming soon.</p>
+                  )}
+                </article>
 
-            {/* Email Capture CTA */}
-            <BlogEmailCTA variant="inline" />
+                {/* Email Capture CTA — inline after article */}
+                <BlogEmailCTA variant="inline" />
+              </div>
 
-            {/* Gold divider */}
-            <div className="my-12 h-px bg-gold/30" />
+              {/* RIGHT — Sticky Sidebar */}
+              <aside className="hidden lg:block">
+                <div className="sticky top-24 space-y-6">
+                  {/* Product CTA Card */}
+                  {(() => {
+                    const cta = getSidebarCTA(slug, post.category, post.tags)
+                    return (
+                      <div className="rounded-xl border border-border bg-white p-6 shadow-sm">
+                        <div className="flex items-center gap-2 mb-3">
+                          <div className="flex h-8 w-8 items-center justify-center rounded-lg bg-gold/10">
+                            <BookOpen className="h-4 w-4 text-gold" />
+                          </div>
+                          <span className="text-xs font-semibold uppercase tracking-wider text-charcoal/50">Recommended</span>
+                        </div>
 
-            {/* CTA Box */}
-            <div className="rounded-xl bg-navy p-8 text-center">
-              <h3 className="text-xl font-bold text-white">Go Deeper With Our Playbooks</h3>
-              <p className="mt-3 text-sm text-white/70 max-w-lg mx-auto">
-                This article covers the fundamentals. Our premium Playbooks provide the complete frameworks, templates,
-                and scripts you need to execute at the highest level.
-              </p>
-              <Link
-                href="/playbooks"
-                className="mt-6 inline-flex items-center gap-2 rounded-lg bg-gold px-6 py-3 text-sm font-semibold text-navy transition-colors hover:bg-white"
-              >
-                Browse Playbooks
-                <ArrowRight className="h-4 w-4" />
-              </Link>
+                        <h3 className="text-base font-bold text-navy leading-snug">{cta.product}</h3>
+                        <p className="mt-2 text-xs text-charcoal/60 leading-relaxed">{cta.description}</p>
+
+                        <ul className="mt-4 space-y-2">
+                          {cta.features.map((feature) => (
+                            <li key={feature} className="flex gap-2 items-start">
+                              <CheckCircle className="h-3.5 w-3.5 text-gold flex-shrink-0 mt-0.5" />
+                              <span className="text-xs text-charcoal/70">{feature}</span>
+                            </li>
+                          ))}
+                        </ul>
+
+                        <Link
+                          href={cta.href}
+                          className="mt-5 flex items-center justify-center gap-2 w-full rounded-lg bg-gold px-4 py-3 text-sm font-semibold text-navy transition-colors hover:bg-gold/90"
+                        >
+                          Get the Guide — ${cta.price}
+                          <ArrowRight className="h-4 w-4" />
+                        </Link>
+
+                        <div className="mt-3 flex items-center justify-center gap-1.5 text-xs text-green-600">
+                          <Shield className="h-3 w-3" />
+                          <span>30-day money-back guarantee</span>
+                        </div>
+                      </div>
+                    )
+                  })()}
+
+                  {/* Free Cheat Sheet CTA */}
+                  <Link
+                    href="/ib-technical-cheat-sheet"
+                    className="block rounded-xl border border-gold/30 bg-gradient-to-br from-gold/5 to-transparent p-5 transition-all hover:border-gold/50 hover:shadow-sm"
+                  >
+                    <div className="flex items-center gap-2 mb-2">
+                      <Download className="h-4 w-4 text-gold" />
+                      <span className="text-xs font-semibold text-gold">FREE DOWNLOAD</span>
+                    </div>
+                    <p className="text-sm font-semibold text-navy">20 Must-Know Technical Questions</p>
+                    <p className="mt-1 text-xs text-charcoal/60">Quick-reference cheat sheet PDF</p>
+                  </Link>
+
+                  {/* Social Proof */}
+                  <div className="rounded-xl border border-border bg-white p-5">
+                    <div className="flex items-center gap-1 mb-2">
+                      {[...Array(5)].map((_, i) => (
+                        <Star key={i} className="h-3.5 w-3.5 fill-gold text-gold" />
+                      ))}
+                    </div>
+                    <p className="text-xs text-charcoal/70 italic leading-relaxed">
+                      "The frequency tags saved me 40+ hours of studying. Stopped wasting time on obscure topics."
+                    </p>
+                    <p className="mt-2 text-[10px] text-charcoal/40">— Liberal Arts Major → Evercore SA</p>
+                  </div>
+
+                  {/* Related Posts Sidebar */}
+                  {relatedPosts.length > 0 && (
+                    <div className="rounded-xl border border-border bg-white p-5">
+                      <h4 className="text-xs font-semibold uppercase tracking-wider text-charcoal/50 mb-3">Related Articles</h4>
+                      <div className="space-y-3">
+                        {relatedPosts.map((rp) => (
+                          <Link
+                            key={rp.slug}
+                            href={`/blog/${rp.slug}`}
+                            className="block group"
+                          >
+                            <p className="text-sm font-medium text-navy group-hover:text-gold transition-colors leading-snug">{rp.title}</p>
+                            {rp.readTime && (
+                              <p className="text-[10px] text-charcoal/40 mt-0.5">{rp.readTime}</p>
+                            )}
+                          </Link>
+                        ))}
+                      </div>
+                    </div>
+                  )}
+                </div>
+              </aside>
             </div>
+          </div>
+        </section>
+
+        {/* Mobile CTA — shown below article on mobile only */}
+        <section className="bg-off-white pb-16 lg:hidden">
+          <div className="mx-auto max-w-3xl px-6">
+            {(() => {
+              const cta = getSidebarCTA(slug, post.category, post.tags)
+              return (
+                <div className="rounded-xl bg-navy p-8 text-center">
+                  <h3 className="text-xl font-bold text-white">{cta.product}</h3>
+                  <p className="mt-3 text-sm text-white/70">
+                    {cta.description}
+                  </p>
+                  <Link
+                    href={cta.href}
+                    className="mt-6 inline-flex items-center gap-2 rounded-lg bg-gold px-6 py-3 text-sm font-semibold text-navy transition-colors hover:bg-white"
+                  >
+                    Get the Guide — ${cta.price}
+                    <ArrowRight className="h-4 w-4" />
+                  </Link>
+                  <p className="mt-3 text-xs text-white/40">30-day money-back guarantee</p>
+                </div>
+              )
+            })()}
           </div>
         </section>
 
