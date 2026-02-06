@@ -70,9 +70,8 @@ export function ScrollReveal({
   const { initial, animate } = animationStyles[animation]
 
   return (
-    <Component
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      ref={ref as any}
+    <div
+      ref={ref as React.RefObject<HTMLDivElement>}
       className={cn(
         "transition-all ease-out",
         isInView ? animate : initial,
@@ -84,7 +83,7 @@ export function ScrollReveal({
       }}
     >
       {children}
-    </Component>
+    </div>
   )
 }
 

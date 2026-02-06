@@ -2309,8 +2309,7 @@ function ScrollReveal({ children, className, animation = "fade-up", delay = 0, d
         triggerOnce: once
     });
     const { initial, animate } = animationStyles[animation];
-    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])(Component, {
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$server$2f$route$2d$modules$2f$app$2d$page$2f$vendored$2f$ssr$2f$react$2d$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
         ref: ref,
         className: (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$lib$2f$utils$2e$ts__$5b$app$2d$ssr$5d$__$28$ecmascript$29$__["cn"])("transition-all ease-out", isInView ? animate : initial, className),
         style: {
@@ -2336,12 +2335,12 @@ function ScrollRevealGroup({ children, className, animation = "fade-up", stagger
                 children: child
             }, index, false, {
                 fileName: "[project]/Downloads/wall-street-playbook/components/scroll-reveal.tsx",
-                lineNumber: 114,
+                lineNumber: 113,
                 columnNumber: 9
             }, this))
     }, void 0, false, {
         fileName: "[project]/Downloads/wall-street-playbook/components/scroll-reveal.tsx",
-        lineNumber: 112,
+        lineNumber: 111,
         columnNumber: 5
     }, this);
 }

@@ -23,3 +23,29 @@ Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
 Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
 [05:40:39.805] Server  LOG      ✓ Compiled in 507ms
 [05:52:47.421] Server  LOG      ✓ Compiled in 245ms
+[05:59:30.097] Server  LOG      ✓ Compiled in 214ms
+[05:59:30.424] Browser ERROR   ./Downloads/wall-street-playbook/components/scroll-reveal.tsx:86:7
+Parsing ecmascript source code failed
+  84 |     >
+  85 |       {children}
+> 86 |     </Component>
+     |       ^^^^^^^^^
+  87 |   )
+  88 | }
+  89 |
+
+Expected corresponding JSX closing tag for <div>
+
+Import traces:
+  Client Component Browser:
+    ./Downloads/wall-street-playbook/components/scroll-reveal.tsx [Client Component Browser]
+    ./Downloads/wall-street-playbook/components/home/cta-section.tsx [Client Component Browser]
+    ./Downloads/wall-street-playbook/components/home/cta-section.tsx [Server Component]
+    ./Downloads/wall-street-playbook/app/page.tsx [Server Component]
+
+  Client Component SSR:
+    ./Downloads/wall-street-playbook/components/scroll-reveal.tsx [Client Component SSR]
+    ./Downloads/wall-street-playbook/components/home/cta-section.tsx [Client Component SSR]
+    ./Downloads/wall-street-playbook/components/home/cta-section.tsx [Server Component]
+    ./Downloads/wall-street-playbook/app/page.tsx [Server Component]
+[05:59:34.219] Server  LOG      ✓ Compiled in 353ms
