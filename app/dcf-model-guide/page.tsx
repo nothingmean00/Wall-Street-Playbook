@@ -369,7 +369,7 @@ export default function DCFModelGuidePage() {
           <div className="mx-auto max-w-3xl px-6 lg:px-8 text-center">
             <h2 className="text-3xl font-bold text-white sm:text-4xl">Master DCF and All Technical Topics</h2>
             <p className="mt-4 text-lg text-white/60">
-              DCF is just one chapter. The Finance Technical Interview Guide covers all 6 core topics—Accounting, EV/Equity Value, DCF, Comps, M&A, and LBOs—in 87 pages with frequency-tagged questions.
+              DCF is just one chapter. The Finance Technical Interview Guide covers all 6 core topics—Accounting, EV/Equity Value, DCF, Comps, M&A, and LBOs—in 88 pages with frequency-tagged questions.
             </p>
             
             <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">

@@ -6,7 +6,7 @@ const livePlaybooks = [
     slug: "ib-technical-guide",
     title: "Finance Technical Interview Guide",
     description:
-      "87 pages. 6 chapters. Every question tagged by interview frequency with dual-format answers.",
+      "88 pages. 6 chapters. Every question tagged by interview frequency with dual-format answers.",
     price: 127,
     highlights: [
       "400+ real interview questions",

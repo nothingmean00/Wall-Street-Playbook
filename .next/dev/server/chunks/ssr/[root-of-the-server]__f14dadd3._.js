@@ -153,8 +153,8 @@ const playbooks = [
     {
         slug: "ib-technical-guide",
         title: "Finance Technical Interview Guide",
-        description: "87-page, 6-chapter technical mastery guide. Every question tagged by interview frequency, with dual-format answers (30-second and 3-minute versions) and red flag warnings.",
-        longDescription: "Master the technical questions that determine who gets the offer and who goes home. This 87-page guide covers all 6 core topics tested in IB, PE, and finance interviews—accounting, enterprise value, DCF, comps, M&A, and LBOs. Every question is tagged by how often it actually appears (Always Asked, Frequently Asked, Sometimes Asked), with dual-format answers for quick checks and deep dives. Built differently from every other prep resource: interview frequency tags, red flag warnings for common mistakes, and interviewer perspective boxes that reveal the hidden evaluation criteria.",
+        description: "88-page, 6-chapter technical mastery guide. Every question tagged by interview frequency, with dual-format answers (30-second and 3-minute versions) and red flag warnings.",
+        longDescription: "Master the technical questions that determine who gets the offer and who goes home. This 88-page guide covers all 6 core topics tested in IB, PE, and finance interviews—accounting, enterprise value, DCF, comps, M&A, and LBOs. Every question is tagged by how often it actually appears (Always Asked, Frequently Asked, Sometimes Asked), with dual-format answers for quick checks and deep dives. Built differently from every other prep resource: interview frequency tags, red flag warnings for common mistakes, and interviewer perspective boxes that reveal the hidden evaluation criteria.",
         price: 127,
         contents: [
             "Chapter 1: Accounting Fundamentals — 3 financial statements, build-a-business walkthrough, working capital deep dive, 12 must-know interview questions",
@@ -4928,7 +4928,7 @@ const livePlaybooks = [
     {
         slug: "ib-technical-guide",
         title: "Finance Technical Interview Guide",
-        description: "87 pages. 6 chapters. Every question tagged by interview frequency with dual-format answers.",
+        description: "88 pages. 6 chapters. Every question tagged by interview frequency with dual-format answers.",
         price: 127,
         highlights: [
             "400+ real interview questions",

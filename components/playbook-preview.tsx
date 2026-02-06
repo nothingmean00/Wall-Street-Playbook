@@ -348,7 +348,7 @@ export function IBTechnicalPreview() {
       title="Finance Technical Interview Guide"
       pdfUrl="https://53r2eh0lojknhqsa.public.blob.vercel-storage.com/IB-Technical-Interview-Guide.pdf"
       previewPages={6}
-      totalPages={87}
+      totalPages={88}
     />
   )
 }

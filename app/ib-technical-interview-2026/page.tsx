@@ -222,7 +222,7 @@ export default function IBTechnicalInterview2026Page() {
             <div className="mx-auto max-w-2xl text-center">
               <h2 className="text-3xl font-bold text-white">Stop Memorizing. Start Understanding.</h2>
               <p className="mt-4 text-white/70">
-                87 pages. 6 chapters. Every question tagged by frequency. Dual-format answers. The technical prep that gets offers.
+                88 pages. 6 chapters. Every question tagged by frequency. Dual-format answers. The technical prep that gets offers.
               </p>
               <div className="mt-8 flex flex-col sm:flex-row gap-4 justify-center">
                 <Link

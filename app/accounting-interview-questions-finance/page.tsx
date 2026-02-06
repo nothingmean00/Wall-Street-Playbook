@@ -153,7 +153,7 @@ export default function AccountingInterviewFinancePage() {
             <div className="mx-auto max-w-2xl text-center">
               <h2 className="text-3xl font-bold text-white">Accounting Is Just the Foundation</h2>
               <p className="mt-4 text-white/70">
-                Chapter 1 covers accounting in depth. But interviews don't stop there—you'll need DCF, comps, M&A, and LBO mastery too. The full guide covers all 6 topics in 87 pages.
+                Chapter 1 covers accounting in depth. But interviews don't stop there—you'll need DCF, comps, M&A, and LBO mastery too. The full guide covers all 6 topics in 88 pages.
               </p>
               <div className="mt-8">
                 <Link

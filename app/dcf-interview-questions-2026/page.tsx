@@ -211,7 +211,7 @@ export default function DCFInterviewQuestions2026Page() {
             <div className="mx-auto max-w-2xl text-center">
               <h2 className="text-3xl font-bold text-white">DCF Is Just One Chapter</h2>
               <p className="mt-4 text-white/70">
-                The full Finance Technical Interview Guide covers 6 chapters: Accounting, EV/Equity Value, DCF, Comps, M&A, and LBOs. Every question tagged by frequency. Dual-format answers. 87 pages.
+                The full Finance Technical Interview Guide covers 6 chapters: Accounting, EV/Equity Value, DCF, Comps, M&A, and LBOs. Every question tagged by frequency. Dual-format answers. 88 pages.
               </p>
               <div className="mt-8">
                 <Link
