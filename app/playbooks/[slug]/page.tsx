@@ -143,6 +143,36 @@ export default async function PlaybookPage({ params }: PlaybookPageProps) {
             <div className="mx-auto grid max-w-6xl gap-12 lg:grid-cols-3">
               {/* Main Content */}
               <div className="lg:col-span-2 space-y-8">
+                {/* Preview Section - PE Playbook */}
+                {playbook.slug === 'pe-recruiting-playbook' && (
+                  <div className="rounded-xl border border-border bg-white p-8 shadow-sm">
+                    <div className="flex items-center gap-2 mb-2">
+                      <BookOpen className="h-5 w-5 text-gold" />
+                      <h2 className="text-xl font-semibold text-navy">Look Inside</h2>
+                    </div>
+                    <div className="mt-2 h-1 w-10 bg-gold" />
+                    <p className="mt-4 text-sm text-charcoal/60 mb-6">
+                      Preview the first 6 pages. Click the expand icon for a larger view.
+                    </p>
+                    <PEPlaybookPreview />
+                  </div>
+                )}
+
+                {/* Preview Section - Finance Technical Guide */}
+                {playbook.slug === 'ib-technical-guide' && (
+                  <div className="rounded-xl border border-border bg-white p-8 shadow-sm">
+                    <div className="flex items-center gap-2 mb-2">
+                      <BookOpen className="h-5 w-5 text-gold" />
+                      <h2 className="text-xl font-semibold text-navy">Look Inside</h2>
+                    </div>
+                    <div className="mt-2 h-1 w-10 bg-gold" />
+                    <p className="mt-4 text-sm text-charcoal/60 mb-6">
+                      Preview the first 6 pages of this 87-page guide. See the structure, frequency tags, and answer format.
+                    </p>
+                    <IBTechnicalPreview />
+                  </div>
+                )}
+
                 {/* Who This Is For */}
                 <div className="rounded-xl border-2 border-gold/30 bg-gradient-to-br from-gold/5 to-transparent p-8 shadow-sm">
                   <div className="flex items-center gap-2 mb-2">
@@ -189,36 +219,6 @@ export default async function PlaybookPage({ params }: PlaybookPageProps) {
                     ))}
                   </ul>
                 </div>
-
-                {/* Preview Section - PE Playbook */}
-                {playbook.slug === 'pe-recruiting-playbook' && (
-                  <div className="rounded-xl border border-border bg-white p-8 shadow-sm">
-                    <div className="flex items-center gap-2 mb-2">
-                      <BookOpen className="h-5 w-5 text-gold" />
-                      <h2 className="text-xl font-semibold text-navy">Look Inside</h2>
-                    </div>
-                    <div className="mt-2 h-1 w-10 bg-gold" />
-                    <p className="mt-4 text-sm text-charcoal/60 mb-6">
-                      Preview the first 6 pages. Click the expand icon for a larger view.
-                    </p>
-                    <PEPlaybookPreview />
-                  </div>
-                )}
-
-                {/* Preview Section - Finance Technical Guide */}
-                {playbook.slug === 'ib-technical-guide' && (
-                  <div className="rounded-xl border border-border bg-white p-8 shadow-sm">
-                    <div className="flex items-center gap-2 mb-2">
-                      <BookOpen className="h-5 w-5 text-gold" />
-                      <h2 className="text-xl font-semibold text-navy">Look Inside</h2>
-                    </div>
-                    <div className="mt-2 h-1 w-10 bg-gold" />
-                    <p className="mt-4 text-sm text-charcoal/60 mb-6">
-                      Preview the first 6 pages of this 87-page guide. See the structure, frequency tags, and answer format.
-                    </p>
-                    <IBTechnicalPreview />
-                  </div>
-                )}
 
                 {/* Excerpt Preview */}
                 <div className="rounded-xl border border-border bg-white p-8 shadow-sm">
