@@ -52,3 +52,5 @@ Import traces:
 [06:10:29.038] Server  LOG      ✓ Compiled in 468ms
 [07:05:46.596] Server  LOG      ✓ Compiled in 329ms
 [07:06:02.043] Server  LOG      ✓ Compiled in 351ms
+[08:24:45.404] Server  LOG      ✓ Compiled in 2.1s
+[08:25:36.111] Server  LOG      ✓ Compiled in 3s
