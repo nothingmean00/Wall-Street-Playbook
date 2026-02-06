@@ -1,0 +1,15 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/ib-technical-cheat-sheet/layout,_N_T_/ib-technical-cheat-sheet/page,_N_T_/ib-technical-cheat-sheet"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/ib-technical-cheat-sheet/__PAGE__",
+    "/ib-technical-cheat-sheet",
+    "/_index",
+    "/_head"
+  ]
+}

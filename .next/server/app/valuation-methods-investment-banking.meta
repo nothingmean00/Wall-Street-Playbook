@@ -1,0 +1,15 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/valuation-methods-investment-banking/layout,_N_T_/valuation-methods-investment-banking/page,_N_T_/valuation-methods-investment-banking"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/valuation-methods-investment-banking/__PAGE__",
+    "/valuation-methods-investment-banking",
+    "/_index",
+    "/_head"
+  ]
+}

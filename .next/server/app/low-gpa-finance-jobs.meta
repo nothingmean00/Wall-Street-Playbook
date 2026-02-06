@@ -1,0 +1,15 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/low-gpa-finance-jobs/layout,_N_T_/low-gpa-finance-jobs/page,_N_T_/low-gpa-finance-jobs"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/low-gpa-finance-jobs/__PAGE__",
+    "/low-gpa-finance-jobs",
+    "/_index",
+    "/_head"
+  ]
+}

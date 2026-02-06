@@ -1,0 +1,15 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/engineer-to-finance/layout,_N_T_/engineer-to-finance/page,_N_T_/engineer-to-finance"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/engineer-to-finance/__PAGE__",
+    "/engineer-to-finance",
+    "/_index",
+    "/_head"
+  ]
+}

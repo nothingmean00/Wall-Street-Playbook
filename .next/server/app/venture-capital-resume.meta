@@ -1,0 +1,15 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/venture-capital-resume/layout,_N_T_/venture-capital-resume/page,_N_T_/venture-capital-resume"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/venture-capital-resume/__PAGE__",
+    "/venture-capital-resume",
+    "/_index",
+    "/_head"
+  ]
+}

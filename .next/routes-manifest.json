@@ -21,6 +21,22 @@
   },
   "dynamicRoutes": [
     {
+      "page": "/api/admin/submissions/[id]",
+      "regex": "^/api/admin/submissions/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPid": "nxtPid"
+      },
+      "namedRegex": "^/api/admin/submissions/(?<nxtPid>[^/]+?)(?:/)?$"
+    },
+    {
+      "page": "/api/download/[productId]",
+      "regex": "^/api/download/([^/]+?)(?:/)?$",
+      "routeKeys": {
+        "nxtPproductId": "nxtPproductId"
+      },
+      "namedRegex": "^/api/download/(?<nxtPproductId>[^/]+?)(?:/)?$"
+    },
+    {
       "page": "/blog/[slug]",
       "regex": "^/blog/([^/]+?)(?:/)?$",
       "routeKeys": {
@@ -63,10 +79,34 @@
       "namedRegex": "^/about(?:/)?$"
     },
     {
+      "page": "/accounting-interview-questions-finance",
+      "regex": "^/accounting\\-interview\\-questions\\-finance(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/accounting\\-interview\\-questions\\-finance(?:/)?$"
+    },
+    {
+      "page": "/admin",
+      "regex": "^/admin(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/admin(?:/)?$"
+    },
+    {
+      "page": "/api/admin/submissions",
+      "regex": "^/api/admin/submissions(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/admin/submissions(?:/)?$"
+    },
+    {
       "page": "/api/checkout",
       "regex": "^/api/checkout(?:/)?$",
       "routeKeys": {},
       "namedRegex": "^/api/checkout(?:/)?$"
+    },
+    {
+      "page": "/api/checkout/resume",
+      "regex": "^/api/checkout/resume(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/checkout/resume(?:/)?$"
     },
     {
       "page": "/api/contact",
@@ -87,6 +127,12 @@
       "namedRegex": "^/api/init\\-db(?:/)?$"
     },
     {
+      "page": "/api/jobs",
+      "regex": "^/api/jobs(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/jobs(?:/)?$"
+    },
+    {
       "page": "/api/subscribe",
       "regex": "^/api/subscribe(?:/)?$",
       "routeKeys": {},
@@ -99,10 +145,34 @@
       "namedRegex": "^/api/upload\\-resume(?:/)?$"
     },
     {
+      "page": "/api/verify-session",
+      "regex": "^/api/verify\\-session(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/api/verify\\-session(?:/)?$"
+    },
+    {
       "page": "/api/webhook",
       "regex": "^/api/webhook(?:/)?$",
       "routeKeys": {},
       "namedRegex": "^/api/webhook(?:/)?$"
+    },
+    {
+      "page": "/apple-icon.png",
+      "regex": "^/apple\\-icon\\.png(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/apple\\-icon\\.png(?:/)?$"
+    },
+    {
+      "page": "/asset-management-resume",
+      "regex": "^/asset\\-management\\-resume(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/asset\\-management\\-resume(?:/)?$"
+    },
+    {
+      "page": "/back-office-to-front-office",
+      "regex": "^/back\\-office\\-to\\-front\\-office(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/back\\-office\\-to\\-front\\-office(?:/)?$"
     },
     {
       "page": "/blog",
@@ -111,10 +181,250 @@
       "namedRegex": "^/blog(?:/)?$"
     },
     {
+      "page": "/career-change-finance-30",
+      "regex": "^/career\\-change\\-finance\\-30(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/career\\-change\\-finance\\-30(?:/)?$"
+    },
+    {
+      "page": "/consulting-to-banking-resume",
+      "regex": "^/consulting\\-to\\-banking\\-resume(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/consulting\\-to\\-banking\\-resume(?:/)?$"
+    },
+    {
       "page": "/contact",
       "regex": "^/contact(?:/)?$",
       "routeKeys": {},
       "namedRegex": "^/contact(?:/)?$"
+    },
+    {
+      "page": "/credit-analyst-resume",
+      "regex": "^/credit\\-analyst\\-resume(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/credit\\-analyst\\-resume(?:/)?$"
+    },
+    {
+      "page": "/dcf-interview-questions-2026",
+      "regex": "^/dcf\\-interview\\-questions\\-2026(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/dcf\\-interview\\-questions\\-2026(?:/)?$"
+    },
+    {
+      "page": "/dcf-model-guide",
+      "regex": "^/dcf\\-model\\-guide(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/dcf\\-model\\-guide(?:/)?$"
+    },
+    {
+      "page": "/engineer-to-finance",
+      "regex": "^/engineer\\-to\\-finance(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/engineer\\-to\\-finance(?:/)?$"
+    },
+    {
+      "page": "/equity-research-resume",
+      "regex": "^/equity\\-research\\-resume(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/equity\\-research\\-resume(?:/)?$"
+    },
+    {
+      "page": "/failed-ib-recruiting",
+      "regex": "^/failed\\-ib\\-recruiting(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/failed\\-ib\\-recruiting(?:/)?$"
+    },
+    {
+      "page": "/finance-career-guide",
+      "regex": "^/finance\\-career\\-guide(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/finance\\-career\\-guide(?:/)?$"
+    },
+    {
+      "page": "/finance-resume-review",
+      "regex": "^/finance\\-resume\\-review(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/finance\\-resume\\-review(?:/)?$"
+    },
+    {
+      "page": "/finance-resume-review-v2",
+      "regex": "^/finance\\-resume\\-review\\-v2(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/finance\\-resume\\-review\\-v2(?:/)?$"
+    },
+    {
+      "page": "/finance-salary-2026",
+      "regex": "^/finance\\-salary\\-2026(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/finance\\-salary\\-2026(?:/)?$"
+    },
+    {
+      "page": "/financial-advisor-resume",
+      "regex": "^/financial\\-advisor\\-resume(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/financial\\-advisor\\-resume(?:/)?$"
+    },
+    {
+      "page": "/fintech-resume",
+      "regex": "^/fintech\\-resume(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/fintech\\-resume(?:/)?$"
+    },
+    {
+      "page": "/fpa-resume",
+      "regex": "^/fpa\\-resume(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/fpa\\-resume(?:/)?$"
+    },
+    {
+      "page": "/hedge-fund-interview-prep",
+      "regex": "^/hedge\\-fund\\-interview\\-prep(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/hedge\\-fund\\-interview\\-prep(?:/)?$"
+    },
+    {
+      "page": "/hedge-fund-resume",
+      "regex": "^/hedge\\-fund\\-resume(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/hedge\\-fund\\-resume(?:/)?$"
+    },
+    {
+      "page": "/ib-technical-cheat-sheet",
+      "regex": "^/ib\\-technical\\-cheat\\-sheet(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/ib\\-technical\\-cheat\\-sheet(?:/)?$"
+    },
+    {
+      "page": "/ib-technical-interview-2026",
+      "regex": "^/ib\\-technical\\-interview\\-2026(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/ib\\-technical\\-interview\\-2026(?:/)?$"
+    },
+    {
+      "page": "/icon.svg",
+      "regex": "^/icon\\.svg(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/icon\\.svg(?:/)?$"
+    },
+    {
+      "page": "/investment-banking-interview-prep",
+      "regex": "^/investment\\-banking\\-interview\\-prep(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/investment\\-banking\\-interview\\-prep(?:/)?$"
+    },
+    {
+      "page": "/investment-banking-recruiting-2026",
+      "regex": "^/investment\\-banking\\-recruiting\\-2026(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/investment\\-banking\\-recruiting\\-2026(?:/)?$"
+    },
+    {
+      "page": "/investment-banking-resume",
+      "regex": "^/investment\\-banking\\-resume(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/investment\\-banking\\-resume(?:/)?$"
+    },
+    {
+      "page": "/investment-banking-resume-review",
+      "regex": "^/investment\\-banking\\-resume\\-review(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/investment\\-banking\\-resume\\-review(?:/)?$"
+    },
+    {
+      "page": "/jobs",
+      "regex": "^/jobs(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/jobs(?:/)?$"
+    },
+    {
+      "page": "/lbo-interview-questions-2026",
+      "regex": "^/lbo\\-interview\\-questions\\-2026(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/lbo\\-interview\\-questions\\-2026(?:/)?$"
+    },
+    {
+      "page": "/lbo-modeling-guide",
+      "regex": "^/lbo\\-modeling\\-guide(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/lbo\\-modeling\\-guide(?:/)?$"
+    },
+    {
+      "page": "/liberal-arts-finance-jobs",
+      "regex": "^/liberal\\-arts\\-finance\\-jobs(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/liberal\\-arts\\-finance\\-jobs(?:/)?$"
+    },
+    {
+      "page": "/low-gpa-finance-jobs",
+      "regex": "^/low\\-gpa\\-finance\\-jobs(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/low\\-gpa\\-finance\\-jobs(?:/)?$"
+    },
+    {
+      "page": "/ma-interview-questions-2026",
+      "regex": "^/ma\\-interview\\-questions\\-2026(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/ma\\-interview\\-questions\\-2026(?:/)?$"
+    },
+    {
+      "page": "/mba-resume-review",
+      "regex": "^/mba\\-resume\\-review(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/mba\\-resume\\-review(?:/)?$"
+    },
+    {
+      "page": "/military-to-finance",
+      "regex": "^/military\\-to\\-finance(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/military\\-to\\-finance(?:/)?$"
+    },
+    {
+      "page": "/non-target-investment-banking",
+      "regex": "^/non\\-target\\-investment\\-banking(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/non\\-target\\-investment\\-banking(?:/)?$"
+    },
+    {
+      "page": "/non-target-resume",
+      "regex": "^/non\\-target\\-resume(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/non\\-target\\-resume(?:/)?$"
+    },
+    {
+      "page": "/non-target-to-pe",
+      "regex": "^/non\\-target\\-to\\-pe(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/non\\-target\\-to\\-pe(?:/)?$"
+    },
+    {
+      "page": "/paper-lbo-template",
+      "regex": "^/paper\\-lbo\\-template(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/paper\\-lbo\\-template(?:/)?$"
+    },
+    {
+      "page": "/pe-career-path-2026",
+      "regex": "^/pe\\-career\\-path\\-2026(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/pe\\-career\\-path\\-2026(?:/)?$"
+    },
+    {
+      "page": "/pe-compensation-2026",
+      "regex": "^/pe\\-compensation\\-2026(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/pe\\-compensation\\-2026(?:/)?$"
+    },
+    {
+      "page": "/pe-headhunters-2026",
+      "regex": "^/pe\\-headhunters\\-2026(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/pe\\-headhunters\\-2026(?:/)?$"
+    },
+    {
+      "page": "/pe-interview-prep-2026",
+      "regex": "^/pe\\-interview\\-prep\\-2026(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/pe\\-interview\\-prep\\-2026(?:/)?$"
     },
     {
       "page": "/playbooks",
@@ -127,6 +437,24 @@
       "regex": "^/privacy(?:/)?$",
       "routeKeys": {},
       "namedRegex": "^/privacy(?:/)?$"
+    },
+    {
+      "page": "/private-equity-recruiting",
+      "regex": "^/private\\-equity\\-recruiting(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/private\\-equity\\-recruiting(?:/)?$"
+    },
+    {
+      "page": "/private-equity-recruiting-2026",
+      "regex": "^/private\\-equity\\-recruiting\\-2026(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/private\\-equity\\-recruiting\\-2026(?:/)?$"
+    },
+    {
+      "page": "/private-equity-resume",
+      "regex": "^/private\\-equity\\-resume(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/private\\-equity\\-resume(?:/)?$"
     },
     {
       "page": "/resume-services",
@@ -163,6 +491,18 @@
       "regex": "^/terms(?:/)?$",
       "routeKeys": {},
       "namedRegex": "^/terms(?:/)?$"
+    },
+    {
+      "page": "/valuation-methods-investment-banking",
+      "regex": "^/valuation\\-methods\\-investment\\-banking(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/valuation\\-methods\\-investment\\-banking(?:/)?$"
+    },
+    {
+      "page": "/venture-capital-resume",
+      "regex": "^/venture\\-capital\\-resume(?:/)?$",
+      "routeKeys": {},
+      "namedRegex": "^/venture\\-capital\\-resume(?:/)?$"
     }
   ],
   "dataRoutes": [],

@@ -1,0 +1,15 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/investment-banking-resume/layout,_N_T_/investment-banking-resume/page,_N_T_/investment-banking-resume"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/investment-banking-resume/__PAGE__",
+    "/investment-banking-resume",
+    "/_index",
+    "/_head"
+  ]
+}

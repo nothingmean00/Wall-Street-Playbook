@@ -22,3 +22,4 @@ Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
 [05:36:33.545] Browser WARN    Image with src "/hero-wall-street.png" is using quality "90" which is not configured in images.qualities [70, 70, 70, 70, 75]. Please update your config to [70, 70, 70, 70, 75, 90].
 Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
 [05:40:39.805] Server  LOG      ✓ Compiled in 507ms
+[05:52:47.421] Server  LOG      ✓ Compiled in 245ms

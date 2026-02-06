@@ -4,7 +4,7 @@
     "env": {},
     "webpack": null,
     "typescript": {
-      "ignoreBuildErrors": true
+      "ignoreBuildErrors": false
     },
     "typedRoutes": false,
     "distDir": ".next",
@@ -20,7 +20,7 @@
       "jsx",
       "js"
     ],
-    "poweredByHeader": true,
+    "poweredByHeader": false,
     "compress": true,
     "images": {
       "deviceSizes": [
@@ -29,11 +29,10 @@
         828,
         1080,
         1200,
-        1920,
-        2048,
-        3840
+        1920
       ],
       "imageSizes": [
+        16,
         32,
         48,
         64,
@@ -49,6 +48,7 @@
       "disableStaticImages": false,
       "minimumCacheTTL": 14400,
       "formats": [
+        "image/avif",
         "image/webp"
       ],
       "maximumRedirects": 3,
@@ -66,7 +66,7 @@
       "qualities": [
         75
       ],
-      "unoptimized": true
+      "unoptimized": false
     },
     "devIndicators": {
       "position": "bottom-left"
@@ -88,7 +88,9 @@
       "keepAlive": true
     },
     "logging": {},
-    "compiler": {},
+    "compiler": {
+      "removeConsole": true
+    },
     "expireTime": 31536000,
     "staticPageGenerationTimeout": 60,
     "modularizeImports": {
@@ -166,7 +168,7 @@
       "imgOptSkipMetadata": null,
       "isrFlushToDisk": true,
       "workerThreads": false,
-      "optimizeCss": false,
+      "optimizeCss": true,
       "nextScriptWorkers": false,
       "scrollRestoration": false,
       "externalDir": false,
@@ -310,7 +312,9 @@
     ".next\\BUILD_ID",
     ".next\\server\\next-font-manifest.js",
     ".next\\server\\next-font-manifest.json",
-    ".next\\required-server-files.json"
+    ".next\\required-server-files.json",
+    ".next\\static\\chunks\\63bea9dd9d07ae1d.css",
+    ".next\\static\\chunks\\bf0c658d18ab41d2.css"
   ],
   "ignore": []
 }

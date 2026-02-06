@@ -1,0 +1,15 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/paper-lbo-template/layout,_N_T_/paper-lbo-template/page,_N_T_/paper-lbo-template"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/paper-lbo-template/__PAGE__",
+    "/paper-lbo-template",
+    "/_index",
+    "/_head"
+  ]
+}

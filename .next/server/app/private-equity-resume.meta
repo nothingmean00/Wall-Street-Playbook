@@ -1,0 +1,15 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/private-equity-resume/layout,_N_T_/private-equity-resume/page,_N_T_/private-equity-resume"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/private-equity-resume/__PAGE__",
+    "/private-equity-resume",
+    "/_index",
+    "/_head"
+  ]
+}

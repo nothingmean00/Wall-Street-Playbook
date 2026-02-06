@@ -1,0 +1,16 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/playbooks/layout,_N_T_/playbooks/[slug]/layout,_N_T_/playbooks/[slug]/page,_N_T_/playbooks/restructuring-guide"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/playbooks/$d$slug/__PAGE__",
+    "/playbooks/$d$slug",
+    "/playbooks",
+    "/_index",
+    "/_head"
+  ]
+}

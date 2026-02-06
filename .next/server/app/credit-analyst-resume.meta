@@ -1,0 +1,15 @@
+{
+  "headers": {
+    "x-nextjs-stale-time": "300",
+    "x-nextjs-prerender": "1",
+    "x-next-cache-tags": "_N_T_/layout,_N_T_/credit-analyst-resume/layout,_N_T_/credit-analyst-resume/page,_N_T_/credit-analyst-resume"
+  },
+  "segmentPaths": [
+    "/_tree",
+    "/_full",
+    "/credit-analyst-resume/__PAGE__",
+    "/credit-analyst-resume",
+    "/_index",
+    "/_head"
+  ]
+}

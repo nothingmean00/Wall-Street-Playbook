@@ -56,6 +56,42 @@ type RouteHandlerConfig<Route extends AppRouteHandlerRoutes = AppRouteHandlerRou
   type __Unused = __Check
 }
 
+// Validate ../../app/accounting-interview-questions-finance/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/accounting-interview-questions-finance">> = Specific
+  const handler = {} as typeof import("../../app/accounting-interview-questions-finance/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../app/admin/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/admin">> = Specific
+  const handler = {} as typeof import("../../app/admin/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../app/asset-management-resume/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/asset-management-resume">> = Specific
+  const handler = {} as typeof import("../../app/asset-management-resume/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../app/back-office-to-front-office/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/back-office-to-front-office">> = Specific
+  const handler = {} as typeof import("../../app/back-office-to-front-office/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
 // Validate ../../app/blog/[slug]/page.tsx
 {
   type __IsExpected<Specific extends AppPageConfig<"/blog/[slug]">> = Specific
@@ -74,6 +110,24 @@ type RouteHandlerConfig<Route extends AppRouteHandlerRoutes = AppRouteHandlerRou
   type __Unused = __Check
 }
 
+// Validate ../../app/career-change-finance-30/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/career-change-finance-30">> = Specific
+  const handler = {} as typeof import("../../app/career-change-finance-30/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../app/consulting-to-banking-resume/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/consulting-to-banking-resume">> = Specific
+  const handler = {} as typeof import("../../app/consulting-to-banking-resume/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
 // Validate ../../app/contact/page.tsx
 {
   type __IsExpected<Specific extends AppPageConfig<"/contact">> = Specific
@@ -83,10 +137,343 @@ type RouteHandlerConfig<Route extends AppRouteHandlerRoutes = AppRouteHandlerRou
   type __Unused = __Check
 }
 
+// Validate ../../app/credit-analyst-resume/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/credit-analyst-resume">> = Specific
+  const handler = {} as typeof import("../../app/credit-analyst-resume/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../app/dcf-interview-questions-2026/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/dcf-interview-questions-2026">> = Specific
+  const handler = {} as typeof import("../../app/dcf-interview-questions-2026/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../app/dcf-model-guide/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/dcf-model-guide">> = Specific
+  const handler = {} as typeof import("../../app/dcf-model-guide/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../app/engineer-to-finance/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/engineer-to-finance">> = Specific
+  const handler = {} as typeof import("../../app/engineer-to-finance/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../app/equity-research-resume/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/equity-research-resume">> = Specific
+  const handler = {} as typeof import("../../app/equity-research-resume/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../app/failed-ib-recruiting/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/failed-ib-recruiting">> = Specific
+  const handler = {} as typeof import("../../app/failed-ib-recruiting/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../app/finance-career-guide/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/finance-career-guide">> = Specific
+  const handler = {} as typeof import("../../app/finance-career-guide/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../app/finance-resume-review-v2/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/finance-resume-review-v2">> = Specific
+  const handler = {} as typeof import("../../app/finance-resume-review-v2/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../app/finance-resume-review/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/finance-resume-review">> = Specific
+  const handler = {} as typeof import("../../app/finance-resume-review/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../app/finance-salary-2026/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/finance-salary-2026">> = Specific
+  const handler = {} as typeof import("../../app/finance-salary-2026/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../app/financial-advisor-resume/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/financial-advisor-resume">> = Specific
+  const handler = {} as typeof import("../../app/financial-advisor-resume/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../app/fintech-resume/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/fintech-resume">> = Specific
+  const handler = {} as typeof import("../../app/fintech-resume/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../app/fpa-resume/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/fpa-resume">> = Specific
+  const handler = {} as typeof import("../../app/fpa-resume/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../app/hedge-fund-interview-prep/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/hedge-fund-interview-prep">> = Specific
+  const handler = {} as typeof import("../../app/hedge-fund-interview-prep/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../app/hedge-fund-resume/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/hedge-fund-resume">> = Specific
+  const handler = {} as typeof import("../../app/hedge-fund-resume/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../app/ib-technical-cheat-sheet/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/ib-technical-cheat-sheet">> = Specific
+  const handler = {} as typeof import("../../app/ib-technical-cheat-sheet/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../app/ib-technical-interview-2026/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/ib-technical-interview-2026">> = Specific
+  const handler = {} as typeof import("../../app/ib-technical-interview-2026/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../app/investment-banking-interview-prep/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/investment-banking-interview-prep">> = Specific
+  const handler = {} as typeof import("../../app/investment-banking-interview-prep/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../app/investment-banking-recruiting-2026/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/investment-banking-recruiting-2026">> = Specific
+  const handler = {} as typeof import("../../app/investment-banking-recruiting-2026/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../app/investment-banking-resume-review/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/investment-banking-resume-review">> = Specific
+  const handler = {} as typeof import("../../app/investment-banking-resume-review/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../app/investment-banking-resume/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/investment-banking-resume">> = Specific
+  const handler = {} as typeof import("../../app/investment-banking-resume/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../app/jobs/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/jobs">> = Specific
+  const handler = {} as typeof import("../../app/jobs/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../app/lbo-interview-questions-2026/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/lbo-interview-questions-2026">> = Specific
+  const handler = {} as typeof import("../../app/lbo-interview-questions-2026/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../app/lbo-modeling-guide/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/lbo-modeling-guide">> = Specific
+  const handler = {} as typeof import("../../app/lbo-modeling-guide/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../app/liberal-arts-finance-jobs/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/liberal-arts-finance-jobs">> = Specific
+  const handler = {} as typeof import("../../app/liberal-arts-finance-jobs/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../app/low-gpa-finance-jobs/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/low-gpa-finance-jobs">> = Specific
+  const handler = {} as typeof import("../../app/low-gpa-finance-jobs/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../app/ma-interview-questions-2026/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/ma-interview-questions-2026">> = Specific
+  const handler = {} as typeof import("../../app/ma-interview-questions-2026/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../app/mba-resume-review/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/mba-resume-review">> = Specific
+  const handler = {} as typeof import("../../app/mba-resume-review/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../app/military-to-finance/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/military-to-finance">> = Specific
+  const handler = {} as typeof import("../../app/military-to-finance/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../app/non-target-investment-banking/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/non-target-investment-banking">> = Specific
+  const handler = {} as typeof import("../../app/non-target-investment-banking/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../app/non-target-resume/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/non-target-resume">> = Specific
+  const handler = {} as typeof import("../../app/non-target-resume/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../app/non-target-to-pe/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/non-target-to-pe">> = Specific
+  const handler = {} as typeof import("../../app/non-target-to-pe/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
 // Validate ../../app/page.tsx
 {
   type __IsExpected<Specific extends AppPageConfig<"/">> = Specific
   const handler = {} as typeof import("../../app/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../app/paper-lbo-template/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/paper-lbo-template">> = Specific
+  const handler = {} as typeof import("../../app/paper-lbo-template/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../app/pe-career-path-2026/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/pe-career-path-2026">> = Specific
+  const handler = {} as typeof import("../../app/pe-career-path-2026/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../app/pe-compensation-2026/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/pe-compensation-2026">> = Specific
+  const handler = {} as typeof import("../../app/pe-compensation-2026/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../app/pe-headhunters-2026/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/pe-headhunters-2026">> = Specific
+  const handler = {} as typeof import("../../app/pe-headhunters-2026/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../app/pe-interview-prep-2026/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/pe-interview-prep-2026">> = Specific
+  const handler = {} as typeof import("../../app/pe-interview-prep-2026/page.js")
   type __Check = __IsExpected<typeof handler>
   // @ts-ignore
   type __Unused = __Check
@@ -114,6 +501,33 @@ type RouteHandlerConfig<Route extends AppRouteHandlerRoutes = AppRouteHandlerRou
 {
   type __IsExpected<Specific extends AppPageConfig<"/privacy">> = Specific
   const handler = {} as typeof import("../../app/privacy/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../app/private-equity-recruiting-2026/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/private-equity-recruiting-2026">> = Specific
+  const handler = {} as typeof import("../../app/private-equity-recruiting-2026/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../app/private-equity-recruiting/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/private-equity-recruiting">> = Specific
+  const handler = {} as typeof import("../../app/private-equity-recruiting/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../app/private-equity-resume/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/private-equity-resume">> = Specific
+  const handler = {} as typeof import("../../app/private-equity-resume/page.js")
   type __Check = __IsExpected<typeof handler>
   // @ts-ignore
   type __Unused = __Check
@@ -155,6 +569,51 @@ type RouteHandlerConfig<Route extends AppRouteHandlerRoutes = AppRouteHandlerRou
   type __Unused = __Check
 }
 
+// Validate ../../app/valuation-methods-investment-banking/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/valuation-methods-investment-banking">> = Specific
+  const handler = {} as typeof import("../../app/valuation-methods-investment-banking/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../app/venture-capital-resume/page.tsx
+{
+  type __IsExpected<Specific extends AppPageConfig<"/venture-capital-resume">> = Specific
+  const handler = {} as typeof import("../../app/venture-capital-resume/page.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../app/api/admin/submissions/[id]/route.ts
+{
+  type __IsExpected<Specific extends RouteHandlerConfig<"/api/admin/submissions/[id]">> = Specific
+  const handler = {} as typeof import("../../app/api/admin/submissions/[id]/route.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../app/api/admin/submissions/route.ts
+{
+  type __IsExpected<Specific extends RouteHandlerConfig<"/api/admin/submissions">> = Specific
+  const handler = {} as typeof import("../../app/api/admin/submissions/route.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../app/api/checkout/resume/route.ts
+{
+  type __IsExpected<Specific extends RouteHandlerConfig<"/api/checkout/resume">> = Specific
+  const handler = {} as typeof import("../../app/api/checkout/resume/route.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
 // Validate ../../app/api/checkout/route.ts
 {
   type __IsExpected<Specific extends RouteHandlerConfig<"/api/checkout">> = Specific
@@ -168,6 +627,15 @@ type RouteHandlerConfig<Route extends AppRouteHandlerRoutes = AppRouteHandlerRou
 {
   type __IsExpected<Specific extends RouteHandlerConfig<"/api/contact">> = Specific
   const handler = {} as typeof import("../../app/api/contact/route.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../app/api/download/[productId]/route.ts
+{
+  type __IsExpected<Specific extends RouteHandlerConfig<"/api/download/[productId]">> = Specific
+  const handler = {} as typeof import("../../app/api/download/[productId]/route.js")
   type __Check = __IsExpected<typeof handler>
   // @ts-ignore
   type __Unused = __Check
@@ -191,6 +659,15 @@ type RouteHandlerConfig<Route extends AppRouteHandlerRoutes = AppRouteHandlerRou
   type __Unused = __Check
 }
 
+// Validate ../../app/api/jobs/route.ts
+{
+  type __IsExpected<Specific extends RouteHandlerConfig<"/api/jobs">> = Specific
+  const handler = {} as typeof import("../../app/api/jobs/route.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
 // Validate ../../app/api/subscribe/route.ts
 {
   type __IsExpected<Specific extends RouteHandlerConfig<"/api/subscribe">> = Specific
@@ -204,6 +681,15 @@ type RouteHandlerConfig<Route extends AppRouteHandlerRoutes = AppRouteHandlerRou
 {
   type __IsExpected<Specific extends RouteHandlerConfig<"/api/upload-resume">> = Specific
   const handler = {} as typeof import("../../app/api/upload-resume/route.js")
+  type __Check = __IsExpected<typeof handler>
+  // @ts-ignore
+  type __Unused = __Check
+}
+
+// Validate ../../app/api/verify-session/route.ts
+{
+  type __IsExpected<Specific extends RouteHandlerConfig<"/api/verify-session">> = Specific
+  const handler = {} as typeof import("../../app/api/verify-session/route.js")
   type __Check = __IsExpected<typeof handler>
   // @ts-ignore
   type __Unused = __Check

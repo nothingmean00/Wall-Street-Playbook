@@ -2,7 +2,7 @@
 
 import { useInView } from "@/hooks/use-in-view"
 import { cn } from "@/lib/utils"
-import { ReactNode } from "react"
+import React, { ReactNode } from "react"
 
 type AnimationType = 
   | "fade-up" 
@@ -21,7 +21,7 @@ interface ScrollRevealProps {
   duration?: number // in milliseconds
   threshold?: number
   once?: boolean
-  as?: keyof JSX.IntrinsicElements
+  as?: "div" | "section" | "span" | "p" | "article" | "li" | "ul" | "h1" | "h2" | "h3"
 }
 
 const animationStyles: Record<AnimationType, { initial: string; animate: string }> = {
@@ -71,7 +71,8 @@ export function ScrollReveal({
 
   return (
     <Component
-      ref={ref as React.RefObject<HTMLDivElement>}
+      // eslint-disable-next-line @typescript-eslint/no-explicit-any
+      ref={ref as any}
       className={cn(
         "transition-all ease-out",
         isInView ? animate : initial,
