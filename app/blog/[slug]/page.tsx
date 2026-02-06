@@ -76,9 +76,9 @@ function getSidebarCTA(slug: string, category: string, tags?: string[]) {
     }
   }
 
-  // Default → IB Technical Interview Guide (covers the broadest audience)
+  // Default → Finance Technical Interview Guide (covers the broadest audience)
   return {
-    product: "IB Technical Interview Guide",
+      product: "Finance Technical Interview Guide",
     description: "87 pages. 6 chapters. Every question tagged by frequency with dual-format answers.",
     price: 127,
     href: "/playbooks/ib-technical-guide",

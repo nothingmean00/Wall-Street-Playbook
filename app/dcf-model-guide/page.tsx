@@ -369,7 +369,7 @@ export default function DCFModelGuidePage() {
           <div className="mx-auto max-w-3xl px-6 lg:px-8 text-center">
             <h2 className="text-3xl font-bold text-white sm:text-4xl">Master DCF and All Technical Topics</h2>
             <p className="mt-4 text-lg text-white/60">
-              DCF is just one chapter. The IB Technical Interview Guide covers all 6 core topics—Accounting, EV/Equity Value, DCF, Comps, M&A, and LBOs—in 87 pages with frequency-tagged questions.
+              DCF is just one chapter. The Finance Technical Interview Guide covers all 6 core topics—Accounting, EV/Equity Value, DCF, Comps, M&A, and LBOs—in 87 pages with frequency-tagged questions.
             </p>
             
             <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -377,7 +377,7 @@ export default function DCFModelGuidePage() {
                 href="/playbooks/ib-technical-guide"
                 className="group flex items-center gap-2 rounded-xl bg-gold px-8 py-4 text-base font-semibold text-navy hover:bg-white transition-colors"
               >
-                Get the IB Technical Interview Guide — $127
+                Get the Finance Technical Interview Guide — $127
                 <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
               </Link>
               <Link

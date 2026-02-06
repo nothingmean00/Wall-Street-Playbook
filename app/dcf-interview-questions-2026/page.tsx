@@ -211,7 +211,7 @@ export default function DCFInterviewQuestions2026Page() {
             <div className="mx-auto max-w-2xl text-center">
               <h2 className="text-3xl font-bold text-white">DCF Is Just One Chapter</h2>
               <p className="mt-4 text-white/70">
-                The full IB Technical Interview Guide covers 6 chapters: Accounting, EV/Equity Value, DCF, Comps, M&A, and LBOs. Every question tagged by frequency. Dual-format answers. 87 pages.
+                The full Finance Technical Interview Guide covers 6 chapters: Accounting, EV/Equity Value, DCF, Comps, M&A, and LBOs. Every question tagged by frequency. Dual-format answers. 87 pages.
               </p>
               <div className="mt-8">
                 <Link
@@ -232,7 +232,7 @@ export default function DCFInterviewQuestions2026Page() {
             <h3 className="text-lg font-bold text-navy mb-6">Related Resources</h3>
             <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
               <Link href="/ib-technical-interview-2026" className="p-4 bg-white rounded-lg border border-border hover:border-gold/50 transition-colors">
-                <p className="font-medium text-navy text-sm">IB Technical Interview 2026</p>
+                <p className="font-medium text-navy text-sm">Finance Technical Interview 2026</p>
                 <p className="text-xs text-charcoal/50 mt-1">All 6 topics overview</p>
               </Link>
               <Link href="/ma-interview-questions-2026" className="p-4 bg-white rounded-lg border border-border hover:border-gold/50 transition-colors">

@@ -629,7 +629,7 @@ const footerLinks = {
             href: "/playbooks"
         },
         {
-            name: "IB Technical Guide",
+            name: "Finance Technical Guide",
             href: "/playbooks/ib-technical-guide"
         },
         {
@@ -2701,7 +2701,7 @@ var __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$
 ;
 const upcomingPlaybooks = [
     {
-        title: "IB Technical Interview Guide",
+        title: "Finance Technical Interview Guide",
         description: "400+ questions with model answers, valuation walkthroughs, and M&A case studies",
         icon: "📊"
     },

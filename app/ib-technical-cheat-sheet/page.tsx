@@ -6,7 +6,7 @@ import { LeadMagnetCapture } from "@/components/lead-magnet-capture"
 import { ArrowRight, CheckCircle, BookOpen, Zap } from "lucide-react"
 
 export const metadata: Metadata = {
-  title: "Free: 20 Must-Know IB Technical Questions (Cheat Sheet PDF)",
+  title: "Free: 20 Must-Know Finance Technical Questions (Cheat Sheet PDF)",
   description:
     "Download the free cheat sheet with the 20 most frequently asked technical questions in investment banking interviews. Quick-reference answers for accounting, DCF, comps, M&A, and LBOs.",
   keywords: [
@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     "Goldman Sachs interview questions free",
   ],
   openGraph: {
-    title: "Free: 20 Must-Know IB Technical Questions",
+    title: "Free: 20 Must-Know Finance Technical Questions",
     description: "The 20 questions tagged 'Always Asked' across all 6 technical topics. Free PDF cheat sheet.",
     url: "https://wallstreetplaybook.org/ib-technical-cheat-sheet",
   },
@@ -126,7 +126,7 @@ export default function IBTechnicalCheatSheetPage() {
               <div className="rounded-2xl border-2 border-gold/30 bg-gradient-to-br from-gold/5 to-transparent p-8">
                 <h2 className="text-2xl font-bold text-navy">Want the Full Picture?</h2>
                 <p className="mt-3 text-charcoal/70">
-                  The cheat sheet covers 20 "Always Asked" questions. The full IB Technical Interview Guide covers <strong>all 6 chapters</strong> with hundreds of questions, dual-format answers, red flag warnings, interviewer perspective boxes, and self-assessment scorecards.
+                  The cheat sheet covers 20 "Always Asked" questions. The full Finance Technical Interview Guide covers <strong>all 6 chapters</strong> with hundreds of questions, dual-format answers, red flag warnings, interviewer perspective boxes, and self-assessment scorecards.
                 </p>
                 <div className="mt-6 grid gap-3 sm:grid-cols-2">
                   <div className="flex gap-2 items-start">

@@ -664,7 +664,7 @@ const footerLinks = {
             href: "/playbooks"
         },
         {
-            name: "IB Technical Guide",
+            name: "Finance Technical Guide",
             href: "/playbooks/ib-technical-guide"
         },
         {

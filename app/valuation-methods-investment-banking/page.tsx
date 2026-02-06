@@ -223,7 +223,7 @@ export default function ValuationMethodsPage() {
                   href="/playbooks/ib-technical-guide"
                   className="inline-flex items-center justify-center gap-2 rounded-lg bg-gold px-8 py-4 text-sm font-semibold text-navy transition-colors hover:bg-gold/90"
                 >
-                  Get the IB Technical Interview Guide — $127
+                  Get the Finance Technical Interview Guide — $127
                   <ArrowRight className="h-4 w-4" />
                 </Link>
               </div>
@@ -237,7 +237,7 @@ export default function ValuationMethodsPage() {
             <h3 className="text-lg font-bold text-navy mb-6">Related Resources</h3>
             <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
               <Link href="/ib-technical-interview-2026" className="p-4 bg-white rounded-lg border border-border hover:border-gold/50 transition-colors">
-                <p className="font-medium text-navy text-sm">IB Technical Interview 2026</p>
+                <p className="font-medium text-navy text-sm">Finance Technical Interview 2026</p>
                 <p className="text-xs text-charcoal/50 mt-1">All 6 topics overview</p>
               </Link>
               <Link href="/dcf-interview-questions-2026" className="p-4 bg-white rounded-lg border border-border hover:border-gold/50 transition-colors">

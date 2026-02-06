@@ -59,7 +59,7 @@ export const PRODUCTS = {
   // Playbooks
   'ib-technical-guide': {
     priceId: process.env.STRIPE_PRICE_IB_TECHNICAL || 'price_xxx',
-    name: 'IB Technical Interview Guide',
+    name: 'Finance Technical Interview Guide',
     price: 127,
   },
   'pe-recruiting-playbook': {

@@ -8,7 +8,7 @@ import { ArrowUpRight } from "lucide-react"
 const footerLinks = {
   products: [
     { name: "All Playbooks", href: "/playbooks" },
-    { name: "IB Technical Guide", href: "/playbooks/ib-technical-guide" },
+    { name: "Finance Technical Guide", href: "/playbooks/ib-technical-guide" },
     { name: "PE Recruiting Playbook", href: "/playbooks/pe-recruiting-playbook" },
     { name: "Networking & Cold Email", href: "/playbooks/networking-cold-email-playbook" },
     { name: "LBO Modeling Course", href: "/playbooks/lbo-modeling-course" },

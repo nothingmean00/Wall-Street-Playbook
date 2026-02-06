@@ -341,7 +341,7 @@ export default function InvestmentBankingResumePage() {
                 href="/playbooks/ib-technical-guide"
                 className="group flex items-center gap-2 rounded-xl bg-navy px-8 py-4 text-base font-semibold text-white hover:bg-gold hover:text-navy transition-colors"
               >
-                IB Technical Guide
+                Finance Technical Guide
                 <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
               </Link>
               <Link

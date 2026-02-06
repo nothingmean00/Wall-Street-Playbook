@@ -368,7 +368,7 @@ export default function ConsultingToBankingResumePage() {
                 href="/playbooks/ib-technical-guide"
                 className="rounded-xl border-2 border-white/20 px-8 py-4 text-base font-semibold text-white hover:border-gold hover:text-gold transition-colors"
               >
-                IB Technical Guide
+                Finance Technical Guide
               </Link>
             </div>
           </div>

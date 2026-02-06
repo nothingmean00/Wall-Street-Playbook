@@ -261,7 +261,7 @@ export default function InvestmentBankingInterviewPrepPage() {
               <div className="mt-12 rounded-2xl bg-navy p-8 text-center">
                 <h3 className="text-xl font-bold text-white">Want All 400+ Technical Questions?</h3>
                 <p className="mt-2 text-white/60">
-                  Our IB Technical Guide covers every question you&apos;ll face with detailed answers.
+                  Our Finance Technical Guide covers every question you&apos;ll face with detailed answers.
                 </p>
                 <Link
                   href="/playbooks/ib-technical-guide"
@@ -437,7 +437,7 @@ export default function InvestmentBankingInterviewPrepPage() {
                 href="/playbooks/ib-technical-guide"
                 className="group flex items-center gap-2 rounded-xl bg-navy px-8 py-4 text-base font-semibold text-white hover:bg-gold hover:text-navy transition-colors"
               >
-                Get the IB Technical Guide — $127
+                Get the Finance Technical Guide — $127
                 <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
               </Link>
               <Link

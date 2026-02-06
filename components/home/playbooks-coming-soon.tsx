@@ -5,7 +5,7 @@ import { BookOpen, Sparkles, Bell, CheckCircle, Loader2 } from "lucide-react"
 
 const upcomingPlaybooks = [
   {
-    title: "IB Technical Interview Guide",
+    title: "Finance Technical Interview Guide",
     description: "400+ questions with model answers, valuation walkthroughs, and M&A case studies",
     icon: "📊",
   },

@@ -169,7 +169,7 @@ export const relatedContentByTopic = {
   ],
   technicals: [
     {
-      title: "IB Technical Interview Prep",
+      title: "Finance Technical Interview Prep",
       href: "/investment-banking-interview-prep",
       type: "guide" as const,
       description: "Complete guide to IB technical interviews.",

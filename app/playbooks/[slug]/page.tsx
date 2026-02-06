@@ -205,7 +205,7 @@ export default async function PlaybookPage({ params }: PlaybookPageProps) {
                   </div>
                 )}
 
-                {/* Preview Section - IB Technical Guide */}
+                {/* Preview Section - Finance Technical Guide */}
                 {playbook.slug === 'ib-technical-guide' && (
                   <div className="rounded-xl border border-border bg-white p-8 shadow-sm">
                     <div className="flex items-center gap-2 mb-2">

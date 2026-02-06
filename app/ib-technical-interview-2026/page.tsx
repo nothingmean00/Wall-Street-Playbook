@@ -5,7 +5,7 @@ import { Footer } from "@/components/layout/footer"
 import { ArrowRight, CheckCircle, BookOpen, Calculator, TrendingUp, BarChart3, Layers, DollarSign } from "lucide-react"
 
 export const metadata: Metadata = {
-  title: "IB Technical Interview Questions 2026 | Complete Prep Guide",
+  title: "Finance Technical Interview Questions 2026 | Complete Prep Guide",
   description:
     "Master every technical question asked at Goldman Sachs, Morgan Stanley, Evercore, and top banks in 2026. Accounting, DCF, comps, M&A, LBO—with frequency tags showing what's tested most.",
   keywords: [
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
     "finance interview prep 2026",
   ],
   openGraph: {
-    title: "IB Technical Interview Questions 2026 | Complete Prep Guide",
+    title: "Finance Technical Interview Questions 2026 | Complete Prep Guide",
     description:
       "Master every technical question asked at Goldman, Morgan Stanley, Evercore, and elite boutiques. 6 topic areas with frequency-tagged questions.",
     url: "https://wallstreetplaybook.org/ib-technical-interview-2026",
@@ -88,7 +88,7 @@ export default function IBTechnicalInterview2026Page() {
                 <span className="text-sm font-medium text-gold">2026 Interview Season</span>
               </div>
               <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl">
-                IB Technical Interview Questions
+                Finance Technical Interview Questions
               </h1>
               <p className="mt-6 text-lg leading-relaxed text-white/70">
                 The 6 topic areas tested at every bulge bracket and elite boutique. Each question tagged by how often it actually appears: <span className="text-gold font-semibold">Always Asked</span>, <span className="text-white/90">Frequently Asked</span>, or Sometimes Asked.
@@ -229,7 +229,7 @@ export default function IBTechnicalInterview2026Page() {
                   href="/playbooks/ib-technical-guide"
                   className="inline-flex items-center justify-center gap-2 rounded-lg bg-gold px-8 py-4 text-sm font-semibold text-navy transition-colors hover:bg-gold/90"
                 >
-                  Get the IB Technical Interview Guide — $127
+                  Get the Finance Technical Interview Guide — $127
                   <ArrowRight className="h-4 w-4" />
                 </Link>
               </div>

@@ -290,7 +290,7 @@ export default function NonTargetInvestmentBankingPage() {
                   },
                   { 
                     icon: FileText, 
-                    title: "IB Technical Guide", 
+                    title: "Finance Technical Guide", 
                     desc: "400+ interview questions with detailed answers",
                     price: "$127",
                     href: "/playbooks/ib-technical-guide"
