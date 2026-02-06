@@ -259,6 +259,58 @@ function SuccessContent() {
             </div>
           )}
 
+          {/* Cross-sell */}
+          {sessionData && !isResumeService && (
+            <div className="mt-8 rounded-2xl border border-gold/30 bg-gradient-to-br from-gold/5 to-navy/5 p-6 text-left">
+              <p className="text-xs font-semibold uppercase tracking-wider text-gold mb-2">
+                Recommended Next
+              </p>
+              {sessionData.productId === "ib-technical-guide" ? (
+                <>
+                  <h3 className="text-lg font-bold text-navy">2026 PE Recruiting Playbook</h3>
+                  <p className="mt-1 text-sm text-charcoal/60">
+                    Now that you have the technicals down, get the insider playbook for PE recruiting — headhunter intel, on-cycle timeline, and paper LBO frameworks.
+                  </p>
+                  <Link
+                    href="/playbooks/pe-recruiting-playbook"
+                    className="mt-4 inline-flex items-center gap-2 rounded-lg bg-navy px-5 py-2.5 text-sm font-semibold text-white hover:bg-gold hover:text-navy transition-colors"
+                  >
+                    View PE Playbook — $97
+                    <ArrowRight className="h-4 w-4" />
+                  </Link>
+                </>
+              ) : sessionData.productId === "pe-recruiting-playbook" ? (
+                <>
+                  <h3 className="text-lg font-bold text-navy">Finance Technical Interview Guide</h3>
+                  <p className="mt-1 text-sm text-charcoal/60">
+                    PE interviews are heavy on technicals. Get 88 pages of frequency-tagged questions with dual-format answers — accounting, DCF, M&A, LBOs, and more.
+                  </p>
+                  <Link
+                    href="/playbooks/ib-technical-guide"
+                    className="mt-4 inline-flex items-center gap-2 rounded-lg bg-navy px-5 py-2.5 text-sm font-semibold text-white hover:bg-gold hover:text-navy transition-colors"
+                  >
+                    View Technical Guide — $127
+                    <ArrowRight className="h-4 w-4" />
+                  </Link>
+                </>
+              ) : (
+                <>
+                  <h3 className="text-lg font-bold text-navy">Browse More Playbooks</h3>
+                  <p className="mt-1 text-sm text-charcoal/60">
+                    Pair your purchase with our other guides for complete interview prep coverage.
+                  </p>
+                  <Link
+                    href="/playbooks"
+                    className="mt-4 inline-flex items-center gap-2 rounded-lg bg-navy px-5 py-2.5 text-sm font-semibold text-white hover:bg-gold hover:text-navy transition-colors"
+                  >
+                    View All Playbooks
+                    <ArrowRight className="h-4 w-4" />
+                  </Link>
+                </>
+              )}
+            </div>
+          )}
+
           <div className="mt-8 rounded-xl border border-green-200 bg-green-50 p-4">
             <p className="text-sm text-green-800">
               <strong>100% Money-Back Guarantee:</strong> If you are not satisfied with the quality of our work, we will refund your payment in full.

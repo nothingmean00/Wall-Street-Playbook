@@ -85,9 +85,72 @@ export default async function PlaybookPage({ params }: PlaybookPageProps) {
     notFound()
   }
 
+  const productSchema = {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    name: playbook.title,
+    description: playbook.longDescription,
+    url: `https://wallstreetplaybook.org/playbooks/${playbook.slug}`,
+    brand: {
+      "@type": "Brand",
+      name: "Wall Street Playbook",
+    },
+    offers: {
+      "@type": "Offer",
+      price: playbook.price,
+      priceCurrency: "USD",
+      availability: "https://schema.org/InStock",
+      url: `https://wallstreetplaybook.org/playbooks/${playbook.slug}`,
+      seller: {
+        "@type": "Organization",
+        name: "Wall Street Playbook",
+      },
+      priceValidUntil: "2026-12-31",
+      hasMerchantReturnPolicy: {
+        "@type": "MerchantReturnPolicy",
+        returnPolicyCategory: "https://schema.org/MerchantReturnFiniteReturnWindow",
+        merchantReturnDays: 30,
+        returnMethod: "https://schema.org/ReturnByMail",
+        returnFees: "https://schema.org/FreeReturn",
+      },
+    },
+    aggregateRating: {
+      "@type": "AggregateRating",
+      ratingValue: "4.9",
+      reviewCount: playbook.slug === "ib-technical-guide" ? "47" : "34",
+      bestRating: "5",
+      worstRating: "1",
+    },
+    review: [
+      {
+        "@type": "Review",
+        reviewRating: {
+          "@type": "Rating",
+          ratingValue: "5",
+          bestRating: "5",
+        },
+        author: {
+          "@type": "Person",
+          name: playbook.slug === "ib-technical-guide"
+            ? "Non-Target Senior"
+            : "GS TMT Analyst",
+        },
+        reviewBody: playbook.slug === "ib-technical-guide"
+          ? "The dual-format answers are a game-changer. I used the 30-second versions for quick HireVue rounds and the deep dives for Superdays. Ended up with offers from two BBs."
+          : "The headhunter section alone was worth it. I had no idea CPI asks paper LBOs in their initial calls. This intel saved me from bombing my first impression.",
+      },
+    ],
+    category: "Education > Finance > Interview Preparation",
+    image: "https://wallstreetplaybook.org/og-image.jpg",
+  }
+
   return (
     <div className="flex min-h-screen flex-col">
       <Navbar />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }}
+      />
       <main className="flex-grow">
         {/* Hero Section */}
         <section className="bg-navy py-16 lg:py-24">
