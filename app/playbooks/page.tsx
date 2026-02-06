@@ -3,7 +3,7 @@ import Link from "next/link"
 import { Navbar } from "@/components/layout/navbar"
 import { Footer } from "@/components/layout/footer"
 import { playbooks } from "@/lib/data"
-import { Check, ArrowRight, BookOpen, Lock, Star, Shield, Sparkles } from "lucide-react"
+import { Check, ArrowRight, BookOpen, Lock, Star, Shield, Sparkles, Mail, TrendingUp, Target, Mic, Wrench, Building2, CreditCard, Zap } from "lucide-react"
 
 export const metadata: Metadata = {
   title: "Premium Playbooks | Wall Street Playbook",
@@ -29,49 +29,49 @@ const upcomingPlaybooks = [
     title: "Networking & Cold Email Playbook",
     description: "50+ proven templates and follow-up cadences that convert cold outreach into referrals.",
     price: 67,
-    icon: "📧",
+    icon: Mail,
   },
   {
     title: "LBO Modeling Crash Course",
     description: "Build full LBO models from scratch. Includes Excel templates used in actual PE interviews.",
     price: 127,
-    icon: "📈",
+    icon: TrendingUp,
   },
   {
     title: "Stock Pitch Template & Examples",
     description: "The exact framework top hedge funds want, plus 5 fully-written example pitches.",
     price: 77,
-    icon: "🎯",
+    icon: Target,
   },
   {
     title: "Walk Me Through Your Resume Playbook",
     description: "Transform your background into a compelling 2-minute narrative. 30+ real examples.",
     price: 57,
-    icon: "🎤",
+    icon: Mic,
   },
   {
     title: "Restructuring & Distressed Debt Guide",
     description: "Chapter 11 mechanics, distressed valuation, and RX-specific interview frameworks.",
     price: 97,
-    icon: "🔧",
+    icon: Wrench,
   },
   {
     title: "Real Estate PE Modeling Guide",
     description: "Property-level cash flows, GP/LP waterfalls, and sector-specific REPE knowledge.",
     price: 127,
-    icon: "🏢",
+    icon: Building2,
   },
   {
     title: "Private Credit & Direct Lending Playbook",
     description: "Credit analysis frameworks, memo writing, and downside-focused thinking for Ares, Golub, Owl Rock.",
     price: 97,
-    icon: "💳",
+    icon: CreditCard,
   },
   {
     title: "The Superday Survival Guide",
     description: "Hour-by-hour playbook for the 48 hours before, during, and after your Superday.",
     price: 47,
-    icon: "⚡",
+    icon: Zap,
   },
 ]
 
@@ -227,7 +227,9 @@ export default function PlaybooksPage() {
                     </span>
                   </div>
 
-                  <div className="text-2xl mb-3">{playbook.icon}</div>
+                  <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-navy/5 mb-3">
+                    <playbook.icon className="h-5 w-5 text-gold" />
+                  </div>
 
                   <h3 className="text-sm font-bold text-navy leading-tight pr-12">
                     {playbook.title}
