@@ -744,7 +744,7 @@ export async function GET(request: Request) {
   // Check cache first (unless refresh is requested)
   const cacheValid = jobsCache && Date.now() - jobsCache.timestamp < CACHE_DURATION
   
-  if (cacheValid && !refresh && !query) {
+  if (cacheValid && !refresh && !query && jobsCache) {
     let jobs = jobsCache.jobs
 
     // Apply filters
