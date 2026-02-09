@@ -94,6 +94,9 @@ function getRelatedTopic(slug: string, category: string, tags?: string[]): keyof
   if (slug.includes("resume") || category === "Resume") return "resume"
   if (slug.includes("private-equity") || slug.includes("pe-")) return "peRecruiting"
   if (slug.includes("hedge-fund") || slug.includes("hf-")) return "hfRecruiting"
+  if (tagSet.has("salary") || tagSet.has("compensation") || tagSet.has("bonus") || slug.includes("salary")) return "compensation"
+  if (tagSet.has("asia") || tagSet.has("hong kong") || tagSet.has("singapore") || slug.includes("hong-kong") || slug.includes("singapore") || slug.includes("asia")) return "asiaFinance"
+  if (slug.includes("recruiting") || slug.includes("superday") || slug.includes("summer-analyst") || category === "Recruiting") return "ibRecruiting"
   return null
 }
 

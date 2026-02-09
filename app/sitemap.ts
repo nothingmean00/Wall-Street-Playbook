@@ -123,6 +123,63 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly" as const,
       priority: 0.95,
     },
+    // 2027 summer analyst recruiting content
+    {
+      url: `${baseUrl}/blog/summer-analyst-recruiting-timeline-2027`,
+      lastModified: new Date(),
+      changeFrequency: "weekly" as const,
+      priority: 0.95,
+    },
+    {
+      url: `${baseUrl}/blog/non-target-to-summer-analyst-2027`,
+      lastModified: new Date(),
+      changeFrequency: "weekly" as const,
+      priority: 0.95,
+    },
+    {
+      url: `${baseUrl}/blog/investment-banking-superday-guide-2027`,
+      lastModified: new Date(),
+      changeFrequency: "weekly" as const,
+      priority: 0.95,
+    },
+    // Asia-focused content (targeting Singapore, Hong Kong, Taiwan traffic)
+    {
+      url: `${baseUrl}/blog/investment-banking-hong-kong-singapore-2026`,
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/blog/target-schools-asia-investment-banking`,
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/blog/asian-candidates-breaking-into-wall-street`,
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: 0.9,
+    },
+    // Salary/compensation guides (high search intent)
+    {
+      url: `${baseUrl}/blog/bulge-bracket-investment-banking-salary-2026`,
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/blog/elite-boutique-investment-banking-salary-2026`,
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/blog/middle-market-investment-banking-salary-2026`,
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: 0.9,
+    },
     // Technical interview intent pages (high commercial intent)
     {
       url: `${baseUrl}/ib-technical-interview-2026`,
@@ -314,13 +371,27 @@ export default function sitemap(): MetadataRoute.Sitemap {
   }))
 
   // Dynamic blog pages (from unified blog system - MDX + data.ts)
+  // Exclude blog posts already listed in static pages to avoid duplicate sitemap entries
+  const staticBlogSlugs = new Set([
+    "summer-analyst-recruiting-timeline-2027",
+    "non-target-to-summer-analyst-2027",
+    "investment-banking-superday-guide-2027",
+    "investment-banking-hong-kong-singapore-2026",
+    "target-schools-asia-investment-banking",
+    "asian-candidates-breaking-into-wall-street",
+    "bulge-bracket-investment-banking-salary-2026",
+    "elite-boutique-investment-banking-salary-2026",
+    "middle-market-investment-banking-salary-2026",
+  ])
   const allBlogPosts = getAllBlogPosts()
-  const blogPages = allBlogPosts.map((post) => ({
-    url: `${baseUrl}/blog/${post.slug}`,
-    lastModified: post.publishedAt ? new Date(post.publishedAt) : new Date(),
-    changeFrequency: "monthly" as const,
-    priority: 0.7,
-  }))
+  const blogPages = allBlogPosts
+    .filter((post) => !staticBlogSlugs.has(post.slug))
+    .map((post) => ({
+      url: `${baseUrl}/blog/${post.slug}`,
+      lastModified: post.publishedAt ? new Date(post.publishedAt) : new Date(),
+      changeFrequency: "monthly" as const,
+      priority: 0.7,
+    }))
 
   return [...staticPages, ...playbookPages, ...blogPages]
 }

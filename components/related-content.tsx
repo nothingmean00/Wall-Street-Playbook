@@ -271,4 +271,82 @@ export const relatedContentByTopic = {
       description: "Lateral into IB from Big 4 accounting.",
     },
   ],
+  asiaFinance: [
+    {
+      title: "IB in Hong Kong & Singapore: The 2026 Guide",
+      href: "/blog/investment-banking-hong-kong-singapore-2026",
+      type: "blog" as const,
+      description: "Recruiting, compensation, and deal flow in Asia's top finance hubs.",
+    },
+    {
+      title: "Target Schools in Asia for IB",
+      href: "/blog/target-schools-asia-investment-banking",
+      type: "blog" as const,
+      description: "Data-backed rankings: NUS, CUHK, HKUST, SMU, and more.",
+    },
+    {
+      title: "Finance Technical Interview Guide",
+      href: "/playbooks/ib-technical-guide",
+      type: "playbook" as const,
+      description: "88 pages. Every question tagged by frequency—works globally.",
+    },
+    {
+      title: "Resume Review Service",
+      href: "/finance-resume-review",
+      type: "service" as const,
+      description: "Line-by-line feedback from professionals who know Asia recruiting.",
+    },
+  ],
+  compensation: [
+    {
+      title: "Bulge Bracket Salary Guide 2026",
+      href: "/blog/bulge-bracket-investment-banking-salary-2026",
+      type: "blog" as const,
+      description: "GS, MS, JPM, BofA & Citi compensation compared.",
+    },
+    {
+      title: "Elite Boutique Salary Guide 2026",
+      href: "/blog/elite-boutique-investment-banking-salary-2026",
+      type: "blog" as const,
+      description: "Evercore, Centerview, PJT, Lazard & Moelis compared.",
+    },
+    {
+      title: "Middle Market Salary Guide 2026",
+      href: "/blog/middle-market-investment-banking-salary-2026",
+      type: "blog" as const,
+      description: "Jefferies, Houlihan Lokey, William Blair & more.",
+    },
+    {
+      title: "Finance Technical Interview Guide",
+      href: "/playbooks/ib-technical-guide",
+      type: "playbook" as const,
+      description: "Land the offer first—88 pages of interview prep.",
+    },
+  ],
+  ibRecruiting: [
+    {
+      title: "Finance Technical Interview Guide",
+      href: "/playbooks/ib-technical-guide",
+      type: "playbook" as const,
+      description: "88 pages. Every question tagged by frequency with dual-format answers.",
+    },
+    {
+      title: "IB Technical Interview Prep 2026",
+      href: "/ib-technical-interview-2026",
+      type: "guide" as const,
+      description: "Complete guide to IB technical interviews for 2026.",
+    },
+    {
+      title: "Investment Banking Resume Guide",
+      href: "/investment-banking-resume",
+      type: "guide" as const,
+      description: "Format, bullet points, and examples that get interviews.",
+    },
+    {
+      title: "Resume Review Service",
+      href: "/finance-resume-review",
+      type: "service" as const,
+      description: "Professional feedback on your finance resume.",
+    },
+  ],
 }
