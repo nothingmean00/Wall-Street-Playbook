@@ -639,6 +639,39 @@ export default function ColdEmailTemplatesPage() {
             </div>
           </div>
         </section>
+
+        {/* Related Resources */}
+        <section className="bg-white py-12">
+          <div className="mx-auto max-w-4xl px-6 lg:px-8">
+            <h3 className="text-lg font-bold text-navy mb-6 text-center">Related Resources</h3>
+            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              <Link href="/informational-interview-questions-banking" className="rounded-lg border border-border p-4 hover:border-gold/40 transition-colors">
+                <p className="text-sm font-semibold text-navy">Informational Interview Questions</p>
+                <p className="mt-1 text-xs text-charcoal/50">30 questions that impress bankers</p>
+              </Link>
+              <Link href="/networking-non-target-students-2026" className="rounded-lg border border-border p-4 hover:border-gold/40 transition-colors">
+                <p className="text-sm font-semibold text-navy">Non-Target Networking 2026</p>
+                <p className="mt-1 text-xs text-charcoal/50">The volume strategy that works</p>
+              </Link>
+              <Link href="/cold-email-checklist" className="rounded-lg border border-border p-4 hover:border-gold/40 transition-colors">
+                <p className="text-sm font-semibold text-navy">Free Cold Email Checklist</p>
+                <p className="mt-1 text-xs text-charcoal/50">11-point pre-send checklist</p>
+              </Link>
+              <Link href="/blog/cold-email-templates-that-get-bankers-to-respond" className="rounded-lg border border-border p-4 hover:border-gold/40 transition-colors">
+                <p className="text-sm font-semibold text-navy">Deep Dive: Email Templates</p>
+                <p className="mt-1 text-xs text-charcoal/50">5 templates with real response data</p>
+              </Link>
+              <Link href="/blog/how-finance-jobs-are-actually-filled-2026" className="rounded-lg border border-border p-4 hover:border-gold/40 transition-colors">
+                <p className="text-sm font-semibold text-navy">How Jobs Are Filled</p>
+                <p className="mt-1 text-xs text-charcoal/50">The data on referrals vs applications</p>
+              </Link>
+              <Link href="/blog/networking-mastery-non-target-students" className="rounded-lg border border-border p-4 hover:border-gold/40 transition-colors">
+                <p className="text-sm font-semibold text-navy">Non-Target Networking Guide</p>
+                <p className="mt-1 text-xs text-charcoal/50">The 100-email strategy</p>
+              </Link>
+            </div>
+          </div>
+        </section>
       </main>
       <Footer />
     </div>

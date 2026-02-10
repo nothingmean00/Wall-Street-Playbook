@@ -646,25 +646,33 @@ export default function FinanceNetworkingPlaybook2026Page() {
         </section>
 
         {/* Related Resources */}
-        <section className="bg-off-white py-12">
-          <div className="mx-auto max-w-7xl px-6 lg:px-8">
-            <h3 className="text-lg font-bold text-navy mb-6">Related Resources</h3>
-            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-              <Link href="/informational-interview-questions-banking" className="p-4 bg-white rounded-lg border border-border hover:border-gold/50 transition-colors">
-                <p className="font-medium text-navy text-sm">Informational Interview Questions</p>
-                <p className="text-xs text-charcoal/50 mt-1">30 questions by conversation phase</p>
+        <section className="bg-white py-12">
+          <div className="mx-auto max-w-4xl px-6 lg:px-8">
+            <h3 className="text-lg font-bold text-navy mb-6 text-center">Related Resources</h3>
+            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              <Link href="/cold-email-templates-investment-banking" className="rounded-lg border border-border p-4 hover:border-gold/40 transition-colors">
+                <p className="text-sm font-semibold text-navy">Cold Email Templates</p>
+                <p className="mt-1 text-xs text-charcoal/50">13 proven templates by scenario</p>
               </Link>
-              <Link href="/non-target-investment-banking" className="p-4 bg-white rounded-lg border border-border hover:border-gold/50 transition-colors">
-                <p className="font-medium text-navy text-sm">Non-Target to IB Guide</p>
-                <p className="text-xs text-charcoal/50 mt-1">Breaking in without OCR</p>
+              <Link href="/networking-non-target-students-2026" className="rounded-lg border border-border p-4 hover:border-gold/40 transition-colors">
+                <p className="text-sm font-semibold text-navy">Non-Target Networking 2026</p>
+                <p className="mt-1 text-xs text-charcoal/50">Volume benchmarks and acceleration playbook</p>
               </Link>
-              <Link href="/investment-banking-recruiting-2026" className="p-4 bg-white rounded-lg border border-border hover:border-gold/50 transition-colors">
-                <p className="font-medium text-navy text-sm">Recruiting Timeline 2026</p>
-                <p className="text-xs text-charcoal/50 mt-1">Key dates and deadlines</p>
+              <Link href="/informational-interview-questions-banking" className="rounded-lg border border-border p-4 hover:border-gold/40 transition-colors">
+                <p className="text-sm font-semibold text-navy">Informational Interview Questions</p>
+                <p className="mt-1 text-xs text-charcoal/50">30 questions that impress bankers</p>
               </Link>
-              <Link href="/investment-banking-resume" className="p-4 bg-white rounded-lg border border-border hover:border-gold/50 transition-colors">
-                <p className="font-medium text-navy text-sm">IB Resume Guide</p>
-                <p className="text-xs text-charcoal/50 mt-1">Format that gets interviews</p>
+              <Link href="/cold-email-checklist" className="rounded-lg border border-border p-4 hover:border-gold/40 transition-colors">
+                <p className="text-sm font-semibold text-navy">Free Cold Email Checklist</p>
+                <p className="mt-1 text-xs text-charcoal/50">11-point pre-send checklist</p>
+              </Link>
+              <Link href="/blog/how-finance-jobs-are-actually-filled-2026" className="rounded-lg border border-border p-4 hover:border-gold/40 transition-colors">
+                <p className="text-sm font-semibold text-navy">How Jobs Are Filled</p>
+                <p className="mt-1 text-xs text-charcoal/50">Hard data on networking effectiveness</p>
+              </Link>
+              <Link href="/blog/networking-mastery-non-target-students" className="rounded-lg border border-border p-4 hover:border-gold/40 transition-colors">
+                <p className="text-sm font-semibold text-navy">Non-Target Networking Guide</p>
+                <p className="mt-1 text-xs text-charcoal/50">The 100-email strategy</p>
               </Link>
             </div>
           </div>

@@ -594,24 +594,32 @@ export default function InformationalInterviewBankingPage() {
 
         {/* Related Resources */}
         <section className="bg-white py-12">
-          <div className="mx-auto max-w-7xl px-6 lg:px-8">
-            <h3 className="text-lg font-bold text-navy mb-6">Related Resources</h3>
-            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
-              <Link href="/non-target-investment-banking" className="p-4 bg-off-white rounded-lg border border-border hover:border-gold/50 transition-colors">
-                <p className="font-medium text-navy text-sm">Non-Target to IB Guide</p>
-                <p className="text-xs text-charcoal/50 mt-1">Breaking in without OCR</p>
+          <div className="mx-auto max-w-4xl px-6 lg:px-8">
+            <h3 className="text-lg font-bold text-navy mb-6 text-center">Related Resources</h3>
+            <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              <Link href="/cold-email-templates-investment-banking" className="rounded-lg border border-border p-4 hover:border-gold/40 transition-colors">
+                <p className="text-sm font-semibold text-navy">Cold Email Templates</p>
+                <p className="mt-1 text-xs text-charcoal/50">13 proven templates by scenario</p>
               </Link>
-              <Link href="/investment-banking-interview-prep" className="p-4 bg-off-white rounded-lg border border-border hover:border-gold/50 transition-colors">
-                <p className="font-medium text-navy text-sm">IB Interview Prep</p>
-                <p className="text-xs text-charcoal/50 mt-1">Technical & behavioral prep</p>
+              <Link href="/networking-non-target-students-2026" className="rounded-lg border border-border p-4 hover:border-gold/40 transition-colors">
+                <p className="text-sm font-semibold text-navy">Non-Target Networking 2026</p>
+                <p className="mt-1 text-xs text-charcoal/50">Volume benchmarks and strategy</p>
               </Link>
-              <Link href="/investment-banking-recruiting-2026" className="p-4 bg-off-white rounded-lg border border-border hover:border-gold/50 transition-colors">
-                <p className="font-medium text-navy text-sm">Recruiting Timeline 2026</p>
-                <p className="text-xs text-charcoal/50 mt-1">Key dates and deadlines</p>
+              <Link href="/cold-email-checklist" className="rounded-lg border border-border p-4 hover:border-gold/40 transition-colors">
+                <p className="text-sm font-semibold text-navy">Free Cold Email Checklist</p>
+                <p className="mt-1 text-xs text-charcoal/50">11-point pre-send checklist</p>
               </Link>
-              <Link href="/investment-banking-resume" className="p-4 bg-off-white rounded-lg border border-border hover:border-gold/50 transition-colors">
-                <p className="font-medium text-navy text-sm">IB Resume Guide</p>
-                <p className="text-xs text-charcoal/50 mt-1">Format that gets interviews</p>
+              <Link href="/blog/informational-interview-questions-investment-banking" className="rounded-lg border border-border p-4 hover:border-gold/40 transition-colors">
+                <p className="text-sm font-semibold text-navy">Deep Dive: Interview Questions</p>
+                <p className="mt-1 text-xs text-charcoal/50">10 questions by call phase</p>
+              </Link>
+              <Link href="/blog/cold-email-templates-that-get-bankers-to-respond" className="rounded-lg border border-border p-4 hover:border-gold/40 transition-colors">
+                <p className="text-sm font-semibold text-navy">Email Templates Guide</p>
+                <p className="mt-1 text-xs text-charcoal/50">5 templates with response data</p>
+              </Link>
+              <Link href="/finance-networking-playbook-2026" className="rounded-lg border border-border p-4 hover:border-gold/40 transition-colors">
+                <p className="text-sm font-semibold text-navy">Full Networking Playbook Overview</p>
+                <p className="mt-1 text-xs text-charcoal/50">All 8 chapters previewed</p>
               </Link>
             </div>
           </div>
