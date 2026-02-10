@@ -87,7 +87,7 @@ export function HeroSection() {
 
             {/* Firm logos / social proof bar */}
             <div className="mt-10 animate-slide-up animate-delay-400">
-              <p className="text-xs font-medium uppercase tracking-widest text-white/30 mb-3">Our readers have landed interviews at 35+ firms including</p>
+              <p className="text-xs font-medium uppercase tracking-widest text-white/30 mb-3">Candidates who use our materials have landed interviews at firms like</p>
               <div className="flex flex-wrap items-center justify-center lg:justify-start gap-x-5 gap-y-2">
                 {["Goldman Sachs", "Blackstone", "KKR", "Evercore", "Carlyle", "UBS", "Lazard"].map((firm) => (
                   <span key={firm} className="text-sm font-semibold text-white/40 hover:text-gold/70 transition-colors">
