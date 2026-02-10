@@ -44,66 +44,56 @@ export function HeroSection() {
             {/* Eyebrow - Real urgency based on recruiting calendar */}
             <div className="inline-flex items-center gap-2 rounded-full border border-gold/30 bg-gold/10 px-4 py-1.5 mb-6 animate-slide-up">
               <span className="h-1.5 w-1.5 rounded-full bg-gold animate-pulse" />
-              <span className="text-xs font-semibold uppercase tracking-widest text-gold">2026 Summer Analyst Apps Open Now</span>
+              <span className="text-xs font-semibold uppercase tracking-widest text-gold">2027 Summer Analyst Deadlines Approaching</span>
             </div>
             
             {/* Headline */}
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-[1.1] animate-slide-up animate-delay-100">
-              Your Edge Into{" "}
+              Land the Interview.{" "}
               <span className="relative inline-block">
-                <span className="text-gradient-gold">Wall Street</span>
-                {/* Underline decoration - CSS only for better performance */}
+                <span className="text-gradient-gold">Get the Offer.</span>
                 <span className="absolute -bottom-1 left-0 w-full h-1 bg-gold/60 rounded-full" />
               </span>
             </h1>
 
-            {/* Subheadline - FOMO: reference the timeline pressure */}
+            {/* Subheadline */}
             <p className="mt-6 text-lg sm:text-xl leading-relaxed text-white/60 max-w-xl mx-auto lg:mx-0 animate-slide-up animate-delay-200">
-              Resume frameworks, technical prep, and networking strategies that get callbacks at 
-              <span className="text-white/80"> bulge brackets</span>,
-              <span className="text-white/80"> elite boutiques</span>, and
-              <span className="text-white/80"> buyside firms</span>.
+              The playbooks, technical guides, and resume services used by candidates who broke into
+              <span className="text-white/80"> Goldman Sachs</span>,
+              <span className="text-white/80"> Blackstone</span>,
+              <span className="text-white/80"> KKR</span>, and
+              <span className="text-white/80"> more</span>.
             </p>
 
             {/* CTAs */}
             <div className="mt-10 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 animate-slide-up animate-delay-300">
               <Link
-                href="/submit-resume?service=resume-review"
-                onClick={() => track("cta_clicked", { location: "hero_resume" })}
+                href="/playbooks/ib-technical-guide"
+                onClick={() => track("cta_clicked", { location: "hero_guide" })}
                 className="group relative flex w-full sm:w-auto items-center justify-center gap-2 rounded-xl bg-gold px-8 py-4 text-base font-semibold text-navy overflow-hidden transition-all hover:shadow-lg hover:shadow-gold/25"
               >
-                <span className="relative z-10">Get Your Resume Reviewed</span>
+                <span className="relative z-10">Get the Interview Guide</span>
                 <ArrowRight className="relative z-10 h-5 w-5 transition-transform group-hover:translate-x-1" />
                 <div className="absolute inset-0 bg-white opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               </Link>
               <Link
-                href="/jobs"
-                onClick={() => track("cta_clicked", { location: "hero_jobs" })}
+                href="/submit-resume?service=resume-review"
+                onClick={() => track("cta_clicked", { location: "hero_resume" })}
                 className="group w-full sm:w-auto rounded-xl border-2 border-white/20 bg-white/5 backdrop-blur-sm px-8 py-4 text-base font-semibold text-white transition-all hover:border-gold hover:bg-gold/10 text-center"
               >
-                See Open Roles
+                Get Your Resume Reviewed
               </Link>
             </div>
 
-            {/* Trust indicators - Authority signals */}
-            <div className="mt-10 flex flex-wrap items-center justify-center lg:justify-start gap-6 animate-slide-up animate-delay-400">
-              <div className="flex items-center gap-2 text-white/40">
-                <svg className="w-5 h-5 text-gold" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                </svg>
-                <span className="text-sm">GS / MS / Evercore Formats</span>
-              </div>
-              <div className="flex items-center gap-2 text-white/40">
-                <svg className="w-5 h-5 text-gold" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                </svg>
-                <span className="text-sm">48hr Turnaround</span>
-              </div>
-              <div className="flex items-center gap-2 text-white/40">
-                <svg className="w-5 h-5 text-gold" fill="currentColor" viewBox="0 0 20 20">
-                  <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
-                </svg>
-                <span className="text-sm">Money-Back Guarantee</span>
+            {/* Firm logos / social proof bar */}
+            <div className="mt-10 animate-slide-up animate-delay-400">
+              <p className="text-xs font-medium uppercase tracking-widest text-white/30 mb-4">Our readers have placed at</p>
+              <div className="flex flex-wrap items-center justify-center lg:justify-start gap-x-5 gap-y-2">
+                {["Goldman Sachs", "JPMorgan", "Blackstone", "KKR", "Lazard", "Carlyle"].map((firm) => (
+                  <span key={firm} className="text-sm font-semibold text-white/40 hover:text-gold/70 transition-colors">
+                    {firm}
+                  </span>
+                ))}
               </div>
             </div>
           </div>
@@ -141,12 +131,12 @@ export function HeroSection() {
                 <div className="bg-navy/95 backdrop-blur-xl rounded-xl border border-white/10 p-5 shadow-xl">
                   <div className="grid grid-cols-3 gap-4 text-center">
                     <div>
-                      <p className="text-2xl font-bold text-gold number-highlight">$197</p>
-                      <p className="text-xs text-white/50 mt-0.5">Resume Review</p>
+                      <p className="text-2xl font-bold text-gold number-highlight">400+</p>
+                      <p className="text-xs text-white/50 mt-0.5">Interview Questions</p>
                     </div>
                     <div className="border-x border-white/10">
-                      <p className="text-2xl font-bold text-gold number-highlight">48hr</p>
-                      <p className="text-xs text-white/50 mt-0.5">Turnaround</p>
+                      <p className="text-2xl font-bold text-gold number-highlight">30+</p>
+                      <p className="text-xs text-white/50 mt-0.5">Free Guides</p>
                     </div>
                     <div>
                       <p className="text-2xl font-bold text-gold number-highlight">100%</p>
@@ -162,7 +152,7 @@ export function HeroSection() {
         {/* Email Capture */}
         <div className="mt-16 sm:mt-20 pt-10 border-t border-white/10 animate-slide-up animate-delay-600">
           <div className="max-w-xl mx-auto lg:mx-0">
-            <p className="text-sm text-white/50 mb-4 text-center lg:text-left">Free: 50 technical interview questions PDF + weekly recruiting tips</p>
+            <p className="text-sm text-white/50 mb-4 text-center lg:text-left">Free weekly recruiting intel + technical prep tips. No spam.</p>
             <EmailCapture variant="hero" />
           </div>
         </div>
