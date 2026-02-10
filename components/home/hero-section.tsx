@@ -87,13 +87,14 @@ export function HeroSection() {
 
             {/* Firm logos / social proof bar */}
             <div className="mt-10 animate-slide-up animate-delay-400">
-              <p className="text-xs font-medium uppercase tracking-widest text-white/30 mb-4">Our readers have placed at</p>
+              <p className="text-xs font-medium uppercase tracking-widest text-white/30 mb-3">Our readers have landed interviews at 35+ firms including</p>
               <div className="flex flex-wrap items-center justify-center lg:justify-start gap-x-5 gap-y-2">
-                {["Goldman Sachs", "JPMorgan", "Blackstone", "KKR", "Lazard", "Carlyle"].map((firm) => (
+                {["Goldman Sachs", "Blackstone", "KKR", "Evercore", "Carlyle", "UBS", "Lazard"].map((firm) => (
                   <span key={firm} className="text-sm font-semibold text-white/40 hover:text-gold/70 transition-colors">
                     {firm}
                   </span>
                 ))}
+                <span className="text-sm font-semibold text-gold/50">& more</span>
               </div>
             </div>
           </div>
