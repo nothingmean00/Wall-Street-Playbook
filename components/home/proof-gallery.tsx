@@ -374,22 +374,13 @@ export function ProofGallery() {
             <div className="inline-flex items-center gap-2 rounded-full border border-gold/30 bg-gold/10 px-4 py-1.5 mb-6">
               <CheckCircle className="w-4 h-4 text-gold" />
               <span className="text-xs font-semibold uppercase tracking-widest text-gold">
-                Real Results
+                Verified Results
               </span>
             </div>
             <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl">
-              Our Readers Land{" "}
-              <span className="text-gradient-gold">Interviews</span>
+              From Cold Outreach to{" "}
+              <span className="text-gradient-gold">Offer in Hand</span>
             </h2>
-            <p className="mt-4 text-lg text-white/60 max-w-2xl mx-auto">
-              Real interview invitations from real firms. Names redacted for privacy.
-            </p>
-            <div className="mt-4 inline-flex items-center gap-2 text-sm text-white/40">
-              <span className="text-2xl font-bold text-gold font-serif italic">
-                35+
-              </span>
-              <span>verified interview screenshots</span>
-            </div>
           </div>
 
           {/* Row 1 — scrolls left */}
