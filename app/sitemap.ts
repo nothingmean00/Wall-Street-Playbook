@@ -217,9 +217,40 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "monthly" as const,
       priority: 0.9,
     },
+    // Networking & cold email intent pages (high commercial intent)
+    {
+      url: `${baseUrl}/cold-email-templates-investment-banking`,
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: 0.95,
+    },
+    {
+      url: `${baseUrl}/networking-non-target-students-2026`,
+      lastModified: new Date(),
+      changeFrequency: "weekly" as const,
+      priority: 0.95,
+    },
+    {
+      url: `${baseUrl}/informational-interview-questions-banking`,
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: 0.9,
+    },
+    {
+      url: `${baseUrl}/finance-networking-playbook-2026`,
+      lastModified: new Date(),
+      changeFrequency: "weekly" as const,
+      priority: 0.95,
+    },
     // Lead magnet pages
     {
       url: `${baseUrl}/ib-technical-cheat-sheet`,
+      lastModified: new Date(),
+      changeFrequency: "monthly" as const,
+      priority: 0.8,
+    },
+    {
+      url: `${baseUrl}/cold-email-checklist`,
       lastModified: new Date(),
       changeFrequency: "monthly" as const,
       priority: 0.8,

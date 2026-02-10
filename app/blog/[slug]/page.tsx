@@ -76,6 +76,17 @@ function getSidebarCTA(slug: string, category: string, tags?: string[]) {
     }
   }
 
+  // Networking-related content → Networking & Cold Email Playbook
+  if (s.includes("networking") || s.includes("cold-email") || s.includes("informational-interview") || s.includes("how-finance-jobs") || tagSet.has("networking") || tagSet.has("cold email") || category === "Networking") {
+    return {
+      product: "Networking & Cold Email Playbook",
+      description: "47 pages. 8 chapters. 13 email templates, 30 interview questions, and the system that turns cold outreach into offers.",
+      price: 67,
+      href: "/playbooks/networking-cold-email-playbook",
+      features: ["13 cold email templates by scenario", "30 informational interview questions", "Response rate data by channel", "Email formats for 13+ major banks"],
+    }
+  }
+
   // Default → Finance Technical Interview Guide (covers the broadest audience)
   return {
       product: "Finance Technical Interview Guide",

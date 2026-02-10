@@ -28,9 +28,22 @@ const livePlaybooks = [
       "Compensation data by fund tier & level",
     ],
   },
+  {
+    slug: "networking-cold-email-playbook",
+    title: "Networking & Cold Email Playbook",
+    description:
+      "47 pages. 8 chapters. 13 email templates, 30 interview questions, and the system that turns cold outreach into offers.",
+    price: 67,
+    highlights: [
+      "13 proven cold email templates by scenario",
+      "30 informational interview questions by phase",
+      "Response rate data by channel & candidate type",
+      "Email formats for 13+ major banks",
+    ],
+  },
 ]
 
-const upcomingCount = 8
+const upcomingCount = 7
 
 export function PlaybooksComingSoon() {
   return (
@@ -60,7 +73,7 @@ export function PlaybooksComingSoon() {
         </div>
 
         {/* Live Playbook Cards */}
-        <div className="mx-auto mt-16 grid max-w-5xl grid-cols-1 gap-8 sm:grid-cols-2">
+        <div className="mx-auto mt-16 grid max-w-6xl grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {livePlaybooks.map((playbook) => (
             <Link
               key={playbook.slug}
@@ -135,7 +148,7 @@ export function PlaybooksComingSoon() {
               </h3>
             </div>
             <p className="text-sm text-charcoal/60 max-w-lg mx-auto mb-5">
-              Networking, LBO modeling, stock pitches, restructuring, REPE, private credit, and more.
+              LBO modeling, stock pitches, restructuring, REPE, private credit, and more.
               New guides released regularly.
             </p>
             <Link

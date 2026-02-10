@@ -3,7 +3,7 @@ import Link from "next/link"
 import { Navbar } from "@/components/layout/navbar"
 import { Footer } from "@/components/layout/footer"
 import { playbooks } from "@/lib/data"
-import { Check, ArrowRight, BookOpen, Lock, Star, Shield, Sparkles, Mail, TrendingUp, Target, Mic, Wrench, Building2, CreditCard, Zap } from "lucide-react"
+import { Check, ArrowRight, BookOpen, Lock, Star, Shield, Sparkles, TrendingUp, Target, Mic, Wrench, Building2, CreditCard, Zap } from "lucide-react"
 
 export const metadata: Metadata = {
   title: "Premium Playbooks | Wall Street Playbook",
@@ -21,16 +21,10 @@ export const metadata: Metadata = {
 }
 
 // Playbooks that are live and purchasable
-const livePlaybookSlugs = ["ib-technical-guide", "pe-recruiting-playbook"]
+const livePlaybookSlugs = ["ib-technical-guide", "pe-recruiting-playbook", "networking-cold-email-playbook"]
 
 // Upcoming playbooks with descriptions
 const upcomingPlaybooks = [
-  {
-    title: "Networking & Cold Email Playbook",
-    description: "50+ proven templates and follow-up cadences that convert cold outreach into referrals.",
-    price: 67,
-    icon: Mail,
-  },
   {
     title: "LBO Modeling Crash Course",
     description: "Build full LBO models from scratch. Includes Excel templates used in actual PE interviews.",
@@ -131,7 +125,7 @@ export default function PlaybooksPage() {
               <div className="mt-2 mx-auto h-1 w-12 bg-gold" />
             </div>
 
-            <div className="mx-auto max-w-5xl grid gap-8 md:grid-cols-2">
+            <div className="mx-auto max-w-6xl grid gap-6 md:grid-cols-2 lg:grid-cols-3">
               {livePlaybooks.map((playbook) => (
                 <Link
                   key={playbook.slug}
@@ -258,7 +252,7 @@ export default function PlaybooksPage() {
               As we release more playbooks, bundles with significant discounts will become available.
               Start with the guide that matches your immediate recruiting timeline.
             </p>
-            <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4">
+            <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4 flex-wrap">
               <Link
                 href="/playbooks/pe-recruiting-playbook"
                 className="inline-flex items-center gap-2 rounded-xl bg-gold px-6 py-3.5 text-sm font-semibold text-navy hover:bg-white transition-colors"
@@ -271,6 +265,13 @@ export default function PlaybooksPage() {
                 className="inline-flex items-center gap-2 rounded-xl border border-white/20 bg-white/5 px-6 py-3.5 text-sm font-semibold text-white hover:bg-white/10 transition-colors"
               >
                 Finance Technical Guide — $127
+                <ArrowRight className="h-4 w-4" />
+              </Link>
+              <Link
+                href="/playbooks/networking-cold-email-playbook"
+                className="inline-flex items-center gap-2 rounded-xl border border-white/20 bg-white/5 px-6 py-3.5 text-sm font-semibold text-white hover:bg-white/10 transition-colors"
+              >
+                Networking Playbook — $67
                 <ArrowRight className="h-4 w-4" />
               </Link>
             </div>

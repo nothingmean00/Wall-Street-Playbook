@@ -267,23 +267,37 @@ function SuccessContent() {
               </p>
               {sessionData.productId === "ib-technical-guide" ? (
                 <>
-                  <h3 className="text-lg font-bold text-navy">2026 PE Recruiting Playbook</h3>
+                  <h3 className="text-lg font-bold text-navy">Networking & Cold Email Playbook</h3>
                   <p className="mt-1 text-sm text-charcoal/60">
-                    Now that you have the technicals down, get the insider playbook for PE recruiting — headhunter intel, on-cycle timeline, and paper LBO frameworks.
+                    You know the technicals — now get the meetings. 13 proven email templates, 30 informational interview questions, and the system that turns cold outreach into offers.
                   </p>
                   <Link
-                    href="/playbooks/pe-recruiting-playbook"
+                    href="/playbooks/networking-cold-email-playbook"
                     className="mt-4 inline-flex items-center gap-2 rounded-lg bg-navy px-5 py-2.5 text-sm font-semibold text-white hover:bg-gold hover:text-navy transition-colors"
                   >
-                    View PE Playbook — $97
+                    View Networking Playbook — $67
                     <ArrowRight className="h-4 w-4" />
                   </Link>
                 </>
               ) : sessionData.productId === "pe-recruiting-playbook" ? (
                 <>
+                  <h3 className="text-lg font-bold text-navy">Networking & Cold Email Playbook</h3>
+                  <p className="mt-1 text-sm text-charcoal/60">
+                    PE recruiting is headhunter-driven, but networking still opens doors. Get the email templates, LinkedIn strategy, and informational interview system that builds your network.
+                  </p>
+                  <Link
+                    href="/playbooks/networking-cold-email-playbook"
+                    className="mt-4 inline-flex items-center gap-2 rounded-lg bg-navy px-5 py-2.5 text-sm font-semibold text-white hover:bg-gold hover:text-navy transition-colors"
+                  >
+                    View Networking Playbook — $67
+                    <ArrowRight className="h-4 w-4" />
+                  </Link>
+                </>
+              ) : sessionData.productId === "networking-cold-email-playbook" ? (
+                <>
                   <h3 className="text-lg font-bold text-navy">Finance Technical Interview Guide</h3>
                   <p className="mt-1 text-sm text-charcoal/60">
-                    PE interviews are heavy on technicals. Get 88 pages of frequency-tagged questions with dual-format answers — accounting, DCF, M&A, LBOs, and more.
+                    You know how to get the meeting — now ace the interview. 88 pages of frequency-tagged technical questions with dual-format answers covering accounting, DCF, M&A, and LBOs.
                   </p>
                   <Link
                     href="/playbooks/ib-technical-guide"

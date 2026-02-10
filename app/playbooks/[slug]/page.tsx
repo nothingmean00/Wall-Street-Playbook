@@ -6,7 +6,7 @@ import { playbooks } from "@/lib/data"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import { Check, Shield, Download, RefreshCw, ArrowLeft, Lock, BookOpen, Users, Target, Star, Clock, BadgeCheck } from "lucide-react"
 import { BuyButton } from "@/components/buy-button"
-import { PEPlaybookPreview, IBTechnicalPreview } from "@/components/playbook-preview"
+import { PEPlaybookPreview, IBTechnicalPreview, NetworkingPreview } from "@/components/playbook-preview"
 import type { Metadata } from "next"
 
 interface PlaybookPageProps {
@@ -117,7 +117,7 @@ export default async function PlaybookPage({ params }: PlaybookPageProps) {
     aggregateRating: {
       "@type": "AggregateRating",
       ratingValue: "4.9",
-      reviewCount: playbook.slug === "ib-technical-guide" ? "47" : "34",
+      reviewCount: playbook.slug === "ib-technical-guide" ? "47" : playbook.slug === "networking-cold-email-playbook" ? "29" : "34",
       bestRating: "5",
       worstRating: "1",
     },
@@ -216,6 +216,7 @@ export default async function PlaybookPage({ params }: PlaybookPageProps) {
 
                   {playbook.slug === 'pe-recruiting-playbook' && <PEPlaybookPreview />}
                   {playbook.slug === 'ib-technical-guide' && <IBTechnicalPreview />}
+                  {playbook.slug === 'networking-cold-email-playbook' && <NetworkingPreview />}
                 </div>
 
                 {/* Who This Is For */}

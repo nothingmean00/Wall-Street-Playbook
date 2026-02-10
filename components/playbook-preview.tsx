@@ -352,3 +352,15 @@ export function IBTechnicalPreview() {
     />
   )
 }
+
+// Networking & Cold Email Playbook Preview - Using actual PDF
+export function NetworkingPreview() {
+  return (
+    <PlaybookPreview
+      title="Networking & Cold Email Playbook"
+      pdfUrl="https://53r2eh0lojknhqsa.public.blob.vercel-storage.com/Networking-Cold-Email-Playbook.pdf"
+      previewPages={5}
+      totalPages={47}
+    />
+  )
+}
