@@ -39,13 +39,29 @@ export async function POST(request: NextRequest) {
     const appUrl = process.env.NEXT_PUBLIC_APP_URL || 'https://wallstreetplaybook.com'
 
     const stripe = getStripe()
+
+    // Use price_data for dynamic pricing (no need to pre-create prices in Stripe Dashboard)
+    // If a real Stripe Price ID is configured, use it; otherwise use inline price_data
+    const hasPriceId = product.priceId && !product.priceId.startsWith('price_xxx')
+
     const session = await stripe.checkout.sessions.create({
       payment_method_types: ['card'],
       line_items: [
-        {
-          price: product.priceId,
-          quantity: 1,
-        },
+        hasPriceId
+          ? {
+              price: product.priceId,
+              quantity: 1,
+            }
+          : {
+              price_data: {
+                currency: 'usd',
+                product_data: {
+                  name: product.name,
+                },
+                unit_amount: product.price * 100, // Stripe uses cents
+              },
+              quantity: 1,
+            },
       ],
       mode: 'payment',
       success_url: `${appUrl}/success?session_id={CHECKOUT_SESSION_ID}`,
