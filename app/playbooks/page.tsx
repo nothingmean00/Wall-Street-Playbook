@@ -3,7 +3,36 @@ import Link from "next/link"
 import { Navbar } from "@/components/layout/navbar"
 import { Footer } from "@/components/layout/footer"
 import { playbooks } from "@/lib/data"
-import { Check, ArrowRight, BookOpen, Lock, Star, Shield, Sparkles, TrendingUp, Target, Mic, Wrench, Building2, CreditCard, Zap } from "lucide-react"
+import {
+  Check,
+  ArrowRight,
+  BookOpen,
+  Lock,
+  Star,
+  Shield,
+  Sparkles,
+  TrendingUp,
+  Target,
+  Mic,
+  Wrench,
+  Building2,
+  CreditCard,
+  Zap,
+  FileText,
+  Users,
+  GraduationCap,
+  Briefcase,
+  Globe,
+  Award,
+  Download,
+  RefreshCw,
+  ChevronDown,
+  X,
+  CheckCircle2,
+  HelpCircle,
+  Clock,
+  DollarSign,
+} from "lucide-react"
 
 export const metadata: Metadata = {
   title: "Finance Recruiting Playbooks | Wall Street Playbook",
@@ -69,8 +98,101 @@ const upcomingPlaybooks = [
   },
 ]
 
+// Candidate types for "Who This Is For"
+const candidateTypes = [
+  {
+    icon: GraduationCap,
+    title: "Undergraduates",
+    description: "Target and non-target students preparing for IB/PE summer analyst recruiting.",
+    recommended: "Technical Guide + Networking Playbook",
+  },
+  {
+    icon: Briefcase,
+    title: "Lateral Candidates",
+    description: "Professionals switching from Big 4, consulting, corporate finance, or other industries.",
+    recommended: "Technical Guide + Networking Playbook",
+  },
+  {
+    icon: TrendingUp,
+    title: "IB Analysts → PE",
+    description: "First and second-year analysts preparing for on-cycle or off-cycle PE recruiting.",
+    recommended: "PE Recruiting Playbook + Technical Guide",
+  },
+  {
+    icon: Award,
+    title: "MBA Candidates",
+    description: "Pre-MBA and current MBA students targeting associate-level finance roles.",
+    recommended: "Technical Guide + PE Playbook",
+  },
+  {
+    icon: Globe,
+    title: "International Candidates",
+    description: "Candidates navigating US/UK finance recruiting from abroad or on sponsorship.",
+    recommended: "Networking Playbook + Technical Guide",
+  },
+  {
+    icon: Users,
+    title: "Non-Target Students",
+    description: "Candidates from non-target schools who need to build networks from scratch.",
+    recommended: "Networking Playbook + Technical Guide",
+  },
+]
+
+// FAQ items
+const faqItems = [
+  {
+    question: "What format are the playbooks delivered in?",
+    answer: "All playbooks are delivered as high-quality PDF files. You'll receive an instant download link immediately after purchase. The PDFs are optimized for both screen reading and printing.",
+  },
+  {
+    question: "How are these different from free resources online?",
+    answer: "Free forum advice and blog posts cover the basics, but they're fragmented, often outdated, and lack the tactical specificity needed to stand out. Our playbooks are structured systems built from real recruiting data across 30+ firms — with interview frequency tags, exact scripts, red-flag warnings, and frameworks you can apply immediately. They're designed to replace 50+ hours of scattered research with a focused, actionable system.",
+  },
+  {
+    question: "Are these relevant for 2026 recruiting?",
+    answer: "Yes. All playbooks are updated for the 2026 recruiting cycle. The PE Recruiting Playbook in particular includes 2026 timeline forecasts, updated headhunter data, and current compensation figures. When recruiting dynamics change, we update the guides — and all updates are free for life.",
+  },
+  {
+    question: "I go to a non-target school. Will these help me?",
+    answer: "Especially so. The Networking & Cold Email Playbook was built with non-target candidates in mind — 13 email templates, LinkedIn outreach strategies with real response rate data, and segment-specific strategies for non-target students. The Technical Guide levels the playing field on interviews. Non-target candidates consistently tell us these are the most impactful resources they used.",
+  },
+  {
+    question: "What if the playbook doesn't help me?",
+    answer: "Every playbook comes with a 30-day money-back guarantee, no questions asked. If you don't find it valuable, email us and we'll refund you immediately. We've processed very few refund requests — but the guarantee exists because we're confident in the material.",
+  },
+  {
+    question: "Can I share my playbook with friends?",
+    answer: "Playbooks are licensed for individual use only. We keep prices accessible specifically so each candidate can invest in their own copy. That said, if you're part of a university finance club looking for group pricing, reach out to us directly.",
+  },
+  {
+    question: "Do you offer bundles or discounts?",
+    answer: "Yes — purchase all three available playbooks together and save $32 compared to buying individually. The Complete Prep Bundle is $259 (regularly $291). As we release more playbooks, the bundle will expand with even larger discounts.",
+  },
+  {
+    question: "How long does it take to get through a playbook?",
+    answer: "Most candidates work through a playbook in 1-2 focused sessions (3-5 hours), then reference specific sections throughout their recruiting process. The Technical Guide is designed for ongoing review — you'll revisit chapters as you prepare for different types of interviews.",
+  },
+]
+
+// Comparison data
+const comparisonFeatures = [
+  { feature: "Structured interview frameworks", wsp: true, forums: false, courses: true, selfStudy: false },
+  { feature: "Interview frequency data", wsp: true, forums: false, courses: false, selfStudy: false },
+  { feature: "Tested email templates & scripts", wsp: true, forums: false, courses: false, selfStudy: false },
+  { feature: "Updated for 2026 recruiting cycle", wsp: true, forums: false, courses: false, selfStudy: false },
+  { feature: "Under $150 per guide", wsp: true, forums: true, courses: false, selfStudy: true },
+  { feature: "Lifetime updates included", wsp: true, forums: false, courses: false, selfStudy: false },
+  { feature: "30-day money-back guarantee", wsp: true, forums: false, courses: true, selfStudy: false },
+  { feature: "Actionable on day one", wsp: true, forums: false, courses: false, selfStudy: false },
+]
+
 export default function PlaybooksPage() {
   const livePlaybooks = playbooks.filter((p) => livePlaybookSlugs.includes(p.slug))
+
+  // Calculate bundle pricing
+  const totalIndividual = livePlaybooks.reduce((sum, p) => sum + p.price, 0)
+  const bundlePrice = 259
+  const bundleSavings = totalIndividual - bundlePrice
 
   return (
     <div className="flex min-h-screen flex-col">
@@ -117,6 +239,30 @@ export default function PlaybooksPage() {
           </div>
         </section>
 
+        {/* Social Proof Stats Bar */}
+        <section className="bg-navy border-t border-white/10">
+          <div className="mx-auto max-w-5xl px-6 lg:px-8 py-8">
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 md:gap-8">
+              <div className="text-center">
+                <p className="text-3xl font-bold text-gold">177+</p>
+                <p className="mt-1 text-xs text-white/40 uppercase tracking-wider">Pages of Tactical Content</p>
+              </div>
+              <div className="text-center">
+                <p className="text-3xl font-bold text-gold">30+</p>
+                <p className="mt-1 text-xs text-white/40 uppercase tracking-wider">Firms&apos; Data Included</p>
+              </div>
+              <div className="text-center">
+                <p className="text-3xl font-bold text-gold">56+</p>
+                <p className="mt-1 text-xs text-white/40 uppercase tracking-wider">Templates &amp; Frameworks</p>
+              </div>
+              <div className="text-center">
+                <p className="text-3xl font-bold text-gold">100%</p>
+                <p className="mt-1 text-xs text-white/40 uppercase tracking-wider">Money-Back Guarantee</p>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Live Playbooks */}
         <section className="bg-off-white py-16 lg:py-24">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -126,7 +272,7 @@ export default function PlaybooksPage() {
             </div>
 
             <div className="mx-auto max-w-6xl grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-              {livePlaybooks.map((playbook) => (
+              {livePlaybooks.map((playbook, index) => (
                 <Link
                   key={playbook.slug}
                   href={`/playbooks/${playbook.slug}`}
@@ -134,6 +280,16 @@ export default function PlaybooksPage() {
                 >
                   {/* Top accent */}
                   <div className="h-1.5 bg-gradient-to-r from-gold via-gold/80 to-gold/50" />
+
+                  {/* Most Popular badge for first playbook */}
+                  {index === 0 && (
+                    <div className="absolute top-4 right-4 z-10">
+                      <span className="inline-flex items-center gap-1 rounded-full bg-gold px-2.5 py-1 text-[10px] font-bold text-navy uppercase tracking-wider">
+                        <Sparkles className="h-3 w-3" />
+                        Most Popular
+                      </span>
+                    </div>
+                  )}
 
                   <div className="p-6 sm:p-8 flex-1 flex flex-col">
                     {/* Badge */}
@@ -190,6 +346,230 @@ export default function PlaybooksPage() {
           </div>
         </section>
 
+        {/* How It Works */}
+        <section className="bg-white py-16 lg:py-20">
+          <div className="mx-auto max-w-5xl px-6 lg:px-8">
+            <div className="mx-auto max-w-2xl text-center mb-14">
+              <h2 className="text-2xl font-bold text-navy sm:text-3xl">How It Works</h2>
+              <div className="mt-2 mx-auto h-1 w-12 bg-gold" />
+              <p className="mt-4 text-charcoal/60 text-sm">From purchase to interview-ready in three steps.</p>
+            </div>
+
+            <div className="grid md:grid-cols-3 gap-8 md:gap-12">
+              <div className="text-center">
+                <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl bg-navy shadow-lg mb-5">
+                  <Download className="h-7 w-7 text-gold" />
+                </div>
+                <div className="inline-flex items-center justify-center h-6 w-6 rounded-full bg-gold/10 text-xs font-bold text-gold mb-3">1</div>
+                <h3 className="text-lg font-bold text-navy">Instant Download</h3>
+                <p className="mt-2 text-sm text-charcoal/60 leading-relaxed">
+                  Purchase and receive your PDF immediately. No waiting, no drip content. The full playbook is yours in seconds.
+                </p>
+              </div>
+
+              <div className="text-center">
+                <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl bg-navy shadow-lg mb-5">
+                  <BookOpen className="h-7 w-7 text-gold" />
+                </div>
+                <div className="inline-flex items-center justify-center h-6 w-6 rounded-full bg-gold/10 text-xs font-bold text-gold mb-3">2</div>
+                <h3 className="text-lg font-bold text-navy">Study the System</h3>
+                <p className="mt-2 text-sm text-charcoal/60 leading-relaxed">
+                  Work through the structured chapters, internalize the frameworks, and use the templates to build your outreach and prep materials.
+                </p>
+              </div>
+
+              <div className="text-center">
+                <div className="mx-auto flex h-16 w-16 items-center justify-center rounded-2xl bg-navy shadow-lg mb-5">
+                  <Award className="h-7 w-7 text-gold" />
+                </div>
+                <div className="inline-flex items-center justify-center h-6 w-6 rounded-full bg-gold/10 text-xs font-bold text-gold mb-3">3</div>
+                <h3 className="text-lg font-bold text-navy">Land the Interview</h3>
+                <p className="mt-2 text-sm text-charcoal/60 leading-relaxed">
+                  Walk into your interviews with a preparation edge that most candidates simply don&apos;t have. Refer back to the playbook throughout your process.
+                </p>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Bundle Offer */}
+        <section className="bg-off-white py-16 lg:py-20">
+          <div className="mx-auto max-w-4xl px-6 lg:px-8">
+            <div className="relative rounded-2xl bg-navy overflow-hidden">
+              <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,_rgba(201,168,110,0.2),_transparent)]" />
+
+              <div className="relative p-8 sm:p-12">
+                <div className="text-center mb-8">
+                  <div className="inline-flex items-center gap-2 rounded-full border border-gold/30 bg-gold/10 px-4 py-1.5 mb-4">
+                    <DollarSign className="w-4 h-4 text-gold" />
+                    <span className="text-xs font-semibold uppercase tracking-widest text-gold">
+                      Best Value
+                    </span>
+                  </div>
+                  <h2 className="text-2xl font-bold text-white sm:text-3xl">
+                    Complete Prep Bundle
+                  </h2>
+                  <p className="mt-3 text-white/60 text-sm max-w-lg mx-auto">
+                    Get all three available playbooks together and save. Cover technicals, networking, and PE recruiting in one purchase.
+                  </p>
+                </div>
+
+                <div className="flex flex-col sm:flex-row items-center justify-center gap-6 mb-8">
+                  <div className="text-center">
+                    <p className="text-sm text-white/40 line-through">${totalIndividual}</p>
+                    <p className="text-4xl font-bold text-gold">${bundlePrice}</p>
+                    <p className="text-sm text-white/60 mt-1">one-time payment</p>
+                  </div>
+                  <div className="hidden sm:block w-px h-16 bg-white/10" />
+                  <div className="text-center sm:text-left">
+                    <p className="text-lg font-bold text-green-400">Save ${bundleSavings}</p>
+                    <p className="text-xs text-white/40 mt-1">vs. buying individually</p>
+                  </div>
+                </div>
+
+                <div className="grid sm:grid-cols-3 gap-4 mb-8">
+                  {livePlaybooks.map((playbook) => (
+                    <div key={playbook.slug} className="flex items-center gap-3 rounded-xl bg-white/5 border border-white/10 px-4 py-3">
+                      <CheckCircle2 className="h-5 w-5 text-gold flex-shrink-0" />
+                      <div>
+                        <p className="text-sm font-semibold text-white">{playbook.title}</p>
+                        <p className="text-xs text-white/40">${playbook.price} value</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+
+                <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
+                  <Link
+                    href="/playbooks/ib-technical-guide"
+                    className="inline-flex items-center gap-2 rounded-xl bg-gold px-8 py-4 text-sm font-bold text-navy hover:bg-white transition-colors"
+                  >
+                    Get the Bundle — ${bundlePrice}
+                    <ArrowRight className="h-4 w-4" />
+                  </Link>
+                  <div className="flex items-center gap-2 text-xs text-white/40">
+                    <Shield className="h-3.5 w-3.5" />
+                    30-day money-back guarantee
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Who This Is For */}
+        <section className="bg-white py-16 lg:py-24">
+          <div className="mx-auto max-w-7xl px-6 lg:px-8">
+            <div className="mx-auto max-w-2xl text-center mb-14">
+              <h2 className="text-2xl font-bold text-navy sm:text-3xl">Built For Every Candidate Type</h2>
+              <div className="mt-2 mx-auto h-1 w-12 bg-gold" />
+              <p className="mt-4 text-charcoal/60 text-sm max-w-lg mx-auto">
+                Whether you&apos;re breaking in or leveling up, we have the playbook for your situation.
+              </p>
+            </div>
+
+            <div className="mx-auto max-w-6xl grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
+              {candidateTypes.map((candidate) => (
+                <div
+                  key={candidate.title}
+                  className="rounded-xl border border-border bg-off-white/50 p-6 hover:border-gold/30 hover:shadow-sm transition-all"
+                >
+                  <div className="flex items-center gap-3 mb-3">
+                    <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-navy/5">
+                      <candidate.icon className="h-5 w-5 text-gold" />
+                    </div>
+                    <h3 className="text-base font-bold text-navy">{candidate.title}</h3>
+                  </div>
+                  <p className="text-sm text-charcoal/60 leading-relaxed">{candidate.description}</p>
+                  <div className="mt-4 pt-3 border-t border-border/40">
+                    <p className="text-xs text-charcoal/40">Recommended:</p>
+                    <p className="text-xs font-semibold text-gold mt-0.5">{candidate.recommended}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Comparison Table */}
+        <section className="bg-off-white py-16 lg:py-24">
+          <div className="mx-auto max-w-4xl px-6 lg:px-8">
+            <div className="mx-auto max-w-2xl text-center mb-14">
+              <h2 className="text-2xl font-bold text-navy sm:text-3xl">How We Compare</h2>
+              <div className="mt-2 mx-auto h-1 w-12 bg-gold" />
+              <p className="mt-4 text-charcoal/60 text-sm">
+                See why structured playbooks outperform every other prep method.
+              </p>
+            </div>
+
+            <div className="rounded-2xl border border-border bg-white shadow-sm overflow-hidden">
+              {/* Table Header */}
+              <div className="grid grid-cols-5 bg-navy text-white">
+                <div className="p-4 text-xs font-semibold uppercase tracking-wider">Feature</div>
+                <div className="p-4 text-xs font-semibold uppercase tracking-wider text-center text-gold">WSP Playbooks</div>
+                <div className="p-4 text-xs font-semibold uppercase tracking-wider text-center hidden sm:block">Free Forums</div>
+                <div className="p-4 text-xs font-semibold uppercase tracking-wider text-center hidden sm:block">$400+ Courses</div>
+                <div className="p-4 text-xs font-semibold uppercase tracking-wider text-center hidden sm:block">Self-Study</div>
+              </div>
+
+              {/* Table Rows */}
+              {comparisonFeatures.map((row, idx) => (
+                <div
+                  key={row.feature}
+                  className={`grid grid-cols-5 ${idx % 2 === 0 ? "bg-white" : "bg-off-white/50"} ${idx < comparisonFeatures.length - 1 ? "border-b border-border/50" : ""}`}
+                >
+                  <div className="p-4 text-sm text-charcoal/80 flex items-center">{row.feature}</div>
+                  <div className="p-4 flex items-center justify-center">
+                    {row.wsp ? (
+                      <CheckCircle2 className="h-5 w-5 text-green-500" />
+                    ) : (
+                      <X className="h-5 w-5 text-charcoal/20" />
+                    )}
+                  </div>
+                  <div className="p-4 items-center justify-center hidden sm:flex">
+                    {row.forums ? (
+                      <CheckCircle2 className="h-5 w-5 text-green-500" />
+                    ) : (
+                      <X className="h-5 w-5 text-charcoal/20" />
+                    )}
+                  </div>
+                  <div className="p-4 items-center justify-center hidden sm:flex">
+                    {row.courses ? (
+                      <CheckCircle2 className="h-5 w-5 text-green-500" />
+                    ) : (
+                      <X className="h-5 w-5 text-charcoal/20" />
+                    )}
+                  </div>
+                  <div className="p-4 items-center justify-center hidden sm:flex">
+                    {row.selfStudy ? (
+                      <CheckCircle2 className="h-5 w-5 text-green-500" />
+                    ) : (
+                      <X className="h-5 w-5 text-charcoal/20" />
+                    )}
+                  </div>
+                </div>
+              ))}
+
+              {/* Price Row */}
+              <div className="grid grid-cols-5 border-t-2 border-gold/30 bg-gold/5">
+                <div className="p-4 text-sm font-bold text-navy">Price</div>
+                <div className="p-4 text-center">
+                  <span className="text-sm font-bold text-gold">$67–$127</span>
+                </div>
+                <div className="p-4 text-center hidden sm:block">
+                  <span className="text-sm text-charcoal/50">Free</span>
+                </div>
+                <div className="p-4 text-center hidden sm:block">
+                  <span className="text-sm text-charcoal/50">$400–$2,000+</span>
+                </div>
+                <div className="p-4 text-center hidden sm:block">
+                  <span className="text-sm text-charcoal/50">Free (+ time)</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Upcoming Playbooks */}
         <section className="bg-white py-16 lg:py-24">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -202,8 +582,7 @@ export default function PlaybooksPage() {
               </div>
               <h2 className="text-2xl font-bold text-navy sm:text-3xl">Coming Soon</h2>
               <p className="mt-3 text-charcoal/60 text-sm max-w-lg mx-auto">
-                The most comprehensive library of finance recruiting playbooks. New guides ship regularly — 
-                join our email list to get notified at launch.
+                The most comprehensive library of finance recruiting playbooks. New guides ship regularly.
               </p>
             </div>
 
@@ -239,32 +618,86 @@ export default function PlaybooksPage() {
                 </div>
               ))}
             </div>
+
+            {/* Email Signup for Notifications */}
+            <div className="mx-auto max-w-xl mt-12 text-center">
+              <div className="rounded-xl border border-border bg-off-white/50 p-6">
+                <RefreshCw className="h-5 w-5 text-gold mx-auto mb-3" />
+                <p className="text-sm font-semibold text-navy">Get notified when new playbooks launch</p>
+                <p className="text-xs text-charcoal/50 mt-1 mb-4">Plus weekly recruiting insights — no spam, unsubscribe anytime.</p>
+                <form className="flex gap-2 max-w-sm mx-auto">
+                  <input
+                    type="email"
+                    placeholder="Enter your email"
+                    className="flex-1 rounded-lg border border-border bg-white px-4 py-2.5 text-sm text-charcoal placeholder:text-charcoal/30 focus:outline-none focus:ring-2 focus:ring-gold/30 focus:border-gold"
+                  />
+                  <button
+                    type="submit"
+                    className="rounded-lg bg-navy px-5 py-2.5 text-sm font-semibold text-white hover:bg-gold hover:text-navy transition-colors"
+                  >
+                    Notify Me
+                  </button>
+                </form>
+              </div>
+            </div>
           </div>
         </section>
 
-        {/* Bundle Teaser */}
-        <section className="bg-navy py-16">
+        {/* FAQ Section */}
+        <section className="bg-off-white py-16 lg:py-24">
+          <div className="mx-auto max-w-3xl px-6 lg:px-8">
+            <div className="mx-auto max-w-2xl text-center mb-14">
+              <h2 className="text-2xl font-bold text-navy sm:text-3xl">Frequently Asked Questions</h2>
+              <div className="mt-2 mx-auto h-1 w-12 bg-gold" />
+            </div>
+
+            <div className="space-y-4">
+              {faqItems.map((faq, idx) => (
+                <details
+                  key={idx}
+                  className="group rounded-xl border border-border bg-white overflow-hidden"
+                >
+                  <summary className="flex cursor-pointer items-center justify-between p-5 text-sm font-semibold text-navy hover:text-gold transition-colors list-none [&::-webkit-details-marker]:hidden">
+                    <span className="flex items-center gap-3">
+                      <HelpCircle className="h-4 w-4 text-gold flex-shrink-0" />
+                      {faq.question}
+                    </span>
+                    <ChevronDown className="h-4 w-4 text-charcoal/40 group-open:rotate-180 transition-transform flex-shrink-0 ml-4" />
+                  </summary>
+                  <div className="px-5 pb-5 pt-0">
+                    <p className="text-sm text-charcoal/60 leading-relaxed pl-7">
+                      {faq.answer}
+                    </p>
+                  </div>
+                </details>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        {/* Final CTA */}
+        <section className="bg-navy py-16 lg:py-20">
           <div className="mx-auto max-w-3xl px-6 lg:px-8 text-center">
             <h2 className="text-2xl font-bold text-white sm:text-3xl">
-              Need more than one?
+              Ready to Get an Unfair Advantage?
             </h2>
             <p className="mt-4 text-white/60 text-base max-w-xl mx-auto">
-              As we release more playbooks, bundles with significant discounts will become available.
-              Start with the guide that matches your immediate recruiting timeline.
+              Every week you wait is a week your competition is preparing. Start with the playbook
+              that matches your immediate recruiting timeline.
             </p>
             <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4 flex-wrap">
               <Link
-                href="/playbooks/pe-recruiting-playbook"
+                href="/playbooks/ib-technical-guide"
                 className="inline-flex items-center gap-2 rounded-xl bg-gold px-6 py-3.5 text-sm font-semibold text-navy hover:bg-white transition-colors"
               >
-                PE Recruiting Playbook — $97
+                Finance Technical Guide — $127
                 <ArrowRight className="h-4 w-4" />
               </Link>
               <Link
-                href="/playbooks/ib-technical-guide"
+                href="/playbooks/pe-recruiting-playbook"
                 className="inline-flex items-center gap-2 rounded-xl border border-white/20 bg-white/5 px-6 py-3.5 text-sm font-semibold text-white hover:bg-white/10 transition-colors"
               >
-                Finance Technical Guide — $127
+                PE Recruiting Playbook — $97
                 <ArrowRight className="h-4 w-4" />
               </Link>
               <Link
@@ -274,6 +707,11 @@ export default function PlaybooksPage() {
                 Networking Playbook — $67
                 <ArrowRight className="h-4 w-4" />
               </Link>
+            </div>
+            <div className="mt-6 flex items-center justify-center gap-6 text-xs text-white/30">
+              <span className="flex items-center gap-1.5"><Shield className="h-3.5 w-3.5" /> 30-day guarantee</span>
+              <span className="flex items-center gap-1.5"><Download className="h-3.5 w-3.5" /> Instant download</span>
+              <span className="flex items-center gap-1.5"><RefreshCw className="h-3.5 w-3.5" /> Lifetime updates</span>
             </div>
           </div>
         </section>
