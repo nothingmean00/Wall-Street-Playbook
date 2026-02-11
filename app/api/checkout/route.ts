@@ -44,25 +44,51 @@ export async function POST(request: NextRequest) {
     // If a real Stripe Price ID is configured, use it; otherwise use inline price_data
     const hasPriceId = product.priceId && !product.priceId.startsWith('price_xxx')
 
+    // For bundles, list individual playbooks as line items with the bundle discount
+    const bundledProducts = productId === 'available-bundle'
+      ? ['ib-technical-guide', 'pe-recruiting-playbook', 'networking-cold-email-playbook'] as const
+      : null
+
+    const lineItems = bundledProducts
+      ? bundledProducts.map((pid, index) => {
+          const bundledProduct = PRODUCTS[pid]
+          const bundledHasPriceId = bundledProduct.priceId && !bundledProduct.priceId.startsWith('price_xxx')
+          // Distribute the bundle discount across items proportionally
+          const totalOriginal = bundledProducts.reduce((sum, id) => sum + PRODUCTS[id].price, 0)
+          const discountedPrice = Math.round((bundledProduct.price / totalOriginal) * product.price)
+          
+          return bundledHasPriceId
+            ? { price: bundledProduct.priceId, quantity: 1 }
+            : {
+                price_data: {
+                  currency: 'usd' as const,
+                  product_data: {
+                    name: bundledProduct.name,
+                    description: index === 0 ? 'Bundle discount applied' : undefined,
+                  },
+                  unit_amount: discountedPrice * 100,
+                },
+                quantity: 1,
+              }
+        })
+      : [
+          hasPriceId
+            ? { price: product.priceId, quantity: 1 }
+            : {
+                price_data: {
+                  currency: 'usd' as const,
+                  product_data: {
+                    name: product.name,
+                  },
+                  unit_amount: product.price * 100, // Stripe uses cents
+                },
+                quantity: 1,
+              },
+        ]
+
     const session = await stripe.checkout.sessions.create({
       payment_method_types: ['card'],
-      line_items: [
-        hasPriceId
-          ? {
-              price: product.priceId,
-              quantity: 1,
-            }
-          : {
-              price_data: {
-                currency: 'usd',
-                product_data: {
-                  name: product.name,
-                },
-                unit_amount: product.price * 100, // Stripe uses cents
-              },
-              quantity: 1,
-            },
-      ],
+      line_items: lineItems,
       mode: 'payment',
       success_url: `${appUrl}/success?session_id={CHECKOUT_SESSION_ID}`,
       cancel_url: `${appUrl}/playbooks`,
@@ -70,6 +96,7 @@ export async function POST(request: NextRequest) {
       metadata: {
         productId,
         productName: product.name,
+        ...(bundledProducts && { bundledProductIds: bundledProducts.join(',') }),
       },
     })
 

@@ -112,6 +112,11 @@ export const PRODUCTS = {
     name: 'Complete Playbook Bundle',
     price: 690, // 30% off $990 total
   },
+  'available-bundle': {
+    priceId: process.env.STRIPE_PRICE_AVAILABLE_BUNDLE || 'price_xxx',
+    name: 'Complete Prep Bundle (3 Playbooks)',
+    price: 259,
+  },
   // Resume Services
   'resume-review': {
     priceId: process.env.STRIPE_PRICE_RESUME_REVIEW || 'price_xxx',

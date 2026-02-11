@@ -2,6 +2,7 @@ import type { Metadata } from "next"
 import Link from "next/link"
 import { Navbar } from "@/components/layout/navbar"
 import { Footer } from "@/components/layout/footer"
+import { BuyButton } from "@/components/buy-button"
 import { playbooks } from "@/lib/data"
 import {
   Check,
@@ -440,13 +441,12 @@ export default function PlaybooksPage() {
                 </div>
 
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                  <Link
-                    href="/playbooks/ib-technical-guide"
-                    className="inline-flex items-center gap-2 rounded-xl bg-gold px-8 py-4 text-sm font-bold text-navy hover:bg-white transition-colors"
-                  >
-                    Get the Bundle — ${bundlePrice}
-                    <ArrowRight className="h-4 w-4" />
-                  </Link>
+                  <BuyButton
+                    productId="available-bundle"
+                    price={bundlePrice}
+                    label="Get the Bundle"
+                    className="rounded-xl bg-gold px-8 py-4 text-sm font-bold text-navy hover:bg-white transition-colors"
+                  />
                   <div className="flex items-center gap-2 text-xs text-white/40">
                     <Shield className="h-3.5 w-3.5" />
                     30-day money-back guarantee
