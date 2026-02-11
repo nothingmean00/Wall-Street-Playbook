@@ -19,6 +19,9 @@ export async function generateStaticParams() {
   }))
 }
 
+// Playbooks that are live and purchasable
+const livePlaybookSlugs = ["ib-technical-guide", "pe-recruiting-playbook", "networking-cold-email-playbook"]
+
 export async function generateMetadata({ params }: PlaybookPageProps): Promise<Metadata> {
   const { slug } = await params
   const playbook = playbooks.find((p) => p.slug === slug)
@@ -26,6 +29,8 @@ export async function generateMetadata({ params }: PlaybookPageProps): Promise<M
   if (!playbook) {
     return { title: "Playbook Not Found" }
   }
+
+  const isLive = livePlaybookSlugs.includes(playbook.slug)
 
   return {
     title: playbook.title,
@@ -36,10 +41,17 @@ export async function generateMetadata({ params }: PlaybookPageProps): Promise<M
       "wall street recruiting",
       ...playbook.contents.slice(0, 3).map((c) => c.toLowerCase()),
     ],
+    // Noindex upcoming playbooks so search engines don't index incomplete product pages
+    ...(!isLive && {
+      robots: {
+        index: false,
+        follow: true,
+      },
+    }),
     openGraph: {
       title: `${playbook.title} | Wall Street Playbook`,
       description: playbook.longDescription,
-      url: `https://wallstreetplaybook.com/playbooks/${playbook.slug}`,
+      url: `https://wallstreetplaybook.org/playbooks/${playbook.slug}`,
       type: "website",
     },
     twitter: {
@@ -48,7 +60,7 @@ export async function generateMetadata({ params }: PlaybookPageProps): Promise<M
       description: playbook.longDescription,
     },
     alternates: {
-      canonical: `https://wallstreetplaybook.com/playbooks/${playbook.slug}`,
+      canonical: `https://wallstreetplaybook.org/playbooks/${playbook.slug}`,
     },
   }
 }
@@ -85,6 +97,8 @@ export default async function PlaybookPage({ params }: PlaybookPageProps) {
     notFound()
   }
 
+  const isLive = livePlaybookSlugs.includes(playbook.slug)
+
   const productSchema = {
     "@context": "https://schema.org",
     "@type": "Product",
@@ -99,7 +113,7 @@ export default async function PlaybookPage({ params }: PlaybookPageProps) {
       "@type": "Offer",
       price: playbook.price,
       priceCurrency: "USD",
-      availability: "https://schema.org/InStock",
+      availability: isLive ? "https://schema.org/InStock" : "https://schema.org/PreOrder",
       url: `https://wallstreetplaybook.org/playbooks/${playbook.slug}`,
       seller: {
         "@type": "Organization",

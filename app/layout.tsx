@@ -16,7 +16,7 @@ const dmSans = DM_Sans({
 const playfair = Playfair_Display({
   subsets: ["latin"],
   variable: "--font-playfair",
-  weight: ["400", "500", "600", "700"],
+  weight: ["600", "700"],
   display: "swap",
   preload: true,
 })
@@ -41,7 +41,7 @@ export const metadata: Metadata = {
     ],
   },
   description:
-    "Proven tactics, frameworks, and tools used by candidates who land roles in investment banking, private equity, and hedge funds. Premium playbooks and resume services for elite finance recruiting.",
+    "Land offers in investment banking, private equity, and hedge funds. Tactical playbooks, resume services, and interview frameworks built by candidates who broke in — not career coaches who didn't.",
   keywords: [
     "investment banking interview prep",
     "private equity recruiting",
@@ -76,7 +76,7 @@ export const metadata: Metadata = {
     siteName: "Wall Street Playbook",
     title: "Wall Street Playbook | Break Into Investment Banking, PE & Hedge Funds",
     description:
-      "Proven tactics, frameworks, and tools used by candidates who land roles in investment banking, private equity, and hedge funds.",
+      "Land offers in investment banking, private equity, and hedge funds. Tactical playbooks, resume services, and interview frameworks built by candidates who broke in.",
     images: [
       {
         url: "/og-image.jpg",
@@ -90,7 +90,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Wall Street Playbook | Break Into Investment Banking, PE & Hedge Funds",
     description:
-      "Proven tactics, frameworks, and tools used by candidates who land roles in investment banking, private equity, and hedge funds.",
+      "Land offers in investment banking, private equity, and hedge funds. Tactical playbooks, resume services, and interview frameworks built by candidates who broke in.",
     images: ["/og-image.jpg"],
   },
   alternates: {
@@ -113,9 +113,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
-        {/* Preconnect to external origins for faster resource loading */}
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        {/* DNS prefetch for analytics */}
         <link rel="dns-prefetch" href="https://va.vercel-scripts.com" />
         
         {/* Organization Schema */}

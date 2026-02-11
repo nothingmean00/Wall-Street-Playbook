@@ -6,13 +6,13 @@ import { playbooks } from "@/lib/data"
 import { Check, ArrowRight, BookOpen, Lock, Star, Shield, Sparkles, TrendingUp, Target, Mic, Wrench, Building2, CreditCard, Zap } from "lucide-react"
 
 export const metadata: Metadata = {
-  title: "Premium Playbooks | Wall Street Playbook",
+  title: "Finance Recruiting Playbooks | Wall Street Playbook",
   description:
-    "Tactical guides built from real recruiting data. PE recruiting, technical interviews, networking, LBO modeling, and more. No fluff — just frameworks that get offers.",
+    "Premium guides for IB, PE, and hedge fund recruiting. Technical interview frameworks, PE recruiting intel, networking systems, and LBO modeling — built from real placement data.",
   openGraph: {
-    title: "Premium Playbooks | Wall Street Playbook",
+    title: "Finance Recruiting Playbooks | Wall Street Playbook",
     description:
-      "Tactical guides built from real recruiting data. PE recruiting, technical interviews, networking, LBO modeling, and more.",
+      "Premium guides for IB, PE, and hedge fund recruiting. Technical interview frameworks, PE recruiting intel, networking systems, and LBO modeling — built from real placement data.",
     url: "https://wallstreetplaybook.org/playbooks",
   },
   alternates: {
@@ -200,10 +200,10 @@ export default function PlaybooksPage() {
                   More Coming
                 </span>
               </div>
-              <h2 className="text-2xl font-bold text-navy sm:text-3xl">Upcoming Playbooks</h2>
+              <h2 className="text-2xl font-bold text-navy sm:text-3xl">Coming Soon</h2>
               <p className="mt-3 text-charcoal/60 text-sm max-w-lg mx-auto">
-                We're building the most comprehensive library of finance recruiting guides.
-                New playbooks are released regularly.
+                The most comprehensive library of finance recruiting playbooks. New guides ship regularly — 
+                join our email list to get notified at launch.
               </p>
             </div>
 

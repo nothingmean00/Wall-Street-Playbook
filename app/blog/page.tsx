@@ -6,9 +6,9 @@ import Link from "next/link"
 import { ArrowRight, Clock } from "lucide-react"
 
 export const metadata: Metadata = {
-  title: "Finance Recruiting Insights & Career Guides",
+  title: "Finance Recruiting Blog | Investment Banking, PE & Hedge Fund Careers",
   description:
-    "Tactical insights on finance recruiting, technical interview preparation, networking strategies, and career development in investment banking, private equity, and hedge funds.",
+    "Free guides on IB technicals, PE recruiting timelines, networking scripts, salary data, and career strategies. Written by practitioners, not professors.",
   keywords: [
     "investment banking career advice",
     "PE recruiting tips",
@@ -20,7 +20,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Finance Recruiting Blog | Wall Street Playbook",
     description:
-      "Tactical insights on recruiting, interview prep, networking, and career development in investment banking, PE, and hedge funds.",
+      "Free guides on IB technicals, PE recruiting timelines, networking scripts, salary data, and career strategies. Written by practitioners, not professors.",
     url: "https://wallstreetplaybook.org/blog",
   },
   alternates: {
