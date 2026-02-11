@@ -1,5 +1,5 @@
 var R=require("../../chunks/ssr/[turbopack]_runtime.js")("server/app/private-equity-recruiting/page.js")
-R.c("server/chunks/ssr/[root-of-the-server]__de4eddfc._.js")
+R.c("server/chunks/ssr/[root-of-the-server]__62efedbc._.js")
 R.c("server/chunks/ssr/Downloads_wall-street-playbook_app_private-equity-recruiting_page_tsx_65976d14._.js")
 R.c("server/chunks/ssr/3eee8_next_dist_579b204f._.js")
 R.c("server/chunks/ssr/Downloads_wall-street-playbook_6b66de53._.js")

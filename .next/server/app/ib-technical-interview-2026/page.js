@@ -1,5 +1,5 @@
 var R=require("../../chunks/ssr/[turbopack]_runtime.js")("server/app/ib-technical-interview-2026/page.js")
-R.c("server/chunks/ssr/[root-of-the-server]__276b8d5a._.js")
+R.c("server/chunks/ssr/[root-of-the-server]__7f262145._.js")
 R.c("server/chunks/ssr/3eee8_next_dist_579b204f._.js")
 R.c("server/chunks/ssr/Downloads_wall-street-playbook_7cd51e1b._.js")
 R.c("server/chunks/ssr/[root-of-the-server]__3bf2585a._.js")

@@ -7,7 +7,7 @@ const livePlaybooks = [
     title: "Finance Technical Interview Guide",
     description:
       "88 pages. 6 chapters. Every question tagged by interview frequency with dual-format answers.",
-    price: 127,
+    price: 79,
     highlights: [
       "400+ real interview questions",
       "Frequency tags (Always Asked → Rarely Asked)",
@@ -20,7 +20,7 @@ const livePlaybooks = [
     title: "2026 PE Recruiting Playbook",
     description:
       "42 pages. 20 chapters. The insider intelligence that contradicts mainstream PE advice.",
-    price: 97,
+    price: 67,
     highlights: [
       "7 headhunter firms that control megafund access",
       "On-cycle timeline & preparation framework",
@@ -33,7 +33,7 @@ const livePlaybooks = [
     title: "Networking & Cold Email Playbook",
     description:
       "47 pages. 8 chapters. 13 email templates, 30 interview questions, and the system that turns cold outreach into offers.",
-    price: 67,
+    price: 47,
     highlights: [
       "13 proven cold email templates by scenario",
       "30 informational interview questions by phase",

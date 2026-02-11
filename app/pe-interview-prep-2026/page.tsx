@@ -214,7 +214,7 @@ export default function PEInterviewPrep2026Page() {
                   href="/playbooks/pe-recruiting-playbook"
                   className="mt-6 inline-flex items-center gap-2 rounded-xl bg-gold px-6 py-3 text-sm font-semibold text-navy hover:bg-white transition-colors"
                 >
-                  Get the 2026 PE Playbook — $97
+                  Get the 2026 PE Playbook — $67
                   <ArrowRight className="h-4 w-4" />
                 </Link>
               </div>
@@ -386,14 +386,14 @@ export default function PEInterviewPrep2026Page() {
                 href="/playbooks/pe-recruiting-playbook"
                 className="group flex items-center gap-2 rounded-xl bg-gold px-8 py-4 text-base font-semibold text-navy hover:bg-white transition-colors"
               >
-                Get the 2026 PE Playbook — $97
+                Get the 2026 PE Playbook — $67
                 <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
               </Link>
               <Link
                 href="/playbooks/lbo-modeling-course"
                 className="rounded-xl border-2 border-white/20 px-8 py-4 text-base font-semibold text-white hover:border-gold hover:text-gold transition-colors"
               >
-                LBO Modeling Course — $127
+                LBO Modeling Course — $79
               </Link>
             </div>
           </div>

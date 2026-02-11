@@ -1220,7 +1220,7 @@ function HeroSection() {
                                 className: "text-center lg:text-left",
                                 children: [
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                        className: "inline-flex items-center gap-2 rounded-full border border-gold/30 bg-gold/10 px-4 py-1.5 mb-6 animate-slide-up",
+                                        className: "inline-flex items-center gap-2 rounded-full border border-gold/30 bg-gold/10 px-4 py-1.5 mb-6",
                                         children: [
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                 className: "h-1.5 w-1.5 rounded-full bg-gold animate-pulse"
@@ -1231,7 +1231,7 @@ function HeroSection() {
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                 className: "text-xs font-semibold uppercase tracking-widest text-gold",
-                                                children: "2026 Summer Analyst Apps Open Now"
+                                                children: "2027 Summer Analyst Deadlines Approaching"
                                             }, void 0, false, {
                                                 fileName: "[project]/Downloads/wall-street-playbook/components/home/hero-section.tsx",
                                                 lineNumber: 47,
@@ -1244,16 +1244,16 @@ function HeroSection() {
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h1", {
-                                        className: "text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-[1.1] animate-slide-up animate-delay-100",
+                                        className: "text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-[1.1]",
                                         children: [
-                                            "Your Edge Into",
+                                            "Land the Interview.",
                                             " ",
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                 className: "relative inline-block",
                                                 children: [
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                         className: "text-gradient-gold",
-                                                        children: "Wall Street"
+                                                        children: "Get the Offer."
                                                     }, void 0, false, {
                                                         fileName: "[project]/Downloads/wall-street-playbook/components/home/hero-section.tsx",
                                                         lineNumber: 54,
@@ -1263,7 +1263,7 @@ function HeroSection() {
                                                         className: "absolute -bottom-1 left-0 w-full h-1 bg-gold/60 rounded-full"
                                                     }, void 0, false, {
                                                         fileName: "[project]/Downloads/wall-street-playbook/components/home/hero-section.tsx",
-                                                        lineNumber: 56,
+                                                        lineNumber: 55,
                                                         columnNumber: 17
                                                     }, this)
                                                 ]
@@ -1279,12 +1279,21 @@ function HeroSection() {
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                        className: "mt-6 text-lg sm:text-xl leading-relaxed text-white/60 max-w-xl mx-auto lg:mx-0 animate-slide-up animate-delay-200",
+                                        className: "mt-6 text-lg sm:text-xl leading-relaxed text-white/60 max-w-xl mx-auto lg:mx-0",
                                         children: [
-                                            "Resume frameworks, technical prep, and networking strategies that get callbacks at",
+                                            "The playbooks, technical guides, and resume services used by candidates who broke into",
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                 className: "text-white/80",
-                                                children: " bulge brackets"
+                                                children: " Goldman Sachs"
+                                            }, void 0, false, {
+                                                fileName: "[project]/Downloads/wall-street-playbook/components/home/hero-section.tsx",
+                                                lineNumber: 62,
+                                                columnNumber: 15
+                                            }, this),
+                                            ",",
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                className: "text-white/80",
+                                                children: " Blackstone"
                                             }, void 0, false, {
                                                 fileName: "[project]/Downloads/wall-street-playbook/components/home/hero-section.tsx",
                                                 lineNumber: 63,
@@ -1293,7 +1302,7 @@ function HeroSection() {
                                             ",",
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                 className: "text-white/80",
-                                                children: " elite boutiques"
+                                                children: " KKR"
                                             }, void 0, false, {
                                                 fileName: "[project]/Downloads/wall-street-playbook/components/home/hero-section.tsx",
                                                 lineNumber: 64,
@@ -1302,7 +1311,7 @@ function HeroSection() {
                                             ", and",
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                 className: "text-white/80",
-                                                children: " buyside firms"
+                                                children: " more"
                                             }, void 0, false, {
                                                 fileName: "[project]/Downloads/wall-street-playbook/components/home/hero-section.tsx",
                                                 lineNumber: 65,
@@ -1312,22 +1321,22 @@ function HeroSection() {
                                         ]
                                     }, void 0, true, {
                                         fileName: "[project]/Downloads/wall-street-playbook/components/home/hero-section.tsx",
-                                        lineNumber: 61,
+                                        lineNumber: 60,
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                        className: "mt-10 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 animate-slide-up animate-delay-300",
+                                        className: "mt-10 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4",
                                         children: [
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
-                                                href: "/submit-resume?service=resume-review",
+                                                href: "/playbooks/ib-technical-guide",
                                                 onClick: ()=>(0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f40$vercel$2f$analytics$2f$dist$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["track"])("cta_clicked", {
-                                                        location: "hero_resume"
+                                                        location: "hero_guide"
                                                     }),
                                                 className: "group relative flex w-full sm:w-auto items-center justify-center gap-2 rounded-xl bg-gold px-8 py-4 text-base font-semibold text-navy overflow-hidden transition-all hover:shadow-lg hover:shadow-gold/25",
                                                 children: [
                                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
                                                         className: "relative z-10",
-                                                        children: "Get Your Resume Reviewed"
+                                                        children: "Get the Interview Guide"
                                                     }, void 0, false, {
                                                         fileName: "[project]/Downloads/wall-street-playbook/components/home/hero-section.tsx",
                                                         lineNumber: 75,
@@ -1354,12 +1363,12 @@ function HeroSection() {
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
-                                                href: "/jobs",
+                                                href: "/submit-resume?service=resume-review",
                                                 onClick: ()=>(0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f40$vercel$2f$analytics$2f$dist$2f$index$2e$mjs__$5b$app$2d$client$5d$__$28$ecmascript$29$__["track"])("cta_clicked", {
-                                                        location: "hero_jobs"
+                                                        location: "hero_resume"
                                                     }),
                                                 className: "group w-full sm:w-auto rounded-xl border-2 border-white/20 bg-white/5 backdrop-blur-sm px-8 py-4 text-base font-semibold text-white transition-all hover:border-gold hover:bg-gold/10 text-center",
-                                                children: "See Open Roles"
+                                                children: "Get Your Resume Reviewed"
                                             }, void 0, false, {
                                                 fileName: "[project]/Downloads/wall-street-playbook/components/home/hero-section.tsx",
                                                 lineNumber: 79,
@@ -1372,111 +1381,47 @@ function HeroSection() {
                                         columnNumber: 13
                                     }, this),
                                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                        className: "mt-10 flex flex-wrap items-center justify-center lg:justify-start gap-6 animate-slide-up animate-delay-400",
+                                        className: "mt-10 animate-slide-up animate-delay-100",
                                         children: [
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                className: "flex items-center gap-2 text-white/40",
-                                                children: [
-                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
-                                                        className: "w-5 h-5 text-gold",
-                                                        fill: "currentColor",
-                                                        viewBox: "0 0 20 20",
-                                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
-                                                            fillRule: "evenodd",
-                                                            d: "M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z",
-                                                            clipRule: "evenodd"
-                                                        }, void 0, false, {
-                                                            fileName: "[project]/Downloads/wall-street-playbook/components/home/hero-section.tsx",
-                                                            lineNumber: 92,
-                                                            columnNumber: 19
-                                                        }, this)
-                                                    }, void 0, false, {
-                                                        fileName: "[project]/Downloads/wall-street-playbook/components/home/hero-section.tsx",
-                                                        lineNumber: 91,
-                                                        columnNumber: 17
-                                                    }, this),
-                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                        className: "text-sm",
-                                                        children: "GS / MS / Evercore Formats"
-                                                    }, void 0, false, {
-                                                        fileName: "[project]/Downloads/wall-street-playbook/components/home/hero-section.tsx",
-                                                        lineNumber: 94,
-                                                        columnNumber: 17
-                                                    }, this)
-                                                ]
-                                            }, void 0, true, {
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                className: "text-xs font-medium uppercase tracking-widest text-white/30 mb-3",
+                                                children: "Candidates who use our materials have landed interviews at firms like"
+                                            }, void 0, false, {
                                                 fileName: "[project]/Downloads/wall-street-playbook/components/home/hero-section.tsx",
                                                 lineNumber: 90,
                                                 columnNumber: 15
                                             }, this),
                                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                className: "flex items-center gap-2 text-white/40",
+                                                className: "flex flex-wrap items-center justify-center lg:justify-start gap-x-5 gap-y-2",
                                                 children: [
-                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
-                                                        className: "w-5 h-5 text-gold",
-                                                        fill: "currentColor",
-                                                        viewBox: "0 0 20 20",
-                                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
-                                                            fillRule: "evenodd",
-                                                            d: "M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z",
-                                                            clipRule: "evenodd"
-                                                        }, void 0, false, {
+                                                    [
+                                                        "Goldman Sachs",
+                                                        "Blackstone",
+                                                        "KKR",
+                                                        "Evercore",
+                                                        "Carlyle",
+                                                        "UBS",
+                                                        "Lazard"
+                                                    ].map((firm)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                            className: "text-sm font-semibold text-white/40 hover:text-gold/70 transition-colors",
+                                                            children: firm
+                                                        }, firm, false, {
                                                             fileName: "[project]/Downloads/wall-street-playbook/components/home/hero-section.tsx",
-                                                            lineNumber: 98,
+                                                            lineNumber: 93,
                                                             columnNumber: 19
-                                                        }, this)
+                                                        }, this)),
+                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                        className: "text-sm font-semibold text-gold/50",
+                                                        children: "& more"
                                                     }, void 0, false, {
                                                         fileName: "[project]/Downloads/wall-street-playbook/components/home/hero-section.tsx",
                                                         lineNumber: 97,
                                                         columnNumber: 17
-                                                    }, this),
-                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                        className: "text-sm",
-                                                        children: "48hr Turnaround"
-                                                    }, void 0, false, {
-                                                        fileName: "[project]/Downloads/wall-street-playbook/components/home/hero-section.tsx",
-                                                        lineNumber: 100,
-                                                        columnNumber: 17
                                                     }, this)
                                                 ]
                                             }, void 0, true, {
                                                 fileName: "[project]/Downloads/wall-street-playbook/components/home/hero-section.tsx",
-                                                lineNumber: 96,
-                                                columnNumber: 15
-                                            }, this),
-                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                className: "flex items-center gap-2 text-white/40",
-                                                children: [
-                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("svg", {
-                                                        className: "w-5 h-5 text-gold",
-                                                        fill: "currentColor",
-                                                        viewBox: "0 0 20 20",
-                                                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("path", {
-                                                            fillRule: "evenodd",
-                                                            d: "M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z",
-                                                            clipRule: "evenodd"
-                                                        }, void 0, false, {
-                                                            fileName: "[project]/Downloads/wall-street-playbook/components/home/hero-section.tsx",
-                                                            lineNumber: 104,
-                                                            columnNumber: 19
-                                                        }, this)
-                                                    }, void 0, false, {
-                                                        fileName: "[project]/Downloads/wall-street-playbook/components/home/hero-section.tsx",
-                                                        lineNumber: 103,
-                                                        columnNumber: 17
-                                                    }, this),
-                                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                                        className: "text-sm",
-                                                        children: "Money-Back Guarantee"
-                                                    }, void 0, false, {
-                                                        fileName: "[project]/Downloads/wall-street-playbook/components/home/hero-section.tsx",
-                                                        lineNumber: 106,
-                                                        columnNumber: 17
-                                                    }, this)
-                                                ]
-                                            }, void 0, true, {
-                                                fileName: "[project]/Downloads/wall-street-playbook/components/home/hero-section.tsx",
-                                                lineNumber: 102,
+                                                lineNumber: 91,
                                                 columnNumber: 15
                                             }, this)
                                         ]
@@ -1492,7 +1437,7 @@ function HeroSection() {
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "relative hidden lg:block animate-slide-up animate-delay-500",
+                                className: "relative hidden lg:block animate-slide-up animate-delay-200",
                                 children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                     className: "relative",
                                     children: [
@@ -1503,7 +1448,7 @@ function HeroSection() {
                                                     className: "absolute -inset-px rounded-2xl bg-gradient-to-br from-gold/40 via-gold/10 to-gold/30"
                                                 }, void 0, false, {
                                                     fileName: "[project]/Downloads/wall-street-playbook/components/home/hero-section.tsx",
-                                                    lineNumber: 117,
+                                                    lineNumber: 108,
                                                     columnNumber: 17
                                                 }, this),
                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1514,38 +1459,39 @@ function HeroSection() {
                                                             alt: "Two young finance professionals walking outside the New York Stock Exchange on Wall Street",
                                                             width: 1200,
                                                             height: 800,
+                                                            sizes: "(max-width: 1024px) 100vw, 50vw",
                                                             className: "w-full h-auto object-cover",
                                                             priority: true,
-                                                            quality: 90
+                                                            quality: 85
                                                         }, void 0, false, {
                                                             fileName: "[project]/Downloads/wall-street-playbook/components/home/hero-section.tsx",
-                                                            lineNumber: 121,
+                                                            lineNumber: 112,
                                                             columnNumber: 19
                                                         }, this),
                                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                                             className: "absolute inset-0 bg-gradient-to-t from-navy-deep/40 via-transparent to-transparent"
                                                         }, void 0, false, {
                                                             fileName: "[project]/Downloads/wall-street-playbook/components/home/hero-section.tsx",
-                                                            lineNumber: 132,
+                                                            lineNumber: 124,
                                                             columnNumber: 19
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/Downloads/wall-street-playbook/components/home/hero-section.tsx",
-                                                    lineNumber: 120,
+                                                    lineNumber: 111,
                                                     columnNumber: 17
                                                 }, this)
                                             ]
                                         }, void 0, true, {
                                             fileName: "[project]/Downloads/wall-street-playbook/components/home/hero-section.tsx",
-                                            lineNumber: 115,
+                                            lineNumber: 106,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                                             className: "absolute -inset-8 bg-gold/10 rounded-3xl blur-3xl -z-10"
                                         }, void 0, false, {
                                             fileName: "[project]/Downloads/wall-street-playbook/components/home/hero-section.tsx",
-                                            lineNumber: 137,
+                                            lineNumber: 129,
                                             columnNumber: 15
                                         }, this),
                                         /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
@@ -1559,7 +1505,56 @@ function HeroSection() {
                                                             children: [
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                                     className: "text-2xl font-bold text-gold number-highlight",
-                                                                    children: "$197"
+                                                                    children: "400+"
+                                                                }, void 0, false, {
+                                                                    fileName: "[project]/Downloads/wall-street-playbook/components/home/hero-section.tsx",
+                                                                    lineNumber: 136,
+                                                                    columnNumber: 23
+                                                                }, this),
+                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                                    className: "text-xs text-white/50 mt-0.5",
+                                                                    children: "Interview Questions"
+                                                                }, void 0, false, {
+                                                                    fileName: "[project]/Downloads/wall-street-playbook/components/home/hero-section.tsx",
+                                                                    lineNumber: 137,
+                                                                    columnNumber: 23
+                                                                }, this)
+                                                            ]
+                                                        }, void 0, true, {
+                                                            fileName: "[project]/Downloads/wall-street-playbook/components/home/hero-section.tsx",
+                                                            lineNumber: 135,
+                                                            columnNumber: 21
+                                                        }, this),
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                            className: "border-x border-white/10",
+                                                            children: [
+                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                                    className: "text-2xl font-bold text-gold number-highlight",
+                                                                    children: "30+"
+                                                                }, void 0, false, {
+                                                                    fileName: "[project]/Downloads/wall-street-playbook/components/home/hero-section.tsx",
+                                                                    lineNumber: 140,
+                                                                    columnNumber: 23
+                                                                }, this),
+                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                                    className: "text-xs text-white/50 mt-0.5",
+                                                                    children: "Free Guides"
+                                                                }, void 0, false, {
+                                                                    fileName: "[project]/Downloads/wall-street-playbook/components/home/hero-section.tsx",
+                                                                    lineNumber: 141,
+                                                                    columnNumber: 23
+                                                                }, this)
+                                                            ]
+                                                        }, void 0, true, {
+                                                            fileName: "[project]/Downloads/wall-street-playbook/components/home/hero-section.tsx",
+                                                            lineNumber: 139,
+                                                            columnNumber: 21
+                                                        }, this),
+                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                            children: [
+                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                                                    className: "text-2xl font-bold text-gold number-highlight",
+                                                                    children: "100%"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/Downloads/wall-street-playbook/components/home/hero-section.tsx",
                                                                     lineNumber: 144,
@@ -1567,7 +1562,7 @@ function HeroSection() {
                                                                 }, this),
                                                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                                                     className: "text-xs text-white/50 mt-0.5",
-                                                                    children: "Resume Review"
+                                                                    children: "Money-Back"
                                                                 }, void 0, false, {
                                                                     fileName: "[project]/Downloads/wall-street-playbook/components/home/hero-section.tsx",
                                                                     lineNumber: 145,
@@ -1578,81 +1573,32 @@ function HeroSection() {
                                                             fileName: "[project]/Downloads/wall-street-playbook/components/home/hero-section.tsx",
                                                             lineNumber: 143,
                                                             columnNumber: 21
-                                                        }, this),
-                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                            className: "border-x border-white/10",
-                                                            children: [
-                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                                    className: "text-2xl font-bold text-gold number-highlight",
-                                                                    children: "48hr"
-                                                                }, void 0, false, {
-                                                                    fileName: "[project]/Downloads/wall-street-playbook/components/home/hero-section.tsx",
-                                                                    lineNumber: 148,
-                                                                    columnNumber: 23
-                                                                }, this),
-                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                                    className: "text-xs text-white/50 mt-0.5",
-                                                                    children: "Turnaround"
-                                                                }, void 0, false, {
-                                                                    fileName: "[project]/Downloads/wall-street-playbook/components/home/hero-section.tsx",
-                                                                    lineNumber: 149,
-                                                                    columnNumber: 23
-                                                                }, this)
-                                                            ]
-                                                        }, void 0, true, {
-                                                            fileName: "[project]/Downloads/wall-street-playbook/components/home/hero-section.tsx",
-                                                            lineNumber: 147,
-                                                            columnNumber: 21
-                                                        }, this),
-                                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                                            children: [
-                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                                    className: "text-2xl font-bold text-gold number-highlight",
-                                                                    children: "100%"
-                                                                }, void 0, false, {
-                                                                    fileName: "[project]/Downloads/wall-street-playbook/components/home/hero-section.tsx",
-                                                                    lineNumber: 152,
-                                                                    columnNumber: 23
-                                                                }, this),
-                                                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                                                    className: "text-xs text-white/50 mt-0.5",
-                                                                    children: "Money-Back"
-                                                                }, void 0, false, {
-                                                                    fileName: "[project]/Downloads/wall-street-playbook/components/home/hero-section.tsx",
-                                                                    lineNumber: 153,
-                                                                    columnNumber: 23
-                                                                }, this)
-                                                            ]
-                                                        }, void 0, true, {
-                                                            fileName: "[project]/Downloads/wall-street-playbook/components/home/hero-section.tsx",
-                                                            lineNumber: 151,
-                                                            columnNumber: 21
                                                         }, this)
                                                     ]
                                                 }, void 0, true, {
                                                     fileName: "[project]/Downloads/wall-street-playbook/components/home/hero-section.tsx",
-                                                    lineNumber: 142,
+                                                    lineNumber: 134,
                                                     columnNumber: 19
                                                 }, this)
                                             }, void 0, false, {
                                                 fileName: "[project]/Downloads/wall-street-playbook/components/home/hero-section.tsx",
-                                                lineNumber: 141,
+                                                lineNumber: 133,
                                                 columnNumber: 17
                                             }, this)
                                         }, void 0, false, {
                                             fileName: "[project]/Downloads/wall-street-playbook/components/home/hero-section.tsx",
-                                            lineNumber: 140,
+                                            lineNumber: 132,
                                             columnNumber: 15
                                         }, this)
                                     ]
                                 }, void 0, true, {
                                     fileName: "[project]/Downloads/wall-street-playbook/components/home/hero-section.tsx",
-                                    lineNumber: 113,
+                                    lineNumber: 104,
                                     columnNumber: 13
                                 }, this)
                             }, void 0, false, {
                                 fileName: "[project]/Downloads/wall-street-playbook/components/home/hero-section.tsx",
-                                lineNumber: 112,
+                                lineNumber: 103,
                                 columnNumber: 11
                             }, this)
                         ]
@@ -1662,34 +1608,34 @@ function HeroSection() {
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "mt-16 sm:mt-20 pt-10 border-t border-white/10 animate-slide-up animate-delay-600",
+                        className: "mt-16 sm:mt-20 pt-10 border-t border-white/10 animate-slide-up animate-delay-300",
                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                             className: "max-w-xl mx-auto lg:mx-0",
                             children: [
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
                                     className: "text-sm text-white/50 mb-4 text-center lg:text-left",
-                                    children: "Free: 50 technical interview questions PDF + weekly recruiting tips"
+                                    children: "Free weekly recruiting intel + technical prep tips. No spam."
                                 }, void 0, false, {
                                     fileName: "[project]/Downloads/wall-street-playbook/components/home/hero-section.tsx",
-                                    lineNumber: 165,
+                                    lineNumber: 157,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$components$2f$email$2d$capture$2e$tsx__$5b$app$2d$client$5d$__$28$ecmascript$29$__["EmailCapture"], {
                                     variant: "hero"
                                 }, void 0, false, {
                                     fileName: "[project]/Downloads/wall-street-playbook/components/home/hero-section.tsx",
-                                    lineNumber: 166,
+                                    lineNumber: 158,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/Downloads/wall-street-playbook/components/home/hero-section.tsx",
-                            lineNumber: 164,
+                            lineNumber: 156,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/Downloads/wall-street-playbook/components/home/hero-section.tsx",
-                        lineNumber: 163,
+                        lineNumber: 155,
                         columnNumber: 9
                     }, this)
                 ]
@@ -1702,7 +1648,7 @@ function HeroSection() {
                 className: "absolute bottom-0 left-0 right-0 h-32 bg-gradient-to-t from-off-white via-off-white/50 to-transparent"
             }, void 0, false, {
                 fileName: "[project]/Downloads/wall-street-playbook/components/home/hero-section.tsx",
-                lineNumber: 172,
+                lineNumber: 164,
                 columnNumber: 7
             }, this)
         ]
@@ -1727,527 +1673,781 @@ __turbopack_context__.s([
     ()=>ProofGallery
 ]);
 var __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Downloads/wall-street-playbook/node_modules/next/dist/compiled/react/jsx-dev-runtime.js [app-client] (ecmascript)");
-var __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$mail$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Mail$3e$__ = __turbopack_context__.i("[project]/Downloads/wall-street-playbook/node_modules/lucide-react/dist/esm/icons/mail.js [app-client] (ecmascript) <export default as Mail>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Downloads/wall-street-playbook/node_modules/next/image.js [app-client] (ecmascript)");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__ = __turbopack_context__.i("[project]/Downloads/wall-street-playbook/node_modules/next/dist/compiled/react/index.js [app-client] (ecmascript)");
 var __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$circle$2d$check$2d$big$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__CheckCircle$3e$__ = __turbopack_context__.i("[project]/Downloads/wall-street-playbook/node_modules/lucide-react/dist/esm/icons/circle-check-big.js [app-client] (ecmascript) <export default as CheckCircle>");
-var __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$building$2d$2$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Building2$3e$__ = __turbopack_context__.i("[project]/Downloads/wall-street-playbook/node_modules/lucide-react/dist/esm/icons/building-2.js [app-client] (ecmascript) <export default as Building2>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$x$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__X$3e$__ = __turbopack_context__.i("[project]/Downloads/wall-street-playbook/node_modules/lucide-react/dist/esm/icons/x.js [app-client] (ecmascript) <export default as X>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$chevron$2d$left$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ChevronLeft$3e$__ = __turbopack_context__.i("[project]/Downloads/wall-street-playbook/node_modules/lucide-react/dist/esm/icons/chevron-left.js [app-client] (ecmascript) <export default as ChevronLeft>");
+var __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$chevron$2d$right$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ChevronRight$3e$__ = __turbopack_context__.i("[project]/Downloads/wall-street-playbook/node_modules/lucide-react/dist/esm/icons/chevron-right.js [app-client] (ecmascript) <export default as ChevronRight>");
+;
+var _s = __turbopack_context__.k.signature();
 "use client";
 ;
 ;
-// Placeholder data - replace with actual screenshot images later
-const interviewInvites = [
+;
+const results = [
+    // Row 1 — mix of elite + strong names
     {
+        src: "/results/goldman-sachs.png",
         firm: "Goldman Sachs",
-        division: "Investment Banking",
-        type: "Summer Analyst"
+        category: "Bulge Bracket"
     },
     {
-        firm: "Morgan Stanley",
-        division: "M&A",
-        type: "Full-Time Analyst"
-    },
-    {
-        firm: "J.P. Morgan",
-        division: "Investment Banking",
-        type: "Summer Analyst"
-    },
-    {
-        firm: "Lazard",
-        division: "Restructuring",
-        type: "Summer Analyst"
-    },
-    {
-        firm: "Evercore",
-        division: "Advisory",
-        type: "Full-Time Analyst"
-    },
-    {
-        firm: "PJT Partners",
-        division: "Restructuring",
-        type: "Summer Analyst"
-    },
-    {
-        firm: "Centerview",
-        division: "M&A",
-        type: "Summer Analyst"
-    },
-    {
-        firm: "Moelis",
-        division: "Advisory",
-        type: "Full-Time Analyst"
-    },
-    {
-        firm: "KKR",
-        division: "Private Equity",
-        type: "Associate"
-    },
-    {
+        src: "/results/blackstone.png",
         firm: "Blackstone",
-        division: "Private Equity",
-        type: "Analyst"
+        category: "Megafund PE"
     },
     {
-        firm: "Apollo",
-        division: "Private Equity",
-        type: "Associate"
+        src: "/results/evercore.png",
+        firm: "Evercore",
+        category: "Elite Boutique"
     },
     {
-        firm: "Carlyle",
-        division: "Private Equity",
-        type: "Analyst"
+        src: "/results/kkr.png",
+        firm: "KKR",
+        category: "Megafund PE"
     },
     {
-        firm: "Warburg Pincus",
-        division: "Growth Equity",
-        type: "Associate"
+        src: "/results/lazard.png",
+        firm: "Lazard",
+        category: "Elite Boutique"
     },
     {
-        firm: "TPG",
-        division: "Private Equity",
-        type: "Associate"
+        src: "/results/pjt-partners.png",
+        firm: "PJT Partners",
+        category: "Elite Boutique"
     },
     {
-        firm: "Bain Capital",
-        division: "Private Equity",
-        type: "Associate"
+        src: "/results/insight-partners.png",
+        firm: "Insight Partners",
+        category: "Growth Equity"
     },
     {
-        firm: "Advent International",
-        division: "Private Equity",
-        type: "Associate"
+        src: "/results/ardian.png",
+        firm: "Ardian",
+        category: "Private Equity"
     },
     {
-        firm: "Citadel",
-        division: "Hedge Fund",
-        type: "Analyst"
+        src: "/results/brighton-park-capital.png",
+        firm: "Brighton Park Capital",
+        category: "Growth Equity"
     },
     {
-        firm: "Point72",
-        division: "Hedge Fund",
-        type: "Analyst"
+        src: "/results/lead-edge.png",
+        firm: "Lead Edge Capital",
+        category: "Growth Equity"
     },
     {
-        firm: "Millennium",
-        division: "Hedge Fund",
-        type: "Analyst"
+        src: "/results/llr-partners-healthcare.png",
+        firm: "LLR Partners",
+        category: "Middle Market PE"
     },
     {
-        firm: "D.E. Shaw",
-        division: "Hedge Fund",
-        type: "Analyst"
+        src: "/results/hudson-structured.png",
+        firm: "Hudson Structured",
+        category: "Asset Management"
     },
     {
-        firm: "Two Sigma",
-        division: "Quantitative",
-        type: "Analyst"
+        src: "/results/davidson-kempner.png",
+        firm: "Davidson Kempner",
+        category: "Hedge Fund"
     },
     {
-        firm: "AQR",
-        division: "Quantitative",
-        type: "Analyst"
+        src: "/results/comvest-partners.png",
+        firm: "Comvest Partners",
+        category: "Middle Market PE"
     },
     {
-        firm: "Houlihan Lokey",
-        division: "Restructuring",
-        type: "Summer Analyst"
+        src: "/results/digitalbridge.png",
+        firm: "DigitalBridge",
+        category: "Infrastructure PE"
     },
     {
-        firm: "Guggenheim",
-        division: "Advisory",
-        type: "Summer Analyst"
+        src: "/results/stone-point-capital.png",
+        firm: "Stone Point Capital",
+        category: "Private Equity"
     },
     {
-        firm: "William Blair",
-        division: "Investment Banking",
-        type: "Summer Analyst"
+        src: "/results/fortuna-advisors.png",
+        firm: "Fortuna Advisors",
+        category: "Advisory"
     },
     {
-        firm: "Harris Williams",
-        division: "M&A",
-        type: "Analyst"
-    },
-    {
-        firm: "Lincoln International",
-        division: "M&A",
-        type: "Summer Analyst"
-    },
-    {
-        firm: "Rothschild",
-        division: "Advisory",
-        type: "Full-Time Analyst"
-    },
-    {
-        firm: "Perella Weinberg",
-        division: "Advisory",
-        type: "Summer Analyst"
-    },
-    {
-        firm: "Qatalyst",
-        division: "Technology M&A",
-        type: "Analyst"
+        src: "/results/westbury.png",
+        firm: "Westbury",
+        category: "Advisory"
     }
 ];
-function EmailPreview(param) {
-    let { firm, division, type, index } = param;
-    const colors = [
-        "from-blue-500/20 to-blue-600/10",
-        "from-emerald-500/20 to-emerald-600/10",
-        "from-violet-500/20 to-violet-600/10",
-        "from-amber-500/20 to-amber-600/10",
-        "from-rose-500/20 to-rose-600/10"
-    ];
-    const colorClass = colors[index % colors.length];
-    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-        className: "group relative flex-shrink-0 w-[320px] rounded-xl border border-white/10 bg-gradient-to-br from-white/5 to-white/[0.02] p-4 backdrop-blur-sm transition-all duration-300 hover:border-gold/30 hover:bg-white/10",
+const results2 = [
+    // Row 2 — different direction, also a strong mix
+    {
+        src: "/results/carlyle-group.png",
+        firm: "The Carlyle Group",
+        category: "Megafund PE"
+    },
+    {
+        src: "/results/kkr-2.png",
+        firm: "KKR",
+        category: "Megafund PE"
+    },
+    {
+        src: "/results/blackrock.png",
+        firm: "BlackRock",
+        category: "Asset Management"
+    },
+    {
+        src: "/results/ubs.png",
+        firm: "UBS",
+        category: "Bulge Bracket"
+    },
+    {
+        src: "/results/hamilton-lane.png",
+        firm: "Hamilton Lane",
+        category: "Private Markets"
+    },
+    {
+        src: "/results/ft-partners.png",
+        firm: "FT Partners",
+        category: "Fintech Advisory"
+    },
+    {
+        src: "/results/brighton-park-capital-2.png",
+        firm: "Brighton Park Capital",
+        category: "Growth Equity"
+    },
+    {
+        src: "/results/gryphon-investors.png",
+        firm: "Gryphon Investors",
+        category: "Middle Market PE"
+    },
+    {
+        src: "/results/tcv-capital.png",
+        firm: "TCV",
+        category: "Growth Equity"
+    },
+    {
+        src: "/results/payden.png",
+        firm: "Payden & Rygel",
+        category: "Asset Management"
+    },
+    {
+        src: "/results/llr-partners.png",
+        firm: "LLR Partners",
+        category: "Middle Market PE"
+    },
+    {
+        src: "/results/ggv-capital.png",
+        firm: "GGV Capital",
+        category: "Venture Capital"
+    },
+    {
+        src: "/results/offit-capital.png",
+        firm: "Offit Capital",
+        category: "Wealth Management"
+    },
+    {
+        src: "/results/digitalbridge-2.png",
+        firm: "DigitalBridge",
+        category: "Infrastructure PE"
+    },
+    {
+        src: "/results/long-ridge.png",
+        firm: "Long Ridge",
+        category: "Growth Equity"
+    },
+    {
+        src: "/results/msci.png",
+        firm: "MSCI",
+        category: "Financial Data"
+    },
+    {
+        src: "/results/jmi-equity.png",
+        firm: "JMI Equity",
+        category: "Growth Equity"
+    }
+];
+const allResults = [
+    ...results,
+    ...results2
+];
+function ResultCard(param) {
+    let { result, index, onClick } = param;
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+        onClick: onClick,
+        className: "group relative flex-shrink-0 w-[340px] sm:w-[380px] rounded-xl overflow-hidden border border-white/10 bg-white/[0.03] backdrop-blur-sm hover:border-gold/40 transition-all duration-300 cursor-pointer text-left",
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "flex items-start gap-3",
+                className: "px-4 py-2.5 border-b border-white/10 flex items-center justify-between",
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: `flex h-10 w-10 items-center justify-center rounded-lg bg-gradient-to-br ${colorClass}`,
-                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$building$2d$2$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Building2$3e$__["Building2"], {
-                            className: "h-5 w-5 text-white/80"
+                        className: "min-w-0",
+                        children: [
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                className: "text-sm font-semibold text-white truncate",
+                                children: result.firm
+                            }, void 0, false, {
+                                fileName: "[project]/Downloads/wall-street-playbook/components/home/proof-gallery.tsx",
+                                lineNumber: 209,
+                                columnNumber: 11
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                className: "text-[11px] text-white/40",
+                                children: result.category
+                            }, void 0, false, {
+                                fileName: "[project]/Downloads/wall-street-playbook/components/home/proof-gallery.tsx",
+                                lineNumber: 210,
+                                columnNumber: 11
+                            }, this)
+                        ]
+                    }, void 0, true, {
+                        fileName: "[project]/Downloads/wall-street-playbook/components/home/proof-gallery.tsx",
+                        lineNumber: 208,
+                        columnNumber: 9
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                        className: "flex-shrink-0 inline-flex items-center gap-1.5 rounded-full bg-green-500/20 px-2.5 py-0.5 text-[10px] font-semibold text-green-400",
+                        children: [
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                className: "h-1.5 w-1.5 rounded-full bg-green-400 animate-pulse"
+                            }, void 0, false, {
+                                fileName: "[project]/Downloads/wall-street-playbook/components/home/proof-gallery.tsx",
+                                lineNumber: 213,
+                                columnNumber: 11
+                            }, this),
+                            "Interview Secured"
+                        ]
+                    }, void 0, true, {
+                        fileName: "[project]/Downloads/wall-street-playbook/components/home/proof-gallery.tsx",
+                        lineNumber: 212,
+                        columnNumber: 9
+                    }, this)
+                ]
+            }, void 0, true, {
+                fileName: "[project]/Downloads/wall-street-playbook/components/home/proof-gallery.tsx",
+                lineNumber: 207,
+                columnNumber: 7
+            }, this),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                className: "relative overflow-hidden",
+                children: [
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
+                        src: result.src,
+                        alt: `Interview invitation from ${result.firm}`,
+                        width: 760,
+                        height: 300,
+                        sizes: "(max-width: 640px) 340px, 380px",
+                        className: "w-full h-auto group-hover:scale-[1.02] transition-transform duration-500",
+                        quality: 75
+                    }, void 0, false, {
+                        fileName: "[project]/Downloads/wall-street-playbook/components/home/proof-gallery.tsx",
+                        lineNumber: 220,
+                        columnNumber: 9
+                    }, this),
+                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                        className: "absolute inset-0 bg-gold/0 group-hover:bg-gold/5 transition-colors duration-300 flex items-center justify-center",
+                        children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                            className: "opacity-0 group-hover:opacity-100 transition-opacity duration-300 bg-navy/80 backdrop-blur-sm text-white text-xs font-medium px-3 py-1.5 rounded-full",
+                            children: "Click to expand"
                         }, void 0, false, {
                             fileName: "[project]/Downloads/wall-street-playbook/components/home/proof-gallery.tsx",
-                            lineNumber: 54,
+                            lineNumber: 231,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/Downloads/wall-street-playbook/components/home/proof-gallery.tsx",
-                        lineNumber: 53,
-                        columnNumber: 9
-                    }, this),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "flex-1 min-w-0",
-                        children: [
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "flex items-center gap-2",
-                                children: [
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                        className: "font-semibold text-white truncate",
-                                        children: firm
-                                    }, void 0, false, {
-                                        fileName: "[project]/Downloads/wall-street-playbook/components/home/proof-gallery.tsx",
-                                        lineNumber: 58,
-                                        columnNumber: 13
-                                    }, this),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$circle$2d$check$2d$big$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__CheckCircle$3e$__["CheckCircle"], {
-                                        className: "h-4 w-4 text-gold flex-shrink-0"
-                                    }, void 0, false, {
-                                        fileName: "[project]/Downloads/wall-street-playbook/components/home/proof-gallery.tsx",
-                                        lineNumber: 59,
-                                        columnNumber: 13
-                                    }, this)
-                                ]
-                            }, void 0, true, {
-                                fileName: "[project]/Downloads/wall-street-playbook/components/home/proof-gallery.tsx",
-                                lineNumber: 57,
-                                columnNumber: 11
-                            }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                className: "text-xs text-white/50 truncate",
-                                children: [
-                                    "recruiting@",
-                                    firm.toLowerCase().replace(/[^a-z]/g, ''),
-                                    ".com"
-                                ]
-                            }, void 0, true, {
-                                fileName: "[project]/Downloads/wall-street-playbook/components/home/proof-gallery.tsx",
-                                lineNumber: 61,
-                                columnNumber: 11
-                            }, this)
-                        ]
-                    }, void 0, true, {
-                        fileName: "[project]/Downloads/wall-street-playbook/components/home/proof-gallery.tsx",
-                        lineNumber: 56,
+                        lineNumber: 230,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/Downloads/wall-street-playbook/components/home/proof-gallery.tsx",
-                lineNumber: 52,
-                columnNumber: 7
-            }, this),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "mt-3 rounded-lg bg-white/5 p-3",
-                children: [
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "flex items-center gap-2 text-xs text-white/40 mb-1",
-                        children: [
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$mail$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__Mail$3e$__["Mail"], {
-                                className: "h-3 w-3"
-                            }, void 0, false, {
-                                fileName: "[project]/Downloads/wall-street-playbook/components/home/proof-gallery.tsx",
-                                lineNumber: 68,
-                                columnNumber: 11
-                            }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                children: "Interview Invitation"
-                            }, void 0, false, {
-                                fileName: "[project]/Downloads/wall-street-playbook/components/home/proof-gallery.tsx",
-                                lineNumber: 69,
-                                columnNumber: 11
-                            }, this)
-                        ]
-                    }, void 0, true, {
-                        fileName: "[project]/Downloads/wall-street-playbook/components/home/proof-gallery.tsx",
-                        lineNumber: 67,
-                        columnNumber: 9
-                    }, this),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                        className: "text-sm font-medium text-white",
-                        children: [
-                            type,
-                            " Interview - ",
-                            division
-                        ]
-                    }, void 0, true, {
-                        fileName: "[project]/Downloads/wall-street-playbook/components/home/proof-gallery.tsx",
-                        lineNumber: 71,
-                        columnNumber: 9
-                    }, this),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                        className: "mt-1 text-xs text-white/50 line-clamp-2",
-                        children: [
-                            "We are pleased to invite you to interview for the ",
-                            type,
-                            " position in our ",
-                            division,
-                            " group..."
-                        ]
-                    }, void 0, true, {
-                        fileName: "[project]/Downloads/wall-street-playbook/components/home/proof-gallery.tsx",
-                        lineNumber: 74,
-                        columnNumber: 9
-                    }, this)
-                ]
-            }, void 0, true, {
-                fileName: "[project]/Downloads/wall-street-playbook/components/home/proof-gallery.tsx",
-                lineNumber: 66,
-                columnNumber: 7
-            }, this),
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "mt-3 flex items-center justify-between text-xs text-white/30",
-                children: [
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                        children: "Name redacted for privacy"
-                    }, void 0, false, {
-                        fileName: "[project]/Downloads/wall-street-playbook/components/home/proof-gallery.tsx",
-                        lineNumber: 81,
-                        columnNumber: 9
-                    }, this),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                        className: "text-gold/60",
-                        children: "Verified ✓"
-                    }, void 0, false, {
-                        fileName: "[project]/Downloads/wall-street-playbook/components/home/proof-gallery.tsx",
-                        lineNumber: 82,
-                        columnNumber: 9
-                    }, this)
-                ]
-            }, void 0, true, {
-                fileName: "[project]/Downloads/wall-street-playbook/components/home/proof-gallery.tsx",
-                lineNumber: 80,
+                lineNumber: 219,
                 columnNumber: 7
             }, this)
         ]
     }, void 0, true, {
         fileName: "[project]/Downloads/wall-street-playbook/components/home/proof-gallery.tsx",
-        lineNumber: 50,
+        lineNumber: 202,
         columnNumber: 5
     }, this);
 }
-_c = EmailPreview;
-function ProofGallery() {
-    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
-        className: "relative bg-navy-deep py-20 lg:py-28 overflow-hidden",
+_c = ResultCard;
+function Lightbox(param) {
+    let { results: allItems, currentIndex, onClose, onPrev, onNext } = param;
+    const current = allItems[currentIndex];
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+        className: "fixed inset-0 z-[100] flex items-center justify-center bg-navy-deep/95 backdrop-blur-xl",
+        onClick: onClose,
         children: [
-            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "absolute inset-0",
-                children: [
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "absolute inset-0 bg-gradient-to-b from-navy via-navy-deep to-navy"
-                    }, void 0, false, {
-                        fileName: "[project]/Downloads/wall-street-playbook/components/home/proof-gallery.tsx",
-                        lineNumber: 93,
-                        columnNumber: 9
-                    }, this),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_50%,_rgba(201,168,110,0.08),_transparent)]"
-                    }, void 0, false, {
-                        fileName: "[project]/Downloads/wall-street-playbook/components/home/proof-gallery.tsx",
-                        lineNumber: 94,
-                        columnNumber: 9
-                    }, this)
-                ]
-            }, void 0, true, {
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                onClick: onClose,
+                className: "absolute top-6 right-6 p-2 rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors z-10",
+                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$x$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__X$3e$__["X"], {
+                    className: "w-6 h-6"
+                }, void 0, false, {
+                    fileName: "[project]/Downloads/wall-street-playbook/components/home/proof-gallery.tsx",
+                    lineNumber: 265,
+                    columnNumber: 9
+                }, this)
+            }, void 0, false, {
                 fileName: "[project]/Downloads/wall-street-playbook/components/home/proof-gallery.tsx",
-                lineNumber: 92,
+                lineNumber: 261,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "relative mx-auto max-w-7xl px-6 lg:px-8",
+                className: "absolute top-6 left-6 text-sm text-white/50",
+                children: [
+                    currentIndex + 1,
+                    " / ",
+                    allItems.length
+                ]
+            }, void 0, true, {
+                fileName: "[project]/Downloads/wall-street-playbook/components/home/proof-gallery.tsx",
+                lineNumber: 269,
+                columnNumber: 7
+            }, this),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                onClick: (e)=>{
+                    e.stopPropagation();
+                    onPrev();
+                },
+                className: "absolute left-4 top-1/2 -translate-y-1/2 p-3 rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors z-10",
+                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$chevron$2d$left$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ChevronLeft$3e$__["ChevronLeft"], {
+                    className: "w-6 h-6"
+                }, void 0, false, {
+                    fileName: "[project]/Downloads/wall-street-playbook/components/home/proof-gallery.tsx",
+                    lineNumber: 281,
+                    columnNumber: 9
+                }, this)
+            }, void 0, false, {
+                fileName: "[project]/Downloads/wall-street-playbook/components/home/proof-gallery.tsx",
+                lineNumber: 274,
+                columnNumber: 7
+            }, this),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
+                onClick: (e)=>{
+                    e.stopPropagation();
+                    onNext();
+                },
+                className: "absolute right-4 top-1/2 -translate-y-1/2 p-3 rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors z-10",
+                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$chevron$2d$right$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__ChevronRight$3e$__["ChevronRight"], {
+                    className: "w-6 h-6"
+                }, void 0, false, {
+                    fileName: "[project]/Downloads/wall-street-playbook/components/home/proof-gallery.tsx",
+                    lineNumber: 292,
+                    columnNumber: 9
+                }, this)
+            }, void 0, false, {
+                fileName: "[project]/Downloads/wall-street-playbook/components/home/proof-gallery.tsx",
+                lineNumber: 285,
+                columnNumber: 7
+            }, this),
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                className: "relative max-w-4xl w-full mx-4 sm:mx-8",
+                onClick: (e)=>e.stopPropagation(),
+                children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                    className: "rounded-xl overflow-hidden border border-white/10 bg-navy/50 backdrop-blur-sm shadow-2xl",
+                    children: [
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                            className: "px-5 py-3 border-b border-white/10 flex items-center justify-between",
+                            children: [
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                    children: [
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                            className: "text-base font-semibold text-white",
+                                            children: current.firm
+                                        }, void 0, false, {
+                                            fileName: "[project]/Downloads/wall-street-playbook/components/home/proof-gallery.tsx",
+                                            lineNumber: 304,
+                                            columnNumber: 15
+                                        }, this),
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                            className: "text-xs text-white/40",
+                                            children: current.category
+                                        }, void 0, false, {
+                                            fileName: "[project]/Downloads/wall-street-playbook/components/home/proof-gallery.tsx",
+                                            lineNumber: 305,
+                                            columnNumber: 15
+                                        }, this)
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "[project]/Downloads/wall-street-playbook/components/home/proof-gallery.tsx",
+                                    lineNumber: 303,
+                                    columnNumber: 13
+                                }, this),
+                                /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                    className: "inline-flex items-center gap-1.5 rounded-full bg-green-500/20 px-3 py-1 text-xs font-semibold text-green-400",
+                                    children: [
+                                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                            className: "h-1.5 w-1.5 rounded-full bg-green-400"
+                                        }, void 0, false, {
+                                            fileName: "[project]/Downloads/wall-street-playbook/components/home/proof-gallery.tsx",
+                                            lineNumber: 308,
+                                            columnNumber: 15
+                                        }, this),
+                                        "Interview Secured"
+                                    ]
+                                }, void 0, true, {
+                                    fileName: "[project]/Downloads/wall-street-playbook/components/home/proof-gallery.tsx",
+                                    lineNumber: 307,
+                                    columnNumber: 13
+                                }, this)
+                            ]
+                        }, void 0, true, {
+                            fileName: "[project]/Downloads/wall-street-playbook/components/home/proof-gallery.tsx",
+                            lineNumber: 302,
+                            columnNumber: 11
+                        }, this),
+                        /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
+                            src: current.src,
+                            alt: `Interview invitation from ${current.firm}`,
+                            width: 1200,
+                            height: 500,
+                            sizes: "(max-width: 640px) 95vw, (max-width: 1024px) 80vw, 896px",
+                            className: "w-full h-auto",
+                            quality: 85
+                        }, void 0, false, {
+                            fileName: "[project]/Downloads/wall-street-playbook/components/home/proof-gallery.tsx",
+                            lineNumber: 313,
+                            columnNumber: 11
+                        }, this)
+                    ]
+                }, void 0, true, {
+                    fileName: "[project]/Downloads/wall-street-playbook/components/home/proof-gallery.tsx",
+                    lineNumber: 300,
+                    columnNumber: 9
+                }, this)
+            }, void 0, false, {
+                fileName: "[project]/Downloads/wall-street-playbook/components/home/proof-gallery.tsx",
+                lineNumber: 296,
+                columnNumber: 7
+            }, this)
+        ]
+    }, void 0, true, {
+        fileName: "[project]/Downloads/wall-street-playbook/components/home/proof-gallery.tsx",
+        lineNumber: 256,
+        columnNumber: 5
+    }, this);
+}
+_c1 = Lightbox;
+function ProofGallery() {
+    _s();
+    const [lightboxIndex, setLightboxIndex] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(null);
+    const openLightbox = (globalIndex)=>setLightboxIndex(globalIndex);
+    const closeLightbox = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useCallback"])({
+        "ProofGallery.useCallback[closeLightbox]": ()=>setLightboxIndex(null)
+    }["ProofGallery.useCallback[closeLightbox]"], []);
+    const prevImage = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useCallback"])({
+        "ProofGallery.useCallback[prevImage]": ()=>setLightboxIndex({
+                "ProofGallery.useCallback[prevImage]": (prev)=>prev !== null ? (prev - 1 + allResults.length) % allResults.length : null
+            }["ProofGallery.useCallback[prevImage]"])
+    }["ProofGallery.useCallback[prevImage]"], []);
+    const nextImage = (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useCallback"])({
+        "ProofGallery.useCallback[nextImage]": ()=>setLightboxIndex({
+                "ProofGallery.useCallback[nextImage]": (prev)=>prev !== null ? (prev + 1) % allResults.length : null
+            }["ProofGallery.useCallback[nextImage]"])
+    }["ProofGallery.useCallback[nextImage]"], []);
+    // Keyboard navigation for lightbox
+    (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
+        "ProofGallery.useEffect": ()=>{
+            if (lightboxIndex === null) return;
+            const handleKeyDown = {
+                "ProofGallery.useEffect.handleKeyDown": (e)=>{
+                    if (e.key === "Escape") closeLightbox();
+                    if (e.key === "ArrowLeft") prevImage();
+                    if (e.key === "ArrowRight") nextImage();
+                }
+            }["ProofGallery.useEffect.handleKeyDown"];
+            window.addEventListener("keydown", handleKeyDown);
+            document.body.style.overflow = "hidden";
+            return ({
+                "ProofGallery.useEffect": ()=>{
+                    window.removeEventListener("keydown", handleKeyDown);
+                    document.body.style.overflow = "";
+                }
+            })["ProofGallery.useEffect"];
+        }
+    }["ProofGallery.useEffect"], [
+        lightboxIndex,
+        closeLightbox,
+        prevImage,
+        nextImage
+    ]);
+    return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["Fragment"], {
+        children: [
+            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("section", {
+                className: "relative bg-navy-deep py-20 lg:py-28 overflow-hidden",
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "text-center mb-12",
+                        className: "absolute inset-0",
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "inline-flex items-center gap-2 rounded-full border border-gold/30 bg-gold/10 px-4 py-1.5 mb-6",
-                                children: [
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$circle$2d$check$2d$big$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__CheckCircle$3e$__["CheckCircle"], {
-                                        className: "w-4 h-4 text-gold"
-                                    }, void 0, false, {
-                                        fileName: "[project]/Downloads/wall-street-playbook/components/home/proof-gallery.tsx",
-                                        lineNumber: 101,
-                                        columnNumber: 13
-                                    }, this),
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                        className: "text-xs font-semibold uppercase tracking-widest text-gold",
-                                        children: "Proven Results"
-                                    }, void 0, false, {
-                                        fileName: "[project]/Downloads/wall-street-playbook/components/home/proof-gallery.tsx",
-                                        lineNumber: 102,
-                                        columnNumber: 13
-                                    }, this)
-                                ]
-                            }, void 0, true, {
-                                fileName: "[project]/Downloads/wall-street-playbook/components/home/proof-gallery.tsx",
-                                lineNumber: 100,
-                                columnNumber: 11
-                            }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
-                                className: "text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl",
-                                children: [
-                                    "Interview Invitations from ",
-                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                                        className: "text-gradient-gold",
-                                        children: "30+ Top Firms"
-                                    }, void 0, false, {
-                                        fileName: "[project]/Downloads/wall-street-playbook/components/home/proof-gallery.tsx",
-                                        lineNumber: 105,
-                                        columnNumber: 40
-                                    }, this)
-                                ]
-                            }, void 0, true, {
-                                fileName: "[project]/Downloads/wall-street-playbook/components/home/proof-gallery.tsx",
-                                lineNumber: 104,
-                                columnNumber: 11
-                            }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                className: "mt-4 text-lg text-white/60 max-w-2xl mx-auto",
-                                children: "Our frameworks have generated real interview invitations from the most competitive firms in finance. Here's a sample of what's possible."
+                                className: "absolute inset-0 bg-gradient-to-b from-navy via-navy-deep to-navy"
                             }, void 0, false, {
                                 fileName: "[project]/Downloads/wall-street-playbook/components/home/proof-gallery.tsx",
-                                lineNumber: 107,
+                                lineNumber: 369,
+                                columnNumber: 11
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_50%,_rgba(201,168,110,0.08),_transparent)]"
+                            }, void 0, false, {
+                                fileName: "[project]/Downloads/wall-street-playbook/components/home/proof-gallery.tsx",
+                                lineNumber: 370,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/Downloads/wall-street-playbook/components/home/proof-gallery.tsx",
-                        lineNumber: 99,
+                        lineNumber: 368,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         className: "relative",
                         children: [
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "absolute left-0 top-0 bottom-0 w-20 bg-gradient-to-r from-navy-deep to-transparent z-10 pointer-events-none"
-                            }, void 0, false, {
-                                fileName: "[project]/Downloads/wall-street-playbook/components/home/proof-gallery.tsx",
-                                lineNumber: 116,
-                                columnNumber: 11
-                            }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "absolute right-0 top-0 bottom-0 w-20 bg-gradient-to-l from-navy-deep to-transparent z-10 pointer-events-none"
-                            }, void 0, false, {
-                                fileName: "[project]/Downloads/wall-street-playbook/components/home/proof-gallery.tsx",
-                                lineNumber: 117,
-                                columnNumber: 11
-                            }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "flex gap-4 mb-4 animate-scroll-left",
+                                className: "text-center mb-12 px-6",
                                 children: [
-                                    ...interviewInvites.slice(0, 15),
-                                    ...interviewInvites.slice(0, 15)
-                                ].map((invite, index)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(EmailPreview, {
-                                        ...invite,
-                                        index: index
-                                    }, `row1-${index}`, false, {
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                        className: "inline-flex items-center gap-2 rounded-full border border-gold/30 bg-gold/10 px-4 py-1.5 mb-6",
+                                        children: [
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$lucide$2d$react$2f$dist$2f$esm$2f$icons$2f$circle$2d$check$2d$big$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__$3c$export__default__as__CheckCircle$3e$__["CheckCircle"], {
+                                                className: "w-4 h-4 text-gold"
+                                            }, void 0, false, {
+                                                fileName: "[project]/Downloads/wall-street-playbook/components/home/proof-gallery.tsx",
+                                                lineNumber: 377,
+                                                columnNumber: 15
+                                            }, this),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                className: "text-xs font-semibold uppercase tracking-widest text-gold",
+                                                children: "Verified Results"
+                                            }, void 0, false, {
+                                                fileName: "[project]/Downloads/wall-street-playbook/components/home/proof-gallery.tsx",
+                                                lineNumber: 378,
+                                                columnNumber: 15
+                                            }, this)
+                                        ]
+                                    }, void 0, true, {
                                         fileName: "[project]/Downloads/wall-street-playbook/components/home/proof-gallery.tsx",
-                                        lineNumber: 122,
-                                        columnNumber: 15
-                                    }, this))
-                            }, void 0, false, {
+                                        lineNumber: 376,
+                                        columnNumber: 13
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("h2", {
+                                        className: "text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl",
+                                        children: [
+                                            "From Cold Outreach to",
+                                            " ",
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
+                                                className: "text-gradient-gold",
+                                                children: "Offer in Hand"
+                                            }, void 0, false, {
+                                                fileName: "[project]/Downloads/wall-street-playbook/components/home/proof-gallery.tsx",
+                                                lineNumber: 384,
+                                                columnNumber: 15
+                                            }, this)
+                                        ]
+                                    }, void 0, true, {
+                                        fileName: "[project]/Downloads/wall-street-playbook/components/home/proof-gallery.tsx",
+                                        lineNumber: 382,
+                                        columnNumber: 13
+                                    }, this)
+                                ]
+                            }, void 0, true, {
                                 fileName: "[project]/Downloads/wall-street-playbook/components/home/proof-gallery.tsx",
-                                lineNumber: 120,
+                                lineNumber: 375,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "flex gap-4 animate-scroll-right",
+                                className: "relative mb-5",
                                 children: [
-                                    ...interviewInvites.slice(15),
-                                    ...interviewInvites.slice(15)
-                                ].map((invite, index)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(EmailPreview, {
-                                        ...invite,
-                                        index: index + 15
-                                    }, `row2-${index}`, false, {
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                        className: "absolute left-0 top-0 bottom-0 w-20 sm:w-40 bg-gradient-to-r from-navy-deep via-navy-deep/80 to-transparent z-10 pointer-events-none"
+                                    }, void 0, false, {
                                         fileName: "[project]/Downloads/wall-street-playbook/components/home/proof-gallery.tsx",
-                                        lineNumber: 129,
-                                        columnNumber: 15
-                                    }, this))
-                            }, void 0, false, {
+                                        lineNumber: 391,
+                                        columnNumber: 13
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                        className: "absolute right-0 top-0 bottom-0 w-20 sm:w-40 bg-gradient-to-l from-navy-deep via-navy-deep/80 to-transparent z-10 pointer-events-none"
+                                    }, void 0, false, {
+                                        fileName: "[project]/Downloads/wall-street-playbook/components/home/proof-gallery.tsx",
+                                        lineNumber: 392,
+                                        columnNumber: 13
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                        className: "flex animate-scroll-left",
+                                        style: {
+                                            width: "max-content"
+                                        },
+                                        children: [
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                className: "flex gap-5 pr-5",
+                                                children: results.map((result, i)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(ResultCard, {
+                                                        result: result,
+                                                        index: i,
+                                                        onClick: ()=>openLightbox(i)
+                                                    }, `r1-a-${i}`, false, {
+                                                        fileName: "[project]/Downloads/wall-street-playbook/components/home/proof-gallery.tsx",
+                                                        lineNumber: 398,
+                                                        columnNumber: 19
+                                                    }, this))
+                                            }, void 0, false, {
+                                                fileName: "[project]/Downloads/wall-street-playbook/components/home/proof-gallery.tsx",
+                                                lineNumber: 396,
+                                                columnNumber: 15
+                                            }, this),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                className: "flex gap-5 pr-5",
+                                                children: results.map((result, i)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(ResultCard, {
+                                                        result: result,
+                                                        index: i,
+                                                        onClick: ()=>openLightbox(i)
+                                                    }, `r1-b-${i}`, false, {
+                                                        fileName: "[project]/Downloads/wall-street-playbook/components/home/proof-gallery.tsx",
+                                                        lineNumber: 409,
+                                                        columnNumber: 19
+                                                    }, this))
+                                            }, void 0, false, {
+                                                fileName: "[project]/Downloads/wall-street-playbook/components/home/proof-gallery.tsx",
+                                                lineNumber: 407,
+                                                columnNumber: 15
+                                            }, this)
+                                        ]
+                                    }, void 0, true, {
+                                        fileName: "[project]/Downloads/wall-street-playbook/components/home/proof-gallery.tsx",
+                                        lineNumber: 394,
+                                        columnNumber: 13
+                                    }, this)
+                                ]
+                            }, void 0, true, {
                                 fileName: "[project]/Downloads/wall-street-playbook/components/home/proof-gallery.tsx",
-                                lineNumber: 127,
+                                lineNumber: 389,
+                                columnNumber: 11
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "relative",
+                                children: [
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                        className: "absolute left-0 top-0 bottom-0 w-20 sm:w-40 bg-gradient-to-r from-navy-deep via-navy-deep/80 to-transparent z-10 pointer-events-none"
+                                    }, void 0, false, {
+                                        fileName: "[project]/Downloads/wall-street-playbook/components/home/proof-gallery.tsx",
+                                        lineNumber: 423,
+                                        columnNumber: 13
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                        className: "absolute right-0 top-0 bottom-0 w-20 sm:w-40 bg-gradient-to-l from-navy-deep via-navy-deep/80 to-transparent z-10 pointer-events-none"
+                                    }, void 0, false, {
+                                        fileName: "[project]/Downloads/wall-street-playbook/components/home/proof-gallery.tsx",
+                                        lineNumber: 424,
+                                        columnNumber: 13
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                        className: "flex animate-scroll-right",
+                                        style: {
+                                            width: "max-content"
+                                        },
+                                        children: [
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                className: "flex gap-5 pr-5",
+                                                children: results2.map((result, i)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(ResultCard, {
+                                                        result: result,
+                                                        index: results.length + i,
+                                                        onClick: ()=>openLightbox(results.length + i)
+                                                    }, `r2-a-${i}`, false, {
+                                                        fileName: "[project]/Downloads/wall-street-playbook/components/home/proof-gallery.tsx",
+                                                        lineNumber: 433,
+                                                        columnNumber: 19
+                                                    }, this))
+                                            }, void 0, false, {
+                                                fileName: "[project]/Downloads/wall-street-playbook/components/home/proof-gallery.tsx",
+                                                lineNumber: 431,
+                                                columnNumber: 15
+                                            }, this),
+                                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                                className: "flex gap-5 pr-5",
+                                                children: results2.map((result, i)=>/*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(ResultCard, {
+                                                        result: result,
+                                                        index: results.length + i,
+                                                        onClick: ()=>openLightbox(results.length + i)
+                                                    }, `r2-b-${i}`, false, {
+                                                        fileName: "[project]/Downloads/wall-street-playbook/components/home/proof-gallery.tsx",
+                                                        lineNumber: 444,
+                                                        columnNumber: 19
+                                                    }, this))
+                                            }, void 0, false, {
+                                                fileName: "[project]/Downloads/wall-street-playbook/components/home/proof-gallery.tsx",
+                                                lineNumber: 442,
+                                                columnNumber: 15
+                                            }, this)
+                                        ]
+                                    }, void 0, true, {
+                                        fileName: "[project]/Downloads/wall-street-playbook/components/home/proof-gallery.tsx",
+                                        lineNumber: 426,
+                                        columnNumber: 13
+                                    }, this)
+                                ]
+                            }, void 0, true, {
+                                fileName: "[project]/Downloads/wall-street-playbook/components/home/proof-gallery.tsx",
+                                lineNumber: 421,
+                                columnNumber: 11
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "mt-12 text-center px-6",
+                                children: [
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
+                                        className: "text-white/40 text-xs mb-6",
+                                        children: "Screenshots from real candidates. Personal information redacted for privacy."
+                                    }, void 0, false, {
+                                        fileName: "[project]/Downloads/wall-street-playbook/components/home/proof-gallery.tsx",
+                                        lineNumber: 457,
+                                        columnNumber: 13
+                                    }, this),
+                                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
+                                        href: "/playbooks",
+                                        className: "inline-flex items-center gap-2 rounded-xl bg-gold px-8 py-4 text-base font-semibold text-navy transition-all hover:bg-white hover:shadow-lg hover:shadow-gold/20",
+                                        children: "Get the Playbooks"
+                                    }, void 0, false, {
+                                        fileName: "[project]/Downloads/wall-street-playbook/components/home/proof-gallery.tsx",
+                                        lineNumber: 461,
+                                        columnNumber: 13
+                                    }, this)
+                                ]
+                            }, void 0, true, {
+                                fileName: "[project]/Downloads/wall-street-playbook/components/home/proof-gallery.tsx",
+                                lineNumber: 456,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/Downloads/wall-street-playbook/components/home/proof-gallery.tsx",
-                        lineNumber: 114,
-                        columnNumber: 9
-                    }, this),
-                    /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                        className: "mt-12 text-center",
-                        children: [
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("p", {
-                                className: "text-white/50 text-sm mb-4",
-                                children: "Want the same frameworks that generated these results?"
-                            }, void 0, false, {
-                                fileName: "[project]/Downloads/wall-street-playbook/components/home/proof-gallery.tsx",
-                                lineNumber: 136,
-                                columnNumber: 11
-                            }, this),
-                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("a", {
-                                href: "/submit-resume?service=resume-review",
-                                className: "inline-flex items-center gap-2 rounded-xl bg-gold px-8 py-4 text-base font-semibold text-navy transition-all hover:bg-white hover:shadow-lg hover:shadow-gold/20",
-                                children: "Get Your Resume Reviewed"
-                            }, void 0, false, {
-                                fileName: "[project]/Downloads/wall-street-playbook/components/home/proof-gallery.tsx",
-                                lineNumber: 139,
-                                columnNumber: 11
-                            }, this)
-                        ]
-                    }, void 0, true, {
-                        fileName: "[project]/Downloads/wall-street-playbook/components/home/proof-gallery.tsx",
-                        lineNumber: 135,
+                        lineNumber: 373,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/Downloads/wall-street-playbook/components/home/proof-gallery.tsx",
-                lineNumber: 97,
+                lineNumber: 366,
                 columnNumber: 7
+            }, this),
+            lightboxIndex !== null && /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$Downloads$2f$wall$2d$street$2d$playbook$2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(Lightbox, {
+                results: allResults,
+                currentIndex: lightboxIndex,
+                onClose: closeLightbox,
+                onPrev: prevImage,
+                onNext: nextImage
+            }, void 0, false, {
+                fileName: "[project]/Downloads/wall-street-playbook/components/home/proof-gallery.tsx",
+                lineNumber: 473,
+                columnNumber: 9
             }, this)
         ]
-    }, void 0, true, {
-        fileName: "[project]/Downloads/wall-street-playbook/components/home/proof-gallery.tsx",
-        lineNumber: 90,
-        columnNumber: 5
-    }, this);
+    }, void 0, true);
 }
-_c1 = ProofGallery;
-var _c, _c1;
-__turbopack_context__.k.register(_c, "EmailPreview");
-__turbopack_context__.k.register(_c1, "ProofGallery");
+_s(ProofGallery, "w4kWfac1cAIl1AHamfz96Tn213U=");
+_c2 = ProofGallery;
+var _c, _c1, _c2;
+__turbopack_context__.k.register(_c, "ResultCard");
+__turbopack_context__.k.register(_c1, "Lightbox");
+__turbopack_context__.k.register(_c2, "ProofGallery");
 if (typeof globalThis.$RefreshHelpers$ === 'object' && globalThis.$RefreshHelpers !== null) {
     __turbopack_context__.k.registerExports(__turbopack_context__.m, globalThis.$RefreshHelpers$);
 }

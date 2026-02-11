@@ -103,7 +103,7 @@ export default function DCFInterviewQuestions2026Page() {
                   href="/playbooks/finance-technical-interview-guide"
                   className="inline-flex items-center justify-center gap-2 rounded-lg bg-gold px-6 py-3 text-sm font-semibold text-navy transition-colors hover:bg-gold/90"
                 >
-                  Full DCF Chapter + 5 More Topics — $127
+                  Full DCF Chapter + 5 More Topics — $79
                   <ArrowRight className="h-4 w-4" />
                 </Link>
               </div>
@@ -218,7 +218,7 @@ export default function DCFInterviewQuestions2026Page() {
                   href="/playbooks/finance-technical-interview-guide"
                   className="inline-flex items-center justify-center gap-2 rounded-lg bg-gold px-8 py-4 text-sm font-semibold text-navy transition-colors hover:bg-gold/90"
                 >
-                  Get the Complete Guide — $127
+                  Get the Complete Guide — $79
                   <ArrowRight className="h-4 w-4" />
                 </Link>
               </div>

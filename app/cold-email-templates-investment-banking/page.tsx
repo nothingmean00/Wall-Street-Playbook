@@ -105,7 +105,7 @@ export default function ColdEmailTemplatesPage() {
                 href="/playbooks/networking-cold-email-playbook"
                 className="group flex items-center gap-2 rounded-xl bg-gold px-8 py-4 text-base font-semibold text-navy transition-all hover:bg-white"
               >
-                Get All 13 Templates — $67
+                Get All 13 Templates — $47
                 <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
               </Link>
               <Link
@@ -353,7 +353,7 @@ export default function ColdEmailTemplatesPage() {
                   href="/playbooks/networking-cold-email-playbook"
                   className="inline-flex items-center gap-2 rounded-xl bg-gold px-8 py-4 text-base font-semibold text-navy hover:bg-navy hover:text-white transition-colors"
                 >
-                  Get All 13 Templates — $67
+                  Get All 13 Templates — $47
                   <ArrowRight className="h-5 w-5" />
                 </Link>
               </div>
@@ -596,13 +596,13 @@ export default function ColdEmailTemplatesPage() {
                 <BookOpen className="h-8 w-8 text-gold mx-auto mb-3" />
                 <p className="text-xl font-bold text-navy">The Networking & Cold Email Playbook</p>
                 <p className="text-charcoal/60 mt-1">Everything you need to build a Wall Street network from scratch</p>
-                <p className="text-3xl font-bold text-gold mt-4">$67</p>
+                <p className="text-3xl font-bold text-gold mt-4">$47</p>
                 <p className="text-xs text-charcoal/50 mt-1">One-time purchase · Instant PDF download · Lifetime access</p>
                 <Link
                   href="/playbooks/networking-cold-email-playbook"
                   className="mt-6 inline-flex items-center gap-2 rounded-xl bg-gold px-8 py-4 text-base font-semibold text-navy hover:bg-navy hover:text-white transition-colors"
                 >
-                  Get the Full Playbook — $67
+                  Get the Full Playbook — $47
                   <ArrowRight className="h-5 w-5" />
                 </Link>
               </div>
@@ -627,7 +627,7 @@ export default function ColdEmailTemplatesPage() {
                 href="/playbooks/networking-cold-email-playbook"
                 className="group flex items-center gap-2 rounded-xl bg-gold px-8 py-4 text-base font-semibold text-navy hover:bg-white transition-colors"
               >
-                Get All 13 Templates — $67
+                Get All 13 Templates — $47
                 <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
               </Link>
               <Link

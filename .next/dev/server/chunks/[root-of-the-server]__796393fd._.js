@@ -762,7 +762,7 @@ async function GET(request) {
     const refresh = searchParams.get("refresh") === "true";
     // Check cache first (unless refresh is requested)
     const cacheValid = jobsCache && Date.now() - jobsCache.timestamp < CACHE_DURATION;
-    if (cacheValid && !refresh && !query) {
+    if (cacheValid && !refresh && !query && jobsCache) {
         let jobs = jobsCache.jobs;
         // Apply filters
         if (category) {

@@ -1,5 +1,5 @@
 var R=require("../../chunks/ssr/[turbopack]_runtime.js")("server/app/fintech-resume/page.js")
-R.c("server/chunks/ssr/[root-of-the-server]__2c06a7c7._.js")
+R.c("server/chunks/ssr/[root-of-the-server]__f7d1cfe4._.js")
 R.c("server/chunks/ssr/Downloads_wall-street-playbook_app_fintech-resume_page_tsx_6fed05ee._.js")
 R.c("server/chunks/ssr/3eee8_next_dist_579b204f._.js")
 R.c("server/chunks/ssr/Downloads_wall-street-playbook_8f96db90._.js")

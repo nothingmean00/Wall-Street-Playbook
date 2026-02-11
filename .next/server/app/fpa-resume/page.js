@@ -1,5 +1,5 @@
 var R=require("../../chunks/ssr/[turbopack]_runtime.js")("server/app/fpa-resume/page.js")
-R.c("server/chunks/ssr/[root-of-the-server]__488cbb4b._.js")
+R.c("server/chunks/ssr/[root-of-the-server]__872b4650._.js")
 R.c("server/chunks/ssr/Downloads_wall-street-playbook_app_fpa-resume_page_tsx_b206ee08._.js")
 R.c("server/chunks/ssr/3eee8_next_dist_579b204f._.js")
 R.c("server/chunks/ssr/Downloads_wall-street-playbook_07ea0ddb._.js")

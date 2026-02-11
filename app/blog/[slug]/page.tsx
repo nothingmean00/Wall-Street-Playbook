@@ -70,7 +70,7 @@ function getSidebarCTA(slug: string, category: string, tags?: string[]) {
     return {
       product: "2026 PE Recruiting Playbook",
       description: "42 pages. 20 chapters. Headhunter intel, timelines, compensation data, and contrarian insights.",
-      price: 97,
+      price: 67,
       href: "/playbooks/pe-recruiting-playbook",
       features: ["Headhunter firm rankings & strategies", "Bank-to-fund pipeline data", "Paper LBO frameworks", "2026 timeline forecast"],
     }
@@ -81,7 +81,7 @@ function getSidebarCTA(slug: string, category: string, tags?: string[]) {
     return {
       product: "Networking & Cold Email Playbook",
       description: "47 pages. 8 chapters. 13 email templates, 30 interview questions, and the system that turns cold outreach into offers.",
-      price: 67,
+      price: 47,
       href: "/playbooks/networking-cold-email-playbook",
       features: ["13 cold email templates by scenario", "30 informational interview questions", "Response rate data by channel", "Email formats for 13+ major banks"],
     }
@@ -91,7 +91,7 @@ function getSidebarCTA(slug: string, category: string, tags?: string[]) {
   return {
       product: "Finance Technical Interview Guide",
     description: "88 pages. 6 chapters. Every question tagged by frequency with dual-format answers.",
-    price: 127,
+    price: 79,
     href: "/playbooks/finance-technical-interview-guide",
     features: ["Interview frequency tags on every concept", "30-second + 3-minute answer formats", "Red flag warnings for common mistakes", "Self-assessment scorecards"],
   }

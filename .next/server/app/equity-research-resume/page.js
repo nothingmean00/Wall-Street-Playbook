@@ -1,5 +1,5 @@
 var R=require("../../chunks/ssr/[turbopack]_runtime.js")("server/app/equity-research-resume/page.js")
-R.c("server/chunks/ssr/[root-of-the-server]__8444d98b._.js")
+R.c("server/chunks/ssr/[root-of-the-server]__87c4d661._.js")
 R.c("server/chunks/ssr/Downloads_wall-street-playbook_app_equity-research-resume_page_tsx_63cdccd3._.js")
 R.c("server/chunks/ssr/3eee8_next_dist_579b204f._.js")
 R.c("server/chunks/ssr/Downloads_wall-street-playbook_64c8d70b._.js")

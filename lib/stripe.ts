@@ -60,17 +60,17 @@ export const PRODUCTS = {
   'finance-technical-interview-guide': {
     priceId: process.env.STRIPE_PRICE_IB_TECHNICAL || 'price_xxx',
     name: 'Finance Technical Interview Guide',
-    price: 127,
+    price: 79,
   },
   'pe-recruiting-playbook': {
     priceId: process.env.STRIPE_PRICE_PE || 'price_xxx',
     name: 'PE Recruiting Playbook',
-    price: 97,
+    price: 67,
   },
   'networking-cold-email-playbook': {
     priceId: process.env.STRIPE_PRICE_NETWORKING || 'price_xxx',
     name: 'Networking & Cold Email Playbook',
-    price: 67,
+    price: 47,
   },
   'lbo-modeling-course': {
     priceId: process.env.STRIPE_PRICE_LBO || 'price_xxx',
@@ -115,7 +115,7 @@ export const PRODUCTS = {
   'available-bundle': {
     priceId: process.env.STRIPE_PRICE_AVAILABLE_BUNDLE || 'price_xxx',
     name: 'Complete Prep Bundle (3 Playbooks)',
-    price: 259,
+    price: 149,
   },
   // Resume Services
   'resume-review': {

@@ -165,7 +165,7 @@ export default function NetworkingNonTargetStudents2026Page() {
                 href="/playbooks/networking-cold-email-playbook"
                 className="group flex items-center gap-2 rounded-xl bg-gold px-8 py-4 text-base font-semibold text-navy transition-all hover:bg-white"
               >
-                Get the Networking System — $67
+                Get the Networking System — $47
                 <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
               </Link>
               <Link
@@ -598,13 +598,13 @@ export default function NetworkingNonTargetStudents2026Page() {
                 <Users className="h-8 w-8 text-gold mx-auto mb-3" />
                 <p className="text-xl font-bold text-navy">The Networking & Cold Email Playbook</p>
                 <p className="text-charcoal/60 mt-1">The complete networking system for non-target students breaking into Wall Street</p>
-                <p className="text-3xl font-bold text-gold mt-4">$67</p>
+                <p className="text-3xl font-bold text-gold mt-4">$47</p>
                 <p className="text-xs text-charcoal/50 mt-1">One-time purchase · Instant PDF download · Lifetime access</p>
                 <Link
                   href="/playbooks/networking-cold-email-playbook"
                   className="mt-6 inline-flex items-center gap-2 rounded-xl bg-gold px-8 py-4 text-base font-semibold text-navy hover:bg-navy hover:text-white transition-colors"
                 >
-                  Get the Complete System — $67
+                  Get the Complete System — $47
                   <ArrowRight className="h-5 w-5" />
                 </Link>
               </div>
@@ -629,7 +629,7 @@ export default function NetworkingNonTargetStudents2026Page() {
                 href="/playbooks/networking-cold-email-playbook"
                 className="group flex items-center gap-2 rounded-xl bg-gold px-8 py-4 text-base font-semibold text-navy hover:bg-white transition-colors"
               >
-                Get the Networking System — $67
+                Get the Networking System — $47
                 <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
               </Link>
               <Link

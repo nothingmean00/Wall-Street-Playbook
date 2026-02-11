@@ -114,11 +114,22 @@ async function initDatabase() {
       resume_url TEXT NOT NULL,
       resume_filename VARCHAR(255),
       status VARCHAR(30) DEFAULT 'pending',
+      payment_status VARCHAR(30) DEFAULT 'unpaid',
+      stripe_session_id VARCHAR(255),
+      amount_paid INTEGER,
       admin_notes TEXT,
       created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
       updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
     )
   `;
+    // Add new payment columns if they don't exist (for existing tables)
+    try {
+        await db`ALTER TABLE resume_submissions ADD COLUMN IF NOT EXISTS payment_status VARCHAR(30) DEFAULT 'unpaid'`;
+        await db`ALTER TABLE resume_submissions ADD COLUMN IF NOT EXISTS stripe_session_id VARCHAR(255)`;
+        await db`ALTER TABLE resume_submissions ADD COLUMN IF NOT EXISTS amount_paid INTEGER`;
+    } catch  {
+    // Columns might already exist, ignore errors
+    }
 }
 }),
 "[project]/Downloads/wall-street-playbook/app/api/init-db/route.ts [app-route] (ecmascript)", ((__turbopack_context__) => {

@@ -238,7 +238,7 @@ export default function ColdEmailChecklistPage() {
                 className="inline-flex items-center gap-2 rounded-xl bg-gold px-8 py-4 text-base font-semibold text-navy transition-all hover:bg-navy hover:text-white"
               >
                 <Mail className="h-5 w-5" />
-                Get the Full Playbook — $67
+                Get the Full Playbook — $47
                 <ArrowRight className="h-4 w-4" />
               </Link>
             </div>

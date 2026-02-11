@@ -385,7 +385,7 @@ export default function NonTargetToPEPage() {
                 href="/playbooks/pe-recruiting-playbook"
                 className="group flex items-center gap-2 rounded-xl bg-gold px-8 py-4 text-base font-semibold text-navy hover:bg-white transition-colors"
               >
-                Get the 2026 PE Playbook — $97
+                Get the 2026 PE Playbook — $67
                 <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
               </Link>
               <Link

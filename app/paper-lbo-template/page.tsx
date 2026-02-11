@@ -216,7 +216,7 @@ export default function PaperLBOTemplatePage() {
                 </Link>
                 <Link href="/playbooks/pe-recruiting-playbook" className="group rounded-xl border border-border bg-gold/10 p-4 hover:border-gold transition-colors">
                   <p className="font-semibold text-navy group-hover:text-gold transition-colors">2026 PE Playbook</p>
-                  <p className="mt-1 text-sm text-charcoal/60">Complete recruiting guide — $97</p>
+                  <p className="mt-1 text-sm text-charcoal/60">Complete recruiting guide — $67</p>
                 </Link>
               </div>
             </div>

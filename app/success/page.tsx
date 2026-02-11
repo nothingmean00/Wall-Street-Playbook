@@ -275,7 +275,7 @@ function SuccessContent() {
                     href="/playbooks/networking-cold-email-playbook"
                     className="mt-4 inline-flex items-center gap-2 rounded-lg bg-navy px-5 py-2.5 text-sm font-semibold text-white hover:bg-gold hover:text-navy transition-colors"
                   >
-                    View Networking Playbook — $67
+                    View Networking Playbook — $47
                     <ArrowRight className="h-4 w-4" />
                   </Link>
                 </>
@@ -289,7 +289,7 @@ function SuccessContent() {
                     href="/playbooks/networking-cold-email-playbook"
                     className="mt-4 inline-flex items-center gap-2 rounded-lg bg-navy px-5 py-2.5 text-sm font-semibold text-white hover:bg-gold hover:text-navy transition-colors"
                   >
-                    View Networking Playbook — $67
+                    View Networking Playbook — $47
                     <ArrowRight className="h-4 w-4" />
                   </Link>
                 </>
@@ -303,7 +303,7 @@ function SuccessContent() {
                     href="/playbooks/finance-technical-interview-guide"
                     className="mt-4 inline-flex items-center gap-2 rounded-lg bg-navy px-5 py-2.5 text-sm font-semibold text-white hover:bg-gold hover:text-navy transition-colors"
                   >
-                    View Technical Guide — $127
+                    View Technical Guide — $79
                     <ArrowRight className="h-4 w-4" />
                   </Link>
                 </>

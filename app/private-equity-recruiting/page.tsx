@@ -323,7 +323,7 @@ export default function PrivateEquityRecruitingPage() {
                   href="/playbooks/pe-recruiting-playbook"
                   className="mt-6 inline-flex items-center gap-2 rounded-xl bg-gold px-6 py-3 text-sm font-semibold text-navy hover:bg-white transition-colors"
                 >
-                  Get the PE Playbook — $97
+                  Get the PE Playbook — $67
                   <ArrowRight className="h-4 w-4" />
                 </Link>
               </div>
@@ -358,7 +358,7 @@ export default function PrivateEquityRecruitingPage() {
                 href="/playbooks/lbo-modeling-course"
                 className="mt-12 inline-flex items-center gap-2 rounded-xl bg-gold px-8 py-4 text-base font-semibold text-navy hover:bg-white transition-colors"
               >
-                Get the LBO Modeling Course — $127
+                Get the LBO Modeling Course — $79
                 <ArrowRight className="h-5 w-5" />
               </Link>
             </div>

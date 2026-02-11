@@ -267,7 +267,7 @@ export default function InvestmentBankingInterviewPrepPage() {
                   href="/playbooks/finance-technical-interview-guide"
                   className="mt-6 inline-flex items-center gap-2 rounded-xl bg-gold px-6 py-3 text-sm font-semibold text-navy hover:bg-white transition-colors"
                 >
-                  Get the Full Guide — $127
+                  Get the Full Guide — $79
                   <ArrowRight className="h-4 w-4" />
                 </Link>
               </div>
@@ -381,7 +381,7 @@ export default function InvestmentBankingInterviewPrepPage() {
                 href="/playbooks/networking-cold-email-playbook"
                 className="mt-12 inline-flex items-center gap-2 rounded-xl bg-gold px-8 py-4 text-base font-semibold text-navy hover:bg-white transition-colors"
               >
-                Get 50+ Email Templates — $67
+                Get 50+ Email Templates — $47
                 <ArrowRight className="h-5 w-5" />
               </Link>
             </div>
@@ -437,7 +437,7 @@ export default function InvestmentBankingInterviewPrepPage() {
                 href="/playbooks/finance-technical-interview-guide"
                 className="group flex items-center gap-2 rounded-xl bg-navy px-8 py-4 text-base font-semibold text-white hover:bg-gold hover:text-navy transition-colors"
               >
-                Get the Finance Technical Guide — $127
+                Get the Finance Technical Guide — $79
                 <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
               </Link>
               <Link

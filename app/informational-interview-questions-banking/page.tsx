@@ -188,7 +188,7 @@ export default function InformationalInterviewBankingPage() {
                 href="/playbooks/networking-cold-email-playbook"
                 className="group flex items-center gap-2 rounded-xl bg-gold px-8 py-4 text-base font-semibold text-navy transition-all hover:bg-white"
               >
-                Get All 30 Questions + Cheat Sheets — $67
+                Get All 30 Questions + Cheat Sheets — $47
                 <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
               </Link>
               <Link
@@ -385,7 +385,7 @@ export default function InformationalInterviewBankingPage() {
                   href="/playbooks/networking-cold-email-playbook"
                   className="inline-flex items-center gap-2 rounded-xl bg-gold px-8 py-4 text-base font-semibold text-navy hover:bg-white transition-colors"
                 >
-                  Get All 30 Questions — $67
+                  Get All 30 Questions — $47
                   <ArrowRight className="h-5 w-5" />
                 </Link>
               </div>
@@ -581,7 +581,7 @@ export default function InformationalInterviewBankingPage() {
                   href="/playbooks/networking-cold-email-playbook"
                   className="group inline-flex items-center gap-2 rounded-xl bg-gold px-10 py-5 text-lg font-semibold text-navy transition-all hover:bg-navy hover:text-white"
                 >
-                  Get the Full Playbook — $67
+                  Get the Full Playbook — $47
                   <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
                 </Link>
                 <p className="mt-4 text-xs text-charcoal/50">

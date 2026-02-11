@@ -263,7 +263,7 @@ export default function FinanceNetworkingPlaybook2026Page() {
                 href="/playbooks/networking-cold-email-playbook"
                 className="group flex items-center gap-2 rounded-xl bg-gold px-8 py-4 text-base font-semibold text-navy transition-all hover:bg-white"
               >
-                Get the Complete 47-Page System — $67
+                Get the Complete 47-Page System — $47
                 <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
               </Link>
               <Link
@@ -628,7 +628,7 @@ export default function FinanceNetworkingPlaybook2026Page() {
                 href="/playbooks/networking-cold-email-playbook"
                 className="group flex items-center gap-2 rounded-xl bg-gold px-10 py-5 text-lg font-semibold text-navy transition-all hover:bg-white"
               >
-                Get the Complete Playbook — $67
+                Get the Complete Playbook — $47
                 <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
               </Link>
               <Link

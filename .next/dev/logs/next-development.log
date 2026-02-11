@@ -1,59 +1,97 @@
-[00:00:08.084] Server  LOG      ✓ Ready in 5.4s
-[00:00:12.270] Server  LOG      ○ Compiling / ...
-[00:00:34.433] Server  WARN    Image with src "/hero-wall-street.png" is using quality "90" which is not configured in images.qualities [75]. Please update your config to [75, 90].
+[00:00:02.563] Server  LOG      ✓ Ready in 1524ms
+[00:00:05.828] Server  LOG      ○ Compiling / ...
+[00:00:21.432] Server  WARN    Image with src "/hero-wall-street.png" is using quality "85" which is not configured in images.qualities [75]. Please update your config to [75, 85].
 Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[00:00:41.225] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
-[00:00:43.914] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
-[00:00:43.914] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
-[00:00:43.914] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1770334156537}
-[00:02:47.815] Server  LOG      ✓ Compiled in 567ms
-[00:03:00.541] Server  LOG      ✓ Compiled in 6s
-[00:03:22.868] Server  LOG      ✓ Compiled in 227ms
-[00:03:27.769] Server  LOG      ✓ Compiled in 844ms
-[00:03:31.534] Server  LOG      ✓ Compiled in 228ms
-[05:27:11.329] Server  LOG      ✓ Compiled in 500ms
-[05:27:13.092] Browser WARN    Image with src "/hero-wall-street.png" is using quality "90" which is not configured in images.qualities [75]. Please update your config to [75, 90].
+[00:00:27.043] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:27.319] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:27.700] Browser INFO    %cDownload the React DevTools for a better development experience: https://react.dev/link/react-devtools font-weight:bold
+[00:00:28.497] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:00:28.497] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
+[00:00:28.497] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1770754916916}
+[00:00:28.514] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:00:28.514] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
+[00:00:28.514] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1770754917023}
+[00:00:28.702] Browser WARN    Image with src "/hero-wall-street.png" is using quality "85" which is not configured in images.qualities [75]. Please update your config to [75, 85].
 Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[05:27:17.702] Server  LOG     ✅ RAPIDAPI_KEY is set, fetching from Active Jobs DB...
-[05:27:17.885] Server  ERROR   Active Jobs DB error for filter "investment banking analyst": 429
-[05:27:17.889] Server  LOG     Fetched 0 live jobs (0 internships, 0 full-time)
-[05:27:17.890] Server  WARN    ⚠️ No live jobs found, falling back to samples
-[05:36:32.550] Server  LOG      ✓ Compiled in 692ms
-[05:36:33.545] Browser WARN    Image with src "/hero-wall-street.png" is using quality "90" which is not configured in images.qualities [70, 70, 70, 70, 75]. Please update your config to [70, 70, 70, 70, 75, 90].
+[00:00:29.607] Browser LOG     %c[Vercel Web Analytics]%c Debug mode is enabled by default in development. No requests will be sent to the server. color: rgb(120, 120, 120) color: inherit
+[00:00:29.607] Browser LOG     %c[Vercel Web Analytics]%c Running queued event color: rgb(120, 120, 120) color: inherit pageview {"path":"/","route":"/"}
+[00:00:29.607] Browser LOG     %c[Vercel Web Analytics]%c [pageview] http://localhost:3000/ color: rgb(120, 120, 120) color: inherit {"dp":"/","o":"http://localhost:3000/","sdkn":"@vercel/analytics/next","sdkv":"1.6.1","sv":"0.1.3","ts":1770754918086}
+[00:00:30.722] Server  LOG     ✅ RAPIDAPI_KEY is set, fetching from Active Jobs DB...
+[00:00:30.865] Server  ERROR   Active Jobs DB error for filter "investment banking analyst": 429
+[00:00:30.870] Server  LOG     Fetched 0 live jobs (0 internships, 0 full-time)
+[00:00:30.871] Server  WARN    ⚠️ No live jobs found, falling back to samples
+[00:00:52.718] Server  LOG      ✓ Compiled in 740ms
+[00:00:58.063] Server  LOG      ✓ Compiled in 650ms
+[00:01:03.121] Server  LOG      ✓ Compiled in 605ms
+[00:01:07.743] Server  LOG      ✓ Compiled in 646ms
+[00:01:11.557] Server  LOG      ✓ Compiled in 546ms
+[00:01:13.436] Browser WARN    Image with src "/hero-wall-street.png" is using quality "85" which is not configured in images.qualities [75]. Please update your config to [75, 85].
 Read more: https://nextjs.org/docs/messages/next-image-unconfigured-qualities
-[05:40:39.805] Server  LOG      ✓ Compiled in 507ms
-[05:52:47.421] Server  LOG      ✓ Compiled in 245ms
-[05:59:30.097] Server  LOG      ✓ Compiled in 214ms
-[05:59:30.424] Browser ERROR   ./Downloads/wall-street-playbook/components/scroll-reveal.tsx:86:7
-Parsing ecmascript source code failed
-  84 |     >
-  85 |       {children}
-> 86 |     </Component>
-     |       ^^^^^^^^^
-  87 |   )
-  88 | }
-  89 |
+[00:01:13.866] Browser ERROR   A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
 
-Expected corresponding JSX closing tag for <div>
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
 
-Import traces:
-  Client Component Browser:
-    ./Downloads/wall-street-playbook/components/scroll-reveal.tsx [Client Component Browser]
-    ./Downloads/wall-street-playbook/components/home/cta-section.tsx [Client Component Browser]
-    ./Downloads/wall-street-playbook/components/home/cta-section.tsx [Server Component]
-    ./Downloads/wall-street-playbook/app/page.tsx [Server Component]
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
 
-  Client Component SSR:
-    ./Downloads/wall-street-playbook/components/scroll-reveal.tsx [Client Component SSR]
-    ./Downloads/wall-street-playbook/components/home/cta-section.tsx [Client Component SSR]
-    ./Downloads/wall-street-playbook/components/home/cta-section.tsx [Server Component]
-    ./Downloads/wall-street-playbook/app/page.tsx [Server Component]
-[05:59:34.219] Server  LOG      ✓ Compiled in 353ms
-[06:10:29.038] Server  LOG      ✓ Compiled in 468ms
-[07:05:46.596] Server  LOG      ✓ Compiled in 329ms
-[07:06:02.043] Server  LOG      ✓ Compiled in 351ms
-[08:24:45.404] Server  LOG      ✓ Compiled in 2.1s
-[08:25:36.111] Server  LOG      ✓ Compiled in 3s
-[16:03:40.696] Server  LOG      ✓ Compiled in 930ms
-[16:04:36.036] Server  LOG      ✓ Compiled in 1169ms
-[19:36:44.607] Server  LOG      ✓ Compiled in 345ms
+%s%s https://react.dev/link/hydration-mismatch 
+
+  ...
+    <Suspense name="/" fallback={<Fragment>}>
+      <HTTPAccessFallbackBoundary notFound={<SegmentViewNode>} forbidden={undefined} unauthorized={undefined}>
+        <HTTPAccessFallbackErrorBoundary pathname="/" notFound={<SegmentViewNode>} forbidden={undefined} ...>
+          <RedirectBoundary>
+            <RedirectErrorBoundary router={{...}}>
+              <InnerLayoutRouter url="/" tree={[...]} params={{}} cacheNode={{lazyData:null, ...}} segmentPath={[...]} ...>
+                <SegmentViewNode type="page" pagePath="/Downloads...">
+                  <SegmentTrieNode>
+                  <HomePage>
+                    <div className="flex min-h...">
+                      <Navbar>
+                      <main className="flex-grow ...">
+                        <HeroSection>
+                          <section className="relative b...">
+                            <div>
+                            <div>
+                            <div>
+                            <div>
+                            <div className="relative m...">
+                              <div className="grid lg:gr...">
+                                <div className="text-cente...">
+                                  <div
++                                   className="inline-flex items-center gap-2 rounded-full border border-gold/30 bg-go..."
+-                                   className="inline-flex items-center gap-2 rounded-full border border-gold/30 bg-go..."
+                                  >
+                                  <h1
++                                   className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white le..."
+-                                   className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white le..."
+                                  >
+                                  <p
++                                   className="mt-6 text-lg sm:text-xl leading-relaxed text-white/60 max-w-xl mx-auto ..."
+-                                   className="mt-6 text-lg sm:text-xl leading-relaxed text-white/60 max-w-xl mx-auto ..."
+                                  >
+                                  <div
++                                   className="mt-10 flex flex-col sm:flex-row items-center justify-center lg:justify-..."
+-                                   className="mt-10 flex flex-col sm:flex-row items-center justify-center lg:justify-..."
+                                  >
+                                  <div
++                                   className="mt-10 animate-slide-up animate-delay-100"
+-                                   className="mt-10 animate-slide-up animate-delay-400"
+                                  >
+                                <div
++                                 className="relative hidden lg:block animate-slide-up animate-delay-200"
+-                                 className="relative hidden lg:block animate-slide-up animate-delay-500"
+                                >
+                              <div
++                               className="mt-16 sm:mt-20 pt-10 border-t border-white/10 animate-slide-up animate-dela..."
+-                               className="mt-16 sm:mt-20 pt-10 border-t border-white/10 animate-slide-up animate-dela..."
+                              >
+                            ...
+                        ...
+                      ...
+                ...
+              ...
+

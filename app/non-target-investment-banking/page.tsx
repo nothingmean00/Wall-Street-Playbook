@@ -230,7 +230,7 @@ export default function NonTargetInvestmentBankingPage() {
                 href="/playbooks/networking-cold-email-playbook"
                 className="mt-8 inline-flex items-center gap-2 rounded-xl bg-gold px-8 py-4 text-base font-semibold text-navy hover:bg-white transition-colors"
               >
-                Get 50+ Email Templates — $67
+                Get 50+ Email Templates — $47
                 <ArrowRight className="h-5 w-5" />
               </Link>
             </div>
@@ -285,14 +285,14 @@ export default function NonTargetInvestmentBankingPage() {
                     icon: Users, 
                     title: "Networking Playbook", 
                     desc: "50+ cold email templates and follow-up sequences",
-                    price: "$67",
+                    price: "$47",
                     href: "/playbooks/networking-cold-email-playbook"
                   },
                   { 
                     icon: FileText, 
                     title: "Finance Technical Guide", 
                     desc: "400+ interview questions with detailed answers",
-                    price: "$127",
+                    price: "$79",
                     href: "/playbooks/finance-technical-interview-guide"
                   },
                 ].map((item) => (

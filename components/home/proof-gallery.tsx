@@ -222,8 +222,9 @@ function ResultCard({
           alt={`Interview invitation from ${result.firm}`}
           width={760}
           height={300}
+          sizes="(max-width: 640px) 340px, 380px"
           className="w-full h-auto group-hover:scale-[1.02] transition-transform duration-500"
-          quality={85}
+          quality={75}
         />
         {/* Hover overlay */}
         <div className="absolute inset-0 bg-gold/0 group-hover:bg-gold/5 transition-colors duration-300 flex items-center justify-center">
@@ -314,8 +315,9 @@ function Lightbox({
             alt={`Interview invitation from ${current.firm}`}
             width={1200}
             height={500}
+            sizes="(max-width: 640px) 95vw, (max-width: 1024px) 80vw, 896px"
             className="w-full h-auto"
-            quality={95}
+            quality={85}
           />
         </div>
       </div>

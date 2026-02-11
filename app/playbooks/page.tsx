@@ -167,7 +167,7 @@ const faqItems = [
   },
   {
     question: "Do you offer bundles or discounts?",
-    answer: "Yes — purchase all three available playbooks together and save $32 compared to buying individually. The Complete Prep Bundle is $259 (regularly $291). As we release more playbooks, the bundle will expand with even larger discounts.",
+    answer: "Yes — purchase all three available playbooks together and save $44 compared to buying individually. The Complete Prep Bundle is $149 (regularly $193). As we release more playbooks, the bundle will expand with even larger discounts.",
   },
   {
     question: "How long does it take to get through a playbook?",
@@ -181,7 +181,7 @@ const comparisonFeatures = [
   { feature: "Interview frequency data", wsp: true, forums: false, courses: false, selfStudy: false },
   { feature: "Tested email templates & scripts", wsp: true, forums: false, courses: false, selfStudy: false },
   { feature: "Updated for 2026 recruiting cycle", wsp: true, forums: false, courses: false, selfStudy: false },
-  { feature: "Under $150 per guide", wsp: true, forums: true, courses: false, selfStudy: true },
+  { feature: "Under $80 per guide", wsp: true, forums: true, courses: false, selfStudy: true },
   { feature: "Lifetime updates included", wsp: true, forums: false, courses: false, selfStudy: false },
   { feature: "30-day money-back guarantee", wsp: true, forums: false, courses: true, selfStudy: false },
   { feature: "Actionable on day one", wsp: true, forums: false, courses: false, selfStudy: false },
@@ -192,7 +192,7 @@ export default function PlaybooksPage() {
 
   // Calculate bundle pricing
   const totalIndividual = livePlaybooks.reduce((sum, p) => sum + p.price, 0)
-  const bundlePrice = 259
+  const bundlePrice = 149
   const bundleSavings = totalIndividual - bundlePrice
 
   return (
@@ -554,7 +554,7 @@ export default function PlaybooksPage() {
               <div className="grid grid-cols-5 border-t-2 border-gold/30 bg-gold/5">
                 <div className="p-4 text-sm font-bold text-navy">Price</div>
                 <div className="p-4 text-center">
-                  <span className="text-sm font-bold text-gold">$67–$127</span>
+                  <span className="text-sm font-bold text-gold">$47–$79</span>
                 </div>
                 <div className="p-4 text-center hidden sm:block">
                   <span className="text-sm text-charcoal/50">Free</span>
@@ -690,21 +690,21 @@ export default function PlaybooksPage() {
                 href="/playbooks/finance-technical-interview-guide"
                 className="inline-flex items-center gap-2 rounded-xl bg-gold px-6 py-3.5 text-sm font-semibold text-navy hover:bg-white transition-colors"
               >
-                Finance Technical Guide — $127
+                Finance Technical Guide — $79
                 <ArrowRight className="h-4 w-4" />
               </Link>
               <Link
                 href="/playbooks/pe-recruiting-playbook"
                 className="inline-flex items-center gap-2 rounded-xl border border-white/20 bg-white/5 px-6 py-3.5 text-sm font-semibold text-white hover:bg-white/10 transition-colors"
               >
-                PE Recruiting Playbook — $97
+                PE Recruiting Playbook — $67
                 <ArrowRight className="h-4 w-4" />
               </Link>
               <Link
                 href="/playbooks/networking-cold-email-playbook"
                 className="inline-flex items-center gap-2 rounded-xl border border-white/20 bg-white/5 px-6 py-3.5 text-sm font-semibold text-white hover:bg-white/10 transition-colors"
               >
-                Networking Playbook — $67
+                Networking Playbook — $47
                 <ArrowRight className="h-4 w-4" />
               </Link>
             </div>

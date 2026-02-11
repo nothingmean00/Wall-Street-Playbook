@@ -260,7 +260,7 @@ export default function LBOModelingGuidePage() {
                   href="/playbooks/lbo-modeling-course"
                   className="inline-flex items-center gap-2 rounded-xl bg-gold px-8 py-4 text-base font-semibold text-navy hover:bg-white transition-colors"
                 >
-                  Get Full LBO Course + Excel Templates — $127
+                  Get Full LBO Course + Excel Templates — $79
                   <ArrowRight className="h-5 w-5" />
                 </Link>
               </ScrollReveal>
@@ -341,7 +341,7 @@ export default function LBOModelingGuidePage() {
                   href="/playbooks/lbo-modeling-course"
                   className="mt-6 inline-flex items-center gap-2 rounded-xl bg-navy px-6 py-3 text-sm font-semibold text-white hover:bg-gold hover:text-navy transition-colors"
                 >
-                  Get the Full Course — $127
+                  Get the Full Course — $79
                   <ArrowRight className="h-4 w-4" />
                 </Link>
               </ScrollReveal>
@@ -362,7 +362,7 @@ export default function LBOModelingGuidePage() {
                 href="/playbooks/lbo-modeling-course"
                 className="group flex items-center gap-2 rounded-xl bg-gold px-8 py-4 text-base font-semibold text-navy hover:bg-white transition-colors"
               >
-                Get the LBO Course — $127
+                Get the LBO Course — $79
                 <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
               </Link>
               <Link

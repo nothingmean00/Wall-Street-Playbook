@@ -306,7 +306,7 @@ export default function PERecruiting2026Page() {
                 href="/playbooks/pe-recruiting-playbook"
                 className="group flex items-center gap-2 rounded-xl bg-navy px-8 py-4 text-base font-semibold text-white hover:bg-gold hover:text-navy transition-colors"
               >
-                Get 2026 PE Playbook — $97
+                Get 2026 PE Playbook — $67
                 <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
               </Link>
               <Link

@@ -36,7 +36,7 @@ export const playbooks: Playbook[] = [
     description: "88-page, 6-chapter technical mastery guide. Every question tagged by interview frequency, with dual-format answers (30-second and 3-minute versions) and red flag warnings.",
     longDescription:
       "Master the technical questions that determine who gets the offer and who goes home. This 88-page guide covers all 6 core topics tested in IB, PE, and finance interviews—accounting, enterprise value, DCF, comps, M&A, and LBOs. Every question is tagged by how often it actually appears (Always Asked, Frequently Asked, Sometimes Asked), with dual-format answers for quick checks and deep dives. Built differently from every other prep resource: interview frequency tags, red flag warnings for common mistakes, and interviewer perspective boxes that reveal the hidden evaluation criteria.",
-    price: 127,
+    price: 79,
     contents: [
       "Chapter 1: Accounting Fundamentals — 3 financial statements, build-a-business walkthrough, working capital deep dive, 12 must-know interview questions",
       "Chapter 2: Enterprise Value & Equity Value — EV bridge formula, diluted shares, treasury stock method, matching multiples correctly",
@@ -58,7 +58,7 @@ export const playbooks: Playbook[] = [
     description: "The definitive 42-page guide to PE recruiting. Timelines, headhunters, technicals, compensation data, and contrarian insights that go beyond conventional wisdom.",
     longDescription:
       "Private equity recruiting has reached an inflection point. This comprehensive 42-page, 20-chapter guide synthesizes 2023-2026 data from headhunter sources, industry practitioners, and proprietary research to give you actionable intelligence that contradicts or goes beyond mainstream advice. From the 7 headhunter firms that control megafund access to compensation data by level, from paper LBO frameworks to the contrarian insights that give you edge—this is everything you need to navigate on-cycle chaos, off-cycle opportunities, and everything in between.",
-    price: 97,
+    price: 67,
     contents: [
       "2026 recruiting timeline forecast and market structure analysis",
       "The 7 headhunter firms that control PE access (CPI, Henkel, SG Partners, Ratio, Amity, DSP, Oxbridge)",
@@ -90,7 +90,7 @@ export const playbooks: Playbook[] = [
     description: "47-page, 8-chapter networking system with 13 proven email templates, 30 informational interview questions, and segment-specific strategies for IB, PE, HF, and asset management.",
     longDescription:
       "70–85% of finance jobs are filled through networking and referrals. At non-target schools, that number approaches 100%. This 47-page playbook gives you the complete system: 13 cold email templates calibrated by scenario (alumni, non-target, career switcher, headhunter outreach, MD-level), the 5-sentence framework that fits on a phone screen, 30 informational interview questions organized by call phase, a minute-by-minute call structure, and the 3-touch relationship escalation framework that converts contacts into referrals. Every strategy is tagged by candidate type (target, non-target, career switcher, international, MBA, diversity) with hard data on response rates by channel. Includes email format cheat sheets for 13+ banks, a full CRM template, and the contrarian insights that challenge conventional networking wisdom.",
-    price: 67,
+    price: 47,
     contents: [
       "Chapter 1: Cold Email Strategy — 5 subject line formulas, the 5-sentence framework, 13 proven email templates by scenario, the 10 mistakes that get you blacklisted, optimal follow-up cadence",
       "Chapter 2: LinkedIn Strategy — Profile optimization for finance, 2-step outreach method (50% acceptance rate), Google X-Ray search techniques, 7 LinkedIn behaviors that turn off professionals",
