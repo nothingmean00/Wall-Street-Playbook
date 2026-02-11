@@ -36,7 +36,7 @@ export async function POST(request: NextRequest) {
     }
 
     const product = PRODUCTS[productId as ProductId]
-    const appUrl = process.env.NEXT_PUBLIC_APP_URL || 'https://wallstreetplaybook.com'
+    const appUrl = process.env.NEXT_PUBLIC_APP_URL || 'https://wallstreetplaybook.org'
 
     const stripe = getStripe()
 
