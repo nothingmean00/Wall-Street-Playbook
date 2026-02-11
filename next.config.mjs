@@ -17,17 +17,9 @@ const nextConfig = {
   compress: true,
   // Power pack performance
   poweredByHeader: false,
-  // Redirect www to non-www for canonical consistency
-  async redirects() {
-    return [
-      {
-        source: '/:path*',
-        has: [{ type: 'host', value: 'www.wallstreetplaybook.org' }],
-        destination: 'https://wallstreetplaybook.org/:path*',
-        permanent: true,
-      },
-    ]
-  },
+  // NOTE: www → non-www redirect should be configured in Vercel Dashboard
+  // (Settings → Domains) rather than here, to avoid CORS issues with API routes
+  // and the web manifest. Vercel handles domain-level redirects before the app runs.
 }
 
 export default nextConfig
