@@ -7,7 +7,7 @@ const BLOB_BASE_URL = process.env.BLOB_BASE_URL || 'https://53r2eh0lojknhqsa.pub
 // Map product IDs to their PDF filenames in Vercel Blob
 const PRODUCT_FILES: Record<string, string> = {
   'pe-recruiting-playbook': 'PE-Recruiting-Guide-2026.pdf',
-  'ib-technical-guide': 'IB-Technical-Interview-Guide.pdf',
+  'finance-technical-interview-guide': 'IB-Technical-Interview-Guide.pdf',
   'networking-cold-email-playbook': 'Networking-Cold-Email-Playbook.pdf',
   'lbo-modeling-course': 'LBO-Modeling-Course.pdf',
   'stock-pitch-guide': 'Stock-Pitch-Guide.pdf',

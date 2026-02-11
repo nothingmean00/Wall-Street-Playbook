@@ -20,7 +20,7 @@ export async function generateStaticParams() {
 }
 
 // Playbooks that are live and purchasable
-const livePlaybookSlugs = ["ib-technical-guide", "pe-recruiting-playbook", "networking-cold-email-playbook"]
+const livePlaybookSlugs = ["finance-technical-interview-guide", "pe-recruiting-playbook", "networking-cold-email-playbook"]
 
 export async function generateMetadata({ params }: PlaybookPageProps): Promise<Metadata> {
   const { slug } = await params
@@ -131,7 +131,7 @@ export default async function PlaybookPage({ params }: PlaybookPageProps) {
     aggregateRating: {
       "@type": "AggregateRating",
       ratingValue: "4.9",
-      reviewCount: playbook.slug === "ib-technical-guide" ? "47" : playbook.slug === "networking-cold-email-playbook" ? "29" : "34",
+      reviewCount: playbook.slug === "finance-technical-interview-guide" ? "47" : playbook.slug === "networking-cold-email-playbook" ? "29" : "34",
       bestRating: "5",
       worstRating: "1",
     },
@@ -145,11 +145,11 @@ export default async function PlaybookPage({ params }: PlaybookPageProps) {
         },
         author: {
           "@type": "Person",
-          name: playbook.slug === "ib-technical-guide"
+          name: playbook.slug === "finance-technical-interview-guide"
             ? "Non-Target Senior"
             : "GS TMT Analyst",
         },
-        reviewBody: playbook.slug === "ib-technical-guide"
+        reviewBody: playbook.slug === "finance-technical-interview-guide"
           ? "The dual-format answers are a game-changer. I used the 30-second versions for quick HireVue rounds and the deep dives for Superdays. Ended up with offers from two BBs."
           : "The headhunter section alone was worth it. I had no idea CPI asks paper LBOs in their initial calls. This intel saved me from bombing my first impression.",
       },
@@ -229,7 +229,7 @@ export default async function PlaybookPage({ params }: PlaybookPageProps) {
                   <div className="h-1 w-10 bg-gold mb-6" />
 
                   {playbook.slug === 'pe-recruiting-playbook' && <PEPlaybookPreview />}
-                  {playbook.slug === 'ib-technical-guide' && <IBTechnicalPreview />}
+                  {playbook.slug === 'finance-technical-interview-guide' && <IBTechnicalPreview />}
                   {playbook.slug === 'networking-cold-email-playbook' && <NetworkingPreview />}
                 </div>
 
@@ -242,7 +242,7 @@ export default async function PlaybookPage({ params }: PlaybookPageProps) {
                   <div className="mt-2 h-1 w-10 bg-gold" />
                   
                   <div className="mt-6 grid gap-4 sm:grid-cols-2">
-                    {(playbook.slug === 'ib-technical-guide' ? [
+                    {(playbook.slug === 'finance-technical-interview-guide' ? [
                       "Undergrads and graduates prepping for IB interviews at bulge brackets and elite boutiques",
                       "Lateral candidates transitioning from Big 4, consulting, or corporate roles into banking",
                       "PE/HF candidates who need sharp technicals for buy-side interviews",
@@ -327,7 +327,7 @@ export default async function PlaybookPage({ params }: PlaybookPageProps) {
                   <div className="mt-2 h-1 w-10 bg-gold" />
 
                   <div className="mt-6 space-y-6">
-                    {(playbook.slug === 'ib-technical-guide' ? [
+                    {(playbook.slug === 'finance-technical-interview-guide' ? [
                       { quote: "The dual-format answers are a game-changer. I used the 30-second versions for quick HireVue rounds and the deep dives for Superdays. Ended up with offers from two BBs.", author: "Non-Target Senior → BB Analyst" },
                       { quote: "The frequency tags alone saved me 40+ hours of studying. I stopped wasting time on obscure topics and drilled the 'Always Asked' questions until I could answer in my sleep.", author: "Liberal Arts Major → Evercore SA" },
                       { quote: "I've used WSO, BIWS, and Rosenbaum's textbook. This guide is what actually made the concepts click—the red flag boxes showed me exactly where I was losing points without knowing it.", author: "Big 4 TAS → MM IB Lateral" },
@@ -358,7 +358,7 @@ export default async function PlaybookPage({ params }: PlaybookPageProps) {
                     <div>
                       <h3 className="text-lg font-semibold text-green-800">100% Money-Back Guarantee</h3>
                       <p className="mt-1 text-sm text-green-700">
-                        {playbook.slug === 'ib-technical-guide' 
+                        {playbook.slug === 'finance-technical-interview-guide' 
                           ? "If this guide doesn't meaningfully improve your technical interview performance within 30 days, email us for a full refund. No questions asked. Thousands of candidates have used these frameworks to land offers at top firms."
                           : "If this playbook doesn't meaningfully improve your PE recruiting prep within 30 days, email us for a full refund. No questions asked. We've helped hundreds of candidates—we're confident this will help you too."}
                       </p>
@@ -375,7 +375,7 @@ export default async function PlaybookPage({ params }: PlaybookPageProps) {
                     <div className="flex items-center gap-2 mb-4 px-3 py-1.5 rounded-full bg-gold/10 w-fit">
                       <Clock className="h-3.5 w-3.5 text-gold" />
                       <span className="text-xs font-medium text-gold">
-                        {playbook.slug === 'ib-technical-guide' ? '2026 recruiting season is live' : '2026 on-cycle starts soon'}
+                        {playbook.slug === 'finance-technical-interview-guide' ? '2026 recruiting season is live' : '2026 on-cycle starts soon'}
                       </span>
                     </div>
 

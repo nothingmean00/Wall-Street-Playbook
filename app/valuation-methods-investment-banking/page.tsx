@@ -82,7 +82,7 @@ export default function ValuationMethodsPage() {
               </p>
               <div className="mt-8">
                 <Link
-                  href="/playbooks/ib-technical-guide"
+                  href="/playbooks/finance-technical-interview-guide"
                   className="inline-flex items-center justify-center gap-2 rounded-lg bg-gold px-6 py-3 text-sm font-semibold text-navy transition-colors hover:bg-gold/90"
                 >
                   Full Valuation Coverage in the Technical Guide — $127
@@ -220,7 +220,7 @@ export default function ValuationMethodsPage() {
               </p>
               <div className="mt-8">
                 <Link
-                  href="/playbooks/ib-technical-guide"
+                  href="/playbooks/finance-technical-interview-guide"
                   className="inline-flex items-center justify-center gap-2 rounded-lg bg-gold px-8 py-4 text-sm font-semibold text-navy transition-colors hover:bg-gold/90"
                 >
                   Get the Finance Technical Interview Guide — $127

@@ -3,7 +3,7 @@ import type { Playbook } from "@/lib/data"
 import { ArrowRight, Sparkles, BookOpen, FileText, Users, TrendingUp, Target, BarChart3, Briefcase, Award, Zap } from "lucide-react"
 
 const playbookIcons: Record<string, typeof BookOpen> = {
-  "ib-technical-guide": BookOpen,
+  "finance-technical-interview-guide": BookOpen,
   "pe-recruiting-playbook": TrendingUp,
   "networking-cold-email-playbook": Users,
   "lbo-modeling-course": BarChart3,
@@ -75,7 +75,7 @@ export function PlaybookCard({ playbook, isBestseller }: PlaybookCardProps) {
       <div className="flex items-center justify-between border-t border-border bg-off-white/30 px-8 py-6">
         <div className="flex items-baseline gap-1.5">
           <span className="text-3xl font-bold text-navy">${playbook.price}</span>
-          <span className="text-sm text-charcoal/40">one-time</span>
+          <span className="text-sm text-charcoal/70">one-time</span>
         </div>
         <Link
           href={`/playbooks/${playbook.slug}`}

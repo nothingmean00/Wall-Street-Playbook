@@ -36,8 +36,8 @@ const popularSlugs = new Set([
 
 // Playbook recommendations per category
 const categoryPlaybooks: Record<string, { title: string; slug: string; price: number }> = {
-  Technical: { title: "Finance Technical Interview Guide", slug: "ib-technical-guide", price: 127 },
-  Interviews: { title: "Finance Technical Interview Guide", slug: "ib-technical-guide", price: 127 },
+  Technical: { title: "Finance Technical Interview Guide", slug: "finance-technical-interview-guide", price: 127 },
+  Interviews: { title: "Finance Technical Interview Guide", slug: "finance-technical-interview-guide", price: 127 },
   Networking: { title: "Networking & Cold Email Playbook", slug: "networking-cold-email-playbook", price: 67 },
   Recruiting: { title: "2026 PE Recruiting Playbook", slug: "pe-recruiting-playbook", price: 97 },
   "Career Strategy": { title: "2026 PE Recruiting Playbook", slug: "pe-recruiting-playbook", price: 97 },

@@ -148,7 +148,7 @@ export default function IBTechnicalCheatSheetPage() {
                 </div>
                 <div className="mt-6">
                   <Link
-                    href="/playbooks/ib-technical-guide"
+                    href="/playbooks/finance-technical-interview-guide"
                     className="inline-flex items-center gap-2 rounded-lg bg-gold px-6 py-3 text-sm font-semibold text-navy transition-colors hover:bg-gold/90"
                   >
                     Get the Full Guide — $127

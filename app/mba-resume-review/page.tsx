@@ -352,7 +352,7 @@ export default function MBAResumeReviewPage() {
                 <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
               </Link>
               <Link
-                href="/playbooks/ib-technical-guide"
+                href="/playbooks/finance-technical-interview-guide"
                 className="rounded-xl border-2 border-white/20 px-8 py-4 text-base font-semibold text-white hover:border-gold hover:text-gold transition-colors"
               >
                 Finance Technical Guide

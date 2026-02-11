@@ -3,7 +3,7 @@ import { BookOpen, ArrowRight, Star, Shield, Check, Sparkles, Lock } from "lucid
 
 const livePlaybooks = [
   {
-    slug: "ib-technical-guide",
+    slug: "finance-technical-interview-guide",
     title: "Finance Technical Interview Guide",
     description:
       "88 pages. 6 chapters. Every question tagged by interview frequency with dual-format answers.",
@@ -124,11 +124,11 @@ export function PlaybooksComingSoon() {
                     <span className="text-2xl font-bold text-navy">
                       ${playbook.price}
                     </span>
-                    <span className="text-sm text-charcoal/50 ml-1.5">
+                    <span className="text-sm text-charcoal/70 ml-1.5">
                       one-time
                     </span>
                   </div>
-                  <span className="inline-flex items-center gap-2 text-sm font-semibold text-gold group-hover:gap-3 transition-all">
+                  <span className="inline-flex items-center gap-2 text-sm font-semibold text-gold-dark group-hover:gap-3 transition-all">
                     View Playbook
                     <ArrowRight className="h-4 w-4" />
                   </span>

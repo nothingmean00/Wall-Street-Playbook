@@ -374,7 +374,7 @@ export default function DCFModelGuidePage() {
             
             <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
               <Link
-                href="/playbooks/ib-technical-guide"
+                href="/playbooks/finance-technical-interview-guide"
                 className="group flex items-center gap-2 rounded-xl bg-gold px-8 py-4 text-base font-semibold text-navy hover:bg-white transition-colors"
               >
                 Get the Finance Technical Interview Guide — $127

@@ -31,7 +31,7 @@ export interface Guide {
 
 export const playbooks: Playbook[] = [
   {
-    slug: "ib-technical-guide",
+    slug: "finance-technical-interview-guide",
     title: "Finance Technical Interview Guide",
     description: "88-page, 6-chapter technical mastery guide. Every question tagged by interview frequency, with dual-format answers (30-second and 3-minute versions) and red flag warnings.",
     longDescription:
@@ -473,7 +473,7 @@ Your stock pitch is the single most important element of hedge fund recruiting. 
 
 *Need the complete framework for stock pitches? Our [Stock Pitch Template & Examples](/playbooks/stock-pitch-guide) includes 5 full pitches with commentary from hedge fund analysts.*
 
-*Looking to strengthen your fundamentals? The [Finance Technical Interview Guide](/playbooks/ib-technical-guide) covers the accounting and valuation knowledge funds expect.*
+*Looking to strengthen your fundamentals? The [Finance Technical Interview Guide](/playbooks/finance-technical-interview-guide) covers the accounting and valuation knowledge funds expect.*
     `,
   },
   {
@@ -595,7 +595,7 @@ Landing the internship is just the beginning. Converting to a full-time offer re
 
 ---
 
-*Ready to nail the technical interviews? Our [Finance Technical Interview Guide](/playbooks/ib-technical-guide) covers 400+ real questions with detailed answers.*
+*Ready to nail the technical interviews? Our [Finance Technical Interview Guide](/playbooks/finance-technical-interview-guide) covers 400+ real questions with detailed answers.*
 
 *Need help with networking? The [Networking & Cold Email Playbook](/playbooks/networking-cold-email-playbook) has 50+ templates that actually get responses.*
     `,
@@ -713,7 +713,7 @@ It matters less than sophomore/junior summers, but it's still valuable. Any fina
 
 ---
 
-*Ready to nail your internship interviews? Our [Finance Technical Interview Guide](/playbooks/ib-technical-guide) covers everything you'll be asked.*
+*Ready to nail your internship interviews? Our [Finance Technical Interview Guide](/playbooks/finance-technical-interview-guide) covers everything you'll be asked.*
 
 *Need help with the networking game? The [Networking & Cold Email Playbook](/playbooks/networking-cold-email-playbook) has the exact templates that get responses.*
     `,
@@ -846,7 +846,7 @@ PE and hedge fund exits typically come with significant pay bumps. Stay in banki
 
 ---
 
-*Ready to break into investment banking? Start with our [Finance Technical Interview Guide](/playbooks/ib-technical-guide) to nail the interviews.*
+*Ready to break into investment banking? Start with our [Finance Technical Interview Guide](/playbooks/finance-technical-interview-guide) to nail the interviews.*
 
 *Working on your candidacy? A polished resume is essential. Consider a [Professional Resume Review](/resume-services).*
     `,
@@ -993,7 +993,7 @@ Pursue stepping-stone opportunities in parallel. Big 4 TAS or corporate banking 
 
 *Need help with networking? Our [Networking & Cold Email Playbook](/playbooks/networking-cold-email-playbook) has 50+ templates and follow-up strategies.*
 
-*Ready for technicals? The [Finance Technical Interview Guide](/playbooks/ib-technical-guide) covers everything you'll be asked.*
+*Ready for technicals? The [Finance Technical Interview Guide](/playbooks/finance-technical-interview-guide) covers everything you'll be asked.*
     `,
   },
   {
@@ -1075,7 +1075,7 @@ Keep emails to 5 sentences maximum and always use your school email address.
 
 ---
 
-*Ready to nail the technical questions? Our [Finance Technical Interview Guide](/playbooks/ib-technical-guide) covers the 400+ questions you'll actually face.*
+*Ready to nail the technical questions? Our [Finance Technical Interview Guide](/playbooks/finance-technical-interview-guide) covers the 400+ questions you'll actually face.*
 
 *Need help with your resume? Get a [professional resume review](/resume-services) from finance professionals who've screened thousands of candidates.*
     `,
@@ -1158,7 +1158,7 @@ You've looked at your resume for 10 hours; you are now blind to your own errors.
 
 *Don't let a formatting error be the reason you miss out on a $110K starting salary. Get a [Professional Resume Review](/resume-services) from finance professionals who catch what you miss.*
 
-*Ready to master the technical questions? Check out our [Finance Technical Interview Guide](/playbooks/ib-technical-guide).*
+*Ready to master the technical questions? Check out our [Finance Technical Interview Guide](/playbooks/finance-technical-interview-guide).*
     `,
   },
   {
@@ -1254,7 +1254,7 @@ You're prepared when you can:
 
 ---
 
-*Want the full 400+ question bank with detailed answers? Get the [Finance Technical Interview Guide](/playbooks/ib-technical-guide).*
+*Want the full 400+ question bank with detailed answers? Get the [Finance Technical Interview Guide](/playbooks/finance-technical-interview-guide).*
 
 *Need to master LBO modeling specifically? Check out our [LBO Modeling Crash Course](/playbooks/lbo-modeling-course).*
     `,
@@ -1363,7 +1363,7 @@ Rule of 144: Equity quadruples, IRR ≈ 144/years.
 
 ---
 
-*Want all 400+ questions with detailed answers? Get the [Finance Technical Interview Guide](/playbooks/ib-technical-guide).*
+*Want all 400+ questions with detailed answers? Get the [Finance Technical Interview Guide](/playbooks/finance-technical-interview-guide).*
 
 *Need to master LBO modeling? Our [LBO Modeling Crash Course](/playbooks/lbo-modeling-course) includes 3 full model templates.*
     `,
@@ -1469,7 +1469,7 @@ Create an Excel tracker with: Bank, Name, Role, Email, Date Sent, Date Followed 
 
 *Want 50+ more templates for every scenario? Get the [Networking & Cold Email Playbook](/playbooks/networking-cold-email-playbook).*
 
-*Got the interview? Make sure you don't blow it on technicals. Check out the [Finance Technical Interview Guide](/playbooks/ib-technical-guide).*
+*Got the interview? Make sure you don't blow it on technicals. Check out the [Finance Technical Interview Guide](/playbooks/finance-technical-interview-guide).*
     `,
   },
   {
@@ -1559,7 +1559,7 @@ Saying "No" to "Do you have any questions?" is an automatic fail.
 
 *Want 30+ example stories and frameworks for every behavioral question? Get the [Walk Me Through Your Resume Playbook](/playbooks/resume-story-playbook).*
 
-*Ready to nail the technicals too? Check out the [Finance Technical Interview Guide](/playbooks/ib-technical-guide).*
+*Ready to nail the technicals too? Check out the [Finance Technical Interview Guide](/playbooks/finance-technical-interview-guide).*
     `,
   },
   {
@@ -1680,7 +1680,7 @@ There's no shame in taking a different path. Many successful finance professiona
 
 ---
 
-*Need to nail the interviews once you get them? Our [Finance Technical Interview Guide](/playbooks/ib-technical-guide) covers 400+ real questions.*
+*Need to nail the interviews once you get them? Our [Finance Technical Interview Guide](/playbooks/finance-technical-interview-guide) covers 400+ real questions.*
 
 *Working on your resume positioning? A [Professional Resume Review](/resume-services) can help you highlight strengths over GPA.*
     `,
@@ -1811,7 +1811,7 @@ The question isn't just "Can I get in?" but "Is this the best path for my goals 
 
 ---
 
-*Preparing for interviews? Our [Finance Technical Interview Guide](/playbooks/ib-technical-guide) covers everything you'll be asked regardless of your background.*
+*Preparing for interviews? Our [Finance Technical Interview Guide](/playbooks/finance-technical-interview-guide) covers everything you'll be asked regardless of your background.*
 
 *Need help positioning your non-traditional background? Get a [Professional Resume Review](/resume-services).*
     `,
@@ -1923,7 +1923,7 @@ What about investment banking—as opposed to consulting, corporate finance, or 
 
 *Want to nail all the behavioral questions? Our [Walk Me Through Your Resume Playbook](/playbooks/resume-story-playbook) has 30+ example stories and frameworks.*
 
-*Ready for technicals? The [Finance Technical Interview Guide](/playbooks/ib-technical-guide) covers 400+ questions.*
+*Ready for technicals? The [Finance Technical Interview Guide](/playbooks/finance-technical-interview-guide) covers 400+ questions.*
     `,
   },
   {
@@ -2100,7 +2100,7 @@ Target 10-20 new outreach emails per week during recruiting season.
 
 *Want 50+ more templates for every scenario? Get the [Networking & Cold Email Playbook](/playbooks/networking-cold-email-playbook).*
 
-*Ready for interviews? The [Finance Technical Interview Guide](/playbooks/ib-technical-guide) covers everything you'll be asked.*
+*Ready for interviews? The [Finance Technical Interview Guide](/playbooks/finance-technical-interview-guide) covers everything you'll be asked.*
     `,
   },
   {
@@ -2235,7 +2235,7 @@ Understanding what drives value changes shows you truly understand the model, no
 
 ---
 
-*Want to master all 400+ technical questions? Get the [Finance Technical Interview Guide](/playbooks/ib-technical-guide).*
+*Want to master all 400+ technical questions? Get the [Finance Technical Interview Guide](/playbooks/finance-technical-interview-guide).*
 
 *Need to build actual DCF models? Our [LBO Modeling Crash Course](/playbooks/lbo-modeling-course) includes model templates.*
     `,
@@ -2551,7 +2551,7 @@ Prestige matters less than people think. What matters is what you learn, what de
 
 ---
 
-*Preparing for banking interviews? Our [Finance Technical Interview Guide](/playbooks/ib-technical-guide) covers questions asked at all bank tiers.*
+*Preparing for banking interviews? Our [Finance Technical Interview Guide](/playbooks/finance-technical-interview-guide) covers questions asked at all bank tiers.*
 
 *Need networking help? The [Networking & Cold Email Playbook](/playbooks/networking-cold-email-playbook) has templates for reaching bankers at any firm.*
     `,
@@ -2739,7 +2739,7 @@ After the Superday, send a thank-you email to each interviewer (get business car
 
 *Want hour-by-hour preparation and stress management strategies? Get [The Superday Survival Guide](/playbooks/superday-survival-guide).*
 
-*Need to brush up on technicals? The [Finance Technical Interview Guide](/playbooks/ib-technical-guide) covers every question you'll face.*
+*Need to brush up on technicals? The [Finance Technical Interview Guide](/playbooks/finance-technical-interview-guide) covers every question you'll face.*
     `,
   },
   {
@@ -2886,7 +2886,7 @@ Banks expect Big 4 laterals to be technically sharp. You should know:
 
 ---
 
-*Ready to nail banking interviews? Our [Finance Technical Interview Guide](/playbooks/ib-technical-guide) covers every question you'll face.*
+*Ready to nail banking interviews? Our [Finance Technical Interview Guide](/playbooks/finance-technical-interview-guide) covers every question you'll face.*
 
 *Need help positioning your Big 4 experience? A [Professional Resume Review](/resume-services) can help you frame your background for banking.*
     `,
@@ -3015,7 +3015,7 @@ Similarly, dilutive deals can be excellent if the strategic benefits outweigh th
 
 ---
 
-*Want to master all M&A technicals? Our [Finance Technical Interview Guide](/playbooks/ib-technical-guide) covers merger models, deal mechanics, and 400+ questions.*
+*Want to master all M&A technicals? Our [Finance Technical Interview Guide](/playbooks/finance-technical-interview-guide) covers merger models, deal mechanics, and 400+ questions.*
 
 *Need to build actual merger models? Check out the [LBO Modeling Crash Course](/playbooks/lbo-modeling-course) for hands-on practice.*
     `,
@@ -3423,7 +3423,7 @@ This is how non-target students break in. Not by being the most qualified on pap
 
 *Want 50+ email templates for every scenario? Get the [Networking & Cold Email Playbook](/playbooks/networking-cold-email-playbook).*
 
-*Ready for interviews? The [Finance Technical Interview Guide](/playbooks/ib-technical-guide) covers 400+ questions you'll face.*
+*Ready for interviews? The [Finance Technical Interview Guide](/playbooks/finance-technical-interview-guide) covers 400+ questions you'll face.*
     `,
   },
   {
@@ -3648,7 +3648,7 @@ The students who break into finance from non-target schools often take this exac
 
 *Need help with networking? The [Networking & Cold Email Playbook](/playbooks/networking-cold-email-playbook) has 50+ templates.*
 
-*Ready for technicals? Our [Finance Technical Interview Guide](/playbooks/ib-technical-guide) covers everything you'll be asked.*
+*Ready for technicals? Our [Finance Technical Interview Guide](/playbooks/finance-technical-interview-guide) covers everything you'll be asked.*
     `,
   },
   {
@@ -3846,7 +3846,7 @@ Certifications sit at #5. They help, but they're not the primary driver of succe
 
 ---
 
-*Ready to nail the technical interview? Our [Finance Technical Interview Guide](/playbooks/ib-technical-guide) covers 400+ real questions.*
+*Ready to nail the technical interview? Our [Finance Technical Interview Guide](/playbooks/finance-technical-interview-guide) covers 400+ real questions.*
 
 *Need help with networking? The [Networking & Cold Email Playbook](/playbooks/networking-cold-email-playbook) has proven templates.*
     `,
@@ -4104,7 +4104,7 @@ Once you're in IB, your Big 4 background becomes part of your story—not a limi
 
 ---
 
-*Ready to nail IB technicals? Our [Finance Technical Interview Guide](/playbooks/ib-technical-guide) covers 400+ questions you'll face.*
+*Ready to nail IB technicals? Our [Finance Technical Interview Guide](/playbooks/finance-technical-interview-guide) covers 400+ questions you'll face.*
 
 *Need help networking your way in? The [Networking & Cold Email Playbook](/playbooks/networking-cold-email-playbook) has proven templates.*
     `,
@@ -4407,7 +4407,7 @@ The students who break in from non-target schools are the ones who refuse to acc
 
 ---
 
-*Ready to nail your interviews? Our [Finance Technical Interview Guide](/playbooks/ib-technical-guide) covers 400+ questions.*
+*Ready to nail your interviews? Our [Finance Technical Interview Guide](/playbooks/finance-technical-interview-guide) covers 400+ questions.*
 
 *Need networking help? The [Networking & Cold Email Playbook](/playbooks/networking-cold-email-playbook) has 50+ templates that get responses.*
     `,

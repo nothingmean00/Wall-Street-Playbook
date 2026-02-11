@@ -171,7 +171,7 @@ export default function InvestmentBankingInterviewPrepPage() {
             
             <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
               <Link
-                href="/playbooks/ib-technical-guide"
+                href="/playbooks/finance-technical-interview-guide"
                 className="group flex items-center gap-2 rounded-xl bg-gold px-8 py-4 text-base font-semibold text-navy transition-all hover:bg-white"
               >
                 Get the Technical Guide
@@ -264,7 +264,7 @@ export default function InvestmentBankingInterviewPrepPage() {
                   Our Finance Technical Guide covers every question you&apos;ll face with detailed answers.
                 </p>
                 <Link
-                  href="/playbooks/ib-technical-guide"
+                  href="/playbooks/finance-technical-interview-guide"
                   className="mt-6 inline-flex items-center gap-2 rounded-xl bg-gold px-6 py-3 text-sm font-semibold text-navy hover:bg-white transition-colors"
                 >
                   Get the Full Guide — $127
@@ -434,7 +434,7 @@ export default function InvestmentBankingInterviewPrepPage() {
             
             <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
               <Link
-                href="/playbooks/ib-technical-guide"
+                href="/playbooks/finance-technical-interview-guide"
                 className="group flex items-center gap-2 rounded-xl bg-navy px-8 py-4 text-base font-semibold text-white hover:bg-gold hover:text-navy transition-colors"
               >
                 Get the Finance Technical Guide — $127

@@ -57,7 +57,7 @@ export function getSegmentPricing(segment: Segment | null | undefined) {
 // Product IDs mapped to Stripe Price IDs (you'll create these in Stripe Dashboard)
 export const PRODUCTS = {
   // Playbooks
-  'ib-technical-guide': {
+  'finance-technical-interview-guide': {
     priceId: process.env.STRIPE_PRICE_IB_TECHNICAL || 'price_xxx',
     name: 'Finance Technical Interview Guide',
     price: 127,

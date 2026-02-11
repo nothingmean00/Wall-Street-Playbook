@@ -92,7 +92,7 @@ function getSidebarCTA(slug: string, category: string, tags?: string[]) {
       product: "Finance Technical Interview Guide",
     description: "88 pages. 6 chapters. Every question tagged by frequency with dual-format answers.",
     price: 127,
-    href: "/playbooks/ib-technical-guide",
+    href: "/playbooks/finance-technical-interview-guide",
     features: ["Interview frequency tags on every concept", "30-second + 3-minute answer formats", "Red flag warnings for common mistakes", "Self-assessment scorecards"],
   }
 }

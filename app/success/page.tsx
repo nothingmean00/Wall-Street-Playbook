@@ -265,7 +265,7 @@ function SuccessContent() {
               <p className="text-xs font-semibold uppercase tracking-wider text-gold mb-2">
                 Recommended Next
               </p>
-              {sessionData.productId === "ib-technical-guide" ? (
+              {sessionData.productId === "finance-technical-interview-guide" ? (
                 <>
                   <h3 className="text-lg font-bold text-navy">Networking & Cold Email Playbook</h3>
                   <p className="mt-1 text-sm text-charcoal/60">
@@ -300,7 +300,7 @@ function SuccessContent() {
                     You know how to get the meeting — now ace the interview. 88 pages of frequency-tagged technical questions with dual-format answers covering accounting, DCF, M&A, and LBOs.
                   </p>
                   <Link
-                    href="/playbooks/ib-technical-guide"
+                    href="/playbooks/finance-technical-interview-guide"
                     className="mt-4 inline-flex items-center gap-2 rounded-lg bg-navy px-5 py-2.5 text-sm font-semibold text-white hover:bg-gold hover:text-navy transition-colors"
                   >
                     View Technical Guide — $127

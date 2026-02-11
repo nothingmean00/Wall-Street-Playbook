@@ -51,7 +51,7 @@ export const metadata: Metadata = {
 }
 
 // Playbooks that are live and purchasable
-const livePlaybookSlugs = ["ib-technical-guide", "pe-recruiting-playbook", "networking-cold-email-playbook"]
+const livePlaybookSlugs = ["finance-technical-interview-guide", "pe-recruiting-playbook", "networking-cold-email-playbook"]
 
 // Upcoming playbooks with descriptions
 const upcomingPlaybooks = [
@@ -687,7 +687,7 @@ export default function PlaybooksPage() {
             </p>
             <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-4 flex-wrap">
               <Link
-                href="/playbooks/ib-technical-guide"
+                href="/playbooks/finance-technical-interview-guide"
                 className="inline-flex items-center gap-2 rounded-xl bg-gold px-6 py-3.5 text-sm font-semibold text-navy hover:bg-white transition-colors"
               >
                 Finance Technical Guide — $127

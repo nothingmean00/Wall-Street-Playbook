@@ -46,7 +46,7 @@ export async function POST(request: NextRequest) {
 
     // For bundles, list individual playbooks as line items with the bundle discount
     const bundledProducts = productId === 'available-bundle'
-      ? ['ib-technical-guide', 'pe-recruiting-playbook', 'networking-cold-email-playbook'] as const
+      ? ['finance-technical-interview-guide', 'pe-recruiting-playbook', 'networking-cold-email-playbook'] as const
       : null
 
     const lineItems = bundledProducts

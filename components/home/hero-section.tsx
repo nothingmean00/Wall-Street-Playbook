@@ -42,13 +42,13 @@ export function HeroSection() {
           {/* Left column - Text content */}
           <div className="text-center lg:text-left">
             {/* Eyebrow - Real urgency based on recruiting calendar */}
-            <div className="inline-flex items-center gap-2 rounded-full border border-gold/30 bg-gold/10 px-4 py-1.5 mb-6 animate-slide-up">
+            <div className="inline-flex items-center gap-2 rounded-full border border-gold/30 bg-gold/10 px-4 py-1.5 mb-6">
               <span className="h-1.5 w-1.5 rounded-full bg-gold animate-pulse" />
               <span className="text-xs font-semibold uppercase tracking-widest text-gold">2027 Summer Analyst Deadlines Approaching</span>
             </div>
             
             {/* Headline */}
-            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-[1.1] animate-slide-up animate-delay-100">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-[1.1]">
               Land the Interview.{" "}
               <span className="relative inline-block">
                 <span className="text-gradient-gold">Get the Offer.</span>
@@ -57,7 +57,7 @@ export function HeroSection() {
             </h1>
 
             {/* Subheadline */}
-            <p className="mt-6 text-lg sm:text-xl leading-relaxed text-white/60 max-w-xl mx-auto lg:mx-0 animate-slide-up animate-delay-200">
+            <p className="mt-6 text-lg sm:text-xl leading-relaxed text-white/60 max-w-xl mx-auto lg:mx-0">
               The playbooks, technical guides, and resume services used by candidates who broke into
               <span className="text-white/80"> Goldman Sachs</span>,
               <span className="text-white/80"> Blackstone</span>,
@@ -66,9 +66,9 @@ export function HeroSection() {
             </p>
 
             {/* CTAs */}
-            <div className="mt-10 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 animate-slide-up animate-delay-300">
+            <div className="mt-10 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
               <Link
-                href="/playbooks/ib-technical-guide"
+                href="/playbooks/finance-technical-interview-guide"
                 onClick={() => track("cta_clicked", { location: "hero_guide" })}
                 className="group relative flex w-full sm:w-auto items-center justify-center gap-2 rounded-xl bg-gold px-8 py-4 text-base font-semibold text-navy overflow-hidden transition-all hover:shadow-lg hover:shadow-gold/25"
               >
@@ -86,7 +86,7 @@ export function HeroSection() {
             </div>
 
             {/* Firm logos / social proof bar */}
-            <div className="mt-10 animate-slide-up animate-delay-400">
+            <div className="mt-10 animate-slide-up animate-delay-100">
               <p className="text-xs font-medium uppercase tracking-widest text-white/30 mb-3">Candidates who use our materials have landed interviews at firms like</p>
               <div className="flex flex-wrap items-center justify-center lg:justify-start gap-x-5 gap-y-2">
                 {["Goldman Sachs", "Blackstone", "KKR", "Evercore", "Carlyle", "UBS", "Lazard"].map((firm) => (
@@ -100,7 +100,7 @@ export function HeroSection() {
           </div>
 
           {/* Right column - Hero Image */}
-          <div className="relative hidden lg:block animate-slide-up animate-delay-500">
+          <div className="relative hidden lg:block animate-slide-up animate-delay-200">
             <div className="relative">
               {/* Image container with effects */}
               <div className="relative rounded-2xl overflow-hidden shadow-2xl shadow-black/40">
@@ -114,9 +114,10 @@ export function HeroSection() {
                     alt="Two young finance professionals walking outside the New York Stock Exchange on Wall Street"
                     width={1200}
                     height={800}
+                    sizes="(max-width: 1024px) 100vw, 50vw"
                     className="w-full h-auto object-cover"
                     priority
-                    quality={90}
+                    quality={85}
                   />
                   
                   {/* Subtle overlay gradient for depth */}
@@ -151,7 +152,7 @@ export function HeroSection() {
         </div>
 
         {/* Email Capture */}
-        <div className="mt-16 sm:mt-20 pt-10 border-t border-white/10 animate-slide-up animate-delay-600">
+        <div className="mt-16 sm:mt-20 pt-10 border-t border-white/10 animate-slide-up animate-delay-300">
           <div className="max-w-xl mx-auto lg:mx-0">
             <p className="text-sm text-white/50 mb-4 text-center lg:text-left">Free weekly recruiting intel + technical prep tips. No spam.</p>
             <EmailCapture variant="hero" />
