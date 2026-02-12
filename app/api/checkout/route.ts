@@ -36,7 +36,13 @@ export async function POST(request: NextRequest) {
     }
 
     const product = PRODUCTS[productId as ProductId]
-    const appUrl = process.env.NEXT_PUBLIC_APP_URL || 'https://wallstreetplaybook.org'
+    let appUrl = (process.env.NEXT_PUBLIC_APP_URL || 'https://wallstreetplaybook.org').trim()
+    // Ensure URL has protocol (Stripe requires full URLs)
+    if (!appUrl.startsWith('http://') && !appUrl.startsWith('https://')) {
+      appUrl = `https://${appUrl}`
+    }
+    // Remove trailing slash
+    appUrl = appUrl.replace(/\/+$/, '')
 
     const stripe = getStripe()
 
