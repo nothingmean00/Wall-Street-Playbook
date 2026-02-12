@@ -12,7 +12,10 @@ export const metadata: Metadata = {
     title: "Contact | Wall Street Playbook",
     description:
       "Get in touch with Wall Street Playbook for questions about playbooks, resume services, or partnerships.",
-    url: "https://wallstreetplaybook.com/contact",
+    url: "https://wallstreetplaybook.org/contact",
+  },
+  alternates: {
+    canonical: "https://wallstreetplaybook.org/contact",
   },
 }
 
@@ -23,7 +26,7 @@ export default function ContactPage() {
 
       <main>
         {/* Header */}
-        <section className="bg-navy py-16 lg:py-20">
+        <section className="bg-navy pt-28 pb-16 lg:pt-36 lg:pb-20">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <div className="mx-auto max-w-2xl text-center">
               <h1 className="text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl">Get in Touch</h1>
@@ -62,10 +65,10 @@ export default function ContactPage() {
                       <h3 className="font-semibold text-charcoal">Email Us Directly</h3>
                       <p className="mt-1 text-sm text-charcoal/60">For direct inquiries, reach us at:</p>
                       <a
-                        href="mailto:support@wallstreetplaybook.com"
+                        href="mailto:support@wallstreetplaybook.org"
                         className="mt-2 inline-block text-sm font-medium text-navy hover:text-gold"
                       >
-                        support@wallstreetplaybook.com
+                        support@wallstreetplaybook.org
                       </a>
                     </div>
                   </div>

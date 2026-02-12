@@ -3,6 +3,7 @@ import Link from "next/link"
 import { Navbar } from "@/components/layout/navbar"
 import { Footer } from "@/components/layout/footer"
 import { BuyButton } from "@/components/buy-button"
+import { EmailCapture } from "@/components/email-capture"
 import { playbooks } from "@/lib/data"
 import {
   Check,
@@ -200,7 +201,7 @@ export default function PlaybooksPage() {
       <Navbar />
       <main className="flex-grow">
         {/* Hero */}
-        <section className="relative bg-navy py-16 lg:py-24 overflow-hidden">
+        <section className="relative bg-navy pt-28 pb-16 lg:pt-32 lg:pb-24 overflow-hidden">
           <div className="absolute inset-0">
             <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,_rgba(201,168,110,0.15),_transparent)]" />
           </div>
@@ -625,19 +626,7 @@ export default function PlaybooksPage() {
                 <RefreshCw className="h-5 w-5 text-gold mx-auto mb-3" />
                 <p className="text-sm font-semibold text-navy">Get notified when new playbooks launch</p>
                 <p className="text-xs text-charcoal/50 mt-1 mb-4">Plus weekly recruiting insights — no spam, unsubscribe anytime.</p>
-                <form className="flex gap-2 max-w-sm mx-auto">
-                  <input
-                    type="email"
-                    placeholder="Enter your email"
-                    className="flex-1 rounded-lg border border-border bg-white px-4 py-2.5 text-sm text-charcoal placeholder:text-charcoal/30 focus:outline-none focus:ring-2 focus:ring-gold/30 focus:border-gold"
-                  />
-                  <button
-                    type="submit"
-                    className="rounded-lg bg-navy px-5 py-2.5 text-sm font-semibold text-white hover:bg-gold hover:text-navy transition-colors"
-                  >
-                    Notify Me
-                  </button>
-                </form>
+                <EmailCapture variant="inline" />
               </div>
             </div>
           </div>

@@ -58,7 +58,6 @@ export function Footer() {
             
             {/* Email Capture */}
             <div className="mt-8">
-              <p className="text-sm font-semibold text-white mb-3">Get recruiting insights</p>
               <EmailCapture variant="footer" />
             </div>
           </div>

@@ -171,8 +171,8 @@ function SuccessContent() {
                   <p className="mt-4 text-charcoal/70">{error}</p>
                   <p className="mt-2 text-sm text-charcoal/50">
                     Please contact support at{" "}
-                    <a href="mailto:support@wallstreetplaybook.com" className="text-navy hover:text-gold">
-                      support@wallstreetplaybook.com
+                    <a href="mailto:support@wallstreetplaybook.org" className="text-navy hover:text-gold">
+                      support@wallstreetplaybook.org
                     </a>
                   </p>
                 </div>
@@ -333,8 +333,8 @@ function SuccessContent() {
 
           <p className="mt-8 text-sm text-charcoal/60">
             Questions? Contact us at{" "}
-            <a href="mailto:support@wallstreetplaybook.com" className="font-medium text-navy hover:text-gold">
-              support@wallstreetplaybook.com
+            <a href="mailto:support@wallstreetplaybook.org" className="font-medium text-navy hover:text-gold">
+              support@wallstreetplaybook.org
             </a>
           </p>
 

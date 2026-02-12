@@ -167,7 +167,7 @@ export default async function PlaybookPage({ params }: PlaybookPageProps) {
       />
       <main className="flex-grow">
         {/* Hero Section */}
-        <section className="bg-navy py-16 lg:py-24">
+        <section className="bg-navy pt-28 pb-16 lg:pt-32 lg:pb-24">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <div className="mx-auto max-w-4xl">
               {/* Breadcrumb */}

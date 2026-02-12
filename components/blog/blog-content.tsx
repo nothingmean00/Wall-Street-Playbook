@@ -92,7 +92,7 @@ export function BlogContent({ allPosts }: BlogContentProps) {
   return (
     <>
       {/* Hero */}
-      <section className="bg-navy py-20 lg:py-28">
+      <section className="bg-navy pt-28 pb-20 lg:pt-32 lg:pb-28">
         <div className="mx-auto max-w-7xl px-6 lg:px-8">
           <div className="mx-auto max-w-3xl text-center">
             <div className="inline-flex items-center gap-2 rounded-full border border-gold/30 bg-gold/10 px-4 py-1.5 mb-6">

@@ -53,7 +53,7 @@ export default function AboutPage() {
 
       <main>
         {/* Hero */}
-        <section className="relative bg-navy-deep py-20 lg:py-28 overflow-hidden">
+        <section className="relative bg-navy-deep pt-28 pb-20 lg:pt-32 lg:pb-28 overflow-hidden">
           <div className="absolute inset-0">
             <div className="absolute inset-0 bg-gradient-to-b from-navy-deep via-navy to-navy-deep" />
             <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,_rgba(201,168,110,0.15),_transparent)]" />

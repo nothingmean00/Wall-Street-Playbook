@@ -191,7 +191,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
       <Navbar />
       <main className="flex-grow">
         {/* Article Header */}
-        <section className="bg-navy py-16 lg:py-24">
+        <section className="bg-navy pt-28 pb-16 lg:pt-32 lg:pb-24">
           <div className="mx-auto max-w-3xl px-6 lg:px-8">
             <Link
               href="/blog"

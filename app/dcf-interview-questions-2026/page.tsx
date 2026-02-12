@@ -85,7 +85,7 @@ export default function DCFInterviewQuestions2026Page() {
       <Navbar />
       <main className="flex-grow">
         {/* Hero */}
-        <section className="bg-navy py-16 lg:py-24">
+        <section className="bg-navy pt-28 pb-16 lg:pt-32 lg:pb-24">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <div className="mx-auto max-w-3xl text-center">
               <div className="mb-4 inline-flex items-center gap-2 rounded-full bg-gold/10 px-4 py-2">

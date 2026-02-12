@@ -29,6 +29,33 @@ const categoryColors: Record<string, { bg: string; text: string; border: string 
   Finance: { bg: "bg-navy/5", text: "text-navy", border: "border-navy/20" },
 }
 
+function CompanyLogo({ logo, company }: { logo?: string; company: string }) {
+  const [imgError, setImgError] = useState(false)
+
+  if (!logo || imgError) {
+    return (
+      <div className="flex-shrink-0">
+        <div className="h-14 w-14 rounded-xl bg-navy/5 flex items-center justify-center">
+          <Building2 className="h-6 w-6 text-navy/40" />
+        </div>
+      </div>
+    )
+  }
+
+  return (
+    <div className="flex-shrink-0">
+      <div className="h-14 w-14 rounded-xl bg-gray-50 p-2 flex items-center justify-center overflow-hidden">
+        <img
+          src={logo}
+          alt={`${company} logo`}
+          className="h-full w-full object-contain"
+          onError={() => setImgError(true)}
+        />
+      </div>
+    </div>
+  )
+}
+
 export function JobsPreview() {
   const [jobs, setJobs] = useState<Job[]>([])
   const [loading, setLoading] = useState(true)
@@ -127,25 +154,7 @@ export function JobsPreview() {
                 className="group relative flex items-start gap-5 rounded-2xl bg-white p-6 shadow-sm transition-all duration-300 hover:shadow-xl hover:-translate-y-1 border border-transparent hover:border-gold/20"
               >
                 {/* Company Logo */}
-                <div className="flex-shrink-0">
-                  {job.companyLogo ? (
-                    <div className="h-14 w-14 rounded-xl bg-gray-50 p-2 flex items-center justify-center overflow-hidden">
-                      <img
-                        src={job.companyLogo}
-                        alt={`${job.company} logo`}
-                        className="h-full w-full object-contain"
-                        onError={(e) => {
-                          e.currentTarget.style.display = "none"
-                          e.currentTarget.parentElement!.innerHTML = `<div class="h-14 w-14 rounded-xl bg-navy/5 flex items-center justify-center"><svg class="h-6 w-6 text-navy/40" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" /></svg></div>`
-                        }}
-                      />
-                    </div>
-                  ) : (
-                    <div className="h-14 w-14 rounded-xl bg-navy/5 flex items-center justify-center">
-                      <Building2 className="h-6 w-6 text-navy/40" />
-                    </div>
-                  )}
-                </div>
+                <CompanyLogo logo={job.companyLogo} company={job.company} />
 
                 <div className="flex-grow min-w-0">
                   {/* Category & Type */}
