@@ -22,16 +22,25 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
   const post = getBlogPost(slug)
   if (!post) return { title: "Not Found" }
 
+  const allKeywords = [
+    ...(post.tags || []),
+    post.category.toLowerCase(),
+    "finance career",
+    "wall street",
+  ]
+  // Deduplicate keywords (case-insensitive)
+  const seen = new Set<string>()
+  const uniqueKeywords = allKeywords.filter((k) => {
+    const lower = k.toLowerCase()
+    if (seen.has(lower)) return false
+    seen.add(lower)
+    return true
+  })
+
   return {
-    title: post.title,
+    title: `${post.title} | Wall Street Playbook`,
     description: post.summary,
-    keywords: [
-      post.category.toLowerCase(),
-      "finance career",
-      "wall street",
-      post.title.toLowerCase().split(" ").slice(0, 3).join(" "),
-      ...(post.tags || []),
-    ],
+    keywords: uniqueKeywords,
     authors: [{ name: post.author || "Wall Street Playbook" }],
     openGraph: {
       title: `${post.title} | Wall Street Playbook`,
@@ -39,16 +48,25 @@ export async function generateMetadata({ params }: { params: Promise<{ slug: str
       url: `https://wallstreetplaybook.org/blog/${post.slug}`,
       type: "article",
       publishedTime: post.publishedAt,
+      modifiedTime: post.publishedAt,
       authors: [post.author || "Wall Street Playbook"],
       section: post.category,
+      tags: post.tags || [],
     },
     twitter: {
       card: "summary_large_image",
-      title: post.title,
+      title: `${post.title} | Wall Street Playbook`,
       description: post.summary,
     },
     alternates: {
       canonical: `https://wallstreetplaybook.org/blog/${post.slug}`,
+    },
+    robots: {
+      index: true,
+      follow: true,
+      "max-snippet": -1,
+      "max-image-preview": "large",
+      "max-video-preview": -1,
     },
   }
 }
@@ -132,9 +150,12 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
       })
     : null
 
+  // Estimate word count from content for structured data
+  const wordCount = post.content ? post.content.split(/\s+/).filter(Boolean).length : 0
+
   const articleStructuredData = {
     "@context": "https://schema.org",
-    "@type": "Article",
+    "@type": "BlogPosting",
     headline: post.title,
     description: post.summary,
     image: "https://wallstreetplaybook.org/og-image.jpg",
@@ -158,6 +179,10 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
       "@type": "WebPage",
       "@id": `https://wallstreetplaybook.org/blog/${post.slug}`,
     },
+    keywords: (post.tags || []).join(", "),
+    articleSection: post.category,
+    wordCount: wordCount,
+    inLanguage: "en-US",
   }
 
   const breadcrumbStructuredData = {

@@ -15,23 +15,71 @@ export const metadata: Metadata = {
     "wall street networking",
     "breaking into investment banking",
     "hedge fund career",
+    "investment banking salary",
+    "non-target to Wall Street",
+    "IB technical questions",
+    "private equity recruiting",
+    "finance career guide",
   ],
   openGraph: {
     title: "Finance Recruiting Blog | Wall Street Playbook",
     description:
       "Free guides on IB technicals, PE recruiting timelines, networking scripts, salary data, and career strategies. Written by practitioners, not professors.",
     url: "https://wallstreetplaybook.org/blog",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Finance Recruiting Blog | Wall Street Playbook",
+    description:
+      "Free guides on IB technicals, PE recruiting timelines, networking scripts, salary data, and career strategies.",
   },
   alternates: {
     canonical: "https://wallstreetplaybook.org/blog",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    "max-snippet": -1,
+    "max-image-preview": "large",
+    "max-video-preview": -1,
   },
 }
 
 export default function BlogPage() {
   const allPosts = getAllBlogPosts()
 
+  // CollectionPage structured data for the blog listing
+  const blogListStructuredData = {
+    "@context": "https://schema.org",
+    "@type": "CollectionPage",
+    name: "Finance Recruiting Blog",
+    description:
+      "Free guides on IB technicals, PE recruiting timelines, networking scripts, salary data, and career strategies.",
+    url: "https://wallstreetplaybook.org/blog",
+    publisher: {
+      "@type": "Organization",
+      name: "Wall Street Playbook",
+      url: "https://wallstreetplaybook.org",
+    },
+    mainEntity: {
+      "@type": "ItemList",
+      numberOfItems: allPosts.length,
+      itemListElement: allPosts.slice(0, 20).map((post, index) => ({
+        "@type": "ListItem",
+        position: index + 1,
+        url: `https://wallstreetplaybook.org/blog/${post.slug}`,
+        name: post.title,
+      })),
+    },
+  }
+
   return (
     <div className="flex min-h-screen flex-col">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(blogListStructuredData) }}
+      />
       <Navbar />
       <main className="flex-grow">
         <BlogContent allPosts={allPosts} />
