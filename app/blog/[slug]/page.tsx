@@ -7,6 +7,8 @@ import { getAllBlogPosts, getBlogPost, getRelatedBlogPosts } from "@/lib/blog"
 import { notFound } from "next/navigation"
 import Link from "next/link"
 import { ArrowLeft, ArrowRight, Clock, Calendar, BookOpen, Download, Shield, Star, CheckCircle } from "lucide-react"
+import { BlogTracker } from "@/components/analytics/blog-tracker"
+import { TrackedLink } from "@/components/analytics/tracked-link"
 
 export async function generateStaticParams() {
   const posts = getAllBlogPosts()
@@ -187,6 +189,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
     <div className="flex min-h-screen flex-col">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(articleStructuredData) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbStructuredData) }} />
+      <BlogTracker slug={post.slug} category={post.category} readTime={post.readTime} />
 
       <Navbar />
       <main className="flex-grow">
@@ -349,13 +352,14 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                           ))}
                         </ul>
 
-                        <Link
+                        <TrackedLink
                           href={cta.href}
+                          location="blog_sidebar_cta"
                           className="mt-5 flex items-center justify-center gap-2 w-full rounded-lg bg-gold px-4 py-3 text-sm font-semibold text-navy transition-colors hover:bg-gold/90"
                         >
                           Get the Guide — ${cta.price}
                           <ArrowRight className="h-4 w-4" />
-                        </Link>
+                        </TrackedLink>
 
                         <div className="mt-3 flex items-center justify-center gap-1.5 text-xs text-green-600">
                           <Shield className="h-3 w-3" />
@@ -366,8 +370,9 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                   })()}
 
                   {/* Free Cheat Sheet CTA */}
-                  <Link
+                  <TrackedLink
                     href="/ib-technical-cheat-sheet"
+                    location="blog_sidebar_cheat_sheet"
                     className="block rounded-xl border border-gold/30 bg-gradient-to-br from-gold/5 to-transparent p-5 transition-all hover:border-gold/50 hover:shadow-sm"
                   >
                     <div className="flex items-center gap-2 mb-2">
@@ -376,7 +381,7 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                     </div>
                     <p className="text-sm font-semibold text-navy">20 Must-Know Technical Questions</p>
                     <p className="mt-1 text-xs text-charcoal/60">Quick-reference cheat sheet PDF</p>
-                  </Link>
+                  </TrackedLink>
 
                   {/* Social Proof */}
                   <div className="rounded-xl border border-border bg-white p-5">
@@ -428,13 +433,14 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                   <p className="mt-3 text-sm text-white/70">
                     {cta.description}
                   </p>
-                  <Link
+                  <TrackedLink
                     href={cta.href}
+                    location="blog_mobile_cta"
                     className="mt-6 inline-flex items-center gap-2 rounded-lg bg-gold px-6 py-3 text-sm font-semibold text-navy transition-colors hover:bg-white"
                   >
                     Get the Guide — ${cta.price}
                     <ArrowRight className="h-4 w-4" />
-                  </Link>
+                  </TrackedLink>
                   <p className="mt-3 text-xs text-white/40">30-day money-back guarantee</p>
                 </div>
               )

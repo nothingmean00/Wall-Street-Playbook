@@ -7,6 +7,8 @@ import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/
 import { Check, Shield, Download, RefreshCw, ArrowLeft, Lock, BookOpen, Users, Target, Star, Clock, BadgeCheck } from "lucide-react"
 import { BuyButton } from "@/components/buy-button"
 import { PEPlaybookPreview, IBTechnicalPreview, NetworkingPreview } from "@/components/playbook-preview"
+import { PageTracker } from "@/components/analytics/page-tracker"
+import { ScrollTracker } from "@/components/analytics/scroll-tracker"
 import type { Metadata } from "next"
 
 interface PlaybookPageProps {
@@ -160,6 +162,8 @@ export default async function PlaybookPage({ params }: PlaybookPageProps) {
 
   return (
     <div className="flex min-h-screen flex-col">
+      <PageTracker event="playbook_page_viewed" properties={{ slug: playbook.slug, price: playbook.price, title: playbook.title }} />
+      <ScrollTracker page={`playbooks/${playbook.slug}`} />
       <Navbar />
       <script
         type="application/ld+json"

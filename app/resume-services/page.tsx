@@ -3,6 +3,8 @@ import { Navbar } from "@/components/layout/navbar"
 import { Footer } from "@/components/layout/footer"
 import { resumeServices } from "@/lib/data"
 import { Check, Clock, FileText, Pencil, ArrowRight, Shield, Users, Award, BadgeCheck } from "lucide-react"
+import { ScrollTracker } from "@/components/analytics/scroll-tracker"
+import { TrackedLink } from "@/components/analytics/tracked-link"
 import Link from "next/link"
 
 export const metadata: Metadata = {
@@ -41,6 +43,7 @@ const comparisonPoints = [
 export default function ResumeServicesPage() {
   return (
     <div className="flex min-h-screen flex-col">
+      <ScrollTracker page="resume-services" />
       <Navbar />
       <main className="flex-grow pt-0">
         {/* Page Header */}
@@ -160,8 +163,9 @@ export default function ResumeServicesPage() {
 
                     {/* CTA */}
                     <div className="border-t border-border bg-off-white/50 p-8">
-                      <Link
+                      <TrackedLink
                         href={`/submit-resume?service=${service.id}`}
+                        location={`resume_services_${service.id}`}
                         className={`w-full rounded-lg py-4 text-sm font-semibold transition-colors flex items-center justify-center gap-2 ${
                           isRecommended
                             ? "bg-gold text-navy hover:bg-navy hover:text-white"
@@ -170,7 +174,7 @@ export default function ResumeServicesPage() {
                       >
                         Get Started
                         <ArrowRight className="h-4 w-4" />
-                      </Link>
+                      </TrackedLink>
                     </div>
                   </div>
                 )
@@ -329,13 +333,14 @@ export default function ResumeServicesPage() {
               want to learn and apply changes yourself, Resume Review gives you the roadmap.
             </p>
             <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
-              <Link 
-                href="/submit-resume?service=resume-review" 
+              <TrackedLink 
+                href="/submit-resume?service=resume-review"
+                location="resume_services_bottom_cta"
                 className="inline-flex items-center gap-2 rounded-xl bg-gold px-6 py-3 text-sm font-semibold text-navy transition-all hover:bg-navy hover:text-white"
               >
                 Get Started Now
                 <ArrowRight className="h-4 w-4" />
-              </Link>
+              </TrackedLink>
             </div>
             <p className="mt-4 text-sm text-charcoal/50">
               Have questions? <Link href="/contact" className="text-gold hover:underline">Contact us</Link>

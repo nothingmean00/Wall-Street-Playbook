@@ -4,6 +4,7 @@ import { Navbar } from "@/components/layout/navbar"
 import { Footer } from "@/components/layout/footer"
 import { BuyButton } from "@/components/buy-button"
 import { EmailCapture } from "@/components/email-capture"
+import { ScrollTracker } from "@/components/analytics/scroll-tracker"
 import { playbooks } from "@/lib/data"
 import {
   Check,
@@ -198,6 +199,7 @@ export default function PlaybooksPage() {
 
   return (
     <div className="flex min-h-screen flex-col">
+      <ScrollTracker page="playbooks" />
       <Navbar />
       <main className="flex-grow">
         {/* Hero */}

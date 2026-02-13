@@ -10,6 +10,7 @@ import { WhyItWorks } from "@/components/home/why-it-works"
 import { BlogPreview } from "@/components/home/blog-preview"
 import { JobsPreview } from "@/components/home/jobs-preview"
 import { CTASection } from "@/components/home/cta-section"
+import { ScrollTracker } from "@/components/analytics/scroll-tracker"
 
 export const metadata: Metadata = {
   title: "Wall Street Playbook | Break Into Investment Banking, PE & Hedge Funds",
@@ -24,6 +25,7 @@ export default function HomePage() {
   return (
     <div className="flex min-h-screen flex-col">
       <Navbar />
+      <ScrollTracker page="homepage" />
       <main className="flex-grow pt-0">
         <HeroSection />
         <ProofGallery />

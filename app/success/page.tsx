@@ -5,7 +5,8 @@ import { CheckCircle, Download, Mail, ArrowRight, Clock, FileText, Loader2, Aler
 import { Navbar } from "@/components/layout/navbar"
 import { Footer } from "@/components/layout/footer"
 import { useSearchParams } from "next/navigation"
-import { Suspense, useEffect, useState } from "react"
+import { Suspense, useEffect, useState, useRef } from "react"
+import { track } from "@vercel/analytics"
 
 interface SessionData {
   success: boolean
@@ -24,10 +25,16 @@ function SuccessContent() {
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState<string | null>(null)
   const [downloading, setDownloading] = useState(false)
+  const tracked = useRef(false)
 
   useEffect(() => {
     async function verifySession() {
       if (!sessionId || isResumeService) {
+        // Track resume service purchase completion
+        if (isResumeService && !tracked.current) {
+          tracked.current = true
+          track("purchase_completed", { type: "resume_service" })
+        }
         setLoading(false)
         return
       }
@@ -38,6 +45,15 @@ function SuccessContent() {
 
         if (response.ok && data.success) {
           setSessionData(data)
+          // Track playbook purchase completion
+          if (!tracked.current) {
+            tracked.current = true
+            track("purchase_completed", {
+              productId: data.productId,
+              productName: data.productName,
+              type: "playbook",
+            })
+          }
         } else {
           setError(data.error || 'Failed to verify purchase')
         }
@@ -62,6 +78,12 @@ function SuccessContent() {
         const errorData = await response.json()
         throw new Error(errorData.error || 'Download failed')
       }
+
+      // Track download
+      track("playbook_downloaded", {
+        productId: sessionData.productId,
+        productName: sessionData.productName,
+      })
 
       // Get the blob and create download
       const blob = await response.blob()
