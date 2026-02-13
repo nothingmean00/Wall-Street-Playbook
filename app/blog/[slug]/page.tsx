@@ -4,6 +4,7 @@ import { Footer } from "@/components/layout/footer"
 import { BlogEmailCTA } from "@/components/blog-email-cta"
 import { RelatedContent, relatedContentByTopic } from "@/components/related-content"
 import { getAllBlogPosts, getBlogPost, getRelatedBlogPosts } from "@/lib/blog"
+import { renderMarkdown } from "@/lib/markdown"
 import { notFound } from "next/navigation"
 import Link from "next/link"
 import { ArrowLeft, ArrowRight, Clock, Calendar, BookOpen, Download, Shield, Star, CheckCircle } from "lucide-react"
@@ -272,73 +273,9 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
                 <article className="prose prose-lg prose-charcoal max-w-none">
                   {post.content ? (
                     <div
-                      className="text-charcoal/80 leading-relaxed space-y-4"
+                      className="text-charcoal/80 leading-relaxed"
                       dangerouslySetInnerHTML={{
-                        __html: post.content
-                          .split("\n\n")
-                          .map((paragraph) => {
-                            if (paragraph.trim() === "---") {
-                              return `<hr class="my-10 border-gold/30" />`
-                            }
-                            if (paragraph.startsWith("## ")) {
-                              return `<h2 class="text-2xl font-bold text-charcoal mt-12 mb-4">${paragraph.replace("## ", "")}</h2>`
-                            }
-                            if (paragraph.startsWith("### ")) {
-                              return `<h3 class="text-xl font-semibold text-charcoal mt-8 mb-3">${paragraph.replace("### ", "")}</h3>`
-                            }
-                            if (paragraph.startsWith("> ") || paragraph.startsWith(">")) {
-                              const quoteContent = paragraph.replace(/^>\s?/gm, "")
-                                .replace(/\*\*(.*?)\*\*/g, '<strong class="text-charcoal">$1</strong>')
-                                .replace(/\*(.*?)\*/g, '<em>$1</em>')
-                              return `<blockquote class="pl-4 border-l-4 border-gold bg-gold/5 py-3 pr-4 rounded-r-lg text-charcoal/80 italic my-4">${quoteContent}</blockquote>`
-                            }
-                            if (paragraph.startsWith("- ")) {
-                              const items = paragraph.split("\n").filter(line => line.trim().startsWith("- "))
-                              const listItems = items.map(item => {
-                                const content = item.replace(/^-\s+/, "")
-                                  .replace(/\*\*(.*?)\*\*/g, '<strong class="text-charcoal">$1</strong>')
-                                  .replace(/\*(.*?)\*/g, '<em>$1</em>')
-                                  .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" class="text-gold hover:text-navy underline">$1</a>')
-                                return `<li class="text-charcoal/80">${content}</li>`
-                              }).join("")
-                              return `<ul class="list-disc list-inside space-y-2 my-4 ml-4">${listItems}</ul>`
-                            }
-                            if (/^\d+\.\s/.test(paragraph.trim())) {
-                              const items = paragraph.split("\n").filter(line => /^\d+\.\s/.test(line.trim()))
-                              const listItems = items.map(item => {
-                                const content = item.replace(/^\d+\.\s+/, "")
-                                  .replace(/\*\*(.*?)\*\*/g, '<strong class="text-charcoal">$1</strong>')
-                                  .replace(/\*(.*?)\*/g, '<em>$1</em>')
-                                  .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" class="text-gold hover:text-navy underline">$1</a>')
-                                return `<li class="text-charcoal/80">${content}</li>`
-                              }).join("")
-                              return `<ol class="list-decimal list-inside space-y-2 my-4 ml-4">${listItems}</ol>`
-                            }
-                            if (paragraph.startsWith("|") && paragraph.includes("|")) {
-                              const rows = paragraph.split("\n").filter(r => r.trim().startsWith("|"))
-                              if (rows.length >= 2) {
-                                const headerRow = rows[0]
-                                const dataRows = rows.slice(2)
-                                const headers = headerRow.split("|").filter(c => c.trim()).map(c => `<th class="px-3 py-2 text-left text-xs font-semibold text-navy bg-navy/5 border-b border-border">${c.trim()}</th>`).join("")
-                                const body = dataRows.map(row => {
-                                  const cells = row.split("|").filter(c => c.trim()).map(c => {
-                                    const formatted = c.trim()
-                                      .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
-                                      .replace(/\*(.*?)\*/g, '<em>$1</em>')
-                                    return `<td class="px-3 py-2 text-xs text-charcoal/70 border-b border-border/50">${formatted}</td>`
-                                  }).join("")
-                                  return `<tr>${cells}</tr>`
-                                }).join("")
-                                return `<div class="my-6 overflow-x-auto rounded-lg border border-border"><table class="w-full"><thead><tr>${headers}</tr></thead><tbody>${body}</tbody></table></div>`
-                              }
-                            }
-                            const formatted = paragraph
-                              .replace(/\*\*(.*?)\*\*/g, '<strong class="text-charcoal">$1</strong>')
-                              .replace(/\*(.*?)\*/g, '<em>$1</em>')
-                              .replace(/\[([^\]]+)\]\(([^)]+)\)/g, '<a href="$2" class="text-gold hover:text-navy underline">$1</a>')
-                            return `<p class="text-charcoal/80 leading-relaxed">${formatted}</p>`
-                          })
-                          .join(""),
+                        __html: renderMarkdown(post.content),
                       }}
                     />
                   ) : (
