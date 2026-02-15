@@ -27,12 +27,18 @@ const guidesLinks = [
   { name: "IB Resume Guide", href: "/investment-banking-resume" },
 ]
 
+const playbooksLinks = [
+  { name: "Finance Technical Guide", href: "/playbooks/finance-technical-interview-guide" },
+  { name: "PE Recruiting Playbook", href: "/playbooks/pe-recruiting-playbook" },
+  { name: "Networking & Cold Email", href: "/playbooks/networking-cold-email-playbook" },
+]
+
 const navigation = [
-  { name: "Playbooks", href: "/playbooks" },
+  { name: "Playbooks", href: "/playbooks", dropdown: playbooksLinks },
   { name: "Interview Prep", href: "/investment-banking-interview-prep", dropdown: interviewPrepLinks },
   { name: "Guides", href: "/non-target-investment-banking", dropdown: guidesLinks },
   { name: "Resume Services", href: "/resume-services" },
-  { name: "Jobs", href: "/jobs" },
+  { name: "Jobs/Internships", href: "/jobs" },
   { name: "Blog", href: "/blog" },
 ]
 
