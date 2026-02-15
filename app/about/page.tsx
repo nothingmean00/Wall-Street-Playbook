@@ -1,16 +1,16 @@
 import type { Metadata } from "next"
 import Link from "next/link"
-import { Target, BookOpen, Users, TrendingUp, Award, ArrowRight, Shield, CheckCircle, FileText, Sparkles, Mail } from "lucide-react"
+import { Target, BookOpen, Users, ArrowRight, Shield, CheckCircle, FileText, Sparkles, Mail, GraduationCap, Briefcase, TrendingUp } from "lucide-react"
 import { Navbar } from "@/components/layout/navbar"
 import { Footer } from "@/components/layout/footer"
 
 export const metadata: Metadata = {
   title: "About | Wall Street Playbook",
   description:
-    "Wall Street Playbook provides tactical preparation materials for candidates targeting investment banking, private equity, and hedge fund roles. Built by professionals who've been through the process.",
+    "Wall Street Playbook is built by finance industry insiders with backgrounds at top PE firms, hedge funds, and investment banks. NYU Stern-educated, real experience, real results.",
   openGraph: {
     title: "About | Wall Street Playbook",
-    description: "Tactical preparation materials for candidates targeting top finance roles.",
+    description: "Built by industry insiders with PE, hedge fund, and investment banking experience.",
     url: "https://wallstreetplaybook.org/about",
   },
   alternates: {
@@ -62,15 +62,15 @@ export default function AboutPage() {
           <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
             <div className="mx-auto max-w-3xl text-center">
               <div className="inline-flex items-center gap-2 rounded-full border border-gold/30 bg-gold/10 px-4 py-1.5 mb-6">
-                <Award className="w-4 h-4 text-gold" />
-                <span className="text-xs font-semibold uppercase tracking-widest text-gold">Our Story</span>
+                <Briefcase className="w-4 h-4 text-gold" />
+                <span className="text-xs font-semibold uppercase tracking-widest text-gold">Built by Industry Insiders</span>
               </div>
               <h1 className="text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl">
-                Built by Candidates Who <span className="text-gradient-gold">Got the Interviews</span>
+                We&apos;ve Sat in <span className="text-gradient-gold">Your Chair</span>
               </h1>
               <p className="mt-6 text-lg leading-relaxed text-white/60">
-                Wall Street Playbook was created by finance professionals who successfully navigated recruiting at the
-                most competitive firms in the industry. We&apos;ve distilled what actually works into actionable frameworks.
+                Wall Street Playbook was built by finance professionals who recruited into private equity, hedge funds,
+                and investment banking at the highest level. We created the resource we wish existed when we were in your shoes.
               </p>
             </div>
 
@@ -89,29 +89,94 @@ export default function AboutPage() {
           </div>
         </section>
 
-        {/* Proof Section */}
+        {/* Founder Story */}
         <section className="py-16 lg:py-24">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <div className="mx-auto max-w-3xl">
               <div className="flex items-center gap-3">
                 <div className="h-px flex-1 bg-gold/30" />
-                <span className="text-sm font-medium uppercase tracking-wider text-gold">Our Track Record</span>
+                <span className="text-sm font-medium uppercase tracking-wider text-gold">The Story</span>
+                <div className="h-px flex-1 bg-gold/30" />
+              </div>
+
+              {/* Founder card */}
+              <div className="mt-12 rounded-2xl border border-border bg-white p-8 sm:p-10">
+                <div className="flex items-start gap-5">
+                  <div className="flex-shrink-0 h-14 w-14 rounded-xl bg-navy flex items-center justify-center">
+                    <span className="text-xl font-bold text-gold">WSP</span>
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-bold text-navy">The Founder</h3>
+                    <div className="mt-1 flex flex-wrap gap-2">
+                      <span className="inline-flex items-center gap-1.5 rounded-full bg-navy/5 px-3 py-1 text-xs font-medium text-navy">
+                        <GraduationCap className="h-3 w-3" /> NYU Stern
+                      </span>
+                      <span className="inline-flex items-center gap-1.5 rounded-full bg-navy/5 px-3 py-1 text-xs font-medium text-navy">
+                        <Briefcase className="h-3 w-3" /> Private Equity
+                      </span>
+                      <span className="inline-flex items-center gap-1.5 rounded-full bg-navy/5 px-3 py-1 text-xs font-medium text-navy">
+                        <TrendingUp className="h-3 w-3" /> Hedge Funds
+                      </span>
+                    </div>
+                  </div>
+                </div>
+
+                <div className="mt-8 space-y-5 text-charcoal/80">
+                  <p className="text-base leading-relaxed">
+                    I built Wall Street Playbook because when I was recruiting, the resources available were either
+                    surface-level or absurdly overpriced. The forums were full of noise. The &quot;guides&quot; rehashed
+                    the same generic advice. Nobody was sharing what actually worked.
+                  </p>
+                  <p className="text-base leading-relaxed">
+                    I went through the full gauntlet — NYU Stern, investment banking recruiting, and eventually
+                    breaking into private equity and the hedge fund space. Along the way, I kept meticulous notes:
+                    what questions actually got asked, what email templates got responses, which networking strategies
+                    converted to interviews, and which ones were a waste of time.
+                  </p>
+                  <p className="text-base leading-relaxed">
+                    After years on both sides of the table — as a candidate and later helping evaluate them — I
+                    realized the gap between who gets offers and who doesn&apos;t is almost never about raw intelligence.
+                    It&apos;s about preparation quality. The candidates who win are the ones who practiced the right things
+                    in the right way.
+                  </p>
+                  <p className="text-base leading-relaxed">
+                    <span className="font-semibold text-navy">That&apos;s what this is.</span> Every playbook, every template,
+                    every framework on this site comes from real recruiting cycles, real interviews, and real results.
+                    No theory. No fluff. Just the playbook I wish someone had handed me on day one.
+                  </p>
+                </div>
+
+                <div className="mt-8 pt-6 border-t border-border">
+                  <p className="text-sm text-charcoal/50 italic">
+                    I stay anonymous because this isn&apos;t about personal branding — it&apos;s about the material.
+                    The playbooks speak for themselves. If the content helps you land the interview, that&apos;s all
+                    that matters.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        {/* Track Record */}
+        <section className="bg-cream py-16 lg:py-24">
+          <div className="mx-auto max-w-7xl px-6 lg:px-8">
+            <div className="mx-auto max-w-3xl">
+              <div className="flex items-center gap-3">
+                <div className="h-px flex-1 bg-gold/30" />
+                <span className="text-sm font-medium uppercase tracking-wider text-gold">Track Record</span>
                 <div className="h-px flex-1 bg-gold/30" />
               </div>
 
               <div className="mt-12 space-y-6 text-charcoal/80">
                 <p className="text-lg leading-relaxed">
-                  <span className="font-semibold text-navy">We don&apos;t teach theory—we share what worked.</span> The team
-                  behind Wall Street Playbook has collectively received interview invitations from 30+ top-tier firms
+                  <span className="font-semibold text-navy">We don&apos;t teach theory — we share what worked.</span> The
+                  materials behind Wall Street Playbook have collectively generated interview invitations from 30+ top-tier firms
                   across investment banking, private equity, and hedge funds.
                 </p>
                 <p className="text-lg leading-relaxed">
-                  Every playbook, template, and framework we offer is based on materials that generated real results:
+                  Every playbook, template, and framework is based on materials that produced real results:
                   callbacks from Goldman Sachs, Morgan Stanley, Lazard, Evercore, KKR, Blackstone, and many more.
-                </p>
-                <p className="text-lg leading-relaxed">
-                  We&apos;ve been on both sides of the table—as nervous candidates and as interviewers. We know what separates
-                  the candidates who get offers from those who don&apos;t. It&apos;s rarely about raw ability. It&apos;s about preparation.
                 </p>
               </div>
 
@@ -137,7 +202,7 @@ export default function AboutPage() {
         </section>
 
         {/* Mid-Page CTA */}
-        <section className="bg-cream py-12">
+        <section className="py-12">
           <div className="mx-auto max-w-4xl px-6 lg:px-8">
             <div className="rounded-2xl bg-navy p-8 sm:p-10 relative overflow-hidden">
               <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_80%_-20%,_rgba(201,168,110,0.15),_transparent)]" />
@@ -186,7 +251,7 @@ export default function AboutPage() {
                 </p>
                 <p className="text-lg leading-relaxed">
                   We built Wall Street Playbook to close that preparation gap. No motivational fluff. No generic advice.
-                  Just the tactical, specific frameworks that get results—the same materials we wish existed when we
+                  Just the tactical, specific frameworks that get results — the same materials we wish existed when we
                   were recruiting.
                 </p>
               </div>
@@ -194,15 +259,15 @@ export default function AboutPage() {
               {/* What makes us different */}
               <div className="mt-12 grid sm:grid-cols-2 gap-4">
                 {[
-                  { icon: CheckCircle, text: "Every framework tested in real recruiting cycles" },
-                  { icon: CheckCircle, text: "Interview frequency data from 30+ firms" },
-                  { icon: CheckCircle, text: "Updated for 2026 recruiting timelines" },
-                  { icon: CheckCircle, text: "100% money-back guarantee on all products" },
-                  { icon: CheckCircle, text: "Free blog with 30+ tactical articles" },
-                  { icon: CheckCircle, text: "Built by practitioners, not career coaches" },
+                  { text: "Every framework tested in real recruiting cycles" },
+                  { text: "Interview frequency data from 30+ firms" },
+                  { text: "Updated for 2026 recruiting timelines" },
+                  { text: "100% money-back guarantee on all products" },
+                  { text: "Free blog with 30+ tactical articles" },
+                  { text: "Built by practitioners, not career coaches" },
                 ].map((item, i) => (
                   <div key={i} className="flex items-center gap-3 rounded-lg bg-white border border-border p-4">
-                    <item.icon className="h-5 w-5 text-gold flex-shrink-0" />
+                    <CheckCircle className="h-5 w-5 text-gold flex-shrink-0" />
                     <span className="text-sm text-charcoal/80">{item.text}</span>
                   </div>
                 ))}
