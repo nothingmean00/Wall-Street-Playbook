@@ -17,6 +17,8 @@ const nextConfig = {
   compress: true,
   // Power pack performance
   poweredByHeader: false,
+  // Explicit trailing slash behavior — prevents URL ambiguity that confuses crawlers
+  trailingSlash: false,
   // NOTE: www → non-www redirect should be configured in Vercel Dashboard
   // (Settings → Domains) rather than here, to avoid CORS issues with API routes
   // and the web manifest. Vercel handles domain-level redirects before the app runs.

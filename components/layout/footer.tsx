@@ -11,11 +11,29 @@ const footerLinks = {
     { name: "Finance Technical Guide", href: "/playbooks/finance-technical-interview-guide" },
     { name: "PE Recruiting Playbook", href: "/playbooks/pe-recruiting-playbook" },
     { name: "Networking & Cold Email", href: "/playbooks/networking-cold-email-playbook" },
-    { name: "LBO Modeling Course", href: "/playbooks/lbo-modeling-course" },
   ],
   services: [
-    { name: "Resume Review", href: "/resume-services" },
-    { name: "Resume Rewrite", href: "/resume-services" },
+    { name: "Resume Services", href: "/resume-services" },
+    { name: "IB Resume Review", href: "/investment-banking-resume-review" },
+    { name: "PE Resume Review", href: "/private-equity-resume" },
+    { name: "Non-Target Resume", href: "/non-target-resume" },
+    { name: "MBA Resume Review", href: "/mba-resume-review" },
+  ],
+  interviewPrep: [
+    { name: "IB Interview Prep", href: "/investment-banking-interview-prep" },
+    { name: "Technical Questions 2026", href: "/ib-technical-interview-2026" },
+    { name: "LBO Interview Questions", href: "/lbo-interview-questions-2026" },
+    { name: "DCF Interview Questions", href: "/dcf-interview-questions-2026" },
+    { name: "Valuation Methods", href: "/valuation-methods-investment-banking" },
+    { name: "PE Interview Prep", href: "/pe-interview-prep-2026" },
+  ],
+  guides: [
+    { name: "Non-Target to IB", href: "/non-target-investment-banking" },
+    { name: "IB Recruiting 2026", href: "/investment-banking-recruiting-2026" },
+    { name: "PE Recruiting 2026", href: "/private-equity-recruiting-2026" },
+    { name: "Cold Email Templates", href: "/cold-email-templates-investment-banking" },
+    { name: "Networking Playbook", href: "/finance-networking-playbook-2026" },
+    { name: "LBO Modeling Guide", href: "/lbo-modeling-guide" },
   ],
   resources: [
     { name: "Jobs & Internships", href: "/jobs" },
@@ -42,7 +60,7 @@ export function Footer() {
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/30 to-transparent" />
       
       <div className="relative mx-auto max-w-7xl px-6 py-16 lg:px-8 lg:py-20">
-        <div className="grid grid-cols-1 gap-12 lg:grid-cols-6">
+        <div className="grid grid-cols-1 gap-12 lg:grid-cols-7">
           {/* Brand column */}
           <div className="lg:col-span-2">
             <Link href="/" className="group flex items-center gap-3">
@@ -62,9 +80,61 @@ export function Footer() {
             </div>
           </div>
 
-          {/* Playbooks */}
+          {/* Interview Prep */}
           <div>
-            <h3 className="text-xs font-bold uppercase tracking-widest text-gold">Playbooks</h3>
+            <h3 className="text-xs font-bold uppercase tracking-widest text-gold">Interview Prep</h3>
+            <ul className="mt-5 space-y-3">
+              {footerLinks.interviewPrep.map((link) => (
+                <li key={link.name}>
+                  <Link 
+                    href={link.href} 
+                    className="group flex items-center gap-1 text-sm text-white/50 transition-colors hover:text-gold"
+                  >
+                    {link.name}
+                    <ArrowUpRight className="w-3 h-3 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Guides */}
+          <div>
+            <h3 className="text-xs font-bold uppercase tracking-widest text-gold">Guides</h3>
+            <ul className="mt-5 space-y-3">
+              {footerLinks.guides.map((link) => (
+                <li key={link.name}>
+                  <Link 
+                    href={link.href} 
+                    className="group flex items-center gap-1 text-sm text-white/50 transition-colors hover:text-gold"
+                  >
+                    {link.name}
+                    <ArrowUpRight className="w-3 h-3 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+
+          {/* Resume Services */}
+          <div>
+            <h3 className="text-xs font-bold uppercase tracking-widest text-gold">Resume Services</h3>
+            <ul className="mt-5 space-y-3">
+              {footerLinks.services.map((link) => (
+                <li key={link.name}>
+                  <Link 
+                    href={link.href} 
+                    className="group flex items-center gap-1 text-sm text-white/50 transition-colors hover:text-gold"
+                  >
+                    {link.name}
+                    <ArrowUpRight className="w-3 h-3 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
+                  </Link>
+                </li>
+              ))}
+            </ul>
+
+            {/* Playbooks sub-section */}
+            <h3 className="mt-8 text-xs font-bold uppercase tracking-widest text-gold">Playbooks</h3>
             <ul className="mt-5 space-y-3">
               {footerLinks.products.map((link) => (
                 <li key={link.name}>
@@ -80,25 +150,7 @@ export function Footer() {
             </ul>
           </div>
 
-          {/* Services */}
-          <div>
-            <h3 className="text-xs font-bold uppercase tracking-widest text-gold">Services</h3>
-            <ul className="mt-5 space-y-3">
-              {footerLinks.services.map((link) => (
-                <li key={link.name}>
-                  <Link 
-                    href={link.href} 
-                    className="group flex items-center gap-1 text-sm text-white/50 transition-colors hover:text-gold"
-                  >
-                    {link.name}
-                    <ArrowUpRight className="w-3 h-3 opacity-0 -translate-x-1 group-hover:opacity-100 group-hover:translate-x-0 transition-all" />
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Resources */}
+          {/* Company & Legal */}
           <div>
             <h3 className="text-xs font-bold uppercase tracking-widest text-gold">Company</h3>
             <ul className="mt-5 space-y-3">
@@ -114,11 +166,8 @@ export function Footer() {
                 </li>
               ))}
             </ul>
-          </div>
 
-          {/* Legal */}
-          <div>
-            <h3 className="text-xs font-bold uppercase tracking-widest text-gold">Legal</h3>
+            <h3 className="mt-8 text-xs font-bold uppercase tracking-widest text-gold">Legal</h3>
             <ul className="mt-5 space-y-3">
               {footerLinks.legal.map((link) => (
                 <li key={link.name}>

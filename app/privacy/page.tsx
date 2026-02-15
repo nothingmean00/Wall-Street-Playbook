@@ -5,6 +5,14 @@ import { Footer } from "@/components/layout/footer"
 export const metadata: Metadata = {
   title: "Privacy Policy | Wall Street Playbook",
   description: "Privacy policy for Wall Street Playbook. Learn how we collect, use, and protect your information.",
+  openGraph: {
+    title: "Privacy Policy | Wall Street Playbook",
+    description: "How Wall Street Playbook collects, uses, and protects your information.",
+    url: "https://wallstreetplaybook.org/privacy",
+  },
+  alternates: {
+    canonical: "https://wallstreetplaybook.org/privacy",
+  },
 }
 
 export default function PrivacyPage() {

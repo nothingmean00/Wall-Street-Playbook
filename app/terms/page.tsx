@@ -6,6 +6,14 @@ export const metadata: Metadata = {
   title: "Terms of Service | Wall Street Playbook",
   description:
     "Terms of service for Wall Street Playbook. Read our terms and conditions for using our products and services.",
+  openGraph: {
+    title: "Terms of Service | Wall Street Playbook",
+    description: "Terms of service for Wall Street Playbook products and services.",
+    url: "https://wallstreetplaybook.org/terms",
+  },
+  alternates: {
+    canonical: "https://wallstreetplaybook.org/terms",
+  },
 }
 
 export default function TermsPage() {
