@@ -130,32 +130,6 @@ export default async function PlaybookPage({ params }: PlaybookPageProps) {
         returnFees: "https://schema.org/FreeReturn",
       },
     },
-    aggregateRating: {
-      "@type": "AggregateRating",
-      ratingValue: "4.9",
-      reviewCount: playbook.slug === "finance-technical-interview-guide" ? "47" : playbook.slug === "networking-cold-email-playbook" ? "29" : "34",
-      bestRating: "5",
-      worstRating: "1",
-    },
-    review: [
-      {
-        "@type": "Review",
-        reviewRating: {
-          "@type": "Rating",
-          ratingValue: "5",
-          bestRating: "5",
-        },
-        author: {
-          "@type": "Person",
-          name: playbook.slug === "finance-technical-interview-guide"
-            ? "Non-Target Senior"
-            : "GS TMT Analyst",
-        },
-        reviewBody: playbook.slug === "finance-technical-interview-guide"
-          ? "The dual-format answers are a game-changer. I used the 30-second versions for quick HireVue rounds and the deep dives for Superdays. Ended up with offers from two BBs."
-          : "The headhunter section alone was worth it. I had no idea CPI asks paper LBOs in their initial calls. This intel saved me from bombing my first impression.",
-      },
-    ],
     category: "Education > Finance > Interview Preparation",
     image: "https://wallstreetplaybook.org/og-image.jpg",
   }

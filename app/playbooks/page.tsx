@@ -10,16 +10,12 @@ import {
   Check,
   ArrowRight,
   BookOpen,
-  Lock,
   Star,
   Shield,
   Sparkles,
   TrendingUp,
   Target,
   Mic,
-  Wrench,
-  Building2,
-  CreditCard,
   Zap,
   FileText,
   Users,
@@ -33,7 +29,6 @@ import {
   X,
   CheckCircle2,
   HelpCircle,
-  Clock,
   DollarSign,
 } from "lucide-react"
 
@@ -55,48 +50,26 @@ export const metadata: Metadata = {
 // Playbooks that are live and purchasable
 const livePlaybookSlugs = ["finance-technical-interview-guide", "pe-recruiting-playbook", "networking-cold-email-playbook"]
 
-// Upcoming playbooks with descriptions
+// Upcoming playbooks — show only the most anticipated ones
 const upcomingPlaybooks = [
   {
     title: "LBO Modeling Crash Course",
     description: "Build full LBO models from scratch. Includes Excel templates used in actual PE interviews.",
-    price: 127,
     icon: TrendingUp,
   },
   {
     title: "Stock Pitch Template & Examples",
     description: "The exact framework top hedge funds want, plus 5 fully-written example pitches.",
-    price: 77,
     icon: Target,
   },
   {
     title: "Walk Me Through Your Resume Playbook",
     description: "Transform your background into a compelling 2-minute narrative. 30+ real examples.",
-    price: 57,
     icon: Mic,
-  },
-  {
-    title: "Restructuring & Distressed Debt Guide",
-    description: "Chapter 11 mechanics, distressed valuation, and RX-specific interview frameworks.",
-    price: 97,
-    icon: Wrench,
-  },
-  {
-    title: "Real Estate PE Modeling Guide",
-    description: "Property-level cash flows, GP/LP waterfalls, and sector-specific REPE knowledge.",
-    price: 127,
-    icon: Building2,
-  },
-  {
-    title: "Private Credit & Direct Lending Playbook",
-    description: "Credit analysis frameworks, memo writing, and downside-focused thinking for Ares, Golub, Owl Rock.",
-    price: 97,
-    icon: CreditCard,
   },
   {
     title: "The Superday Survival Guide",
     description: "Hour-by-hour playbook for the 48 hours before, during, and after your Superday.",
-    price: 47,
     icon: Zap,
   },
 ]
@@ -527,176 +500,98 @@ export default function PlaybooksPage() {
           </div>
         </section>
 
-        {/* Who This Is For */}
-        <section className="bg-white py-16 lg:py-24">
-          <div className="mx-auto max-w-7xl px-6 lg:px-8">
-            <div className="mx-auto max-w-2xl text-center mb-14">
-              <h2 className="text-2xl font-bold text-navy sm:text-3xl">Built For Every Candidate Type</h2>
-              <div className="mt-2 mx-auto h-1 w-12 bg-gold" />
-              <p className="mt-4 text-charcoal/60 text-sm max-w-lg mx-auto">
-                Whether you&apos;re breaking in or leveling up, we have the playbook for your situation.
-              </p>
-            </div>
-
-            <div className="mx-auto max-w-6xl grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
-              {candidateTypes.map((candidate) => (
-                <div
-                  key={candidate.title}
-                  className="rounded-xl border border-border bg-off-white/50 p-6 hover:border-gold/30 hover:shadow-sm transition-all"
-                >
-                  <div className="flex items-center gap-3 mb-3">
-                    <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-navy/5">
-                      <candidate.icon className="h-5 w-5 text-gold" />
+        {/* Who This Is For + How We Compare — combined compact section */}
+        <section className="bg-white py-16 lg:py-20">
+          <div className="mx-auto max-w-6xl px-6 lg:px-8">
+            <div className="grid gap-12 lg:gap-16 lg:grid-cols-2">
+              {/* Left: Who This Is For */}
+              <div>
+                <h2 className="text-2xl font-bold text-navy">Built For Every Candidate</h2>
+                <div className="mt-2 h-1 w-12 bg-gold" />
+                <div className="mt-8 space-y-4">
+                  {candidateTypes.map((candidate) => (
+                    <div key={candidate.title} className="flex items-start gap-4">
+                      <div className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-lg bg-navy/5">
+                        <candidate.icon className="h-4.5 w-4.5 text-gold" />
+                      </div>
+                      <div>
+                        <h3 className="text-sm font-bold text-navy">{candidate.title}</h3>
+                        <p className="text-xs text-charcoal/50 mt-0.5">Recommended: <span className="text-gold font-medium">{candidate.recommended}</span></p>
+                      </div>
                     </div>
-                    <h3 className="text-base font-bold text-navy">{candidate.title}</h3>
+                  ))}
+                </div>
+              </div>
+
+              {/* Right: How We Compare */}
+              <div>
+                <h2 className="text-2xl font-bold text-navy">Why Playbooks Win</h2>
+                <div className="mt-2 h-1 w-12 bg-gold" />
+                <div className="mt-8 rounded-xl border border-border bg-off-white/50 overflow-hidden">
+                  {/* Table Header */}
+                  <div className="grid grid-cols-3 bg-navy text-white">
+                    <div className="p-3 text-[10px] font-semibold uppercase tracking-wider">Feature</div>
+                    <div className="p-3 text-[10px] font-semibold uppercase tracking-wider text-center text-gold">WSP</div>
+                    <div className="p-3 text-[10px] font-semibold uppercase tracking-wider text-center">Others</div>
                   </div>
-                  <p className="text-sm text-charcoal/60 leading-relaxed">{candidate.description}</p>
-                  <div className="mt-4 pt-3 border-t border-border/40">
-                    <p className="text-xs text-charcoal/40">Recommended:</p>
-                    <p className="text-xs font-semibold text-gold mt-0.5">{candidate.recommended}</p>
+                  {comparisonFeatures.map((row, idx) => (
+                    <div
+                      key={row.feature}
+                      className={`grid grid-cols-3 ${idx % 2 === 0 ? "bg-white" : "bg-off-white/30"} ${idx < comparisonFeatures.length - 1 ? "border-b border-border/30" : ""}`}
+                    >
+                      <div className="px-3 py-2.5 text-xs text-charcoal/70">{row.feature}</div>
+                      <div className="px-3 py-2.5 flex items-center justify-center">
+                        <CheckCircle2 className="h-4 w-4 text-green-500" />
+                      </div>
+                      <div className="px-3 py-2.5 flex items-center justify-center">
+                        {row.forums || row.courses ? (
+                          <span className="text-[10px] text-charcoal/30">Sometimes</span>
+                        ) : (
+                          <X className="h-4 w-4 text-charcoal/15" />
+                        )}
+                      </div>
+                    </div>
+                  ))}
+                  <div className="grid grid-cols-3 border-t border-gold/20 bg-gold/5">
+                    <div className="px-3 py-2.5 text-xs font-bold text-navy">Price</div>
+                    <div className="px-3 py-2.5 text-center text-xs font-bold text-gold">$47–$79</div>
+                    <div className="px-3 py-2.5 text-center text-xs text-charcoal/40">$0–$2,000+</div>
                   </div>
                 </div>
-              ))}
+              </div>
             </div>
           </div>
         </section>
 
-        {/* Comparison Table */}
-        <section className="bg-off-white py-16 lg:py-24">
-          <div className="mx-auto max-w-4xl px-6 lg:px-8">
-            <div className="mx-auto max-w-2xl text-center mb-14">
-              <h2 className="text-2xl font-bold text-navy sm:text-3xl">How We Compare</h2>
+        {/* Upcoming Playbooks + Email Capture */}
+        <section className="bg-off-white py-16 lg:py-20">
+          <div className="mx-auto max-w-5xl px-6 lg:px-8">
+            <div className="text-center mb-10">
+              <h2 className="text-2xl font-bold text-navy">Coming Soon</h2>
               <div className="mt-2 mx-auto h-1 w-12 bg-gold" />
-              <p className="mt-4 text-charcoal/60 text-sm">
-                See why structured playbooks outperform every other prep method.
-              </p>
             </div>
 
-            <div className="rounded-2xl border border-border bg-white shadow-sm overflow-hidden">
-              {/* Table Header */}
-              <div className="grid grid-cols-5 bg-navy text-white">
-                <div className="p-4 text-xs font-semibold uppercase tracking-wider">Feature</div>
-                <div className="p-4 text-xs font-semibold uppercase tracking-wider text-center text-gold">WSP Playbooks</div>
-                <div className="p-4 text-xs font-semibold uppercase tracking-wider text-center hidden sm:block">Free Forums</div>
-                <div className="p-4 text-xs font-semibold uppercase tracking-wider text-center hidden sm:block">$400+ Courses</div>
-                <div className="p-4 text-xs font-semibold uppercase tracking-wider text-center hidden sm:block">Self-Study</div>
-              </div>
-
-              {/* Table Rows */}
-              {comparisonFeatures.map((row, idx) => (
-                <div
-                  key={row.feature}
-                  className={`grid grid-cols-5 ${idx % 2 === 0 ? "bg-white" : "bg-off-white/50"} ${idx < comparisonFeatures.length - 1 ? "border-b border-border/50" : ""}`}
-                >
-                  <div className="p-4 text-sm text-charcoal/80 flex items-center">{row.feature}</div>
-                  <div className="p-4 flex items-center justify-center">
-                    {row.wsp ? (
-                      <CheckCircle2 className="h-5 w-5 text-green-500" />
-                    ) : (
-                      <X className="h-5 w-5 text-charcoal/20" />
-                    )}
-                  </div>
-                  <div className="p-4 items-center justify-center hidden sm:flex">
-                    {row.forums ? (
-                      <CheckCircle2 className="h-5 w-5 text-green-500" />
-                    ) : (
-                      <X className="h-5 w-5 text-charcoal/20" />
-                    )}
-                  </div>
-                  <div className="p-4 items-center justify-center hidden sm:flex">
-                    {row.courses ? (
-                      <CheckCircle2 className="h-5 w-5 text-green-500" />
-                    ) : (
-                      <X className="h-5 w-5 text-charcoal/20" />
-                    )}
-                  </div>
-                  <div className="p-4 items-center justify-center hidden sm:flex">
-                    {row.selfStudy ? (
-                      <CheckCircle2 className="h-5 w-5 text-green-500" />
-                    ) : (
-                      <X className="h-5 w-5 text-charcoal/20" />
-                    )}
-                  </div>
-                </div>
-              ))}
-
-              {/* Price Row */}
-              <div className="grid grid-cols-5 border-t-2 border-gold/30 bg-gold/5">
-                <div className="p-4 text-sm font-bold text-navy">Price</div>
-                <div className="p-4 text-center">
-                  <span className="text-sm font-bold text-gold">$47–$79</span>
-                </div>
-                <div className="p-4 text-center hidden sm:block">
-                  <span className="text-sm text-charcoal/50">Free</span>
-                </div>
-                <div className="p-4 text-center hidden sm:block">
-                  <span className="text-sm text-charcoal/50">$400–$2,000+</span>
-                </div>
-                <div className="p-4 text-center hidden sm:block">
-                  <span className="text-sm text-charcoal/50">Free (+ time)</span>
-                </div>
-              </div>
-            </div>
-          </div>
-        </section>
-
-        {/* Upcoming Playbooks */}
-        <section className="bg-white py-16 lg:py-24">
-          <div className="mx-auto max-w-7xl px-6 lg:px-8">
-            <div className="mx-auto max-w-2xl text-center mb-12">
-              <div className="inline-flex items-center gap-2 rounded-full border border-gold/30 bg-gold/10 px-4 py-1.5 mb-4">
-                <Sparkles className="w-4 h-4 text-gold" />
-                <span className="text-xs font-semibold uppercase tracking-widest text-gold">
-                  More Coming
-                </span>
-              </div>
-              <h2 className="text-2xl font-bold text-navy sm:text-3xl">Coming Soon</h2>
-              <p className="mt-3 text-charcoal/60 text-sm max-w-lg mx-auto">
-                The most comprehensive library of finance recruiting playbooks. New guides ship regularly.
-              </p>
-            </div>
-
-            <div className="mx-auto max-w-6xl grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+            <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4 mb-10">
               {upcomingPlaybooks.map((playbook) => (
                 <div
                   key={playbook.title}
-                  className="relative rounded-xl border border-border/60 bg-off-white/50 p-5 transition-all hover:border-gold/30 hover:shadow-sm"
+                  className="flex items-start gap-3 rounded-xl border border-border/60 bg-white p-4 transition-all hover:border-gold/30"
                 >
-                  {/* Coming soon badge */}
-                  <div className="absolute top-3 right-3">
-                    <span className="inline-flex items-center gap-1 rounded-full bg-gold/10 px-2 py-0.5 text-[10px] font-semibold text-gold">
-                      <Lock className="h-2.5 w-2.5" />
-                      Soon
-                    </span>
+                  <div className="flex h-9 w-9 flex-shrink-0 items-center justify-center rounded-lg bg-navy/5">
+                    <playbook.icon className="h-4 w-4 text-gold" />
                   </div>
-
-                  <div className="flex h-10 w-10 items-center justify-center rounded-lg bg-navy/5 mb-3">
-                    <playbook.icon className="h-5 w-5 text-gold" />
-                  </div>
-
-                  <h3 className="text-sm font-bold text-navy leading-tight pr-12">
-                    {playbook.title}
-                  </h3>
-                  <p className="mt-2 text-xs text-charcoal/50 leading-relaxed">
-                    {playbook.description}
-                  </p>
-
-                  <div className="mt-4 pt-3 border-t border-border/40">
-                    <span className="text-sm font-bold text-navy">${playbook.price}</span>
-                    <span className="text-xs text-charcoal/40 ml-1">at launch</span>
+                  <div>
+                    <h3 className="text-sm font-bold text-navy leading-tight">{playbook.title}</h3>
+                    <p className="mt-1 text-[11px] text-charcoal/40 leading-relaxed">{playbook.description}</p>
                   </div>
                 </div>
               ))}
             </div>
 
-            {/* Email Signup for Notifications */}
-            <div className="mx-auto max-w-xl mt-12 text-center">
-              <div className="rounded-xl border border-border bg-off-white/50 p-6">
-                <RefreshCw className="h-5 w-5 text-gold mx-auto mb-3" />
-                <p className="text-sm font-semibold text-navy">Get notified when new playbooks launch</p>
-                <p className="text-xs text-charcoal/50 mt-1 mb-4">Plus weekly recruiting insights — no spam, unsubscribe anytime.</p>
-                <EmailCapture variant="inline" />
-              </div>
+            <div className="mx-auto max-w-md text-center">
+              <p className="text-sm font-semibold text-navy">Get notified when new playbooks launch</p>
+              <p className="text-xs text-charcoal/50 mt-1 mb-4">Plus weekly recruiting insights — no spam.</p>
+              <EmailCapture variant="inline" />
             </div>
           </div>
         </section>
