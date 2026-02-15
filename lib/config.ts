@@ -4,11 +4,11 @@
  */
 
 /** Playbook slugs that are live and purchasable */
-export const LIVE_PLAYBOOK_SLUGS = [
+export const LIVE_PLAYBOOK_SLUGS: string[] = [
   "finance-technical-interview-guide",
   "pe-recruiting-playbook",
   "networking-cold-email-playbook",
-] as const
+]
 
 /** Set version for efficient lookups (e.g. sitemap filtering) */
 export const LIVE_PLAYBOOK_SLUGS_SET = new Set(LIVE_PLAYBOOK_SLUGS)
