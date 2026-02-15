@@ -22,6 +22,7 @@ export const metadata: Metadata = {
     description:
       "Complete guide to hedge fund interview preparation. Stock pitch frameworks and what top funds look for.",
     url: "https://wallstreetplaybook.org/hedge-fund-interview-prep",
+    images: [{ url: "https://wallstreetplaybook.org/og-interview-prep.jpg", width: 1200, height: 630 }],
   },
   alternates: {
     canonical: "https://wallstreetplaybook.org/hedge-fund-interview-prep",

@@ -23,6 +23,7 @@ export const metadata: Metadata = {
     description:
       "Complete guide to finance careers. Compare paths, compensation, and what it takes to break in.",
     url: "https://wallstreetplaybook.org/finance-career-guide",
+    images: [{ url: "https://wallstreetplaybook.org/og-recruiting.jpg", width: 1200, height: 630 }],
   },
   alternates: {
     canonical: "https://wallstreetplaybook.org/finance-career-guide",

@@ -10,6 +10,11 @@ export const metadata: Metadata = {
     title: "Terms of Service | Wall Street Playbook",
     description: "Terms of service for Wall Street Playbook products and services.",
     url: "https://wallstreetplaybook.org/terms",
+    images: [{ url: "https://wallstreetplaybook.org/og-default.jpg", width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    images: ["https://wallstreetplaybook.org/og-default.jpg"],
   },
   alternates: {
     canonical: "https://wallstreetplaybook.org/terms",

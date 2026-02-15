@@ -9,6 +9,11 @@ export const metadata: Metadata = {
     title: "Privacy Policy | Wall Street Playbook",
     description: "How Wall Street Playbook collects, uses, and protects your information.",
     url: "https://wallstreetplaybook.org/privacy",
+    images: [{ url: "https://wallstreetplaybook.org/og-default.jpg", width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    images: ["https://wallstreetplaybook.org/og-default.jpg"],
   },
   alternates: {
     canonical: "https://wallstreetplaybook.org/privacy",

@@ -22,6 +22,7 @@ export const metadata: Metadata = {
     description:
       "The complete guide to private equity recruiting. On-cycle timelines, headhunter strategies, and PE interview preparation.",
     url: "https://wallstreetplaybook.org/private-equity-recruiting",
+    images: [{ url: "https://wallstreetplaybook.org/og-recruiting.jpg", width: 1200, height: 630 }],
   },
   alternates: {
     canonical: "https://wallstreetplaybook.org/private-equity-recruiting",

@@ -21,6 +21,7 @@ export const metadata: Metadata = {
     description:
       "How to break into investment banking from a non-target school. Networking strategies, resume tips, and proven playbooks.",
     url: "https://wallstreetplaybook.org/non-target-investment-banking",
+    images: [{ url: "https://wallstreetplaybook.org/og-recruiting.jpg", width: 1200, height: 630 }],
   },
   alternates: {
     canonical: "https://wallstreetplaybook.org/non-target-investment-banking",

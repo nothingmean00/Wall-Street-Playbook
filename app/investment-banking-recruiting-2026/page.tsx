@@ -23,6 +23,7 @@ export const metadata: Metadata = {
     description:
       "Complete 2026 investment banking recruiting timeline. Summer analyst dates and what's changed.",
     url: "https://wallstreetplaybook.org/investment-banking-recruiting-2026",
+    images: [{ url: "https://wallstreetplaybook.org/og-recruiting.jpg", width: 1200, height: 630 }],
   },
   alternates: {
     canonical: "https://wallstreetplaybook.org/investment-banking-recruiting-2026",

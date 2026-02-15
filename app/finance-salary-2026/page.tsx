@@ -23,6 +23,7 @@ export const metadata: Metadata = {
     description:
       "2026 finance salary guide. Investment banking, PE, and hedge fund compensation breakdown.",
     url: "https://wallstreetplaybook.org/finance-salary-2026",
+    images: [{ url: "https://wallstreetplaybook.org/og-recruiting.jpg", width: 1200, height: 630 }],
   },
   alternates: {
     canonical: "https://wallstreetplaybook.org/finance-salary-2026",

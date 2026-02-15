@@ -16,6 +16,18 @@ export const metadata: Metadata = {
   title: "Wall Street Playbook | Break Into Investment Banking, PE & Hedge Funds",
   description:
     "Proven tactics, frameworks, and tools used by candidates who land roles in investment banking, private equity, and hedge funds. Premium playbooks and resume services.",
+  openGraph: {
+    title: "Wall Street Playbook | Break Into Investment Banking, PE & Hedge Funds",
+    description: "Proven tactics, frameworks, and tools used by candidates who land roles in investment banking, private equity, and hedge funds.",
+    url: "https://wallstreetplaybook.org",
+    images: [{ url: "https://wallstreetplaybook.org/og-default.jpg", width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Wall Street Playbook | Break Into IB, PE & Hedge Funds",
+    description: "Proven tactics, frameworks, and tools used by candidates who land roles in investment banking, private equity, and hedge funds.",
+    images: ["https://wallstreetplaybook.org/og-default.jpg"],
+  },
   alternates: {
     canonical: "https://wallstreetplaybook.org",
   },

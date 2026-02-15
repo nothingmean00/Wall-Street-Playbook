@@ -21,6 +21,7 @@ export const metadata: Metadata = {
     description:
       "The complete guide to investment banking interview preparation. Technical questions, behavioral frameworks, and networking strategies.",
     url: "https://wallstreetplaybook.org/investment-banking-interview-prep",
+    images: [{ url: "https://wallstreetplaybook.org/og-interview-prep.jpg", width: 1200, height: 630 }],
   },
   alternates: {
     canonical: "https://wallstreetplaybook.org/investment-banking-interview-prep",

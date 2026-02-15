@@ -22,6 +22,7 @@ export const metadata: Metadata = {
     description:
       "How to write an investment banking resume that gets interviews. Format, bullet points, and real examples.",
     url: "https://wallstreetplaybook.org/investment-banking-resume",
+    images: [{ url: "https://wallstreetplaybook.org/og-resume-services.jpg", width: 1200, height: 630 }],
   },
   alternates: {
     canonical: "https://wallstreetplaybook.org/investment-banking-resume",
