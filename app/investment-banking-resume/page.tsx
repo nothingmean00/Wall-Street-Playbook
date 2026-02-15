@@ -26,6 +26,10 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://wallstreetplaybook.org/investment-banking-resume",
   },
+  twitter: {
+    card: "summary_large_image",
+    images: ["https://wallstreetplaybook.org/og-resume-services.jpg"],
+  },
 }
 
 const formatRules = [

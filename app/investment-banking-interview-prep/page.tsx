@@ -25,6 +25,10 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://wallstreetplaybook.org/investment-banking-interview-prep",
   },
+  twitter: {
+    card: "summary_large_image",
+    images: ["https://wallstreetplaybook.org/og-interview-prep.jpg"],
+  },
 }
 
 const technicalCategories = [

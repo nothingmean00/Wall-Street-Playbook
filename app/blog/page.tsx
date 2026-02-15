@@ -27,12 +27,14 @@ export const metadata: Metadata = {
       "Free guides on IB technicals, PE recruiting timelines, networking scripts, salary data, and career strategies. Written by practitioners, not professors.",
     url: "https://wallstreetplaybook.org/blog",
     type: "website",
+    images: [{ url: "https://wallstreetplaybook.org/og-blog.jpg", width: 1200, height: 630 }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Finance Recruiting Blog | Wall Street Playbook",
     description:
       "Free guides on IB technicals, PE recruiting timelines, networking scripts, salary data, and career strategies.",
+    images: ["https://wallstreetplaybook.org/og-blog.jpg"],
   },
   alternates: {
     canonical: "https://wallstreetplaybook.org/blog",

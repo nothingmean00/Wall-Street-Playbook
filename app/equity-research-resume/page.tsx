@@ -22,9 +22,14 @@ export const metadata: Metadata = {
     description:
       "Professional resume review for research roles. Highlight your investment insights and analytical rigor.",
     url: "https://wallstreetplaybook.org/equity-research-resume",
+    images: [{ url: "https://wallstreetplaybook.org/og-resume-services.jpg", width: 1200, height: 630 }],
   },
   alternates: {
     canonical: "https://wallstreetplaybook.org/equity-research-resume",
+  },
+  twitter: {
+    card: "summary_large_image",
+    images: ["https://wallstreetplaybook.org/og-resume-services.jpg"],
   },
 }
 

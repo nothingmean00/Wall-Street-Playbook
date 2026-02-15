@@ -23,9 +23,14 @@ export const metadata: Metadata = {
     description:
       "2026 private equity recruiting timeline and on-cycle dates. When top PE firms recruit.",
     url: "https://wallstreetplaybook.org/private-equity-recruiting-2026",
+    images: [{ url: "https://wallstreetplaybook.org/og-recruiting.jpg", width: 1200, height: 630 }],
   },
   alternates: {
     canonical: "https://wallstreetplaybook.org/private-equity-recruiting-2026",
+  },
+  twitter: {
+    card: "summary_large_image",
+    images: ["https://wallstreetplaybook.org/og-recruiting.jpg"],
   },
 }
 

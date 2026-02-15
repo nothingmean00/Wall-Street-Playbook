@@ -24,9 +24,14 @@ export const metadata: Metadata = {
     description:
       "Professional resume review for MBA candidates targeting investment banking and finance. Summer associate positioning.",
     url: "https://wallstreetplaybook.org/mba-resume-review",
+    images: [{ url: "https://wallstreetplaybook.org/og-resume-services.jpg", width: 1200, height: 630 }],
   },
   alternates: {
     canonical: "https://wallstreetplaybook.org/mba-resume-review",
+  },
+  twitter: {
+    card: "summary_large_image",
+    images: ["https://wallstreetplaybook.org/og-resume-services.jpg"],
   },
 }
 

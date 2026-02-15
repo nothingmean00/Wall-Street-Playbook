@@ -23,9 +23,14 @@ export const metadata: Metadata = {
     description:
       "The 11-point checklist that separates emails that get responses from emails that get deleted. Free download.",
     url: "https://wallstreetplaybook.org/cold-email-checklist",
+    images: [{ url: "https://wallstreetplaybook.org/og-recruiting.jpg", width: 1200, height: 630 }],
   },
   alternates: {
     canonical: "https://wallstreetplaybook.org/cold-email-checklist",
+  },
+  twitter: {
+    card: "summary_large_image",
+    images: ["https://wallstreetplaybook.org/og-recruiting.jpg"],
   },
 }
 

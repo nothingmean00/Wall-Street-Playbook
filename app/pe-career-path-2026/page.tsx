@@ -23,9 +23,14 @@ export const metadata: Metadata = {
     description:
       "Private equity career progression in 2026. Timelines, promotion rates, and exit opportunities.",
     url: "https://wallstreetplaybook.org/pe-career-path-2026",
+    images: [{ url: "https://wallstreetplaybook.org/og-recruiting.jpg", width: 1200, height: 630 }],
   },
   alternates: {
     canonical: "https://wallstreetplaybook.org/pe-career-path-2026",
+  },
+  twitter: {
+    card: "summary_large_image",
+    images: ["https://wallstreetplaybook.org/og-recruiting.jpg"],
   },
 }
 

@@ -22,9 +22,14 @@ export const metadata: Metadata = {
     title: "Didn't Get IB Offers? What to Do Next | Wall Street Playbook",
     description: "Failed IB recruiting? Here's your playbook for what actually works next.",
     url: "https://wallstreetplaybook.org/failed-ib-recruiting",
+    images: [{ url: "https://wallstreetplaybook.org/og-recruiting.jpg", width: 1200, height: 630 }],
   },
   alternates: {
     canonical: "https://wallstreetplaybook.org/failed-ib-recruiting",
+  },
+  twitter: {
+    card: "summary_large_image",
+    images: ["https://wallstreetplaybook.org/og-recruiting.jpg"],
   },
 }
 

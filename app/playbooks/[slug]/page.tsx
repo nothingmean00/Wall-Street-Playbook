@@ -9,7 +9,7 @@ import { BuyButton } from "@/components/buy-button"
 import { PEPlaybookPreview, IBTechnicalPreview, NetworkingPreview } from "@/components/playbook-preview"
 import { PageTracker } from "@/components/analytics/page-tracker"
 import { ScrollTracker } from "@/components/analytics/scroll-tracker"
-import { LIVE_PLAYBOOK_SLUGS, DEFAULT_OG_IMAGE } from "@/lib/config"
+import { LIVE_PLAYBOOK_SLUGS, OG_IMAGES } from "@/lib/config"
 import type { Metadata } from "next"
 
 interface PlaybookPageProps {
@@ -32,6 +32,13 @@ export async function generateMetadata({ params }: PlaybookPageProps): Promise<M
 
   const isLive = LIVE_PLAYBOOK_SLUGS.includes(playbook.slug)
 
+  const ogImageMap: Record<string, string> = {
+    "finance-technical-interview-guide": OG_IMAGES.technicalGuide,
+    "pe-recruiting-playbook": OG_IMAGES.pePlaybook,
+    "networking-cold-email-playbook": OG_IMAGES.networkingPlaybook,
+  }
+  const ogImage = ogImageMap[playbook.slug] || OG_IMAGES.playbooks
+
   return {
     title: playbook.title,
     description: playbook.longDescription,
@@ -53,13 +60,13 @@ export async function generateMetadata({ params }: PlaybookPageProps): Promise<M
       description: playbook.longDescription,
       url: `https://wallstreetplaybook.org/playbooks/${playbook.slug}`,
       type: "website",
-      images: [{ url: DEFAULT_OG_IMAGE, width: 1200, height: 630 }],
+      images: [{ url: ogImage, width: 1200, height: 630 }],
     },
     twitter: {
       card: "summary_large_image",
       title: `${playbook.title} | Wall Street Playbook`,
       description: playbook.longDescription,
-      images: [DEFAULT_OG_IMAGE],
+      images: [ogImage],
     },
     alternates: {
       canonical: `https://wallstreetplaybook.org/playbooks/${playbook.slug}`,

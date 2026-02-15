@@ -23,9 +23,14 @@ export const metadata: Metadata = {
     description:
       "How to break into PE from consulting, Big 4, corp dev, and military backgrounds in 2026.",
     url: "https://wallstreetplaybook.org/non-target-to-pe",
+    images: [{ url: "https://wallstreetplaybook.org/og-recruiting.jpg", width: 1200, height: 630 }],
   },
   alternates: {
     canonical: "https://wallstreetplaybook.org/non-target-to-pe",
+  },
+  twitter: {
+    card: "summary_large_image",
+    images: ["https://wallstreetplaybook.org/og-recruiting.jpg"],
   },
 }
 

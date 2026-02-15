@@ -21,9 +21,14 @@ export const metadata: Metadata = {
     title: "Low GPA? How to Break Into Finance Anyway",
     description: "Realistic strategies for finance careers when your GPA isn't perfect.",
     url: "https://wallstreetplaybook.org/low-gpa-finance-jobs",
+    images: [{ url: "https://wallstreetplaybook.org/og-recruiting.jpg", width: 1200, height: 630 }],
   },
   alternates: {
     canonical: "https://wallstreetplaybook.org/low-gpa-finance-jobs",
+  },
+  twitter: {
+    card: "summary_large_image",
+    images: ["https://wallstreetplaybook.org/og-recruiting.jpg"],
   },
 }
 

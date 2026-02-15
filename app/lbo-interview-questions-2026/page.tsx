@@ -22,9 +22,14 @@ export const metadata: Metadata = {
     title: "LBO Interview Questions 2026 | PE & Finance Technical Prep",
     description: "The LBO questions tested at top PE firms and banks—return drivers, deal mechanics, and paper LBO frameworks.",
     url: "https://wallstreetplaybook.org/lbo-interview-questions-2026",
+    images: [{ url: "https://wallstreetplaybook.org/og-interview-prep.jpg", width: 1200, height: 630 }],
   },
   alternates: {
     canonical: "https://wallstreetplaybook.org/lbo-interview-questions-2026",
+  },
+  twitter: {
+    card: "summary_large_image",
+    images: ["https://wallstreetplaybook.org/og-interview-prep.jpg"],
   },
 }
 

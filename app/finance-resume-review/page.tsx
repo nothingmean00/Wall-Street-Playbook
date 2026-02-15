@@ -23,9 +23,14 @@ export const metadata: Metadata = {
     description:
       "Professional finance resume review by industry experts. Investment banking, PE, and hedge fund resumes. Fast turnaround.",
     url: "https://wallstreetplaybook.org/finance-resume-review",
+    images: [{ url: "https://wallstreetplaybook.org/og-resume-services.jpg", width: 1200, height: 630 }],
   },
   alternates: {
     canonical: "https://wallstreetplaybook.org/finance-resume-review",
+  },
+  twitter: {
+    card: "summary_large_image",
+    images: ["https://wallstreetplaybook.org/og-resume-services.jpg"],
   },
 }
 

@@ -78,6 +78,39 @@ export async function initDatabase() {
     )
   `
 
+  await db`
+    CREATE TABLE IF NOT EXISTS lead_magnet_downloads (
+      id SERIAL PRIMARY KEY,
+      email VARCHAR(255) NOT NULL,
+      magnet_name VARCHAR(200) NOT NULL,
+      source VARCHAR(100) DEFAULT 'blog',
+      created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+    )
+  `
+
+  // Add index for querying downloads by email
+  try {
+    await db`CREATE INDEX IF NOT EXISTS idx_lead_magnet_downloads_email ON lead_magnet_downloads (email)`
+  } catch {
+    // Index might already exist, ignore errors
+  }
+
+  // Jobs cache table — persists across serverless cold starts
+  await db`
+    CREATE TABLE IF NOT EXISTS jobs_cache (
+      id SERIAL PRIMARY KEY,
+      jobs_data JSONB NOT NULL,
+      fetched_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+      query_set TEXT DEFAULT 'default'
+    )
+  `
+
+  try {
+    await db`CREATE INDEX IF NOT EXISTS idx_jobs_cache_fetched ON jobs_cache (fetched_at DESC)`
+  } catch {
+    // Index might already exist
+  }
+
   // Add new payment columns if they don't exist (for existing tables)
   try {
     await db`ALTER TABLE resume_submissions ADD COLUMN IF NOT EXISTS payment_status VARCHAR(30) DEFAULT 'unpaid'`

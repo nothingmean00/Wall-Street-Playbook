@@ -24,9 +24,14 @@ export const metadata: Metadata = {
     description:
       "Professional PE resume review. Position your deal experience and banking background to land PE interviews.",
     url: "https://wallstreetplaybook.org/private-equity-resume",
+    images: [{ url: "https://wallstreetplaybook.org/og-resume-services.jpg", width: 1200, height: 630 }],
   },
   alternates: {
     canonical: "https://wallstreetplaybook.org/private-equity-resume",
+  },
+  twitter: {
+    card: "summary_large_image",
+    images: ["https://wallstreetplaybook.org/og-resume-services.jpg"],
   },
 }
 

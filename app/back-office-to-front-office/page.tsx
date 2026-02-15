@@ -22,9 +22,14 @@ export const metadata: Metadata = {
     title: "Back Office to Front Office | Wall Street Playbook",
     description: "The realistic path from operations to revenue-generating roles.",
     url: "https://wallstreetplaybook.org/back-office-to-front-office",
+    images: [{ url: "https://wallstreetplaybook.org/og-recruiting.jpg", width: 1200, height: 630 }],
   },
   alternates: {
     canonical: "https://wallstreetplaybook.org/back-office-to-front-office",
+  },
+  twitter: {
+    card: "summary_large_image",
+    images: ["https://wallstreetplaybook.org/og-recruiting.jpg"],
   },
 }
 

@@ -22,9 +22,14 @@ export const metadata: Metadata = {
     title: "M&A Interview Questions 2026 | Accretion/Dilution, Merger Models",
     description: "The M&A questions tested at top banks—accretion/dilution, merger models, and deal mechanics.",
     url: "https://wallstreetplaybook.org/ma-interview-questions-2026",
+    images: [{ url: "https://wallstreetplaybook.org/og-interview-prep.jpg", width: 1200, height: 630 }],
   },
   alternates: {
     canonical: "https://wallstreetplaybook.org/ma-interview-questions-2026",
+  },
+  twitter: {
+    card: "summary_large_image",
+    images: ["https://wallstreetplaybook.org/og-interview-prep.jpg"],
   },
 }
 

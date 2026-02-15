@@ -21,9 +21,14 @@ export const metadata: Metadata = {
     title: "Career Change to Finance at 30+ | Wall Street Playbook",
     description: "The realistic path to finance when you're not 22 anymore.",
     url: "https://wallstreetplaybook.org/career-change-finance-30",
+    images: [{ url: "https://wallstreetplaybook.org/og-recruiting.jpg", width: 1200, height: 630 }],
   },
   alternates: {
     canonical: "https://wallstreetplaybook.org/career-change-finance-30",
+  },
+  twitter: {
+    card: "summary_large_image",
+    images: ["https://wallstreetplaybook.org/og-recruiting.jpg"],
   },
 }
 

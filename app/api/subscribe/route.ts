@@ -41,6 +41,20 @@ export async function POST(request: NextRequest) {
         END
     `
 
+    // If this is a lead magnet download, log it separately
+    if (source && source.startsWith('lead_magnet_')) {
+      const magnetName = source.replace('lead_magnet_', '').replace(/_/g, ' ')
+      try {
+        await sql`
+          INSERT INTO lead_magnet_downloads (email, magnet_name, source)
+          VALUES (${email}, ${magnetName}, ${source})
+        `
+      } catch (downloadError) {
+        console.error('Failed to log lead magnet download:', downloadError)
+        // Don't fail the request if logging fails
+      }
+    }
+
     // Send welcome email
     try {
       await sendWelcomeEmail(email)

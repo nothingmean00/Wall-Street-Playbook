@@ -27,6 +27,10 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://wallstreetplaybook.org/investment-banking-recruiting-2026",
   },
+  twitter: {
+    card: "summary_large_image",
+    images: ["https://wallstreetplaybook.org/og-recruiting.jpg"],
+  },
 }
 
 const timeline2026 = [

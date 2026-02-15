@@ -23,9 +23,14 @@ export const metadata: Metadata = {
     description:
       "The 7 headhunter firms that control access to Blackstone, KKR, Apollo, and top PE funds in 2026.",
     url: "https://wallstreetplaybook.org/pe-headhunters-2026",
+    images: [{ url: "https://wallstreetplaybook.org/og-recruiting.jpg", width: 1200, height: 630 }],
   },
   alternates: {
     canonical: "https://wallstreetplaybook.org/pe-headhunters-2026",
+  },
+  twitter: {
+    card: "summary_large_image",
+    images: ["https://wallstreetplaybook.org/og-recruiting.jpg"],
   },
 }
 

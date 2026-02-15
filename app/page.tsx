@@ -29,10 +29,10 @@ export default function HomePage() {
       <main className="flex-grow pt-0">
         <HeroSection />
         <ProofGallery />
-        <ResumeServicesSection />
         <WhatYouGet />
         <WhyItWorks />
         <PlaybooksComingSoon />
+        <ResumeServicesSection />
         <JobsPreview />
         <BlogPreview />
         <CTASection />

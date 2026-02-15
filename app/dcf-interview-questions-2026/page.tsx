@@ -22,9 +22,14 @@ export const metadata: Metadata = {
     title: "DCF Interview Questions 2026 | Walk Through a DCF Perfect Answer",
     description: "The 6-step DCF framework tested at every top bank, with follow-up questions and common traps.",
     url: "https://wallstreetplaybook.org/dcf-interview-questions-2026",
+    images: [{ url: "https://wallstreetplaybook.org/og-interview-prep.jpg", width: 1200, height: 630 }],
   },
   alternates: {
     canonical: "https://wallstreetplaybook.org/dcf-interview-questions-2026",
+  },
+  twitter: {
+    card: "summary_large_image",
+    images: ["https://wallstreetplaybook.org/og-interview-prep.jpg"],
   },
 }
 

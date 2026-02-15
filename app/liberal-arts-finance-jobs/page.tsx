@@ -22,9 +22,14 @@ export const metadata: Metadata = {
     title: "Liberal Arts to Finance | Wall Street Playbook",
     description: "Your English degree isn't a liability. Here's how to use it.",
     url: "https://wallstreetplaybook.org/liberal-arts-finance-jobs",
+    images: [{ url: "https://wallstreetplaybook.org/og-recruiting.jpg", width: 1200, height: 630 }],
   },
   alternates: {
     canonical: "https://wallstreetplaybook.org/liberal-arts-finance-jobs",
+  },
+  twitter: {
+    card: "summary_large_image",
+    images: ["https://wallstreetplaybook.org/og-recruiting.jpg"],
   },
 }
 

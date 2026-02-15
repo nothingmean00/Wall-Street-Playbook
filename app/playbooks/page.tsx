@@ -6,7 +6,7 @@ import { BuyButton } from "@/components/buy-button"
 import { EmailCapture } from "@/components/email-capture"
 import { ScrollTracker } from "@/components/analytics/scroll-tracker"
 import { playbooks } from "@/lib/data"
-import { LIVE_PLAYBOOK_SLUGS, DEFAULT_OG_IMAGE } from "@/lib/config"
+import { LIVE_PLAYBOOK_SLUGS, OG_IMAGES } from "@/lib/config"
 import {
   Check,
   ArrowRight,
@@ -42,13 +42,13 @@ export const metadata: Metadata = {
     description:
       "Premium guides for IB, PE, and hedge fund recruiting. Technical interview frameworks, PE recruiting intel, networking systems, and LBO modeling — built from real placement data.",
     url: "https://wallstreetplaybook.org/playbooks",
-    images: [{ url: DEFAULT_OG_IMAGE, width: 1200, height: 630 }],
+    images: [{ url: OG_IMAGES.playbooks, width: 1200, height: 630 }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Finance Recruiting Playbooks | Wall Street Playbook",
     description: "Premium guides for IB, PE, and hedge fund recruiting — built from real placement data.",
-    images: [DEFAULT_OG_IMAGE],
+    images: [OG_IMAGES.playbooks],
   },
   alternates: {
     canonical: "https://wallstreetplaybook.org/playbooks",

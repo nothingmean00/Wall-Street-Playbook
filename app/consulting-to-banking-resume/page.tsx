@@ -23,9 +23,14 @@ export const metadata: Metadata = {
     description:
       "Resume help for consultants transitioning to investment banking. Position your consulting experience for IB recruiting.",
     url: "https://wallstreetplaybook.org/consulting-to-banking-resume",
+    images: [{ url: "https://wallstreetplaybook.org/og-resume-services.jpg", width: 1200, height: 630 }],
   },
   alternates: {
     canonical: "https://wallstreetplaybook.org/consulting-to-banking-resume",
+  },
+  twitter: {
+    card: "summary_large_image",
+    images: ["https://wallstreetplaybook.org/og-resume-services.jpg"],
   },
 }
 

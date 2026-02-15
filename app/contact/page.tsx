@@ -18,13 +18,13 @@ export const metadata: Metadata = {
     description:
       "Get in touch with Wall Street Playbook for questions about playbooks, resume services, or partnerships.",
     url: "https://wallstreetplaybook.org/contact",
-    images: [{ url: "https://wallstreetplaybook.org/og-image.jpg", width: 1200, height: 630 }],
+    images: [{ url: "https://wallstreetplaybook.org/og-default.jpg", width: 1200, height: 630 }],
   },
   twitter: {
     card: "summary_large_image",
     title: "Contact | Wall Street Playbook",
     description: "Questions about playbooks, resume services, or partnerships? We respond within 24 hours.",
-    images: ["https://wallstreetplaybook.org/og-image.jpg"],
+    images: ["https://wallstreetplaybook.org/og-default.jpg"],
   },
   alternates: {
     canonical: "https://wallstreetplaybook.org/contact",

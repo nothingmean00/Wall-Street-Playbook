@@ -23,9 +23,14 @@ export const metadata: Metadata = {
     description:
       "47-page networking system with cold email templates, call scripts, and the frameworks top candidates use to break into Wall Street.",
     url: "https://wallstreetplaybook.org/finance-networking-playbook-2026",
+    images: [{ url: "https://wallstreetplaybook.org/og-recruiting.jpg", width: 1200, height: 630 }],
   },
   alternates: {
     canonical: "https://wallstreetplaybook.org/finance-networking-playbook-2026",
+  },
+  twitter: {
+    card: "summary_large_image",
+    images: ["https://wallstreetplaybook.org/og-recruiting.jpg"],
   },
 }
 

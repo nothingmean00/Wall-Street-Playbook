@@ -22,9 +22,14 @@ export const metadata: Metadata = {
     title: "Free: 20 Must-Know Finance Technical Questions",
     description: "The 20 questions tagged 'Always Asked' across all 6 technical topics. Free PDF cheat sheet.",
     url: "https://wallstreetplaybook.org/ib-technical-cheat-sheet",
+    images: [{ url: "https://wallstreetplaybook.org/og-interview-prep.jpg", width: 1200, height: 630 }],
   },
   alternates: {
     canonical: "https://wallstreetplaybook.org/ib-technical-cheat-sheet",
+  },
+  twitter: {
+    card: "summary_large_image",
+    images: ["https://wallstreetplaybook.org/og-interview-prep.jpg"],
   },
 }
 

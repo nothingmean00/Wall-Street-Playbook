@@ -23,9 +23,14 @@ export const metadata: Metadata = {
     description:
       "Professional resume review for VC careers. Highlight your deal flow, startup experience, and investment thesis.",
     url: "https://wallstreetplaybook.org/venture-capital-resume",
+    images: [{ url: "https://wallstreetplaybook.org/og-resume-services.jpg", width: 1200, height: 630 }],
   },
   alternates: {
     canonical: "https://wallstreetplaybook.org/venture-capital-resume",
+  },
+  twitter: {
+    card: "summary_large_image",
+    images: ["https://wallstreetplaybook.org/og-resume-services.jpg"],
   },
 }
 

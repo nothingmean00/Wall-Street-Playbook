@@ -26,6 +26,10 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://wallstreetplaybook.org/hedge-fund-interview-prep",
   },
+  twitter: {
+    card: "summary_large_image",
+    images: ["https://wallstreetplaybook.org/og-interview-prep.jpg"],
+  },
 }
 
 const interviewTypes = [

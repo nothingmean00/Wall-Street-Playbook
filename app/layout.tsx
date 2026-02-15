@@ -80,7 +80,7 @@ export const metadata: Metadata = {
       "Land offers in investment banking, private equity, and hedge funds. Tactical playbooks, resume services, and interview frameworks built by candidates who broke in.",
     images: [
       {
-        url: "/og-image.jpg",
+        url: "/og-default.jpg",
         width: 1200,
         height: 630,
         alt: "Wall Street Playbook - Elite Finance Recruiting Preparation",
@@ -92,7 +92,7 @@ export const metadata: Metadata = {
     title: "Wall Street Playbook | Break Into Investment Banking, PE & Hedge Funds",
     description:
       "Land offers in investment banking, private equity, and hedge funds. Tactical playbooks, resume services, and interview frameworks built by candidates who broke in.",
-    images: ["/og-image.jpg"],
+    images: ["/og-default.jpg"],
   },
   alternates: {
     canonical: "https://wallstreetplaybook.org",

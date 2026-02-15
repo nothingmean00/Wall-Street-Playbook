@@ -22,9 +22,14 @@ export const metadata: Metadata = {
     title: "Military to Finance | Wall Street Playbook",
     description: "The veteran's playbook for breaking into high finance.",
     url: "https://wallstreetplaybook.org/military-to-finance",
+    images: [{ url: "https://wallstreetplaybook.org/og-recruiting.jpg", width: 1200, height: 630 }],
   },
   alternates: {
     canonical: "https://wallstreetplaybook.org/military-to-finance",
+  },
+  twitter: {
+    card: "summary_large_image",
+    images: ["https://wallstreetplaybook.org/og-recruiting.jpg"],
   },
 }
 

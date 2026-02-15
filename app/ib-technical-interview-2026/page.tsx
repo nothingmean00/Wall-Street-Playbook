@@ -24,9 +24,14 @@ export const metadata: Metadata = {
     description:
       "Master every technical question asked at Goldman, Morgan Stanley, Evercore, and elite boutiques. 6 topic areas with frequency-tagged questions.",
     url: "https://wallstreetplaybook.org/ib-technical-interview-2026",
+    images: [{ url: "https://wallstreetplaybook.org/og-interview-prep.jpg", width: 1200, height: 630 }],
   },
   alternates: {
     canonical: "https://wallstreetplaybook.org/ib-technical-interview-2026",
+  },
+  twitter: {
+    card: "summary_large_image",
+    images: ["https://wallstreetplaybook.org/og-interview-prep.jpg"],
   },
 }
 

@@ -24,9 +24,14 @@ export const metadata: Metadata = {
     description:
       "Real private equity compensation data for 2025-2026. Base, bonus, carry by level and fund type.",
     url: "https://wallstreetplaybook.org/pe-compensation-2026",
+    images: [{ url: "https://wallstreetplaybook.org/og-recruiting.jpg", width: 1200, height: 630 }],
   },
   alternates: {
     canonical: "https://wallstreetplaybook.org/pe-compensation-2026",
+  },
+  twitter: {
+    card: "summary_large_image",
+    images: ["https://wallstreetplaybook.org/og-recruiting.jpg"],
   },
 }
 

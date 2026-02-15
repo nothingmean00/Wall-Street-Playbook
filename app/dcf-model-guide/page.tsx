@@ -25,9 +25,14 @@ export const metadata: Metadata = {
     description:
       "Learn how to build a DCF model from scratch. Complete guide to discounted cash flow analysis.",
     url: "https://wallstreetplaybook.org/dcf-model-guide",
+    images: [{ url: "https://wallstreetplaybook.org/og-interview-prep.jpg", width: 1200, height: 630 }],
   },
   alternates: {
     canonical: "https://wallstreetplaybook.org/dcf-model-guide",
+  },
+  twitter: {
+    card: "summary_large_image",
+    images: ["https://wallstreetplaybook.org/og-interview-prep.jpg"],
   },
 }
 

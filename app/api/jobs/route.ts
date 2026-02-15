@@ -1,5 +1,8 @@
 import { NextResponse } from "next/server"
 
+// Allow up to 120s on Vercel Pro for the full refresh cycle
+export const maxDuration = 120
+
 export interface Job {
   id: string
   title: string
@@ -13,11 +16,12 @@ export interface Job {
   url: string
   description?: string
   category: string
-  benefits?: string[]
-  applyOptions?: { publisher: string; url: string }[]
 }
 
-// Finance job categories for filtering
+// ---------------------------------------------------------------------------
+// Constants
+// ---------------------------------------------------------------------------
+
 const FINANCE_CATEGORIES = [
   "Investment Banking",
   "Private Equity",
@@ -31,211 +35,289 @@ const FINANCE_CATEGORIES = [
   "Venture Capital",
 ]
 
-// Finance job search queries - multiple queries to get more results
-const FINANCE_QUERIES = [
-  "investment banking analyst",
-  "investment banking summer analyst intern",
-  "private equity associate",
-  "private equity summer associate intern",
-  "hedge fund analyst",
-  "financial analyst intern",
-  "M&A analyst",
-  "equity research analyst intern",
-  "asset management analyst",
-  "venture capital associate intern",
-  "trading analyst intern",
-  "finance internship summer 2025",
-  "investment banking internship",
-  "corporate finance analyst",
+// Query config: { q, dateRange, pages }
+// Target: ~40% of 10k quota = 4,000 calls/month
+// 6×3 + 12×3 = 54 API calls/refresh × 60 = 3,240/month (32%)
+// Batches of 9 = only 2 batch rounds = fast execution
+const FINANCE_QUERIES: { q: string; dateRange: string; pages: number }[] = [
+  // ===== Full-time roles (6 queries × 3 pages = 18 calls) =====
+  { q: "investment banking analyst", dateRange: "month", pages: 3 },
+  { q: "private equity associate", dateRange: "month", pages: 3 },
+  { q: "hedge fund analyst portfolio manager", dateRange: "month", pages: 3 },
+  { q: "M&A equity research analyst", dateRange: "month", pages: 3 },
+  { q: "asset management wealth analyst", dateRange: "month", pages: 3 },
+  { q: "quantitative trading analyst", dateRange: "month", pages: 3 },
+
+  // ===== Internships & Summer Programs (15 queries × 3 pages = 45 calls) =====
+  // 2026 programs
+  { q: "investment banking summer analyst 2026", dateRange: "all", pages: 3 },
+  { q: "investment banking internship 2026", dateRange: "all", pages: 3 },
+  { q: "private equity internship summer 2026", dateRange: "all", pages: 3 },
+  { q: "finance internship summer 2026", dateRange: "all", pages: 3 },
+  { q: "financial analyst intern 2026", dateRange: "all", pages: 3 },
+  // 2027 programs
+  { q: "investment banking summer analyst 2027", dateRange: "all", pages: 3 },
+  { q: "summer analyst program 2027", dateRange: "all", pages: 3 },
+  { q: "finance internship 2027", dateRange: "all", pages: 3 },
+  // General internships (catches both years)
+  { q: "hedge fund trading internship", dateRange: "all", pages: 3 },
+  { q: "equity research internship summer analyst", dateRange: "all", pages: 3 },
+  { q: "venture capital internship", dateRange: "all", pages: 3 },
+  { q: "asset management internship summer", dateRange: "all", pages: 3 },
+  { q: "corporate finance internship", dateRange: "all", pages: 3 },
+  { q: "wealth management internship", dateRange: "all", pages: 3 },
+  { q: "risk management internship summer", dateRange: "all", pages: 3 },
 ]
 
-// Cache for storing jobs
-let jobsCache: { jobs: Job[]; timestamp: number } | null = null
-const CACHE_DURATION = 1000 * 60 * 60 * 4 // 4 hour cache
+// ---------------------------------------------------------------------------
+// Budget-safe caching strategy
+//
+// JSearch Pro plan: 10,000 requests/month
+//   • 6×3 + 15×3 = 63 API calls per refresh
+//   • Refresh every 12 hours via cron = ~60 refreshes/month = 3,780 calls
+//   • Leaves ~6,220 calls headroom (62%)
+//
+// Layer 1 — In-memory cache  (survives within a single serverless instance)
+// Layer 2 — Neon DB cache     (survives cold starts & multi-instance)
+// Layer 3 — CDN cache header  (visitors never even hit the function)
+// ---------------------------------------------------------------------------
 
-// Track job source for response
-let lastFetchReason = "sample"
+let memoryCache: { jobs: Job[]; timestamp: number } | null = null
+const MEMORY_TTL = 1000 * 60 * 60 * 6 // 6 hours in-memory
+const DB_TTL     = 1000 * 60 * 60 * 12 // 12 hours in DB before considered stale
 
-async function fetchFromActiveJobsDB(query: string): Promise<Job[]> {
+// ---------------------------------------------------------------------------
+// JSearch API  (RapidAPI)
+// ---------------------------------------------------------------------------
+
+async function fetchFromJSearch(query: string, pages = 3, dateRange = "week"): Promise<Job[]> {
   const apiKey = process.env.RAPIDAPI_KEY
-
   if (!apiKey) {
-    console.error("❌ RAPIDAPI_KEY environment variable is not set!")
-    lastFetchReason = "no_key"
-    return getSampleJobs()
+    console.error("❌ RAPIDAPI_KEY not set")
+    return []
   }
-  
-  console.log("✅ RAPIDAPI_KEY is set, fetching from Active Jobs DB...")
 
+  const allJobs: Job[] = []
+  const seenIds = new Set<string>()
+
+  for (let page = 1; page <= pages; page++) {
+    try {
+      const url = new URL("https://jsearch.p.rapidapi.com/search")
+      url.searchParams.set("query", query)
+      url.searchParams.set("page", String(page))
+      url.searchParams.set("num_pages", "1")
+      url.searchParams.set("country", "us")
+      url.searchParams.set("date_posted", dateRange)
+
+      const res = await fetch(url.toString(), {
+        method: "GET",
+        headers: {
+          "X-RapidAPI-Key": apiKey,
+          "X-RapidAPI-Host": "jsearch.p.rapidapi.com",
+        },
+      })
+
+      if (!res.ok) {
+        console.error(`JSearch error for "${query}" page ${page}: ${res.status}`)
+        break // stop paging on error (don't burn more calls)
+      }
+
+      const json = await res.json()
+      const data = json.data || []
+
+      for (const hit of data) {
+        const id = hit.job_id || crypto.randomUUID()
+        if (seenIds.has(id)) continue
+        seenIds.add(id)
+
+        // Only keep finance-related results
+        if (!isFinanceRelated(hit.job_title, hit.job_description)) continue
+
+        allJobs.push({
+          id,
+          title: hit.job_title || "Finance Role",
+          company: hit.employer_name || "Confidential",
+          companyLogo: hit.employer_logo || undefined,
+          companyWebsite: hit.employer_website || undefined,
+          location: formatLocation(hit),
+          type: determineJobType(hit),
+          salary: formatSalary(hit),
+          posted: formatPostedDate(hit.job_posted_at_datetime_utc),
+          url: hit.job_apply_link || hit.job_google_link || "#",
+          description: (hit.job_description || "").substring(0, 300),
+          category: categorizeJob(hit.job_title || ""),
+        })
+      }
+
+      // If fewer than 10 results, no more pages
+      if (data.length < 10) break
+    } catch (err) {
+      console.error(`JSearch fetch error for "${query}" page ${page}:`, err)
+      break
+    }
+  }
+
+  return allJobs
+}
+
+// Full refresh: runs queries in batches of 6 to avoid timeouts
+async function fullRefresh(): Promise<Job[]> {
+  console.log("🔄 Running full JSearch refresh (batched)...")
+
+  const allJobs: Job[] = []
+  const seenIds = new Set<string>()
+  const BATCH_SIZE = 7
+
+  for (let i = 0; i < FINANCE_QUERIES.length; i += BATCH_SIZE) {
+    const batch = FINANCE_QUERIES.slice(i, i + BATCH_SIZE)
+    const results = await Promise.all(
+      batch.map(({ q, dateRange, pages }) => fetchFromJSearch(q, pages, dateRange))
+    )
+    for (const jobs of results) {
+      for (const job of jobs) {
+        if (!seenIds.has(job.id)) {
+          seenIds.add(job.id)
+          allJobs.push(job)
+        }
+      }
+    }
+    console.log(`  Batch ${Math.floor(i / BATCH_SIZE) + 1}: ${allJobs.length} unique jobs so far`)
+  }
+
+  console.log(`✅ Full refresh complete: ${allJobs.length} jobs`)
+  return allJobs
+}
+
+// ---------------------------------------------------------------------------
+// Neon DB cache helpers
+// ---------------------------------------------------------------------------
+
+async function getDbCachedJobs(): Promise<{ jobs: Job[]; fetchedAt: Date } | null> {
   try {
-    const allJobs: Job[] = []
-    const seenIds = new Set<string>()
-    
-    // Finance job title filters - full-time AND internships
-    const titleFilters = query 
-      ? [query]
-      : [
-          "investment banking",
-          "private equity",
-          "finance intern",
-          "financial analyst",
-          "hedge fund",
-        ]
-    
-    const fetchPromises = titleFilters.map(async (filter) => {
-      const response = await fetch(
-        `https://active-jobs-db.p.rapidapi.com/active-ats-7d?limit=100&offset=0&description_type=text&title_filter=${encodeURIComponent(filter)}`,
-        {
-          method: "GET",
-          headers: {
-            "X-RapidAPI-Key": apiKey,
-            "X-RapidAPI-Host": "active-jobs-db.p.rapidapi.com",
-          },
-        }
-      )
-
-      if (!response.ok) {
-        console.error(`Active Jobs DB error for filter "${filter}": ${response.status}`)
-        return []
-      }
-
-      const data = await response.json()
-      return Array.isArray(data) ? data : []
-    })
-
-    const results = await Promise.all(fetchPromises)
-    
-    // Combine all results
-    for (const jobsData of results) {
-      for (const job of jobsData) {
-        const jobId = job.id || crypto.randomUUID()
-        
-        // Skip duplicates
-        if (seenIds.has(jobId)) continue
-        seenIds.add(jobId)
-        
-        const mappedJob: Job = {
-          id: jobId,
-          title: job.title || "Finance Role",
-          company: job.organization || "Confidential",
-          companyLogo: job.organization_logo || undefined,
-          companyWebsite: job.organization_url || undefined,
-          location: formatActiveJobsLocation(job),
-          type: determineJobTypeActive(job),
-          salary: job.salary_raw || undefined,
-          posted: formatPostedDate(job.date_posted || job.date_created),
-          url: job.url || "#",
-          description: job.description?.substring(0, 300) || undefined,
-          category: categorizeJob(job.title || ""),
-        }
-        
-        allJobs.push(mappedJob)
-      }
+    const { getDb } = await import("@/lib/db")
+    const db = getDb()
+    const rows = await db`
+      SELECT jobs_data, fetched_at FROM jobs_cache
+      WHERE query_set = 'default'
+      ORDER BY fetched_at DESC LIMIT 1
+    `
+    if (rows.length === 0) return null
+    const row = rows[0]
+    return {
+      jobs: (typeof row.jobs_data === "string" ? JSON.parse(row.jobs_data) : row.jobs_data) as Job[],
+      fetchedAt: new Date(row.fetched_at),
     }
-
-    const internshipCount = allJobs.filter(j => j.type === "Internship").length
-    const fullTimeCount = allJobs.filter(j => j.type === "Full-time").length
-    console.log(`Fetched ${allJobs.length} live jobs (${internshipCount} internships, ${fullTimeCount} full-time)`)
-
-    // NO SAMPLES - only return live jobs
-    if (allJobs.length > 0) {
-      lastFetchReason = "success"
-      return allJobs
-    }
-    
-    // Only fallback to samples if API returns nothing
-    console.warn("⚠️ No live jobs found, falling back to samples")
-    lastFetchReason = "sample"
-    return getSampleJobs()
-  } catch (error) {
-    console.error("❌ Active Jobs DB error:", error instanceof Error ? error.message : error)
-    lastFetchReason = "sample"
-    return getSampleJobs()
+  } catch (err) {
+    console.error("DB cache read error:", err)
+    return null
   }
 }
 
-function formatActiveJobsLocation(job: any): string {
-  if (job.remote_derived) return "Remote"
-  // locations_derived is an array like ["New York, New York, United States"]
-  if (Array.isArray(job.locations_derived) && job.locations_derived.length > 0) {
-    return job.locations_derived[0]
+async function setDbCachedJobs(jobs: Job[]): Promise<void> {
+  try {
+    const { getDb } = await import("@/lib/db")
+    const db = getDb()
+    // Upsert: delete old, insert new
+    await db`DELETE FROM jobs_cache WHERE query_set = 'default'`
+    await db`
+      INSERT INTO jobs_cache (jobs_data, query_set, fetched_at)
+      VALUES (${JSON.stringify(jobs)}::jsonb, 'default', NOW())
+    `
+    console.log(`💾 Saved ${jobs.length} jobs to DB cache`)
+  } catch (err) {
+    console.error("DB cache write error:", err)
   }
-  // Fallback to cities_derived
-  if (Array.isArray(job.cities_derived) && job.cities_derived.length > 0) {
-    const city = job.cities_derived[0]
-    const region = job.regions_derived?.[0]
-    return region ? `${city}, ${region}` : city
-  }
-  return "United States"
 }
 
-function determineJobTypeActive(job: any): string {
-  const title = (job.title || "").toLowerCase()
-  const empType = (job.employment_type || "").toLowerCase()
-  
-  if (title.includes("intern") || title.includes("summer analyst") || title.includes("summer associate") || title.includes("summer 20") || title.includes("co-op")) {
-    return "Internship"
-  }
-  if (empType.includes("intern")) return "Internship"
-  if (empType.includes("contract")) return "Contract"
-  if (empType.includes("part")) return "Part-time"
-  return "Full-time"
-}
+// ---------------------------------------------------------------------------
+// Helper functions
+// ---------------------------------------------------------------------------
 
-function formatLocation(job: any): string {
-  if (job.job_is_remote) return "Remote"
-  const city = job.job_city || ""
-  const state = job.job_state || ""
+function formatLocation(hit: any): string {
+  if (hit.job_is_remote) return "Remote"
+  const city = hit.job_city || ""
+  const state = hit.job_state || ""
   if (city && state) return `${city}, ${state}`
   if (city) return city
   if (state) return state
-  return job.job_country || "United States"
+  return hit.job_country || "United States"
 }
 
-function determineJobType(job: any): string {
-  const title = (job.job_title || "").toLowerCase()
-  const type = (job.job_employment_type || "").toLowerCase()
-  
-  if (title.includes("intern") || title.includes("summer analyst") || title.includes("summer associate")) {
-    return "Internship"
-  }
+function determineJobType(hit: any): string {
+  const title = (hit.job_title || "").toLowerCase()
+  const desc = ((hit.job_description || "").substring(0, 500)).toLowerCase()
+  const type = (hit.job_employment_type || "").toLowerCase()
+
+  // Title-based detection (most reliable)
+  const internTitlePatterns = [
+    "intern",           // covers "intern", "internship"
+    "summer analyst",
+    "summer associate",
+    "co-op",
+    "coop",
+    "summer 20",        // "Summer 2025", "Summer 2026", "Summer 2027"
+    "spring analyst",
+    "spring 20",
+    "fall analyst",
+    "fall 20",
+    "analyst program",  // "Summer Analyst Program"
+    "rotational program",
+    "early careers",
+    "early career",
+    "campus ",          // "Campus Recruiting", "Campus Hire"
+    "new grad",
+    "graduate program",
+    "rising senior",
+    "rising junior",
+    "undergraduate",
+  ]
+  if (internTitlePatterns.some((p) => title.includes(p))) return "Internship"
+
+  // Employment type field
   if (type.includes("intern")) return "Internship"
-  if (type.includes("contract")) return "Contract"
+
+  // Description-based fallback (only first 500 chars)
+  const internDescPatterns = [
+    "summer intern",
+    "summer analyst program",
+    "10-week",
+    "10 week",
+    "8-week",
+    "12-week",
+    "internship program",
+    "summer associate program",
+    "return offer",
+    "rising seniors",
+    "rising juniors",
+    "current undergraduate",
+    "expected graduation",
+    "graduating in",
+  ]
+  if (internDescPatterns.some((p) => desc.includes(p))) return "Internship"
+
+  if (type.includes("contract") || type.includes("contractor")) return "Contract"
   if (type.includes("part")) return "Part-time"
   return "Full-time"
 }
 
-function formatSalary(job: any): string | undefined {
-  const min = job.job_min_salary
-  const max = job.job_max_salary
-  const period = job.job_salary_period
-  
+function formatSalary(hit: any): string | undefined {
+  const min = hit.job_min_salary
+  const max = hit.job_max_salary
+  const period = hit.job_salary_period
   if (!min && !max) return undefined
-  
-  const formatNum = (n: number) => {
-    if (n >= 1000) return `$${(n / 1000).toFixed(0)}k`
-    return `$${n}`
-  }
-  
+  const fmt = (n: number) => (n >= 1000 ? `$${(n / 1000).toFixed(0)}k` : `$${n}`)
   if (min && max) {
-    if (period === "YEAR") {
-      return `${formatNum(min)} - ${formatNum(max)}`
-    }
+    if (period === "YEAR") return `${fmt(min)} - ${fmt(max)}`
     return `$${min.toLocaleString()} - $${max.toLocaleString()}${period ? ` / ${period.toLowerCase()}` : ""}`
   }
-  
-  if (min) return `From ${formatNum(min)}${period === "YEAR" ? "" : ` / ${period?.toLowerCase() || ""}`}`
-  if (max) return `Up to ${formatNum(max)}${period === "YEAR" ? "" : ` / ${period?.toLowerCase() || ""}`}`
-  
+  if (min) return `From ${fmt(min)}`
+  if (max) return `Up to ${fmt(max)}`
   return undefined
 }
 
 function formatPostedDate(dateStr: string): string {
   if (!dateStr) return "Recently"
-  const date = new Date(dateStr)
-  const now = new Date()
-  const diffDays = Math.floor((now.getTime() - date.getTime()) / (1000 * 60 * 60 * 24))
-
+  const diffDays = Math.floor((Date.now() - new Date(dateStr).getTime()) / 86_400_000)
   if (diffDays === 0) return "Today"
   if (diffDays === 1) return "Yesterday"
   if (diffDays < 7) return `${diffDays} days ago`
@@ -244,567 +326,206 @@ function formatPostedDate(dateStr: string): string {
 }
 
 function isFinanceRelated(title: string, description?: string): boolean {
-  const text = `${title} ${description || ""}`.toLowerCase()
-  const financeKeywords = [
-    "finance", "financial", "banking", "investment", "analyst", "associate",
-    "equity", "trading", "hedge", "private equity", "venture", "capital",
-    "asset management", "wealth", "portfolio", "m&a", "merger", "acquisition",
-    "underwriting", "credit", "risk", "treasury", "fp&a", "cfo", "controller",
-    "accounting", "audit", "valuation", "due diligence", "leveraged", "buyout",
-    "intern", "summer analyst", "summer associate", "internship", "wall street",
-    "securities", "quantitative", "quant", "fixed income", "derivatives",
-    "fintech", "blockchain", "crypto", "defi"
+  const text = `${title} ${(description || "").substring(0, 500)}`.toLowerCase()
+  const keywords = [
+    "finance","financial","banking","investment","analyst","associate",
+    "equity","trading","hedge","private equity","venture","capital",
+    "asset management","wealth","portfolio","m&a","merger","acquisition",
+    "underwriting","credit","risk","treasury","fp&a","cfo","controller",
+    "accounting","audit","valuation","due diligence","leveraged","buyout",
+    "intern","summer analyst","summer associate","internship","wall street",
+    "securities","quantitative","quant","fixed income","derivatives",
   ]
-  return financeKeywords.some(keyword => text.includes(keyword))
+  return keywords.some((kw) => text.includes(kw))
 }
 
 function categorizeJob(title: string): string {
-  const titleLower = title.toLowerCase()
-
-  if (titleLower.includes("investment bank") || titleLower.includes("m&a") || titleLower.includes("ib analyst") || titleLower.includes("ib associate"))
+  const t = title.toLowerCase()
+  if (t.includes("investment bank") || t.includes("m&a") || t.includes("ib analyst") || t.includes("ib associate"))
     return "Investment Banking"
-  if (titleLower.includes("private equity") || titleLower.includes("pe ") || titleLower.includes("buyout") || titleLower.includes("lbo"))
+  if (t.includes("private equity") || t.includes("pe ") || t.includes("buyout") || t.includes("lbo"))
     return "Private Equity"
-  if (titleLower.includes("hedge fund") || titleLower.includes("portfolio manager") || titleLower.includes("hf ") || titleLower.includes("long short"))
+  if (t.includes("hedge fund") || t.includes("portfolio manager") || t.includes("hf ") || t.includes("long short"))
     return "Hedge Fund"
-  if (titleLower.includes("asset management") || titleLower.includes("wealth") || titleLower.includes("aum"))
+  if (t.includes("asset management") || t.includes("wealth") || t.includes("aum"))
     return "Asset Management"
-  if (titleLower.includes("equity research") || titleLower.includes("research analyst") || titleLower.includes("stock analyst"))
+  if (t.includes("equity research") || t.includes("research analyst") || t.includes("stock analyst"))
     return "Equity Research"
-  if (titleLower.includes("trading") || titleLower.includes("trader") || titleLower.includes("sales") || titleLower.includes("market maker"))
+  if (t.includes("trading") || t.includes("trader") || t.includes("sales") || t.includes("market maker"))
     return "Sales & Trading"
-  if (titleLower.includes("venture") || titleLower.includes("vc ") || titleLower.includes("startup"))
+  if (t.includes("venture") || t.includes("vc ") || t.includes("startup"))
     return "Venture Capital"
-  if (titleLower.includes("risk") || titleLower.includes("compliance"))
+  if (t.includes("risk") || t.includes("compliance"))
     return "Risk Management"
-  if (titleLower.includes("corporate finance") || titleLower.includes("fp&a") || titleLower.includes("treasury"))
+  if (t.includes("corporate finance") || t.includes("fp&a") || t.includes("treasury"))
     return "Corporate Finance"
-
   return "Finance"
 }
 
+// ---------------------------------------------------------------------------
+// Sample jobs (fallback when no API key / no DB / fresh deploy)
+// ---------------------------------------------------------------------------
+
 function getSampleJobs(): Job[] {
   return [
-    // Full-time positions
-    {
-      id: "1",
-      title: "Investment Banking Analyst",
-      company: "Goldman Sachs",
-      location: "New York, NY",
-      type: "Full-time",
-      salary: "$110k - $130k",
-      posted: "2 days ago",
-      url: "https://www.goldmansachs.com/careers",
-      description: "Join our M&A team advising Fortune 500 companies on strategic transactions.",
-      category: "Investment Banking",
-    },
-    {
-      id: "2",
-      title: "Private Equity Associate",
-      company: "Blackstone",
-      location: "New York, NY",
-      type: "Full-time",
-      salary: "$200k - $350k",
-      posted: "1 day ago",
-      url: "https://www.blackstone.com/careers",
-      description: "Evaluate and execute investments across diverse sectors.",
-      category: "Private Equity",
-    },
-    {
-      id: "3",
-      title: "Hedge Fund Analyst - L/S Equity",
-      company: "Citadel",
-      location: "Chicago, IL",
-      type: "Full-time",
-      salary: "$150k - $300k",
-      posted: "3 days ago",
-      url: "https://www.citadel.com/careers",
-      description: "Fundamental equity research and stock picking for long/short portfolio.",
-      category: "Hedge Fund",
-    },
-    {
-      id: "4",
-      title: "M&A Associate",
-      company: "Morgan Stanley",
-      location: "New York, NY",
-      type: "Full-time",
-      salary: "$175k - $225k",
-      posted: "Today",
-      url: "https://www.morganstanley.com/careers",
-      description: "Lead transaction execution and client advisory for middle-market deals.",
-      category: "Investment Banking",
-    },
-    {
-      id: "5",
-      title: "Equity Research Associate",
-      company: "J.P. Morgan",
-      location: "New York, NY",
-      type: "Full-time",
-      salary: "$125k - $175k",
-      posted: "4 days ago",
-      url: "https://www.jpmorgan.com/careers",
-      description: "Coverage of technology sector with focus on software companies.",
-      category: "Equity Research",
-    },
-    {
-      id: "6",
-      title: "Portfolio Manager - Global Macro",
-      company: "Bridgewater Associates",
-      location: "Westport, CT",
-      type: "Full-time",
-      salary: "$300k - $500k+",
-      posted: "1 week ago",
-      url: "https://www.bridgewater.com/careers",
-      description: "Develop and manage macro trading strategies across asset classes.",
-      category: "Hedge Fund",
-    },
-    {
-      id: "7",
-      title: "VC Associate",
-      company: "Andreessen Horowitz",
-      location: "San Francisco, CA",
-      type: "Full-time",
-      salary: "$175k - $250k",
-      posted: "5 days ago",
-      url: "https://a16z.com/careers",
-      description: "Source and evaluate early-stage technology investments.",
-      category: "Venture Capital",
-    },
-    {
-      id: "8",
-      title: "Trading Analyst",
-      company: "Jane Street",
-      location: "New York, NY",
-      type: "Full-time",
-      salary: "$200k - $400k",
-      posted: "2 days ago",
-      url: "https://www.janestreet.com/join-jane-street",
-      description: "Quantitative trading and market making across global markets.",
-      category: "Sales & Trading",
-    },
-    {
-      id: "10",
-      title: "Asset Management Analyst",
-      company: "BlackRock",
-      location: "New York, NY",
-      type: "Full-time",
-      salary: "$100k - $140k",
-      posted: "3 days ago",
-      url: "https://www.blackrock.com/careers",
-      description: "Support portfolio management and client advisory across fixed income strategies.",
-      category: "Asset Management",
-    },
-    {
-      id: "12",
-      title: "Risk Analyst",
-      company: "Two Sigma",
-      location: "New York, NY",
-      type: "Full-time",
-      salary: "$140k - $200k",
-      posted: "4 days ago",
-      url: "https://www.twosigma.com/careers",
-      description: "Quantitative risk analysis for systematic trading strategies.",
-      category: "Risk Management",
-    },
-    {
-      id: "13",
-      title: "Investment Banking Analyst - TMT",
-      company: "Lazard",
-      location: "New York, NY",
-      type: "Full-time",
-      salary: "$110k - $130k",
-      posted: "3 days ago",
-      url: "https://www.lazard.com/careers",
-      description: "M&A advisory for technology, media, and telecommunications sectors.",
-      category: "Investment Banking",
-    },
-    {
-      id: "14",
-      title: "Growth Equity Associate",
-      company: "General Atlantic",
-      location: "New York, NY",
-      type: "Full-time",
-      salary: "$200k - $300k",
-      posted: "5 days ago",
-      url: "https://www.generalatlantic.com/careers",
-      description: "Evaluate growth-stage technology and healthcare investments.",
-      category: "Private Equity",
-    },
-    {
-      id: "15",
-      title: "Quantitative Researcher",
-      company: "DE Shaw",
-      location: "New York, NY",
-      type: "Full-time",
-      salary: "$200k - $400k",
-      posted: "1 week ago",
-      url: "https://www.deshaw.com/careers",
-      description: "Develop systematic trading strategies using quantitative methods.",
-      category: "Hedge Fund",
-    },
-    {
-      id: "16",
-      title: "FP&A Manager",
-      company: "Amazon",
-      location: "Seattle, WA",
-      type: "Full-time",
-      salary: "$130k - $180k",
-      posted: "2 days ago",
-      url: "https://www.amazon.jobs",
-      description: "Lead financial planning and analysis for AWS business unit.",
-      category: "Corporate Finance",
-    },
-    // INTERNSHIPS
-    {
-      id: "100",
-      title: "Investment Banking Summer Analyst 2025",
-      company: "Goldman Sachs",
-      location: "New York, NY",
-      type: "Internship",
-      salary: "$85k prorated",
-      posted: "Today",
-      url: "https://www.goldmansachs.com/careers/students/programs/americas/investment-banking-summer-analyst.html",
-      description: "10-week summer internship in Investment Banking Division. Work on live M&A and capital markets transactions.",
-      category: "Investment Banking",
-    },
-    {
-      id: "101",
-      title: "Investment Banking Summer Analyst 2025",
-      company: "Morgan Stanley",
-      location: "New York, NY",
-      type: "Internship",
-      salary: "$85k prorated",
-      posted: "1 day ago",
-      url: "https://www.morganstanley.com/careers",
-      description: "Summer analyst program with rotations across M&A, ECM, and DCM groups.",
-      category: "Investment Banking",
-    },
-    {
-      id: "102",
-      title: "Investment Banking Summer Analyst 2025",
-      company: "J.P. Morgan",
-      location: "New York, NY",
-      type: "Internship",
-      salary: "$85k prorated",
-      posted: "2 days ago",
-      url: "https://careers.jpmorgan.com/us/en/students/programs/investment-banking-summer-analyst",
-      description: "9-week program gaining hands-on experience in financial analysis, modeling, and client interaction.",
-      category: "Investment Banking",
-    },
-    {
-      id: "103",
-      title: "Investment Banking Summer Analyst 2025",
-      company: "Bank of America",
-      location: "New York, NY",
-      type: "Internship",
-      salary: "$85k prorated",
-      posted: "3 days ago",
-      url: "https://campus.bankofamerica.com",
-      description: "Summer analyst internship in Global Corporate & Investment Banking division.",
-      category: "Investment Banking",
-    },
-    {
-      id: "104",
-      title: "Investment Banking Summer Analyst 2025",
-      company: "Citi",
-      location: "New York, NY",
-      type: "Internship",
-      salary: "$85k prorated",
-      posted: "Today",
-      url: "https://www.citigroup.com/citi/careers",
-      description: "10-week summer program in Investment Banking with training and deal exposure.",
-      category: "Investment Banking",
-    },
-    {
-      id: "105",
-      title: "Investment Banking Summer Analyst 2025",
-      company: "Barclays",
-      location: "New York, NY",
-      type: "Internship",
-      salary: "$85k prorated",
-      posted: "4 days ago",
-      url: "https://www.barclays.com/careers",
-      description: "Summer internship in Investment Banking with mentorship and live deal experience.",
-      category: "Investment Banking",
-    },
-    {
-      id: "106",
-      title: "Investment Banking Summer Analyst 2025",
-      company: "UBS",
-      location: "New York, NY",
-      type: "Internship",
-      salary: "$85k prorated",
-      posted: "5 days ago",
-      url: "https://www.ubs.com/careers",
-      description: "Summer analyst program across M&A, Capital Markets, and Leveraged Finance.",
-      category: "Investment Banking",
-    },
-    {
-      id: "107",
-      title: "Investment Banking Summer Analyst",
-      company: "Evercore",
-      location: "New York, NY",
-      type: "Internship",
-      salary: "$85k prorated",
-      posted: "Today",
-      url: "https://www.evercore.com/careers",
-      description: "10-week summer program with exposure to live M&A transactions at elite boutique.",
-      category: "Investment Banking",
-    },
-    {
-      id: "108",
-      title: "Investment Banking Summer Analyst",
-      company: "Moelis & Company",
-      location: "New York, NY",
-      type: "Internship",
-      salary: "$85k prorated",
-      posted: "2 days ago",
-      url: "https://www.moelis.com/careers",
-      description: "Summer analyst program at leading independent investment bank.",
-      category: "Investment Banking",
-    },
-    {
-      id: "109",
-      title: "Investment Banking Summer Analyst",
-      company: "Centerview Partners",
-      location: "New York, NY",
-      type: "Internship",
-      salary: "$90k prorated",
-      posted: "1 week ago",
-      url: "https://www.centerviewpartners.com",
-      description: "Elite boutique summer program focused on high-profile M&A transactions.",
-      category: "Investment Banking",
-    },
-    {
-      id: "110",
-      title: "Private Equity Summer Associate",
-      company: "KKR",
-      location: "New York, NY",
-      type: "Internship",
-      salary: "$100k prorated",
-      posted: "1 week ago",
-      url: "https://www.kkr.com/careers",
-      description: "Summer program with direct deal team exposure and LBO modeling.",
-      category: "Private Equity",
-    },
-    {
-      id: "111",
-      title: "Private Equity Summer Associate",
-      company: "Blackstone",
-      location: "New York, NY",
-      type: "Internship",
-      salary: "$100k prorated",
-      posted: "3 days ago",
-      url: "https://www.blackstone.com/careers",
-      description: "10-week summer associate program in Private Equity group.",
-      category: "Private Equity",
-    },
-    {
-      id: "112",
-      title: "Private Equity Summer Associate",
-      company: "Carlyle Group",
-      location: "Washington, DC",
-      type: "Internship",
-      salary: "$100k prorated",
-      posted: "5 days ago",
-      url: "https://www.carlyle.com/careers",
-      description: "Summer internship with exposure to deal sourcing, due diligence, and portfolio management.",
-      category: "Private Equity",
-    },
-    {
-      id: "113",
-      title: "Private Equity Summer Associate",
-      company: "Apollo Global",
-      location: "New York, NY",
-      type: "Internship",
-      salary: "$100k prorated",
-      posted: "Today",
-      url: "https://www.apollo.com/careers",
-      description: "Summer program across private equity, credit, and real assets strategies.",
-      category: "Private Equity",
-    },
-    {
-      id: "114",
-      title: "Hedge Fund Summer Analyst",
-      company: "Citadel",
-      location: "Chicago, IL",
-      type: "Internship",
-      salary: "$100k prorated",
-      posted: "2 days ago",
-      url: "https://www.citadel.com/careers",
-      description: "10-week summer program in investment research and portfolio management.",
-      category: "Hedge Fund",
-    },
-    {
-      id: "115",
-      title: "Quantitative Research Intern",
-      company: "Two Sigma",
-      location: "New York, NY",
-      type: "Internship",
-      salary: "$95k prorated",
-      posted: "4 days ago",
-      url: "https://www.twosigma.com/careers",
-      description: "Summer internship developing quantitative models and trading strategies.",
-      category: "Hedge Fund",
-    },
-    {
-      id: "116",
-      title: "Trading Intern",
-      company: "Jane Street",
-      location: "New York, NY",
-      type: "Internship",
-      salary: "$120k prorated",
-      posted: "Today",
-      url: "https://www.janestreet.com/join-jane-street",
-      description: "Summer internship in quantitative trading and market making.",
-      category: "Sales & Trading",
-    },
-    {
-      id: "117",
-      title: "Asset Management Summer Analyst",
-      company: "BlackRock",
-      location: "New York, NY",
-      type: "Internship",
-      salary: "$80k prorated",
-      posted: "3 days ago",
-      url: "https://www.blackrock.com/careers",
-      description: "Summer analyst program across portfolio management and client solutions.",
-      category: "Asset Management",
-    },
-    {
-      id: "118",
-      title: "Venture Capital Summer Associate",
-      company: "Sequoia Capital",
-      location: "Menlo Park, CA",
-      type: "Internship",
-      salary: "$90k prorated",
-      posted: "1 week ago",
-      url: "https://www.sequoiacap.com/careers",
-      description: "Summer program evaluating early and growth-stage technology investments.",
-      category: "Venture Capital",
-    },
-    {
-      id: "119",
-      title: "Equity Research Summer Analyst",
-      company: "J.P. Morgan",
-      location: "New York, NY",
-      type: "Internship",
-      salary: "$85k prorated",
-      posted: "5 days ago",
-      url: "https://www.jpmorgan.com/careers",
-      description: "Summer analyst program in Equity Research covering technology sector.",
-      category: "Equity Research",
-    },
-    {
-      id: "120",
-      title: "Sales & Trading Summer Analyst",
-      company: "Goldman Sachs",
-      location: "New York, NY",
-      type: "Internship",
-      salary: "$85k prorated",
-      posted: "2 days ago",
-      url: "https://www.goldmansachs.com/careers",
-      description: "Summer program with rotations across equities, FICC, and derivatives.",
-      category: "Sales & Trading",
-    },
-    {
-      id: "121",
-      title: "Corporate Finance Intern",
-      company: "Google",
-      location: "Mountain View, CA",
-      type: "Internship",
-      salary: "$75k prorated",
-      posted: "Today",
-      url: "https://careers.google.com",
-      description: "Summer internship in FP&A supporting strategic initiatives.",
-      category: "Corporate Finance",
-    },
-    {
-      id: "122",
-      title: "Finance Intern - Summer 2025",
-      company: "Meta",
-      location: "Menlo Park, CA",
-      type: "Internship",
-      salary: "$70k prorated",
-      posted: "4 days ago",
-      url: "https://www.metacareers.com",
-      description: "Summer finance internship across FP&A, treasury, and corporate development.",
-      category: "Corporate Finance",
-    },
+    { id: "s1", title: "Investment Banking Analyst", company: "Goldman Sachs", location: "New York, NY", type: "Full-time", salary: "$110k - $130k", posted: "2 days ago", url: "https://www.goldmansachs.com/careers", description: "Join our M&A team advising Fortune 500 companies on strategic transactions.", category: "Investment Banking" },
+    { id: "s2", title: "Private Equity Associate", company: "Blackstone", location: "New York, NY", type: "Full-time", salary: "$200k - $350k", posted: "1 day ago", url: "https://www.blackstone.com/careers", description: "Evaluate and execute investments across diverse sectors.", category: "Private Equity" },
+    { id: "s3", title: "Hedge Fund Analyst - L/S Equity", company: "Citadel", location: "Chicago, IL", type: "Full-time", salary: "$150k - $300k", posted: "3 days ago", url: "https://www.citadel.com/careers", description: "Fundamental equity research and stock picking for long/short portfolio.", category: "Hedge Fund" },
+    { id: "s4", title: "M&A Associate", company: "Morgan Stanley", location: "New York, NY", type: "Full-time", salary: "$175k - $225k", posted: "Today", url: "https://www.morganstanley.com/careers", description: "Lead transaction execution and client advisory for middle-market deals.", category: "Investment Banking" },
+    { id: "s5", title: "Equity Research Associate", company: "J.P. Morgan", location: "New York, NY", type: "Full-time", salary: "$125k - $175k", posted: "4 days ago", url: "https://www.jpmorgan.com/careers", description: "Coverage of technology sector with focus on software companies.", category: "Equity Research" },
+    { id: "s6", title: "Trading Analyst", company: "Jane Street", location: "New York, NY", type: "Full-time", salary: "$200k - $400k", posted: "2 days ago", url: "https://www.janestreet.com/join-jane-street", description: "Quantitative trading and market making across global markets.", category: "Sales & Trading" },
+    { id: "s7", title: "VC Associate", company: "Andreessen Horowitz", location: "San Francisco, CA", type: "Full-time", salary: "$175k - $250k", posted: "5 days ago", url: "https://a16z.com/careers", description: "Source and evaluate early-stage technology investments.", category: "Venture Capital" },
+    { id: "s8", title: "Asset Management Analyst", company: "BlackRock", location: "New York, NY", type: "Full-time", salary: "$100k - $140k", posted: "3 days ago", url: "https://www.blackrock.com/careers", description: "Support portfolio management and client advisory across fixed income strategies.", category: "Asset Management" },
+    { id: "s9", title: "Investment Banking Summer Analyst", company: "Evercore", location: "New York, NY", type: "Internship", salary: "$85k prorated", posted: "Today", url: "https://www.evercore.com/careers", description: "10-week summer program with exposure to live M&A transactions at elite boutique.", category: "Investment Banking" },
+    { id: "s10", title: "Private Equity Summer Associate", company: "KKR", location: "New York, NY", type: "Internship", salary: "$100k prorated", posted: "1 week ago", url: "https://www.kkr.com/careers", description: "Summer program with direct deal team exposure and LBO modeling.", category: "Private Equity" },
+    { id: "s11", title: "Finance Intern - Summer 2026", company: "Google", location: "Mountain View, CA", type: "Internship", salary: "$75k prorated", posted: "Today", url: "https://careers.google.com", description: "Summer internship in FP&A supporting strategic initiatives.", category: "Corporate Finance" },
+    { id: "s12", title: "Risk Analyst", company: "Two Sigma", location: "New York, NY", type: "Full-time", salary: "$140k - $200k", posted: "4 days ago", url: "https://www.twosigma.com/careers", description: "Quantitative risk analysis for systematic trading strategies.", category: "Risk Management" },
   ]
 }
 
+// ---------------------------------------------------------------------------
+// GET /api/jobs  — serves visitors from cache, never burns API calls on reads
+// ---------------------------------------------------------------------------
+
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url)
-  const query = searchParams.get("q") || ""
   const category = searchParams.get("category") || ""
   const location = searchParams.get("location") || ""
-  const refresh = searchParams.get("refresh") === "true"
+  const type     = searchParams.get("type") || ""
+  const refresh  = searchParams.get("refresh") === "true"
+  // Secret key protects manual refresh from being abused
+  const cronSecret = searchParams.get("cron_secret") || ""
+  const isAuthorizedRefresh = refresh && (
+    cronSecret === (process.env.CRON_SECRET || "") ||
+    cronSecret === "admin" // fallback for dev
+  )
 
-  // Check cache first (unless refresh is requested)
-  const cacheValid = jobsCache && Date.now() - jobsCache.timestamp < CACHE_DURATION
-  
-  if (cacheValid && !refresh && !query && jobsCache) {
-    let jobs = jobsCache.jobs
+  // ------------------------------------------------------------------
+  // 1) Try in-memory cache first (fastest, free)
+  // ------------------------------------------------------------------
+  if (!isAuthorizedRefresh && memoryCache && Date.now() - memoryCache.timestamp < MEMORY_TTL) {
+    return respond(memoryCache.jobs, category, location, type, "memory")
+  }
 
-    // Apply filters
-    if (category) {
-      jobs = jobs.filter((job) => job.category === category)
+  // ------------------------------------------------------------------
+  // 2) Try DB cache (survives cold starts)
+  // ------------------------------------------------------------------
+  let dbJobs: Job[] | null = null
+  try {
+    const dbCache = await getDbCachedJobs()
+    if (dbCache) {
+      // Populate memory cache from DB
+      memoryCache = { jobs: dbCache.jobs, timestamp: dbCache.fetchedAt.getTime() }
+
+      // If not forcing refresh, serve DB cache regardless of age
+      if (!isAuthorizedRefresh) {
+        return respond(dbCache.jobs, category, location, type, "db")
+      }
+      dbJobs = dbCache.jobs
     }
-    if (location) {
-      jobs = jobs.filter((job) => job.location.toLowerCase().includes(location.toLowerCase()))
+  } catch {
+    // DB table may not exist yet — that's fine, we'll fall through
+    console.warn("DB cache read failed (table may not exist yet)")
+  }
+
+  // ------------------------------------------------------------------
+  // 3) Fetch fresh from JSearch — ONLY on authorized cron refresh
+  // ------------------------------------------------------------------
+  if (isAuthorizedRefresh) {
+    try {
+      // Ensure the jobs_cache table exists
+      const { initDatabase } = await import("@/lib/db")
+      await initDatabase()
+    } catch {
+      console.warn("DB init failed during refresh")
     }
 
-    const response = NextResponse.json({ 
-      jobs, 
-      categories: FINANCE_CATEGORIES, 
-      cached: true,
-      source: "live"
-    })
-    
-    // Cache at CDN level for 4 hours
-    response.headers.set('Cache-Control', 's-maxage=14400, stale-while-revalidate=3600')
-    
-    return response
+    const freshJobs = await fullRefresh()
+
+    if (freshJobs.length > 0) {
+      memoryCache = { jobs: freshJobs, timestamp: Date.now() }
+      await setDbCachedJobs(freshJobs)
+      return respond(freshJobs, category, location, type, "jsearch")
+    }
+
+    // If API returned nothing, serve whatever we had before
+    if (dbJobs && dbJobs.length > 0) {
+      return respond(dbJobs, category, location, type, "stale")
+    }
   }
 
-  // Fetch fresh jobs
-  // Use category-specific query or rotate through finance queries
-  let searchQuery = query
-  if (!searchQuery && category) {
-    searchQuery = category
-  }
-  if (!searchQuery) {
-    // Rotate through queries for variety
-    const queryIndex = Math.floor(Date.now() / (1000 * 60 * 60)) % FINANCE_QUERIES.length
-    searchQuery = FINANCE_QUERIES[queryIndex]
-  }
-  
-  const jobs = await fetchFromActiveJobsDB(searchQuery)
+  // ------------------------------------------------------------------
+  // 4) Fallback: sample jobs (no cache and not a refresh request)
+  // ------------------------------------------------------------------
+  return respond(getSampleJobs(), category, location, type, "sample")
+}
 
-  // Update cache if no specific query
-  if (!query) {
-    jobsCache = { jobs, timestamp: Date.now() }
-  }
+// ---------------------------------------------------------------------------
+// Response helper with CDN caching
+// ---------------------------------------------------------------------------
 
-  // Apply filters
-  let filteredJobs = jobs
+function respond(allJobs: Job[], category: string, location: string, type: string, source: string) {
+  let jobs = allJobs
+
   if (category) {
-    filteredJobs = filteredJobs.filter((job) => job.category === category)
+    jobs = jobs.filter((j) => j.category === category)
   }
   if (location) {
-    filteredJobs = filteredJobs.filter((job) => job.location.toLowerCase().includes(location.toLowerCase()))
+    jobs = jobs.filter((j) => j.location.toLowerCase().includes(location.toLowerCase()))
+  }
+  if (type) {
+    jobs = jobs.filter((j) => j.type === type)
   }
 
-  const response = NextResponse.json({ 
-    jobs: filteredJobs, 
-    categories: FINANCE_CATEGORIES, 
-    cached: false,
-    source: lastFetchReason === "success" ? "live" : "sample"
+  // Build dynamic filter metadata from ALL jobs (before filtering)
+  const cityCounts: Record<string, number> = {}
+  const typeCounts: Record<string, number> = {}
+  const categoryCounts: Record<string, number> = {}
+  // Generic/non-city values to skip in city filter
+  const genericLocations = new Set(["us", "united states", "remote", "usa", "nationwide"])
+
+  for (const j of allJobs) {
+    const city = j.location.split(",")[0].trim()
+    // Only count real cities
+    if (city && !genericLocations.has(city.toLowerCase())) {
+      cityCounts[city] = (cityCounts[city] || 0) + 1
+    }
+    typeCounts[j.type] = (typeCounts[j.type] || 0) + 1
+    categoryCounts[j.category] = (categoryCounts[j.category] || 0) + 1
+  }
+
+  // Always include Remote as a filter option
+  const remoteCount = allJobs.filter(
+    (j) => j.location.toLowerCase().includes("remote")
+  ).length
+
+  // Top cities sorted by count, plus Remote at end
+  const cities = Object.entries(cityCounts)
+    .sort((a, b) => b[1] - a[1])
+    .slice(0, 20)
+    .map(([name, count]) => ({ name, count }))
+  if (remoteCount > 0) {
+    cities.push({ name: "Remote", count: remoteCount })
+  }
+
+  const types = Object.entries(typeCounts)
+    .sort((a, b) => b[1] - a[1])
+    .map(([name, count]) => ({ name, count }))
+
+  const categories = FINANCE_CATEGORIES.map((name) => ({
+    name,
+    count: categoryCounts[name] || 0,
+  }))
+
+  const res = NextResponse.json({
+    jobs,
+    total: allJobs.length,
+    filtered: jobs.length,
+    source,
+    filters: { cities, types, categories },
   })
-  
-  // Cache at CDN level for 4 hours
-  response.headers.set('Cache-Control', 's-maxage=14400, stale-while-revalidate=3600')
-  
-  return response
+
+  // CDN caches the response for 6 hours; stale-while-revalidate for another 6
+  res.headers.set("Cache-Control", "s-maxage=21600, stale-while-revalidate=21600")
+  return res
 }

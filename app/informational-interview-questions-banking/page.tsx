@@ -23,9 +23,14 @@ export const metadata: Metadata = {
     description:
       "25-minute call structure, 30 questions by phase, and the 3-Touch Framework that converts calls into referrals.",
     url: "https://wallstreetplaybook.org/informational-interview-questions-banking",
+    images: [{ url: "https://wallstreetplaybook.org/og-recruiting.jpg", width: 1200, height: 630 }],
   },
   alternates: {
     canonical: "https://wallstreetplaybook.org/informational-interview-questions-banking",
+  },
+  twitter: {
+    card: "summary_large_image",
+    images: ["https://wallstreetplaybook.org/og-recruiting.jpg"],
   },
 }
 

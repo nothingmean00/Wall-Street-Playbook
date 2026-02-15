@@ -24,9 +24,14 @@ export const metadata: Metadata = {
     description:
       "Professional hedge fund resume review. Position your background for buy-side roles at top funds.",
     url: "https://wallstreetplaybook.org/hedge-fund-resume",
+    images: [{ url: "https://wallstreetplaybook.org/og-resume-services.jpg", width: 1200, height: 630 }],
   },
   alternates: {
     canonical: "https://wallstreetplaybook.org/hedge-fund-resume",
+  },
+  twitter: {
+    card: "summary_large_image",
+    images: ["https://wallstreetplaybook.org/og-resume-services.jpg"],
   },
 }
 

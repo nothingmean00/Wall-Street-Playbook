@@ -23,9 +23,14 @@ export const metadata: Metadata = {
     description:
       "Professional IB resume review by industry experts. Get feedback that helps you land interviews at top banks.",
     url: "https://wallstreetplaybook.org/investment-banking-resume-review",
+    images: [{ url: "https://wallstreetplaybook.org/og-resume-services.jpg", width: 1200, height: 630 }],
   },
   alternates: {
     canonical: "https://wallstreetplaybook.org/investment-banking-resume-review",
+  },
+  twitter: {
+    card: "summary_large_image",
+    images: ["https://wallstreetplaybook.org/og-resume-services.jpg"],
   },
 }
 

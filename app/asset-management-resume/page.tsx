@@ -23,9 +23,14 @@ export const metadata: Metadata = {
     description:
       "Professional resume review for buy-side roles. Highlight your track record, investment process, and AUM effectively.",
     url: "https://wallstreetplaybook.org/asset-management-resume",
+    images: [{ url: "https://wallstreetplaybook.org/og-resume-services.jpg", width: 1200, height: 630 }],
   },
   alternates: {
     canonical: "https://wallstreetplaybook.org/asset-management-resume",
+  },
+  twitter: {
+    card: "summary_large_image",
+    images: ["https://wallstreetplaybook.org/og-resume-services.jpg"],
   },
 }
 

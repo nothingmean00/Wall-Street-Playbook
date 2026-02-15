@@ -23,9 +23,14 @@ export const metadata: Metadata = {
     description:
       "Expert resume review for financial advisors and wealth managers. Showcase your AUM, certifications, and client relationships effectively.",
     url: "https://wallstreetplaybook.org/financial-advisor-resume",
+    images: [{ url: "https://wallstreetplaybook.org/og-resume-services.jpg", width: 1200, height: 630 }],
   },
   alternates: {
     canonical: "https://wallstreetplaybook.org/financial-advisor-resume",
+  },
+  twitter: {
+    card: "summary_large_image",
+    images: ["https://wallstreetplaybook.org/og-resume-services.jpg"],
   },
 }
 

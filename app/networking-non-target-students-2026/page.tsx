@@ -24,9 +24,14 @@ export const metadata: Metadata = {
     description:
       "The 4-phase networking system that takes non-target students from 0 connections to IB offers. Volume benchmarks, response rates, and the exact conversion funnel.",
     url: "https://wallstreetplaybook.org/networking-non-target-students-2026",
+    images: [{ url: "https://wallstreetplaybook.org/og-recruiting.jpg", width: 1200, height: 630 }],
   },
   alternates: {
     canonical: "https://wallstreetplaybook.org/networking-non-target-students-2026",
+  },
+  twitter: {
+    card: "summary_large_image",
+    images: ["https://wallstreetplaybook.org/og-recruiting.jpg"],
   },
 }
 

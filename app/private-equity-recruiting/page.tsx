@@ -26,6 +26,10 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://wallstreetplaybook.org/private-equity-recruiting",
   },
+  twitter: {
+    card: "summary_large_image",
+    images: ["https://wallstreetplaybook.org/og-recruiting.jpg"],
+  },
 }
 
 const onCycleTimeline = [

@@ -24,9 +24,14 @@ export const metadata: Metadata = {
     description:
       "Professional resume review for fintech careers. Bridge finance and tech on your resume to land roles at top fintechs.",
     url: "https://wallstreetplaybook.org/fintech-resume",
+    images: [{ url: "https://wallstreetplaybook.org/og-resume-services.jpg", width: 1200, height: 630 }],
   },
   alternates: {
     canonical: "https://wallstreetplaybook.org/fintech-resume",
+  },
+  twitter: {
+    card: "summary_large_image",
+    images: ["https://wallstreetplaybook.org/og-resume-services.jpg"],
   },
 }
 

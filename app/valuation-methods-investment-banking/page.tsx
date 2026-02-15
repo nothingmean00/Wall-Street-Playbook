@@ -22,9 +22,14 @@ export const metadata: Metadata = {
     title: "Valuation Methods in Investment Banking | DCF, Comps, Precedent",
     description: "The 3 core valuation methods: DCF, trading comps, and precedent transactions. When to use each and how they compare.",
     url: "https://wallstreetplaybook.org/valuation-methods-investment-banking",
+    images: [{ url: "https://wallstreetplaybook.org/og-interview-prep.jpg", width: 1200, height: 630 }],
   },
   alternates: {
     canonical: "https://wallstreetplaybook.org/valuation-methods-investment-banking",
+  },
+  twitter: {
+    card: "summary_large_image",
+    images: ["https://wallstreetplaybook.org/og-interview-prep.jpg"],
   },
 }
 

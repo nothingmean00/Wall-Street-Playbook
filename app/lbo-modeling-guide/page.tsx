@@ -25,9 +25,14 @@ export const metadata: Metadata = {
     description:
       "Complete guide to LBO modeling. Learn how to build leveraged buyout models and ace PE interviews.",
     url: "https://wallstreetplaybook.org/lbo-modeling-guide",
+    images: [{ url: "https://wallstreetplaybook.org/og-interview-prep.jpg", width: 1200, height: 630 }],
   },
   alternates: {
     canonical: "https://wallstreetplaybook.org/lbo-modeling-guide",
+  },
+  twitter: {
+    card: "summary_large_image",
+    images: ["https://wallstreetplaybook.org/og-interview-prep.jpg"],
   },
 }
 
