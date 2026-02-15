@@ -1,13 +1,7 @@
 import { playbooks } from "@/lib/data"
 import { getAllBlogPosts } from "@/lib/blog"
+import { LIVE_PLAYBOOK_SLUGS_SET } from "@/lib/config"
 import type { MetadataRoute } from "next"
-
-// Playbooks that are live and purchasable — must match livePlaybookSlugs in playbooks/[slug]/page.tsx
-const livePlaybookSlugs = new Set([
-  "finance-technical-interview-guide",
-  "pe-recruiting-playbook",
-  "networking-cold-email-playbook",
-])
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const baseUrl = "https://wallstreetplaybook.org"
@@ -411,7 +405,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   // Non-live playbooks have robots noindex, so including them creates
   // contradictory signals that waste crawl budget.
   const playbookPages = playbooks
-    .filter((playbook) => livePlaybookSlugs.has(playbook.slug))
+    .filter((playbook) => LIVE_PLAYBOOK_SLUGS_SET.has(playbook.slug))
     .map((playbook) => ({
       url: `${baseUrl}/playbooks/${playbook.slug}`,
       lastModified: siteLastUpdated,

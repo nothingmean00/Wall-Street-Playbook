@@ -9,6 +9,7 @@ import { BuyButton } from "@/components/buy-button"
 import { PEPlaybookPreview, IBTechnicalPreview, NetworkingPreview } from "@/components/playbook-preview"
 import { PageTracker } from "@/components/analytics/page-tracker"
 import { ScrollTracker } from "@/components/analytics/scroll-tracker"
+import { LIVE_PLAYBOOK_SLUGS, DEFAULT_OG_IMAGE } from "@/lib/config"
 import type { Metadata } from "next"
 
 interface PlaybookPageProps {
@@ -21,9 +22,6 @@ export async function generateStaticParams() {
   }))
 }
 
-// Playbooks that are live and purchasable
-const livePlaybookSlugs = ["finance-technical-interview-guide", "pe-recruiting-playbook", "networking-cold-email-playbook"]
-
 export async function generateMetadata({ params }: PlaybookPageProps): Promise<Metadata> {
   const { slug } = await params
   const playbook = playbooks.find((p) => p.slug === slug)
@@ -32,7 +30,7 @@ export async function generateMetadata({ params }: PlaybookPageProps): Promise<M
     return { title: "Playbook Not Found" }
   }
 
-  const isLive = livePlaybookSlugs.includes(playbook.slug)
+  const isLive = LIVE_PLAYBOOK_SLUGS.includes(playbook.slug)
 
   return {
     title: playbook.title,
@@ -55,11 +53,13 @@ export async function generateMetadata({ params }: PlaybookPageProps): Promise<M
       description: playbook.longDescription,
       url: `https://wallstreetplaybook.org/playbooks/${playbook.slug}`,
       type: "website",
+      images: [{ url: DEFAULT_OG_IMAGE, width: 1200, height: 630 }],
     },
     twitter: {
       card: "summary_large_image",
       title: `${playbook.title} | Wall Street Playbook`,
       description: playbook.longDescription,
+      images: [DEFAULT_OG_IMAGE],
     },
     alternates: {
       canonical: `https://wallstreetplaybook.org/playbooks/${playbook.slug}`,
@@ -99,7 +99,20 @@ export default async function PlaybookPage({ params }: PlaybookPageProps) {
     notFound()
   }
 
-  const isLive = livePlaybookSlugs.includes(playbook.slug)
+  const isLive = LIVE_PLAYBOOK_SLUGS.includes(playbook.slug)
+
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.answer,
+      },
+    })),
+  }
 
   const productSchema = {
     "@context": "https://schema.org",
@@ -142,6 +155,10 @@ export default async function PlaybookPage({ params }: PlaybookPageProps) {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(productSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
       <main className="flex-grow">
         {/* Hero Section */}
@@ -225,6 +242,11 @@ export default async function PlaybookPage({ params }: PlaybookPageProps) {
                       "Lateral candidates transitioning from Big 4, consulting, or corporate roles into banking",
                       "PE/HF candidates who need sharp technicals for buy-side interviews",
                       "Anyone tired of memorizing answers without understanding the logic behind them",
+                    ] : playbook.slug === 'networking-cold-email-playbook' ? [
+                      "Non-target students who need to build a Wall Street network from scratch",
+                      "Anyone struggling to get responses from cold emails to bankers and investors",
+                      "Lateral candidates who don't have a built-in alumni network in finance",
+                      "MBA students looking to convert networking into interview invitations",
                     ] : [
                       "IB analysts preparing for on-cycle or off-cycle PE recruiting",
                       "Undergrads targeting direct-to-PE analyst programs",
@@ -309,6 +331,10 @@ export default async function PlaybookPage({ params }: PlaybookPageProps) {
                       { quote: "The dual-format answers are a game-changer. I used the 30-second versions for quick HireVue rounds and the deep dives for Superdays. Ended up with offers from two BBs.", author: "Non-Target Senior → BB Analyst" },
                       { quote: "The frequency tags alone saved me 40+ hours of studying. I stopped wasting time on obscure topics and drilled the 'Always Asked' questions until I could answer in my sleep.", author: "Liberal Arts Major → Evercore SA" },
                       { quote: "I've used WSO, BIWS, and Rosenbaum's textbook. This guide is what actually made the concepts click—the red flag boxes showed me exactly where I was losing points without knowing it.", author: "Big 4 TAS → MM IB Lateral" },
+                    ] : playbook.slug === 'networking-cold-email-playbook' ? [
+                      { quote: "I sent 40+ cold emails before buying this and got zero replies. After using the templates, my response rate jumped to nearly 50%. Landed 8 informational calls in two weeks.", author: "Non-Target Junior → EB Internship" },
+                      { quote: "The informational interview script is gold. I used to freeze up after 'tell me about your role.' Now I run 25-minute calls that consistently convert into referrals.", author: "State School Senior → BB SA Offer" },
+                      { quote: "The LinkedIn X-Ray search technique alone was worth it. Found 30+ alumni connections I didn't know existed. Three of them referred me directly to their recruiting teams.", author: "Career Changer → MM IB Analyst" },
                     ] : [
                       { quote: "The headhunter section alone was worth it. I had no idea CPI asks paper LBOs in their initial calls. This intel saved me from bombing my first impression.", author: "GS TMT Analyst, Class of 2024" },
                       { quote: "Finally, advice that isn't 'network and grind technicals.' The bank-to-fund pipeline data helped me target the right groups for lateral moves.", author: "MM IB Associate → UMM PE" },
@@ -338,6 +364,8 @@ export default async function PlaybookPage({ params }: PlaybookPageProps) {
                       <p className="mt-1 text-sm text-green-700">
                         {playbook.slug === 'finance-technical-interview-guide' 
                           ? "If this guide doesn't meaningfully improve your technical interview performance within 30 days, email us for a full refund. No questions asked. Thousands of candidates have used these frameworks to land offers at top firms."
+                          : playbook.slug === 'networking-cold-email-playbook'
+                          ? "If these templates and strategies don't meaningfully improve your networking results within 30 days, email us for a full refund. No questions asked. Candidates consistently report 3-5x improvements in response rates."
                           : "If this playbook doesn't meaningfully improve your PE recruiting prep within 30 days, email us for a full refund. No questions asked. We've helped hundreds of candidates—we're confident this will help you too."}
                       </p>
                     </div>
@@ -353,7 +381,9 @@ export default async function PlaybookPage({ params }: PlaybookPageProps) {
                     <div className="flex items-center gap-2 mb-4 px-3 py-1.5 rounded-full bg-gold/10 w-fit">
                       <Clock className="h-3.5 w-3.5 text-gold" />
                       <span className="text-xs font-medium text-gold">
-                        {playbook.slug === 'finance-technical-interview-guide' ? '2026 recruiting season is live' : '2026 on-cycle starts soon'}
+                        {playbook.slug === 'finance-technical-interview-guide' ? '2026 recruiting season is live' 
+                          : playbook.slug === 'networking-cold-email-playbook' ? 'Start networking today'
+                          : '2026 on-cycle starts soon'}
                       </span>
                     </div>
 

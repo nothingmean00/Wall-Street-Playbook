@@ -8,21 +8,65 @@ export const metadata: Metadata = {
   title: "Contact | Wall Street Playbook",
   description:
     "Get in touch with Wall Street Playbook. Questions about playbooks, resume services, or partnership opportunities.",
+  keywords: [
+    "contact wall street playbook",
+    "finance recruiting help",
+    "investment banking prep support",
+  ],
   openGraph: {
     title: "Contact | Wall Street Playbook",
     description:
       "Get in touch with Wall Street Playbook for questions about playbooks, resume services, or partnerships.",
     url: "https://wallstreetplaybook.org/contact",
+    images: [{ url: "https://wallstreetplaybook.org/og-image.jpg", width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Contact | Wall Street Playbook",
+    description: "Questions about playbooks, resume services, or partnerships? We respond within 24 hours.",
+    images: ["https://wallstreetplaybook.org/og-image.jpg"],
   },
   alternates: {
     canonical: "https://wallstreetplaybook.org/contact",
   },
 }
 
+const contactFaqs = [
+  {
+    question: "How are playbooks delivered?",
+    answer: "All playbooks are delivered as instant PDF downloads after purchase. You'll receive a secure download link immediately via email.",
+  },
+  {
+    question: "What is the resume review turnaround time?",
+    answer: "Resume reviews are completed in 3-5 business days. Full resume rewrites take 5-7 business days. Resume service clients receive priority support.",
+  },
+  {
+    question: "What is your refund policy?",
+    answer: "All products come with a full 30-day money-back guarantee. If you're not satisfied, email us and we'll refund you immediately — no questions asked.",
+  },
+]
+
 export default function ContactPage() {
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: contactFaqs.map((faq) => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.answer,
+      },
+    })),
+  }
+
   return (
     <div className="min-h-screen bg-off-white">
       <Navbar />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
 
       <main>
         {/* Header */}

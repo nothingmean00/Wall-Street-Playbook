@@ -12,6 +12,13 @@ export const metadata: Metadata = {
     title: "About | Wall Street Playbook",
     description: "Built by industry insiders with PE, hedge fund, and investment banking experience.",
     url: "https://wallstreetplaybook.org/about",
+    images: [{ url: "https://wallstreetplaybook.org/og-image.jpg", width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "About | Wall Street Playbook",
+    description: "Built by industry insiders with PE, hedge fund, and investment banking experience.",
+    images: ["https://wallstreetplaybook.org/og-image.jpg"],
   },
   alternates: {
     canonical: "https://wallstreetplaybook.org/about",

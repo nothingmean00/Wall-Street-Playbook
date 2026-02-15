@@ -6,6 +6,7 @@ import { BuyButton } from "@/components/buy-button"
 import { EmailCapture } from "@/components/email-capture"
 import { ScrollTracker } from "@/components/analytics/scroll-tracker"
 import { playbooks } from "@/lib/data"
+import { LIVE_PLAYBOOK_SLUGS, DEFAULT_OG_IMAGE } from "@/lib/config"
 import {
   Check,
   ArrowRight,
@@ -41,14 +42,18 @@ export const metadata: Metadata = {
     description:
       "Premium guides for IB, PE, and hedge fund recruiting. Technical interview frameworks, PE recruiting intel, networking systems, and LBO modeling — built from real placement data.",
     url: "https://wallstreetplaybook.org/playbooks",
+    images: [{ url: DEFAULT_OG_IMAGE, width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Finance Recruiting Playbooks | Wall Street Playbook",
+    description: "Premium guides for IB, PE, and hedge fund recruiting — built from real placement data.",
+    images: [DEFAULT_OG_IMAGE],
   },
   alternates: {
     canonical: "https://wallstreetplaybook.org/playbooks",
   },
 }
-
-// Playbooks that are live and purchasable
-const livePlaybookSlugs = ["finance-technical-interview-guide", "pe-recruiting-playbook", "networking-cold-email-playbook"]
 
 // Upcoming playbooks — show only the most anticipated ones
 const upcomingPlaybooks = [
@@ -163,17 +168,34 @@ const comparisonFeatures = [
 ]
 
 export default function PlaybooksPage() {
-  const livePlaybooks = playbooks.filter((p) => livePlaybookSlugs.includes(p.slug))
+  const livePlaybooks = playbooks.filter((p) => LIVE_PLAYBOOK_SLUGS.includes(p.slug))
 
   // Calculate bundle pricing
   const totalIndividual = livePlaybooks.reduce((sum, p) => sum + p.price, 0)
   const bundlePrice = 149
   const bundleSavings = totalIndividual - bundlePrice
 
+  const faqSchema = {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqItems.map((faq) => ({
+      "@type": "Question",
+      name: faq.question,
+      acceptedAnswer: {
+        "@type": "Answer",
+        text: faq.answer,
+      },
+    })),
+  }
+
   return (
     <div className="flex min-h-screen flex-col">
       <ScrollTracker page="playbooks" />
       <Navbar />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
+      />
       <main className="flex-grow">
         {/* Hero */}
         <section className="relative bg-navy pt-28 pb-16 lg:pt-32 lg:pb-24 overflow-hidden">

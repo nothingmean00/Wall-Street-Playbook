@@ -24,6 +24,13 @@ export const metadata: Metadata = {
     description:
       "Professional resume services optimized for IB, PE, and hedge fund recruiting. Expert feedback with money-back guarantee.",
     url: "https://wallstreetplaybook.org/resume-services",
+    images: [{ url: "https://wallstreetplaybook.org/og-image.jpg", width: 1200, height: 630 }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Investment Banking Resume Review & Rewrite | Wall Street Playbook",
+    description: "Professional resume services optimized for IB, PE, and hedge fund recruiting.",
+    images: ["https://wallstreetplaybook.org/og-image.jpg"],
   },
   alternates: {
     canonical: "https://wallstreetplaybook.org/resume-services",
