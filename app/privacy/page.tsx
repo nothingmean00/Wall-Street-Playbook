@@ -17,10 +17,10 @@ export const metadata: Metadata = {
 
 export default function PrivacyPage() {
   return (
-    <div className="min-h-screen bg-off-white">
+    <div className="flex min-h-screen flex-col bg-off-white">
       <Navbar />
 
-      <main className="pt-28 pb-16 lg:pt-32 lg:pb-24">
+      <main className="flex-grow pt-28 pb-16 lg:pt-32 lg:pb-24">
         <div className="mx-auto max-w-3xl px-6 lg:px-8">
           <h1 className="text-3xl font-bold tracking-tight text-charcoal sm:text-4xl">Privacy Policy</h1>
           <p className="mt-4 text-sm text-charcoal/60">Last updated: February 2025</p>

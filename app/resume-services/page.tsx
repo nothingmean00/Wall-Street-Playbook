@@ -2,7 +2,7 @@ import type { Metadata } from "next"
 import { Navbar } from "@/components/layout/navbar"
 import { Footer } from "@/components/layout/footer"
 import { resumeServices } from "@/lib/data"
-import { Check, Clock, FileText, Pencil, ArrowRight, Shield, Users, Award, BadgeCheck } from "lucide-react"
+import { Check, Clock, FileText, Pencil, ArrowRight, Shield, Users, Award, BadgeCheck, Star } from "lucide-react"
 import { ScrollTracker } from "@/components/analytics/scroll-tracker"
 import { TrackedLink } from "@/components/analytics/tracked-link"
 import Link from "next/link"
@@ -285,6 +285,55 @@ export default function ResumeServicesPage() {
           </div>
         </section>
 
+        {/* Social Proof / Testimonials */}
+        <section className="bg-white py-16 border-t border-border">
+          <div className="mx-auto max-w-7xl px-6 lg:px-8">
+            <div className="mx-auto max-w-4xl">
+              <div className="text-center mb-12">
+                <h2 className="text-2xl font-bold text-navy sm:text-3xl">What Clients Say</h2>
+                <div className="mt-2 mx-auto h-1 w-12 bg-gold" />
+              </div>
+
+              <div className="grid gap-6 md:grid-cols-3">
+                {[
+                  {
+                    quote: "I submitted my resume on Monday and had detailed, line-by-line feedback by Thursday. The reviewer caught formatting issues and weak bullet points I'd missed for months. Got 3 first-round interviews the next week.",
+                    author: "Non-Target Senior",
+                    result: "Landed BB Summer Analyst",
+                    service: "Resume Review",
+                  },
+                  {
+                    quote: "The rewrite completely transformed how I positioned my Big 4 experience for banking. They rewrote every bullet to quantify impact and match what IB recruiters look for. Night and day difference.",
+                    author: "Big 4 TAS Associate",
+                    result: "Lateraled to MM IB",
+                    service: "Resume Rewrite",
+                  },
+                  {
+                    quote: "As an MBA candidate switching from tech, I had no idea how to frame my experience for PE recruiting. The rewritten resume positioned me perfectly — got callbacks from 4 megafunds.",
+                    author: "MBA Candidate",
+                    result: "PE Summer Associate Offers",
+                    service: "Resume Rewrite",
+                  },
+                ].map((testimonial, idx) => (
+                  <div key={idx} className="rounded-xl border border-border bg-off-white p-6">
+                    <div className="flex items-center gap-0.5 mb-3">
+                      {[...Array(5)].map((_, i) => (
+                        <Star key={i} className="h-4 w-4 fill-gold text-gold" />
+                      ))}
+                    </div>
+                    <p className="text-sm text-charcoal/80 italic leading-relaxed">&quot;{testimonial.quote}&quot;</p>
+                    <div className="mt-4 pt-4 border-t border-border/60">
+                      <p className="text-sm font-semibold text-navy">{testimonial.author}</p>
+                      <p className="text-xs text-gold font-medium">{testimonial.result}</p>
+                      <p className="text-[10px] text-charcoal/40 mt-1">{testimonial.service}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </section>
+
         {/* Trust Section */}
         <section className="bg-navy py-16">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
@@ -342,10 +391,17 @@ export default function ResumeServicesPage() {
             <div className="mt-8 flex flex-col items-center justify-center gap-4 sm:flex-row">
               <TrackedLink 
                 href="/submit-resume?service=resume-review"
-                location="resume_services_bottom_cta"
+                location="resume_services_bottom_cta_review"
+                className="inline-flex items-center gap-2 rounded-xl border-2 border-gold bg-transparent px-6 py-3 text-sm font-semibold text-gold transition-all hover:bg-gold hover:text-navy"
+              >
+                Resume Review — $49
+              </TrackedLink>
+              <TrackedLink 
+                href="/submit-resume?service=resume-rewrite"
+                location="resume_services_bottom_cta_rewrite"
                 className="inline-flex items-center gap-2 rounded-xl bg-gold px-6 py-3 text-sm font-semibold text-navy transition-all hover:bg-navy hover:text-white"
               >
-                Get Started Now
+                Resume Rewrite — $99
                 <ArrowRight className="h-4 w-4" />
               </TrackedLink>
             </div>

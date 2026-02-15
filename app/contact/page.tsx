@@ -61,14 +61,14 @@ export default function ContactPage() {
   }
 
   return (
-    <div className="min-h-screen bg-off-white">
+    <div className="flex min-h-screen flex-col bg-off-white">
       <Navbar />
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(faqSchema) }}
       />
 
-      <main>
+      <main className="flex-grow">
         {/* Header */}
         <section className="bg-navy pt-28 pb-16 lg:pt-36 lg:pb-20">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">

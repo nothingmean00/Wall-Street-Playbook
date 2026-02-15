@@ -55,10 +55,10 @@ const milestones = [
 
 export default function AboutPage() {
   return (
-    <div className="min-h-screen bg-off-white">
+    <div className="flex min-h-screen flex-col bg-off-white">
       <Navbar />
 
-      <main>
+      <main className="flex-grow">
         {/* Hero */}
         <section className="relative bg-navy-deep pt-28 pb-20 lg:pt-32 lg:pb-28 overflow-hidden">
           <div className="absolute inset-0">
