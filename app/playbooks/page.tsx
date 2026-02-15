@@ -270,82 +270,149 @@ export default function PlaybooksPage() {
         {/* Live Playbooks */}
         <section className="bg-off-white py-16 lg:py-24">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
-            <div className="mx-auto max-w-2xl text-center mb-12">
+            <div className="mx-auto max-w-2xl text-center mb-16">
               <h2 className="text-2xl font-bold text-navy sm:text-3xl">Available Now</h2>
               <div className="mt-2 mx-auto h-1 w-12 bg-gold" />
             </div>
 
-            <div className="mx-auto max-w-6xl grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-              {livePlaybooks.map((playbook, index) => (
-                <Link
-                  key={playbook.slug}
-                  href={`/playbooks/${playbook.slug}`}
-                  className="group relative rounded-2xl border border-border bg-white shadow-sm hover:shadow-xl hover:border-gold/40 transition-all duration-300 overflow-hidden flex flex-col"
-                >
-                  {/* Top accent */}
-                  <div className="h-1.5 bg-gradient-to-r from-gold via-gold/80 to-gold/50" />
+            <div className="mx-auto max-w-6xl grid gap-10 lg:grid-cols-3">
+              {livePlaybooks.map((playbook, index) => {
+                // Extract page count and chapter count from description
+                const pageMatch = playbook.description.match(/(\d+)-page/)
+                const chapterMatch = playbook.description.match(/(\d+)-chapter/)
+                const pages = pageMatch ? pageMatch[1] : null
+                const chapters = chapterMatch ? chapterMatch[1] : null
 
-                  {/* Most Popular badge for first playbook */}
-                  {index === 0 && (
-                    <div className="absolute top-4 right-4 z-10">
-                      <span className="inline-flex items-center gap-1 rounded-full bg-gold px-2.5 py-1 text-[10px] font-bold text-navy uppercase tracking-wider">
-                        <Sparkles className="h-3 w-3" />
-                        Most Popular
-                      </span>
-                    </div>
-                  )}
+                return (
+                  <Link
+                    key={playbook.slug}
+                    href={`/playbooks/${playbook.slug}`}
+                    className="group flex flex-col"
+                  >
+                    {/* Book Cover */}
+                    <div className="relative rounded-t-xl overflow-hidden shadow-[0_10px_40px_-10px_rgba(10,26,47,0.4)] group-hover:shadow-[0_20px_60px_-10px_rgba(10,26,47,0.5)] transition-all duration-500 group-hover:-translate-y-1">
+                      {/* Spine effect */}
+                      <div className="absolute left-0 top-0 bottom-0 w-3 bg-gradient-to-r from-black/20 via-black/5 to-transparent z-10" />
 
-                  <div className="p-6 sm:p-8 flex-1 flex flex-col">
-                    {/* Badge */}
-                    <div className="flex items-center justify-between mb-4">
-                      <span className="inline-flex items-center gap-1.5 rounded-full bg-green-50 border border-green-200 px-3 py-1 text-xs font-semibold text-green-700">
-                        <span className="h-1.5 w-1.5 rounded-full bg-green-500" />
-                        Available Now
-                      </span>
-                      <div className="flex items-center gap-1">
-                        {[...Array(5)].map((_, i) => (
-                          <Star key={i} className="h-3.5 w-3.5 fill-gold text-gold" />
-                        ))}
-                      </div>
-                    </div>
+                      {/* Cover background */}
+                      <div className="relative bg-gradient-to-br from-navy via-navy to-[#0d2240] px-7 py-8 min-h-[320px] flex flex-col">
+                        {/* Subtle pattern overlay */}
+                        <div className="absolute inset-0 opacity-[0.04]" style={{ backgroundImage: 'url("data:image/svg+xml,%3Csvg width=\'20\' height=\'20\' xmlns=\'http://www.w3.org/2000/svg\'%3E%3Cpath d=\'M0 0h20v20H0z\' fill=\'none\' stroke=\'%23C9A86E\' stroke-width=\'.5\'/%3E%3C/svg%3E")' }} />
+                        
+                        {/* Top accent line */}
+                        <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-gold via-gold/80 to-gold/40" />
 
-                    {/* Title & Description */}
-                    <h3 className="text-xl font-bold text-navy group-hover:text-gold transition-colors">
-                      {playbook.title}
-                    </h3>
-                    <p className="mt-3 text-sm leading-relaxed text-charcoal/60 flex-1">
-                      {playbook.description}
-                    </p>
+                        {/* Badge */}
+                        {index === 0 && (
+                          <div className="mb-4">
+                            <span className="inline-flex items-center gap-1 rounded-full bg-gold/20 border border-gold/30 px-2.5 py-1 text-[10px] font-bold text-gold uppercase tracking-wider">
+                              <Sparkles className="h-3 w-3" />
+                              Most Popular
+                            </span>
+                          </div>
+                        )}
 
-                    {/* Contents preview */}
-                    <div className="mt-5 space-y-2">
-                      {playbook.contents.slice(0, 4).map((item, idx) => (
-                        <div key={idx} className="flex items-start gap-2">
-                          <Check className="h-4 w-4 text-gold flex-shrink-0 mt-0.5" />
-                          <span className="text-xs text-charcoal/70">{item}</span>
-                        </div>
-                      ))}
-                      {playbook.contents.length > 4 && (
-                        <p className="text-xs text-charcoal/40 pl-6">
-                          + {playbook.contents.length - 4} more sections
+                        {/* Gold decorative line */}
+                        <div className="h-0.5 w-10 bg-gold mb-5" />
+
+                        {/* Title */}
+                        <h3 className="font-playfair text-2xl font-bold text-white leading-tight tracking-tight">
+                          {playbook.title}
+                        </h3>
+
+                        {/* Subtitle */}
+                        <p className="mt-3 text-xs leading-relaxed text-white/50 max-w-[240px]">
+                          {playbook.description.split('.')[0]}.
                         </p>
-                      )}
+
+                        {/* Spacer */}
+                        <div className="flex-1" />
+
+                        {/* Bottom stats */}
+                        <div className="flex items-center gap-4 mt-6">
+                          {pages && (
+                            <div className="flex items-center gap-1.5">
+                              <FileText className="h-3.5 w-3.5 text-gold/60" />
+                              <span className="text-[11px] font-medium text-white/40">{pages} pages</span>
+                            </div>
+                          )}
+                          {chapters && (
+                            <div className="flex items-center gap-1.5">
+                              <BookOpen className="h-3.5 w-3.5 text-gold/60" />
+                              <span className="text-[11px] font-medium text-white/40">{chapters} chapters</span>
+                            </div>
+                          )}
+                        </div>
+
+                        {/* WSP Logo Mark */}
+                        <div className="absolute bottom-6 right-6 opacity-10">
+                          <div className="h-16 w-16 rounded-full border-2 border-gold flex items-center justify-center">
+                            <span className="text-gold text-xs font-bold tracking-widest">WSP</span>
+                          </div>
+                        </div>
+                      </div>
                     </div>
 
-                    {/* Footer */}
-                    <div className="mt-6 pt-5 border-t border-border flex items-center justify-between">
-                      <div>
-                        <span className="text-2xl font-bold text-navy">${playbook.price}</span>
-                        <span className="text-sm text-charcoal/50 ml-1.5">one-time</span>
+                    {/* Table of Contents Card */}
+                    <div className="flex-1 rounded-b-xl border border-t-0 border-border bg-white px-6 py-6 shadow-sm group-hover:shadow-md transition-shadow">
+                      {/* TOC Header */}
+                      <div className="flex items-center justify-between mb-4">
+                        <p className="text-[10px] font-bold uppercase tracking-widest text-charcoal/30">Table of Contents</p>
+                        <div className="flex items-center gap-0.5">
+                          {[...Array(5)].map((_, i) => (
+                            <Star key={i} className="h-3 w-3 fill-gold text-gold" />
+                          ))}
+                        </div>
                       </div>
-                      <span className="inline-flex items-center gap-2 text-sm font-semibold text-gold group-hover:gap-3 transition-all">
-                        View Playbook
-                        <ArrowRight className="h-4 w-4" />
-                      </span>
+
+                      {/* Chapter list */}
+                      <div className="space-y-2.5">
+                        {playbook.contents.slice(0, 5).map((item, idx) => {
+                          // Parse chapter title from "Chapter X: Title — details"
+                          const chapterLabelMatch = item.match(/^(Chapter \d+|Appendix[^:]*):\s*(.+?)(?:\s*—\s*(.+))?$/)
+                          const label = chapterLabelMatch ? chapterLabelMatch[1] : null
+                          const title = chapterLabelMatch ? chapterLabelMatch[2] : item
+                          
+                          return (
+                            <div key={idx} className="flex items-start gap-3">
+                              {label ? (
+                                <span className="flex-shrink-0 text-[10px] font-bold text-gold/70 uppercase tracking-wider mt-0.5 w-6 text-right">
+                                  {label.replace('Chapter ', '').replace('Appendix', '+')}
+                                </span>
+                              ) : (
+                                <span className="flex-shrink-0 mt-0.5 w-6 text-right">
+                                  <Check className="h-3.5 w-3.5 text-gold/50 inline" />
+                                </span>
+                              )}
+                              <span className="text-xs text-charcoal/70 leading-relaxed">{title}</span>
+                            </div>
+                          )
+                        })}
+                        {playbook.contents.length > 5 && (
+                          <div className="flex items-start gap-3">
+                            <span className="flex-shrink-0 w-6" />
+                            <span className="text-[11px] text-charcoal/35 italic">
+                              + {playbook.contents.length - 5} more chapters
+                            </span>
+                          </div>
+                        )}
+                      </div>
+
+                      {/* Price & CTA */}
+                      <div className="mt-6 pt-5 border-t border-border/60 flex items-center justify-between">
+                        <div>
+                          <span className="text-2xl font-bold text-navy">${playbook.price}</span>
+                          <span className="text-xs text-charcoal/40 ml-1.5">one-time</span>
+                        </div>
+                        <span className="inline-flex items-center gap-2 text-sm font-semibold text-gold group-hover:gap-3 transition-all duration-300">
+                          View Playbook
+                          <ArrowRight className="h-4 w-4" />
+                        </span>
+                      </div>
                     </div>
-                  </div>
-                </Link>
-              ))}
+                  </Link>
+                )
+              })}
             </div>
           </div>
         </section>
