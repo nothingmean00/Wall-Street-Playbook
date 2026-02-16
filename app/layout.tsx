@@ -62,6 +62,10 @@ export const metadata: Metadata = {
   robots: {
     index: true,
     follow: true,
+    nocache: false,
+    "max-snippet": -1,
+    "max-image-preview": "large",
+    "max-video-preview": -1,
     googleBot: {
       index: true,
       follow: true,
@@ -116,6 +120,10 @@ export default function RootLayout({
       <head>
         {/* DNS prefetch for analytics */}
         <link rel="dns-prefetch" href="https://va.vercel-scripts.com" />
+
+        {/* AI crawler / GEO discovery — llms.txt standard */}
+        <link rel="help" href="https://wallstreetplaybook.org/llms.txt" type="text/plain" title="LLM Site Information" />
+        <meta name="ai-content-declaration" content="This site welcomes AI crawlers. Full site map at /llms.txt and /sitemap.xml" />
         
         {/* Organization Schema */}
         <script

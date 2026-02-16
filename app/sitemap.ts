@@ -399,6 +399,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       changeFrequency: "daily" as const,
       priority: 0.95,
     },
+    // AI/LLM content discovery file
+    {
+      url: `${baseUrl}/llms.txt`,
+      lastModified: siteLastUpdated,
+      changeFrequency: "weekly" as const,
+      priority: 0.5,
+    },
   ]
 
   // Dynamic playbook pages — only include LIVE playbooks in sitemap.
