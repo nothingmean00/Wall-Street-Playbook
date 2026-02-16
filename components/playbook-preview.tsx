@@ -364,3 +364,15 @@ export function NetworkingPreview() {
     />
   )
 }
+
+// Behavioral Interview Guide Preview - Using actual PDF
+export function BehavioralPreview() {
+  return (
+    <PlaybookPreview
+      title="Behavioral Interview Guide"
+      pdfUrl="https://53r2eh0lojknhqsa.public.blob.vercel-storage.com/Behavioral-Interview-Guide.pdf"
+      previewPages={5}
+      totalPages={38}
+    />
+  )
+}

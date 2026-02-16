@@ -103,6 +103,28 @@ export const playbooks: Playbook[] = [
       "Here is the uncomfortable truth about breaking into Wall Street: the vast majority of positions are filled before they are ever posted publicly. Goldman Sachs receives over 300,000 applications annually and hires fewer than 4%. If you are relying on online applications alone, you are competing for scraps. This playbook exists because the system is rigged—but rigged in a way that rewards those who understand how to play it.",
   },
   {
+    slug: "behavioral-interview-guide",
+    title: "Behavioral Interview Guide",
+    description: "38-page, 9-chapter behavioral mastery system. 50 questions decoded by hidden psychology, a classification matrix mapping every question to 6 screening dimensions, and firm-specific patterns for GS, JPM, MS, and elite boutiques.",
+    longDescription:
+      "At Goldman Sachs, 60% of all interview questions are behavioral. At JP Morgan, 66%. After the first round, candidates have roughly equivalent technical skills—the differentiator is who you are, how you carry yourself, and whether the team wants to spend 100-hour weeks alongside you. This 38-page guide psychologically reverse-engineers all 50 of the most common behavioral questions, decoding the hidden objective, the risk being priced, and the specific signals that kill credibility versus those that project future-MD energy. Includes the classification matrix that maps every question to 6 dimensions banks actually screen for, the CARL+ framework for structuring answers, a 7-story bank system that flexes to cover all 50 questions, and firm-specific behavioral patterns for Goldman Sachs, JP Morgan, Morgan Stanley, and elite boutiques.",
+    price: 47,
+    contents: [
+      "Chapter 1: The 50 Most Common Behavioral Questions — Frequency-ranked from ~95% to niche curveballs, organized into 5 tiers with firm-specific attribution",
+      "Chapter 2: The 12 Universal Questions — Deep Analysis — Hidden objective, risk being priced, weak vs. strong signals, framework, and red flags for each",
+      "Chapter 3: Questions 13–50 — Condensed Analysis — Hidden test, risk, strong answer signal, and credibility-killing behavior for every remaining question",
+      "Chapter 4: The Hidden Classification Matrix — Maps all 50 questions to 6 screening dimensions: obedience, stamina, hierarchy navigation, client readiness, revenue mindset, and maturity",
+      "Chapter 5: How the Top 1% Differentiate — High-signal story selection, narrative framing techniques, implicit status signaling, and authentic vs. coached tells",
+      "Chapter 6: Interview Delivery Mechanics — Future-MD energy vs. desperate applicant energy, optimal pacing (140–160 wpm), authority calibration, emotional control",
+      "Chapter 7: The Complete Preparation System — CARL+ framework, the 7-story bank that covers all 50 questions, emphasis-shifting technique, and the 14-day timeline",
+      "Chapter 8: Firm-Specific Behavioral Patterns — Goldman Sachs (HireVue + values), JP Morgan (Pymetrics + 66% behavioral), Morgan Stanley (curveballs), Evercore, Lazard, Centerview",
+      "Chapter 9: PE, Hedge Fund & Lateral Differences — PE investor mindset test, hedge fund passion filters, lateral deal-walk-through format, firm-specific patterns for BX, KKR, Bridgewater, Citadel",
+      "Appendix A: Quick-Reference Cheat Sheets — Pre-interview checklist, story bank template, dimension quick-reference card, 14-day countdown planner",
+    ],
+    excerpt:
+      "Here is the uncomfortable truth about behavioral interviews on Wall Street: they are not designed to find the best candidate. They are designed to eliminate the riskiest one. Banks are risk-averse hiring machines. They would rather hire someone competent with no major red flags than a superstar with one serious concern. Every behavioral question is, at its core, a risk-elimination exercise. The singular meta-question behind every prompt: 'Would I want to be trapped in a conference room with this person at 2 AM on a Sunday?'",
+  },
+  {
     slug: "lbo-modeling-course",
     title: "LBO Modeling Crash Course",
     description: "Build LBO models from scratch. Sources & uses, debt schedules, returns analysis—with Excel templates included.",

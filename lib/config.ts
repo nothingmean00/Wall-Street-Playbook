@@ -8,6 +8,7 @@ export const LIVE_PLAYBOOK_SLUGS: string[] = [
   "finance-technical-interview-guide",
   "pe-recruiting-playbook",
   "networking-cold-email-playbook",
+  "behavioral-interview-guide",
 ]
 
 /** Set version for efficient lookups (e.g. sitemap filtering) */
@@ -23,6 +24,7 @@ export const OG_IMAGES = {
   technicalGuide: `${SITE_URL}/og-technical-guide.jpg`,
   pePlaybook: `${SITE_URL}/og-pe-playbook.jpg`,
   networkingPlaybook: `${SITE_URL}/og-networking-playbook.jpg`,
+  behavioralGuide: `${SITE_URL}/og-interview-prep.jpg`,
   resumeServices: `${SITE_URL}/og-resume-services.jpg`,
   interviewPrep: `${SITE_URL}/og-interview-prep.jpg`,
   recruiting: `${SITE_URL}/og-recruiting.jpg`,

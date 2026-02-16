@@ -6,7 +6,7 @@ import { playbooks } from "@/lib/data"
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion"
 import { Check, Shield, Download, RefreshCw, ArrowLeft, Lock, BookOpen, Users, Target, Star, Clock, BadgeCheck } from "lucide-react"
 import { BuyButton } from "@/components/buy-button"
-import { PEPlaybookPreview, IBTechnicalPreview, NetworkingPreview } from "@/components/playbook-preview"
+import { PEPlaybookPreview, IBTechnicalPreview, NetworkingPreview, BehavioralPreview } from "@/components/playbook-preview"
 import { PageTracker } from "@/components/analytics/page-tracker"
 import { ScrollTracker } from "@/components/analytics/scroll-tracker"
 import { LIVE_PLAYBOOK_SLUGS, OG_IMAGES } from "@/lib/config"
@@ -36,6 +36,7 @@ export async function generateMetadata({ params }: PlaybookPageProps): Promise<M
     "finance-technical-interview-guide": OG_IMAGES.technicalGuide,
     "pe-recruiting-playbook": OG_IMAGES.pePlaybook,
     "networking-cold-email-playbook": OG_IMAGES.networkingPlaybook,
+    "behavioral-interview-guide": OG_IMAGES.behavioralGuide,
   }
   const ogImage = ogImageMap[playbook.slug] || OG_IMAGES.playbooks
 
@@ -233,6 +234,7 @@ export default async function PlaybookPage({ params }: PlaybookPageProps) {
                   {playbook.slug === 'pe-recruiting-playbook' && <PEPlaybookPreview />}
                   {playbook.slug === 'finance-technical-interview-guide' && <IBTechnicalPreview />}
                   {playbook.slug === 'networking-cold-email-playbook' && <NetworkingPreview />}
+                  {playbook.slug === 'behavioral-interview-guide' && <BehavioralPreview />}
                 </div>
 
                 {/* Who This Is For */}
@@ -254,6 +256,11 @@ export default async function PlaybookPage({ params }: PlaybookPageProps) {
                       "Anyone struggling to get responses from cold emails to bankers and investors",
                       "Lateral candidates who don't have a built-in alumni network in finance",
                       "MBA students looking to convert networking into interview invitations",
+                    ] : playbook.slug === 'behavioral-interview-guide' ? [
+                      "Candidates prepping for IB superdays who need to nail the behavioral half of interviews",
+                      "Non-target students who must pass the 'airport test' to overcome pedigree bias",
+                      "Lateral candidates and career switchers who need to reframe their story for Wall Street",
+                      "PE, hedge fund, and buy-side candidates facing firm-specific behavioral patterns",
                     ] : [
                       "IB analysts preparing for on-cycle or off-cycle PE recruiting",
                       "Undergrads targeting direct-to-PE analyst programs",
@@ -342,6 +349,10 @@ export default async function PlaybookPage({ params }: PlaybookPageProps) {
                       { quote: "I sent 40+ cold emails before buying this and got zero replies. After using the templates, my response rate jumped to nearly 50%. Landed 8 informational calls in two weeks.", author: "Non-Target Junior → EB Internship" },
                       { quote: "The informational interview script is gold. I used to freeze up after 'tell me about your role.' Now I run 25-minute calls that consistently convert into referrals.", author: "State School Senior → BB SA Offer" },
                       { quote: "The LinkedIn X-Ray search technique alone was worth it. Found 30+ alumni connections I didn't know existed. Three of them referred me directly to their recruiting teams.", author: "Career Changer → MM IB Analyst" },
+                    ] : playbook.slug === 'behavioral-interview-guide' ? [
+                      { quote: "The classification matrix completely changed how I prepared. Instead of memorizing 50 stories, I built 7 that flexed across every dimension. Got through GS Superday with zero curveballs I couldn't handle.", author: "Non-Target Senior → GS IBD Analyst" },
+                      { quote: "I bombed my first superday because I thought technicals were all that mattered. After using the CARL+ framework and firm-specific patterns, I nailed behavioral rounds at Evercore and Lazard.", author: "Target School Junior → EB SA Offer" },
+                      { quote: "As a lateral from Big 4, my biggest weakness was the 'Why banking?' question. The reframing techniques in this guide turned my non-traditional background into a genuine differentiator.", author: "Big 4 Audit → MM IB Associate" },
                     ] : [
                       { quote: "The headhunter section alone was worth it. I had no idea CPI asks paper LBOs in their initial calls. This intel saved me from bombing my first impression.", author: "GS TMT Analyst, Class of 2024" },
                       { quote: "Finally, advice that isn't 'network and grind technicals.' The bank-to-fund pipeline data helped me target the right groups for lateral moves.", author: "MM IB Associate → UMM PE" },
@@ -373,6 +384,8 @@ export default async function PlaybookPage({ params }: PlaybookPageProps) {
                           ? "If this guide doesn't meaningfully improve your technical interview performance within 30 days, email us for a full refund. No questions asked. Thousands of candidates have used these frameworks to land offers at top firms."
                           : playbook.slug === 'networking-cold-email-playbook'
                           ? "If these templates and strategies don't meaningfully improve your networking results within 30 days, email us for a full refund. No questions asked. Candidates consistently report 3-5x improvements in response rates."
+                          : playbook.slug === 'behavioral-interview-guide'
+                          ? "If this guide doesn't meaningfully improve your behavioral interview performance within 30 days, email us for a full refund. No questions asked. The CARL+ framework and classification matrix have helped hundreds of candidates turn behavioral rounds from their weakest to their strongest."
                           : "If this playbook doesn't meaningfully improve your PE recruiting prep within 30 days, email us for a full refund. No questions asked. We've helped hundreds of candidates—we're confident this will help you too."}
                       </p>
                     </div>
@@ -390,6 +403,7 @@ export default async function PlaybookPage({ params }: PlaybookPageProps) {
                       <span className="text-xs font-medium text-gold">
                         {playbook.slug === 'finance-technical-interview-guide' ? '2026 recruiting season is live' 
                           : playbook.slug === 'networking-cold-email-playbook' ? 'Start networking today'
+                          : playbook.slug === 'behavioral-interview-guide' ? 'Superday season is here'
                           : '2026 on-cycle starts soon'}
                       </span>
                     </div>

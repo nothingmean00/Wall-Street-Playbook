@@ -11,6 +11,7 @@ const footerLinks = {
     { name: "Finance Technical Guide", href: "/playbooks/finance-technical-interview-guide" },
     { name: "PE Recruiting Playbook", href: "/playbooks/pe-recruiting-playbook" },
     { name: "Networking & Cold Email", href: "/playbooks/networking-cold-email-playbook" },
+    { name: "Behavioral Interview Guide", href: "/playbooks/behavioral-interview-guide" },
   ],
   services: [
     { name: "Resume Services", href: "/resume-services" },
