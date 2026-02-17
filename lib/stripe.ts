@@ -102,6 +102,11 @@ export const PRODUCTS = {
     name: 'Credit & Direct Lending Playbook',
     price: 97,
   },
+  'behavioral-interview-guide': {
+    priceId: process.env.STRIPE_PRICE_BEHAVIORAL || 'price_xxx',
+    name: 'Behavioral Interview Guide',
+    price: 47,
+  },
   'superday-survival-guide': {
     priceId: process.env.STRIPE_PRICE_SUPERDAY || 'price_xxx',
     name: 'The Superday Survival Guide',
