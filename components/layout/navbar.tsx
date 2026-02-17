@@ -28,6 +28,7 @@ const guidesLinks = [
 ]
 
 const playbooksLinks = [
+  { name: "Ultimate Finance Interview Guide", href: "/playbooks/ultimate-finance-interview-guide" },
   { name: "Finance Technical Guide", href: "/playbooks/finance-technical-interview-guide" },
   { name: "PE Recruiting Playbook", href: "/playbooks/pe-recruiting-playbook" },
   { name: "Networking & Cold Email", href: "/playbooks/networking-cold-email-playbook" },
