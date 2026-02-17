@@ -221,7 +221,7 @@ export default function ValuationMethodsPage() {
             <div className="mx-auto max-w-2xl text-center">
               <h2 className="text-3xl font-bold text-white">Master All Valuation Methods</h2>
               <p className="mt-4 text-white/70">
-                DCF is Chapter 3. Comps are Chapter 4. M&A (including precedent transactions) is Chapter 5. Plus Accounting, EV/Equity Value, and LBOs. 88 pages covering everything you'll be asked.
+                DCF is Chapter 3. Comps are Chapter 4. M&A is Chapter 5. Plus Accounting, EV/Equity Value, LBOs, Advanced Valuation, and Complex Accounting. 80+ pages covering everything you'll be asked.
               </p>
               <div className="mt-8">
                 <Link

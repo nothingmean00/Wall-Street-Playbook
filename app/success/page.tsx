@@ -319,7 +319,7 @@ function SuccessContent() {
                 <>
                   <h3 className="text-lg font-bold text-navy">Finance Technical Interview Guide</h3>
                   <p className="mt-1 text-sm text-charcoal/60">
-                    You know how to get the meeting — now ace the interview. 88 pages of frequency-tagged technical questions with dual-format answers covering accounting, DCF, M&A, and LBOs.
+                    You know how to get the meeting — now ace the interview. 80+ pages of frequency-tagged technical questions covering accounting, EV, DCF, comps, M&A, LBOs, advanced valuation, and complex accounting.
                   </p>
                   <Link
                     href="/playbooks/finance-technical-interview-guide"

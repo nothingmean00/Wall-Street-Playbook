@@ -6,7 +6,7 @@ const livePlaybooks = [
     slug: "finance-technical-interview-guide",
     title: "Finance Technical Interview Guide",
     description:
-      "88 pages. 6 chapters. Every question tagged by interview frequency with dual-format answers.",
+      "80+ pages. 8 chapters. 300+ questions. Every question tagged by interview frequency with dual-format answers.",
     price: 79,
     highlights: [
       "400+ real interview questions",

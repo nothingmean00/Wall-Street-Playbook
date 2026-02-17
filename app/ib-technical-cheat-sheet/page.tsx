@@ -136,7 +136,7 @@ export default function IBTechnicalCheatSheetPage() {
                 <div className="mt-6 grid gap-3 sm:grid-cols-2">
                   <div className="flex gap-2 items-start">
                     <CheckCircle className="h-4 w-4 text-gold flex-shrink-0 mt-0.5" />
-                    <span className="text-sm text-charcoal/80">88 pages of deep content</span>
+                    <span className="text-sm text-charcoal/80">80+ pages of deep content</span>
                   </div>
                   <div className="flex gap-2 items-start">
                     <CheckCircle className="h-4 w-4 text-gold flex-shrink-0 mt-0.5" />

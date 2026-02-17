@@ -288,7 +288,7 @@ export const relatedContentByTopic = {
       title: "Finance Technical Interview Guide",
       href: "/playbooks/finance-technical-interview-guide",
       type: "playbook" as const,
-      description: "88 pages. Every question tagged by frequency—works globally.",
+      description: "80+ pages. Every question tagged by frequency—works globally.",
     },
     {
       title: "Resume Review Service",
@@ -320,7 +320,7 @@ export const relatedContentByTopic = {
       title: "Finance Technical Interview Guide",
       href: "/playbooks/finance-technical-interview-guide",
       type: "playbook" as const,
-      description: "Land the offer first—88 pages of interview prep.",
+      description: "Land the offer first—80+ pages of interview prep.",
     },
   ],
   ibRecruiting: [
@@ -328,7 +328,7 @@ export const relatedContentByTopic = {
       title: "Finance Technical Interview Guide",
       href: "/playbooks/finance-technical-interview-guide",
       type: "playbook" as const,
-      description: "88 pages. Every question tagged by frequency with dual-format answers.",
+      description: "80+ pages. Every question tagged by frequency with dual-format answers.",
     },
     {
       title: "IB Technical Interview Prep 2026",

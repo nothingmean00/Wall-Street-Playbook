@@ -130,7 +130,7 @@ export default function MAInterviewQuestions2026Page() {
             <div className="mx-auto max-w-2xl text-center">
               <h2 className="text-3xl font-bold text-white">Master All 6 Technical Topics</h2>
               <p className="mt-4 text-white/70">
-                M&A is Chapter 5 of 6 in the Finance Technical Interview Guide. Get the full picture—Accounting, EV, DCF, Comps, M&A, and LBOs—in 88 pages.
+                M&A is Chapter 5 of 8 in the Finance Technical Interview Guide. Get the full picture—Accounting, EV, DCF, Comps, M&A, LBOs, Advanced Valuation, and Complex Accounting—in 80+ pages.
               </p>
               <div className="mt-8">
                 <Link

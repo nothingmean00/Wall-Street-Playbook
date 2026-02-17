@@ -345,10 +345,10 @@ export function PEPlaybookPreview() {
 export function IBTechnicalPreview() {
   return (
     <PlaybookPreview
-      title="Finance Technical Interview Guide"
-      pdfUrl="https://53r2eh0lojknhqsa.public.blob.vercel-storage.com/IB-Technical-Interview-Guide.pdf"
-      previewPages={6}
-      totalPages={88}
+      title="Finance Technical Interview Guide — 2026 Edition"
+      pdfUrl="https://53r2eh0lojknhqsa.public.blob.vercel-storage.com/Finance-Technical-Interview-Guide-2026.pdf"
+      previewPages={10}
+      totalPages={80}
     />
   )
 }
@@ -369,10 +369,10 @@ export function NetworkingPreview() {
 export function BehavioralPreview() {
   return (
     <PlaybookPreview
-      title="Behavioral Interview Guide"
-      pdfUrl="https://53r2eh0lojknhqsa.public.blob.vercel-storage.com/Behavioral-Interview-Guide.pdf"
-      previewPages={5}
-      totalPages={38}
+      title="Behavioral Interview Guide — 2026 Edition"
+      pdfUrl="https://53r2eh0lojknhqsa.public.blob.vercel-storage.com/Behavioral-Interview-Guide-2026.pdf"
+      previewPages={10}
+      totalPages={41}
     />
   )
 }
