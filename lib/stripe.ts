@@ -107,6 +107,11 @@ export const PRODUCTS = {
     name: 'Behavioral Interview Guide',
     price: 47,
   },
+  'ultimate-finance-interview-guide': {
+    priceId: process.env.STRIPE_PRICE_ULTIMATE || 'price_xxx',
+    name: 'Ultimate Finance Interview Guide',
+    price: 129,
+  },
   'superday-survival-guide': {
     priceId: process.env.STRIPE_PRICE_SUPERDAY || 'price_xxx',
     name: 'The Superday Survival Guide',

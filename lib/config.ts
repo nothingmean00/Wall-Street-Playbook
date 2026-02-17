@@ -9,6 +9,7 @@ export const LIVE_PLAYBOOK_SLUGS: string[] = [
   "pe-recruiting-playbook",
   "networking-cold-email-playbook",
   "behavioral-interview-guide",
+  "ultimate-finance-interview-guide",
 ]
 
 /** Set version for efficient lookups (e.g. sitemap filtering) */

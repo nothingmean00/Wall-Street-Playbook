@@ -365,6 +365,18 @@ export function NetworkingPreview() {
   )
 }
 
+// Ultimate Finance Interview Guide Preview - Using actual PDF
+export function UltimateGuidePreview() {
+  return (
+    <PlaybookPreview
+      title="Ultimate Finance Interview Guide — 2026 Edition"
+      pdfUrl="https://53r2eh0lojknhqsa.public.blob.vercel-storage.com/Ultimate-Finance-Interview-Guide-2026.pdf"
+      previewPages={12}
+      totalPages={130}
+    />
+  )
+}
+
 // Behavioral Interview Guide Preview - Using actual PDF
 export function BehavioralPreview() {
   return (
