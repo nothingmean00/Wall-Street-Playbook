@@ -45,7 +45,7 @@ const features = [
 
 export function WhatYouGet() {
   return (
-    <section className="relative bg-cream py-24 lg:py-32 overflow-hidden">
+    <section className="relative bg-cream py-16 sm:py-24 lg:py-32 overflow-hidden">
       {/* Background pattern */}
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_rgba(201,168,110,0.08),_transparent_70%)]" />
@@ -112,12 +112,12 @@ export function WhatYouGet() {
         
         {/* Bottom stat bar */}
         <ScrollReveal animation="fade-up" delay={400} className="mt-20 mx-auto max-w-4xl">
-          <div className="relative rounded-2xl bg-navy p-8 lg:p-10 overflow-hidden">
+          <div className="relative rounded-2xl bg-navy p-6 sm:p-8 lg:p-10 overflow-hidden">
             {/* Background effects */}
             <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,_rgba(201,168,110,0.15),_transparent_60%)]" />
             <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,_rgba(201,168,110,0.1),_transparent_60%)]" />
             
-            <div className="relative grid grid-cols-2 lg:grid-cols-4 gap-8 text-center">
+            <div className="relative grid grid-cols-2 sm:grid-cols-4 gap-6 sm:gap-8 text-center">
               {[
                 { value: "30+", label: "Top Firm Interviews" },
                 { value: "48hr", label: "Turnaround Time" },
@@ -125,10 +125,10 @@ export function WhatYouGet() {
                 { value: "100%", label: "Money-Back Guarantee" },
               ].map((stat, i) => (
                 <div key={i} className="relative">
-                  <p className="text-3xl lg:text-4xl font-bold text-gold number-highlight">{stat.value}</p>
-                  <p className="mt-1 text-sm text-white/60">{stat.label}</p>
+                  <p className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gold number-highlight">{stat.value}</p>
+                  <p className="mt-1 text-xs sm:text-sm text-white/60">{stat.label}</p>
                   {i < 3 && (
-                    <div className="hidden lg:block absolute right-0 top-1/2 -translate-y-1/2 w-px h-12 bg-white/10" />
+                    <div className="hidden sm:block absolute right-0 top-1/2 -translate-y-1/2 w-px h-12 bg-white/10" />
                   )}
                 </div>
               ))}

@@ -222,8 +222,8 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
       <Navbar />
       <main className="flex-grow">
         {/* Article Header */}
-        <section className="bg-navy pt-28 pb-16 lg:pt-32 lg:pb-24">
-          <div className="mx-auto max-w-3xl px-6 lg:px-8">
+        <section className="bg-navy pt-24 pb-12 sm:pt-28 sm:pb-16 lg:pt-32 lg:pb-24">
+          <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
             <Link
               href="/blog"
               className="inline-flex items-center gap-2 text-sm font-medium text-white/70 hover:text-gold transition-colors mb-8"
@@ -266,8 +266,8 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
         </section>
 
         {/* Article Content — 2-column layout */}
-        <section className="bg-off-white py-16 lg:py-20">
-          <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        <section className="bg-off-white py-10 sm:py-16 lg:py-20">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="mx-auto grid max-w-6xl gap-12 lg:grid-cols-[1fr_320px]">
 
               {/* LEFT — Article Body */}
@@ -387,12 +387,12 @@ export default async function BlogPostPage({ params }: { params: Promise<{ slug:
         </section>
 
         {/* Mobile CTA — shown below article on mobile only */}
-        <section className="bg-off-white pb-16 lg:hidden">
-          <div className="mx-auto max-w-3xl px-6">
+        <section className="bg-off-white pb-12 sm:pb-16 lg:hidden">
+          <div className="mx-auto max-w-3xl px-4 sm:px-6">
             {(() => {
               const cta = getSidebarCTA(slug, post.category, post.tags)
               return (
-                <div className="rounded-xl bg-navy p-8 text-center">
+                <div className="rounded-xl bg-navy p-6 sm:p-8 text-center">
                   <h3 className="text-xl font-bold text-white">{cta.product}</h3>
                   <p className="mt-3 text-sm text-white/70">
                     {cta.description}

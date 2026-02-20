@@ -55,9 +55,28 @@ export function Navbar() {
     const handleScroll = () => {
       setScrolled(window.scrollY > 20)
     }
-    window.addEventListener("scroll", handleScroll)
+    window.addEventListener("scroll", handleScroll, { passive: true })
     return () => window.removeEventListener("scroll", handleScroll)
   }, [])
+
+  useEffect(() => {
+    if (mobileMenuOpen) {
+      const scrollY = window.scrollY
+      document.documentElement.style.setProperty("--scroll-y", `-${scrollY}px`)
+      document.body.classList.add("no-scroll")
+    } else {
+      const scrollY = document.body.style.top
+      document.body.classList.remove("no-scroll")
+      document.documentElement.style.removeProperty("--scroll-y")
+      if (scrollY) {
+        window.scrollTo(0, parseInt(scrollY || "0", 10) * -1)
+      }
+    }
+    return () => {
+      document.body.classList.remove("no-scroll")
+      document.documentElement.style.removeProperty("--scroll-y")
+    }
+  }, [mobileMenuOpen])
 
   const handleMouseEnter = (name: string) => {
     if (dropdownTimeout.current) clearTimeout(dropdownTimeout.current)
@@ -166,7 +185,7 @@ export function Navbar() {
         {/* Mobile menu button */}
         <button 
           type="button" 
-          className="lg:hidden relative p-2 rounded-lg text-white hover:bg-white/10 transition-colors" 
+          className="lg:hidden relative p-3 -mr-2 rounded-lg text-white hover:bg-white/10 transition-colors" 
           onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           aria-expanded={mobileMenuOpen}
           aria-controls="mobile-nav-menu"
@@ -185,7 +204,7 @@ export function Navbar() {
         id="mobile-nav-menu"
         role="region"
         aria-label="Mobile navigation"
-        className={`lg:hidden fixed inset-0 top-[72px] z-50 transition-all duration-300 ${mobileMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}
+        className={`lg:hidden fixed inset-0 z-50 transition-all duration-300 ${scrolled ? 'top-[64px]' : 'top-[72px]'} ${mobileMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'}`}
       >
         {/* Backdrop */}
         <div 
@@ -194,7 +213,7 @@ export function Navbar() {
         />
         
         {/* Menu content */}
-        <div className={`relative bg-navy border-t border-white/10 transition-transform duration-300 max-h-[calc(100vh-72px)] overflow-y-auto ${mobileMenuOpen ? 'translate-y-0' : '-translate-y-4'}`}>
+        <div className={`relative bg-navy border-t border-white/10 transition-transform duration-300 overflow-y-auto overscroll-contain ${scrolled ? 'max-h-[calc(100vh-64px)]' : 'max-h-[calc(100vh-72px)]'} ${mobileMenuOpen ? 'translate-y-0' : '-translate-y-4'}`}>
           <div className="px-6 py-6 space-y-1">
             {navigation.map((item) => (
               <div key={item.name}>

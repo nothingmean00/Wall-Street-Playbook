@@ -8,7 +8,7 @@ import { track } from "@vercel/analytics"
 
 export function HeroSection() {
   return (
-    <section className="relative bg-navy-deep overflow-hidden min-h-[90vh] flex items-center">
+    <section className="relative bg-navy-deep overflow-hidden min-h-[80vh] sm:min-h-[90vh] flex items-center">
       {/* Layered background effects */}
       <div className="absolute inset-0">
         {/* Deep gradient base */}
@@ -37,14 +37,14 @@ export function HeroSection() {
       <div className="absolute top-0 right-1/3 w-px h-48 bg-gradient-to-b from-transparent via-gold/10 to-transparent" />
       <div className="absolute bottom-0 left-1/2 w-px h-24 bg-gradient-to-t from-transparent via-gold/15 to-transparent" />
 
-      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 py-16 sm:py-24 lg:px-8 lg:py-32 w-full">
+      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 py-12 sm:py-24 lg:px-8 lg:py-32 w-full">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-8 items-center">
           {/* Left column - Text content */}
           <div className="text-center lg:text-left">
             {/* Eyebrow - Real urgency based on recruiting calendar */}
-            <div className="inline-flex items-center gap-2 rounded-full border border-gold/30 bg-gold/10 px-4 py-1.5 mb-6">
-              <span className="h-1.5 w-1.5 rounded-full bg-gold animate-pulse" />
-              <span className="text-xs font-semibold uppercase tracking-widest text-gold">2027 Summer Analyst Deadlines Approaching</span>
+            <div className="inline-flex items-center gap-2 rounded-full border border-gold/30 bg-gold/10 px-3 sm:px-4 py-1.5 mb-6">
+              <span className="h-1.5 w-1.5 rounded-full bg-gold animate-pulse flex-shrink-0" />
+              <span className="text-[10px] sm:text-xs font-semibold uppercase tracking-widest text-gold">2027 Summer Analyst Deadlines Approaching</span>
             </div>
             
             {/* Headline */}
@@ -85,16 +85,36 @@ export function HeroSection() {
               </Link>
             </div>
 
+            {/* Mobile stats - visible only on small screens */}
+            <div className="mt-8 lg:hidden animate-slide-up animate-delay-100">
+              <div className="bg-white/[0.06] backdrop-blur-sm rounded-xl border border-white/10 p-4">
+                <div className="grid grid-cols-3 gap-3 text-center">
+                  <div>
+                    <p className="text-xl sm:text-2xl font-bold text-gold number-highlight">400+</p>
+                    <p className="text-[10px] sm:text-xs text-white/50 mt-0.5">Interview Questions</p>
+                  </div>
+                  <div className="border-x border-white/10">
+                    <p className="text-xl sm:text-2xl font-bold text-gold number-highlight">30+</p>
+                    <p className="text-[10px] sm:text-xs text-white/50 mt-0.5">Free Guides</p>
+                  </div>
+                  <div>
+                    <p className="text-xl sm:text-2xl font-bold text-gold number-highlight">100%</p>
+                    <p className="text-[10px] sm:text-xs text-white/50 mt-0.5">Money-Back</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
             {/* Firm logos / social proof bar */}
-            <div className="mt-10 animate-slide-up animate-delay-100">
-              <p className="text-xs font-medium uppercase tracking-widest text-white/30 mb-3">Candidates who use our materials have landed interviews at firms like</p>
-              <div className="flex flex-wrap items-center justify-center lg:justify-start gap-x-5 gap-y-2">
+            <div className="mt-6 sm:mt-10 animate-slide-up animate-delay-200">
+              <p className="text-[10px] sm:text-xs font-medium uppercase tracking-widest text-white/30 mb-3">Candidates who use our materials have landed interviews at firms like</p>
+              <div className="flex flex-wrap items-center justify-center lg:justify-start gap-x-4 sm:gap-x-5 gap-y-2">
                 {["Goldman Sachs", "Blackstone", "KKR", "Evercore", "Carlyle", "UBS", "Lazard"].map((firm) => (
-                  <span key={firm} className="text-sm font-semibold text-white/40 hover:text-gold/70 transition-colors">
+                  <span key={firm} className="text-xs sm:text-sm font-semibold text-white/40 hover:text-gold/70 transition-colors">
                     {firm}
                   </span>
                 ))}
-                <span className="text-sm font-semibold text-gold/50">& more</span>
+                <span className="text-xs sm:text-sm font-semibold text-gold/50">& more</span>
               </div>
             </div>
           </div>
@@ -152,7 +172,7 @@ export function HeroSection() {
         </div>
 
         {/* Email Capture */}
-        <div className="mt-16 sm:mt-20 pt-10 border-t border-white/10 animate-slide-up animate-delay-300">
+        <div className="mt-10 sm:mt-16 lg:mt-20 pt-8 sm:pt-10 border-t border-white/10 animate-slide-up animate-delay-300">
           <div className="max-w-xl mx-auto lg:mx-0">
             <p className="text-sm text-white/50 mb-4 text-center lg:text-left">Free weekly recruiting intel + technical prep tips. No spam.</p>
             <EmailCapture variant="hero" />

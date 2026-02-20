@@ -62,9 +62,9 @@ export function Footer() {
       <div className="absolute top-0 left-0 right-0 h-px bg-gradient-to-r from-transparent via-gold/30 to-transparent" />
       
       <div className="relative mx-auto max-w-7xl px-6 py-16 lg:px-8 lg:py-20">
-        <div className="grid grid-cols-1 gap-12 lg:grid-cols-7">
+        <div className="grid grid-cols-1 gap-12 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-7">
           {/* Brand column */}
-          <div className="lg:col-span-2">
+          <div className="sm:col-span-2 md:col-span-3 lg:col-span-2">
             <Link href="/" className="group flex items-center gap-3">
               <Logo className="h-10 w-10 transition-transform group-hover:scale-105" />
               <div>
@@ -192,7 +192,7 @@ export function Footer() {
             <p className="text-xs text-white/30">
               © {new Date().getFullYear()} Wall Street Playbook. All rights reserved.
             </p>
-            <div className="flex items-center gap-4 text-xs text-white/30">
+            <div className="flex flex-col sm:flex-row items-center gap-2 sm:gap-4 text-xs text-white/30 text-center sm:text-left">
               <span>Not affiliated with any investment bank or financial institution.</span>
               <span className="hidden sm:inline text-white/20">·</span>
               <a 

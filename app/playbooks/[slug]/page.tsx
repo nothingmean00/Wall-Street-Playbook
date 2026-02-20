@@ -171,8 +171,8 @@ export default async function PlaybookPage({ params }: PlaybookPageProps) {
       />
       <main className="flex-grow">
         {/* Hero Section */}
-        <section className="bg-navy pt-28 pb-16 lg:pt-32 lg:pb-24">
-          <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        <section className="bg-navy pt-24 pb-12 sm:pt-28 sm:pb-16 lg:pt-32 lg:pb-24">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="mx-auto max-w-4xl">
               {/* Breadcrumb */}
               <nav className="mb-8">
@@ -219,8 +219,8 @@ export default async function PlaybookPage({ params }: PlaybookPageProps) {
         </section>
 
         {/* Content Section */}
-        <section className="bg-off-white py-16 lg:py-24">
-          <div className="mx-auto max-w-7xl px-6 lg:px-8">
+        <section className="bg-off-white py-10 sm:py-16 lg:py-24 pb-24 sm:pb-16 lg:pb-24">
+          <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
             <div className="mx-auto grid max-w-6xl gap-12 lg:grid-cols-3">
               {/* Main Content */}
               <div className="lg:col-span-2 space-y-8">
@@ -240,7 +240,7 @@ export default async function PlaybookPage({ params }: PlaybookPageProps) {
                 </div>
 
                 {/* Who This Is For */}
-                <div className="rounded-xl border-2 border-gold/30 bg-gradient-to-br from-gold/5 to-transparent p-8 shadow-sm">
+                <div className="rounded-xl border-2 border-gold/30 bg-gradient-to-br from-gold/5 to-transparent p-5 sm:p-8 shadow-sm">
                   <div className="flex items-center gap-2 mb-2">
                     <Target className="h-5 w-5 text-gold" />
                     <h2 className="text-xl font-semibold text-navy">Who This Is For</h2>
@@ -285,7 +285,7 @@ export default async function PlaybookPage({ params }: PlaybookPageProps) {
                 </div>
 
                 {/* What's Inside */}
-                <div className="rounded-xl border border-border bg-white p-8 shadow-sm">
+                <div className="rounded-xl border border-border bg-white p-5 sm:p-8 shadow-sm">
                   <h2 className="text-xl font-semibold text-navy">What You Get</h2>
                   <div className="mt-2 h-1 w-10 bg-gold" />
 
@@ -302,7 +302,7 @@ export default async function PlaybookPage({ params }: PlaybookPageProps) {
                 </div>
 
                 {/* Excerpt Preview */}
-                <div className="rounded-xl border border-border bg-white p-8 shadow-sm">
+                <div className="rounded-xl border border-border bg-white p-5 sm:p-8 shadow-sm">
                   <h2 className="text-xl font-semibold text-navy">Sample Excerpt</h2>
                   <div className="mt-2 h-1 w-10 bg-gold" />
 
@@ -321,7 +321,7 @@ export default async function PlaybookPage({ params }: PlaybookPageProps) {
                 </div>
 
                 {/* FAQ */}
-                <div className="rounded-xl border border-border bg-white p-8 shadow-sm">
+                <div className="rounded-xl border border-border bg-white p-5 sm:p-8 shadow-sm">
                   <h2 className="text-xl font-semibold text-navy">Frequently Asked Questions</h2>
                   <div className="mt-2 h-1 w-10 bg-gold" />
 
@@ -340,7 +340,7 @@ export default async function PlaybookPage({ params }: PlaybookPageProps) {
                 </div>
 
                 {/* Social Proof */}
-                <div className="rounded-xl border border-border bg-white p-8 shadow-sm">
+                <div className="rounded-xl border border-border bg-white p-5 sm:p-8 shadow-sm">
                   <div className="flex items-center gap-2 mb-2">
                     <Users className="h-5 w-5 text-gold" />
                     <h2 className="text-xl font-semibold text-navy">What Readers Say</h2>

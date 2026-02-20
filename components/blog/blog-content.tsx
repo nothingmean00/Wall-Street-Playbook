@@ -114,9 +114,9 @@ export function BlogContent({ allPosts }: BlogContentProps) {
       </section>
 
       {/* Filter Bar */}
-      <section className="bg-off-white border-b border-border sticky top-[72px] z-30">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8 py-4">
-          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
+      <section className="bg-off-white border-b border-border sticky top-[56px] sm:top-[72px] z-30">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 py-3 sm:py-4">
+          <div className="flex flex-col sm:flex-row items-start sm:items-center gap-3 sm:gap-4">
             {/* Category Pills */}
             <div className="flex items-center gap-2 overflow-x-auto scrollbar-hide pb-1 sm:pb-0 flex-1">
               <Filter className="h-4 w-4 text-charcoal/40 flex-shrink-0" />
@@ -220,10 +220,10 @@ export function BlogContent({ allPosts }: BlogContentProps) {
       )}
 
       {/* Email Capture Mid-Page */}
-      <section className="bg-navy py-12">
-        <div className="mx-auto max-w-3xl px-6 lg:px-8">
-          <div className="flex flex-col sm:flex-row items-center gap-6 sm:gap-8">
-            <div className="flex-shrink-0 flex h-14 w-14 items-center justify-center rounded-xl bg-gold/10">
+      <section className="bg-navy py-10 sm:py-12">
+        <div className="mx-auto max-w-3xl px-4 sm:px-6 lg:px-8">
+          <div className="flex flex-col items-center gap-5 sm:flex-row sm:gap-8">
+            <div className="flex-shrink-0 hidden sm:flex h-14 w-14 items-center justify-center rounded-xl bg-gold/10">
               <Mail className="h-6 w-6 text-gold" />
             </div>
             <div className="flex-1 text-center sm:text-left">
@@ -232,7 +232,7 @@ export function BlogContent({ allPosts }: BlogContentProps) {
                 Technical prep tips, recruiting timeline updates, and career strategies. No spam.
               </p>
             </div>
-            <div className="w-full sm:w-auto sm:min-w-[320px]">
+            <div className="w-full sm:w-auto sm:min-w-[280px]">
               <EmailCapture variant="hero" />
             </div>
           </div>

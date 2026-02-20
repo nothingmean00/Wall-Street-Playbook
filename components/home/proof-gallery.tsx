@@ -1,7 +1,7 @@
 "use client"
 
 import Image from "next/image"
-import { useState, useEffect, useCallback } from "react"
+import { useState, useEffect, useCallback, useRef } from "react"
 import { CheckCircle, X, ChevronLeft, ChevronRight } from "lucide-react"
 
 const results = [
@@ -201,7 +201,7 @@ function ResultCard({
   return (
     <button
       onClick={onClick}
-      className="group relative flex-shrink-0 w-[340px] sm:w-[380px] rounded-xl overflow-hidden border border-white/10 bg-white/[0.03] backdrop-blur-sm hover:border-gold/40 transition-all duration-300 cursor-pointer text-left"
+      className="group relative flex-shrink-0 w-[280px] sm:w-[380px] rounded-xl overflow-hidden border border-white/10 bg-white/[0.03] backdrop-blur-sm hover:border-gold/40 transition-all duration-300 cursor-pointer text-left"
     >
       {/* Firm label */}
       <div className="px-4 py-2.5 border-b border-white/10 flex items-center justify-between">
@@ -222,7 +222,7 @@ function ResultCard({
           alt={`Interview invitation from ${result.firm}`}
           width={760}
           height={300}
-          sizes="(max-width: 640px) 340px, 380px"
+          sizes="(max-width: 640px) 280px, 380px"
           className="w-full h-auto group-hover:scale-[1.02] transition-transform duration-500"
           quality={75}
         />
@@ -251,60 +251,77 @@ function Lightbox({
   onNext: () => void
 }) {
   const current = allItems[currentIndex]
+  const touchStart = useRef<number | null>(null)
+
+  const handleTouchStart = (e: React.TouchEvent) => {
+    touchStart.current = e.touches[0].clientX
+  }
+
+  const handleTouchEnd = (e: React.TouchEvent) => {
+    if (touchStart.current === null) return
+    const diff = touchStart.current - e.changedTouches[0].clientX
+    if (Math.abs(diff) > 50) {
+      if (diff > 0) onNext()
+      else onPrev()
+    }
+    touchStart.current = null
+  }
 
   return (
     <div
       className="fixed inset-0 z-[100] flex items-center justify-center bg-navy-deep/95 backdrop-blur-xl"
       onClick={onClose}
+      onTouchStart={handleTouchStart}
+      onTouchEnd={handleTouchEnd}
     >
       {/* Close */}
       <button
         onClick={onClose}
-        className="absolute top-6 right-6 p-2 rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors z-10"
+        className="absolute top-4 right-4 sm:top-6 sm:right-6 p-3 rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors z-10"
       >
-        <X className="w-6 h-6" />
+        <X className="w-5 h-5 sm:w-6 sm:h-6" />
       </button>
 
       {/* Counter */}
-      <div className="absolute top-6 left-6 text-sm text-white/50">
+      <div className="absolute top-5 left-4 sm:top-6 sm:left-6 text-xs sm:text-sm text-white/50">
         {currentIndex + 1} / {allItems.length}
       </div>
 
-      {/* Prev */}
+      {/* Prev - hidden on mobile (use swipe), visible on desktop */}
       <button
         onClick={(e) => {
           e.stopPropagation()
           onPrev()
         }}
-        className="absolute left-4 top-1/2 -translate-y-1/2 p-3 rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors z-10"
+        className="hidden sm:block absolute left-4 top-1/2 -translate-y-1/2 p-3 rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors z-10"
       >
         <ChevronLeft className="w-6 h-6" />
       </button>
 
-      {/* Next */}
+      {/* Next - hidden on mobile (use swipe), visible on desktop */}
       <button
         onClick={(e) => {
           e.stopPropagation()
           onNext()
         }}
-        className="absolute right-4 top-1/2 -translate-y-1/2 p-3 rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors z-10"
+        className="hidden sm:block absolute right-4 top-1/2 -translate-y-1/2 p-3 rounded-full bg-white/10 hover:bg-white/20 text-white transition-colors z-10"
       >
         <ChevronRight className="w-6 h-6" />
       </button>
 
       {/* Image */}
       <div
-        className="relative max-w-4xl w-full mx-4 sm:mx-8"
+        className="relative max-w-4xl w-full mx-3 sm:mx-8"
         onClick={(e) => e.stopPropagation()}
       >
-        <div className="rounded-xl overflow-hidden border border-white/10 bg-navy/50 backdrop-blur-sm shadow-2xl">
+        <div className="rounded-lg sm:rounded-xl overflow-hidden border border-white/10 bg-navy/50 backdrop-blur-sm shadow-2xl">
           {/* Header */}
-          <div className="px-5 py-3 border-b border-white/10 flex items-center justify-between">
-            <div>
-              <p className="text-base font-semibold text-white">{current.firm}</p>
-              <p className="text-xs text-white/40">{current.category}</p>
+          <div className="px-4 py-2.5 sm:px-5 sm:py-3 border-b border-white/10 flex items-center justify-between">
+            <div className="min-w-0">
+              <p className="text-sm sm:text-base font-semibold text-white truncate">{current.firm}</p>
+              <p className="text-[11px] sm:text-xs text-white/40">{current.category}</p>
             </div>
-            <span className="inline-flex items-center gap-1.5 rounded-full bg-green-500/20 px-3 py-1 text-xs font-semibold text-green-400">
+            <span className="flex-shrink-0 inline-flex items-center gap-1.5 rounded-full bg-green-500/20 px-2 sm:px-3 py-1 text-[10px] sm:text-xs font-semibold text-green-400">
               <span className="h-1.5 w-1.5 rounded-full bg-green-400" />
               Interview Secured
             </span>
@@ -319,6 +336,31 @@ function Lightbox({
             className="w-full h-auto"
             quality={85}
           />
+        </div>
+
+        {/* Mobile nav hint */}
+        <p className="sm:hidden text-center text-xs text-white/30 mt-3">Swipe to navigate</p>
+
+        {/* Mobile bottom nav buttons */}
+        <div className="sm:hidden flex justify-center gap-4 mt-3">
+          <button
+            onClick={(e) => {
+              e.stopPropagation()
+              onPrev()
+            }}
+            className="p-3 rounded-full bg-white/10 active:bg-white/20 text-white transition-colors"
+          >
+            <ChevronLeft className="w-5 h-5" />
+          </button>
+          <button
+            onClick={(e) => {
+              e.stopPropagation()
+              onNext()
+            }}
+            className="p-3 rounded-full bg-white/10 active:bg-white/20 text-white transition-colors"
+          >
+            <ChevronRight className="w-5 h-5" />
+          </button>
         </div>
       </div>
     </div>
@@ -363,7 +405,7 @@ export function ProofGallery() {
 
   return (
     <>
-      <section className="relative bg-navy-deep py-20 lg:py-28 overflow-hidden">
+      <section className="relative bg-navy-deep py-16 sm:py-20 lg:py-28 overflow-hidden">
         {/* Background effects */}
         <div className="absolute inset-0">
           <div className="absolute inset-0 bg-gradient-to-b from-navy via-navy-deep to-navy" />

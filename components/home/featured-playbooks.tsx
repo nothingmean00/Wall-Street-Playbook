@@ -6,7 +6,7 @@ const playbookIcons = [BookOpen, FileText, Users]
 
 export function FeaturedPlaybooks() {
   return (
-    <section className="relative bg-white py-24 lg:py-32 overflow-hidden">
+    <section className="relative bg-white py-16 sm:py-24 lg:py-32 overflow-hidden">
       {/* Background decoration */}
       <div className="absolute inset-0 mesh-gradient opacity-50" />
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-px h-20 bg-gradient-to-b from-gold to-transparent" />

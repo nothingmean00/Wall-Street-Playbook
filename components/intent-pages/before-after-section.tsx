@@ -25,8 +25,8 @@ export function BeforeAfterSection({
 }: BeforeAfterSectionProps) {
   if (variant === "dark") {
     return (
-      <section className="bg-navy py-20 lg:py-28">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
+      <section className="bg-navy py-16 sm:py-20 lg:py-28">
+        <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="mx-auto max-w-3xl">
             <h2 className="text-3xl font-bold text-white sm:text-4xl text-center">{title}</h2>
             {subtitle && (
@@ -63,8 +63,8 @@ export function BeforeAfterSection({
   }
 
   return (
-    <section className="bg-cream py-20 lg:py-28">
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+    <section className="bg-cream py-16 sm:py-20 lg:py-28">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-3xl">
           <h2 className="text-3xl font-bold text-navy sm:text-4xl">{title}</h2>
           <div className="mt-2 h-1 w-20 bg-gold" />

@@ -90,9 +90,36 @@ export function ExitIntentPopup() {
     }, 45000)
 
     document.addEventListener("mouseleave", handleMouseLeave)
+
+    // Mobile: detect scroll-up as exit intent
+    let lastScrollY = window.scrollY
+    let scrollUpDistance = 0
+    const handleScroll = () => {
+      const currentY = window.scrollY
+      if (currentY < lastScrollY) {
+        scrollUpDistance += lastScrollY - currentY
+      } else {
+        scrollUpDistance = 0
+      }
+      if (scrollUpDistance > 300 && currentY > 500 && !hasShown && !sessionStorage.getItem("exitPopupShown")) {
+        setIsOpen(true)
+        setHasShown(true)
+        sessionStorage.setItem("exitPopupShown", "true")
+        track("exit_popup_shown", { trigger: "scroll_up" })
+      }
+      lastScrollY = currentY
+    }
+    
+    const isTouchDevice = "ontouchstart" in window
+    if (isTouchDevice) {
+      window.addEventListener("scroll", handleScroll, { passive: true })
+    }
     
     return () => {
       document.removeEventListener("mouseleave", handleMouseLeave)
+      if (isTouchDevice) {
+        window.removeEventListener("scroll", handleScroll)
+      }
       clearTimeout(timer)
     }
   }, [hasShown])
@@ -156,7 +183,7 @@ export function ExitIntentPopup() {
         </button>
 
         {/* Content */}
-        <div className="p-8 sm:p-10">
+        <div className="p-6 sm:p-10">
           {status === "success" ? (
             <div className="text-center py-8">
               <div className="mx-auto w-16 h-16 rounded-full bg-green-100 flex items-center justify-center mb-4">

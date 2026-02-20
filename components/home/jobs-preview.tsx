@@ -80,7 +80,7 @@ export function JobsPreview() {
 
   if (loading) {
     return (
-      <section className="relative bg-cream py-24 lg:py-32 overflow-hidden">
+      <section className="relative bg-cream py-16 sm:py-24 lg:py-32 overflow-hidden">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,_rgba(201,168,110,0.08),_transparent_70%)]" />
         <div className="relative mx-auto max-w-7xl px-6 lg:px-8">
           <div className="flex flex-col sm:flex-row sm:items-end sm:justify-between gap-4 mb-12">
@@ -114,7 +114,7 @@ export function JobsPreview() {
   if (jobs.length === 0) return null
 
   return (
-    <section className="relative bg-cream py-24 lg:py-32 overflow-hidden">
+    <section className="relative bg-cream py-16 sm:py-24 lg:py-32 overflow-hidden">
       {/* Background effects */}
       <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom,_rgba(201,168,110,0.08),_transparent_70%)]" />
       <div className="absolute top-0 left-1/2 -translate-x-1/2 w-px h-16 bg-gradient-to-b from-gold to-transparent" />
@@ -151,7 +151,7 @@ export function JobsPreview() {
                 href={job.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group relative flex items-start gap-5 rounded-2xl bg-white p-6 shadow-sm transition-all duration-300 hover:shadow-xl hover:-translate-y-1 border border-transparent hover:border-gold/20"
+                className="group relative flex items-start gap-3 sm:gap-5 rounded-2xl bg-white p-4 sm:p-6 shadow-sm transition-all duration-300 hover:shadow-xl hover:-translate-y-1 border border-transparent hover:border-gold/20"
               >
                 {/* Company Logo */}
                 <CompanyLogo logo={job.companyLogo} company={job.company} />

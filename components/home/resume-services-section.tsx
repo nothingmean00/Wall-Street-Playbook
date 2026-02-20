@@ -4,7 +4,7 @@ import { ArrowRight, CheckCircle, Clock, FileText, Pencil, Star } from "lucide-r
 
 export function ResumeServicesSection() {
   return (
-    <section className="relative bg-white py-24 lg:py-32 overflow-hidden">
+    <section className="relative bg-white py-16 sm:py-24 lg:py-32 overflow-hidden">
       {/* Background decoration */}
       <div className="absolute inset-0">
         <div className="absolute top-0 right-0 w-96 h-96 bg-gold/5 rounded-full blur-3xl" />
@@ -37,7 +37,7 @@ export function ResumeServicesSection() {
                 key={service.id}
                 className={`group relative flex flex-col rounded-2xl bg-white transition-all duration-500 overflow-hidden ${
                   isRecommended 
-                    ? 'ring-2 ring-gold shadow-xl lg:scale-105' 
+                    ? 'ring-2 ring-gold shadow-xl' 
                     : 'border border-border shadow-lg hover:shadow-xl'
                 }`}
               >
@@ -49,14 +49,14 @@ export function ResumeServicesSection() {
                 )}
 
                 {/* Card Header */}
-                <div className="p-8 pb-0">
+                <div className="p-5 sm:p-8 pb-0">
                   <div className="flex items-start gap-4">
-                    <div className={`flex h-16 w-16 flex-shrink-0 items-center justify-center rounded-2xl ${
+                    <div className={`flex h-12 w-12 sm:h-16 sm:w-16 flex-shrink-0 items-center justify-center rounded-xl sm:rounded-2xl ${
                       isRecommended 
                         ? 'bg-gradient-to-br from-gold to-gold-dark shadow-lg shadow-gold/30' 
                         : 'bg-gradient-to-br from-navy to-navy-deep shadow-lg'
                     }`}>
-                      <Icon className={`h-7 w-7 ${isRecommended ? 'text-navy' : 'text-gold'}`} />
+                      <Icon className={`h-5 w-5 sm:h-7 sm:w-7 ${isRecommended ? 'text-navy' : 'text-gold'}`} />
                     </div>
                     <div className="flex-1">
                       <h3 className="text-2xl font-bold text-navy">{service.title}</h3>
@@ -79,7 +79,7 @@ export function ResumeServicesSection() {
                 </div>
 
                 {/* What's Included */}
-                <div className="flex-grow p-8">
+                <div className="flex-grow p-5 sm:p-8">
                   <p className="text-xs font-semibold uppercase tracking-wider text-charcoal/60 mb-4">What&apos;s Included</p>
                   <ul className="space-y-3">
                     {service.includes.map((item, i) => (
@@ -92,7 +92,7 @@ export function ResumeServicesSection() {
                 </div>
 
                 {/* CTA */}
-                <div className="p-8 pt-0">
+                <div className="p-5 sm:p-8 pt-0">
                   <Link
                     href={`/submit-resume?service=${service.id}`}
                     className={`group/btn w-full flex items-center justify-center gap-2 rounded-xl py-4 text-base font-semibold transition-all ${

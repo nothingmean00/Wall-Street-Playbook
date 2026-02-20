@@ -234,13 +234,15 @@
     transition: opacity 0.5s ease;
   }
   
-  .card-premium:hover {
-    transform: translateY(-8px);
-    box-shadow: 0 25px 50px -12px rgba(10, 26, 47, 0.15), 0 12px 24px -8px rgba(201, 168, 110, 0.1);
-  }
-  
-  .card-premium:hover::before {
-    opacity: 1;
+  @media (hover: hover) and (pointer: fine) {
+    .card-premium:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 25px 50px -12px rgba(10, 26, 47, 0.15), 0 12px 24px -8px rgba(201, 168, 110, 0.1);
+    }
+    
+    .card-premium:hover::before {
+      opacity: 1;
+    }
   }
   
   /* Subtle lift for cards */
@@ -248,9 +250,11 @@
     @apply transition-all duration-300 ease-out;
   }
   
-  .card-lift:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 20px 40px -12px rgba(10, 26, 47, 0.12), 0 8px 16px -8px rgba(201, 168, 110, 0.08);
+  @media (hover: hover) and (pointer: fine) {
+    .card-lift:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 20px 40px -12px rgba(10, 26, 47, 0.12), 0 8px 16px -8px rgba(201, 168, 110, 0.08);
+    }
   }
   
   /* Gold accent underline for headings */
@@ -581,9 +585,11 @@
     animation: scroll-right 90s linear infinite;
   }
 
-  .animate-scroll-left:hover,
-  .animate-scroll-right:hover {
-    animation-play-state: paused;
+  @media (hover: hover) and (pointer: fine) {
+    .animate-scroll-left:hover,
+    .animate-scroll-right:hover {
+      animation-play-state: paused;
+    }
   }
 }
 
@@ -609,6 +615,27 @@
   }
 }
 
+/* Prevent horizontal overflow from long words on mobile */
+@media (max-width: 640px) {
+  p, li, span, td, th {
+    overflow-wrap: break-word;
+    word-break: break-word;
+  }
+
+  /* Prevent iOS auto-zoom on input focus (16px min font-size) */
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  input[type="url"],
+  input[type="search"],
+  input[type="number"],
+  input[type="password"],
+  select,
+  textarea {
+    font-size: 16px;
+  }
+}
+
 /* Hide scrollbar but keep scroll functionality */
 .scrollbar-hide {
   -ms-overflow-style: none;
@@ -616,4 +643,12 @@
 }
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
+}
+
+/* Utility to prevent body scroll (used by mobile menu & lightbox) */
+body.no-scroll {
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
+  top: var(--scroll-y, 0px);
 }

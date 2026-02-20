@@ -30,13 +30,13 @@ export function HeroSection({
   showGuarantee = true,
 }: HeroSectionProps) {
   return (
-    <section className="relative bg-navy-deep pt-32 pb-20 lg:pt-40 lg:pb-28 overflow-hidden">
+    <section className="relative bg-navy-deep pt-24 pb-16 sm:pt-32 sm:pb-20 lg:pt-40 lg:pb-28 overflow-hidden">
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-gradient-to-b from-navy-deep via-navy to-navy-deep" />
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_-20%,_rgba(201,168,110,0.15),_transparent)]" />
       </div>
       
-      <div className="relative mx-auto max-w-4xl px-6 lg:px-8 text-center">
+      <div className="relative mx-auto max-w-4xl px-4 sm:px-6 lg:px-8 text-center">
         <p className="text-sm font-semibold uppercase tracking-widest text-gold mb-4">{badge}</p>
         <h1 className="text-4xl font-bold tracking-tight text-white sm:text-5xl lg:text-6xl">
           {title} <span className="text-gradient-gold">{titleHighlight}</span>
@@ -48,14 +48,14 @@ export function HeroSection({
         <div className="mt-10 flex flex-col sm:flex-row items-center justify-center gap-4">
           <Link
             href={primaryCTA.href}
-            className="group flex items-center gap-2 rounded-xl bg-gold px-8 py-4 text-base font-semibold text-navy transition-all hover:bg-white"
+            className="group flex w-full sm:w-auto items-center justify-center gap-2 rounded-xl bg-gold px-8 py-4 text-base font-semibold text-navy transition-all hover:bg-white"
           >
             {primaryCTA.text}
             <ArrowRight className="h-5 w-5 transition-transform group-hover:translate-x-1" />
           </Link>
           <Link
             href={secondaryCTA.href}
-            className="rounded-xl border-2 border-white/20 px-8 py-4 text-base font-semibold text-white transition-all hover:border-gold hover:text-gold"
+            className="w-full sm:w-auto text-center rounded-xl border-2 border-white/20 px-8 py-4 text-base font-semibold text-white transition-all hover:border-gold hover:text-gold"
           >
             {secondaryCTA.text}
           </Link>

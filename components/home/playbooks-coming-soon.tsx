@@ -47,7 +47,7 @@ const upcomingCount = 7
 
 export function PlaybooksComingSoon() {
   return (
-    <section className="relative bg-cream py-24 lg:py-32 overflow-hidden">
+    <section className="relative bg-cream py-16 sm:py-24 lg:py-32 overflow-hidden">
       {/* Background decoration */}
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_0%,_rgba(201,168,110,0.1),_transparent)]" />
@@ -83,7 +83,7 @@ export function PlaybooksComingSoon() {
               {/* Top accent */}
               <div className="h-1.5 bg-gradient-to-r from-gold via-gold/80 to-gold/50" />
 
-              <div className="p-6 sm:p-8 flex-1 flex flex-col">
+              <div className="p-5 sm:p-8 flex-1 flex flex-col">
                 {/* Badge + rating */}
                 <div className="flex items-center justify-between mb-4">
                   <span className="inline-flex items-center gap-1.5 rounded-full bg-green-50 border border-green-200 px-3 py-1 text-xs font-semibold text-green-700">

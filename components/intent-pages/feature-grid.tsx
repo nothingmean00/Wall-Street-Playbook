@@ -32,8 +32,8 @@ export function FeatureGrid({
   }[columns]
 
   return (
-    <section className={`${bgClass} py-20 lg:py-28`}>
-      <div className="mx-auto max-w-7xl px-6 lg:px-8">
+    <section className={`${bgClass} py-16 sm:py-20 lg:py-28`}>
+      <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-3xl">
           <h2 className="text-3xl font-bold text-navy sm:text-4xl">{title}</h2>
           <div className="mt-2 h-1 w-20 bg-gold" />

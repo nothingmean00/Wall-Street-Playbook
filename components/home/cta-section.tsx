@@ -7,7 +7,7 @@ import { track } from "@vercel/analytics"
 
 export function CTASection() {
   return (
-    <section className="relative bg-navy-deep py-20 lg:py-28 overflow-hidden">
+    <section className="relative bg-navy-deep py-16 sm:py-20 lg:py-28 overflow-hidden">
       {/* Background decoration */}
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-gradient-to-b from-navy-deep via-navy to-navy-deep" />
@@ -55,7 +55,7 @@ export function CTASection() {
           
           {/* Trust badges */}
           <ScrollReveal animation="fade-up" delay={300}>
-            <div className="mt-12 flex flex-wrap items-center justify-center gap-8 text-white/50">
+            <div className="mt-10 sm:mt-12 flex flex-wrap items-center justify-center gap-4 sm:gap-8 text-white/50">
               <div className="flex items-center gap-2">
                 <Clock className="w-5 h-5 text-gold" />
                 <span className="text-sm font-medium">48-Hour Turnaround</span>

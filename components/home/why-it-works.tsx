@@ -33,7 +33,7 @@ const reasons = [
 
 export function WhyItWorks() {
   return (
-    <section className="relative bg-navy py-24 lg:py-32 overflow-hidden">
+    <section className="relative bg-navy py-16 sm:py-24 lg:py-32 overflow-hidden">
       {/* Background effects */}
       <div className="absolute inset-0">
         <div className="absolute inset-0 bg-[radial-gradient(ellipse_80%_50%_at_50%_0%,_rgba(201,168,110,0.12),_transparent)]" />

@@ -12,7 +12,7 @@ const categoryColors: Record<string, { bg: string; text: string }> = {
 
 export function BlogPreview() {
   return (
-    <section className="relative bg-white py-24 lg:py-32 overflow-hidden">
+    <section className="relative bg-white py-16 sm:py-24 lg:py-32 overflow-hidden">
       {/* Background decoration */}
       <div className="absolute inset-0 mesh-gradient opacity-30" />
       <div className="absolute bottom-0 left-1/2 -translate-x-1/2 w-px h-16 bg-gradient-to-t from-gold to-transparent" />

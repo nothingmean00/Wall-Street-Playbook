@@ -94,7 +94,7 @@ export function BlogEmailCTA({ variant = "inline" }: BlogEmailCTAProps) {
 
   // Inline variant (for within blog content)
   return (
-    <div className="my-10 rounded-xl bg-gradient-to-br from-navy to-charcoal p-8 text-white">
+    <div className="my-8 sm:my-10 rounded-xl bg-gradient-to-br from-navy to-charcoal p-5 sm:p-8 text-white">
       <div className="flex flex-col sm:flex-row sm:items-center gap-6">
         <div className="flex-shrink-0">
           <div className="w-14 h-14 rounded-xl bg-gold/20 flex items-center justify-center">
