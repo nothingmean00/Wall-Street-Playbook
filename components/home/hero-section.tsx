@@ -72,7 +72,7 @@ export function HeroSection() {
             {/* CTAs */}
             <div className="mt-10 flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4">
               <Link
-                href="/playbooks/finance-technical-interview-guide"
+                href="/playbooks/ultimate-finance-interview-guide"
                 onClick={() => track("cta_clicked", { location: "hero_guide" })}
                 className="group relative flex w-full sm:w-auto items-center justify-center gap-2 rounded-xl bg-gold px-8 py-4 text-base font-semibold text-navy overflow-hidden transition-all hover:shadow-lg hover:shadow-gold/25"
               >
