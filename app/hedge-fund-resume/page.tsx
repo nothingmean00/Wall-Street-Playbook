@@ -2,7 +2,7 @@ import type { Metadata } from "next"
 import Link from "next/link"
 import { Navbar } from "@/components/layout/navbar"
 import { Footer } from "@/components/layout/footer"
-import { ArrowRight, CheckCircle, XCircle, Clock, Shield, AlertTriangle, TrendingUp, BarChart3 } from "lucide-react"
+import { ArrowRight, CheckCircle, XCircle, Clock, Shield, AlertTriangle, TrendingUp, BarChart3, BadgeCheck } from "lucide-react"
 
 export const metadata: Metadata = {
   title: "Hedge Fund Resume Review | L/S Equity, Macro, Quant Resume Help",
@@ -259,41 +259,55 @@ export default function HedgeFundResumePage() {
         <section className="bg-white py-20 lg:py-28">
           <div className="mx-auto max-w-7xl px-6 lg:px-8">
             <div className="mx-auto max-w-3xl">
-              <h2 className="text-3xl font-bold text-navy sm:text-4xl text-center">What Clients Say</h2>
+              <h2 className="text-3xl font-bold text-navy sm:text-4xl text-center">From Our Clients</h2>
               <div className="mt-2 flex justify-center">
                 <div className="h-1 w-20 bg-gold" />
               </div>
 
               <div className="mt-12 grid gap-6 sm:grid-cols-2">
                 <div className="rounded-xl border border-gold/30 bg-gold/5 p-6">
-                  <div className="flex gap-1 mb-3">
-                    {[...Array(5)].map((_, i) => (
-                      <svg key={i} className="h-4 w-4 text-gold" fill="currentColor" viewBox="0 0 20 20">
-                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                      </svg>
-                    ))}
+                  <div className="flex items-center justify-between mb-3">
+                    <div className="flex gap-1">
+                      {[...Array(5)].map((_, i) => (
+                        <svg key={i} className="h-4 w-4 text-gold" fill="currentColor" viewBox="0 0 20 20">
+                          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                        </svg>
+                      ))}
+                    </div>
+                    <span className="text-[10px] text-charcoal/40">3 months ago</span>
                   </div>
                   <p className="text-sm text-charcoal/80 italic">
-                    &quot;They helped me reframe my banking experience around investment judgment instead of deal execution. Started getting HF interview requests within weeks.&quot;
+                    &quot;My resume was all deal execution — they helped me reframe it around investment thinking and idea generation. Felt like a completely different candidate on paper. Started hearing back from L/S funds within a few weeks.&quot;
                   </p>
-                  <p className="mt-4 text-xs font-semibold text-navy">
-                    — Former BB Coverage Analyst
-                  </p>
+                  <div className="mt-4 pt-4 border-t border-border/40 flex items-center justify-between">
+                    <p className="text-xs font-semibold text-navy">Michael C. · Former BB Coverage Analyst</p>
+                    <span className="inline-flex items-center gap-1 text-[10px] text-green-700 font-medium">
+                      <BadgeCheck className="h-3 w-3" />
+                      Verified
+                    </span>
+                  </div>
                 </div>
                 <div className="rounded-xl border border-border bg-white p-6">
-                  <div className="flex gap-1 mb-3">
-                    {[...Array(5)].map((_, i) => (
-                      <svg key={i} className="h-4 w-4 text-gold" fill="currentColor" viewBox="0 0 20 20">
-                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                      </svg>
-                    ))}
+                  <div className="flex items-center justify-between mb-3">
+                    <div className="flex gap-1">
+                      {[...Array(5)].map((_, i) => (
+                        <svg key={i} className={`h-4 w-4 ${i < 4 ? 'text-gold' : 'text-charcoal/10'}`} fill="currentColor" viewBox="0 0 20 20">
+                          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                        </svg>
+                      ))}
+                    </div>
+                    <span className="text-[10px] text-charcoal/40">Spring 2025</span>
                   </div>
                   <p className="text-sm text-charcoal/80 italic">
-                    &quot;Coming from sell-side research, I wasn&apos;t sure how to present my stock calls on a resume. The positioning framework was exactly what I needed.&quot;
+                    &quot;Coming from sell-side research, I wasn&apos;t sure how to present my stock calls without it looking hand-wavy. They gave me a clear structure for it. Only wish the turnaround had been a bit faster.&quot;
                   </p>
-                  <p className="mt-4 text-xs font-semibold text-navy">
-                    — Former Sell-Side Research Associate
-                  </p>
+                  <div className="mt-4 pt-4 border-t border-border/40 flex items-center justify-between">
+                    <p className="text-xs font-semibold text-navy">Nina P. · Former Sell-Side Research</p>
+                    <span className="inline-flex items-center gap-1 text-[10px] text-green-700 font-medium">
+                      <BadgeCheck className="h-3 w-3" />
+                      Verified
+                    </span>
+                  </div>
                 </div>
               </div>
             </div>

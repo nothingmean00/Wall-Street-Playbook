@@ -422,8 +422,8 @@ export function ProofGallery() {
               </span>
             </div>
             <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl lg:text-5xl">
-              From Cold Outreach to{" "}
-              <span className="text-gradient-gold">Offer in Hand</span>
+              Real Interview Invitations from{" "}
+              <span className="text-gradient-gold">Real Candidates</span>
             </h2>
           </div>
 

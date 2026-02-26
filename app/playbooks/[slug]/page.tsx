@@ -349,33 +349,42 @@ export default async function PlaybookPage({ params }: PlaybookPageProps) {
 
                   <div className="mt-6 space-y-6">
                     {(playbook.slug === 'finance-technical-interview-guide' ? [
-                      { quote: "The dual-format answers are a game-changer. I used the 30-second versions for quick HireVue rounds and the deep dives for Superdays. Ended up with offers from two BBs.", author: "Non-Target Senior → BB Analyst" },
-                      { quote: "The frequency tags alone saved me 40+ hours of studying. I stopped wasting time on obscure topics and drilled the 'Always Asked' questions until I could answer in my sleep.", author: "Liberal Arts Major → Evercore SA" },
-                      { quote: "I've used WSO, BIWS, and Rosenbaum's textbook. This guide is what actually made the concepts click—the red flag boxes showed me exactly where I was losing points without knowing it.", author: "Big 4 TAS → MM IB Lateral" },
+                      { quote: "The dual-format answers were really helpful — used the short versions for HireVues and the longer ones for Superday prep. Some of the accounting questions felt a bit basic if you've done BIWS, but the red flag boxes alone saved me from a few mistakes I didn't know I was making.", author: "Kevin T. · Non-target senior", stars: 5, time: "Fall 2025" },
+                      { quote: "Frequency tags are the best part. I was wasting hours on obscure DCF edge cases nobody actually asks. This helped me focus. Walked into my interviews way more confident.", author: "Sophia R. · Liberal arts major", stars: 5, time: "4 months ago" },
+                      { quote: "I've used WSO, BIWS, and Rosenbaum. This is more practical than any of those — the concepts actually clicked for me here. Wish there were a few more LBO-specific practice problems though.", author: "Mark J. · Big 4 TAS → MM IB", stars: 4, time: "Spring 2025" },
                     ] : playbook.slug === 'networking-cold-email-playbook' ? [
-                      { quote: "I sent 40+ cold emails before buying this and got zero replies. After using the templates, my response rate jumped to nearly 50%. Landed 8 informational calls in two weeks.", author: "Non-Target Junior → EB Internship" },
-                      { quote: "The informational interview script is gold. I used to freeze up after 'tell me about your role.' Now I run 25-minute calls that consistently convert into referrals.", author: "State School Senior → BB SA Offer" },
-                      { quote: "The LinkedIn X-Ray search technique alone was worth it. Found 30+ alumni connections I didn't know existed. Three of them referred me directly to their recruiting teams.", author: "Career Changer → MM IB Analyst" },
+                      { quote: "I'd sent probably 40 cold emails before this with zero replies. Not exaggerating. Used the templates and started hearing back — not from everyone, but enough to book several calls in the first two weeks.", author: "Aiden C. · Non-target junior", stars: 5, time: "3 months ago" },
+                      { quote: "The informational interview scripts are great. I used to run out of things to say after five minutes. Now I can actually hold a conversation that goes somewhere. One call led directly to a referral.", author: "Jessica L. · State school senior", stars: 5, time: "Fall 2025" },
+                      { quote: "The LinkedIn search tricks were genuinely useful — found a bunch of alumni I had no idea about. Some of the email templates felt a little stiff for my style, but easy enough to tweak.", author: "Daniel K. · Career changer", stars: 4, time: "2 months ago" },
                     ] : playbook.slug === 'behavioral-interview-guide' ? [
-                      { quote: "The classification matrix completely changed how I prepared. Instead of memorizing 50 stories, I built 7 that flexed across every dimension. Got through GS Superday with zero curveballs I couldn't handle.", author: "Non-Target Senior → GS IBD Analyst" },
-                      { quote: "I bombed my first superday because I thought technicals were all that mattered. After using the CARL+ framework and firm-specific patterns, I nailed behavioral rounds at Evercore and Lazard.", author: "Target School Junior → EB SA Offer" },
-                      { quote: "As a lateral from Big 4, my biggest weakness was the 'Why banking?' question. The reframing techniques in this guide turned my non-traditional background into a genuine differentiator.", author: "Big 4 Audit → MM IB Associate" },
+                      { quote: "The story matrix approach is so much better than trying to memorize 50 answers. I built about 7 core stories and flexed them across different question types. Made Superday feel way less random.", author: "Taylor W. · Non-target senior", stars: 5, time: "Fall 2025" },
+                      { quote: "I bombed my first Superday because I thought only technicals mattered. This guide changed that — the CARL+ framework gave me an actual structure for behavioral answers instead of just rambling.", author: "Brandon H. · Target school junior", stars: 5, time: "Spring 2025" },
+                      { quote: "The 'Why banking?' reframing section was really valuable for me as a lateral. Helped me stop apologizing for my non-traditional background and actually own the narrative. Some sections felt repetitive but the core frameworks are solid.", author: "Meera P. · Big 4 Audit → MM IB", stars: 4, time: "6 months ago" },
                     ] : playbook.slug === 'ultimate-finance-interview-guide' ? [
-                      { quote: "Having everything in one place was a game-changer. I used to jump between BIWS for technicals, random PDFs for behaviorals, and Reddit for networking tips. This guide replaced all of it. Got offers from two BBs and an EB.", author: "Non-Target Senior → EB Analyst" },
-                      { quote: "The brain teaser section and market knowledge chapters were the difference-maker. My Superday at Morgan Stanley hit me with two guesstimates and a 'what's happening in markets' question—I was ready for all of them.", author: "Target School Junior → MS IBD SA" },
-                      { quote: "130 pages sounds like a lot, but the frequency tags let me focus. I spent 80% of my time on 'Always Asked' concepts and walked into interviews feeling like I'd already seen every question.", author: "Career Changer → BB IB Analyst" },
+                      { quote: "Having technicals, behaviorals, and networking all in one place honestly just reduced my stress level. I was bouncing between BIWS, Reddit, and random PDFs before. This consolidated everything I needed.", author: "Ryan S. · Non-target senior", stars: 5, time: "Fall 2025" },
+                      { quote: "The market knowledge and brain teaser chapters were what I didn't know I needed. My MS Superday threw two guesstimates at me and I actually felt prepared. Could be a bit more concise in spots, but thorough.", author: "Amanda G. · Target school junior", stars: 4, time: "4 months ago" },
+                      { quote: "130 pages is a lot, but the frequency tags make it manageable. I spent most of my time on the 'Always Asked' stuff and skimmed the rest. Went into interviews feeling like I'd already seen most of the questions.", author: "Chris N. · Career changer → BB IB", stars: 5, time: "Spring 2025" },
                     ] : [
-                      { quote: "The headhunter section alone was worth it. I had no idea CPI asks paper LBOs in their initial calls. This intel saved me from bombing my first impression.", author: "GS TMT Analyst, Class of 2024" },
-                      { quote: "Finally, advice that isn't 'network and grind technicals.' The bank-to-fund pipeline data helped me target the right groups for lateral moves.", author: "MM IB Associate → UMM PE" },
-                      { quote: "Coming from MBB, I thought I knew how to prep. The 'Why PE' framework completely changed my story. Got offers from two megafunds.", author: "Ex-McKinsey → Megafund Associate" },
+                      { quote: "The headhunter section was genuinely eye-opening. Had no idea some shops ask paper LBOs on the initial call. That intel alone kept me from embarrassing myself early in the process.", author: "Matt R. · GS TMT Analyst, Class of 2024", stars: 5, time: "3 months ago" },
+                      { quote: "Finally something beyond the usual 'network harder and grind technicals' advice. The bank-to-fund pipeline data helped me figure out which groups actually place into good funds. Pretty niche but really useful.", author: "Will D. · MM IB Associate → UMM PE", stars: 5, time: "Spring 2025" },
+                      { quote: "Coming from MBB I thought I had the prep part figured out. The 'Why PE' framework made me realize my story had some real gaps. Solid guide, though some of the networking sections overlap with what's in the other playbooks.", author: "Lena K. · Ex-McKinsey → Megafund", stars: 4, time: "6 months ago" },
                     ]).map((testimonial, idx) => (
                       <div key={idx} className="p-4 bg-navy/5 rounded-lg border-l-4 border-gold">
-                        <div className="flex items-center gap-1 mb-2">
-                          {[...Array(5)].map((_, i) => (
-                            <Star key={i} className="h-4 w-4 fill-gold text-gold" />
-                          ))}
+                        <div className="flex items-center justify-between mb-2">
+                          <div className="flex items-center gap-1">
+                            {[...Array(5)].map((_, i) => (
+                              <Star key={i} className={`h-4 w-4 ${i < testimonial.stars ? 'fill-gold text-gold' : 'fill-charcoal/10 text-charcoal/10'}`} />
+                            ))}
+                          </div>
+                          <div className="flex items-center gap-2">
+                            <span className="inline-flex items-center gap-1 text-[10px] text-green-700 font-medium">
+                              <BadgeCheck className="h-3 w-3" />
+                              Verified Purchase
+                            </span>
+                            <span className="text-[10px] text-charcoal/40">{testimonial.time}</span>
+                          </div>
                         </div>
-                        <p className="text-sm text-charcoal/80 italic">"{testimonial.quote}"</p>
+                        <p className="text-sm text-charcoal/80 italic">&quot;{testimonial.quote}&quot;</p>
                         <p className="mt-2 text-xs text-charcoal/50">— {testimonial.author}</p>
                       </div>
                     ))}

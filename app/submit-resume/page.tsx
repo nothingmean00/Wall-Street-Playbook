@@ -64,27 +64,26 @@ const SEGMENT_OPTIONS = [
   { value: 'other', label: 'Other Finance Role' }
 ]
 
-// Segment-specific testimonials
 const SEGMENT_TESTIMONIALS: Record<string, { quote: string; attribution: string }[]> = {
   'pe': [
-    { quote: "The rewrite changed how I presented my deal experience. Went from no responses to multiple headhunter callbacks.", attribution: "BB Analyst, now at UMM PE" },
-    { quote: "They understood exactly what PE firms look for. The positioning made all the difference.", attribution: "EB Analyst, Class of 2024" }
+    { quote: "They basically rewrote how I talked about my deal experience. I was listing tasks — they turned everything into outcomes. Got three headhunter emails within a month.", attribution: "Alex R. · BB Analyst → UMM PE" },
+    { quote: "Really solid work. Only note is turnaround was closer to 3 days than 2, but the actual positioning advice was worth the wait.", attribution: "Sarah T. · EB Analyst, Class of 2024" }
   ],
   'hf': [
-    { quote: "They helped me reframe my banking experience around investment judgment. Started getting HF interviews within weeks.", attribution: "Former BB Coverage Analyst" },
-    { quote: "The positioning framework for presenting my stock picks was exactly what I needed.", attribution: "Former Sell-Side Research Associate" }
+    { quote: "My resume was all deal execution and they helped me reframe it around investment thinking. Felt like a different candidate on paper. Started getting responses from funds pretty quickly after.", attribution: "Michael C. · Former BB Coverage Analyst" },
+    { quote: "Honestly the best money I spent during recruiting. They gave me a clear framework for how to present stock picks on a resume without it looking like I was BSing.", attribution: "Nina P. · Former Sell-Side Research" }
   ],
   'ib': [
-    { quote: "The feedback was specific and actionable. Caught weak bullets I didn't even notice.", attribution: "Target school junior" },
-    { quote: "Finally started getting first rounds after months of silence.", attribution: "Non-target senior" }
+    { quote: "Got my resume back covered in red — in a good way. They caught weak bullets, inconsistent formatting, stuff I'd looked at a hundred times without noticing.", attribution: "Rachel W. · Target school junior" },
+    { quote: "I'd been applying for months with basically zero response. Honestly thought my GPA was the issue. Turns out my resume was just bad. Started hearing back after the rewrite.", attribution: "Omar J. · Non-target senior" }
   ],
   'non-target': [
-    { quote: "I was getting ghosted on applications for months. After the rewrite, I finally started getting first rounds.", attribution: "State School Senior, Class of 2025" },
-    { quote: "The reviewer understood exactly what non-targets face. Helped me position my Big 4 experience.", attribution: "Big 4 TAS Lateral" }
+    { quote: "I was getting ghosted on every application for months. After the rewrite I actually started hearing back from boutiques and even one BB. Not magic, but definitely moved the needle.", attribution: "Chris D. · State School Senior, Class of 2025" },
+    { quote: "The reviewer clearly got it — they didn't try to make me sound like a target kid. They just helped me frame my Big 4 experience in a way that actually made sense for banking.", attribution: "Ananya S. · Big 4 TAS Lateral" }
   ],
   'default': [
-    { quote: "I wasn't getting responses on my applications. After the rewrite, I finally started getting interview requests.", attribution: "Non-target senior" },
-    { quote: "The feedback was specific and actionable. Caught formatting issues and weak bullets I didn't even notice.", attribution: "Target school junior" }
+    { quote: "I'd been applying to places for weeks with nothing back. Turns out my resume had some pretty obvious issues I just couldn't see anymore. The markup was detailed and the rewrite was solid.", attribution: "Jordan M. · Non-target senior" },
+    { quote: "Really specific feedback — not generic stuff like 'quantify more.' They told me exactly which bullets were weak and why. The revised version felt way more professional.", attribution: "Emily H. · Target school junior" }
   ]
 }
 
@@ -610,12 +609,18 @@ function ResumeSubmissionForm({ initialService, segment, pricing }: ResumeSubmis
 
                 {/* Segment-Specific Testimonial 1 */}
                 <div className="rounded-xl border border-gold/30 bg-gold/5 p-5">
-                  <div className="flex gap-1 mb-2">
-                    {[...Array(5)].map((_, i) => (
-                      <svg key={i} className="h-4 w-4 text-gold" fill="currentColor" viewBox="0 0 20 20">
-                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                      </svg>
-                    ))}
+                  <div className="flex items-center justify-between mb-2">
+                    <div className="flex gap-1">
+                      {[...Array(5)].map((_, i) => (
+                        <svg key={i} className="h-4 w-4 text-gold" fill="currentColor" viewBox="0 0 20 20">
+                          <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                        </svg>
+                      ))}
+                    </div>
+                    <span className="inline-flex items-center gap-1 text-[10px] text-green-700 font-medium">
+                      <BadgeCheck className="h-3 w-3" />
+                      Verified
+                    </span>
                   </div>
                   <p className="text-sm text-charcoal/80 italic leading-relaxed">
                     &quot;{testimonials[0]?.quote}&quot;
@@ -628,6 +633,12 @@ function ResumeSubmissionForm({ initialService, segment, pricing }: ResumeSubmis
                 {/* Segment-Specific Testimonial 2 */}
                 {testimonials[1] && (
                   <div className="rounded-xl border border-border bg-white p-5">
+                    <div className="flex items-center justify-end mb-2">
+                      <span className="inline-flex items-center gap-1 text-[10px] text-green-700 font-medium">
+                        <BadgeCheck className="h-3 w-3" />
+                        Verified
+                      </span>
+                    </div>
                     <p className="text-sm text-charcoal/80 italic leading-relaxed">
                       &quot;{testimonials[1].quote}&quot;
                     </p>

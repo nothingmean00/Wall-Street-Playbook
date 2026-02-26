@@ -37,28 +37,32 @@ export function HeroSection() {
       <div className="absolute top-0 right-1/3 w-px h-48 bg-gradient-to-b from-transparent via-gold/10 to-transparent" />
       <div className="absolute bottom-0 left-1/2 w-px h-24 bg-gradient-to-t from-transparent via-gold/15 to-transparent" />
 
-      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 py-12 sm:py-24 lg:px-8 lg:py-32 w-full">
+      <div className="relative mx-auto max-w-7xl px-4 sm:px-6 pt-24 pb-10 sm:py-24 lg:px-8 lg:py-32 w-full">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-8 items-center">
           {/* Left column - Text content */}
           <div className="text-center lg:text-left">
             {/* Eyebrow - Real urgency based on recruiting calendar */}
-            <div className="inline-flex items-center gap-2 rounded-full border border-gold/30 bg-gold/10 px-3 sm:px-4 py-1.5 mb-6">
+            <div className="inline-flex items-center gap-2 rounded-full border border-gold/30 bg-gold/10 px-3 sm:px-4 py-1.5 mb-8 sm:mb-6 max-w-full">
               <span className="h-1.5 w-1.5 rounded-full bg-gold animate-pulse flex-shrink-0" />
-              <span className="text-[10px] sm:text-xs font-semibold uppercase tracking-widest text-gold">2027 Summer Analyst Deadlines Approaching</span>
+              <span className="text-[10px] sm:text-xs font-semibold uppercase tracking-widest text-gold">
+                <span className="hidden sm:inline">2027 Summer Analyst Deadlines Approaching</span>
+                <span className="sm:hidden">2027 SA Deadlines Approaching</span>
+              </span>
             </div>
             
             {/* Headline */}
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold tracking-tight text-white leading-[1.1]">
-              Land the Interview.{" "}
+              The difference between getting ghosted and getting{" "}
               <span className="relative inline-block">
-                <span className="text-gradient-gold">Get the Offer.</span>
+                <span className="text-gradient-gold">Goldman</span>
                 <span className="absolute -bottom-1 left-0 w-full h-1 bg-gold/60 rounded-full" />
-              </span>
+              </span>{" "}
+              isn&apos;t talent.
             </h1>
 
             {/* Subheadline */}
             <p className="mt-6 text-lg sm:text-xl leading-relaxed text-white/60 max-w-xl mx-auto lg:mx-0">
-              The playbooks, technical guides, and resume services used by candidates who broke into
+              It&apos;s knowing how the system actually works. Playbooks, technical guides, and resume services built from what gets people into
               <span className="text-white/80"> Goldman Sachs</span>,
               <span className="text-white/80"> Blackstone</span>,
               <span className="text-white/80"> KKR</span>, and
@@ -107,7 +111,7 @@ export function HeroSection() {
 
             {/* Firm logos / social proof bar */}
             <div className="mt-6 sm:mt-10 animate-slide-up animate-delay-200">
-              <p className="text-[10px] sm:text-xs font-medium uppercase tracking-widest text-white/30 mb-3">Candidates who use our materials have landed interviews at firms like</p>
+              <p className="text-[10px] sm:text-xs font-medium uppercase tracking-widest text-white/30 mb-3">Our clients have interviewed at</p>
               <div className="flex flex-wrap items-center justify-center lg:justify-start gap-x-4 sm:gap-x-5 gap-y-2">
                 {["Goldman Sachs", "Blackstone", "KKR", "Evercore", "Carlyle", "UBS", "Lazard"].map((firm) => (
                   <span key={firm} className="text-xs sm:text-sm font-semibold text-white/40 hover:text-gold/70 transition-colors">
